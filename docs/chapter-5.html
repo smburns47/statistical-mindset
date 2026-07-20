@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Describing Data – Foundations for a Statistical Mindset</title>
+<title>5&nbsp; Summarizing a Variable – Foundations for a Statistical Mindset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -350,7 +369,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'gridExtra'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -372,7 +391,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"#ggformula is already installed on the book's server - the first time you use it on your own computer, you will need to use install.packages('ggformula')\n\nlibrary(ggformula)\n\ntetrismemories <- read.csv(\"data/tetrismemories.csv\")\n\ngf_histogram(gformula = ~ intrusive_memories, data = tetrismemories)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Change the plotted variable to STAI_T\ngf_histogram(gformula = ~ intrusive_memories, data = tetrismemories)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"outcome <- c(1,2,3,4,5)\ntiny_data <- data.frame(outcome) #gf_histogram only works on dataframe objects, not vectors\n\n#Your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(gformula = ~ outcome, data = tiny_data, bins = 5)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(gformula = ~ outcome, data = tiny_data, bins = 5, color = \"gray\", fill = \"blue\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_dhistogram(gformula = ~ outcome, data = tiny_data, bins = 5, color = \"gray\", fill = \"blue\")","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_dhistogram(#set formula here, #set data frame here, #set bin and color options here)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"normal_data <- rnorm(n = 1000, mean = 0, sd = 1) \n#rnorm() is a function that generates data in a normal distribution;\n# we'll talk about simulating data like this in a later chapter\n\ngf_dhistogram(gformula = ~ data_pts, data = data.frame(data_pts = normal_data))","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"test_scores <- c(76,91,86,80,93)\n#This computes a mean\nsum(test_scores) / length(test_scores)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here\n\n#Read the code below. Do you think it will be the same as your mean calculation?\nsum(test_scores) / length(test_scores)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dist1 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10)\ndist2 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)\n\n#Your code here","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Calculate mean of dist1\n\n#Calculate mean of dist2","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"median(test_scores)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Visualizing a new distribution \ndist3 <- data.frame(data_pts = c(10,20,20,30,30,30,40,40,40,40,50,50,50,50,50))\ngf_dhistogram(gformula = ~ data_pts, data = dist3)\n\n#Your code here","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"table(dist3$data_pts)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Max of test_scores\nmax(test_scores)\n\n#Min of test_scores\nmin(test_scores)\n\n#Your code here","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"range(test_scores)","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(tetrismemories$STAI_T, probs = 0.5, na.rm = TRUE)\nmedian(tetrismemories$STAI_T, na.rm = TRUE)","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(tetrismemories$STAI_T, probs = c(0.25,0.5,0.75), na.rm = TRUE)","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"IQR(tetrismemories$STAI_T, na.rm = TRUE)","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean_score <- mean(test_scores)   # mean of the data\ndevs <- test_scores - mean_score  # all deviations from the mean\nsum(devs)                         # sum of the deviations","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"var(tetrismemories$intrusive_memories, na.rm = TRUE)","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"memories_var <- var(tetrismemories$intrusive_memories, na.rm = TRUE)\nmemories_sd <- sd( #type your code here )\nsqrt(memores_var) == memores_sd","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"filepath <- \"https://statistical-mindset.com/data/studentdata.csv\"\nstudentdata <- read.csv(filepath)\n\nwebr::install('ggplot2')  #downloading package from the internet\nlibrary(ggplot2)   #loading package from library \n\nggplot(studentdata, aes(x=Height))","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Height)) + \n  geom_histogram()","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Make a histogram of Siblings","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"test_scores <- c(76,91,86,80,93)\n#This computes a mean\nsum(test_scores) / length(test_scores)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here\n\n#Check if your answer is the same as this answer\nsum(test_scores) / length(test_scores)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dist1 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10)\ndist2 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)\n\n#Your code here - use two ggplot commands","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Calculate mean of dist1\n\n#Calculate mean of dist2","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"median(test_scores)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Visualizing a new distribution \ndist3 <- data.frame(data_pts = c(10,20,20,30,30,30,40,40,40,40,50,50,50,50,50))\nggplot(dist3, aes(x=data_pts)) + \n  geom_histogram()\n\n#Your code here","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"table(dist3$data_pts)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Max of test_scores\nmax(test_scores)\n\n#Min of test_scores\nmin(test_scores)\n\n#Your code here","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"range(test_scores)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(studentdata$Height, probs = 0.5, na.rm = TRUE)\nmedian(studentdata$Height, na.rm = TRUE)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(studentdata$Height, probs = c(0.25,0.5,0.75), na.rm = TRUE)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"IQR(studentdata$Height, na.rm = TRUE)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean_score <- mean(test_scores)   # mean of the data\ndevs <- test_scores - mean_score  # all deviations from the mean\nsum(devs)                         # sum of the deviations","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"var(studentdata$Height, na.rm = TRUE)","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"var_height <- var(studentdata$Height, na.rm = TRUE)\nsd_height <- #your code here\nsqrt(var_height) == sd_height","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Height_rescaled <- (studentdata$Height - mean(studentdata$Height)) / sd(studentdata$Height)\nstudentdata$Height[3] # value of student's height, in original units\nstudentdata$Height_rescaled[3] # new value of student's height, in new units","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Height_z <- scale(studentdata$Height)\nstudentdata$Height_z[3]","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1658,7 +1677,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -1667,7 +1686,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1701,7 +1720,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Managing Data</span></a>
+ <span class="menu-text">Working with Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1734,30 +1753,30 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variation in Multiple Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Modeling Hypotheses</span></span>
+ <span class="menu-text">Predicting &amp; Explaining Data</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions</span></span>
+ <span class="menu-text">Making Conclusions with Data</span></span>
   </li>
     </ul>
     </div>
@@ -1773,43 +1792,38 @@ window.Quarto = {
   <li><a href="#sec-ch5-visualizing-distributions" id="toc-sec-ch5-visualizing-distributions" class="nav-link" data-scroll-target="#sec-ch5-visualizing-distributions"><span class="header-section-number">5.2</span> Visualizing distributions</a>
   <ul class="collapse">
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">5.2.1</span> Histograms</a></li>
-  <li><a href="#density-plots" id="toc-density-plots" class="nav-link" data-scroll-target="#density-plots"><span class="header-section-number">5.2.2</span> Density plots</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-distribution-shape" id="toc-sec-ch5-distribution-shape" class="nav-link" data-scroll-target="#sec-ch5-distribution-shape"><span class="header-section-number">5.3</span> Shape</a></li>
-  <li><a href="#sec-ch5-distribution-center" id="toc-sec-ch5-distribution-center" class="nav-link" data-scroll-target="#sec-ch5-distribution-center"><span class="header-section-number">5.4</span> Center</a>
+  <li><a href="#sec-ch5-math-notation-distributions" id="toc-sec-ch5-math-notation-distributions" class="nav-link" data-scroll-target="#sec-ch5-math-notation-distributions"><span class="header-section-number">5.3</span> Mathematical notation for distributions</a></li>
+  <li><a href="#sec-ch5-distribution-shape" id="toc-sec-ch5-distribution-shape" class="nav-link" data-scroll-target="#sec-ch5-distribution-shape"><span class="header-section-number">5.4</span> Distribution shape</a></li>
+  <li><a href="#sec-ch5-distribution-center" id="toc-sec-ch5-distribution-center" class="nav-link" data-scroll-target="#sec-ch5-distribution-center"><span class="header-section-number">5.5</span> Distribution center</a>
   <ul class="collapse">
-  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">5.4.1</span> Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">5.4.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">5.4.3</span> Mode</a></li>
-  <li><a href="#which-measure-of-central-tendency-to-use" id="toc-which-measure-of-central-tendency-to-use" class="nav-link" data-scroll-target="#which-measure-of-central-tendency-to-use"><span class="header-section-number">5.4.4</span> Which measure of central tendency to use?</a></li>
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">5.5.1</span> Mean</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">5.5.2</span> Median</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">5.5.3</span> Mode</a></li>
+  <li><a href="#which-measure-of-central-tendency-to-use" id="toc-which-measure-of-central-tendency-to-use" class="nav-link" data-scroll-target="#which-measure-of-central-tendency-to-use"><span class="header-section-number">5.5.4</span> Which measure of central tendency to use?</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-distribution-variability" id="toc-sec-ch5-distribution-variability" class="nav-link" data-scroll-target="#sec-ch5-distribution-variability"><span class="header-section-number">5.5</span> Variability</a>
+  <li><a href="#sec-ch5-distribution-variability" id="toc-sec-ch5-distribution-variability" class="nav-link" data-scroll-target="#sec-ch5-distribution-variability"><span class="header-section-number">5.6</span> Distribution variation</a>
   <ul class="collapse">
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">5.5.1</span> Range</a></li>
-  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">5.5.2</span> Interquartile range</a></li>
-  <li><a href="#sum-of-squares" id="toc-sum-of-squares" class="nav-link" data-scroll-target="#sum-of-squares"><span class="header-section-number">5.5.3</span> Sum of Squares</a></li>
-  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">5.5.4</span> Variance</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">5.5.5</span> Standard deviation</a></li>
-  <li><a href="#which-measure-of-variability-to-use" id="toc-which-measure-of-variability-to-use" class="nav-link" data-scroll-target="#which-measure-of-variability-to-use"><span class="header-section-number">5.5.6</span> Which measure of variability to use?</a></li>
+  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">5.6.1</span> Range</a></li>
+  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">5.6.2</span> Interquartile range</a></li>
+  <li><a href="#sum-of-squares" id="toc-sum-of-squares" class="nav-link" data-scroll-target="#sum-of-squares"><span class="header-section-number">5.6.3</span> Sum of squares</a></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">5.6.4</span> Variance</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">5.6.5</span> Standard deviation</a></li>
+  <li><a href="#which-measure-of-variability-to-use" id="toc-which-measure-of-variability-to-use" class="nav-link" data-scroll-target="#which-measure-of-variability-to-use"><span class="header-section-number">5.6.6</span> Which measure of variability to use?</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-reporting-distributions" id="toc-sec-ch5-reporting-distributions" class="nav-link" data-scroll-target="#sec-ch5-reporting-distributions"><span class="header-section-number">5.6</span> Reporting distribution summaries</a>
+  <li><a href="#sec-ch5-zscores" id="toc-sec-ch5-zscores" class="nav-link" data-scroll-target="#sec-ch5-zscores"><span class="header-section-number">5.7</span> Z-scores</a></li>
+  <li><a href="#sec-ch5-resources" id="toc-sec-ch5-resources" class="nav-link" data-scroll-target="#sec-ch5-resources"><span class="header-section-number">5.8</span> Chapter resources</a>
   <ul class="collapse">
-  <li><a href="#central-tendency" id="toc-central-tendency" class="nav-link" data-scroll-target="#central-tendency"><span class="header-section-number">5.6.1</span> Central tendency</a></li>
-  <li><a href="#spread" id="toc-spread" class="nav-link" data-scroll-target="#spread"><span class="header-section-number">5.6.2</span> Spread</a></li>
-  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape"><span class="header-section-number">5.6.3</span> Shape</a></li>
-  </ul></li>
-  <li><a href="#sec-ch5-resources" id="toc-sec-ch5-resources" class="nav-link" data-scroll-target="#sec-ch5-resources"><span class="header-section-number">5.7</span> Chapter resources</a>
-  <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">5.7.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">5.7.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">5.7.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.7.4</span> Further reading</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">5.8.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">5.8.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">5.8.3</span> New R functionality</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.8.4</span> Further reading</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
 <script type="module" id="qwebr-monaco-editor-init">
 
@@ -2095,9 +2109,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></span></h1>
+<h1 class="title"><span id="sec-ch5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></h1>
 </div>
 
 
@@ -2114,46 +2128,43 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p><img src="images/header3.png" class="img-fluid"> Data are the measurements that make up variables, as we saw last chapter. To refresh, a variable is a set of observations across many things where the values vary. For example, human intelligence is a variable because everyone has a separate intelligence score and we would likely measure different values for different people. The values of intelligence would vary person to person. In contrast, people’s species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation data point to data point.</p>
-<p>Over the last four chapters you’ve developed the basic proficiency in coding and data management that will enable you to explore and analyze data in many contexts. These skills are an important foundation for the rest of the course, so it is highly recommended that you practice with them and return to them to review frequently (and keep this url handy to come back to in future classes).</p>
-<p>Next, we are going to turn to how we can apply these skills for statistical insights on the data we’ve been working with. In this chapter, we will learn about the use of descriptive statistics for summarizing datasets.</p>
-<section id="sec-ch5-distribution" class="level2" data-number="5.1">
+<p><img src="images/header-ch5.png" class="img-fluid"></p>
+<p>Over the last four chapters you’ve developed the basic proficiency in coding and data management that will enable you to explore and analyze data in many contexts. These skills are an important foundation for the rest of the course, so it is highly recommended that you practice with them and return to them to review frequently (and keep the url of this book handy to come back to in future classes).</p>
+<div class="page-columns page-full"><p>Next, we’re going to leverage these skills for making statistical insights about the data we’ve been working with. In this chapter, we will learn about the use of <strong>descriptive statistics</strong> for summarizing datasets.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>descriptive statistics</strong> = a set of statistical tools used to describe a data sample</span></div></div>
+<section id="sec-ch5-distribution" class="level2 page-columns page-full" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="sec-ch5-distribution"><span class="header-section-number">5.1</span> The concept of a distribution</h2>
-<p>Assuming we have a tidy dataset with many variables, it is a good idea to look at the variation in your measures. This can give you clues about what kind of cleaning is needed, if any errors in data collection happened, and what sort of analyses will best suit the data. This leads us to one of the most fundamental concepts in statistics, the concept of a <strong>distribution</strong>.</p>
-<p>A distribution reflects the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 60 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary. The concept of a distribution allows us to see the whole as greater than the sum of the parts; the forest, and not just the trees.</p>
-<p>The features of a forest cannot be seen in a single tree. Measuring the height of a single tree does not allow you to see characteristics of the distribution of height. You can know the height of that one tree, but not the minimum, maximum, or average height of trees in the forest based on a single measurement. Statistics such as the mean do not themselves constitute a distribution; they are features of a distribution, features that don’t apply to individual trees.</p>
-<p>Note that not just any bunch of numbers can be thought of as a distribution. The numbers must all be measures of the same attribute. So, for example, if you have measures of height and weight on a sample of 60 people, you can’t just lump the height and weight numbers into a single distribution. You can, however, examine the distribution of height and the distribution of weight separately.</p>
+<div class="page-columns page-full"><p>Assuming we have a tidy data frame with many variables, it is a good idea to look at the variation in your measures. This can give you clues about what kind of cleaning is needed, if any errors in data collection happened, and whether your planned analyses will be appropriate. This leads us to one of the most fundamental concepts in statistics - the concept of a <strong>distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>distribution</strong> = the nature and shape of variation in the collective values of a variable(s)</span></div></div>
+<p>A distribution is the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 60 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary. Features about a distribution don’t apply to individual data points - they apply to the whole set.</p>
+<p>Note that a distribution only makes sense to talk about if something is <em>distributed</em>. This requires multiple data values and variation, like in a variable. We can talk about the distribution of human intelligence because there is a separate score per person and we would likely measure different values for different people. In contrast, people’s species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation data point to data point, so this would not be a variable and would not have a distribution.</p>
 </section>
-<section id="sec-ch5-visualizing-distributions" class="level2" data-number="5.2">
+<section id="sec-ch5-visualizing-distributions" class="level2 page-columns page-full" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-ch5-visualizing-distributions"><span class="header-section-number">5.2</span> Visualizing distributions</h2>
-<section id="histograms" class="level3" data-number="5.2.1">
+<section id="histograms" class="level3 page-columns page-full" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">5.2.1</span> Histograms</h3>
-<p>When first learning about distributions, it can help to visualize them. Below are some examples of what distributions can look like:</p>
-<p><img src="images/ch5-distributions.png" width="600"></p>
-<p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): anxiety scores from the Tetris Memories study; the number of intrusive memories those participants experienced; how long a sample of students slept per night, measured in hours; and the heights of a sample of people, measured in inches. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in purple), the height of the bars does not represent what STAI score someone got, but instead represents the number of participants in this sample who got a certain score.</p>
-<p>There are lots of ways to make histograms in R. In this course we will use the package <code>ggformula</code> to make our visualizations. It is a large and flexible package, so it can be good to read through a guide to <a href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">everything you can do with it</a> for help or inspiration. <code>ggformula</code> is a weird name, but that’s what the authors of this package called it. Because of that, many of the <code>ggformula</code> commands are going to start with <code>gf_</code>; the <code>g</code> stands for “graphical” and the <code>f</code> stands for “formula”.</p>
-<p>We will start by making a histogram with the <code>gf_histogram()</code> function. Here is how to make a basic histogram of <code>intrusive_memories</code> from the <code>tetrismemories</code> data frame.</p>
+<p>When first learning about variable distributions, it can help to visualize them. Below are some examples of what distributions can look like:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch5-histograms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-histograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-5_files/figure-html/fig-ch5-histograms-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-histograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Distributions of four variables from student dataset
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): height values among the respondents in <code>studentdata</code>; various employment categories; number of siblings a student may have; and ethnic identities in the student sample. The y-axis represents the <em>frequency</em> of some score in a sample. So, in the first histogram (in orange), the height of the bars does not represent what height someone is, but instead represents the number of respondents in this sample who are the height indicated on the x-axis.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>histogram</strong> = a type of plot that visualizes a single-variable distribution, with variable values on the x-axis and number of observations with that value on the y-axis</span></div></div>
+<p>There are lots of ways to make histograms in R. In this book we will use the package <code>ggplot2</code> to make our visualizations because it is by far the most-used data visualization package in R. It is a large and flexible package, with a lot of capability to make just about any plot customization you can imagine. It takes a little getting used to, so we will just use some of its basic functionality. If you’re really into data viz, you can learn more about the package in the online book <em>ggplot2: Elegant Graphics for Data Analysis</em> (<span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span>).</p>
+<p>The process of building a plot with <code>ggplot2</code> is a process of creating and adding layers to an image, like in Photoshop. The first step of every <code>ggplot2</code> plot is to define what data should be used in it and the plot’s aesthetic mappings - what variables should go where visually. This is all wrapped in the primary function <code>ggplot()</code>.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The <code>gf_histogram</code> function takes two arguments. The first is a <em>formula</em> (using the argument name <code>gformula</code>). In this formula, notice that the variable we want to display, <code>intrusive_memories</code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for graphing a line (e.g., <code>y = mx + b</code> from geometry class). So in a formula, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the <code>gformula</code> argument in <code>gf_histogram()</code> is the formula <code>~ instrusive_memories</code>, which tells R “plot the variable <code>intrusive_memories</code> on the x-axis.”</p>
-<p>The second argument is <code>data = tetrismemories</code>, which tells R which data frame to find <code>intrusive_memories</code> in.</p>
-<p>This is an example of using named arguments to explicitly tell R which argument values should be what. By using the named argument syntax with <code>=</code> signs, you can put these name/value pairs in any order inside the function call; e.g.&nbsp;<code>gf_formula(data = tetrismemories, gformula = ~ intrusive_memories)</code> would still work. You can also leave off the argument names <code>gformula =</code> and <code>data =</code>, but in that case you have to enter the argument values in the specific order this function expects by default (formula first, then data). <a href="https://www.rdocumentation.org/packages/ggformula/versions/0.6/topics/gf_histogram">Looking up</a> a function online or using the <code>?</code> symbol before a function name will always tell you how to use a function if you forget.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now say we wanted to change the histogram to one that plots the variable <code>STAI_T</code> on the x-axis instead. Rewrite the code below to do so.</p>
-</div>
-</div>
+<p>If you only see a blank plot so far, that’s correct! In the code command above, we told <code>ggplot()</code> to reference the <code>studentdata</code> dataset. We also used the <code>aes()</code> function (short for “aesthetic”) within the <code>ggplot()</code> function to do the aesthetic mapping. In this case, we just told <code>ggplot()</code> to put the variable <code>Height</code> on the x axis. But we didn’t tell the code to <em>do</em> anything with that information yet.</p>
+<p>To actually make a plot, we need to next add a “geom” layer. This tells the plotting function what geometric shapes should be on the screen, representing the data we already told it about. To add a layer, we add a plus sign after the <code>ggplot()</code> function and then write a specific function on the next line for the specific type of plot we want to build. In this case, since we want to look at the <code>Height</code> variable in a histogram, we will use <code>geom_histogram()</code>.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Because the variable on the x-axis is often measured on a continuous scale with many possible values, the bars in the histograms usually represent a range of values, called bins. We’ll illustrate this idea of bins by creating a simple outcome variable called <code>outcome</code>, and displaying it on a histogram.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2164,71 +2175,58 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write some code below to plot a histogram of the variable <code>outcome</code> in the data frame <code>tiny_data</code>.</p>
+<p>Try making a histogram of the <code>Siblings</code> variable yourself. It should look like the red histogram in <a href="#fig-ch5-histograms" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This histogram shows gaps between the bars because by default <code>gf_histogram()</code> sets up 30 bins, even though we only have five possible numbers in our variable. If we change the number of bins to 5, then we’ll get rid of the gaps between the bars. To do this, we add in a new argument that <code>gf_histogram()</code> can accept: <code>bins</code>.</p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now we only have one bin per data value. However, since there are exactly one of each type of value, this histogram looks like a rectangle. To help distinguish things more, we can change the colors of the histogram, adding in the arguments <code>color</code> and <code>fill</code>. What do you think each of these arguments does?</p>
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In chapter 7, we’ll talk much more about how to tweak the details of our data visualizations.</p>
+<p>We will learn much more about data visualization ins <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> and <a href="chapter-7.html" class="quarto-xref"><span>Chapter 7</span></a>. For now, know that the very first thing you should do when analyzing data is examine the distributions of your variables. If you skip this step, and go directly to the application of other statistical procedures without knowing the distribution of your data, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are ok, and that your planned analysis will be appropriate.</p>
 </section>
-<section id="density-plots" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="density-plots"><span class="header-section-number">5.2.2</span> Density plots</h3>
-<p><strong>Density plots</strong> are a lot like histograms, except on the y-axis is the <em>proportion</em> (or percentage) of the data that falls into a bin, rather than the raw count number. The only real difference between a histogram and density plot is how the y-axis is represented.</p>
-<p>The function <code>gf_dhistogram</code> will plot a density plot (note the d before the word histogram, to distinguish it from the regular histogram function).</p>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If everything worked right, the general shape of this plot should match the one above. The only difference is, the bins show a density of 0.2 instead of 1, since 1 value out of 5 means 20% of the sample is in that bin.</p>
-<p>In the window below, write some code to make a density plot of the <code>tetris_total_score</code> variable in the <code>tetrismemories</code> data.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
+</section>
+<section id="sec-ch5-math-notation-distributions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-ch5-math-notation-distributions"><span class="header-section-number">5.3</span> Mathematical notation for distributions</h2>
+<p>A plot helps us understand a distribution visually. Next, we need to know some specific ways to talk about distributions. Using mathematical notation means choosing some symbols to briefly represent an idea so that it’s more efficient to communicate about it.</p>
+<p>There are a few mathematical notations for talking about distributions. First, if we are referring to a variable as a whole group, we will use a Latin letter like <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> to stand in for the whole distribution. If we are talking about a specific observation in a variable distribution, we will add a subscript letter to the distribution letter. E.g. if you see <span class="math inline">\(x_i\)</span>, that is referring to the value on <span class="math inline">\(x\)</span> belonging to observation <span class="math inline">\(i\)</span>.</p>
+<p>Why aren’t we using the actual variable name and observation value when talking about them? At first it may seem like using vague <span class="math inline">\(x\)</span> and <span class="math inline">\(i\)</span> symbols instead of more descriptive names is worse for communication rather than helpful.</p>
+<p>The reason we do this is because these notation symbols stand in for general ideas that go beyond a specific variable or value. This is helpful when we start writing equations in a little bit where the equation would apply to any variable or observation. We <em>could</em> replace the notation with a specific value if we know it. E.g., if we define <span class="math inline">\(x =\)</span> <code>Sibling</code> and <span class="math inline">\(i = 5\)</span>, then we can solve for <span class="math inline">\(x_i\)</span>: it would be the 5th value in the variable <code>Sibling</code>. But by letting <span class="math inline">\(x\)</span> and <span class="math inline">\(x_i\)</span> represent more generally <em>any</em> variable and <em>any</em> observation, we can talk about more general principles of how distributions work and how values can relate to each other.</p>
+</section>
+<section id="sec-ch5-distribution-shape" class="level2 page-columns page-full" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-ch5-distribution-shape"><span class="header-section-number">5.4</span> Distribution shape</h2>
+<p>Now, we know how to visualize a distribution and we know how to refer to it generally with mathematical notation. Next, let’s learn some ways we can think about the characteristics of a distribution, and how we can summarize a distribution with specific metrics. In general, there are three important attributes to a distribution: its shape, center, and variation.</p>
+<div class="page-columns page-full"><p>Look back at the histogram you made for <code>Siblings</code>, and take note of the general shape the distribution takes. Where is the peak of the the distribution? What are the most infrequent values? Statisticians describe the shapes of distributions using a few key features. Distributions can be <strong>symmetrical</strong>, or they can be <strong>skewed</strong>. In a symmetrical distribution, if you drew a vertical line down the middle to split it into two halves, the left side of the shape is close to a mirror image of the right side. If a distribution is skewed, then one half is longer than the other half. Another way of thinking about it is there are more uncommon values on one side of the shape than on the other side. A distribution can be skewed left (the skinny longer tail is on the left, like someone stretched out that side) or skewed right (the skinny longer tail is on the right).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>symmetrical distribution</strong> = A distribution shaped such that both halves look approximately mirrored</span><span class="margin-aside"><strong>skewed distribution</strong> = A distribution shaped such that one half of the distribution is more spread out than the other; a lopsided distribution</span></div></div>
+<p>It’s rare to find a sample of data that is perfectly symmetrical, but the more skewed something is the more we should take note of it. When looking at the distribution of <code>Siblings</code>, we would say it has right skew because the infrequent values are all on the right side of the distribution shape.</p>
+<div class="page-columns page-full"><p>Other ways to talk about the shape of distributions include the number of peaks it has. If a distribution has one peak, we call it <strong>unimodal</strong>. If there are two peaks, it is <strong>bimodal</strong>. If there are no peaks and it looks like all values on the x-axis have the approximately the same number of occurrences, the distribution is <strong>uniform</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>unimodal distribution</strong> = a distribution with one clear peak</span><span class="margin-aside"><strong>bimodal distribution</strong> = a distribution with two clear peaks</span><span class="margin-aside"><strong>uniform distribution</strong> = a distribution with no clear peak and a roughly even number of observations across the range of possible values</span></div></div>
+<p>Look at your <code>Siblings</code> histogram again. Do you think it is unimodal, bimodal, or uniform?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
+<span class="screen-reader-only">Tip</span>Reveal the answer
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Finish the code below to make a density plot of <code>Age</code> in <code>mindsetmatters</code>.</p>
+<p>There is one value that is most frequent and the distribution slopes away from this value to either side - therefor, it is unimodal.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You may have gotten a warning by running this that said <code>Warning message: "Removed 36 rows containing non-finite values (`stat_bin()`).”</code>. Warnings in R mean your code can still run, but the program thinks something happened that you should pay attention to. In this case, there are 36 observations that have missing data in <code>tetris_total_score</code>. Since it’s impossible to plot something that doesn’t exist, this function ignored those rows when plotting. Some functions are able to manage missing values this way, others will break completely with an error when you try to pass data with missing values. As you use R more you’ll start getting a sense of which ones behave which way. You’ll also start learning what error messages mean so you can learn to use new functions correctly.</p>
-<p>In summary, the very first thing you should always do when analyzing data is to examine the distributions of your variables. If you skip this step, and go directly to the application of more complex statistical procedures without knowning the nature of your data, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are ok, and that your planned analysis will be appropriate.</p>
-<p>Besides visualizing a distribution, we can also describe it with specific metrics. In general, a distribution can be described with three things: its shape, center, and variability.</p>
+</div>
+<p>Usually, distributions of collected data are kind of lumpy and jagged, so many of these features should be thought of with the word “roughly” in front of them. Even if a distribution doesn’t have exactly the same number of observations across all possible scores — but has roughly the same number — we should still call that distribution uniform. If you look at the distribution for <code>Height</code> again, it looks like there are many peaks. But statisticians would consider it roughly unimodal because the peak in the middle of the distribution has more mass around it than the others.</p>
 </section>
-</section>
-<section id="sec-ch5-distribution-shape" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="sec-ch5-distribution-shape"><span class="header-section-number">5.3</span> Shape</h2>
-<p>Look back at the density plot you made for <code>tetrismemories$intrusive_memories</code>, and take note of the general shape the whole dataset takes. Where is the peak of the the distribution? What are the most infrequent values? Statisticians describe the shapes of distributions using a few key features. Distributions can be <strong>symmetrical</strong>, or they can be <strong>skewed</strong>. A symmetrical distribution has a peak generally in the center of the x-axis, and the left side of the shape is close to a mirror image of the right side. If a distribution is skewed, it can be skewed left (the skinny longer tail is on the left, like someone stretched out that side) or skewed right (the skinny longer tail is on the right).</p>
-<p>It’s rare to find a distribution perfectly symmetrical, but the more skewed something is the more we should take note of it. The distribution above has a fairly large skew to the right.</p>
-<p>Other ways to talk about the shape of distributions include: - <strong>uniform</strong>, meaning the number of observations is evenly distributed across the possible scores and there is no peak in the data (remember the rectangle histogram we made earlier?)<br>
-- <strong>unimodal</strong>, meaning that there is one peak in the data - <strong>bimodal</strong> (or multimodal), having two (or more) clear peaks with only a few data values in between</p>
-<p>Do you think the <code>intrusive_memories</code> distribution above is uniform, unimodal, or bimodal?</p>
-<p>You will often see distributions that match a particular shape and skewness. These special distribution types have names. For instance, the <strong>normal</strong> distribution is symmetric and unimodal, looking like a bell:</p>
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Usually, distributions are kind of lumpy and jagged, so many of these features should be thought of with the word “roughly” in front of them. Even if a distribution doesn’t have exactly the same number of observations across all possible scores — but has roughly the same number — we should still call that distribution uniform. If you look at the density plot above, you might see some extra lumpiness along the sides of the bell curve. Some people might initially think this is a bimodal distribution. But statisticians would consider it roughly unimodal and roughly normal because the lumps are quite small compared to the main peak.</p>
+<section id="sec-ch5-distribution-center" class="level2 page-columns page-full" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-ch5-distribution-center"><span class="header-section-number">5.5</span> Distribution center</h2>
 <p>If a distribution is unimodal, it is often useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample are around this middle value.”</p>
-</section>
-<section id="sec-ch5-distribution-center" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="sec-ch5-distribution-center"><span class="header-section-number">5.4</span> Center</h2>
-<p>There are specific numbers that represent what that middle point is for a distribution. We mentioned in chapter 1 that one of the central principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset and describe its center value. In most situations, after checking out the shape of the data distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p>
-<section id="mean" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">5.4.1</span> Mean</h3>
-<p>The <strong>mean</strong> of a set of observations is a traditional average: add all of the values up, and then divide by the total number of values. If a student’s five exam scores were 76, 91, 86, 80 and 92, the mean of those scores would be:</p>
+<div class="page-columns page-full"><p>We can calculate a specific number to represent what that middle point is for a distribution. We mentioned in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> that one of the central principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we describe a variable using its center value. In most situations, after checking out the shape of the distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>central tendency</strong> = the “middle” or “typical” value of a distribution, close to where most points are</span></div></div>
+<section id="mean" class="level3 page-columns page-full" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">5.5.1</span> Mean</h3>
+<div class="page-columns page-full"><p>The <strong>mean</strong> of a set of observations is a traditional average: add all of the values up, and then divide by the total number of values. If a student took five exams and got scores 76, 91, 86, 80 and 92, the mean of those scores would be:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean</strong> = a measure of central tendency calculated by summing all values and dividing by the number of values</span></div></div>
 <p><span class="math display">\[\frac{76 + 91 + 86 + 80 + 93}{5} = 85.2\]</span></p>
 <p>To calculate the mean in R, you could type out that exact formula above and have R work for you like a calculator: <code>(76 + 91 + 86 + 80 + 93)/5</code>. However, that’s not the only way to do the calculation, and when the number of observations starts to become large, it’s very tedious. Besides, in almost every real world scenario, you’ve already got the actual numbers stored in a variable of some kind, like <code>test_scores &lt;- c(76,91,86,80,93)</code>. Under those circumstances, you can use a combination of the <code>sum()</code> function and the <code>length()</code> function:</p>
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Although it’s pretty easy to calculate the mean like this, we can do it in an even easier way. Since the mean is such a common metric to compute, R also provides us with the <code>mean()</code> function. Simply pass a vector to this fuction to return the mean. Try it in the code block below.</p>
+<p>Although it’s pretty easy to calculate the mean like this, we can do it in an even easier way. Since the mean is such a common metric to compute, R also provides us with the <code>mean()</code> function. Simply pass a vector to this function to return the mean. Try it in the code block below.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2242,12 +2240,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Use <code>mean()</code> to calculate the mean of <code>test_scores</code> in the code window below.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The mean is a really useful and common way to describe a distribution’s central tendency. It’s so common, that it has it’s own mathematical notation: <span class="math inline">\(\bar{x}\)</span>, which is read as “x bar.” Where <span class="math inline">\(x\)</span> stands for the distribution of some variable, <span class="math inline">\(\bar{x}\)</span> stands for the corresponding mean of that distribution. Since we calculated the mean of <code>test_scores</code> to be 85.2, we’d say <span class="math inline">\(\bar{x}\)</span> = 85.2 where <span class="math inline">\(x\)</span> is defined as <code>test_scores</code>.</p>
 </section>
-<section id="median" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="median"><span class="header-section-number">5.4.2</span> Median</h3>
-<p>The mean is a really useful way of describing what the central tendency of a distribution is. However, sometimes it doesn’t work as well as one might think. Imagine two distributions: <code>dist1 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10)</code> and <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100).</code> Plot these as density plots below.</p>
+<section id="median" class="level3 page-columns page-full" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="median"><span class="header-section-number">5.5.2</span> Median</h3>
+<p>Despite its ubiquity, the mean is not always a good fit for all situations. Imagine two distributions: <code>dist1 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10)</code> and <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100).</code> Plot these as histograms below.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2258,10 +2257,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write code to plot the density plot of the provided distributions, using <code>df_dhistogram()</code>.</p>
+<p>Write code to plot the density plot of the provided distributions using <code>ggplot()</code> and <code>geom_histogram()</code>.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>While <code>dist2</code> has an obvious outlier, most people would say a value that best represents the majority of the data is still around 10, like in <code>dist1</code>. However, the mean is a different story:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
@@ -2277,18 +2276,32 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Now calculate the mean of each distribution.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The mean of <code>dist2</code> is way off of the mean of <code>dist1</code>. This sort of situation is not uncommon - in fact, the mean of any distribution with appreciable skew will fall towards the long tail rather than the peak of the rest of the data. In this case, a better measure of central tendency can be the <strong>median</strong>.</p>
-<p>The median is even easier to describe than the mean. The median of a set of observations is just the middle value, when the values are in numerical order. As before, let’s imagine we were interested in a student’s five test scores. To figure out the median, we sort these numbers into ascending order, 76,80,<strong>86</strong>,91,93. The value in the middle, bolded here, is the median.</p>
-<p>It’s easy to find the middle value in a set of numbers that are an odd-numbered length. But what should we do if <code>test_scores</code> had 6 values instead? E.g., 76,80,<strong>86,91</strong>,93,94. Now there are <em>two</em> middle numbers, 86 and 91. In this case, the median is defined as the average of these: 88.5.</p>
-<p>As before, it’s very tedious to do this by hand when you’ve got lots of numbers. Luckily in R, we have the <code>median()</code> function:</p>
-<div id="qwebr-insertion-location-13"></div>
+<p>The mean of <code>dist2</code> is way off of the mean of <code>dist1</code>. This sort of situation is not uncommon - in fact, the mean of any distribution with appreciable skew will move towards the long tail rather than the peak of the rest of the data.</p>
+<div class="page-columns page-full"><p>The mean has some desirable mathematical properties that we’ll return to later. But as far as it corresponds to our intrinsic sense of what is the “middle” value, it doesn’t always match. In this case, a better measure of central tendency can be the <strong>median</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>median</strong> = a measure of central tendency calculated by finding the middle value if all values were ordered smallest to largest</span></div></div>
+<p>The median is even easier to describe than the mean. The median of a set of observations is just the middle value, when the values are sorted in numerical order. As before, let’s imagine we were interested in a student’s five test scores. To figure out the median, we sort these numbers into ascending order, 76,80,<strong>86</strong>,91,93. The value in the middle, bolded here, is the median.</p>
+<p>It’s easy to find the middle value in a set of numbers that are an odd-numbered length. But what should we do if <code>test_scores</code> had 6 values instead? E.g., 76,80,<strong>86,91</strong>,93,94. Now there are <em>two</em> middle numbers, 86 and 91. In this case, the median is defined as the average of these middle scores: 88.5.</p>
+<p>As before, it’s tedious to calculate this by hand when you’ve got lots of numbers. Luckily in R, we have the <code>median()</code> function:</p>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Summary functions like <code>mean()</code> and <code>median()</code> are some of the functions in R that break with NA values. To make it skip over them, add the argument <code>na.rm=TRUE</code>. This turns a setting “should I remove NA values?” to TRUE.</p>
+</div>
+</div>
 </section>
-<section id="mode" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">5.4.3</span> Mode</h3>
-<p>The last common measure of central tendency is the <strong>mode</strong>. This is the most frequent value within our data - what we’ve been calling the “peak” of a distribution. In a somewhat normal distribution, this is near the middle of the curve with the mean and median. But in a really weird distribution, where, say, the most extreme values are the most common, the mode could be way off.</p>
+<section id="mode" class="level3 page-columns page-full" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">5.5.3</span> Mode</h3>
+<div class="page-columns page-full"><p>The last common measure of central tendency is the <strong>mode</strong>. This is the most frequent value within the distribution - what we’ve been calling the “peak” of a distribution. In a somewhat symmetrical distribution, this is near the middle of the distribution with the mean and median. But in a really weird distribution, where, say, the most extreme values are the most common, the mode could be very different than the other metrics.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mode</strong> = a measure of central tendency calculated by finding the most frequent value</span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2302,30 +2315,30 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Try the calculate the mean, median, and mode of the new distribution <code>dist3.</code></p>
 </div>
 </div>
-<div id="qwebr-insertion-location-14"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You may have tried to use a function like <code>mode()</code> in the code block above to calculate the mode of the dataframe <code>dist3</code>. However, in R <code>mode()</code> is already taken up by a different function that does something else. So we’ll need a different method to describe our distribution. Given that the mode is the most frequent data value in a distribution, we can use the <code>table()</code> function to list the number of data points with each unique value, and identify the mode that way:</p>
-<div id="qwebr-insertion-location-15"></div>
+<p>You may have tried to use a function like <code>mode()</code> in the code block above to calculate the mode of the variable <code>data_pts</code>. However, in R <code>mode()</code> is taken by a different function that does something else. So we’ll need a different method to describe our distribution. Given that the mode is the most frequent data value in a distribution, we can use the <code>table()</code> function to list the number of data points with each unique value, and identify the mode that way:</p>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Because the mode can be far away from the middle of the value range in distributions like this, it may be better to think of the mode as more of a measure of “typicality” rather than a measure of “central tendency.”</p>
+<p>Because the mode can be far away from the middle in distributions like this, it may be better to think of the mode as more of a measure of “typicality” rather than a measure of “central tendency.”</p>
 </section>
-<section id="which-measure-of-central-tendency-to-use" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="which-measure-of-central-tendency-to-use"><span class="header-section-number">5.4.4</span> Which measure of central tendency to use?</h3>
-<p>When do you pick between mean, median, and mode? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some things to think about when making your decision:</p>
+<section id="which-measure-of-central-tendency-to-use" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="which-measure-of-central-tendency-to-use"><span class="header-section-number">5.5.4</span> Which measure of central tendency to use?</h3>
+<p>When do you pick between mean, median, and mode to describe a distribution? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some things to think about when making your decision:</p>
 <ul>
 <li>The mean is a good default - many statistical tools are based on the mean, and lots of people know what it is.</li>
 <li>As already mentioned, if you have a highly skewed distribution, median may be better than mean for describing the middle of the data.</li>
-<li>If your data are categorical, it doesn’t make sense to calculate the mean or the median. Both the mean and the median rely on the idea that the numbers assigned to values are meaningful - i.e., can you say what the mean is of {apple, orange, banana, watermelon}? If data values aren’t related numerically, it’s best to use mode.</li>
-<li>If your data are ordinal scale, you’re more likely to want to use the median than the mean. For instance, when measuring the typical number of children that an American household has, you can only have whole-numbered children. However, if we calculate the <a href="https://www.statista.com/statistics/718084/average-number-of-own-children-per-family">average child number per family in 2020</a>, we get 1.93. A partial amount of a child doesn’t really make sense when discussing the typical number of children one might find in a household. Instead, it would make more sense to use the median: 2.</li>
+<li>If your data are categorical, it doesn’t make sense to calculate the mean or the median. Both the mean and the median rely on the idea that the numbers assigned to values are meaningful - i.e., can you say what the mean is of {apple, orange, banana, watermelon}? If data values aren’t related numerically, use the mode.</li>
+<li>If your data are whole number counts, you’re more likely to want to use the median than the mean. For instance, when measuring the typical number of children that an American household has, you can only have whole-numbered children. However, if we calculate the <a href="https://www.statista.com/statistics/718084/average-number-of-own-children-per-family">average child number per family in 2020</a>, we get 1.93. A partial amount of a child doesn’t really make sense when discussing the typical number of children one might find in a household. Instead, it would make more sense to use the median: 2.</li>
 </ul>
 </section>
 </section>
-<section id="sec-ch5-distribution-variability" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="sec-ch5-distribution-variability"><span class="header-section-number">5.5</span> Variability</h2>
-<p>Lastly we come to variability. Variability refers to how spread out (or wide) the distribution is. Central tendency tells us what the most typical values are like, but we don’t want to completely ignore the infrequent scores. Two distributions can have a mean of 60, but if the range of one is 50 to 70 while the range of another is 2 to 200, those are obviously different distributions of data. Variability also has multiple measures we can use.</p>
-<section id="range" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="range"><span class="header-section-number">5.5.1</span> Range</h3>
-<p>The <strong>range</strong> of a variable is very simple: it’s the biggest value minus the smallest value. For <code>test_scores</code> data, the maximum value is 93, and the minimum value is 76. We can calculate these values in R using the <code>max()</code> and <code>min()</code> functions.</p>
+<section id="sec-ch5-distribution-variability" class="level2 page-columns page-full" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-ch5-distribution-variability"><span class="header-section-number">5.6</span> Distribution variation</h2>
+<p>Lastly we come to variation. Variation refers to how spread out (or wide) the distribution is. Central tendency tells us what the middle/most typical values are, but we don’t want to completely ignore the other scores. Two distributions can have a mean of 60, but if the range of one is 50 to 70 while the range of another is 2 to 200, those are obviously different distributions of data. There are also multiple measures available to give a specific value for a distribution’s variation.</p>
+<section id="range" class="level3 page-columns page-full" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="range"><span class="header-section-number">5.6.1</span> Range</h3>
+<div class="page-columns page-full"><p>The <strong>range</strong> of a variable is very simple: it’s the maximum value minus the minimum value. For <code>test_scores</code> data, the maximum value is 93, and the minimum value is 76. We can calculate these values in R using the <code>max()</code> and <code>min()</code> functions.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>range</strong> = a measure of variation calculated by identifying the difference between the minimum and maximum values</span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2339,38 +2352,25 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Use <code>min()</code> and <code>max()</code> to calculate the range of <code>test_scores</code> by subtracting the min from the max.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-16"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>The other possibility is to use the <code>range()</code> function, which outputs both the minimum value and the maximum value in a vector, like this:</p>
-<div id="qwebr-insertion-location-17"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Although the range is the simplest way to quantify the notion of variability, it’s one of the worst. Recall from our discussion of the mean that we want our summary measure to be robust (meaning it isn’t affected by outliers very much). If the dataset has one or two extreme values in it, we’d like our statistics not to be unduly influenced by these cases. If we look once again at our toy example of a data set containing a very extreme outlier, <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)</code>, it is clear that the range is not robust, since this has a range of 92 unless the outlier were removed; then we would have a range of only 4.</p>
+<p>Although the range is the simplest way to quantify the notion of variation, it’s one of the worst. Recall from our discussion of the mean and median that we want our summary measure to be robust (meaning it isn’t affected by outliers very much). If the distribution has one or two extreme values in it, we’d usually like our summary of the whole not to be unduly influenced by these cases. If we look once again at our toy example of a data set containing a very extreme outlier, <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)</code>, it is clear that the range is not robust, since this has a range of 92 unless the outlier were removed; then we would have a range of only 4.</p>
 </section>
-<section id="interquartile-range" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">5.5.2</span> Interquartile range</h3>
-<p>The <strong>interquartile range (IQR)</strong> is like the range, but instead of calculating the difference between the biggest and smallest value, it calculates the difference between the 25th percentile and the 75th percentile values (i.e., splitting the data into four buckets/“quartiles”). In fact, we’ve already come across the idea: the median of a data set is its 50th percentile!</p>
+<section id="interquartile-range" class="level3 page-columns page-full" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">5.6.2</span> Interquartile range</h3>
+<div class="page-columns page-full"><p>The <strong>interquartile range (IQR)</strong> is like the range, but instead of calculating the difference between the biggest and smallest value, it calculates the difference between the 25th percentile and the 75th percentile values (i.e., splitting the data into four buckets/“quartiles”). In fact, we’ve already come across the idea: the median of a data set is its 50th percentile!</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>interquartile range (IQR)</strong> = a measure of variation calculated by finding the 25th and 75th percentile values</span></div></div>
 <p>The simplest way to think about IQR is that it contains the “middle half” of the data. That is, one quarter of the data falls below the 25th quartile, one quarter of the data is above the 75th quartile, leaving the “middle half” of the data lying in between the two. The IQR is the range covered by that middle half.</p>
-<p>R provides you with a way of calculating percentiles, using the <code>quantile()</code> function. Let’s use it to calculate the median of <code>STAI_T</code> in the <code>tetrismemories</code> dataset:</p>
-<div id="qwebr-insertion-location-18"></div>
+<p>R provides you with a way of calculating percentiles, using the <code>quantile()</code> function. Let’s use it to calculate the median of <code>Height</code> in the <code>studentdata</code> dataset:</p>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Summary functions like <code>quantile()</code> and <code>median()</code> are some of those functions that break with NA values. To make it skip over them, add the argument <code>na.rm=TRUE</code>. This turns a setting “should I remove NA values?” to TRUE.</p>
-</div>
-</div>
-<p>Not surprisingly, The 50% percentile and the median agree. Now, we can actually input lots of percentiles at once, by specifying a vector for the probs argument. So lets do that, and get the 25th and 75th percentile:</p>
-<div id="qwebr-insertion-location-19"></div>
+<p>Not surprisingly, The 50% percentile and the median agree. Now, we can actually input lots of percentiles at once, by specifying a vector for the <code>probs</code> argument. So lets do that, and get the 25th and 75th percentile:</p>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Since the IQR is the 75th percentile minus the 25th percentile, our IQR is 38.25 - 27 = 11.25. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
-<div id="qwebr-insertion-location-20"></div>
+<p>Since the IQR is the 75th percentile minus the 25th percentile, our IQR is 69 - 64 = 5. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Making life even easier, we can get the mean, median, range, and IQR of a distribution all at once using the <code>summary()</code> function.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
@@ -2383,18 +2383,18 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use <code>summary()</code> on <code>testrismemories$STAI_T</code>. Can you recognize all the returned values?</p>
+<p>Use <code>summary()</code> on <code>studentdata$Height</code>. Can you recognize all the returned values?</p>
 </div>
 </div>
-<pre class="{web-r}"><code>#Your code here</code></pre>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="sum-of-squares" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="sum-of-squares"><span class="header-section-number">5.5.3</span> Sum of Squares</h3>
-<p>The two measures we’ve looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the quantiles of the data. However, this isn’t the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report how much all the data points deviate from that reference point. If there’s a lot of deviation, that means many points are far away from the middle and thus our distribution is spread out. If there’s not much deviation, most datapoints are clumped closely around the middle.</p>
-<p>Since the previous paragraph might sound a little abstract, let’s go through what “deviation” means a little more slowly. Let’s think about our <code>test_scores</code> data, <code>c(76,91,86,80,93)</code>. Since our calculations rely on an examination of the deviation from some reference point (in this case the mean), the first thing we need to calculate is the mean. In math, the mean of a variable X is often written as X with a horizontal line above it, so we’ll use that here to help us write out our calculation. For the five observations of <code>test_scores</code>, our mean is</p>
-<p><span class="math display">\[\bar{X} = 85.2\]</span></p>
-<p>The next step is to convert each of our observations in X into a deviation score. That means calculating the difference between each score, <span class="math inline">\(X_i\)</span>, and the mean <span class="math inline">\(\bar{X}\)</span>. That is, the deviation score is defined to be</p>
-<p><span class="math display">\[X_i - \bar{X}\]</span></p>
+<section id="sum-of-squares" class="level3 page-columns page-full" data-number="5.6.3">
+<h3 data-number="5.6.3" class="anchored" data-anchor-id="sum-of-squares"><span class="header-section-number">5.6.3</span> Sum of squares</h3>
+<p>The two measures we’ve looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the percentiles of the data. However, this isn’t the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report how much all the data points deviate from that reference point. If there’s a lot of deviation, that means many points are far away from the middle and thus our distribution is spread out. If there’s not much deviation, most data points are clumped closely around the middle.</p>
+<p>Computing this is a multi-step process. Let’s think about our <code>test_scores</code> data, <code>c(76,91,86,80,93)</code>. Since our calculations rely on an examination of the deviation from some reference point (in this example let’s use the mean), the first thing we need to calculate is that reference point (the mean). For the five observations of <code>test_scores</code>, our mean is <span class="math inline">\(\bar{x} = 85.2\)</span>, as we saw before.</p>
+<p>The next step is to convert each of our observations into a deviation score. That means calculating the difference between each score, <span class="math inline">\(x_i\)</span>, and the mean <span class="math inline">\(\bar{x}\)</span>. That is, the deviation score is defined as:</p>
+<p><span id="eq-difference"><span class="math display">\[x_i - \bar{x} \tag{5.1}\]</span></span></p>
 <p>For the first observation in our sample, this is equal to 76 - 85.2 = -9.2. By repeating this calculation for each data point in a sample, we know how far away each data point is from the sample mean.</p>
 <table class="caption-top table">
 <thead>
@@ -2432,22 +2432,24 @@ Note
 </tr>
 </tbody>
 </table>
-<p>Now that we have calculated the absolute deviation score for every observation in the dataset, we could sum these up to say “here is the total amount of deviation in this distribution.”</p>
-<div id="qwebr-insertion-location-21"></div>
+<p>Now that we have calculated the absolute deviation score for every observation in the distribution, we could sum these up to say “here is the total amount of deviation in this distribution.”</p>
+<div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Uh oh, there seems to be a problem. Our sum of deviations is practically 0 (-1.42e<sup>-14</sup> is a really, really small number!). Surely there is more deviation in our dataset than that?</p>
+<p>Uh oh, there seems to be a problem. Our sum of deviations is practically 0 (-1.42e<sup>-14</sup> is a really, really small number!). Surely there is more deviation in our distribution than that?</p>
 <p>The reason this happened is because some data points are above the mean (a positive difference score), and some are below the mean (a negative difference score). When you sum up positive and negative numbers, they cancel each other out.</p>
-<p>One way to get around this is to square every difference score. This gets rid of negative numbers and allows us to calculate the total amount of deviation in a dataset more effectively. This calculation is called the <strong>sum of squares</strong>. Statisticians often use squaring instead of something like the absolute number to get rid of negative values for reasons that are beyond the scope of this course, <a href="https://medium.com/@kaushalsharma880/squared-error-vs-absolute-values-5c2624bc5ade#:~:text=There%20are%20various%20reasons%20for,not%20differentiable%20at%20x%20%3D%200">but you can read about it if you like</a>.</p>
+<p>One way to get around this is to square every difference score:</p>
+<p><span id="eq-squared-difference"><span class="math display">\[(x_i - \bar{x})^2 \tag{5.2}\]</span></span></p>
+<div class="page-columns page-full"><p>This gets rid of negative numbers and allows us to calculate the total amount of deviation in a distribution more effectively. This calculation is called the <strong>sum of squares</strong>. Statisticians often use squaring instead of something like the absolute value to get rid of negative values for reasons that are beyond the scope of this course, <a href="https://www.benkuhn.net/squared/">but you can read about it if you like</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sum of squares</strong> = a measure of variation calculated by summing the squares of all data points’ deviations from the mean</span></div></div>
 <p>Here’s the formula for sum of squares:</p>
-<p><span class="math display">\[SS(X) = \sum_{i=1}^{N}(X_i-\bar{X})^2\]</span></p>
-<p>To break this down, it’s the sum (<span class="math inline">\(\sum_{i=1}^{N}\)</span>) of all squared deviations (<span class="math inline">\((X_i-\bar{X})^2\)</span>). Hence the name!</p>
+<p><span id="eq-ss"><span class="math display">\[SS(x) = \sum_{i=1}^{n}(x_i-\bar{x})^2 \tag{5.3}\]</span></span></p>
+<p>To read this equation and remember it, break it down into the pieces we’ve talked about already. We have our difference equation in there, squared to remove negatives. We could find this squared difference for any data value <span class="math inline">\(x_i\)</span> in a variable <span class="math inline">\(x\)</span>, so to get one number for the whole distribution we find the sum of all differences across all observations <span class="math inline">\(i\)</span> from the 1st to the nth: hence <span class="math inline">\(\sum_{i=1}^{n}\)</span>. This equation tells us to find the sum of all squared differences in the variable. Hence the name!</p>
 </section>
-<section id="variance" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">5.5.4</span> Variance</h3>
-<p>Sum of squares represents the total amount of deviation from the mean that all the points in a dataset have. That causes problems though if we ever want to compare datasets of different sizes - a variable with 10 items that all vary from the mean by 1 would have a lower total deviation than a variable with 100 items that all vary from the mean by 0.5, even though we would think the latter variable has less spread. This is why it’s also good to represent the amount of deviation in a dataset relative to how many data points are in it. This is a measure called the <strong>variance</strong>.</p>
-<p>We’ve used this word before to talk about the general concept of data varying, but here it is a specific measure with a specific formula. The variance of a data set X is sometimes written as Var(X), but it’s more commonly denoted s<sup>2</sup> (the reason for this will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p>
-<p><span class="math display">\[Var(X) = \frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2\]</span></p>
-<p>It is very similar to the equation for sum of squares, except for one change. We take the sum of squares, and then divide the whole thing by N-1.</p>
+<section id="variance" class="level3 page-columns page-full" data-number="5.6.4">
+<h3 data-number="5.6.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">5.6.4</span> Variance</h3>
+<p>Sum of squares represents the total amount of deviation from the mean that all the points in a distribution have. We squared the deviations before adding them together, which helped us deal with the summing-to-zero problem. However, we still have another issue. Say we want to compare the variation scores for two datasets, one with 10 observations and one with 100. In the 10-observation dataset, the values all deviate from their mean by 1. In the 100-observation dataset, the values all differ from their mean by 0.5. We would think the bigger dataset has less spread becuase of this. But if we use the sum of squares equation, 100*(0.5)^2 is bigger than 10*(1)^2.</p>
+<div class="page-columns page-full"><p>This is why it’s also good to represent the amount of deviation in a distribution relative to how many data points are in it. This is a metric called the <strong>variance</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> . Variance is commonly given the short hand mathematical notations of <span class="math inline">\(Var(x)\)</span> or <span class="math inline">\(s^2\)</span> (the reason for the second one will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>variance</strong> = a measure of variation calculated by dividing the sum of squares by n-1</span></div></div>
+<p><span id="eq-variance"><span class="math display">\[s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2 \tag{5.4}\]</span></span></p>
+<p>It is very similar to the equation for sum of squares, except for one change. We take the sum of squares, and then divide the whole thing by n-1.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2458,20 +2460,20 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It may seem strange that we’re dividing by N-1 instead of N like in an average calculation. The reason for this is a bit nuanced and will be covered in chapter 15, so for now just take it on faith that this is correct.</p>
+<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <span class="quarto-unresolved-ref">?sec-ch15</span>, so for now just take it on faith that this is correct.</p>
 </div>
 </div>
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code>var()</code>.</p>
-<div id="qwebr-insertion-location-22"></div>
+<div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now, what does the variance actually <em>mean</em>? Descriptive statistics are supposed to describe things, after all, and right now the variance is kind of a gibberish number. Unfortunately, the reason why we haven’t given you the human-friendly interpretation of the variance is that there really isn’t one. This is the most serious problem with the variance. It has some elegant mathematical properties that help a lot for deriving other statistical tools, but by itself is pretty useless if you want to communicate with an actual human because variances are uninterpretable in terms of the original variable. All the numbers have been squared, and they don’t have units anymore. What counts as low or high variance? What does it mean for number of memories to vary at a quantity of 11? These questions don’t have good answers. Most of the time when we use variance, we don’t interpret the number directly - we look at a ratio of different variances to see percent change, or we use it to calculate more interpretable quantities. For instance…</p>
+<p>Now, what does the variance actually <em>mean</em>? This one is a little weird to interpret. It has some elegant mathematical properties that help a lot for deriving other statistical tools, but by itself it is not very helpful if you want to communicate about variation with another human. This is because variance is uninterpretable in terms of the original variable (this is true of sum of squares also). All the numbers have been squared so they don’t have units anymore. Because of this, we usually don’t interpret the number directly - we look at a ratio of different variances to see percent change, or we use it to calculate more interpretable quantities. For instance…</p>
 </section>
-<section id="standard-deviation" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">5.5.5</span> Standard deviation</h3>
-<p>Suppose that you like the idea of using variance because of those nice mathematical properties you were promised, but – since you’re a human and not a robot – you’d like to have a measure that is expressed in the same units as the data itself (i.e., number of memories, not memories-squared). What should you do? The solution to the problem is to take the square root of the variance, known as the <strong>standard deviation.</strong> This solves our problem fairly neatly: while nobody has a clue what “a variance of 11.28 memories-squared” really means, it’s much easier to understand “a standard deviation of 3.36 memories”, since it’s expressed in the original units. Interpret it as the typical amount of deviation you expect any randomly-chosen data point to have from the sample mean.</p>
-<p>It is traditional to refer to the standard deviation of a sample of data as <code>s</code>, though “sd” and “std dev” are also used at times. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
-<p><span class="math display">\[s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2}\]</span></p>
-<p>and the R function to calculate it is <code>sd()</code>.</p>
+<section id="standard-deviation" class="level3 page-columns page-full" data-number="5.6.5">
+<h3 data-number="5.6.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">5.6.5</span> Standard deviation</h3>
+<div class="page-columns page-full"><p>Since squaring the deviations is what took us away from the original units of the variable originally, we could take the square root of the variance to get back to them. This is known as the <strong>standard deviation</strong>. While a variance of 12.84 inches-squared” is weird to think about, it’s much easier to understand “a standard deviation of 3.58 inches”, since it’s expressed in the original units. Interpret it as the typical amount of deviation you expect any randomly-chosen data point to have from the sample mean.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standard deviation</strong> = a measure of variation calculated by taking the square root of the variance</span></div></div>
+<p>The mathematical notation for standard deviation is <span class="math inline">\(s\)</span>, though “sd” and “std dev” are also used at times as abbreviations of the term. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
+<p><span id="eq-stddev"><span class="math display">\[s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2} \tag{5.5}\]</span></span></p>
+<p>This just puts a square root operation around the variance equation (which just divides the sum of squares equation by n-1 - it’s all connected!). The R function to calculate standard deviation is <code>sd()</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2482,128 +2484,143 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Find the standard deviation of <code>tetrismemories$intrusive_memories</code> using <code>sd()</code>, and verify that it produces the same result as the square root of <code>var()</code>.</p>
+<p>Find the standard deviation of <code>studentdata$Height</code> using <code>sd()</code>, and verify that it produces the same result as the square root of <code>var()</code>.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-23"></div>
+<div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Besides telling us about a typical amount of deviation in our data distribution, standard deviation can also tell us how much of the data deviates by that amount. In general, ~68% of the data will fall within 1 standard deviation of the mean, ~95% of the data will fall within 2 standard deviations, and ~99.7% of the data will fall within 3 standard deviations. This rule tends to work pretty well most of the time, but it’s not exact: it’s actually calculated based on an assumption that the histogram is normally distributed. But even with skewed distributions, this rule is pretty close.</p>
 </section>
-<section id="which-measure-of-variability-to-use" class="level3" data-number="5.5.6">
-<h3 data-number="5.5.6" class="anchored" data-anchor-id="which-measure-of-variability-to-use"><span class="header-section-number">5.5.6</span> Which measure of variability to use?</h3>
+<section id="which-measure-of-variability-to-use" class="level3" data-number="5.6.6">
+<h3 data-number="5.6.6" class="anchored" data-anchor-id="which-measure-of-variability-to-use"><span class="header-section-number">5.6.6</span> Which measure of variability to use?</h3>
 <p>We’ve discussed quite a few measures of spread (range, IQR, sum of squares, variance, and standard deviation), and hinted at their strengths and weaknesses. Here’s a quick summary:</p>
 <ul>
-<li>Range: Gives you the full spread of the data. It’s very vulnerable to outliers, and as a consequence it isn’t often used unless you have good reasons to care about the extremes in the data.</li>
+<li>Range: Gives you the full spread of the data. It’s very vulnerable to outliers, and as a consequence it isn’t often used unless you have good reasons to talk about the extremes in the data.</li>
 <li>Interquartile range: Tells you where the “middle half” of the data sits. It’s pretty robust, and complements the median nicely.</li>
-<li>Sum of squares: Tells you how the total amount of squared deviations in a dataset. Rarely used to summarize a distribution by itself, but serves as the basis of other statistical tools.</li>
-<li>Variance: Tells you the average squared deviation from the mean. Similarly to sum of squares, it’s mathematically useful but uninterpretable to humans because it doesn’t use the same units as the data. Infrequently used as a standalone summary statistic.</li>
-<li>Standard deviation: This is the square root of the variance. It’s fairly elegant mathematically, and it’s expressed in the same units as the data so it can be interpreted pretty well. In situations where the mean is the measure of central tendency, this is the most popular measure of spread.</li>
+<li>Sum of squares: Tells you the total amount of squared deviations in a distribution. Rarely used to summarize a distribution by itself, but serves as the basis of other statistical tools.</li>
+<li>Variance: Tells you the average squared deviation from the mean. Similarly to sum of squares, it’s mathematically useful but infrequently used as a standalone summary statistic.</li>
+<li>Standard deviation: Square root of the variance. It’s fairly elegant mathematically, and it’s expressed in the same units as the data so it can be interpreted well. In situations where the mean is the measure of central tendency, this is the most popular measure of spread.</li>
 </ul>
 </section>
 </section>
-<section id="sec-ch5-reporting-distributions" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="sec-ch5-reporting-distributions"><span class="header-section-number">5.6</span> Reporting distribution summaries</h2>
-<p>Shape, central tendency, and spread are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! Specifically, you are doing what is called descriptive statistics - calculating numbers that describe a sample of data.</p>
-<p>However, there’s not much point to doing all that work if you can’t share the results with other people. Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
-<section id="central-tendency" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">5.6.1</span> Central tendency</h3>
-<p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>Mode</em>). Reporting the mean in the body of some text may look like:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5) than the posttest score (<em>M</em> = 65.3).”</p>
-<p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
-<p>“The median time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
-<p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pretest and posttest scores for male and females on an aptitude test. Notice that the statement about the mean being summarized in this particular table is presented in the table title.</p>
-<p><strong>Mean Scores for Pre- and Post-test by Gender</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Pre-test</th>
-<th style="text-align: center;">Post-test</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Female</td>
-<td style="text-align: center;">45.6</td>
-<td style="text-align: center;">72.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Male</td>
-<td style="text-align: center;">50.2</td>
-<td style="text-align: center;">69.5</td>
-</tr>
-</tbody>
-</table>
+<section id="sec-ch5-zscores" class="level2 page-columns page-full" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sec-ch5-zscores"><span class="header-section-number">5.7</span> Z-scores</h2>
+<p>The concepts we’ve covered in this chapter - shape, center, and spread - are all features of a distribution. As we mentioned as the beginning of the chapter, they don’t apply to individual data points, only the whole. However, they can still be relevant for understanding specific data values, <em>in the context</em> of the whole variable.</p>
+<p>So far our data practice we have only dealt with relatively concrete variables, like <code>Height</code> measured in inches. When we calculate a mean of 66.14 and a standard deviation of 3.58, we know roughly what those amounts look like because we have experiences looking at different heights. But what if we got the same standard deviation for a different variable, like light intensity of a light bulb? Do you have any instincts about how much 3.58 lumens is?</p>
+<p>Interpreting the meaning of a variable, and thus its summary statistics, depends on knowing about that variable in real life. It depends on knowing the context of what other values on this variable are typical. This may seem like a problem for doing statistics on variables we are unfamiliar with (which is likely to happen, if we are doing data analysis to understand something better!). However, there is a way we can translate any variable into the same units so that they’re easier to interpret and compare.</p>
+<p>For example, consider a student who is 64 inches tall. Good for them, but what does this mean? Is that a particularly tall height, or pretty normal? How can we know?</p>
+<p>Let’s consider this student’s height relative to the mean of our <code>Height</code> data. By comparing these two values, we know that the student is about 6.14 shorter than average. That helps us get a little closer to understanding what this one data point means. But because we have no idea about the spread of the distribution, we still don’t have a complete answer. Is a 2.14 difference still pretty close to the mean, or is it far away? It’s hard to tell without also knowing what the spread of <code>Height</code> values looks like.</p>
+<p>Standard deviation is useful for this. A standard deviation of 3.58 tells us that, on average, people’s heights are 3.58 away from the mean, both above and below. So although our selected student is below average in height, they are definitely not one of the shortest people in the distribution, or even that atypical - they are only about 0.6 of a standard deviation away from the mean. Check out the histogram in <a href="#fig-ch5-zscore" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> to see this visualized (the green line is the distribution average, while the red line is the selected student’s height).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch5-zscore" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-5_files/figure-html/fig-ch5-zscore-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: a specific student’s heigh relative to the rest of the Height distribution
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Consider another example. Your friend tells you they just hit a new high score of 3,700 on a video game. Is that a big deal? Here are two possible distributions of high scores other people get on this game, with your friend’s score marked by the red line:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch5-zscore2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch5-zscore2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-5_files/figure-html/fig-ch5-zscore2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-zscore2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: your friend’s video game score relative to other possible score distributions
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Clearly your friend would be an outstanding player if distribution 1 were true. But if distribution 2 were true, they would be just slightly above average. Thus, it’s more useful to say something about a particular data point if we can also communicate about the mean and standard deviation of a distribution.</p>
+<p>In order to make this easier, so that we don’t have to report several numbers at once, we can treat standard deviation as a new unit on which to measure our data. Let’s convert the value of Height to be a data point’s deviation from the mean, divided by the standard deviation:</p>
+<div id="qwebr-insertion-location-20"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="page-columns page-full"><p>This new unit tells us how much of a standard deviation any score is from the mean. This can be positive (above the mean), or negative (below the mean). This rescaled unit is called a <strong>z-score</strong>. It is a transformation of a variable so that the middle point of a distribution is always 0, and a value of 1 means one standard deviation above the middle (-1 is one standard deviation below the middle). To calculate it:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>z-score</strong> = a standardized unit all quantitative variables can be transformed to; 1 z-score corresponds to 1-SD away from the mean in the original variable units</span></div></div>
+<p><span id="eq-zscore"><span class="math display">\[z_i = \frac{(x_i - \bar{x})}{s} \tag{5.6}\]</span></span></p>
+<p>where <span class="math inline">\(s\)</span> is the standard deviation of <span class="math inline">\(x\)</span>. You can implement this equation in R (watch out for order of operations!), or you can also use the function <code>scale()</code>.</p>
+<div id="qwebr-insertion-location-21"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>A score of 37,000 on a game doesn’t mean much to someone who doesn’t play that game. But this way it’s easy to understand a z-score of 0.2 (a little above average, not too strange) or 3 (way above average, very unusual). The z-score <em>standardizes</em> the variable, so it’s always on the same scale as any other variable that has been standardized.</p>
+<p>With the knowledge in this chapter - visualizing distributions, summarizing them, and talking about data values relative to their place in the distribution - you have the tools to describe just about any variable. You have created your first statistical answers to statistical questions such as “what are people like on this variable?”</p>
 </section>
-<section id="spread" class="level3" data-number="5.6.2">
-<h3 data-number="5.6.2" class="anchored" data-anchor-id="spread"><span class="header-section-number">5.6.2</span> Spread</h3>
-<p>Descriptive statistics of variables involving interval or ordinal scales often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
-<p>When reporting the descriptive statistical summary of many groups, the results may be summarized in a table as well.</p>
-</section>
-<section id="shape" class="level3" data-number="5.6.3">
-<h3 data-number="5.6.3" class="anchored" data-anchor-id="shape"><span class="header-section-number">5.6.3</span> Shape</h3>
-<p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
-<p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
-</section>
-</section>
-<section id="sec-ch5-resources" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="sec-ch5-resources"><span class="header-section-number">5.7</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">5.7.1</span> Learning goals</h3>
+<section id="sec-ch5-resources" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="sec-ch5-resources"><span class="header-section-number">5.8</span> Chapter resources</h2>
+<section id="learning-goals" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">5.8.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
 <li>Define “distribution”</li>
 <li>Describe what shape, center, and spread refers to about a distribution</li>
 <li>Plot a distribution of data in R</li>
 <li>Visually identify modality and skewness in a distribution</li>
-<li>Describe the differences between mean, median, and mode</li>
-<li>Describe the differences between range, interquartile range, sum of squares, variance, and standard deviation</li>
-<li>Report summaries in APA style</li>
+<li>Compute the mean, median, and mode for describing a variable’s central tendency</li>
+<li>Compute the range, interquartile range, sum of squares, variance, and standard deviation for describing a variable’s variation</li>
+<li>Compute and interpret a z-score for a data point in a distribution</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">5.7.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">5.8.2</span> New concepts</h3>
 <ul>
-<li><strong>distribution</strong>: Variation in the values of a variable. Can be visualized and described with summary statistics.</li>
-<li><strong>histogram</strong>: A type of plot that visualizes a distribution. Variable values are represented on the x-axis and number of data points with that value is represented on the y-axis.</li>
-<li><strong>density plot</strong>: A type of plot that visualizes a distribution. Similar to a histogram, except the y-axis represents percentage of data points with a specific value instead of counts.</li>
-<li><strong>symmetrical</strong>: A distribution shape where both halves of the distribution look approximately mirrored.</li>
-<li><strong>skewed</strong>: A distribution shape where who half of the distribution is more spread out than the other.</li>
-<li><strong>uniform</strong>: A distribution shape where there is no clear peak; the distribution looks approximately like a rectangle.</li>
-<li><strong>unimodal</strong>: A distribution shape where there is one clear peak.</li>
-<li><strong>bimodal</strong>: A distribution shape where there are two clear peaks.</li>
-<li><strong>normal</strong>: A distribution shape that is unimodal and symmetrical.<br>
-</li>
-<li><strong>central tendency</strong>: The “middle” or “typical” value of a distribution; close to where most points are.</li>
-<li><strong>mean</strong>: A method of representing the central tendency of a distribution by summing all values and dividing by the number of values.</li>
-<li><strong>median</strong>: A method of representing the central tendency of a distribution by finding the middle value if all values were ordered smallest to largest.</li>
-<li><strong>mode</strong>: A method of representing the central tendency of a distribution; is the most frequent value.</li>
-<li><strong>range</strong>: A method of representing the amount of spread in a distribution by identifying the minimum and maximum values.</li>
-<li><strong>interquartile range (IQR)</strong>: A method of representing the amount of spread in a distribution by finding the “middle half” of the data, or the values that consitute the 25th and 75th percentiles.</li>
-<li><strong>sum of squares</strong>: A method of representing the amound of spread in a distribution by summing the squares of all data points’ deviations from the mean.</li>
-<li><strong>variance</strong>: a method of representing the amount of spread in a distribution by dividing the sum of squares by N-1.</li>
-<li><strong>standard deviation</strong>: A method of representing the amount of spread in a distribution by taking the square root of variance. Can be interpreted as the average amount of deviation each data point has from the mean.</li>
+<li><strong>descriptive statistics</strong>: A set of statistical tools used to describe a data sample.</li>
+<li><strong>distribution</strong>: The nature and shape of variation in the collective values of a variable(s).</li>
+<li><strong>histogram</strong>: A type of plot that visualizes a single-variable distribution, with variable values on the x-axis and number of observations with that value on the y-axis.</li>
+<li><strong>symmetrical distribution</strong>: a distribution shaped such that both halves look approximately mirrored.</li>
+<li><strong>skewed distribution</strong>: a distribution shaped such that one half of the distribution is more spread out than the other; a lopsided distribution.</li>
+<li><strong>unimodal distribution</strong>: a distribution with one clear peak.</li>
+<li><strong>bimodal distribution</strong>: a distribution with two clear peaks.</li>
+<li><strong>uniform distribution</strong>: a distribution with no clear peak and a roughly even number of observations across the range of possible values.</li>
+<li><strong>central tendency</strong>: the “middle” or “typical” value of a distribution, close to where most points are.</li>
+<li><strong>mean</strong>: a measure of central tendency calculated by summing all values and dividing by the number of values.</li>
+<li><strong>median</strong>: a measure of central tendency calculated by finding the middle value if all values were ordered smallest to largest.</li>
+<li><strong>mode</strong>: a measure of central tendency calculated by finding the most frequent value.</li>
+<li><strong>range</strong>: a measure of variation calculated by identifying the difference between the minimum and maximum values.</li>
+<li><strong>interquartile range (IQR)</strong>: a measure of variation calculated by finding the 25th and 75th percentile values.</li>
+<li><strong>sum of squares</strong>: a measure of variation calculated by summing the squares of all data points’ deviations from the mean.</li>
+<li><strong>variance</strong>: a measure of variation calculated by dividing the sum of squares by n-1.</li>
+<li><strong>standard deviation</strong>: a measure of variation calculated by taking the square root of the variance.</li>
+<li><strong>z-score</strong>: a standardized unit all quantitative variables can be transformed to; 1 z-score corresponds to 1-SD away from the mean in the original variable units.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">5.7.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">5.8.3</span> New R functionality</h3>
 <ul>
-<li><a href="https://www.rdocumentation.org/packages/ggformula/versions/0.6/topics/gf_histogram">ggformula::gf_histogram() &amp; gf_dhistogram()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot2::ggplot()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">ggplot2::geom_histogram()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean">mean()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/median">median()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/table">table()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/range">range()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile">quantile()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/cmvnorm/versions/1.0-7/topics/var">var()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/sd">sd()</a></li>
 </ul>
 </section>
-<section id="further-reading" class="level3" data-number="5.7.4">
-<h3 data-number="5.7.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.7.4</span> Further reading</h3>
+<section id="further-reading" class="level3" data-number="5.8.4">
+<h3 data-number="5.8.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.8.4</span> Further reading</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-wickham2023b" class="csl-entry" role="listitem">
+Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: Elegant Graphics for Data Analysis (3e)</em>. <a href="https://ggplot2-book.org/" class="uri">Https://ggplot2-book.org/</a>; Springer.
+</div>
+</div>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>And sometimes we do use absolute values anyways. A less common measure of variation, the mean or median absolute deviation (MAD), uses absolute values.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A note on terms here: statisticians are smart folks but naming things is not their strong suit. When we refer to “variation” or “variability”, we are talking about the general concept of spread in a distribution. “variance” refers to a specific metric for computing variation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -3014,8 +3031,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-6.html" class="pagination-link" aria-label="Variation in Multiple Variables">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variation in Multiple Variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-6.html" class="pagination-link" aria-label="Patterns Among Multiple Variables">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

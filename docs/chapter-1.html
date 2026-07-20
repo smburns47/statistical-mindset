@@ -369,7 +369,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'gridExtra'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -1657,7 +1657,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1691,7 +1691,7 @@ globalThis.qwebrExecuteCode = async function (
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Managing Data</span></a>
+ <span class="menu-text">Working with Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1724,30 +1724,30 @@ globalThis.qwebrExecuteCode = async function (
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variation in Multiple Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Modeling Hypotheses</span></span>
+ <span class="menu-text">Predicting &amp; Explaining Data</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions</span></span>
+ <span class="menu-text">Making Conclusions with Data</span></span>
   </li>
     </ul>
     </div>
@@ -2085,7 +2085,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-ch1" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></span></h1>
 </div>
@@ -2104,7 +2104,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p><img src="images/header2.png" class="img-fluid"></p>
+<p><img src="images/header-ch1.png" class="img-fluid"></p>
 <p>What comes to mind when you hear the word “statistics?”</p>
 <p>For some people, they think of a collection of numbers, like a baseball player’s strike out rate or home run count. For others, they think of people with big brains working on big ideas in science. A significant portion of people feel some anxiety or trepidation, dreading the math and complex theory. If you are a student reading this book, chances are you are required to and you might not be happy about that.</p>
 <p>But statistics is so much more than numbers on a spreadsheet or solving equations.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is <em>a way of thinking</em>, an approach to seeing the world and making decisions. It is an interdisciplinary method, with philosophy, natural science, and computer science forming the foundation along with mathematics. And it is useful to everyone, whether you are a scientist doing data analysis every day or a casual reader who wants to be more informed about the world around them.</p>
@@ -2116,15 +2116,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>In science, we hope to discover fundamental principles of how the world works. But things like people, animals, weather, even microscopic bacteria can vary between each other in a multitude of ways, for a multitude of reasons. How do we make sense of this miasma of complexity? How do we find the signal in the noise?</p>
 <p>We may be tempted to use our intuition to answer these questions. The human brain is pretty good at learning patterns from experience. However, we don’t get to experience everything first hand, and not all patterns in the world are apparent to us even when we do experience them.</p>
 <p>For example - should you pick up smoking? Probably not, because it is common knowledge that smoking is bad for your health. Large studies of smokers and non-smokers in the 60s and the 80s showed that smokers died from from lung cancer during the study period at substantially higher rates than non-smokers (<a href="#fig-ch1-smoking" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>). E.g., ~341 per 100,000 male smokers vs.&nbsp;~10 per 100,000 non smokers. However, these rates still aren’t very high: that’s a 0.003% chance vs.&nbsp;0.0001% chance of dying from lung cancer during the study. If this research didn’t exist and all you had to go on was the health of 20 smokers and 20 non-smokers you knew in your community, it is very unlikely that you would notice any difference in lung cancer rates between the two groups. If everyone you knew were smokers, you wouldn’t even be aware that another group might have a different lung cancer rate!</p>
+<div class="cell">
+<div class="cell-output-display">
 <div id="fig-ch1-smoking" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch1-smoking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ch1-smoking.png" class="img-fluid figure-img">
+<img src="chapter-1_files/figure-html/fig-ch1-smoking-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch1-smoking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.1: Rates of lung cancer deaths (per 100,000 people) in smokers and non-smokers. Figure adapted from <span class="citation" data-cites="thun1997">Thun and Heath Jr. (<a href="#ref-thun1997" role="doc-biblioref">1997</a>)</span>. Does it feel hard to read this graph? Check out <a href="chapter-7.html" class="quarto-xref"><span>Chapter 7</span></a> to learn about data visualization!
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>We also have a tendency to over-interpret information that is particularly shocking or memorable. <a href="https://usafacts.org/articles/is-flying-safer-than-driving/">According to the USA Bureau of Transportation Statistics</a>, between 2003 and 2023, passengers in cars and trucks were injured at a rate of 42.2 people per 100 million miles traveled while airplane passengers were injured at a rate of just 0.004 per 100 million miles. This makes air travel the safest mode of transportation in the US. However, when plane crashes do happen, they get a lot of vivid media coverage. So when people think about accidents in cars and planes, it is easier to recall memories of devastating plane crashes. This makes people think plane crashes are more likely (psychologists call this phenomenon the “availability bias”). As a result, aviophobia (fear of flying) is much more common than the arguably more rational amaxophobia (fear of driving).</p>
 <p>Statistics gives us an alternative method for decision-making. It is an approach to knowledge that allows us to pull insights from many pieces of data, describe uncertainty around those insights, and make evidence-based predictions about what comes next. When done appropriately, it is a more powerful method of learning about the world than relying on one person’s observations.</p>
@@ -2142,17 +2146,21 @@ Figure&nbsp;1.1: Rates of lung cancer deaths (per 100,000 people) in smokers and
 <section id="describe" class="level3 page-columns page-full" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="describe"><span class="header-section-number">1.2.1</span> Describe</h3>
 <p>A descriptive research goal focuses on understanding the state of a group of things in terms of amounts, levels, rates, or other quantitative values. For instance, the <a href="https://www.worldhappiness.report/">World Happiness Report</a> is a yearly analysis of survey data collected from people in more than 140 countries. The Report looks at people’s responses to questions about their well-being and other factors in their lives. One question we may have for these data could be as simple as “how happy are people in each country?” This is a descriptive research goal because it asks for a quantifiable value (level of happiness) that would characterize some population (people in each country).</p>
-<div class="page-columns page-full"><p>The number of people in this survey is more than 130,000 - that makes it very hard to look at all the numbers directly to come up with an answer to our descriptive question about happiness. For this reason, we need to <strong>summarize</strong> the data some way - distill it into succinct pieces of information that are easier to look at, but that still give a sense of the whole dataset.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>summary</strong> = a succint presentation of the key characteristics of a dataset</span></div></div>
+<div class="page-columns page-full"><p>The number of people in this survey is more than 130,000 - that makes it very hard to look at all the numbers directly to come up with an answer to our descriptive question about happiness. For this reason, we need to <strong>summarize</strong> the data some way - distill it into succinct pieces of information that are easier to look at, but that still give a sense of the whole dataset.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>summary</strong>= a succint presentation of the key characteristics of a dataset</span></div></div>
 <div class="page-columns page-full"><p>Below is a <strong>plot</strong> that summarizes the amount of happiness in the top and bottom 5 countries (<a href="#fig-ch1-description" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>). It calculates the average reported happiness score in each country in order to make one data value that represents all the people surveyed.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>plot</strong> = a graphical summary of characteristics or trends in data</span></div></div>
+<div class="cell">
+<div class="cell-output-display">
 <div id="fig-ch1-description" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch1-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ch1-description.png" class="img-fluid figure-img">
+<img src="chapter-1_files/figure-html/fig-ch1-description-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch1-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.2: Average happiness of selected countries in 2025. Data from the 2026 World Happiness Report.
 </figcaption>
 </figure>
+</div>
+</div>
 </div>
 <p>From this plot, we can get a quick answer to our research question. For instance, look at the average happiness score in Finland - a little over 7.5. The scale used in this survey went from 0 (“worst possible life”) to 10 (“best possible life”), so based on this value we could describe people in Finland as quite happy. Meanwhile, there is clearly a different level of happiness in Afghanistan: ~1.5 out of 10. People in Afghanistan in 2025 are very unhappy, and much less happy than people in Finland.</p>
 <div class="page-columns page-full"><p>While summaries like averages are very useful to get a general description of a group, they mask the fact that not everyone within a country has the same happiness level. Surely there are people in Finland who are very unhappy with their current life, while there are people in Afghanistan who are happy. There is <strong>variation</strong> in scores within a group. This means happiness is a <strong>variable</strong> - a piece of data that has different values in different people.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>variation</strong> = the extent to which things in a set have different values</span><span class="margin-aside"><strong>variable</strong> = a quantity that assumes different values in different measurement instances; something that varies</span></div></div>
@@ -2216,7 +2224,7 @@ Figure&nbsp;1.4: Life satistfaction among boys and girls with varying amounts of
 <p>The English wording of the question is “Please imagine a ladder, with steps numbered from 0 at the bottom to 10 at the top. The top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time?” This measure is also referred to as Cantril Life Ladder.</p>
 </blockquote>
 <p>In other words, the researchers define “happiness” as someone’s subjective judgment of their life relative to the best and worst possible versions they can imagine.</p>
-<div class="page-columns page-full"><p>The process of assigning a specific definition to a variable is called <strong>operationalization</strong>, and is very important for making statistical conclusions. This is because, if you measure an abstract concept like “happiness” in a different way, you might get different data and different statistical results.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>operationalization</strong> = concretely define the meaning of the values in a data variable</span></div></div>
+<div class="page-columns page-full"><p>The process of assigning a specific definition to a variable is called <strong>operationalization</strong>, and is very important for making statistical conclusions. This is because, if you measure an abstract concept like “happiness” in a different way, you might get different data and different statistical results.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>operationalization</strong> = to concretely defining the meaning of the values in a data variable</span></div></div>
 <p>For instance, we could alternatively define happiness as how frequently people feel positive or negative emotions. This was also measured in the World Happiness Report, and it turns out that people do not give the same answers to these different measures of happiness. Some people rate their life satisfaction highly, even though they say their typical day has a lot of negative emotions. Some people have many positive emotions day to day, but still say their life is lacking relative to what they could imagine.</p>
 <p>You might even argue that the way happiness is measured in the World Happiness Report is not a good measure of happiness at all - e.g., that <a href="https://www.lunduniversity.lu.se/article/world-happiness-report-why-we-might-be-measuring-happiness-wrong">it measures social comparisons of wealth and power more than well-being</a>. If this were true, then the Scandinavian countries may be on top because of their economy rather than because of the way their people feel.</p>
 <p>So is the Cantril Ladder or daily emotion a better measure of happiness? That is up to happiness researchers to debate. The important point here is that you need to operationalize whatever variables you do choose to measure and analyze, because that has implications for how you interpret your statistical results.</p>
@@ -2406,7 +2414,7 @@ Note
 <p>So far you know about operators, like doing arithmetic or assigning values to objects. All of these operators tell the computer to “do a thing” (add numbers, create an object, etc.)</p>
 <div class="page-columns page-full"><p>Oftentimes, we want the computer to do more complex things than there are operator symbols for. For this case, we use what’s called a <strong>function</strong>. Functions will still do an operation, but are not limited to individual symbols (in fact, operators are just special kinds of functions). In thinking about the grammar of a coding language, objects are like nouns and functions are like verbs.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>function</strong> = a piece of code that runs some predefined action when called.</span></div></div>
 <p>We used a function at the very beginning of this chapter: <code>print("Hello world!")</code>.</p>
-<div class="page-columns page-full"><p>Functions have three basic parts. The first part is the name of the function (e.g., <code>print</code>). The second part is the input to the function, which goes inside a pair of parentheses. We call these inputs <strong>arguments</strong>. Arguments are whatever objects or values you want to do operations with. Lastly, the <strong>output</strong>[<strong>output</strong> = the resulting value of a function call] of a function is whatever result comes out of the operation.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>argument</strong> = the input values on which a function runs operations</span></div></div>
+<div class="page-columns page-full"><p>Functions have three basic parts. The first part is the name of the function (e.g., <code>print</code>). The second part is the input to the function, which goes inside a pair of parentheses. We call these inputs <strong>arguments</strong>. Arguments are whatever objects or values you want to do operations with. Lastly, the <strong>output</strong> of a function is whatever result comes out of the operation.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>argument</strong> = the input values on which a function runs operations</span><span class="margin-aside"><strong>output</strong> = the resulting value of a function call</span></div></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2466,7 +2474,7 @@ Traceback:</code></pre>
 </div>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>One thing to keep in mind - the sorts of errors that give you an error message are called <strong>run-time errors.</strong> These ones prevent the code from completing, so you know when they’ve happened. You can also get more insidious errors - the kind where your command was a real code command, but it didn’t actually do what you intended. For example, maybe you wanted to print out the result of <code>5 + 1</code>, but accidentally typed <code>5 - 1</code>. The computer will still give you an answer without a warning, because <code>5 + 1</code> is a legal code command. But it will be the wrong answer. Double-check your work to watch out for these!</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>run-time error</strong> = an error in code that prevents the code from running</span></div></div>
+<div class="page-columns page-full"><p>One thing to keep in mind - the sorts of errors that give you an error message are called <strong>run-time errors</strong>. These ones prevent the code from completing, so you know when they’ve happened. You can also get more insidious errors - the kind where your command was a real code command, but it didn’t actually do what you intended. For example, maybe you wanted to print out the result of <code>5 + 1</code>, but accidentally typed <code>5 - 1</code>. The computer will still give you an answer without a warning, because <code>5 + 1</code> is a legal code command. But it will be the wrong answer. Double-check your work to watch out for these!</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>run-time errors</strong> = an error in code that prevents the code from running</span></div></div>
 </section>
 <section id="packages" class="level3 page-columns page-full" data-number="1.6.5">
 <h3 data-number="1.6.5" class="anchored" data-anchor-id="packages"><span class="header-section-number">1.6.5</span> Packages</h3>
@@ -2571,7 +2579,7 @@ Thun, Michael J., and Clark W. Heath Jr. 1997. <span>“Changes in Mortality fro
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>increasingly, computers do this part for us.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Increasingly, computers do this part for us<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>We’ll see many examples of statistical pitfalls through this book, and <span class="quarto-unresolved-ref">?sec-ch21</span> will focus specifically on how badly we can lie to ourselves if we’re not careful with how we look at data.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>“To estimate the mean (estimand), we compute the mean (estimator) to obtain a mean (estimate).” So clear right?<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>You didn’t learn to ride a bike on your first try, did you?<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

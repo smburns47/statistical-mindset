@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Principles of Data Visualization – Foundations for a Statistical Mindset</title>
+<title>7&nbsp; Communicating Statistical Results – Foundations for a Statistical Mindset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -349,7 +349,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'gridExtra'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -1637,7 +1637,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1671,7 +1671,7 @@ globalThis.qwebrExecuteCode = async function (
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Managing Data</span></a>
+ <span class="menu-text">Working with Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1704,30 +1704,30 @@ globalThis.qwebrExecuteCode = async function (
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variation in Multiple Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Modeling Hypotheses</span></span>
+ <span class="menu-text">Predicting &amp; Explaining Data</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions</span></span>
+ <span class="menu-text">Making Conclusions with Data</span></span>
   </li>
     </ul>
     </div>
@@ -1739,27 +1739,33 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-ch7-importance-of-visualization" id="toc-sec-ch7-importance-of-visualization" class="nav-link active" data-scroll-target="#sec-ch7-importance-of-visualization"><span class="header-section-number">7.1</span> The importance of good visualization</a></li>
-  <li><a href="#sec-ch7-anatomy-of-plot" id="toc-sec-ch7-anatomy-of-plot" class="nav-link" data-scroll-target="#sec-ch7-anatomy-of-plot"><span class="header-section-number">7.2</span> Anatomy of a plot</a></li>
-  <li><a href="#sec-ch7-principles-of-good-visualization" id="toc-sec-ch7-principles-of-good-visualization" class="nav-link" data-scroll-target="#sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.3</span> Principles of good visualization</a>
+  <li><a href="#sec-ch7-reporting-distributions" id="toc-sec-ch7-reporting-distributions" class="nav-link active" data-scroll-target="#sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting distribution summaries</a>
   <ul class="collapse">
-  <li><a href="#rule-1---show-the-data-variation" id="toc-rule-1---show-the-data-variation" class="nav-link" data-scroll-target="#rule-1---show-the-data-variation"><span class="header-section-number">7.3.1</span> Rule 1 - Show the data variation</a></li>
-  <li><a href="#rule-2---maximize-the-data-to-ink-ratio" id="toc-rule-2---maximize-the-data-to-ink-ratio" class="nav-link" data-scroll-target="#rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.3.2</span> Rule 2 - Maximize the data to ink ratio</a></li>
-  <li><a href="#rule-3---avoid-chart-junk" id="toc-rule-3---avoid-chart-junk" class="nav-link" data-scroll-target="#rule-3---avoid-chart-junk"><span class="header-section-number">7.3.3</span> Rule 3 - Avoid chart junk</a></li>
-  <li><a href="#rule-4---avoid-distorting-the-data" id="toc-rule-4---avoid-distorting-the-data" class="nav-link" data-scroll-target="#rule-4---avoid-distorting-the-data"><span class="header-section-number">7.3.4</span> Rule 4 - Avoid distorting the data</a></li>
-  <li><a href="#rule-5---readable-data-labels" id="toc-rule-5---readable-data-labels" class="nav-link" data-scroll-target="#rule-5---readable-data-labels"><span class="header-section-number">7.3.5</span> Rule 5 - Readable data labels</a></li>
+  <li><a href="#central-tendency" id="toc-central-tendency" class="nav-link" data-scroll-target="#central-tendency"><span class="header-section-number">7.1.1</span> Central tendency</a></li>
+  <li><a href="#spread" id="toc-spread" class="nav-link" data-scroll-target="#spread"><span class="header-section-number">7.1.2</span> Spread</a></li>
+  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape"><span class="header-section-number">7.1.3</span> Shape</a></li>
   </ul></li>
-  <li><a href="#sec-ch7-human-readability" id="toc-sec-ch7-human-readability" class="nav-link" data-scroll-target="#sec-ch7-human-readability"><span class="header-section-number">7.4</span> Accomodating human readability</a>
+  <li><a href="#sec-ch7-importance-of-visualization" id="toc-sec-ch7-importance-of-visualization" class="nav-link" data-scroll-target="#sec-ch7-importance-of-visualization"><span class="header-section-number">7.2</span> The importance of good visualization</a></li>
+  <li><a href="#sec-ch7-anatomy-of-plot" id="toc-sec-ch7-anatomy-of-plot" class="nav-link" data-scroll-target="#sec-ch7-anatomy-of-plot"><span class="header-section-number">7.3</span> Anatomy of a plot</a></li>
+  <li><a href="#sec-ch7-principles-of-good-visualization" id="toc-sec-ch7-principles-of-good-visualization" class="nav-link" data-scroll-target="#sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.4</span> Principles of good visualization</a>
   <ul class="collapse">
-  <li><a href="#colorblindness" id="toc-colorblindness" class="nav-link" data-scroll-target="#colorblindness"><span class="header-section-number">7.4.1</span> Colorblindness</a></li>
-  <li><a href="#perceptual-simplicity" id="toc-perceptual-simplicity" class="nav-link" data-scroll-target="#perceptual-simplicity"><span class="header-section-number">7.4.2</span> Perceptual simplicity</a></li>
+  <li><a href="#rule-1---show-the-data-variation" id="toc-rule-1---show-the-data-variation" class="nav-link" data-scroll-target="#rule-1---show-the-data-variation"><span class="header-section-number">7.4.1</span> Rule 1 - Show the data variation</a></li>
+  <li><a href="#rule-2---maximize-the-data-to-ink-ratio" id="toc-rule-2---maximize-the-data-to-ink-ratio" class="nav-link" data-scroll-target="#rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.4.2</span> Rule 2 - Maximize the data to ink ratio</a></li>
+  <li><a href="#rule-3---avoid-chart-junk" id="toc-rule-3---avoid-chart-junk" class="nav-link" data-scroll-target="#rule-3---avoid-chart-junk"><span class="header-section-number">7.4.3</span> Rule 3 - Avoid chart junk</a></li>
+  <li><a href="#rule-4---avoid-distorting-the-data" id="toc-rule-4---avoid-distorting-the-data" class="nav-link" data-scroll-target="#rule-4---avoid-distorting-the-data"><span class="header-section-number">7.4.4</span> Rule 4 - Avoid distorting the data</a></li>
+  <li><a href="#rule-5---readable-data-labels" id="toc-rule-5---readable-data-labels" class="nav-link" data-scroll-target="#rule-5---readable-data-labels"><span class="header-section-number">7.4.5</span> Rule 5 - Readable data labels</a></li>
   </ul></li>
-  <li><a href="#sec-ch7-resources" id="toc-sec-ch7-resources" class="nav-link" data-scroll-target="#sec-ch7-resources"><span class="header-section-number">7.5</span> Chapter resources</a>
+  <li><a href="#sec-ch7-human-readability" id="toc-sec-ch7-human-readability" class="nav-link" data-scroll-target="#sec-ch7-human-readability"><span class="header-section-number">7.5</span> Accomodating human readability</a>
   <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">7.5.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">7.5.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">7.5.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.5.4</span> Further reading</a></li>
+  <li><a href="#colorblindness" id="toc-colorblindness" class="nav-link" data-scroll-target="#colorblindness"><span class="header-section-number">7.5.1</span> Colorblindness</a></li>
+  <li><a href="#perceptual-simplicity" id="toc-perceptual-simplicity" class="nav-link" data-scroll-target="#perceptual-simplicity"><span class="header-section-number">7.5.2</span> Perceptual simplicity</a></li>
+  </ul></li>
+  <li><a href="#sec-ch7-resources" id="toc-sec-ch7-resources" class="nav-link" data-scroll-target="#sec-ch7-resources"><span class="header-section-number">7.6</span> Chapter resources</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">7.6.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">7.6.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">7.6.3</span> New R functionality</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.6.4</span> Further reading</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2051,9 +2057,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Managing Data</a></li><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Principles of Data Visualization</span></span></h1>
+<h1 class="title"><span id="sec-ch7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></h1>
 </div>
 
 
@@ -2070,19 +2076,66 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p><img src="images/header7.png" class="img-fluid"></p>
+<p><img src="images/header-ch7.png" class="img-fluid"></p>
+<section id="sec-ch7-reporting-distributions" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting distribution summaries</h2>
+<p>Shape, central tendency, and spread are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! Specifically, you are doing what is called descriptive statistics - calculating numbers that describe a sample of data.</p>
+<p>However, there’s not much point to doing all that work if you can’t share the results with other people. Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
+<section id="central-tendency" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">7.1.1</span> Central tendency</h3>
+<p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>Mode</em>). Reporting the mean in the body of some text may look like:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5) than the posttest score (<em>M</em> = 65.3).”</p>
+<p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
+<p>“The median time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
+<p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pretest and posttest scores for male and females on an aptitude test. Notice that the statement about the mean being summarized in this particular table is presented in the table title.</p>
+<p><strong>Mean Scores for Pre- and Post-test by Gender</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Pre-test</th>
+<th style="text-align: center;">Post-test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">45.6</td>
+<td style="text-align: center;">72.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">50.2</td>
+<td style="text-align: center;">69.5</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spread" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="spread"><span class="header-section-number">7.1.2</span> Spread</h3>
+<p>Descriptive statistics of variables involving interval or ordinal scales often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
+<p>When reporting the descriptive statistical summary of many groups, the results may be summarized in a table as well.</p>
+</section>
+<section id="shape" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="shape"><span class="header-section-number">7.1.3</span> Shape</h3>
+<p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
+<p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
 <p>So far you’ve learned several ways to visualize data - histograms, scatterplots, boxplots, etc. You’ve also learned how to make changes to those graphs like adjusting color, data size, or faceting. Up to this point, you’ve made choices on exactly what to do with those options on your own (maybe according to your preferences, or whatever let you do the assignment most quickly).</p>
 <p>However, visualizations are a powerful way of not just understanding your data yourself, but also communicating about it to other people. Thus there are important principles to follow so that your audience will see the point you intend to make.</p>
-<section id="sec-ch7-importance-of-visualization" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch7-importance-of-visualization"><span class="header-section-number">7.1</span> The importance of good visualization</h2>
+</section>
+</section>
+<section id="sec-ch7-importance-of-visualization" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-ch7-importance-of-visualization"><span class="header-section-number">7.2</span> The importance of good visualization</h2>
 <p>Here’s a historic example of just how important it can be to visualize your data well. On January 28, 1986, the Space Shuttle Challenger exploded 73 seconds after takeoff, killing all 7 of the astronauts on board. As when any such disaster occurs, there was an official investigation into the cause of the accident. It found that an O-ring connecting two sections of the solid rocket booster leaked, resulting in failure of the joint and explosion of the large liquid fuel tank.</p>
 <p><img src="images/ch7-challenger.png" width="400"></p>
 <p>The investigation also found that prior to the accident, many aspects of the NASA decision making process were flawed. In particular, investigators focused on a meeting between NASA staff and engineers from Morton Thiokol (a contractor who built the solid rocket boosters). The engineers were particularly concerned for launch day because the temperatures were forecast to be very cold, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides describing outcomes from various past launches.</p>
 <p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one below, which highlights two important facts. First, it shows that the amount of O-ring damage was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the red shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive for why cold temperatures would mean likely O-ring failure.</p>
 <p><img src="images/ch7-challengerdamage.png" width="750"></p>
 </section>
-<section id="sec-ch7-anatomy-of-plot" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sec-ch7-anatomy-of-plot"><span class="header-section-number">7.2</span> Anatomy of a plot</h2>
+<section id="sec-ch7-anatomy-of-plot" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch7-anatomy-of-plot"><span class="header-section-number">7.3</span> Anatomy of a plot</h2>
 <p>The goal of plotting data is to give a visually-discernable summary of a dataset in 2D format. We refer to the dimensions as axes – the horizontal axis is called the X-axis and the vertical axis is called the Y-axis. We can arrange the data along the axes in a way that highlights the data values. These values may be either continuous or categorical.</p>
 <p>There are many different types of plots that we can use, which have different advantages and disadvantages. Let’s say that we are interested in characterizing the difference in height between men and women in the <code>studentdata</code> dataset. The figure below shows four different ways to plot these data - some of these we discussed in the last chapter, and one is new.</p>
 <p><img src="images/ch7-plottypes.png" width="550"></p>
@@ -2126,11 +2179,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>What sort of information about the data is easier to see in a boxplot? What sort of information is easier to see in a violin plot?</p>
 </section>
-<section id="sec-ch7-principles-of-good-visualization" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.3</span> Principles of good visualization</h2>
+<section id="sec-ch7-principles-of-good-visualization" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.4</span> Principles of good visualization</h2>
 <p>Many books have been written on effective visualization of data. There are some principles that most of these authors agree on, while others are more contentious. Here we summarize some of the major principles.</p>
-<section id="rule-1---show-the-data-variation" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="rule-1---show-the-data-variation"><span class="header-section-number">7.3.1</span> Rule 1 - Show the data variation</h3>
+<section id="rule-1---show-the-data-variation" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="rule-1---show-the-data-variation"><span class="header-section-number">7.4.1</span> Rule 1 - Show the data variation</h3>
 <p>Let’s say that you performed a study that examined the relationship between dental health and time spent flossing, and you would like to visualize the data. The figure below shows four possible presentations of these data.</p>
 <p><img src="images/ch7-dental.png" width="550"></p>
 <p>In panel A, we don’t see the data points, just a line expressing the relationship between the data. This line implies an explanatory relationship. It says that, for observations that have more flossing, we would expect better dental health. However, this plot is clearly not optimal, because we can’t actually see what the underlying data look like. We don’t know anything about the data spread or how well this line fits the data.</p>
@@ -2170,15 +2223,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="rule-2---maximize-the-data-to-ink-ratio" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.3.2</span> Rule 2 - Maximize the data to ink ratio</h3>
+<section id="rule-2---maximize-the-data-to-ink-ratio" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.4.2</span> Rule 2 - Maximize the data to ink ratio</h3>
 <p>Edward Tufte has proposed an idea called the data/ink ratio, which is the amount of ink used on representing the data vs.&nbsp;the total amount of ink used for the whole plot.</p>
 <p>Because we now do all our statistics with code, “ink” is maybe an anachronism - it could be better to say “pixels” now. But regardless, the point of this is to minimize visual clutter and let the data show through. For example, take the two presentations of the dental health data below. Both panels show the same data, but panel A is much easier to apprehend, because of its relatively higher data/ink ratio.</p>
 <p>The default settings in R’s graphing functions make it hard to violate this rule. But as you get more advanced you may decide to <a href="http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements">set your own visual themes</a>, or you may make future visualization in a separate software. If so, keep the data/ink ratio in mind.</p>
 <p><img src="images/ch7-inkratio.png" width="750"></p>
 </section>
-<section id="rule-3---avoid-chart-junk" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="rule-3---avoid-chart-junk"><span class="header-section-number">7.3.3</span> Rule 3 - Avoid chart junk</h3>
+<section id="rule-3---avoid-chart-junk" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="rule-3---avoid-chart-junk"><span class="header-section-number">7.4.3</span> Rule 3 - Avoid chart junk</h3>
 <p>It’s especially common to see presentations of data in the popular media that are adorned with lots of visual elements that are thematically related to the content but unrelated to the actual data. This is known as chart junk. It may seem like a cool thing to add, but it should be avoided at all costs.</p>
 <p>One good way to avoid chart junk is to rely on the graphical plotting from programming languages like R, rather than manually adding fancy graphics. For example, the chart below (created using Microsoft Excel) plots the relative popularity of different religions in the United States. There are at least three things wrong with this figure:</p>
 <ul>
@@ -2188,8 +2241,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul>
 <p><img src="images/ch7-chartjunk.png" width="550"></p>
 </section>
-<section id="rule-4---avoid-distorting-the-data" class="level3" data-number="7.3.4">
-<h3 data-number="7.3.4" class="anchored" data-anchor-id="rule-4---avoid-distorting-the-data"><span class="header-section-number">7.3.4</span> Rule 4 - Avoid distorting the data</h3>
+<section id="rule-4---avoid-distorting-the-data" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="rule-4---avoid-distorting-the-data"><span class="header-section-number">7.4.4</span> Rule 4 - Avoid distorting the data</h3>
 <p>It’s often possible to use visualization to distort the message of a dataset. A very common one is the use of different axis scaling to either exaggerate or hide a pattern of data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In the below figure, we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
 <p><img src="images/ch7-crime.png" width="700"></p>
 <p><em>data obtained <a href="https://www.ucrdatatool.gov/Search/Crime/State/RunCrimeStatebyState.cfm">here</a></em></p>
@@ -2210,8 +2263,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Of course, if we look at the y-axis values the actual difference in numbers doesn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than White.” You can imagine the types of commentary that can be spawned on social media just from a quick glance at a picture.</p>
 <p>To avoid wasting too much white space or misleading your audience by exaggerating differences, a good starting place is to use axis ranges that encompass the full range of your raw data but not much more. Then consider whether a larger range should be used based on what you’re specifically trying to communicate.</p>
 </section>
-<section id="rule-5---readable-data-labels" class="level3" data-number="7.3.5">
-<h3 data-number="7.3.5" class="anchored" data-anchor-id="rule-5---readable-data-labels"><span class="header-section-number">7.3.5</span> Rule 5 - Readable data labels</h3>
+<section id="rule-5---readable-data-labels" class="level3" data-number="7.4.5">
+<h3 data-number="7.4.5" class="anchored" data-anchor-id="rule-5---readable-data-labels"><span class="header-section-number">7.4.5</span> Rule 5 - Readable data labels</h3>
 <p>Often in datasets you work with, variables will be given shorthand names that make them easier to type in code. If you then use them to make a plot, that variable name will be used as the label on the axis:</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2259,10 +2312,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 </section>
-<section id="sec-ch7-human-readability" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="sec-ch7-human-readability"><span class="header-section-number">7.4</span> Accomodating human readability</h2>
-<section id="colorblindness" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="colorblindness"><span class="header-section-number">7.4.1</span> Colorblindness</h3>
+<section id="sec-ch7-human-readability" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-ch7-human-readability"><span class="header-section-number">7.5</span> Accomodating human readability</h2>
+<section id="colorblindness" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="colorblindness"><span class="header-section-number">7.5.1</span> Colorblindness</h3>
 <p>Humans have both perceptual and cognitive limitations that can make some visualizations very difficult to understand. In addition to the rules of data visualization, it’s also important to keep these in mind when building a plot.</p>
 <p>One important perceptual limitation that many people (8% of men and 0.5% of women) have is color blindness. This can make it very difficult to perceive the information in a figure where there is only color contrast between the elements but no brightness contrast. It is always helpful to use graph elements that differ substantially in brightness and/or shape, in addition to color. There are also colorblind-friendly palettes available for use with many visualization tools.</p>
 <p><img src="images/ch7-colorblind.jpg" width="650"></p>
@@ -2300,8 +2353,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><img src="images/ch7-colorbrewer.png" width="400"></p>
 <p><em>Palette choices in the RColorBrewer package</em></p>
 </section>
-<section id="perceptual-simplicity" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="perceptual-simplicity"><span class="header-section-number">7.4.2</span> Perceptual simplicity</h3>
+<section id="perceptual-simplicity" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="perceptual-simplicity"><span class="header-section-number">7.5.2</span> Perceptual simplicity</h3>
 <p>Even for people with perfect color vision, there are perceptual limitations that can make some plots ineffective. This is one reason why good statisticians never use pie charts: It can be very difficult for humans to accurately perceive differences in the volume of shapes. The pie chart below (presenting the same data on religious affiliation that we showed above) shows how tricky this can be.</p>
 <p><img src="images/ch7-piechart.png" width="500"></p>
 <p>This plot is terrible for several reasons. First, it requires distinguishing a large number of colors from very small patches at the bottom of the figure. Second, the 3D perspective distorts the relative numbers, such that the pie wedge for Catholic appears much larger than the pie wedge for None, when in fact the number for None is slightly larger (22.8 vs 20.8 percent). Third, it uses text that is far too small, making it impossible to read without zooming in.</p>
@@ -2310,10 +2363,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>This plot allows the viewer to make comparisons based on the the length of the bars along a common scale (the y-axis). Humans tend to be more accurate when decoding differences based on these perceptual elements than based on area or color.</p>
 </section>
 </section>
-<section id="sec-ch7-resources" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">7.5</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">7.5.1</span> Learning goals</h3>
+<section id="sec-ch7-resources" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">7.6</span> Chapter resources</h2>
+<section id="learning-goals" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">7.6.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
 <li>Explain the importance of good data visualization</li>
@@ -2323,14 +2376,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Choose plot elements based on how well they communicate your intended message</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">7.5.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">7.6.2</span> New concepts</h3>
 <ul>
 <li><strong>violin plot</strong>: A type of data visualization that plots the distribution of data per group.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">7.5.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">7.6.3</span> New R functionality</h3>
 <ul>
 <li><a href="https://www.mosaic-web.org/ggformula/reference/gf_violin.html">ggformula::gf_violin()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">ggplot2::coord_cartesian()</a></li>
@@ -2340,8 +2393,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><a href="https://sjmgarnier.github.io/viridisLite/reference/viridis.html">viridis::viridis() and other palettes</a></li>
 </ul>
 </section>
-<section id="further-reading" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.5.4</span> Further reading</h3>
+<section id="further-reading" class="level3" data-number="7.6.4">
+<h3 data-number="7.6.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.6.4</span> Further reading</h3>
 
 
 </section>
@@ -2750,8 +2803,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-6.html" class="pagination-link" aria-label="Variation in Multiple Variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variation in Multiple Variables</span></span>
+      <a href="./chapter-6.html" class="pagination-link" aria-label="Patterns Among Multiple Variables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
