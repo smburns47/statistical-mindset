@@ -2093,7 +2093,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 
 <p><img src="images/header-ch2.png" class="img-fluid"></p>
-<p>Although we can apply statistical techniques to any bunch of numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, we generally want to analyze numbers that represent something about the world. These numbers we refer to as data in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a>. Data are the focus and currency of statistics - you can’t do it without data, and qualities about the data determine the type of reliability of your analyses. In this chapter, we will discuss different kinds of data, how they are represented in R, and how to reason about when data are good quality or not.</p>
+<p>Although we can apply statistical techniques to any bunch of numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, we generally want to analyze numbers that represent something about the world. These numbers we refer to as data. Data are the focus and currency of statistics - you can’t do it without data, and qualities about the data determine the type of reliability of your analyses. In this chapter, we will discuss different kinds of data, how they are represented in R, and how to reason about when data are good quality or not.</p>
 <section id="sec-ch2-scales-measurement" class="level2 page-columns page-full" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-ch2-scales-measurement"><span class="header-section-number">2.1</span> Scales of measurement</h2>
 <p>Think of all the things you could measure about a person - their physical attributes, their personality, their beliefs and opinions… Now, think about how you would measure those attributes. Would we write down numbers, or words? What kind of values would be valid entries? How would those values relate to each other?</p>
@@ -2242,7 +2242,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><code>handedness_word &lt;- c("left","right","right","right","right","left","right","right","right")</code></p>
 <p>That’s a lot of typing though. Instead, they could choose to assign “right” the value of 1, and “left” the value of 2. This would create a vector like:</p>
 <p><code>handedness_label &lt;- c(2,1,1,1,1,2,1,1,1)</code></p>
-<p>Much easier to type! For this reason, don’t assume what scale of measurement a variable has based simply on it’s data type when recorded in a dataset. Instead, think about the nature of what those values represent in the real world.</p>
+<p>This is much easier to type! More consequentially, the majority of the statistical tools we will use to analyze data are equations that need quantitative values to operate on. For this reason, researchers often need to quantify their data by turning it into numbers in some way. So don’t assume what scale of measurement a variable has based simply on it’s data type when recorded in a dataset. Instead, think about the nature of what those values represent in the real world.</p>
 </section>
 <section id="boolean-data" class="level3 page-columns page-full" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="boolean-data"><span class="header-section-number">2.3.3</span> Boolean data</h3>
