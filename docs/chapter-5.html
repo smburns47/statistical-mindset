@@ -369,7 +369,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'gridExtra'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -2158,7 +2158,7 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 </div>
 </div>
 <div class="page-columns page-full"><p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): height values among the respondents in <code>studentdata</code>; various employment categories; number of siblings a student may have; and ethnic identities in the student sample. The y-axis represents the <em>frequency</em> of some score in a sample. So, in the first histogram (in orange), the height of the bars does not represent what height someone is, but instead represents the number of respondents in this sample who are the height indicated on the x-axis.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>histogram</strong> = a type of plot that visualizes a single-variable distribution, with variable values on the x-axis and number of observations with that value on the y-axis</span></div></div>
-<p>There are lots of ways to make histograms in R. In this book we will use the package <code>ggplot2</code> to make our visualizations because it is by far the most-used data visualization package in R. It is a large and flexible package, with a lot of capability to make just about any plot customization you can imagine. It takes a little getting used to, so we will just use some of its basic functionality. If you’re really into data viz, you can learn more about the package in the online book <em>ggplot2: Elegant Graphics for Data Analysis</em> (<span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span>).</p>
+<p>There are lots of ways to make histograms in R. In this book we will use the package <code>ggplot2</code> to make our visualizations because it is by far the most-used data visualization package in R. It is a large and flexible package, with a lot of capability to make <a href="https://r-graph-gallery.com/">just about any plot customization you can imagine</a>. It takes a little getting used to, so we will just use some of its basic functionality. If you’re really into data viz, you can learn more about the package in the online book <em>ggplot2: Elegant Graphics for Data Analysis</em> (<span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span>).</p>
 <p>The process of building a plot with <code>ggplot2</code> is a process of creating and adding layers to an image, like in Photoshop. The first step of every <code>ggplot2</code> plot is to define what data should be used in it and the plot’s aesthetic mappings - what variables should go where visually. This is all wrapped in the primary function <code>ggplot()</code>.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2444,6 +2444,7 @@ Warning
 <p>Here’s the formula for sum of squares:</p>
 <p><span id="eq-ss"><span class="math display">\[SS(x) = \sum_{i=1}^{n}(x_i-\bar{x})^2 \tag{5.3}\]</span></span></p>
 <p>To read this equation and remember it, break it down into the pieces we’ve talked about already. We have our difference equation in there, squared to remove negatives. We could find this squared difference for any data value <span class="math inline">\(x_i\)</span> in a variable <span class="math inline">\(x\)</span>, so to get one number for the whole distribution we find the sum of all differences across all observations <span class="math inline">\(i\)</span> from the 1st to the nth: hence <span class="math inline">\(\sum_{i=1}^{n}\)</span>. This equation tells us to find the sum of all squared differences in the variable. Hence the name!</p>
+<p>There’s a neat fact about the relationship between the mean and the sum of squares. The mean, <span class="math inline">\(\bar{x}\)</span> is the value that most <em>minimizes</em> the sum of squared deviations for a variable. If we put any other number in place of <span class="math inline">\(\bar{x}\)</span> in the sum of squares equation, like the median or mode, the sum of squares would be bigger. This is one of the reasons why the mean is such a common measure of central tendency despite its conceptual limitations - it vibes well with other statistical tools we may want to use.</p>
 </section>
 <section id="variance" class="level3 page-columns page-full" data-number="5.6.4">
 <h3 data-number="5.6.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">5.6.4</span> Variance</h3>
@@ -2542,7 +2543,7 @@ Note
 <div id="qwebr-insertion-location-21"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="page-columns page-full"><p>Turning binary categorical data into Boolean data is quite common in statistics, and is called making a <strong>dummy variable</strong>. The mean of a dummy variable is the proportion of observations that are TRUE, and the variance and standard deviation are measures of how much variation there is in the distribution of TRUE and FALSE values.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>dummy variable</strong> = quantification of a binary categorical variable, such that one category is set to 1 and the other to 0</span></div></div>
-<div class="page-columns page-full"><p>Note that these values being the mean and standard deviation of Boolean/binary data does not mean these values actually exist in the dataset (indeed, since they’re not 0 or 1, they cannot). It is more natural to think of the mean of a Boolean variable as the <strong>proportion</strong> of the variable that equals TRUE/1. The notation for proportion is traditionally <span class="math inline">\(p\)</span>, but just keep in mind for later that <span class="math inline">\(p = \bar{x}\)</span> when <span class="math inline">\(x\)</span> is binary categorical. The variance and standard deviation of Boolean data don’t have a straightforward interpretation, but they will approach a max of <span class="math inline">\(s^2 0.25\)</span> (<span class="math inline">\(s = 0.5\)</span>) when the distribution is evenly split between TRUE and FALSE and will approach a min of 0 when the distribution is all TRUE or all FALSE (i.e., no variation).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>proportion</strong> = number of “successes” in a set divided by the total number of items in the set</span></div></div>
+<div class="page-columns page-full"><p>Note that these values being the mean and standard deviation of Boolean/binary data does not mean these values actually exist in the dataset (indeed, since they’re not 0 or 1, they cannot). It is more natural to think of the mean of a Boolean variable as the <strong>proportion</strong> of the variable that equals TRUE. The notation for proportion is traditionally <span class="math inline">\(p\)</span>, but just keep in mind for later that <span class="math inline">\(p = \bar{x}\)</span> when <span class="math inline">\(x\)</span> is binary. The variance and standard deviation of Boolean data don’t have a straightforward interpretation, but they will approach a max of <span class="math inline">\(s^2 = 0.25\)</span> (<span class="math inline">\(s = 0.5\)</span>) when the distribution is evenly split between TRUE and FALSE and will be 0 when the distribution is all TRUE or all FALSE (i.e., no variation).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>proportion</strong> = number of “successes” in a set divided by the total number of items in the set</span></div></div>
 <p>Now let’s consider a more complex categorical variable like <code>Ethnicity</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
@@ -2554,7 +2555,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try to remember a function we learned about in this chapter to show which values are in this variable and how many observations are in each category. If you forgot, re-read #sec-ch5-distribution-center before peaking at the answer.</p>
+<p>Try to remember a function we learned about in this chapter to show which values are in this variable and how many observations are in each category. If you forgot, re-read <a href="#sec-ch5-distribution-center" class="quarto-xref"><span>Section 5.5</span></a> before peaking at the answer.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-22"></div>
@@ -2576,7 +2577,35 @@ Note
 </div>
 </div>
 <p>Because there are more than two categories in <code>Ethnicity</code>, we can’t turn it into Boolean data… or can we?</p>
-<div class="page-columns page-full"><p>Recall that Boolean data is the answer to a logical question, like “is this person female?” There’s no reason we couldn’t pose a similar logical question of this variable, such as “is this person Asian?” The answer to such a question will be TRUE for everyone who answered <code>Asian</code> and FALSE for everyone else. Leaving the variable like this means we lose information about how people answered if they did not select <code>Asian</code> on the survey. But we could ask successive logical questions about the other categories, effectively making multiple Boolean variables. We can then take the sum of the variances across all these dummy variables to get a measure of overall variation in the original multilevel categorical variable, called the <strong>index of qualitative variation (IQV)</strong>. Along with the mode for central tendency, this is how we would use quantification to describe non-numeric data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>index of qualitative variation (IQV)</strong> = a measure of variation in a multilevel categorical variable, calculated as the sum of the variances for each of the variable’s corresponding dummy variables</span></div></div>
+<div class="page-columns page-full"><p>Recall that Boolean data are the answer to a logical question, like “is this person female?” There’s no reason we couldn’t pose a similar logical question of this variable, such as “is this person Asian?” The answer to such a question will be TRUE for everyone who answered <code>Asian</code> and FALSE for everyone else. Leaving the variable like this means we lose information about how people answered if they did not select <code>Asian</code> on the survey. But we could ask successive logical questions about the other categories, effectively making multiple Boolean variables. We can then take the sum of the variances across all these dummy variables to get an <strong>index of qualitative variation (IQV)</strong> for the whole multilevel variable<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Along with the mode for central tendency, this is how we would use quantification to describe non-numeric data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>index of qualitative variation (IQV)</strong> = a measure of variation in a multilevel categorical variable, calculated as the sum of the variances for each of the variable’s corresponding dummy variables</span></div></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Optional: going deeper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(np(1-p)/(n-1)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> as</p>
+<p><span class="math display">\[\sum_{i=1}^{n}(x_i-p)^2\]</span></p>
+<p>Because <span class="math inline">\(x_i\)</span> in a binary variable can only be 0 or 1, the deviation part of the equation can only ever be <span class="math inline">\((1-p)^2\)</span> or <span class="math inline">\((0-p)^2 = p^2\)</span>. If we let <span class="math inline">\(m\)</span> equal the number of 1s and <span class="math inline">\(n-m\)</span> equal the number of 0s, we can break down the sum to get:</p>
+<p><span class="math display">\[m(1-p)^2 + (n-m)p^2\]</span></p>
+<p>Now, we replace <span class="math inline">\(m\)</span> with <span class="math inline">\(np\)</span>, since a count of 1s is the product of the proportion of 1s and the total sample size.</p>
+<p><span class="math display">\[np(1-p)^2 + n(1-p)p^2\]</span> Factor out <span class="math inline">\(np(1-p)\)</span>:</p>
+<p><span class="math display">\[np(1-p)(1-p + p)\]</span></p>
+<p><span class="math inline">\(1-p + p\)</span> is simply 1, so for the sum of squares of a binary variable we are left with:</p>
+<p><span class="math display">\[np(1-p)\]</span></p>
+<p>To get to variance of this variable, like we saw with getting variance out of the sum of squares for a numeric variable, we divide by <span class="math inline">\(n-1\)</span>:</p>
+<p><span class="math display">\[s^2 = \frac{np(1-p)}{n-1}\]</span></p>
+<p>To derive a generalized equation for a multilevel categorical variable, suppose there are <span class="math inline">\(k\)</span> categories and <span class="math inline">\(p_j\)</span> stands for the proportion of 1s in the jth dummy variable. Summing up the variances for each dummy variable gives us:</p>
+<p><span class="math display">\[\sum_{j=1}^{k} s_j^2 = \frac{n}{n-1} \sum_{j=1}^{k} p_j(1-p_j) = \frac{n}{n-1} (1 - \sum_{j=1}^{k} p_j^2)\]</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-ch5-zscores" class="level2 page-columns page-full" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="sec-ch5-zscores"><span class="header-section-number">5.8</span> Z-scores</h2>
@@ -2700,6 +2729,7 @@ Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: El
 <li id="fn1"><p>And sometimes we do use absolute values anyways. A less common measure of variation, the mean or median absolute deviation (MAD), uses absolute values.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>A note on terms here: statisticians are smart folks but naming things is not their strong suit. When we refer to “variation” or “variability”, we are talking about the general concept of spread in a distribution. “variance” refers to a specific metric for computing variation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>There is actually <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ele.70350">debate in biology</a> over whether sex in nature is truly binary categorical, but in our data we only have two values so we will analyze this variable as such.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>There are <a href="https://en.wikipedia.org/wiki/Qualitative_variation">a <em>lot</em></a> of other ways to quantify variation/diversity in categorical data, but this is one of the simplest and most comparable to variance in numeric data<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
