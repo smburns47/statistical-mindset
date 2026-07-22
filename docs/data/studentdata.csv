@@ -16,7 +16,7 @@ SurveyYear,Sex,Ethnicity,IDLast,Siblings,CollegeYear,Job,SleepHours,Nose,Ear,Han
 2022,Female,Black,7,0,2,Not Working,7,57,70,160,64,Yes,,,,,,,,,,A little,,,,
 2022,Female,White,4,4,3,Not Working,10,73,73,169,69,No,,,,,,,,,,Somewhat,,,,
 2022,Female,Asian,6,3,3,Part-time Job,7,50,75,160,68,Yes,,,,,,,,,,A little,,,,
-2022,Female,Latino,0,5,2,Not Working,6,5.1,6.3,15.2,60,No,,,,,,,,,,Very strongly,,,,
+2022,Female,Latino,0,5,2,Not Working,6,5.1,6.3,152,60,No,,,,,,,,,,Very strongly,,,,
 2022,Male,Asian,0,3,3,Part-time Job,6,55,60,161,68,No,,,,,,,,,,Very strongly,,,,
 2022,Male,Black,8,NA,3,Not Working,7,75,80,190,71,No,,,,,,,,,,Very strongly,,,,
 2022,Male,Latino,6,4,3,Part-time Job,4,94,94,252,66,No,,,,,,,,,,A little,,,,
