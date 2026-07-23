@@ -2122,6 +2122,88 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
 <p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
 <p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
+<p><strong>Visualizations for one variable</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: center;">Visualization type</th>
+<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Categorical</td>
+<td style="text-align: center;">Bar graph</td>
+<td style="text-align: center;"><code>gf_bar()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Quantitative</td>
+<td style="text-align: center;">Histogram</td>
+<td style="text-align: center;"><code>gf_histogram()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Boxplot</td>
+<td style="text-align: center;"><code>gf_boxplot()</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualizations for two variables</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Outcome variable</th>
+<th style="text-align: center;">Explanatory variable</th>
+<th style="text-align: center;">Visualization type</th>
+<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Categorical</td>
+<td style="text-align: center;">Categorical</td>
+<td style="text-align: center;">Faceted bar graph</td>
+<td style="text-align: center;"><code>gf_bar() |&gt; gf_facet_grid(.)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Quantitative</td>
+<td style="text-align: center;">Categorical</td>
+<td style="text-align: center;">Faceted histogram</td>
+<td style="text-align: center;"><code>gf_histogram() |&gt; gf_facet_grid(.)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Boxplot</td>
+<td style="text-align: center;"><code>gf_boxplot()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Jitter plot</td>
+<td style="text-align: center;"><code>gf_jitter()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Categorical</td>
+<td style="text-align: center;">Quantitative</td>
+<td style="text-align: center;">Same as above, axes flipped</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Quantitative</td>
+<td style="text-align: center;">Quantitative</td>
+<td style="text-align: center;">Scatterplot</td>
+<td style="text-align: center;"><code>gf_point()</code></td>
+</tr>
+</tbody>
+</table>
 <p>So far you’ve learned several ways to visualize data - histograms, scatterplots, boxplots, etc. You’ve also learned how to make changes to those graphs like adjusting color, data size, or faceting. Up to this point, you’ve made choices on exactly what to do with those options on your own (maybe according to your preferences, or whatever let you do the assignment most quickly).</p>
 <p>However, visualizations are a powerful way of not just understanding your data yourself, but also communicating about it to other people. Thus there are important principles to follow so that your audience will see the point you intend to make.</p>
 </section>

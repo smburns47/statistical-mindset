@@ -372,7 +372,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"filepath <- \"https://statistical-mindset.com/data/studentdata.csv\"\nstudentdata <- read.csv(filepath)\n\n#your code here","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Hand, y=Height)) + \n  geom_point() ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"hand_quantiles <- quantile(studentdata$Hand, probs = c(0.20, 0.80), na.rm = TRUE)\nshort_cutoff <- hand_quantiles[1]\nlong_cutoff <- hand_quantiles[2]\n\n#passing a logic statement as an index value will return only items where that logic statement is true\nheight_shorthand <- studentdata$Height[studentdata$Hand <= short_cutoff]\nheight_longhand <- studentdata$Height[studentdata$Hand >= long_cutoff]\n\nprint('Short hands: height mean and sd:')\nprint(mean(height_shorthand, na.rm = TRUE))\nprint(sd(height_shorthand, na.rm = TRUE))\n\nprint('Long hands: height mean and sd:')\nprint(mean(height_longhand, na.rm = TRUE))\nprint(sd(height_longhand, na.rm = TRUE))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(#your code here)) + \n  geom_histogram() + \n  facet_wrap(#your code here)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sleep_stats <- studentdata$SleepHours[studentdata$StatsExperience == \"Yes\"]\nsleep_nostats <- studentdata$SleepHours[studentdata$StatsExperience == \"No\"]\n\nmean(sleep_stats, na.rm = TRUE)\nmean(sleep_nostats, na.rm = TRUE)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sd(studentdata$SleepHours, na.rm = TRUE)\nsd(sleep_stats, na.rm = TRUE)\nsd(sleep_nostats, na.rm = TRUE)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://raw.githubusercontent.com/smburns47/Psyc158/main/studentdata.csv\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata, fill = ~ Sex)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata, fill = ~ Sex) %>%\n    gf_refine(., scale_fill_manual(values = c(\"purple\", \"orange\")))","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata) %>% \n  gf_facet_grid(., ~ Sex)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata) %>% \n  gf_facet_grid(., Sex ~ .)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata) %>%\n    gf_facet_grid(., Sex ~ .)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata) %>% \n  gf_facet_grid(., CollegeYear ~ .) \n\ngf_dhistogram(~ Thumb, data = studentdata, fill = ~ RaceEthnic) %>% \n  gf_facet_grid(., RaceEthnic ~ .) ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"tetrismemories <- read.csv(\"https://raw.githubusercontent.com/smburns47/Psyc158/main/tetrismemories.csv\")\n\n# using mutate() and select() functions loaded from dplyr to create new variable and subset\ntetrismemories_subset <- tetrismemories |>\n  mutate(many_memories = intrusive_memories > 5) |>\n  select(condition, many_memories)\n\nhead(tetrismemories_subset)","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_bar(~ many_memories, data = tetrismemories_subset)","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Thumb ~ Sex, data = studentdata)","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Thumb ~ Sex, data = studentdata, color = \"orange\", size = 5) ","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Can you tell how many people have each explanatory/outcome pairing?\ngf_point(MathAnxious ~ StatsInterest, data = studentdata, color = \"blue\")","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, color = \"blue\") ","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, color = \"blue\", width = 0.1, height = 0.1) ","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, \n          color = \"blue\", size = 3, alpha = 0.2, width = 0.1, height = 0.1) ","id":24,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-24","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here","id":25,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-25","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(Sex ~ Thumb, data = studentdata, color = \"orange\", size = 3, height = 0.2) ","id":26,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-26","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Thumb ~ Height, data = studentdata)","id":27,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-27","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_boxplot(Thumb ~ Sex, data = studentdata)","id":28,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-28","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_boxplot(Thumb ~ Sex, data = studentdata, fill = \"orange\")","id":29,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-29","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_boxplot(Thumb ~ Sex, data = studentdata, fill = \"orange\") %>%\n    gf_jitter(.)","id":30,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-30","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_boxplot(Thumb ~ Sex, data = studentdata, color = ~ Sex) %>%\n    gf_jitter(., height = 0, color = 'gray', alpha = .5, size = 3)","id":31,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-31","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"filepath <- \"https://statistical-mindset.com/data/studentdata.csv\"\nstudentdata <- read.csv(filepath)\n\n#your code here","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Hand, y=Height)) + \n  geom_point() ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"hand_quantiles <- quantile(studentdata$Hand, probs = c(0.20, 0.80), na.rm = TRUE)\nshort_cutoff <- hand_quantiles[1]\nlong_cutoff <- hand_quantiles[2]\n\n#passing a logic statement as an index value will return only items where that logic statement is true\nheight_shorthand <- studentdata$Height[studentdata$Hand <= short_cutoff]\nheight_longhand <- studentdata$Height[studentdata$Hand >= long_cutoff]\n\nprint('Short hands: height mean and sd:')\nprint(mean(height_shorthand, na.rm = TRUE))\nprint(sd(height_shorthand, na.rm = TRUE))\n\nprint('Long hands: height mean and sd:')\nprint(mean(height_longhand, na.rm = TRUE))\nprint(sd(height_longhand, na.rm = TRUE))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(#your code here)) + \n  geom_point() ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sleep_shorthand <- studentdata$SleepHours[studentdata$Hand <= short_cutoff]\nsleep_longhand <- studentdata$SleepHours[studentdata$Hand >= long_cutoff]\n\nmean(sleep_shorthand, na.rm = TRUE)\nmean(sleep_longhand, na.rm = TRUE)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sd(studentdata$SleepHours, na.rm = TRUE)\nsd(sleep_shorthand, na.rm = TRUE)\nsd(sleep_longhand, na.rm = TRUE)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cov(studentdata$Hand, studentdata$Height, use = \"pairwise.complete.obs\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"height_z <- scale(studentdata$Height)\nhand_z <- scale(studentdata$Hand)\nheight_sd <- sd(studentdata$Height, na.rm = TRUE)\nhand_sd <- sd(studentdata$Hand, na.rm = TRUE)\nheight_hand_cov <- cov(studentdata$Height, studentdata$Hand, use = \"pairwise.complete.obs\")\n\n#verifying that these two approaches give the same result\nheight_hand_cov / (height_sd * hand_sd)\ncov(height_z, hand_z, use = \"pairwise.complete.obs\")","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cor(studentdata$Hand, studentdata$Height, use = \"pairwise.complete.obs\", method = \"spearman\")","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1772,18 +1772,23 @@ window.Quarto = {
   <li><a href="#sec-ch6-visualizing-two-variables" id="toc-sec-ch6-visualizing-two-variables" class="nav-link active" data-scroll-target="#sec-ch6-visualizing-two-variables"><span class="header-section-number">6.1</span> Visualizing two variables</a></li>
   <li><a href="#sec-ch6-distributions-as-probability" id="toc-sec-ch6-distributions-as-probability" class="nav-link" data-scroll-target="#sec-ch6-distributions-as-probability"><span class="header-section-number">6.2</span> Distributions as probability</a></li>
   <li><a href="#sec-ch6-independence-vs-association" id="toc-sec-ch6-independence-vs-association" class="nav-link" data-scroll-target="#sec-ch6-independence-vs-association"><span class="header-section-number">6.3</span> Independence vs.&nbsp;association</a></li>
-  <li><a href="#sec-ch6-covariation" id="toc-sec-ch6-covariation" class="nav-link" data-scroll-target="#sec-ch6-covariation"><span class="header-section-number">6.4</span> Covariation</a></li>
-  <li><a href="#sec-ch6-explaining-one-variable-with-another" id="toc-sec-ch6-explaining-one-variable-with-another" class="nav-link" data-scroll-target="#sec-ch6-explaining-one-variable-with-another"><span class="header-section-number">6.5</span> Explaining one variable with another</a></li>
-  <li><a href="#sec-ch6-outcomes-and-explanatory-variables" id="toc-sec-ch6-outcomes-and-explanatory-variables" class="nav-link" data-scroll-target="#sec-ch6-outcomes-and-explanatory-variables"><span class="header-section-number">6.6</span> Outcomes and explanatory variables</a></li>
-  <li><a href="#sec-ch6-point-and-jitter-plots" id="toc-sec-ch6-point-and-jitter-plots" class="nav-link" data-scroll-target="#sec-ch6-point-and-jitter-plots"><span class="header-section-number">6.7</span> Point and jitter plots</a></li>
-  <li><a href="#sec-ch6-quantitative-explanatory-variables" id="toc-sec-ch6-quantitative-explanatory-variables" class="nav-link" data-scroll-target="#sec-ch6-quantitative-explanatory-variables"><span class="header-section-number">6.8</span> Quantitative explanatory variables</a></li>
-  <li><a href="#sec-ch6-multiple-plots" id="toc-sec-ch6-multiple-plots" class="nav-link" data-scroll-target="#sec-ch6-multiple-plots"><span class="header-section-number">6.9</span> Putting multiple plots together</a></li>
-  <li><a href="#sec-ch6-resources" id="toc-sec-ch6-resources" class="nav-link" data-scroll-target="#sec-ch6-resources"><span class="header-section-number">6.10</span> Chapter resources</a>
+  <li><a href="#sec-ch6-types-of-association" id="toc-sec-ch6-types-of-association" class="nav-link" data-scroll-target="#sec-ch6-types-of-association"><span class="header-section-number">6.4</span> Types of association</a>
   <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">6.10.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">6.10.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">6.10.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">6.10.4</span> Further reading</a></li>
+  <li><a href="#association-form" id="toc-association-form" class="nav-link" data-scroll-target="#association-form"><span class="header-section-number">6.4.1</span> Association form</a></li>
+  <li><a href="#association-strength" id="toc-association-strength" class="nav-link" data-scroll-target="#association-strength"><span class="header-section-number">6.4.2</span> Association strength</a></li>
+  <li><a href="#association-direction" id="toc-association-direction" class="nav-link" data-scroll-target="#association-direction"><span class="header-section-number">6.4.3</span> Association direction</a></li>
+  </ul></li>
+  <li><a href="#sec-ch6-association-metrics" id="toc-sec-ch6-association-metrics" class="nav-link" data-scroll-target="#sec-ch6-association-metrics"><span class="header-section-number">6.5</span> Association metrics</a>
+  <ul class="collapse">
+  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">6.5.1</span> Covariance</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">6.5.2</span> Correlation</a></li>
+  </ul></li>
+  <li><a href="#sec-ch6-resources" id="toc-sec-ch6-resources" class="nav-link" data-scroll-target="#sec-ch6-resources"><span class="header-section-number">6.6</span> Chapter resources</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">6.6.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">6.6.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">6.6.3</span> New R functionality</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">6.6.4</span> Further reading</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2210,7 +2215,7 @@ Note
 <p>When we plot and summarize the center and spread of one variable, we are looking at where the middle of the distribution is and how wide the distribution is. But another way to think about these features is to treat the dataset as a big bag of marbles, and consider what would happen if we randomly drew one marble/observation from the bag. What is your best guess for what a randomly selected value would be? How confident are you that the next marble/observation you drew would be that value?</p>
 <p>Earlier we calculated the mean of <code>Height</code> in our dataset to be 66.2. Now look at where that value is on the overall histogram of <code>Height</code>. It’s not the most common value in the histogram (indeed no one responded with decimals like this), but we know that it minimizes the sum of squares of a variable. In other words, if we use the mean as a guess for what a randomly-drawn value will be, we will be <em>less wrong</em> on average than if we used any other number to guess. For this reason, we can think of central tendency as representing what data values are <em>probable</em>.</p>
 <p>But even if you are less wrong <em>on average</em> by guessing the mean, that doesn’t mean you’ll get it right for this specific guess. If you guessed the mean, how confident are you that you would be within 5 inches of the actual value? Would you be willing to bet someone a dollar, or ten dollars? You’d probably be more confident if you were guessing about a distribution that had a standard deviation of 3 than if it had a standard deviation of 10. For this reason, we can think variation as representing how much <em>uncertainty</em> there is about what any specific data value will be.</p>
-<div class="page-columns page-full"><p>With words like “probable” and “uncertainty”, we are talking about <strong>probability</strong>. Probability refers to a random process, where you don’t know exactly what will happen next. We can think of selecting data points from a distribution as a probabilistic random process - we don’t know which data point we will pick. But “random” doesn’t mean all numbers are equally likely. Some values will be more likely than others (more <em>probable</em>), even if it’s not guaranteed what will happen on the next draw (<em>uncertainty</em>). Unusual values can still happen, but across many draws the more probable values will come up more often.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probability</strong> = the likelihood of a specific event occurring</span></div></div>
+<div class="page-columns page-full"><p>With words like “probable” and “uncertainty”, we are talking about <strong>probabiliy</strong>. Probability refers to a random process, where you don’t know exactly what will happen next. We can think of selecting data points from a distribution as a probabilistic random process - we don’t know which data point we will pick. But “random” doesn’t mean all numbers are equally likely. Some values will be more likely than others (more probable), even if it’s not guaranteed what will happen on the next draw (uncertainty). Unusual values can still happen, but across many draws the more probable values will come up more often.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probability</strong> = the likelihood of a specific event occurring</span></div></div>
 <p>When we’re dealing with probabilistic processes, we often want to reduce uncertainty as much as we can. What will the weather be like when you drive to the beach? What is the economy likely to be like in 6 months? It’d be nice to be more certain about what range of values is likely to happen, so you can make better decisions about what clothes to wear or if you should risk leaving a safe but boring job.</p>
 <p>So if we’re randomly predicting a value in a data distribution like <code>Height</code>, we want our guess to be as good as possible. By guessing the mean value, we are going to be wrong by 3.61 on average.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Is there any other information we can use to tell us how to adjust our guess and make a better prediction?</p>
 </section>
@@ -2223,8 +2228,8 @@ Note
 <p>If we didn’t know someone’s height and we had to guess, without any other information to help, our best guess would be the variable mean 66.2 but we would be uncertain that that was correct. We’d be wrong by about 3.61 inches on average.</p>
 <p>However, if we know that the person in question had a short hand, we could change strategy. Now we could focus only on the data in the <code>height_shorthand</code> distribution and use <em>that</em> mean for our guess. In other words, having some information about the person changes what our best guess is for them (from 66.2 to 63.75).</p>
 <p>It also changed our level of uncertainty. Because the spread of the <code>height_shorthand</code> distribution is 2.93, which smaller than 3.61, our new guess is more likely to be correct than our original guess. There is still some variation we can’t predict, but we are more confident now.</p>
-<p>This is the essence of association. If two variables are associated, knowing an observation’s value on one variable changes your guess and decreases your uncertainty about the value of the other variable. We just saw this happen with <code>Sex</code> and <code>Height</code>, so we would say these variables are associated. Another way people talk about this kind of relationship is to say the <code>Sex</code> explains or accounts for some of the variation in <code>Height</code>.</p>
-<p>Not all variables are associated with each other. Let’s look at the faceted deviations of two other variables, <code>SleepHours</code> and <code>StatsExperience</code>:</p>
+<p>This is the essence of association. If two variables are associated, knowing an observation’s value on one variable changes your guess and decreases your uncertainty about the value of the other variable. We just saw this happen with <code>Hand</code> and <code>Height</code>, so we would say these variables are associated. Another way people talk about this kind of relationship is to say the <code>Hand</code> explains or accounts for some of the variation in <code>Height</code>.</p>
+<p>Not all variables are associated with each other. Let’s look at a scatterplot, <code>Hand</code> and <code>SleepHours</code> this time:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2235,353 +2240,130 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Finish the code below to make faceted histograms of <code>SleepHours</code> on the x-axis, with different histograms for the different values of <code>StatsExperience</code>.</p>
+<p>Finish the code below to make a scatterplot with <code>Hand</code> on the x-axis and <code>SleepHours</code> on the y-axis.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>While the distributions don’t look exactly the same (there are more people without stats experience than with), focus on their centers and spreads. It looks like the typical number of sleep hours for someone with stats experience is not that much different than someone without stats experience. Indeed, when we calculate the mean of these:</p>
+<p>Now there doesn’t appear to be any change of the <code>SleepHours</code> distribution as we change values on <code>Hand</code>. Indeed, when we calculate the mean of these:</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>These values are not all that different. When comparing the new standard deviations with that of the overall <code>SleepHours</code> distribution:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Knowing someone’s stats experience doesn’t much change our uncertainty about their sleep hours either. In this case, we wouldn’t say that prior stats experience is associated with sleep hours. We would say these variables are <strong>independent</strong> of each other.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>independence</strong> = a relationship between variables where one variable contains no information to help make predictions about the value of the other variable</span></div></div>
+<div class="page-columns page-full"><p>Knowing someone’s hand size doesn’t help our uncertainty about their sleep hours - in fact it makes our uncertainty worse! In this case, we wouldn’t say that hand size is associated with sleep hours. We would say these variables are <strong>independent</strong> of each other.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>independence</strong> = a relationship between variables where one variable contains no information to help make predictions about the value of the other variable</span></div></div>
 <p>It’s important to emphasize here that when we say one variable <span class="math inline">\(x\)</span> is associated with another variable <span class="math inline">\(y\)</span>, we don’t always mean that one <em>causes</em> the other. An association between the two just means that knowing the value of some observation on <span class="math inline">\(x\)</span> improves our guess about what <span class="math inline">\(y\)</span> is. This <em>could</em> be because of causation, but there are many other reasons two variables could be associated. Whenever we use the word “associated” in this book, make sure you’re not automatically assuming that a causal relationship is involved.</p>
 </section>
-<section id="sec-ch6-covariation" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="sec-ch6-covariation"><span class="header-section-number">6.4</span> Covariation</h2>
-<p>We can summarize and quantitatively describe an association relationship like this, similar to how we summarized single-variable distributions last chapter. There are different kinds of association relationships between variables and correspondingly different methods of quantifying them.</p>
+<section id="sec-ch6-types-of-association" class="level2 page-columns page-full" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-ch6-types-of-association"><span class="header-section-number">6.4</span> Types of association</h2>
+<p>There are different ways that two variables can be associated with each other. Take a look at the scatter plot in <a href="#fig-ch6-associations" class="quarto-xref">Figure&nbsp;<span>6.3</span></a> to see some examples.</p>
+<section id="association-form" class="level3 page-columns page-full" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="association-form"><span class="header-section-number">6.4.1</span> Association form</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch6-associations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch6-associations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-6_files/figure-html/fig-ch6-associations-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch6-associations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Three examples of different types of association between two variables.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>In all of these examples, <code>Variable1</code> is associated with <code>Variable2</code> because knowing a specific value of <code>Variable1</code> helps you make a good guess about what an observation’s value on <code>Variable2</code> will be. But exactly how a change in <code>Variable1</code> adjusts one’s guess about <code>Variable2</code> depends on the <strong>form</strong> of the association.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>association form</strong> = the functional relationship between two associated variables; what mathematical function is needed to transform <span class="math inline">\(x\)</span> values into <span class="math inline">\(y\)</span> values</span></div></div>
+<p>For instance, in the first plotted association, if you knew <code>Variable1</code> = 0 for a new data point, you’d guess the corresponding <code>Variable2</code> value would be something like 5 (that’s the center of the distribution of <code>Variable2</code> values at the <code>Variable1</code>=0 location).</p>
+<p>If you knew another</p>
+<div class="page-columns page-full"><p>a 1-unit increase in <code>Variable1</code> corresponds to an approximately 1-unit increase in <code>Variable2</code>. This is known as a <strong>linear association</strong> because, when plotting the data, you could draw a straight line through it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>linear association</strong> = a relationship between two variables such that consistent changes in <span class="math inline">\(x\)</span> correspond to consistent changes in <span class="math inline">\(y\)</span>, across the whole range of <span class="math inline">\(x\)</span></span></div></div>
+<div class="page-columns page-full"><p>In the second plot, notice that <span class="math inline">\(y\)</span> values get bigger as <span class="math inline">\(x\)</span> values get bigger, like in the first plot. But now the line we would draw through all the points is curved. The same amount of increase in <span class="math inline">\(x\)</span> corresponds to different amounts of increase in <span class="math inline">\(y\)</span> depending on where you are along the <span class="math inline">\(x\)</span> axis. This is known as a <strong>non-linear association</strong>. In this kind of association, we can still draw a line through the data that is always going up or going down (“monotonic”), but by how <em>much</em> it goes up/down is not always the same across the range of the variables (“non-linear”). A relationship that increases and then levels off, like in this plot, is one type of non-linear monotonic relationship. You could also find examples where the line gets increasingly steeper, or hits an inflection point in the middle.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>non-linear association</strong> = a relationship between two variables such that an increase in <span class="math inline">\(x\)</span> corresponds to strictly an increase or decrease in <span class="math inline">\(y\)</span>, but by an inconsistent amount</span></div></div>
+<div class="page-columns page-full"><p>The third plot is an example of an even more complex association. Here, knowing <span class="math inline">\(x\)</span> helps us make better guesses about <span class="math inline">\(y\)</span> - e.g., if we knew <span class="math inline">\(x = 0\)</span>, we wouldn’t guess <span class="math inline">\(y = -0.5\)</span> because data never appear there on the scatterplot. But there isn’t any specific direction that <span class="math inline">\(y\)</span> goes in as <span class="math inline">\(x\)</span> increases. Also, multiple different values of <span class="math inline">\(y\)</span> are associated with a specific value of <span class="math inline">\(x\)</span>. This is a <strong>non-linear non-monotonic association</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>non-linear non-monotonic association</strong> = a relationship between two variables such that there is no simple transform function between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, but knowing a value of <span class="math inline">\(x\)</span> still decreases uncertainty about <span class="math inline">\(y\)</span></span></div></div>
 </section>
-<section id="sec-ch6-explaining-one-variable-with-another" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="sec-ch6-explaining-one-variable-with-another"><span class="header-section-number">6.5</span> Explaining one variable with another</h2>
-<p>Let’s start by loading a simple dataset that includes information about stats students:</p>
+<section id="association-strength" class="level3 page-columns page-full" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="association-strength"><span class="header-section-number">6.4.2</span> Association strength</h3>
+<div class="page-columns page-full"><p>The form of an association is about the shape made when <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are plotted together. Meanwhile, the <strong>strength</strong> of the association refers to how clear this relationship is when plotted.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>association strength</strong> = how much knowing <span class="math inline">\(x\)</span> reduces uncertainty about <span class="math inline">\(y\)</span></span></div></div>
+<p>The prior plots in <a href="#fig-ch6-associations" class="quarto-xref">Figure&nbsp;<span>6.3</span></a> were strong associations - the patterns among the variables were very clear. Another way of thinking about a strong association is that knowing <span class="math inline">\(x\)</span> reduces your uncertainty about <span class="math inline">\(y\)</span> by a lot - the range of reasonable guesses for <span class="math inline">\(y\)</span> is a lot narrower once you know <span class="math inline">\(x\)</span>.</p>
+<p>But not all relationships are strong. Sometimes a variable <span class="math inline">\(x\)</span> only has a little bit of information about <span class="math inline">\(y\)</span>. In this case, there is still a lot of uncertainty about what to guess for <span class="math inline">\(y\)</span> even if you have a specific <span class="math inline">\(x\)</span> value in hand. <a href="#fig-ch6-associations2" class="quarto-xref">Figure&nbsp;<span>6.4</span></a> shows the same form of relationships as before, but this time the relationships are much weaker. Can you still tell what the shape of each association is supposed to be? Can you tell the real associations apart from the independent variables?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch6-associations2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch6-associations2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-6_files/figure-html/fig-ch6-associations2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch6-associations2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Three examples of weak association between two variables.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Strong associations look pretty and are easy to see. Unfortunately, they are pretty rare in real-world data applications. Most of the time we will be dealing with weak relationships that are hard to see with the eye. In these cases, it is helpful to describe the association with some quantifiable metric, as we did with quantifying single-variable distributions (see <a href="#sec-ch6-association-metrics" class="quarto-xref"><span>Section 6.5</span></a> below).</p>
+</section>
+<section id="association-direction" class="level3 page-columns page-full" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="association-direction"><span class="header-section-number">6.4.3</span> Association direction</h3>
+<div class="page-columns page-full"><p>Lastly, if we are looking at a linear or monotonic association where <span class="math inline">\(y\)</span> moves strictly up or down as <span class="math inline">\(x\)</span> increases, we can also talk about the association’s <strong>direction</strong>. A positive association means that as <span class="math inline">\(x\)</span> increases, <span class="math inline">\(y\)</span> tends to increase too. A negative association means that as <span class="math inline">\(x\)</span> increases, <span class="math inline">\(y\)</span> tends to decrease. In <a href="#fig-ch6-associations" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>, both the linear and monotonic associations were positive associations because the lines moved up - as you move up across the x-axis, the y-values got bigger. If the lines of data had started in the upper left corner and moved down, that would be a negative association.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>association direction</strong> = whether <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> both increase/decrease, or if one decreases while another increases</span></div></div>
+</section>
+</section>
+<section id="sec-ch6-association-metrics" class="level2 page-columns page-full" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="sec-ch6-association-metrics"><span class="header-section-number">6.5</span> Association metrics</h2>
+<p>In this chapter we will focus on metrics we can use to describe linear and monotonic associations.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<section id="covariance" class="level3 page-columns page-full" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="covariance"><span class="header-section-number">6.5.1</span> Covariance</h3>
+<div class="page-columns page-full"><p>The first one is is for describing linear relationships and is called <strong>covariance</strong>. Covariance, often notated as <span class="math inline">\(s_{xy}\)</span> or <span class="math inline">\(cov(x,y)\)</span>, is defined as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>covariance</strong> = a measure of association between two variables, calculated by summing the products of their deviations and dividing the sum by n-1</span></div></div>
+<p><span class="math display">\[s_{xy} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{n-1}\]</span>{eq-covariance}</p>
+<p>To interpret this equation, focus on the <span class="math inline">\((x_i - \bar{x})\)</span> and <span class="math inline">\((y_i - \bar{y})\)</span> parts first. These terms calculate, for every observation i, how far away that observation is from the mean of each respective variable. By multiplying them together, we are creating a value that will be positive if both <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span> are above their respective means, or if both are below their respective means - i.e., deviating from the mean in the same direction. On the other hand, if <span class="math inline">\(x_i\)</span> is below its mean while <span class="math inline">\(y_i\)</span> is above its mean (or vice versa), the product will be negative.</p>
+<p>Next we sum all these products across observations. If this sum is a positive number, that means there are more observations where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are in consistent directions (both above or both below their means) than there are observations where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are in opposite directions. This is a sign of a positive association. If the sum is negative, that means there are more observations where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are in opposite directions than there are observations where they are in consistent directions. This is a negative association.</p>
+<p>Finally, we divide this sum by <span class="math inline">\(n-1\)</span>. In this way we can quantify how much of this positive/negative co-deviation there is, per observation in the dataset.</p>
+<p>To calculate the covariance of two variables in R, we can use the <code>cov()</code> function. To make this function work correctly, we have to pass two variables as separate arguments. If those variables have any NA values, we also have to tell the function what to do about that with the <code>use =</code> argument. A value like “pairwise.complete.obs” tells <code>cov</code> to only consider observations that have complete data in both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> variable - is “pairwise complete”.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write code to draw a histogram of the variable <code>Thumb</code>, which corresponds to each person’s thumb length. Remember which function does this?</p>
-</div>
-</div>
+<p>If you noticed that “covariance” sounds a lot like “variance” from last chapter, that’s because their equations are very similar! Look at the covariance equation again, and compare it to the variance equation:</p>
+<p><span class="math display">\[s_x^2 = \frac{\sum_{i=1}^{n} (x_i-\bar{x})^2}{n-1}\]</span>{eq-variance}</p>
+<p>The only difference is the <span class="math inline">\((x_i - \bar{x})(y_i - \bar{y})\)</span> term in the numerator of the covariance equation, vs.&nbsp;<span class="math inline">\((x_i - \bar{x})^2\)</span> in the variance equation. In fact, the variance equation is just a special case of the covariance equation! Since <span class="math inline">\((x_i - \bar{x})^2 = (x_i - \bar{x})(x_i - \bar{x})\)</span>, the variance of one variable is really just the covariance of that variable with itself.</p>
+<div class="page-columns page-full"><p>Sometimes you will see this information for all variables listed together, in what is called a <strong>variance-covariance matrix</strong>. The variance-covariance matrix for any two variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> look like this:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>variance-covariance matrix</strong> = a method of visualizing two variables’ variance and covariance values together, with different rows and columns corresponding to each variable</span></div></div>
+<p><span class="math display">\[
+\begin{bmatrix} s_x^2 &amp; s_{xy} \\ s_{xy} &amp; s_y^2 \end{bmatrix}
+\]</span> On the diagonal of the matrix (positions [1,1] and [2,2]) are the variances of variable 1 and 2. On the off-diagonals (positions [1,2] and [2,1]) we store the covariance value between the two variables.</p>
+</section>
+<section id="correlation" class="level3 page-columns page-full" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6.5.2</span> Correlation</h3>
+<p>Does a covariance of 38.04 between <code>Hand</code> and <code>Height</code> make sense to you? It’s a positive number, so that tells us that the association between these two variables is positive. But is the number indicative of a strong or weak association?</p>
+<div class="page-columns page-full"><p>Like the variance, covariance is not easy to understand on its own. And it will be bigger or smaller not just as a function of the strength of association between two variables, but as a function of the units those variables are on. Covariance is, again, the basis of a lot of other statistical tools used to look at relationships between variables. But because it is not easy to interpret, a different measure known as <strong>correlation</strong> is often used by people trying to communicate about associations in data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>correlation</strong> = a standardized measure of the linear association between two variables</span></div></div>
+<p>Correlation is an umbrella term for many different ways to calculate an association, but the key feature of a correlation is that the variables used in the correlation equation are standardized in some way - they will all use the same units. This way the same association strength will get the same correlation score regardless of which variables the metric was computed on. It also means the correlation score will be bounded between -1 (strongest possible negative correlation) and 1 (strongest possible positive correlation), with 0 meaning no association. This makes it easy to look at the score and immediately understand how strong the association is.</p>
+<div class="page-columns page-full"><p>The most popular correlation metric is called <strong>Pearson correlation</strong> <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. It is often notated as <span class="math inline">\(r\)</span> and is calculated by dividing the covariance of two variables by the product of their standard deviations:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Pearson correlation</strong> = a measure of linear association between two variables, calculated by dividing the covariance of the two variables by the product of their standard deviations</span></div></div>
+<p><span class="math display">\[ r = \frac{s_{xy}}{s_x s_y}\]</span>{eq-pearson-corr1}</p>
+<p>Alternatively, the Pearson correlation can be calculated by taking the covariance of the two variables after they have been z-scored (since z-scoring a variable is dividing it by it’s standard deviation).</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Quickly evaluating the distribution, it looks like most of the thumbs are between 40 and 80 mm long; the center of the distribution is somewhere around 60 mm; and the distribution is kind of normal-shaped, with most of the observations clustered around the middle, then just a few observations in the outer tails.</p>
-<p>Let’s say we want to check some other variable to see if it explains the variation we see in thumb length. A starting place is to think about other variables that, if we knew someone’s score on that variable, would help us make a better guess about their thumb length. Below is a list of some of the variables in <code>studentdata</code> and descriptions of how they were coded. Which of these variables might be related to thumb length?</p>
-<ul>
-<li><code>Sex</code>: female, male, non-binary, or prefer not to answer</li>
-<li><code>RaceEthnic</code>: White, Black, Asian, Latino, Middle Eastern, or Other</li>
-<li><code>Siblings</code>: Number of siblings someone has</li>
-<li><code>IDLast</code>: Last digit of their student ID number</li>
-<li><code>CollegeYear</code>: Year in college</li>
-<li><code>Job</code>: Respondant’s job status; Not Working, Part-time Job, or Full-time Job</li>
-<li><code>MathAnxious</code>: Agreement with the statement, “In general, I tend to feel very anxious about mathematics.” strongly agree, agree, neither agree not disagree, disagree, strongly disagree</li>
-<li><code>StatsInterest</code>: How interested respondant is in statistics; No Interest, Somewhat Interested, or Very Interested</li>
-<li><code>GradePredict</code>: Anticipated course letter grade</li>
-<li><code>SleepHours</code>: How much sleep respondant got the night before</li>
-<li><code>Height</code>: Height in inches</li>
-</ul>
-<p>One variable that might explain the variation in thumb length is <code>Sex</code>. You might intuitively sense that male and female thumb lengths would differ from each other. But then again, even within a sex category, their thumb lengths vary too. So how big is the <strong>effect</strong> of sex? How much variation in thumb length can it explain?</p>
-<p>In our basic histogram right now, we can’t see the effect of taking <code>Sex</code> into account. We don’t know which data points correspond to female, male, or other participants. But we can change this histogram to visualize the relationship between <code>Thumb</code> and <code>Sex</code> in a few ways. One way is by coloring or filling in the data in the histogram by <code>Sex</code>, assigning females to one color and males another.</p>
-<p>To do this we use the <code>fill =</code> argument again in <code>gf_histogram()</code>, but instead of putting in a color we put a tilde (<code>~</code>) and then the name of a variable: <code>fill = ~ Sex</code>. Remember that a <code>~</code> in functions like this is like saying “vary by”, or “is explained by”, followed by the variable you care about.</p>
+<p>The most straightforward way to calculate a Pearson correlation in R is to use the <code>cor()</code> function. It works like <code>cov()</code>, such that you need to pass it two variables as arguments and tell it what to do about NA values.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>cor()</code> to find the Pearson correlation between <code>Hand</code> and <code>Height</code>.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Whenever you color data with another variable in <code>gf_histogram()</code>, it uses default colors. If you want to change them, we can use another handy function, <code>gf_refine()</code>, that will take an already-built histogram and make some changes to it. For example, here’s the R code to change the colors of this histogram. We will use the piping functionality from chapter 4 in order to chain multiple commands together.</p>
+<p>A Pearson correlation of 0.51 is not the strongest it could be (that would be 1). But it is not too shabby either.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="page-columns page-full"><p>Another popular correlation metric is called the <strong>Spearman correlation</strong> <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, notated <span class="math inline">\(r_s\)</span>. This one is again involves standardizing variables, but this time we take it a step further - we rank the values of each variable first. Ranking the variables means the smallest value in the variable becomes a 1, the second smallest becomes a 2, and so on. Ranking essentially puts all the values of a variable in order but removes information about how far apart those values are. This makes it a good metric for seeing how strong a monotonic relationship is that might not be strictly linear.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Spearman correlation</strong> = a measure of monotonic association between two variables, calculated by dividing the covariance of the two variables’ ranks by the product of their standard deviations</span></div></div>
+<p>If we wanted to calculate the Spearman correlation by hand, we could use the <code>rank()</code> function on our variables before passing them to <code>cor()</code>. But <code>cor()</code> also gives us an option to skip this step and compute the Spearman correlation directly if we add the argument <code>method = spearman</code>.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The function <code>gf_refine()</code> takes a histogram object as a first argument, and then another function as a second argument that we want to apply to that histogram. In this case, we used the graphic function <code>scale_fill_manual()</code> which allows us to manually define the colors we want for each unique value in <code>Sex</code> (make sure to use no more and no fewer colors than values to be colored!)</p>
-<p>Another way to examine the male and female data is to split the histogram we made into two different pictures: one for females and another for males. We can chain on (using <code>%&gt;%</code>) the command <code>gf_facet_grid()</code> after <code>gf_histogram()</code>. This will split the base histogram into separate histograms of <code>Thumb</code> for females and for males in a grid.</p>
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Using either the colored histogram or the separate histograms, does it seem like thumb length varies as a function of sex?</p>
-<p>Remember that putting something after the <code>~</code> means something gets changed on the x-axis. <code>gf_facet_grid()</code> works the same way. Putting the variable <code>Sex</code> after the <code>~</code> puts these two graphs in a row along the x-axis. Putting <code>Sex</code> <em>before</em> the <code>~</code> puts these two graphs in a column along the y-axis. The only difference is we have to include a period after the <code>~</code>, because this function always expects something after the <code>~</code> but we don’t have any variable we want to plot along the x-axis.</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This is more helpful than side-by-side because it’s easier to compare where the distributions are along the same <code>Thumb</code> axis. It seems that the distribution of thumb lengths for males is shifted higher relative to the female distribution.</p>
-<p>Also, it is immediately apparent that there are fewer males than females. This is when a measure like density (rather than count) comes in handy - it lets you see the distribution relative to itself rather than the range of values somewhere else.</p>
-<p>Adjust the following code to re-create these histograms as density plots.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Modify the code below to create density histograms.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Another way of thinking about <code>Sex</code> explaining variation in <code>Thumb</code> is to say that <code>Thumb</code> is really made up of two different distributions, one for males and one for females. Although the shape of these two histograms are roughly normal, the average male thumb is larger than the average female thumb. It almost seems like the whole male distribution is shifted higher along the x-axis. The center of the distribution is different across the two groups.</p>
-<p>This isn’t to say that just because we know someone’s sex we definitely know their thumb length. After all, there are both males and females with longer thumbs and both males and females with shorter thumbs. This variation among members of the same group is called <strong>unexplained variation</strong>. When we combine all the thumbs together in a single histogram, we are able to see how spread-out the overall distribution is. This gives us an idea of the total variation. When we divide the distribution up and look separately at the two histograms, we can see the variation left unexplained by grouping into males and females.</p>
-<p>Besides finding a difference in group means, notice that these group-specific histograms tend to have less variation than the single histogram. It’s as if some of the variation in <code>Thumb</code> has been reduced, or “accounted for” by <code>Sex</code>. Because we can only see the within-group variation after we divide the distribution up by <code>Sex</code>, another name for within-group variation is “leftover variation.”</p>
-<p>Even though there is still a lot of variation in thumb length left over after taking out the role of <code>Sex</code>, it is true that if we know someone’s sex we can be a little better at predicting their thumb length. A little better may not be great, but it is better than nothing.</p>
-<p>Now, remember any other variable you thought might be related to <code>Thumb</code>. Make a grid of histograms to investigate the association of that variable with thumb length. (Use a categorical variable for this exercise.)</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write some code to plot histograms of <code>Thumb</code> and another variable</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Here are a few example histograms you could have made. The gray histograms on the left make a grid of thumb length based on year in college. The colorful histograms are based on Race/Ethnicity.</p>
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Of the two variables used to create the faceted histograms above (year in college and race/ethnicity), which do you think does a better job predicting thumb length? In other words, which one seems to reduce within-group variation the most?</p>
 </section>
-<section id="sec-ch6-outcomes-and-explanatory-variables" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="sec-ch6-outcomes-and-explanatory-variables"><span class="header-section-number">6.6</span> Outcomes and explanatory variables</h2>
-<p>We now have a sense of what it means to explain variation in one variable by variation in another. In the previous section, for example, we saw that variation in thumb length could be explained, in part, by variation in sex. In this section we want to begin developing a language for describing the variables that play different roles in these relationships where one variable explains variation in another.</p>
-<p>Up to this point, we have distinguished between qualitative variables and quantitative variables. But our desire to explain variation in one variable with variation in another variable leads us to make another distinction: that is, between which variable is explained and which one is doing the explaining.</p>
-<p>The <strong>outcome variable</strong> is the variable whose variation we are trying to explain. It is the “target” thing we are trying to understand, and the “outcome” of some process we think led to it. In this course, the tools and methods we use will focus on a single outcome variable at one time.</p>
-<p>The <strong>explanatory variables</strong> are the variables we use to explain variation in the outcome variable. Although we will initially consider only one explanatory variable at a time, later in this course we will allow for the possibility of using multiple explanatory variables at a time.</p>
-<p>You may or may not have heard the terms “outcome variable” and “explanatory variable” before. We will use these terms throughout, but if you’ve taken statistics before, or read any research reports, you will no doubt have encountered a number of different terms used to represent the same distinction. Some of these are presented in the table below.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Outcome variable</th>
-<th style="text-align: center;">Explanatory variable</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Dependent variable (DV)</td>
-<td style="text-align: center;">Independent variable (IV)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Predicted variable</td>
-<td style="text-align: center;">Predictor variable</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Response variable</td>
-<td style="text-align: center;">Treatment variable</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Output variable</td>
-<td style="text-align: center;">Experimental variable</td>
-</tr>
-</tbody>
-</table>
-<p>It is important to figure out whether a variable is quantitative or qualitative. But it is equally important to figure out whether a variable is an outcome or explanatory variable. Making this latter distinction requires a greater understanding of the context that the data pertain to, and the purpose for collecting the data. Let’s think about a situation and try to figure out what the outcome variable might be.</p>
-<p>In the <code>tetrismemories</code> dataset, we have the results of an experiment where a researcher showed a traumatic video to participants and then randomly assigned them to one of four experimental conditions - no additional instruction (1), a reactivation task with photos from the video followed by playing tetris (2), playing tetris only (3), or the ractivation task only (4). Lastly, for the following 10 days, participants reported how many intrusive memories about the video they had.</p>
-<p>To simplify things, let’s make a new variable called <code>many_memories</code> that codes whether someone had a high (&gt;5) or low (up to 5) number of intrusive memories over the course of the experiment. Then the first six rows of the data frame for these two variables are shown below.</p>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The experimental condition a participant was in was recorded by the variable called <code>condition</code>. The high or low memory classification is called <code>many_memories</code>. Which do you think is the explanatory variable, and which is the outcome?</p>
-<p>This study was meant to understand what kind of intervention could reduce memories of traumatic experiences. Thus, <code>many_memories</code> is the outcome variable because it’s the variable we ultimately care about - it’s the one where we want to know what produces changes in it. The explanatory variable is <code>condition</code>, because the researchers manipulated it in order to see if that influenced variation in memories.</p>
-<p>Because these are both categorical variables, it’s not possible to make a nice normal distribution histogram like we saw above. Histograms only work for numerical outcome variables. Instead, here’s a <strong>bar graph</strong> to visualize the distribution of <code>many_memories</code> (using the function <code>gf_bar()</code>).</p>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You can use <code>gf_facet_grid()</code> with any plot, not just histograms. Try creating a bar graph of <code>many_memories</code> (like the one above), but chain on a facet grid to compare the outcome across conditions.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Create a bar graph of <code>many_memories</code>, then use <code>gf_facet_grid()</code> to compare the outcome across groups of condition.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="sec-ch6-point-and-jitter-plots" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="sec-ch6-point-and-jitter-plots"><span class="header-section-number">6.7</span> Point and jitter plots</h2>
-<p>We have learned how to make visualizations of outcome variables as a function of explanatory variables by making histograms and bar graphs for each explanatory group.</p>
-<p>A <strong>scatterplot</strong> is a common way to show the relationship between an outcome and an explanatory variable all on one plot. A scatterplot in <code>ggformula</code> can be made with the function <code>gf_point()</code>. Let’s try using <code>gf_point()</code> to examine <code>Thumb</code> lengths by <code>Sex</code>.</p>
-<div id="qwebr-insertion-location-19"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This is the first time we’re including both the explanatory variable and the outcome variable in the same function call, on either side of the <code>~</code> symbol. This results in a plot that, instead of making two separate histograms of the outcome variable for each explanatory variable, makes points in a 2D space that shows the value of each observation on each variable.</p>
-<p>You can change the color of the points with the argument <code>color</code> (much like we did before) and the size of the points with <code>size</code>.</p>
-<div id="qwebr-insertion-location-20"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Sometimes with scatterplots like this, it’s difficult to make out all the points because they overlap each other. This is particularly a problem when you have two variables of categorical or ordinal data that can’t have more than a few values:</p>
-<div id="qwebr-insertion-location-21"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We can <strong>jitter</strong> these points, or spread them out a little bit, so that you can see all the individual points better. We’ll use the function <code>gf_jitter()</code> to create a jitter plot depicting <code>Thumb</code> length by <code>Sex</code>. This function is just like making a <code>gf_point()</code> plot, except that the points will be a little jittered both vertically and horizontally.</p>
-<div id="qwebr-insertion-location-22"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>But now they’re <em>too</em> jittered - it’s hard to tell which points should correspond to each ordinal value. We can use the <code>width</code> and <code>height</code> arguments to change how the points get jittered. Height and width can be set to values between 0 and 1, which corresponds to the proportion of one unit in the variable value.</p>
-<div id="qwebr-insertion-location-23"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Much easier to see! In a jitter plot, a point being more to the left or right within the group doesn’t mean anything. The jitter is some random repositioning so the points do not overlap too much and obscure how many data points have that value.</p>
-<p>Just like a scatterplot, in a jitter plot you can change the size of the points by including the argument <code>size</code>. You can also change the transparency of the points using the argument <code>alpha</code>. <code>alpha</code> can take values from 0 (more transparent) to 1 (more opaque). This is another way of showing how many points are at one place - the darker the color, the more observations there.</p>
-<div id="qwebr-insertion-location-24"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try making jitter plots for a few of the other variables from the <code>student</code> dataframe. Play around with some of the arguments such as <code>height</code>, <code>width</code>, <code>color</code>, <code>size</code>, and <code>alpha</code> (<a href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_jitter">here</a> are the possible arguments). Try making a jitter plot one way, then switching which variable is on the x-axis and which on the y-axis. Does it work both ways?</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-25"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>There isn’t any restriction on what kind of variable you can put in the x- or y-axis for a jitter plot. You can put an outcome or explanatory variable in either position. You can also put a categorical or quantitative variable in either position. For example, in this jitter plot, we have put <code>Sex</code> on the y-axis and <code>Thumb</code> length on the x-axis.</p>
-<div id="qwebr-insertion-location-26"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Even though you can put the outcome variable anywhere, it is more common to put the outcome variable on the y-axis. We will follow that convention in our jitter plots because it conforms with what people expect, and thus makes them easier to interpret.</p>
-</section>
-<section id="sec-ch6-quantitative-explanatory-variables" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="sec-ch6-quantitative-explanatory-variables"><span class="header-section-number">6.8</span> Quantitative explanatory variables</h2>
-<p>So far we have considered both numerical (e.g., <code>Thumb</code>) and categorical (e.g., <code>many_memories</code>) outcomes. We have also looked at some categorical explanatory variables (e.g., <code>Sex</code> and <code>condition</code>). But we haven’t yet looked at any examples of quantitative explanatory variables.</p>
-<p>There isn’t any reason to think that we couldn’t. Perhaps a quantitative variable like height might help us predict thumb length. But how do we show variation between quantitative explanatory and quantitative outcome variables? There’s no unique “bins” for the explanatory data values.</p>
-<p>You might think the best option is to create those bins, and turn the quantitative variable into a categorical one by, say, grouping everyone taller than the median height value into one bin and everyone shorter than the median into another. Or making three groups the same way by making bins for “short,” “medium,” and “tall.” We did this earlier by binning number of <code>intrusive_memories</code> into high and low categories.</p>
-<p>This is called <strong>dichotomozing</strong>, but it is actually bad practice for the majority of use cases. When we do this, we are throwing away some of the information we have in our data. We know exactly how many inches tall each person is - why not use that information instead of just categorizing people as either tall or short?</p>
-<p>Let’s try another approach, a scatterplot of <code>Thumb</code> length by <code>Height</code>. Try using <code>gf_point()</code> with <code>Height</code> on the x-axis. Remember: when making plots, the convention is to put the outcome variable on the y-axis and the explanatory variable on the x-axis.</p>
-<div id="qwebr-insertion-location-27"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You can see the dots scattered around, but on a general upward trend. If you were to visualize a distribution on thumb for each general value of height, you would see that the distribution is slowly moving up. A student who is taller also tends to have a longer thumb, but there’s not an exact relationship.</p>
-<p>So, just as when we explained the variance of <code>Thumb</code> with a categorical variable, there appears to be some variation in <code>Thumb</code> that is explained by <code>Height</code>. But there is also variation left over after we have taken out the variation due to <code>Height</code>. I.e., there is variation on <code>Thumb</code> within the same value of <code>Height</code>.</p>
-</section>
-<section id="sec-ch6-multiple-plots" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="sec-ch6-multiple-plots"><span class="header-section-number">6.9</span> Putting multiple plots together</h2>
-<p>The <code>gf_point()</code> and <code>gf_jitter()</code> functions are useful. They emphasize that data are made up of individual numbers, and yet they help us notice patterns in those individual points. There are times, however, when we want to transcend the individual data points and focus only on data summaries.</p>
-<p><strong>Boxplots</strong> are helpful in this regard, and are especially useful for comparing the features of the distribution of an outcome variable across different levels of a categorical explanatory variable.</p>
-<p>Here’s how we would create a boxplot of <code>Thumb</code> length broken down by <code>Sex</code>.</p>
-<div id="qwebr-insertion-location-28"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In making boxplots we can play with the arguments <code>color</code> and <code>fill</code> much like we did before.</p>
-<div id="qwebr-insertion-location-29"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Boxplots visually tell us the quantiles of the data. The rectangle at the center of the boxplot shows us where the middle 50% of the data points fall on the scale of the outcome variable (i.e., the IQR). The thick line inside the box is the median. There are also lines, called whiskers, above and below the box. Another name for the boxplot is box-and-whisker plot. The points that appear past the whiskers are considered outliers by this function (anything that is greater than 75%ile + 1.5*IQR, or less than 25%ile - 1.5*IQR). This isn’t the only way to define an outlier, but is a pretty common one. The length of the whiskers depicts the max and min of the data range - when there are outliers, the end of the whisker depicts the max or min value that is not considered an outlier.</p>
-<p>In <code>ggformula</code>, we can chain on multiple functions to put multiple types of plots in the same image. It’s like adding a layer of one plot on top of a layer of the first one below it. When chaining between multiple <code>ggformula</code> plots, the later functions “inherits” the same variables and data so we don’t need to type those in again. Handy!</p>
-<div id="qwebr-insertion-location-30"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In this situation where we are looking at the variation in <code>Thumb</code> length by <code>Sex</code>, the boxes are in different vertical positions. The male box is higher than the female box. How do you think we should interpret the placement of the boxes?</p>
-<p>Instead of an explanatory variable like <code>Sex</code>, let’s try one that is unlikely to help us explain the variation in thumb length.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Modify this boxplot below to look at <code>Thumb</code> length varying by <code>Job</code> instead of <code>Sex</code>.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-31"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Notice that in this boxplot, the boxes are at approximately the same vertical position and are about the same size. The one exception is the box for the full-time level of <code>Job</code>. The full-time box doesn’t contain many datapoints, so, we wouldn’t want to draw any conclusions about the relationship between working full time and thumb length. Most of the students in the <code>studentdata</code> data frame either work part-time or not at all. The thumbs of students with no job are not much longer or shorter than thumbs of students with part-time jobs. But within each group, their thumb lengths vary a lot. There are long-thumbed and short-thumbed students with part-time jobs and with no jobs. Thus, it doesn’t seem like job type explains variation in thumb length.</p>
-<p>In summary, visualization helps see variation in data, and patterns of co-variation <em>between</em> variables reveals how they are related to each other. Below are tables of all the visualization methods we learned in this chapter. It would be very helpful to keep this in your R cheatsheet to refer to whenever you need!</p>
-<p><strong>Visualizations for one variable</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Variable</th>
-<th style="text-align: center;">Visualization type</th>
-<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Bar graph</td>
-<td style="text-align: center;"><code>gf_bar()</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Histogram</td>
-<td style="text-align: center;"><code>gf_histogram()</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Boxplot</td>
-<td style="text-align: center;"><code>gf_boxplot()</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Visualizations for two variables</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Outcome variable</th>
-<th style="text-align: center;">Explanatory variable</th>
-<th style="text-align: center;">Visualization type</th>
-<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Faceted bar graph</td>
-<td style="text-align: center;"><code>gf_bar() |&gt; gf_facet_grid(.)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Faceted histogram</td>
-<td style="text-align: center;"><code>gf_histogram() |&gt; gf_facet_grid(.)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Boxplot</td>
-<td style="text-align: center;"><code>gf_boxplot()</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Jitter plot</td>
-<td style="text-align: center;"><code>gf_jitter()</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Same as above, axes flipped</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Scatterplot</td>
-<td style="text-align: center;"><code>gf_point()</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="sec-ch6-resources" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="sec-ch6-resources"><span class="header-section-number">6.10</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="6.10.1">
-<h3 data-number="6.10.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">6.10.1</span> Learning goals</h3>
+<section id="sec-ch6-resources" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-ch6-resources"><span class="header-section-number">6.6</span> Chapter resources</h2>
+<section id="learning-goals" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">6.6.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
 <li>Explain what “explain” means</li>
@@ -2589,9 +2371,17 @@ Note
 <li>Make the corre ct type of plot for each type of quantitative/categorical variable relationship</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="6.10.2">
-<h3 data-number="6.10.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">6.10.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">6.6.2</span> New concepts</h3>
 <ul>
+<li><strong>scatterplot</strong>: a type of data visualization plot that shows the relationship between two quantitative variables by plotting each observation as a point in a 2D space.</li>
+<li><strong>probability</strong>: the likelihood of a specific event occurring.</li>
+<li><strong>association</strong>: a relationship between variables such that knowing the value of one improves predictions about the value of the other.</li>
+<li><strong>independence</strong>: a relationship between variables where one variable contains no information to help make predictions about the value of the other variable.</li>
+<li><strong>association form</strong>: the functional relationship between two associated variables; what mathematical function is needed to transform <span class="math inline">\(x\)</span> values into <span class="math inline">\(y\)</span> values.</li>
+<li><strong>linear association</strong>: a relationship between two variables such that consistent changes in <span class="math inline">\(x\)</span> correspond to consistent changes in <span class="math inline">\(y\)</span>.</li>
+<li><strong>non-linear monotonic association</strong>: a relationship between two variables such that an increase in <span class="math inline">\(x\)</span> corresponds to strictly an increase or decrease in <span class="math inline">\(y\)</span>, but by an inconsistent amount.</li>
+<li><strong>non-linear non-monotonic association</strong> = a relationship between two variables such that there is no simple transform function between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, but knowing a value of <span class="math inline">\(x\)</span> still decreases uncertainty about <span class="math inline">\(y\)</span>.</li>
 <li><strong>explain variation</strong>: When knowing the value on some variable A helps you predict the value on another variable B better than random guessing, then variable A explains some variation in variable B.</li>
 <li><strong>effect</strong>: If a variable A explains variation in variable B, there is an effect of variable A. The magnitude of the effect is how much variation A explains.</li>
 <li><strong>unexplained variation</strong>: Variation in a variable that is not currently explained by another other variable under consideration.</li>
@@ -2604,8 +2394,8 @@ Note
 <li><strong>dichotomization/binning</strong>: The process of dividing an interval variable into fewer bins and treating it as an ordinal or categorical variable.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="6.10.3">
-<h3 data-number="6.10.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">6.10.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">6.6.3</span> New R functionality</h3>
 <ul>
 <li><a href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_labs">ggformula::gf_refine()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">ggplot2::scale_fill_manual() &amp; scale_color_manual()</a></li>
@@ -2616,8 +2406,8 @@ Note
 <li><a href="https://www.mosaic-web.org/ggformula/reference/gf_boxplot.html">ggformula::gf_boxplot()</a></li>
 </ul>
 </section>
-<section id="further-reading" class="level3" data-number="6.10.4">
-<h3 data-number="6.10.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">6.10.4</span> Further reading</h3>
+<section id="further-reading" class="level3" data-number="6.6.4">
+<h3 data-number="6.6.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">6.6.4</span> Further reading</h3>
 
 
 </section>
@@ -2627,6 +2417,11 @@ Note
 <ol>
 <li id="fn1"><p>You may have an instinctual answer to this already, but it’s always good to back up our pre-concieved notions with data!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Note <em>on average</em>. For just one guess, you might get lucky and be right on target! Or get unlucky and be way off. If you repeatedly guessed though, the difference between your guess and the actual value would average to 3.61.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>It is possible to quantify non-monotonic associations too, but it is less common to do and the math is more complex. <a href="https://lcalem.github.io/blog/2018/10/17/mutual-information">This</a> is a decent explanation that will make sense once you’ve read <span class="quarto-unresolved-ref">?sec-ch8</span>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>read the <a href="https://www.rdocumentation.org/packages/pbdDMAT/versions/0.5-1/topics/covariance">documentation</a> for the <code>cov()</code> function to see what other <code>use =</code> options there are.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Named after the mathematician who invented it, Karl Pearson<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>In fact if you work with human data, you will rarely get an association this large. So enjoy it now!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Named after yet another inventive mathematician, Charles Spearman<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
