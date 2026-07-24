@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -371,7 +390,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"studentdata <- read.csv(\"https://raw.githubusercontent.com/smburns47/Psyc158/main/studentdata.csv\")","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# your code here","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Middle ~ Sex, data = studentdata, color = \"orange\", size = 5) ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Middle ~ Sex, data = studentdata, color = \"orange\", size = 5) ","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Middle ~ Thumb, data = studentdata) %>% \n    gf_refine(., coord_cartesian(ylim = c(0,140))) #the argument ylim takes a vector \n                                                   #defining the min and max of the axis","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Middle ~ Thumb, data = studentdata) %>%\n    gf_refine(., coord_cartesian(ylim = c(0, 200), xlim = c(0,200))) ","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"filter(studentdata, RaceEthnic %in% c(\"Asian\",\"White\")) %>%\n    gf_bar( ~ RaceEthnic, data = .)      #piping the filtered data to the data argument","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"filter(studentdata, RaceEthnic %in% c(\"Asian\",\"White\")) %>%\n    gf_bar( ~ RaceEthnic, data = .) %>%\n    gf_refine(., coord_cartesian(ylim = c(45, 55)))","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, height = 0.1, width = 0.1)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, \n          height = 0.1, width = 0.1, xlab = \"Interest in Statistics\")","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, \n          height = 0.1, width = 0.1, \n          xlab = \"Interest in Statistics\", ylab = \"Anxious About Doing Math\")","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(MathAnxious ~ StatsInterest, data = studentdata, \n          height = 0.1, width = 0.1, \n          xlab = \"Interest in Statistics\", ylab = \"Anxious About Doing Math\", \n          title = #Your code here)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata %>%\nmutate(., MathAnxious_ordinal = factor(MathAnxious, \n          levels = c('Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Agree', 'Strongly Agree'))) %>%\ngf_jitter(MathAnxious_ordinal ~ StatsInterest, data = ., \n          height = 0.1, width = 0.1, \n          xlab = \"Interest in Statistics\", ylab = \"Anxious About Doing Math\")","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_jitter(Thumb ~ Sex, data = studentdata, width = 0.2, height = 0, \n          color = ~ Sex, alpha = .5, size = 3) %>%\n    gf_labs(.,\n        title = \"YOUR TITLE HERE\",\n        subtitle = \"can have a subtitle too\",\n        color = \"rename the legend\",\n        x = \"x-label\",\n        y = \"what's here?\",\n        caption = \"describe the point of this plot\"\n      )","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata, fill = ~ Sex) %>%\n    gf_refine(., scale_fill_manual(values = c(\"purple\", \"orange\")))","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"webr::install(\"viridis\") \nlibrary(viridis)            \n\nviridis(5)","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_histogram(~ Thumb, data = studentdata, fill = ~ Sex) %>%\n    gf_refine(., scale_fill_viridis(discrete = TRUE))\n\ngf_point(Middle ~ Thumb, data = studentdata, color = ~ Thumb, size = 3) %>%\n    gf_refine(., scale_color_viridis()) \n#discrete = FALSE is the default value in scale_color_viridis(), so not required to add it here","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Middle ~ Thumb, data = studentdata, color = ~ Thumb, size = 3) %>%\n    gf_refine(., scale_color_viridis(discrete = FALSE, option = \"magma\"))","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"colorpalette <- viridis(5, option = \"plasma\")\nprint(colorpalette)\n\n#using the 2nd and 4th generated colors\ngf_histogram(~ Thumb, data = studentdata, fill = ~ Sex) %>%\n    gf_refine(., scale_fill_manual(values = c(colorpalette[2], colorpalette[4])))\n\n#using the 3rd and 5th generated colors\ngf_histogram(~ Thumb, data = studentdata, fill = ~ Sex) %>%\n    gf_refine(., scale_fill_manual(values = c(colorpalette[3], colorpalette[5])))","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\nggplot(studentdata, aes(x = Sex)) +\n  geom_histogram()","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Sex)) +\n  geom_histogram()","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#two variable plot, so make sure to include a y variable in the aesthetic mapping!\nggplot(studentdata, aes(x = Sex, y = Height)) +\n  geom_boxplot()","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height, fill = Sex)) +\n  geom_histogram()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height)) +\n  geom_histogram() + \n  facet_wrap(~Sex)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Sex, y = Height)) +\n  geom_boxplot() + \n  geom_point()","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Sex, y = Height)) +\n  geom_boxplot() + \n  geom_point(size = 3)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Sex, y = Height)) +\n  geom_boxplot() + \n  geom_point(size = 3, alpha = 0.5)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Sex, y = Height)) +\n  geom_boxplot() + \n  geom_jitter(width = 0.1)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Hand, y=Height)) + \n  geom_point() + \n  coord_cartesian(ylim=c(0,80), xlim=c(0,280))","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#we can pipe our filtered dataset directly into the first argument of ggplot()\nfilter(studentdata, Ethnicity %in% c(\"Asian\",\"Latino\")) |>\n  ggplot(aes(x=Ethnicity)) + \n  geom_bar() ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"filter(studentdata, Ethnicity %in% c(\"Asian\",\"Latino\")) |>\n  ggplot(aes(x=Ethnicity)) + \n  geom_bar() + \n  coord_cartesian(ylim=c(18,22))","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=StatsBeliefs_3, y=StatsEmotions_10)) + \n  geom_jitter(width = 0.2, height = 0.2)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=StatsBeliefs_3, y=StatsEmotions_10)) +\n  geom_jitter(width = 0.2, height = 0.2) +\n  labs(x = \"Self efficacy belief\",\n       y = \"Anxiety while learning statistics\")","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- studentdata |>\n  mutate(\n    Beliefs_ordinal = factor(\n      StatsBeliefs_3, \n      levels = c('Strongly disagree', 'Somehwat disagree', 'Neither agree nor disagree', 'Somewhat agree', 'Strongly agree')\n    ),\n    Emotions_ordinal = factor(\n      StatsEmotions_10, \n      levels = c('Not at all', 'A little', 'Somewhat', 'Quite a bit', 'Very strongly')\n    )\n  )\n\nggplot(studentdata, aes(x=Beliefs_ordinal, y=Emotions_ordinal)) +\n  geom_jitter(width = 0.2, height = 0.2) +\n  labs(x = \"Self efficacy belief\",\n       y = \"Anxiety while learning statistics\")","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Beliefs_ordinal, y=Emotions_ordinal, color=Emotions_ordinal)) +\n  geom_jitter(width = 0.2) +\n    labs(title = \"YOUR TITLE HERE\",\n        subtitle = \"can have a subtitle too\",\n        color = \"rename the legend\",\n        x = \"x-label\",\n        y = \"what's here?\",\n        caption = \"describe the point of this plot\"\n      )","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height, fill = Sex)) +\n  geom_histogram()","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height, fill = Sex)) +\n  geom_histogram() + \n  scale_fill_manual(values = c(\"purple\", \"orange\"))","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height, fill = Sex)) +\n  geom_histogram() + \n  scale_fill_manual(values = c(\"#2F5874\", \"#F28C4B\"))","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x = Height, fill = Sex)) +\n  geom_histogram() + \n  scale_fill_manual(values = c(\"#D6DEE3\", \"#D6E3DF\"))","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1625,10 +1644,39 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -1739,39 +1787,29 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-ch7-reporting-distributions" id="toc-sec-ch7-reporting-distributions" class="nav-link active" data-scroll-target="#sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting distribution summaries</a>
+  <li><a href="#sec-ch7-reporting-distributions" id="toc-sec-ch7-reporting-distributions" class="nav-link active" data-scroll-target="#sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting summaries</a>
   <ul class="collapse">
   <li><a href="#central-tendency" id="toc-central-tendency" class="nav-link" data-scroll-target="#central-tendency"><span class="header-section-number">7.1.1</span> Central tendency</a></li>
   <li><a href="#spread" id="toc-spread" class="nav-link" data-scroll-target="#spread"><span class="header-section-number">7.1.2</span> Spread</a></li>
   <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape"><span class="header-section-number">7.1.3</span> Shape</a></li>
+  <li><a href="#associations" id="toc-associations" class="nav-link" data-scroll-target="#associations"><span class="header-section-number">7.1.4</span> Associations</a></li>
   </ul></li>
-  <li><a href="#sec-ch7-importance-of-visualization" id="toc-sec-ch7-importance-of-visualization" class="nav-link" data-scroll-target="#sec-ch7-importance-of-visualization"><span class="header-section-number">7.2</span> The importance of good visualization</a></li>
-  <li><a href="#sec-ch7-anatomy-of-plot" id="toc-sec-ch7-anatomy-of-plot" class="nav-link" data-scroll-target="#sec-ch7-anatomy-of-plot"><span class="header-section-number">7.3</span> Anatomy of a plot</a></li>
-  <li><a href="#sec-ch7-principles-of-good-visualization" id="toc-sec-ch7-principles-of-good-visualization" class="nav-link" data-scroll-target="#sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.4</span> Principles of good visualization</a>
+  <li><a href="#sec-ch7-plot-types" id="toc-sec-ch7-plot-types" class="nav-link" data-scroll-target="#sec-ch7-plot-types"><span class="header-section-number">7.2</span> Plot types</a></li>
+  <li><a href="#sec-ch7-show-the-data" id="toc-sec-ch7-show-the-data" class="nav-link" data-scroll-target="#sec-ch7-show-the-data"><span class="header-section-number">7.3</span> Show the data</a></li>
+  <li><a href="#dont-distort-the-data" id="toc-dont-distort-the-data" class="nav-link" data-scroll-target="#dont-distort-the-data"><span class="header-section-number">7.4</span> Don’t distort the data</a></li>
+  <li><a href="#label-the-data" id="toc-label-the-data" class="nav-link" data-scroll-target="#label-the-data"><span class="header-section-number">7.5</span> Label the data</a></li>
+  <li><a href="#remember-the-limits-of-human-perception" id="toc-remember-the-limits-of-human-perception" class="nav-link" data-scroll-target="#remember-the-limits-of-human-perception"><span class="header-section-number">7.6</span> Remember the limits of human perception</a></li>
+  <li><a href="#sec-ch7-resources" id="toc-sec-ch7-resources" class="nav-link" data-scroll-target="#sec-ch7-resources"><span class="header-section-number">7.7</span> Chapter resources</a>
   <ul class="collapse">
-  <li><a href="#rule-1---show-the-data-variation" id="toc-rule-1---show-the-data-variation" class="nav-link" data-scroll-target="#rule-1---show-the-data-variation"><span class="header-section-number">7.4.1</span> Rule 1 - Show the data variation</a></li>
-  <li><a href="#rule-2---maximize-the-data-to-ink-ratio" id="toc-rule-2---maximize-the-data-to-ink-ratio" class="nav-link" data-scroll-target="#rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.4.2</span> Rule 2 - Maximize the data to ink ratio</a></li>
-  <li><a href="#rule-3---avoid-chart-junk" id="toc-rule-3---avoid-chart-junk" class="nav-link" data-scroll-target="#rule-3---avoid-chart-junk"><span class="header-section-number">7.4.3</span> Rule 3 - Avoid chart junk</a></li>
-  <li><a href="#rule-4---avoid-distorting-the-data" id="toc-rule-4---avoid-distorting-the-data" class="nav-link" data-scroll-target="#rule-4---avoid-distorting-the-data"><span class="header-section-number">7.4.4</span> Rule 4 - Avoid distorting the data</a></li>
-  <li><a href="#rule-5---readable-data-labels" id="toc-rule-5---readable-data-labels" class="nav-link" data-scroll-target="#rule-5---readable-data-labels"><span class="header-section-number">7.4.5</span> Rule 5 - Readable data labels</a></li>
-  </ul></li>
-  <li><a href="#sec-ch7-human-readability" id="toc-sec-ch7-human-readability" class="nav-link" data-scroll-target="#sec-ch7-human-readability"><span class="header-section-number">7.5</span> Accomodating human readability</a>
-  <ul class="collapse">
-  <li><a href="#colorblindness" id="toc-colorblindness" class="nav-link" data-scroll-target="#colorblindness"><span class="header-section-number">7.5.1</span> Colorblindness</a></li>
-  <li><a href="#perceptual-simplicity" id="toc-perceptual-simplicity" class="nav-link" data-scroll-target="#perceptual-simplicity"><span class="header-section-number">7.5.2</span> Perceptual simplicity</a></li>
-  </ul></li>
-  <li><a href="#sec-ch7-resources" id="toc-sec-ch7-resources" class="nav-link" data-scroll-target="#sec-ch7-resources"><span class="header-section-number">7.6</span> Chapter resources</a>
-  <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">7.6.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">7.6.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">7.6.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.6.4</span> Further reading</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">7.7.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">7.7.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">7.7.3</span> New R functionality</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
 <script type="module" id="qwebr-monaco-editor-init">
 
@@ -2077,17 +2115,18 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 
 <p><img src="images/header-ch7.png" class="img-fluid"></p>
+<p>So far you’ve learned several ways to summarize data - shape, center, and spread of distributions, and form, strength, and direction of multivariable associations. Congrats, you’re doing statistics! Specifically, you are doing what is called descriptive statistics - calculating numbers that describe a sample of data.</p>
+<p>However, there’s not much point to doing all that work if you can’t share the results with other people. Doing statistics well is important, but equally important is the <em>communication</em> of your statistics. Otherwise, no one else will be able to use your insights to make different decisions or improve lives. In this chapter, we will discuss important principles of clearly communicating statistical results.</p>
 <section id="sec-ch7-reporting-distributions" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting distribution summaries</h2>
-<p>Shape, central tendency, and spread are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! Specifically, you are doing what is called descriptive statistics - calculating numbers that describe a sample of data.</p>
-<p>However, there’s not much point to doing all that work if you can’t share the results with other people. Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting summaries</h2>
+<p>Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> and <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>:</p>
 <section id="central-tendency" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">7.1.1</span> Central tendency</h3>
 <p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>Mode</em>). Reporting the mean in the body of some text may look like:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5) than the posttest score (<em>M</em> = 65.3).”</p>
+<p>“The pre-test score for the group is lower (<em>M</em> = 20.5) than the post-test score (<em>M</em> = 65.3).”</p>
 <p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
 <p>“The median time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
-<p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pretest and posttest scores for male and females on an aptitude test. Notice that the statement about the mean being summarized in this particular table is presented in the table title.</p>
+<p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pre-test and post-test scores for male and females on a test. Notice that the title of the table is a clear description of what kind of information is in it.</p>
 <p><strong>Mean Scores for Pre- and Post-test by Gender</strong></p>
 <table class="caption-top table">
 <thead>
@@ -2113,122 +2152,29 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="spread" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="spread"><span class="header-section-number">7.1.2</span> Spread</h3>
-<p>Descriptive statistics of variables involving interval or ordinal scales often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
-<p>When reporting the descriptive statistical summary of many groups, the results may be summarized in a table as well.</p>
+<p>Summary statistics of variables involving numeric values often report both measurements of central tendency and spread together. Usually, standard deviation is the variation score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> (e.g., IQR and IQV) or just the word of the measure. For example:</p>
+<p>“The pre-test score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the post-test score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
+<p>When reporting the descriptive statistical summaries of many groups, the results may be summarized in a table as well.</p>
 </section>
 <section id="shape" class="level3" data-number="7.1.3">
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="shape"><span class="header-section-number">7.1.3</span> Shape</h3>
-<p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
-<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
-<p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
-<p><strong>Visualizations for one variable</strong></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Variable</th>
-<th style="text-align: center;">Visualization type</th>
-<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Bar graph</td>
-<td style="text-align: center;"><code>gf_bar()</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Histogram</td>
-<td style="text-align: center;"><code>gf_histogram()</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Boxplot</td>
-<td style="text-align: center;"><code>gf_boxplot()</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Visualizations for two variables</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 31%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Outcome variable</th>
-<th style="text-align: center;">Explanatory variable</th>
-<th style="text-align: center;">Visualization type</th>
-<th style="text-align: center;">R code (<code>gg_formula</code> package)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Faceted bar graph</td>
-<td style="text-align: center;"><code>gf_bar() |&gt; gf_facet_grid(.)</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Faceted histogram</td>
-<td style="text-align: center;"><code>gf_histogram() |&gt; gf_facet_grid(.)</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Boxplot</td>
-<td style="text-align: center;"><code>gf_boxplot()</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">Jitter plot</td>
-<td style="text-align: center;"><code>gf_jitter()</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Categorical</td>
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Same as above, axes flipped</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Quantitative</td>
-<td style="text-align: center;">Scatterplot</td>
-<td style="text-align: center;"><code>gf_point()</code></td>
-</tr>
-</tbody>
-</table>
-<p>So far you’ve learned several ways to visualize data - histograms, scatterplots, boxplots, etc. You’ve also learned how to make changes to those graphs like adjusting color, data size, or faceting. Up to this point, you’ve made choices on exactly what to do with those options on your own (maybe according to your preferences, or whatever let you do the assignment most quickly).</p>
-<p>However, visualizations are a powerful way of not just understanding your data yourself, but also communicating about it to other people. Thus there are important principles to follow so that your audience will see the point you intend to make.</p>
+<p>Generally distribution shapes aren’t reported[^Even though they will be very important to us later when choosing what additional kinds of analyses to do]. Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your summaries. So a complete reporting in APA style would look something like:</p>
+<p>“The pre-test score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the post-test score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
+</section>
+<section id="associations" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="associations"><span class="header-section-number">7.1.4</span> Associations</h3>
+<p>When talking about associations between more than one variable, correlation is the most common metric to report. APA style for correlations calculated within samples is the italic <em>r</em>, reported along side the sample size used to calculate it. Generally it’s good practice to name what type of correlation you are using (e.g., Pearson vs.&nbsp;Spearman), though sometimes people leave this name out. An APA-style of report for an association would look like:</p>
+<p>“There was a positive relationship between self-reported efficacy and post-test score (<em>r</em> = 0.45, <em>N</em> = 74).”</p>
 </section>
 </section>
-<section id="sec-ch7-importance-of-visualization" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sec-ch7-importance-of-visualization"><span class="header-section-number">7.2</span> The importance of good visualization</h2>
-<p>Here’s a historic example of just how important it can be to visualize your data well. On January 28, 1986, the Space Shuttle Challenger exploded 73 seconds after takeoff, killing all 7 of the astronauts on board. As when any such disaster occurs, there was an official investigation into the cause of the accident. It found that an O-ring connecting two sections of the solid rocket booster leaked, resulting in failure of the joint and explosion of the large liquid fuel tank.</p>
-<p><img src="images/ch7-challenger.png" width="400"></p>
-<p>The investigation also found that prior to the accident, many aspects of the NASA decision making process were flawed. In particular, investigators focused on a meeting between NASA staff and engineers from Morton Thiokol (a contractor who built the solid rocket boosters). The engineers were particularly concerned for launch day because the temperatures were forecast to be very cold, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides describing outcomes from various past launches.</p>
-<p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one below, which highlights two important facts. First, it shows that the amount of O-ring damage was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the red shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive for why cold temperatures would mean likely O-ring failure.</p>
-<p><img src="images/ch7-challengerdamage.png" width="750"></p>
-</section>
-<section id="sec-ch7-anatomy-of-plot" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch7-anatomy-of-plot"><span class="header-section-number">7.3</span> Anatomy of a plot</h2>
-<p>The goal of plotting data is to give a visually-discernable summary of a dataset in 2D format. We refer to the dimensions as axes – the horizontal axis is called the X-axis and the vertical axis is called the Y-axis. We can arrange the data along the axes in a way that highlights the data values. These values may be either continuous or categorical.</p>
-<p>There are many different types of plots that we can use, which have different advantages and disadvantages. Let’s say that we are interested in characterizing the difference in height between men and women in the <code>studentdata</code> dataset. The figure below shows four different ways to plot these data - some of these we discussed in the last chapter, and one is new.</p>
-<p><img src="images/ch7-plottypes.png" width="550"></p>
-<p>Now we will begin to discuss <em>why</em> we should choose to use some of these over others.</p>
-<p>The bar graph in panel A shows the difference in means, but doesn’t show us how much spread there is in the data around these means – and as we will see later, knowing this is essential to determine whether we think the difference between the groups is large enough to be important.</p>
-<p>The second panel B shows the bars with all of the jittered data points overlaid. This makes it a bit clearer that the distributions of height for men and women are overlapping, but it’s still hard to see due to the large number of data points focused on one spot.</p>
-<p>In general we prefer using a plotting technique that provides a clearer view of the distribution of the data points. In panel C, we see one example of a <strong>violin plot</strong>, which plots the distribution of data in each condition (after smoothing it out a bit). The name of this plot comes from the fact that it sort of resembles a violin shape. The fatter part of the “violin” is where there is more data, the skinnier parts are the tails of the distribution. You can make a plot like this in R using <code>gf_violin()</code>.</p>
-<p>Another option is the boxplot shown in panel D, which shows the median (central line), a measure of variability (the width of the box, which is based on the interquartile range), and any outliers (noted by the points at the ends of the lines). Violin plots and boxplots are both effective ways to communicate the central tendency of each group as well as provide a good feel for the distribution of the data.</p>
-<p>Let’s explore the differences between making a boxplot and a violin plot. In the code window below, write a function that will plot <code>Thumb</code> explained by <code>RaceEthnic</code> in <code>studentdata</code>, with colors varying by <code>RaceEthnic</code>.</p>
+<section id="sec-ch7-plot-types" class="level2 page-columns page-full" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-ch7-plot-types"><span class="header-section-number">7.2</span> Plot types</h2>
+<p>Besides clearly <em>talking</em> about one’s results, it is also important to clearly <em>show</em> them. In fact a plot can be more effective than a description - a picture is worth a thousand words, after all. This is increasingly true in the online era, when most people encounter your findings through a picture on a digital media feed. For this reason, we will spend the remainder of the chapter on principles of good data visualization.</p>
+<p>We’ve already learned some types of plots that communicate data summaries. To review, a histogram summarizes the distribution of one numeric variable while a scatter plot summarizes the association between two numeric variables. However, these aren’t the best way to show all types of data.</p>
+<p>For instance, let’s consider a categorical variable from the <code>studentdata</code> dataset, <code>Sex</code>. If we wanted to know how repsonses on this variable were distributed, we might want to something like a histogram. But if we try to plot it with <code>geom_histogram()</code>:</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="page-columns page-full"><p>This error is because a histogram is for numeric data where the values can be ordered on a number line along the x-axis. The values of this <code>Sex</code> variable are categorical without clear ordering, so we need to use a slightly different kind of plot called a <strong>bar graph</strong>. To do so, replace the <code>geom_histogram()</code> function in the visualization code with the function for this kind of plot, <code>geom_bar()</code>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>bar graph</strong> = a type of data visualization that plots values of a categorical variable on the x-axis and number of data points in each category on the y-axis.</span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2239,144 +2185,124 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write code for making a boxplot of <code>Thumb ~ RaceEthnic</code>, with varying colors.</p>
+<p>Fix this plotting code so that it generates a bar graph.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now, simply replace <code>gf_boxlplot</code> with <code>gf_violin</code> and see what happens.</p>
-</div>
-</div>
+<p>A bar graph looks a lot like a histogram, in that the x-axis shows values on the variable and the y-axis shows how many observations are each value. The difference is that these values on the x-axis can be put in any order. By default <code>geom_bar()</code> will order the values alphabetically, but you can also specify a different order if you want with other code modifications we will get to later.</p>
+<p>For plots of two variables, there are even more options. While the scatter plot effectively visualizes the association between two numeric variables, this plot again needs the variable values to be quantitatively ordered. What do we do if on variable is categorical like <code>Sex</code>?</p>
+<div class="page-columns page-full"><p>A <strong>boxplot</strong> is sort of a combination of a bar plot and histogram for a categorical <span class="math inline">\(x\)</span> variable and a numeric <span class="math inline">\(y\)</span> variable. On the x-axis are the different values of the categorical variable. On the y-axis, the plot show a summary of the distribution of <span class="math inline">\(y\)</span> values within each category of <span class="math inline">\(x\)</span>. We can make this type of plot with the function <code>geom_boxplot()</code>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>boxplot</strong> = a type of data visualization that shows the distribution of a numeric variable for different categories of a categorical variable.</span></div></div>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>What sort of information about the data is easier to see in a boxplot? What sort of information is easier to see in a violin plot?</p>
-</section>
-<section id="sec-ch7-principles-of-good-visualization" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="sec-ch7-principles-of-good-visualization"><span class="header-section-number">7.4</span> Principles of good visualization</h2>
-<p>Many books have been written on effective visualization of data. There are some principles that most of these authors agree on, while others are more contentious. Here we summarize some of the major principles.</p>
-<section id="rule-1---show-the-data-variation" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="rule-1---show-the-data-variation"><span class="header-section-number">7.4.1</span> Rule 1 - Show the data variation</h3>
-<p>Let’s say that you performed a study that examined the relationship between dental health and time spent flossing, and you would like to visualize the data. The figure below shows four possible presentations of these data.</p>
-<p><img src="images/ch7-dental.png" width="550"></p>
-<p>In panel A, we don’t see the data points, just a line expressing the relationship between the data. This line implies an explanatory relationship. It says that, for observations that have more flossing, we would expect better dental health. However, this plot is clearly not optimal, because we can’t actually see what the underlying data look like. We don’t know anything about the data spread or how well this line fits the data.</p>
-<p>Panels B-D show three possible outcomes from plotting the actual data, where each plot shows a different way that the data might have looked. If we saw the plot in Panel B, we would probably be suspicious – rarely would real data follow such a precise pattern. The data in Panel C, on the other hand, look like real data – they show a general trend, but they are messy, as data in the world usually are. The data in Panel D show us that the apparent relationship between the two variables is solely caused by one individual, who we would refer to as an outlier because they fall so far outside of the pattern of the rest of the group. It should be clear that we probably don’t want to conclude very much from a relationship that is driven by one data point. This figure highlights why it is always important to look at the raw data and its variation before putting too much faith in any summary of the data.</p>
-<p>Below is a scatterplot of <code>Middle</code> varying by <code>Sex</code>. The density of the distributions is pretty tight, so with this code it is hard to see all the datapoints. Make at least one change to the plot so that it is easier to see the data points.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make at least one change to this plot to make the data stand out better.</p>
-</div>
-</div>
+<p>You should see a box (hence the name) for each category of <code>Sex</code>. The thick line in the middle of the box represents the median value of <code>Height</code> for that category. The top and bottom of the box represent the 75th and 25th percentiles (the bounds of the IQR) of the distribution, respectively. Lastly, the vertical lines represent the rest of the distribution range<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Occasionally you will see some dots outside of the range lines - these would be values that the function has flagged as outliers due to unusually high or low value.</p>
+<p>Based on what you can see in this plot, does it look like there is an association between <code>Sex</code> and <code>Height</code>? Would you adjust your guess about someone’s height if you knew their sex?</p>
+<p>Another way to plot two variables at once is to use a one-variable plot, but <em>color</em> the data points based on their value in another variable. To do this, we add a <code>fill =</code> or <code>color =</code> argument to the <code>aes()</code> call. <code>fill</code> will fill in a bar, while <code>color</code> will set the color of lines or points.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>That’s for making the data distribution most evident. You also want your broader message to stand out - again, think about <em>why</em> you’re showing people this graph. Are they understanding what you want them to understand? In the plot above, even if you changed it to a jitter plot, changed the point transparency, etc., it might still be hard to see from a glance where the central tendency of each group is, or which group is which. People can probably figure it out by looking harder, but in the real world we want things to be as cognitively easy for our readers as possible.</p>
-<p>Thus, it’s good to choose plot styles and elements that highlight your main message. For this plot, we might be trying to say “male students have generally longer middle fingers than female students.” This has two important pieces to communicate - the central tendency of a group, and the distinctness of the groups. It’s a good rule of thumb that, when you have more than one group of data in a plot, you change the color of the data to correspond to each group. In addition, if the central tendency is the main summary statistic you care about, choose a plot type that highlights that (such as a violin plot or a boxplot).</p>
-<p>Below is the same basic scatterplot. Try to switch it to a plot type that better communicates the central tendency, and change the group colors to be different.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Switch this to a better plot type, and make the group colors different.</p>
-</div>
-</div>
+<div class="page-columns page-full"><p>Alternatively, we can split a one-variable plot into multiple plots based on the values of a second variable. This is called <strong>faceting</strong>. Faceting is an example of adding a new player to a plot. First we make the type of plot we want with the appropriate <code>geom_</code> function, and then we add a new function <code>facet_wrap()</code>. Inside this function, we pass <code>~Sex</code> to say which variable we want to split the data on. The <code>~</code> symbol in R means “vary by”, so this code is telling <code>ggplot</code> to vary the histograms by their value on <code>Sex</code>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>faceting</strong> = in data visualization, splitting a plot into multiple plots based on the values of some variable.</span></div></div>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="rule-2---maximize-the-data-to-ink-ratio" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="rule-2---maximize-the-data-to-ink-ratio"><span class="header-section-number">7.4.2</span> Rule 2 - Maximize the data to ink ratio</h3>
-<p>Edward Tufte has proposed an idea called the data/ink ratio, which is the amount of ink used on representing the data vs.&nbsp;the total amount of ink used for the whole plot.</p>
-<p>Because we now do all our statistics with code, “ink” is maybe an anachronism - it could be better to say “pixels” now. But regardless, the point of this is to minimize visual clutter and let the data show through. For example, take the two presentations of the dental health data below. Both panels show the same data, but panel A is much easier to apprehend, because of its relatively higher data/ink ratio.</p>
-<p>The default settings in R’s graphing functions make it hard to violate this rule. But as you get more advanced you may decide to <a href="http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements">set your own visual themes</a>, or you may make future visualization in a separate software. If so, keep the data/ink ratio in mind.</p>
-<p><img src="images/ch7-inkratio.png" width="750"></p>
-</section>
-<section id="rule-3---avoid-chart-junk" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="rule-3---avoid-chart-junk"><span class="header-section-number">7.4.3</span> Rule 3 - Avoid chart junk</h3>
-<p>It’s especially common to see presentations of data in the popular media that are adorned with lots of visual elements that are thematically related to the content but unrelated to the actual data. This is known as chart junk. It may seem like a cool thing to add, but it should be avoided at all costs.</p>
-<p>One good way to avoid chart junk is to rely on the graphical plotting from programming languages like R, rather than manually adding fancy graphics. For example, the chart below (created using Microsoft Excel) plots the relative popularity of different religions in the United States. There are at least three things wrong with this figure:</p>
-<ul>
-<li>it has graphics overlaid on each of the bars that have nothing to do with the actual data</li>
-<li>it has a distracting background texture</li>
-<li>it uses 3D bars on a 2D screen, which impairs readability of exact values</li>
-</ul>
-<p><img src="images/ch7-chartjunk.png" width="550"></p>
-</section>
-<section id="rule-4---avoid-distorting-the-data" class="level3" data-number="7.4.4">
-<h3 data-number="7.4.4" class="anchored" data-anchor-id="rule-4---avoid-distorting-the-data"><span class="header-section-number">7.4.4</span> Rule 4 - Avoid distorting the data</h3>
-<p>It’s often possible to use visualization to distort the message of a dataset. A very common one is the use of different axis scaling to either exaggerate or hide a pattern of data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In the below figure, we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
-<p><img src="images/ch7-crime.png" width="700"></p>
-<p><em>data obtained <a href="https://www.ucrdatatool.gov/Search/Crime/State/RunCrimeStatebyState.cfm">here</a></em></p>
-<p>One of the major controversies in statistical data visualization is how to choose the Y axis, and in particular whether it should always include zero. In his famous book “How to lie with statistics”, Darrell Huff argued strongly that one should always include the zero point in the Y axis. On the other hand, Edward Tufte has argued against this. He asserts that one should not spend a lot of empty vertical space trying to reach down to the zero point at the cost of hiding what is going on in the data line itself.</p>
-<p>There are certainly cases where using the zero point makes no sense at all. Let’s plot the <code>Middle</code> and <code>Thumb</code> variables from <code>studentdata</code> in a scatterplot, with and without zero in the Y axis. We’ll use the <code>gf_refine()</code> function again to refine the default scatterplot we make, but this time the second argument will be <code>coord_cartesian()</code> that gets applied to the plot, to explicitly define the axis limits.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Try making a faceted bar plot to show the distribution of <code>Ethnicity</code>, split by values of <code>Sex</code>.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Plotting these data with zero in the y-axis wastes a lot of space in the figure, given that someone’s finger length is very unlikely to be so short. By including zero, we are also squishing down the variance within <code>Middle</code> to make it look like <code>Thumb</code> explains more of it than we’d otherwise think. To make the problem even more evident, let’s expand both the y-axis and x-axis to go from 0-200.</p>
+</section>
+<section id="sec-ch7-show-the-data" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch7-show-the-data"><span class="header-section-number">7.3</span> Show the data</h2>
+<p>The goal of data visualization is to clarify - to make a messy set of data and patterns easier to understand. There are ways to use visualization that help with this goal, but also ways to do it poorly. Bad visualization obfuscates or distorts rather than clarifies. Here we will cover the major principles of good data visualization that you should always follow.</p>
+<p>Let’s say that you collected data with the aim to find the association between daily coffee intake and longevity. You have information on how much coffee people drank, and how long they lived. Now you want to visualize the relationship. <a href="#fig-ch7-coffee-longevity" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> below shows four potential ways the data could appear.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch7-coffee-longevity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-coffee-longevity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-7_files/figure-html/fig-ch7-coffee-longevity-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-coffee-longevity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Four potential sets of data that all show a positive relationship.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In the first plot we don’t see the data points, just a line expressing the relationship between the data. This line implies a positive linear association between daily coffee intake and longevity. However, this plot is not optimal because we can’t actually see what the underlying data look like. We don’t know anything about the data spread or how well this line fits the data.</p>
+<p>The other plots show three possible instances of the actual data. The upper right plot look like real data – there’s a general trend, but the data are messy as data in the world usually are. Meanwhile, the lower left plot shows data where the apparent relationship is solely caused by one individual who happens to be a very long-lived coffee fanatic. We probably don’t want to conclude very much from a relationship that is driven by one data point. On the other hand, the lower right plot shows an association that is perhaps <em>too</em> perfect. Real trends in data about humans are never so clean, so we would be suspicious that these data are even real.</p>
+<p>This demonstrates the importance of the first principle of data visualization - where possible, show the data.</p>
+<p>When we made a scatter plot and histograms earlier, we were following this principle already. But when we made a histogram, we only saw a summary of the data. Luckily, the layering capabilities of <code>ggplot2</code> mean we can layer multiple types of plots over top each other. Using this functionality, we can add a point visualization on top of the boxplot in order to show the data.</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We don’t have much ability at all to see the variation in the data here, and there’s a lot of wasted space around the data points.</p>
-<p>However, it can be manipulative to go in the other direction, and focus in on the axis scale so much that small differences in values look massive. Let’s take a look at the number of students in the dataset that identify as Asian or White. First we’ll filter down the dataset to focus on just those values in the variable <code>RaceEthnic</code>, and then plot them in a bar plot.</p>
+<p>Now the nature of the data is a bit clearer. We can see that the data are pretty well distributed within each category and thus the summaries aren’t driven by any particular values. We can also see there are less data in the <code>Male</code> category compared to the <code>Female</code> category, so maybe we trust conclusions about male heights a little less.</p>
+<p>But this isn’t the best we can do. When you have a plot with a lot of data points, sometimes they overlap each other. It might be helpful to change some aspect about how the dots are presented in order to make them easier to see.</p>
+<p>Each <code>geom_</code> function in <code>ggplot2</code> includes optional arguments you can specify to change details about how they present information. For instance, the <code>size =</code> argument will change the size of the dots:</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Based on the size of the bars, it looks like there are a fairly similar number of students with each ethnicity. However, we can make it look like there are many more Asian students than White students by changing the y-axis:</p>
+<p>You can also change the opacity of the dots with the argument <code>alpha =</code>. This way, you can see if there are datapoints that are sitting on top of each other.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Of course, if we look at the y-axis values the actual difference in numbers doesn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than White.” You can imagine the types of commentary that can be spawned on social media just from a quick glance at a picture.</p>
-<p>To avoid wasting too much white space or misleading your audience by exaggerating differences, a good starting place is to use axis ranges that encompass the full range of your raw data but not much more. Then consider whether a larger range should be used based on what you’re specifically trying to communicate.</p>
-</section>
-<section id="rule-5---readable-data-labels" class="level3" data-number="7.4.5">
-<h3 data-number="7.4.5" class="anchored" data-anchor-id="rule-5---readable-data-labels"><span class="header-section-number">7.4.5</span> Rule 5 - Readable data labels</h3>
-<p>Often in datasets you work with, variables will be given shorthand names that make them easier to type in code. If you then use them to make a plot, that variable name will be used as the label on the axis:</p>
+<p>Another option is to <strong>jitter</strong> the data points. This means shifting the visual position of the data a little bit vertically or horizontally. This doesn’t change the underlying values of the data, but makes it so that the points are not all in a line.</p>
+<p>To jitter data in a plot, use the <code>geom_jitter()</code> function rather than the basic <code>geom_point()</code>.</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In this graph, without knowing much about the study the data came from, can you be sure what “StatsInterest” means? Even if you know this is a survey of students in a statistics class, is it interest in the whole course? This lesson? Taking this survey?</p>
-<p>If you’re writing a research paper with this data, someone could read the text elsewhere in your paper to know what the variable names mean, but why make them work so hard and risk them not understanding? It’s important to label the axes in your plots with readable names that communicate important information about the variable by just looking at the image.</p>
-<p>Most <code>ggformula</code> functions let you change the axis labels for a plot via the arguments <code>xlab</code> and <code>ylab</code>. These arguments take a string of text (in quotation marks) as the new axis label. Let’s do that to make the x-axis in the above figure more understandable:</p>
+<p>When you make your own visualizations, play around with these arguments to customize your plot and make the data as clear as possible.</p>
+</section>
+<section id="dont-distort-the-data" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="dont-distort-the-data"><span class="header-section-number">7.4</span> Don’t distort the data</h2>
+<p>If you played around with the <code>width</code> argument for <code>geom_jitter()</code>, you may have noticed that it’s possible to set a jitter big enough that it is now unclear what category a data point belongs to. This is an example of how features of a visualization can hinder rather than help. In this case, too much jitter distorted the data, so we couldn’t understand their true values well.</p>
+<p>Data can also be distorted through other means. A common one is the use of different axis scaling to either exaggerate or hide a pattern in the data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In <a href="#fig-ch7-crime" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch7-crime" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-crime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-7_files/figure-html/fig-ch7-crime-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-crime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Changing the y-axis can change the message of a data plot
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>One of the major controversies in statistical data visualization is how to choose the axis bounds. Some people argue that the axes should always include 0. Others argue against this, saying that one should not spend a lot of empty space trying to reach down to the zero point at the cost of hiding what is going on in the range of the data.</p>
+<p>There are certainly cases where using the zero point makes no sense at all. Let’s plot the <code>Hand</code> and <code>Height</code> variables in a scatter plot, with and without zero in the axes. To change the axis bounds of a plot, we add a new plot layer using the <code>coord_cartesian()</code> function that includes pairs of values for the min and max of each axis.</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We could also choose to update the y-axis: Someone can probably figure out what <code>MathAnxious</code> means, but it’s not a word itself so it’s not very professional.</p>
+<p>Plotting these data with zero in the axes wastes a lot of space in the figure, given that no one is going to have a height and hand length of 0<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. By including zero, we are also squishing down the variance within the variables and making it difficult to see the association between them.</p>
+<p>However, it can be manipulative to go in the opposite direction and focus in on the axis scale so much that small differences in values look massive. Let’s take a look at the number of students in the dataset that identify as Asian or Latino. First we’ll filter down the dataset to focus on just those values in the variable <code>Ethnicity</code>, and then plot them in a bar plot.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There’s also an argument for <code>title</code> to name the overall graph. Use it in the code below to give this graph a name of whatever you want.</p>
-</div>
-</div>
+<p>Based on the size of the bars, it looks like there are a fairly similar number of students with each ethnicity. However, we can make it look like there are many more Asian students than Latino students by changing the y-axis:</p>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Next, notice the values on the Y-axis. By default they’re put in alphabetical order, but <code>MathAxious</code> is clearly an ordinal variable and thus all the levels are out of order. We should recode this variable with a specified order. We can do this using the <code>factor()</code> function, which creates a specific kind of character data that has ordering information called “levels”. We implement this in the first step of the code below. The <code>levels =</code> argument in <code>factor()</code> takes a vector specifying which value should come first, second, etc.</p>
+<p>Of course, if we actually look at the y-axis values, the difference in numbers didn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than Latino.” You can imagine the narratives that can be spawned on social media just from a quick glance at a picture.</p>
+<p>To avoid wasting too much white space or misleading your audience with exaggerated differences, a good starting place is to use axis ranges that encompass the full range of your raw data but not much more.</p>
+</section>
+<section id="label-the-data" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="label-the-data"><span class="header-section-number">7.5</span> Label the data</h2>
+<p>Often in datasets you work with, variables will be given shorthand names that make them easier to type in code. If you then use them to make a plot, that variable name will be used as the label on the axis:</p>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Lastly, if you want even finer control over the axes and titles, there’s another function called <code>gf_labs()</code> that, like <code>gf_refine()</code>, can be chained on.</p>
+<p>In this graph, without knowing much about the study the data came from, can you be sure what “StatsBeliefs” or “StatsEmotions” mean? Even if you know this is a survey of students in a statistics class, do you know what specific belief or emotion these variables measure?</p>
+<p>If you’re writing a research paper with this data, someone could read the text elsewhere in your paper to know what the variable names mean. But why make them work so hard and risk them not understanding? It’s important to label the axes in your plots with readable names that communicate important information about the variable by just looking at the image.</p>
+<p>We could address this problem by renaming the variables in the dataset during data cleaning. Alternatively, we can simply add informative labels to a plot. This again involves adding a plot layer. This time, we use the <code>labs()</code> function to add labels.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Next, notice the values on the axes. By default they’re put in alphabetical order. But these variables are ordinal and thus the levels should have a specific order. We should recode this variable to enforce this order. We can do this using the <code>factor()</code> function, which creates a specific kind of character data that has ordering information called “levels”. We implement this in the first step of the code below. The <code>levels =</code> argument in <code>factor()</code> takes a vector specifying which value should come first, second, etc.</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We could also choose to modify the title, subtitle, caption, and legend label of this graph. This is helpful for communicating what the main message of the plot is supposed to be and what the variables mean if there’s still more to say about them.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2387,99 +2313,122 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check out the code below, and try adjusting all the possible options for <code>gf_labs()</code>.</p>
+<p>Put in meaningful text to each aspect of the plot.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-</section>
-<section id="sec-ch7-human-readability" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="sec-ch7-human-readability"><span class="header-section-number">7.5</span> Accomodating human readability</h2>
-<section id="colorblindness" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="colorblindness"><span class="header-section-number">7.5.1</span> Colorblindness</h3>
-<p>Humans have both perceptual and cognitive limitations that can make some visualizations very difficult to understand. In addition to the rules of data visualization, it’s also important to keep these in mind when building a plot.</p>
-<p>One important perceptual limitation that many people (8% of men and 0.5% of women) have is color blindness. This can make it very difficult to perceive the information in a figure where there is only color contrast between the elements but no brightness contrast. It is always helpful to use graph elements that differ substantially in brightness and/or shape, in addition to color. There are also colorblind-friendly palettes available for use with many visualization tools.</p>
-<p><img src="images/ch7-colorblind.jpg" width="650"></p>
-<p><em>What various colors look like to individuals with the two most common types of color blindness - it’s good to choose contrasting colors that look different to everyone</em></p>
-<p>Remember when we changed the colors of our histogram with <code>gf_refine()</code>?</p>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The coloring function we applied to the histogram, <code>scale_fill_manual()</code> (or <code>scale_color_manual()</code> for outlines), isn’t the only coloring function. The “manual” part of the name refers to the fact that you manually choose colors by their name (“purple” or “orange”), but it’s restricted to just a few colors. There are a great many color packages that people have created to provide extra palettes to work with. Here are some gradients of example palettes:</p>
-<p><img src="images/ch7-colors.png" width="500"></p>
-<p>The “rainbow” color palette is less perceptually uniform compared to the other color scales. If you were to make it grayscale, there would be several points along the gradient that are brighter than other points, rather than making a smooth transition from bright to dark to correspond with the hue transition.</p>
-<p><img src="images/ch7-blackandwhite.png" width="500"></p>
-<p>One of the most common alternative coloring packages is called <code>viridis</code>. It has been optimized to be perceptually uniform and play friendly with color blindness. The whole package comes with several different color sets:</p>
-<p><img src="images/ch7-viridis.png" width="500"></p>
-<p>When you install this package and load it into your library, it gives you access to some key functions:</p>
-<ul>
-<li><code>scale_color_viridis()</code>: Change the color of points, lines and texts</li>
-<li><code>scale_fill_viridis()</code>: Change the fill color of areas (box plot, bar plot, etc)</li>
-<li><code>viridis(n)</code>, <code>magma(n)</code>, <code>inferno(n)</code> and <code>plasma(n)</code>: Generate color palettes, where n is the number of colors to return.</li>
-</ul>
-<p>Let’s add this package, and then use <code>viridis(5)</code> to pick out 5 color values:</p>
 <div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>These don’t seem like color names, what gives? Actually, they are - but named using the <a href="https://www.pluralsight.com/blog/tutorials/understanding-hexadecimal-colors-simple">hexadecimal color code system</a>. This code represents the amount of red, green, and blue in a color, as well as its brightness. Using the hex color code system gives you many more color options. Technically, you can use these codes in the place of “orange” or “purple” in <code>scale_fill_manual()</code> to give you access to all possible colors. However, that makes you put in effort to pick out specific colors and ensure their contrast is perceptually different enough. If you’d rather rely on someone else already having done that work, you can let these downloaded color palettes choose colors for you.</p>
-<p>Let’s practice recoloring plots using <code>viridis</code> colors and functions. This function normally returns a continuous gradient of color, so whenever we have a categorical variable like <code>Sex</code> that we want to color, adding the argument <code>discrete = TRUE</code> will have the function pick out two specific colors to use.</p>
+</section>
+<section id="remember-the-limits-of-human-perception" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="remember-the-limits-of-human-perception"><span class="header-section-number">7.6</span> Remember the limits of human perception</h2>
+<p>Humans have both perceptual and cognitive limitations that can make some visualizations very difficult to understand.</p>
+<p>One important perceptual limitation is our ability to see color. While human vision is pretty acute compared to many other species, that doesn’t mean it is always easy to tell the difference between colors that are very similar. In addition, 8% of men and 0.5% of women are colorblind. This can make it very difficult to perceive the information in a figure if there is not an appropriate level of color and brightness contrast.</p>
+<div id="fig-ch7-colorblindness" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-colorblindness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch7-colorblind.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-colorblindness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: What various colors look like to individuals with the two most common types of color blindness. It’s good to choose contrasting colors that look different to everyone.
+</figcaption>
+</figure>
+</div>
+<p>Remember when we changed the colors of our histogram in <a href="#sec-ch7-plot-types" class="quarto-xref"><span>Section 7.2</span></a>?</p>
 <div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>To use the other color palettes in the <code>viridis</code> package, add the <code>option=</code> argument with the palette name:</p>
+<p>If we only tell <code>ggplot</code> to fill the bars with different colors based on <code>Sex</code>, it will pick default colors to use. These colors are the defaults because they have good contrast and are vetted for being colorblind-friendly.</p>
+<p>It’s possible to choose our own colors for the plots. In that case, we would add a layer with <code>scale_fill_manual()</code> to manually specify the colors we want to use:</p>
 <div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you’d rather choose among the color options yourself for discrete coloring, you can pair <code>scale_fill_manual()</code> with <code>viridis()</code> to generate a vector of color values:</p>
+<p>We can write some color names with strings, or we can exert finer control over the colors by using the <a href="https://www.pluralsight.com/blog/tutorials/understanding-hexadecimal-colors-simple">hexadecimal color code system</a>. This is a six-digit code that represents the amount of red, green, and blue in a color as well as its brightness. Using the hex color code system gives you many more color options, which you can explore in a color picker tool like <a href="https://wtools.io/color-picker">this</a>.</p>
+<p>You can use these codes in the place of “orange” or “purple” in <code>scale_fill_manual()</code> to give you access to all possible colors. For instance, here are the first two colors of the plot theme used throughout this book:</p>
 <div id="qwebr-insertion-location-20"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>To know what the colors will look like ahead of time, you can paste the first 6 digits of the hex code into an online color picker tool <a href="https://wtools.io/color-picker">like this</a>.</p>
-<p>For those intrepid designers who want even more color choices, there are several other coloring packages out there you can look up. The package <a href="https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/">RColorBrewer</a> is particularly popular among psychologists and has many options:</p>
-<p><img src="images/ch7-colorbrewer.png" width="400"></p>
-<p><em>Palette choices in the RColorBrewer package</em></p>
+<p>While choosing hex colors yourself gives you a lot of control, it is effortful to ensure their contrast is perceptually different enough<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. A plot like below would not be effective because someone with color blindness (or even someone with a different brightness setting on their computer monitor) would not be able to easily tell the difference between the categories:</p>
+<div id="qwebr-insertion-location-21"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>If you’d like to use more interesting colors in your plot but don’t want to spend effort picking them yourself, many people have created <a href="https://r-graph-gallery.com/color-palette-finder">different color palettes</a> that you can download as additional R packages.</p>
+<p>Other perceptual limitations apply to how we perceive quantities and sizes of shapes. For instance, look at the plot in <a href="#fig-ch7-piechart" class="quarto-xref">Figure&nbsp;<span>7.4</span></a> below:</p>
+<div id="fig-ch7-piechart" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-piechart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch7-piechart.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-piechart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: A 3D pie chart of religious affiliation percentages in the United States.
+</figcaption>
+</figure>
+</div>
+<p>This plot is terrible for several reasons. First, it is difficult to accurately perceive differences in the volume of shapes like pie wedges. Second, the 3D perspective distorts the relative volumes further, such that it’s hard to tell if something like Catholic is bigger or smaller than Mainline Protestant (it’s notably bigger, 19% vs.&nbsp;11%). Third, the large number of categories mean that the small ones are given almost no space in the graph, making it hard to refer to them.</p>
+<p>This is a more reasonable approach:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch7-religion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch7-religion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-7_files/figure-html/fig-ch7-religion-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-religion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.5: A clear visualization of religious affiliation percentages in the United States.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#fig-ch7-religion" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> we can see the pattern much more clearly. This plot allows the viewer to make comparisons based on just one feature - the the height of the bars. Humans tend to be more accurate when decoding differences this way vs.&nbsp;using area or volume. This plot may not look as flashy as the 3D pie chart, but it’s a much more effective representation of the data.</p>
+<p>That said, there is <a href="https://eagereyes.org/blog/2010/chart-junk-considered-useful-after-all">some</a> evidence that flashy plots are better for memory. You just want to be careful that your viewers are remembering the right things! For more resources on customizing plots to that they’re both eye-catching <em>and</em> communicative, check out <span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span> and <a href="https://r-graph-gallery.com/">r-graph-gallery</a>.</p>
 </section>
-<section id="perceptual-simplicity" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="perceptual-simplicity"><span class="header-section-number">7.5.2</span> Perceptual simplicity</h3>
-<p>Even for people with perfect color vision, there are perceptual limitations that can make some plots ineffective. This is one reason why good statisticians never use pie charts: It can be very difficult for humans to accurately perceive differences in the volume of shapes. The pie chart below (presenting the same data on religious affiliation that we showed above) shows how tricky this can be.</p>
-<p><img src="images/ch7-piechart.png" width="500"></p>
-<p>This plot is terrible for several reasons. First, it requires distinguishing a large number of colors from very small patches at the bottom of the figure. Second, the 3D perspective distorts the relative numbers, such that the pie wedge for Catholic appears much larger than the pie wedge for None, when in fact the number for None is slightly larger (22.8 vs 20.8 percent). Third, it uses text that is far too small, making it impossible to read without zooming in.</p>
-<p>Plotting the data using a more reasonable approach, we can see the pattern much more clearly. This plot may not look as flashy as the pie chart generated using Excel, but it’s a much more effective and accurate representation of the data.</p>
-<p><img src="images/ch7-religionbars.png" width="800"></p>
-<p>This plot allows the viewer to make comparisons based on the the length of the bars along a common scale (the y-axis). Humans tend to be more accurate when decoding differences based on these perceptual elements than based on area or color.</p>
-</section>
-</section>
-<section id="sec-ch7-resources" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">7.6</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">7.6.1</span> Learning goals</h3>
+<section id="sec-ch7-resources" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">7.7</span> Chapter resources</h2>
+<section id="learning-goals" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">7.7.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
-<li>Explain the importance of good data visualization</li>
-<li>Describe the 5 basic rules of visualization</li>
-<li>Manipulate the color, size, and transparency of data in R plots</li>
-<li>Change axis labels and titles in R plots</li>
-<li>Choose plot elements based on how well they communicate your intended message</li>
+<li>Write the results of descriptive statistics in APA-style</li>
+<li>Identify and produce bar graphs, boxplots, and faceted histograms with code</li>
+<li>Explain why we should show the data, not distort the data, add labels, and remember human perceptual limitations when making plots</li>
+<li>Layer data points on top of other plot types</li>
+<li>Change the color, size, transparency, and jitter of data points in R plots</li>
+<li>Change axis limits and labels and titles in R plots</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="7.6.2">
-<h3 data-number="7.6.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">7.6.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">7.7.2</span> New concepts</h3>
 <ul>
-<li><strong>violin plot</strong>: A type of data visualization that plots the distribution of data per group.</li>
+<li><strong>bar graph</strong>: a type of data visualization that plots values of a categorical variable on the x-axis and number of data points in each category on the y-axis.</li>
+<li><strong>boxplot</strong>: a type of data visualization that shows the distribution of a numeric variable for different categories of a categorical variable.</li>
+<li><strong>faceting</strong>: in data visualization, splitting a plot into multiple plots based on the values of some variable.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="7.6.3">
-<h3 data-number="7.6.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">7.6.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">7.7.3</span> New R functionality</h3>
 <ul>
-<li><a href="https://www.mosaic-web.org/ggformula/reference/gf_violin.html">ggformula::gf_violin()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">ggplot2::geom_bar()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">ggplot2::geom_boxplot()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">ggplot2::facet_wrap()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">ggplot2::geom_jitter()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">ggplot2::coord_cartesian()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggplot2::labs()</a>]</li>
 <li><a href="http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/">factor()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_labs">ggformula::gf_labs()</a></li>
-<li><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">viridis::scale_color_viridis() &amp; scale_fill_viridis()</a></li>
-<li><a href="https://sjmgarnier.github.io/viridisLite/reference/viridis.html">viridis::viridis() and other palettes</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/scale_fill_manual.html">ggplot2::scale_fill_manual()</a></li>
+<li><a href="http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/">factor()</a></li>
 </ul>
-</section>
-<section id="further-reading" class="level3" data-number="7.6.4">
-<h3 data-number="7.6.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.6.4</span> Further reading</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-wickham2023b" class="csl-entry" role="listitem">
+Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: Elegant Graphics for Data Analysis (3e)</em>. <a href="https://ggplot2-book.org/" class="uri">Https://ggplot2-book.org/</a>; Springer.
+</div>
+</div>
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Sometimes this type of plot is also called a box-and-whisker plot because of these lines<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>well, technically someone could be missing a hand. But maybe that should be an NA value instead…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://www.datanovia.com/blog/r-color-palettes">Here</a> is a good guide for how to pick perceptually effective colors<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
