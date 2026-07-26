@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Summarizing a Variable – Foundations for a Statistical Mindset</title>
+<title>8&nbsp; Where Data Come From – Foundations for a Statistical Mindset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +68,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-6.html" rel="next">
-<link href="./chapter-4.html" rel="prev">
+<link href="./chapter-9.html" rel="next">
+<link href="./chapter-7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -391,7 +407,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"filepath <- \"https://statistical-mindset.com/data/studentdata.csv\"\nstudentdata <- read.csv(filepath)\n\nwebr::install('ggplot2')  #downloading package from the internet\nlibrary(ggplot2)   #loading package from library \n\nggplot(studentdata, aes(x=Height))","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(studentdata, aes(x=Height)) + \n  geom_histogram()","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Make a histogram of Siblings","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"test_scores <- c(76,91,86,80,93)\n#This computes a mean\nsum(test_scores) / length(test_scores)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here\n\n#Check if your answer is the same as this answer\nsum(test_scores) / length(test_scores)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dist1 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10)\ndist2 <- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)\n\n#Your code here - use two ggplot commands","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Calculate mean of dist1\n\n#Calculate mean of dist2","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"median(test_scores)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Visualizing a new distribution \ndist3 <- data.frame(data_pts = c(10,20,20,30,30,30,40,40,40,40,50,50,50,50,50))\nggplot(dist3, aes(x=data_pts)) + \n  geom_histogram()\n\n#Your code here","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"table(dist3$data_pts)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Max of test_scores\nmax(test_scores)\n\n#Min of test_scores\nmin(test_scores)\n\n#Your code here","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"range(test_scores)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(studentdata$Height, probs = 0.5, na.rm = TRUE)\nmedian(studentdata$Height, na.rm = TRUE)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"quantile(studentdata$Height, probs = c(0.25,0.5,0.75), na.rm = TRUE)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"IQR(studentdata$Height, na.rm = TRUE)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean_score <- mean(test_scores)   # mean of the data\ndevs <- test_scores - mean_score  # all deviations from the mean\nsum(devs)                         # sum of the deviations","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"var(studentdata$Height, na.rm = TRUE)","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"var_height <- var(studentdata$Height, na.rm = TRUE)\nsd_height <- #your code here\nsqrt(var_height) == sd_height","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Sex_bool <- #Your code here","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean(studentdata$Sex_bool)\nvar(studentdata$Sex_bool)\nsd(studentdata$Sex_bool)","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Your code here","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Height_rescaled <- (studentdata$Height - mean(studentdata$Height)) / sd(studentdata$Height)\nstudentdata$Height[3] # value of student's height, in original units\nstudentdata$Height_rescaled[3] # new value of student's height, in new units","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Height_z <- scale(studentdata$Height)\nstudentdata$Height_z[3]","id":24,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-24","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata$Hand_z <- #your code here\n#return the mean\n#return the standard deviation","id":25,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-25","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"grav_data <- data.frame(\n  g = c(9.8, 9.8, 9.8, 9.8, 9.8),\n  t = c(1, 2, 3, 4, 5)\n)\n\ngrav_data$d <- 0.5 * grav_data$g * grav_data$t^2 \n\ngrav_data$d","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- c(9.8, 3.7, 24.8, 8.9, 1.6)\nt <- c(1, 2, 3, 4, 5)\n\ngrav_data <- data.frame(\n  g_long = #your code here\n  t_long = #your code here\n)\n\ngrav_data$d <- 0.5 * grav_data$g_long * grav_data$t_long^2 \n\ngrav_data$d","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_point()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_jitter(width = 0.1, alpha = 0.5)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_grav <- grav_data |>\n  filter(g_long == 9.8, t_long == 1)\n\nggplot(subset_grav, aes(x=d)) + \n  geom_histogram() +\n  coord_cartesian(xlim = c(0, 10))","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\n#your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_studentdata <- studentdata |>\n  filter(Hand == 160, Sex == 'Female')\n\nggplot(subset_studentdata, aes(x=Height)) + \n  geom_histogram() + \n  labs(subtitle = 'Distribution of Height when Sex==Female and Hand==160mm')","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coin_flips <- sample(x=c('heads','tails'), \n                     size=1, \n                     prob=c(0.5,0.5), \n                     replace=TRUE)\n\ncoin_flips","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(47)\ncoin_flips <- sample(x=c('heads','tails'), \n                     size=1, \n                     prob=c(0.5,0.5), \n                     replace=TRUE)\n\n#this value should always be 'heads'\ncoin_flips","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coin_flips <- sample(x=c('heads','tails'), \n                     size=1, \n                     prob=c(0.5,0.5), \n                     replace=TRUE)\n\nggplot(data.frame(coin_flips), aes(x=coin_flips)) + \n  geom_bar()","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coin <- rep(c('A','B'), times = 1000)\nface <- c()\n\nset.seed(47)\nfor (i in 1:length(coin)) {\n  if (coin[i] == 'A') {\n    face[i] <- sample(x=c('heads','tails'), \n                      size=1, \n                      prob=c(0.5,0.5), \n                      replace=TRUE)\n  } else {\n    face[i] <- sample(x=c('heads','tails'), \n                      size=1, \n                      prob=c(0.67,0.33), \n                      replace=TRUE)\n  }\n}\n\nggplot(data.frame(coin, face), aes(x=face)) + \n  geom_bar() + \n  facet_wrap(~coin)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"data <- runif(n=1000, min=0, max=5)\nggplot(data.frame(data), aes(x=data)) + \n  geom_histogram()","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"data <- #your code here\n\nggplot(data.frame(data), aes(x=data)) + \n  geom_histogram()","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sex <- rep(c('Male','Female'), times = 1000)\nheight <- c()\n\n#Sex influences the value of mean\nset.seed(1)\nfor (i in 1:length(sex)) {\n  if (sex[i] == 'Male') {\n    height[i] <- rnorm(1, mean=70, sd=3)\n  } else {\n    height[i] <- rnorm(1, mean=65, sd=3)\n  }\n}\n\nggplot(data.frame(sex, height), aes(x=height, fill=sex)) + \n  geom_histogram() ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gen_mean <- 65\ndata <- rnorm(n=50, mean=gen_mean, sd=5)\n\nprint('Generating parameter mu:')\ngen_mean\nprint('Sample mean x_bar:')\nmean(data)","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1686,7 +1702,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1752,7 +1768,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></a>
   </div>
 </li>
@@ -1781,7 +1797,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
   </div>
 </li>
@@ -1837,37 +1853,29 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-ch5-distribution" id="toc-sec-ch5-distribution" class="nav-link active" data-scroll-target="#sec-ch5-distribution"><span class="header-section-number">5.1</span> The concept of a distribution</a></li>
-  <li><a href="#sec-ch5-visualizing-distributions" id="toc-sec-ch5-visualizing-distributions" class="nav-link" data-scroll-target="#sec-ch5-visualizing-distributions"><span class="header-section-number">5.2</span> Visualizing distributions</a>
+  <li><a href="#sec-ch8-data-generation-process" id="toc-sec-ch8-data-generation-process" class="nav-link active" data-scroll-target="#sec-ch8-data-generation-process"><span class="header-section-number">8.1</span> The data generation process</a>
   <ul class="collapse">
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">5.2.1</span> Histograms</a></li>
+  <li><a href="#components-of-the-data-generation-process" id="toc-components-of-the-data-generation-process" class="nav-link" data-scroll-target="#components-of-the-data-generation-process"><span class="header-section-number">8.1.1</span> Components of the data generation process</a></li>
+  <li><a href="#the-data-generation-process-in-research" id="toc-the-data-generation-process-in-research" class="nav-link" data-scroll-target="#the-data-generation-process-in-research"><span class="header-section-number">8.1.2</span> The data generation process in research</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-math-notation-distributions" id="toc-sec-ch5-math-notation-distributions" class="nav-link" data-scroll-target="#sec-ch5-math-notation-distributions"><span class="header-section-number">5.3</span> Mathematical notation for distributions</a></li>
-  <li><a href="#sec-ch5-distribution-shape" id="toc-sec-ch5-distribution-shape" class="nav-link" data-scroll-target="#sec-ch5-distribution-shape"><span class="header-section-number">5.4</span> Distribution shape</a></li>
-  <li><a href="#sec-ch5-distribution-center" id="toc-sec-ch5-distribution-center" class="nav-link" data-scroll-target="#sec-ch5-distribution-center"><span class="header-section-number">5.5</span> Distribution center</a>
+  <li><a href="#deterministic-vs.-probabilistic-data-generation" id="toc-deterministic-vs.-probabilistic-data-generation" class="nav-link" data-scroll-target="#deterministic-vs.-probabilistic-data-generation"><span class="header-section-number">8.2</span> Deterministic vs.&nbsp;probabilistic data generation</a></li>
+  <li><a href="#rules-of-probability" id="toc-rules-of-probability" class="nav-link" data-scroll-target="#rules-of-probability"><span class="header-section-number">8.3</span> Rules of probability</a>
   <ul class="collapse">
-  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><span class="header-section-number">5.5.1</span> Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">5.5.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">5.5.3</span> Mode</a></li>
-  <li><a href="#which-measure-of-central-tendency-to-use" id="toc-which-measure-of-central-tendency-to-use" class="nav-link" data-scroll-target="#which-measure-of-central-tendency-to-use"><span class="header-section-number">5.5.4</span> Which measure of central tendency to use?</a></li>
+  <li><a href="#probability-terms" id="toc-probability-terms" class="nav-link" data-scroll-target="#probability-terms"><span class="header-section-number">8.3.1</span> Probability terms</a></li>
+  <li><a href="#probability-axioms" id="toc-probability-axioms" class="nav-link" data-scroll-target="#probability-axioms"><span class="header-section-number">8.3.2</span> Probability axioms</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-distribution-spread" id="toc-sec-ch5-distribution-spread" class="nav-link" data-scroll-target="#sec-ch5-distribution-spread"><span class="header-section-number">5.6</span> Distribution spread</a>
+  <li><a href="#simulating-probabilistic-data-generation" id="toc-simulating-probabilistic-data-generation" class="nav-link" data-scroll-target="#simulating-probabilistic-data-generation"><span class="header-section-number">8.4</span> Simulating probabilistic data generation</a></li>
+  <li><a href="#simulating-different-types-of-data" id="toc-simulating-different-types-of-data" class="nav-link" data-scroll-target="#simulating-different-types-of-data"><span class="header-section-number">8.5</span> Simulating different types of data</a></li>
+  <li><a href="#mathematical-notation-for-data-generation-processes" id="toc-mathematical-notation-for-data-generation-processes" class="nav-link" data-scroll-target="#mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</a>
   <ul class="collapse">
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">5.6.1</span> Range</a></li>
-  <li><a href="#interquartile-range" id="toc-interquartile-range" class="nav-link" data-scroll-target="#interquartile-range"><span class="header-section-number">5.6.2</span> Interquartile range</a></li>
-  <li><a href="#sum-of-squares" id="toc-sum-of-squares" class="nav-link" data-scroll-target="#sum-of-squares"><span class="header-section-number">5.6.3</span> Sum of squares</a></li>
-  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">5.6.4</span> Variance</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">5.6.5</span> Standard deviation</a></li>
-  <li><a href="#which-measure-of-variability-to-use" id="toc-which-measure-of-variability-to-use" class="nav-link" data-scroll-target="#which-measure-of-variability-to-use"><span class="header-section-number">5.6.6</span> Which measure of variability to use?</a></li>
+  <li><a href="#notating-kind-of-possible-distribution" id="toc-notating-kind-of-possible-distribution" class="nav-link" data-scroll-target="#notating-kind-of-possible-distribution"><span class="header-section-number">8.6.1</span> Notating kind of possible distribution</a></li>
+  <li><a href="#notating-how-other-information-influences-generating-parameters" id="toc-notating-how-other-information-influences-generating-parameters" class="nav-link" data-scroll-target="#notating-how-other-information-influences-generating-parameters"><span class="header-section-number">8.6.2</span> Notating how other information influences generating parameters</a></li>
   </ul></li>
-  <li><a href="#sec-ch5-summarizing-nonnumeric-data" id="toc-sec-ch5-summarizing-nonnumeric-data" class="nav-link" data-scroll-target="#sec-ch5-summarizing-nonnumeric-data"><span class="header-section-number">5.7</span> Summarizing non-numeric data</a></li>
-  <li><a href="#sec-ch5-zscores" id="toc-sec-ch5-zscores" class="nav-link" data-scroll-target="#sec-ch5-zscores"><span class="header-section-number">5.8</span> Z-scores</a></li>
-  <li><a href="#sec-ch5-resources" id="toc-sec-ch5-resources" class="nav-link" data-scroll-target="#sec-ch5-resources"><span class="header-section-number">5.9</span> Chapter resources</a>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.7</span> Chapter summary</a>
   <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">5.9.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">5.9.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">5.9.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.9.4</span> Further reading</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">8.7.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">8.7.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">8.7.3</span> New R functionality</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2159,9 +2167,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></h1>
+<h1 class="title"><span id="sec-ch8" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></h1>
 </div>
 
 
@@ -2178,43 +2186,97 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p><img src="images/header-ch5.png" class="img-fluid"></p>
-<p>Over the last four chapters you’ve developed the basic proficiency in coding and data management that will enable you to explore and analyze data in many contexts. These skills are an important foundation for the rest of the course, so it is highly recommended that you practice with them and return to them to review frequently (and keep the url of this book handy to come back to in future classes).</p>
-<div class="page-columns page-full"><p>Next, we’re going to leverage these skills for making statistical insights about the data we’ve been working with. In this chapter, we will learn about the use of <strong>descriptive statistics</strong> for summarizing datasets.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>descriptive statistics</strong> = a set of statistical tools used to describe a data sample</span></div></div>
-<section id="sec-ch5-distribution" class="level2 page-columns page-full" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="sec-ch5-distribution"><span class="header-section-number">5.1</span> The concept of a distribution</h2>
-<div class="page-columns page-full"><p>Assuming we have a tidy data frame with many variables, it is a good idea to look at the variation in your measures. This can give you clues about what kind of cleaning is needed, if any errors in data collection happened, and whether your planned analyses will be appropriate. This leads us to one of the most fundamental concepts in statistics - the concept of a <strong>distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>distribution</strong> = the nature and shape of variation in the collective values of a variable</span></div></div>
-<p>A distribution is the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 60 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary. Features about a distribution don’t apply to individual data points - they apply to the whole set.</p>
-<p>Note that a distribution only makes sense to talk about if something is <em>distributed</em>. This requires multiple data values and variation, like in a variable. We can talk about the distribution of human intelligence because there is a separate score per person and we would likely measure different values for different people. In contrast, people’s species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation data point to data point, so this would not be a variable and would not have a distribution.</p>
-</section>
-<section id="sec-ch5-visualizing-distributions" class="level2 page-columns page-full" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sec-ch5-visualizing-distributions"><span class="header-section-number">5.2</span> Visualizing distributions</h2>
-<section id="histograms" class="level3 page-columns page-full" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">5.2.1</span> Histograms</h3>
-<p>When first learning about variable distributions, it can help to visualize them. Below are some examples of what distributions can look like:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-ch5-histograms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p><img src="images/header-ch8.png" class="img-fluid"></p>
+<p>We can learn a lot by examining distributions and summaries of a dataset. We can describe the current state of some situation for a clearer picture about reality around us. But in data analysis, our interest usually goes beyond these data alone. <em>Why</em> is the sample distribution shaped the way it is? What causes certain value to be what they are? What will future data look like?</p>
+<div class="page-columns page-full"><p>To be able to answer these sorts of questions, we need to understand and start thinking deeply about another fundamental idea in statistics - <strong>the data generation process</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>data generation process</strong> = the process by which data take on the values that they do</span></div></div>
+<section id="sec-ch8-data-generation-process" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-ch8-data-generation-process"><span class="header-section-number">8.1</span> The data generation process</h2>
+<p>So far we’ve described distributions of data, but have sort of treated them like they just appeared in our hands - we didn’t discuss where they come from. We calculated associations between two variables and saw how much information about one variable reduces uncertainty about another, but didn’t talk very much about why those two variables would be associated in the first place, and why they are associated in the way they are.</p>
+<p>Rather than looking at data as only a current record of reality, we can also think about data as the product of some sort of process. A delicious cheesecake doesn’t just poof into existence - you create it, by combining specific ingredients and subjecting them to specific procedures. The same is true of data. While we can see that a classroom of students are all different heights right now, their heights were <em>created</em>, by some combination of things like genetics, nutrition, stress, injury, etc. Thinking about this process of creation, not just the product, is thinking about the data generation process.</p>
+<section id="components-of-the-data-generation-process" class="level3 page-columns page-full" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="components-of-the-data-generation-process"><span class="header-section-number">8.1.1</span> Components of the data generation process</h3>
+<p>Knowing the full data generation process for some variable involves knowing three pieces of knowledge:</p>
+<ul>
+<li>What kind of distribution is possible for the variable of interest</li>
+<li>What other information influences the probable values in that distribution</li>
+<li>How this other information is integrated together to exert influence</li>
+</ul>
+<p>Let’s think about this with a metaphor to start. Say that you are starting up a business 3D-printing figurines. You have a machine that does the printing - this is your figurine generation process.</p>
+<p>The machine is rather small, and can only use plastic filament for printing. This means you can’t make just anything. You can only print plastic figurines, less than six inches tall. But there are still a lot of options within those constraints. You could make table-top action figures, or cute cats. They could be in many poses, in many colors. These are the kinds of possible outputs from your figurine generation process.</p>
+<p>Variation in the figurines you produce is controlled by settings on your machine. If you leave the settings at their defaults, you’ll get little cats in random colors. But the settings can also be changed. When you get your first customer order, they want 20 figurines of dragons for a board game party. So, based on the values of the customer’s order, you change some settings to start creating mostly dragons instead (but you threw in a cat figurine too because they really are super cute). The customer’s order is the information that influenced the distribution of things produced by the figurine generation process.</p>
+<p>Lastly, <em>how</em> the information you get from the customer influences the settings can be straight-forward (they tell you exact color, size, shape specifications) or complicated (“make them look cool and unique but not super expensive”). So you have to use your personal method of combining, transforming, and weighting this information before you choose what print settings to use. Your judgment algorithm is how information is integrated for influencing the figurine generation process.</p>
+<div id="fig-ch8-dgp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch5-histograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter-5_files/figure-html/fig-ch5-histograms-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-ch8-dgp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch8-dgp.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-histograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Distributions of four variables from student dataset
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8-dgp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: The data generation process of plastic figurines and of data
 </figcaption>
 </figure>
 </div>
+<div class="page-columns page-full"><p>Now think of that same process, but for data like height values. The output or <strong>target</strong> variable is the variable we want to understand the data generation process for.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>target</strong> = the variable we are trying to predict or understand</span></div></div>
+<p>Height can be any real positive number. Yet, it’s pretty uncommon to be really short or really tall. Thus the kind of distribution that is possible for the <code>Height</code> variable is a unimodal distribution over a continuous range of positive values.</p>
+<div class="page-columns page-full"><p>This kind of distribution can be shaped differently. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>, we learned how to calculate central tendency and spread measures. These are attributes that describe how height values are distributed within the bounds of the possible values. We will call these attributes the <strong>generating parameters</strong> of the target distribution, because they determine how the target distribution looks. They are like the separate settings on the printing machine for what values come out.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>generating parameters</strong> = values that control the shape of a distribution of generated data</span></div></div>
+<div id="fig-normal-distribution" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+  <div style="margin-bottom: 0.5rem;">
+    <label for="mean-slider"><strong>Mean:</strong> <span id="mean-value">0</span></label><br>
+    <input type="range" id="mean-slider" min="-5" max="5" step="0.5" value="0" style="width: 100%;">
+  </div>
+  <div style="margin-bottom: 1rem;">
+    <label for="sd-slider"><strong>Standard Deviation:</strong> <span id="sd-value">1</span></label><br>
+    <input type="range" id="sd-slider" min="0.5" max="3" step="0.1" value="1" style="width: 100%;">
+  </div>
+  <div id="normal-plot"></div>
 </div>
+
+<script>
+  window.__savedDefine = window.define;
+  window.define = undefined;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+<script>
+  window.define = window.__savedDefine;
+</script>
+<script src="./widgets/ch8-widget.js"></script>
+<script>
+  initNormalWidget({
+    meanSliderId: "mean-slider",
+    sdSliderId: "sd-slider",
+    meanLabelId: "mean-value",
+    sdLabelId: "sd-value",
+    plotContainerId: "normal-plot"
+  });
+</script>
 </div>
-<div class="page-columns page-full"><p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): height values among the respondents in <code>studentdata</code>; various employment categories; number of siblings a student may have; and ethnic identities in the student sample. The y-axis represents the <em>frequency</em> of some score in a sample. So, in the first histogram (in orange), the height of the bars does not represent what height someone is, but instead represents the number of respondents in this sample who are the height indicated on the x-axis.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>histogram</strong> = a type of plot that visualizes a single-variable distribution, with variable values on the x-axis and number of observations with that value on the y-axis</span></div></div>
-<p>There are lots of ways to make histograms in R. In this book we will use the package <code>ggplot2</code> to make our visualizations because it is by far the most-used data visualization package in R. It is a large and flexible package, with a lot of capability to make <a href="https://r-graph-gallery.com/">just about any plot customization you can imagine</a>. It takes a little getting used to, so we will just use some of its basic functionality for now. If you’re really into data viz, you can learn more about the package in the online book <em>ggplot2: Elegant Graphics for Data Analysis</em> (<span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span>).</p>
-<p>The process of building a plot with <code>ggplot2</code> is a process of creating and adding layers to an image, like in Photoshop. The first step of every <code>ggplot2</code> plot is to define what data should be used in it and the plot’s aesthetic mappings - what variables should go where visually. This is all wrapped in the primary function <code>ggplot()</code>.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Adjust the “settings” of the data generation “machine” to see how they affect the look of the generated data distribution.
+</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p>How tall someone is likely to be comes from different influences like genetics and environment. These factors change the central tendency and spread of the height distribution. This is the information that influences the values of the generating parameters, like the customer order that influenced the printer setting values. We will call this set of information the input or <strong>feature</strong> variables.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>features</strong> = variables that influence the generating parameters for a target variable</span></div></div>
+<div class="page-columns page-full"><p>If there are multiple feature variables, we need some way of combining that information to determine what the values of the generating parameters will be. We could simply add up the values, multiply them, average them, etc. Whatever mathematical process we do to combine the input features, we call that the <strong>input function</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>input function</strong> = the mathematical algorithm that combines feature variables to determine the values of the generating parameters</span></div></div>
+</section>
+<section id="the-data-generation-process-in-research" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="the-data-generation-process-in-research"><span class="header-section-number">8.1.2</span> The data generation process in research</h3>
+<p>For researchers interested in description research goals, the estimand of interest is often some summary of what values are possible and probable in a population. The data generation process is less relevant. But for researchers interested in explanation, the data generation process is the phenomenon of interest more than any specific data value. The how, not just the what. While statistics alone can’t determine cause and effect, looking at data for evidence of the data generation process can give us important clues about the mechanisms of the human mind and society.</p>
+<p>In fact, what we normally think of as scientific research questions - e.g.&nbsp;“what aspects make a message more persuasive?” or “do children learn new languages better than adults?” - are really questions about the data generation process: How is persuasion generated from message design? How does age contribute to the process of language acquisition?</p>
+<p>For researchers with prediction goals, the data generation process may not seem as immediately relevant if we are thinking about it as the causal process that creates data. In a prediction problem, we could use causal outcomes as indicators (e.g., health symptoms) to predict the cause as the target (e.g., disease). But the concept of the data generation process is still relevant for prediction goals if we think about what information cause our <em>guesses</em> about what the value of the target is.</p>
+</section>
+</section>
+<section id="deterministic-vs.-probabilistic-data-generation" class="level2 page-columns page-full" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="deterministic-vs.-probabilistic-data-generation"><span class="header-section-number">8.2</span> Deterministic vs.&nbsp;probabilistic data generation</h2>
+<p>Let’s put these ideas into practice by doing some data generation ourselves. We will play with a very simple data generation process, the distance traveled by a dropped ball.</p>
+<p>If you remember taking a physics class in school, you might recall that falling distance of an object is determined by the gravitational force exerted on that object and amount of time spent falling<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We could write this relationship as:</p>
+<p><span id="eq-gravity"><span class="math display">\[ d = \frac{1}{2} * g * t^2  \tag{8.1}\]</span></span></p>
+<p>where <span class="math inline">\(g\)</span> is gravitational force, <span class="math inline">\(t\)</span> is time since the object was dropped, and <span class="math inline">\(d\)</span> is the resulting distance. To generate distance data ourselves, we simply need to pass this information in as feature variables to the equation - aka the input function.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you only see a blank plot so far, that’s correct! In the code command above, we told <code>ggplot()</code> to reference the <code>studentdata</code> dataset. We also used the <code>aes()</code> function (short for “aesthetic”) within the <code>ggplot()</code> function to do the aesthetic mapping. In this case, we just told <code>ggplot()</code> to put the variable <code>Height</code> on the x axis. But we didn’t tell the code to <em>do</em> anything with that information yet.</p>
-<p>To actually make a plot, we need to next add a “geom” layer. This tells the plotting function what geometric shapes should be on the screen, representing the data we already told it about. To add a layer, we add a plus sign after the <code>ggplot()</code> function and then write a specific function on the next line for the specific type of plot we want to build. In this case, since we want to look at the <code>Height</code> variable in a histogram, we will use <code>geom_histogram()</code>.</p>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>If we wanted to generate a lot more data without a bunch of typing, a handy function <code>rep()</code> in R lets us make a new vector by repeating values of an existing vector. If we write <code>rep(x, times = n)</code>, the whole vector <code>x</code> will be repeated <code>n</code> times. If we write <code>rep(x, each = n)</code>, each individual element of the vector <code>x</code> will be repeated n times before moving on to the next element. Try it in the code block below to generate distance values for different inputs of time and gravity, as if we were repeating this experiment on different planets.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2225,30 +2287,29 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try making a histogram of the <code>Siblings</code> variable yourself. It should look like the red histogram in <a href="#fig-ch5-histograms" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>.</p>
+<p>Use <code>rep()</code> to make bigger data vectors for <code>t_long</code> and <code>g_long</code>. <code>t_long</code> should be <code>t</code> repeated 30 times, while <code>g_long</code> should be each value of <code>g</code> repeated 30 times.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We can now plot our data to see the distribution of distance values generated by this process.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>ggplot()</code> code from a previous chapter to visualize the distribution of distance values. Reread <a href="chapter-5.html#sec-ch5-visualizing-distributions" class="quarto-xref"><span>Section 5.2</span></a> if you need a refresher.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We will learn much more about data visualization ins <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> and <a href="chapter-7.html" class="quarto-xref"><span>Chapter 7</span></a>. For now, know that the very first thing you should do when analyzing data is examine the distributions of your variables. If you skip this step, and go directly to the application of other statistical procedures without knowing the distribution of your data, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are ok, and that your planned analysis will be appropriate.</p>
-</section>
-</section>
-<section id="sec-ch5-math-notation-distributions" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="sec-ch5-math-notation-distributions"><span class="header-section-number">5.3</span> Mathematical notation for distributions</h2>
-<p>A plot helps us understand a distribution visually. Next, we need to know some specific ways to talk about distributions. Using mathematical notation means choosing some symbols to briefly represent an idea so that it’s more efficient to communicate about it.</p>
-<p>There are a few mathematical notations for talking about distributions. First, if we are referring to a variable as a whole group, we will use a Latin letter like <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> to stand in for the whole distribution. If we are talking about a specific observation in a variable distribution, we will add a subscript letter to the distribution letter. E.g. if you see <span class="math inline">\(x_i\)</span>, that is referring to the value on <span class="math inline">\(x\)</span> belonging to observation <span class="math inline">\(i\)</span>.</p>
-<p>Why aren’t we using the actual variable name and observation value when talking about them? At first it may seem like using vague <span class="math inline">\(x\)</span> and <span class="math inline">\(i\)</span> symbols instead of more descriptive names is worse for communication rather than helpful.</p>
-<p>The reason we do this is because these notation symbols stand in for general ideas that go beyond a specific variable or value. This is helpful when we start writing equations in a little bit where the equation would apply to any variable or observation. We <em>could</em> replace the notation with a specific value if we know it. E.g., if we define <span class="math inline">\(x =\)</span> <code>Sibling</code> and <span class="math inline">\(i = 5\)</span>, then we can solve for <span class="math inline">\(x_i\)</span>: it would be the 5th value in the variable <code>Sibling</code>. But by letting <span class="math inline">\(x\)</span> and <span class="math inline">\(x_i\)</span> represent more generally <em>any</em> variable and <em>any</em> observation, we can talk about more general principles of how distributions work and how values can relate to each other.</p>
-</section>
-<section id="sec-ch5-distribution-shape" class="level2 page-columns page-full" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="sec-ch5-distribution-shape"><span class="header-section-number">5.4</span> Distribution shape</h2>
-<p>Now, we know how to visualize a distribution and we know how to refer to it generally with mathematical notation. Next, let’s learn some ways we can think about the characteristics of a distribution, and how we can summarize a distribution with specific metrics. In general, there are three important attributes to a distribution: its shape, center, and variation.</p>
-<div class="page-columns page-full"><p>Look back at the histogram you made for <code>Siblings</code>, and take note of the general shape the distribution takes. Where is the peak of the the distribution? What are the most infrequent values? Statisticians describe the shapes of distributions using a few key features. Distributions can be <strong>symmetrical</strong>, or they can be <strong>skewed</strong>. In a symmetrical distribution, if you drew a vertical line down the middle to split it into two halves, the left side of the shape is close to a mirror image of the right side. If a distribution is skewed, then one half is longer than the other half. Another way of thinking about it is there are more uncommon values on one side of the shape than on the other side. A distribution can be skewed left (the skinny longer tail is on the left, like someone stretched out that side) or skewed right (the skinny longer tail is on the right).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>symmetrical distribution</strong> = A distribution shaped such that both halves look approximately mirrored</span><span class="margin-aside"><strong>skewed distribution</strong> = A distribution shaped such that one half of the distribution is more spread out than the other; a lopsided distribution</span></div></div>
-<p>It’s rare to find a sample of data that is perfectly symmetrical, but the more skewed something is the more we should take note of it. When looking at the distribution of <code>Siblings</code>, we would say it has right skew because the infrequent values are all on the right side of the distribution shape.</p>
-<div class="page-columns page-full"><p>Other ways to talk about the shape of distributions include the number of peaks it has. If a distribution has one peak, we call it <strong>unimodal</strong>. If there are two peaks, it is <strong>bimodal</strong>. If there are no peaks and it looks like all values on the x-axis have the approximately the same number of occurrences, the distribution is <strong>uniform</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>unimodal distribution</strong> = a distribution with one clear peak</span><span class="margin-aside"><strong>bimodal distribution</strong> = a distribution with two clear peaks</span><span class="margin-aside"><strong>uniform distribution</strong> = a distribution with no clear peak and a roughly even number of observations across the range of possible values</span></div></div>
-<p>Look at your <code>Siblings</code> histogram again. Do you think it is unimodal, bimodal, or uniform?</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2257,62 +2318,25 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>There is one value that is most frequent and the distribution slopes away from this value to either side - therefor, it is unimodal.</p>
+<p><code>ggplot(grav_data, aes(x=d)) + geom_histogram()</code></p>
 </div>
 </div>
 </div>
-<p>Usually, distributions of collected data are kind of lumpy and jagged, so many of these features should be thought of with the word “roughly” in front of them. Even if a distribution doesn’t have exactly the same number of observations across all possible scores — but has roughly the same number — we should still call that distribution uniform. If you look at the distribution for <code>Height</code> again, it looks like there are many peaks. But statisticians would consider it roughly unimodal because the peak in the middle of the distribution has more mass around it than the others.</p>
-</section>
-<section id="sec-ch5-distribution-center" class="level2 page-columns page-full" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="sec-ch5-distribution-center"><span class="header-section-number">5.5</span> Distribution center</h2>
-<p>If a distribution is unimodal, it is often useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample are around this middle value.”</p>
-<div class="page-columns page-full"><p>We can calculate a specific number to represent what that middle point is for a distribution. We mentioned in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> that one of the central principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we describe a variable using its center value. In most situations, after checking out the shape of the distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>central tendency</strong> = the “middle” or “typical” value of a distribution, close to where most points are</span></div></div>
-<section id="mean" class="level3 page-columns page-full" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">5.5.1</span> Mean</h3>
-<div class="page-columns page-full"><p>The <strong>mean</strong> of a set of observations is a traditional average: add all of the values up, and then divide by the total number of values. If a student took five exams and got scores 76, 91, 86, 80 and 92, the mean of those scores would be:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean</strong> = a measure of central tendency calculated by summing all values and dividing by the number of values</span></div></div>
-<p><span class="math display">\[\frac{76 + 91 + 86 + 80 + 93}{5} = 85.2\]</span></p>
-<p>To calculate the mean in R, you could type out that exact formula above and have R work for you like a calculator: <code>(76 + 91 + 86 + 80 + 93)/5</code>. However, that’s not the only way to do the calculation, and when the number of observations starts to become large, it’s very tedious. Besides, in almost every real world scenario, you’ve already got the actual numbers stored in a variable of some kind, like <code>test_scores &lt;- c(76,91,86,80,93)</code>. Under those circumstances, you can use a combination of the <code>sum()</code> function and the <code>length()</code> function:</p>
+<p>Looking at this distribution, it looks like the possible values of <code>d</code> can be any positive number. This sample space makes sense given what we know about what distances are and how gravity works.</p>
+<p>Now let’s visualize all the data together - we’ll make a scatter plot of distance, gravity, and time together. So far we’ve only made plots for two variables at a time, but we can easily expand to three by using our <code>ggplot2</code> knowledge to put two variables on each axis and coloring different dots by the third variable.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Although it’s pretty easy to calculate the mean like this, we can do it in an even easier way. Since the mean is such a common metric to compute, R also provides us with the <code>mean()</code> function. Simply pass a vector to this function to return the mean. Try it in the code block below.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use <code>mean()</code> to calculate the mean of <code>test_scores</code> in the code window below.</p>
-</div>
-</div>
+<p>Now we can also see the distribution of <code>d</code> within each value of <code>g</code> and <code>t</code>.</p>
+<p>But wait, it looks like there’s only one data point at each combination of <code>g</code> and <code>t</code>. We repeated the <code>g</code> and <code>t</code> vectors 30 times, so shouldn’t there should be 30 * 5 data points on the plot? This isn’t wrong; look at a jittered version of the plot:</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The mean is a really useful and common way to describe a distribution’s central tendency. It’s so common, that it has it’s own mathematical notation: <span class="math inline">\(\bar{x}\)</span>, which is read as “x bar.” Where <span class="math inline">\(x\)</span> stands for the distribution of some variable, <span class="math inline">\(\bar{x}\)</span> stands for the corresponding mean of that distribution. Since we calculated the mean of <code>test_scores</code> to be 85.2, we’d say <span class="math inline">\(\bar{x}\)</span> = 85.2 where <span class="math inline">\(x\)</span> is defined as <code>test_scores</code>.</p>
-</section>
-<section id="median" class="level3 page-columns page-full" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="median"><span class="header-section-number">5.5.2</span> Median</h3>
-<p>Despite its ubiquity, the mean is not always a good fit for all situations. Imagine two distributions: <code>dist1 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10)</code> and <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100).</code> Plot these as histograms below.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write code to plot the density plot of the provided distributions using <code>ggplot()</code> and <code>geom_histogram()</code>.</p>
-</div>
-</div>
+<p>The reason we couldn’t see all the data in the first scatter plot was because the data points at the same values of <code>g</code> and <code>t</code> were overlapping. This happened because we knew the complete data generation process. There is only one <code>d</code> value for every unique combination of <code>g</code> and <code>t</code>, so the distribution of <code>d</code> values for specific values of <code>g</code> and <code>t</code> isn’t really a distribution at all:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>While <code>dist2</code> has an obvious outlier, most people would say a value that best represents the majority of the data is still around 10, like in <code>dist1</code>. However, the mean is a different story:</p>
+<div class="page-columns page-full"><p>In other words, <code>g</code> and <code>t</code> entirely account for the variation in <code>d</code>. There is no variation left unexplained. When this happens, we are dealing with what is called a <strong>deterministic</strong> data generation process. The input function involving the input features <code>g</code> and <code>t</code> create a generating parameter <code>d</code>, but the output data values generated by that parameter never vary.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>deterministic data generation</strong> = when everything is known about how a target value is generated, such that the values can be calculated exactly</span></div></div>
+<p>In contrast, let’s look at data from humans in the <code>studentdata</code> dataset. We will plot <code>Hand</code> and <code>Sex</code> as input features of the target variable <code>Height</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2323,184 +2347,66 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now calculate the mean of each distribution.</p>
+<p>Make a scatter plot with <code>Height</code> on the y-axis, <code>Hand</code> on the x-axis, and color the points by <code>Sex</code>.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The mean of <code>dist2</code> is way off of the mean of <code>dist1</code>. This sort of situation is not uncommon - in fact, the mean of any distribution with appreciable skew will move towards the long tail rather than the peak of the rest of the data.</p>
-<div class="page-columns page-full"><p>The mean has some desirable mathematical properties that we’ll return to later. But as far as it corresponds to our intrinsic sense of what is the “middle” value, it doesn’t always match. In this case, a better measure of central tendency can be the <strong>median</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>median</strong> = a measure of central tendency calculated by finding the middle value if all values were ordered smallest to largest</span></div></div>
-<p>The median is even easier to describe than the mean. The median of a set of observations is just the middle value, when the values are sorted in numerical order. As before, let’s imagine we were interested in a student’s five test scores. To figure out the median, we sort these numbers into ascending order, 76,80,<strong>86</strong>,91,93. The value in the middle, bolded here, is the median.</p>
-<p>It’s easy to find the middle value in a set of numbers that are an odd-numbered length. But what should we do if <code>test_scores</code> had 6 values instead? E.g., 76,80,<strong>86,91</strong>,93,94. Now there are <em>two</em> middle numbers, 86 and 91. In this case, the median is defined as the average of these middle scores: 88.5.</p>
-<p>As before, it’s tedious to calculate this by hand when you’ve got lots of numbers. Luckily in R, we have the <code>median()</code> function:</p>
+<p>While <code>Hand</code> and <code>Sex</code> are related to <code>Height</code>, because they change the distribution of <code>Height</code> at each unique value of those input variables, there is still <em>some</em> distribution. Some variation in <code>Height</code> is left unaccounted for.</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Summary functions like <code>mean()</code> and <code>median()</code> are some of the functions in R that break with NA values. To make it skip over them, add the argument <code>na.rm=TRUE</code>. This turns a setting “should I remove NA values?” to TRUE.</p>
-</div>
-</div>
+<div class="page-columns page-full"><p>This is what’s known as a <strong>probabilistic</strong> data generation process - the feature variables don’t entirely determine the value of the target variable. Instead, these features determine the <em>probabilities</em> of the target variable - which values are most probable. I.e., they determine the generating parameters of target distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probabilistic data generation</strong> = when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur</span></div></div>
+<p>In a probabilistic data generation process, our understanding of the process is incomplete. We don’t know all of what determines someone’s height, or even how to mathematically combine the features we do know about. It’s possible that we could eventually understand the data generation process much better with more research, such that we could turn this problem into a deterministic process and entirely determine the value of someone’s height based on a set of relevant features. But at the moment, we can only say that <code>Hand</code> and <code>Sex</code> make certain values of <code>Height</code> more or less probable.</p>
 </section>
-<section id="mode" class="level3 page-columns page-full" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">5.5.3</span> Mode</h3>
-<div class="page-columns page-full"><p>The last common measure of central tendency is the <strong>mode</strong>. This is the most frequent value within the distribution - what we’ve been calling the “peak” of a distribution. In a somewhat symmetrical distribution, this is near the middle of the distribution with the mean and median. But in a really weird distribution, where, say, the most extreme values are the most common, the mode could be very different than the other metrics.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mode</strong> = a measure of central tendency calculated by finding the most frequent value</span></div></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="rules-of-probability" class="level2 page-columns page-full" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="rules-of-probability"><span class="header-section-number">8.3</span> Rules of probability</h2>
+<div class="blue-text">
+<p><em>Chance is beloved of Art, and Art of Chance.</em></p>
+<p>— Plato’s <em>Symposium</em>, quoting Agathon</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try the calculate the mean, median, and mode of the new distribution <code>dist3.</code></p>
-</div>
-</div>
+<p>Science deals almost entirely with probabilistic data generation processes - indeed, doing science is often the process of trying to account for more and more variation in a target variable like disease, cognition, or behavior. We have already learned a bit about the concept of probability in <a href="chapter-6.html#sec-ch6-distributions-as-probability" class="quarto-xref"><span>Section 6.2</span></a>, but because probability is so fundamental to the probabilistic data generation processes we will study, we will now spend the rest of the chapter learning this concept more deeply.</p>
+<section id="probability-terms" class="level3 page-columns page-full" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="probability-terms"><span class="header-section-number">8.3.1</span> Probability terms</h3>
+<div class="page-columns page-full"><p>Consider a normal, every day coin. It has two sides, heads and tails. When you flip it in the air and catch it, either heads or tails will be showing. This means the coin is a variable. When one coin flip happens and one side shows, this is known as an <strong>elementary event</strong>: a single value that comes out of a probabilistic process. To notate this formally: if <span class="math inline">\(x\)</span> is a coin flip variable, then <span class="math inline">\(x_i\)</span> is an elementary event.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>elementary event</strong> = one occurrence of data</span></div></div>
+<div class="page-columns page-full"><p>When you flip the coin once, can you predict what side will be showing before you look at it? Unless you’re a wizard or really really good at counting flips in the air<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, your answer is probably no; it’s a probabilistic process after all. But what you <em>can</em> say is that it will be one of heads or tails. The set of all possible options that can happen in a probabilistic process is called the <strong>sample space</strong>. We notate the sample space as options within brackets, like <span class="math inline">\([heads, tails]\)</span>. When we draw one elementary event from the sample space (e.g.&nbsp;we do one coin flip and look at what side came up), we are <strong>sampling</strong> from the sample space.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sample space</strong> = the set of possible values a variable can take on</span><span class="margin-aside"><strong>sampling</strong> = the process of generating one or more elementary events from the sample space</span></div></div>
+<p>We can also say that a particular side will show up a certain proportion of times if we flip the coin a lot. This is the more formal definition of probability - the proportion of times an event will occur over repeated sampling. To notate the probability of a specific event, we use the letter <span class="math inline">\(P\)</span>. For instance, the probability of getting heads on any one flip is:</p>
+<p><span id="eq-probability"><span class="math display">\[P(x = heads) \tag{8.2}\]</span></span></p>
+<p>On a fair coin, <span class="math inline">\(P(x=heads) = 0.5\)</span> because heads should come up half the time.</p>
+</section>
+<section id="probability-axioms" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="probability-axioms"><span class="header-section-number">8.3.2</span> Probability axioms</h3>
+<p>Since probabilities are proportions of data, we can build up some basic axioms that control how we calculate more complex probabilities.</p>
+<ol type="1">
+<li><strong>Probability cannot be negative</strong>:</li>
+</ol>
+<p><span id="eq-axiom1"><span class="math display">\[P(x = x_i ) \geq 0 \tag{8.3}\]</span></span></p>
+<ol start="2" type="1">
+<li><strong>The total probability of all outcomes in the sample space is 1</strong>; that is, if we take the probability of each <span class="math inline">\(x_i\)</span> and add them up, they must sum to 1. <em>Something</em> is always guaranteed to happen.</li>
+</ol>
+<p><span id="eq-axiom2"><span class="math display">\[\sum_{i=1}^{n} P(x) = 1 \tag{8.4}\]</span></span></p>
+<ol start="3" type="1">
+<li><strong>The probability of any individual event cannot be greater than one</strong>:</li>
+</ol>
+<p><span id="eq-axiom3"><span class="math display">\[P(x = x_i) \leq 1 \tag{8.5}\]</span></span></p>
+<p>This is implied by the previous point; since the probability of all possible events in the sample space must sum to one, and they can’t be negative, then the probability of any particular event cannot exceed one.</p>
+<p>From these three axioms, we can build up other facts about probability. In <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> we will see how this is useful.</p>
+</section>
+</section>
+<section id="simulating-probabilistic-data-generation" class="level2 page-columns page-full" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="simulating-probabilistic-data-generation"><span class="header-section-number">8.4</span> Simulating probabilistic data generation</h2>
+<div class="page-columns page-full"><p>Now that we understand probability a little better, let’s generate some data probabilistically rather than deterministically to see how a data generation process works. Doing this is called <strong>simulating</strong> data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>simulation</strong> = the process of generating data based on provided information about the data generation process</span></div></div>
+<p>Simulation may sound complicated based on popular ideas of super computers and simulated realities. But simulation just means generating data based on provided information about the data generation process.</p>
+<p>In R we can use the function <code>sample()</code> to randomly sample from a sample space and generate probabilistic data. This function takes four arguments:</p>
+<ul>
+<li><code>x</code>: a vector of the sample space values</li>
+<li><code>size</code>: how many events to sample</li>
+<li><code>prob</code>: a vector of the probabilities of each value in the sample space. Following the axioms above, these values must be between 0 and 1 and all sum to 1. Note that this argument isn’t required; if we left it out, R would default to all options having the same probability. Use this if you want to set different probabilities.</li>
+<li><code>replace</code>: a True/False flag to tell the function to sample with replacement, or sample without replacement. With replacement means that if a value is drawn, it is still possible to draw it again on a subsequent draw (like drawing a marble from a bag and then putting it back). Without replacement means that if a value is drawn, it’s now gone from the sample space (like drawing the marble and leaving it outside of the bag for the next draw).</li>
+</ul>
+<p>With this information, <code>sample()</code> will randomly choose values from the sample space at the proportion given by the probabilities. Here is some code that generates 1 coin flip from a fair coin:</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You may have tried to use a function like <code>mode()</code> in the code block above to calculate the mode of the variable <code>data_pts</code>. However, in R <code>mode()</code> is taken by a different function that does something else. So we’ll need a different method to describe our distribution. Given that the mode is the most frequent data value in a distribution, we can use the <code>table()</code> function to list the number of data points with each unique value, and identify the mode that way:</p>
-<div id="qwebr-insertion-location-10"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Because the mode can be far away from the middle in distributions like this, it may be better to think of the mode as more of a measure of “typicality” rather than a measure of “central tendency.”</p>
-</section>
-<section id="which-measure-of-central-tendency-to-use" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="which-measure-of-central-tendency-to-use"><span class="header-section-number">5.5.4</span> Which measure of central tendency to use?</h3>
-<p>When do you pick between mean, median, and mode to describe a distribution? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some things to think about when making your decision:</p>
-<ul>
-<li>The mean is a good default - many statistical tools are based on the mean, and lots of people know what it is.</li>
-<li>As already mentioned, if you have a highly skewed distribution, median may be better than mean for describing the middle of the data.</li>
-<li>If your data are categorical, it doesn’t make sense to calculate the mean or the median. Both the mean and the median rely on the idea that the numbers assigned to values are meaningful - i.e., can you say what the mean is of {apple, orange, banana, watermelon}? If data values aren’t related numerically, use the mode.</li>
-<li>If your data are whole number counts, you’re more likely to want to use the median than the mean. For instance, when measuring the typical number of children that an American household has, you can only have whole-numbered children. However, if we calculate the <a href="https://www.statista.com/statistics/718084/average-number-of-own-children-per-family">average child number per family in 2020</a>, we get 1.93. A partial amount of a child doesn’t really make sense when discussing the typical number of children one might find in a household. Instead, it would make more sense to use the median: 2.</li>
-</ul>
-</section>
-</section>
-<section id="sec-ch5-distribution-spread" class="level2 page-columns page-full" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="sec-ch5-distribution-spread"><span class="header-section-number">5.6</span> Distribution spread</h2>
-<p>Lastly we come to variation. Variation refers to how spread out (or wide) the distribution is. Central tendency tells us what the middle/most typical values are, but we don’t want to completely ignore the other scores. Two distributions can have a mean of 60, but if the range of one is 50 to 70 while the range of another is 2 to 200, those are obviously different distributions of data. There are also multiple measures available to give a specific value for a distribution’s variation.</p>
-<section id="range" class="level3 page-columns page-full" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="range"><span class="header-section-number">5.6.1</span> Range</h3>
-<div class="page-columns page-full"><p>The <strong>range</strong> of a variable is very simple: it’s the maximum value minus the minimum value. For <code>test_scores</code> data, the maximum value is 93, and the minimum value is 76. We can calculate these values in R using the <code>max()</code> and <code>min()</code> functions.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>range</strong> = a measure of variation calculated by identifying the difference between the minimum and maximum values</span></div></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use <code>min()</code> and <code>max()</code> to calculate the range of <code>test_scores</code> by subtracting the min from the max.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The other possibility is to use the <code>range()</code> function, which outputs both the minimum value and the maximum value in a vector, like this:</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Although the range is the simplest way to quantify the notion of variation, it’s one of the worst. Recall from our discussion of the mean and median that we want our summary measure to be robust (meaning it isn’t affected by outliers very much). If the distribution has one or two extreme values in it, we’d usually like our summary of the whole not to be unduly influenced by these cases. If we look once again at our toy example of a data set containing a very extreme outlier, <code>dist2 &lt;- c(10, 10, 11, 9, 11, 12, 8, 9, 10, 100)</code>, it is clear that the range is not robust, since this has a range of 92 unless the outlier were removed; then we would have a range of only 4.</p>
-</section>
-<section id="interquartile-range" class="level3 page-columns page-full" data-number="5.6.2">
-<h3 data-number="5.6.2" class="anchored" data-anchor-id="interquartile-range"><span class="header-section-number">5.6.2</span> Interquartile range</h3>
-<div class="page-columns page-full"><p>The <strong>interquartile range (IQR)</strong> is like the range, but instead of calculating the difference between the biggest and smallest value, it calculates the difference between the 25th percentile and the 75th percentile values (i.e., splitting the data into four buckets/“quartiles”). In fact, we’ve already come across the idea: the median of a data set is its 50th percentile!</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>interquartile range (IQR)</strong> = a measure of variation calculated by finding the 25th and 75th percentile values</span></div></div>
-<p>The simplest way to think about IQR is that it contains the “middle half” of the data. That is, one quarter of the data falls below the 25th quartile, one quarter of the data is above the 75th quartile, leaving the “middle half” of the data lying in between the two. The IQR is the range covered by that middle half.</p>
-<p>R provides you with a way of calculating percentiles, using the <code>quantile()</code> function. Let’s use it to calculate the median of <code>Height</code> in the <code>studentdata</code> dataset:</p>
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Not surprisingly, the 50% percentile and the median agree. Now, we can actually input lots of percentiles at once, by specifying a vector for the <code>probs</code> argument. So lets do that, and get the 25th and 75th percentile:</p>
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Since the IQR is the 75th percentile minus the 25th percentile, our IQR is 69 - 64 = 5. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Making life even easier, we can get the mean, median, range, and IQR of a distribution all at once using the <code>summary()</code> function.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use <code>summary()</code> on <code>studentdata$Height</code>. Can you recognize all the returned values?</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="sum-of-squares" class="level3 page-columns page-full" data-number="5.6.3">
-<h3 data-number="5.6.3" class="anchored" data-anchor-id="sum-of-squares"><span class="header-section-number">5.6.3</span> Sum of squares</h3>
-<p>The two measures we’ve looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the percentiles of the data. However, this isn’t the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report how much all the data points deviate from that reference point. If there’s a lot of deviation, that means many points are far away from the middle and thus our distribution is spread out. If there’s not much deviation, most data points are clumped closely around the middle.</p>
-<p>Computing this is a multi-step process. Let’s think about our <code>test_scores</code> data, <code>c(76,91,86,80,93)</code>. Since our calculations rely on an examination of the deviation from some reference point (in this example let’s use the mean), the first thing we need to calculate is that reference point (the mean). For the five observations of <code>test_scores</code>, our mean is <span class="math inline">\(\bar{x} = 85.2\)</span>, as we saw before.</p>
-<p>The next step is to convert each of our observations into a deviation score. That means calculating the difference between each score, <span class="math inline">\(x_i\)</span>, and the mean <span class="math inline">\(\bar{x}\)</span>. That is, the deviation score is defined as:</p>
-<p><span id="eq-difference"><span class="math display">\[x_i - \bar{x} \tag{5.1}\]</span></span></p>
-<p>For the first observation in our sample, this is equal to 76 - 85.2 = -9.2. By repeating this calculation for each data point in a sample, we know how far away each data point is from the sample mean.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Which score</th>
-<th style="text-align: center;">Value</th>
-<th style="text-align: center;">Deviation from mean</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">76</td>
-<td style="text-align: center;">-9.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">91</td>
-<td style="text-align: center;">5.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">86</td>
-<td style="text-align: center;">0.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">80</td>
-<td style="text-align: center;">-5.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">93</td>
-<td style="text-align: center;">7.8</td>
-</tr>
-</tbody>
-</table>
-<p>Now that we have calculated the absolute deviation score for every observation in the distribution, we could sum these up to say “here is the total amount of deviation in this distribution.”</p>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Uh oh, there seems to be a problem. Our sum of deviations is practically 0 (-1.42e<sup>-14</sup> is a really, really small number!). Surely there is more deviation in our distribution than that?</p>
-<p>The reason this happened is because some data points are above the mean (a positive difference score), and some are below the mean (a negative difference score). When you sum up positive and negative numbers, they cancel each other out.</p>
-<p>One way to get around this is to square every difference score:</p>
-<p><span id="eq-squared-difference"><span class="math display">\[(x_i - \bar{x})^2 \tag{5.2}\]</span></span></p>
-<div class="page-columns page-full"><p>This gets rid of negative numbers and allows us to calculate the total amount of deviation in a distribution more effectively. This calculation is called the <strong>sum of squares</strong>. Statisticians often use squaring instead of something like the absolute value to get rid of negative values for reasons that are beyond the scope of this course, <a href="https://www.benkuhn.net/squared/">but you can read about it if you like</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sum of squares</strong> = a measure of variation calculated by summing the squares of all data points’ deviations from the mean</span></div></div>
-<p>Here’s the formula for sum of squares:</p>
-<p><span id="eq-ss"><span class="math display">\[SS(x) = \sum_{i=1}^{n}(x_i-\bar{x})^2 \tag{5.3}\]</span></span></p>
-<p>To read this equation and remember it, break it down into the pieces we’ve talked about already. We have our difference equation in there, squared to remove negatives. We could find this squared difference for any data value <span class="math inline">\(x_i\)</span> in a variable <span class="math inline">\(x\)</span>, so to get one number for the whole distribution we find the sum of all differences across all observations <span class="math inline">\(i\)</span> from the 1st to the nth: hence <span class="math inline">\(\sum_{i=1}^{n}\)</span>. This equation tells us to find the sum of all squared differences in the variable. Hence the name!</p>
-<p>There’s a neat fact about the relationship between the mean and the sum of squares. The mean, <span class="math inline">\(\bar{x}\)</span> is the value that most <em>minimizes</em> the sum of squared deviations for a variable. If we put any other number in place of <span class="math inline">\(\bar{x}\)</span> in the sum of squares equation, like the median or mode, the sum of squares would be bigger. This is one of the reasons why the mean is such a common measure of central tendency despite its conceptual limitations - it vibes well with other statistical tools we may want to use.</p>
-</section>
-<section id="variance" class="level3 page-columns page-full" data-number="5.6.4">
-<h3 data-number="5.6.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">5.6.4</span> Variance</h3>
-<p>Sum of squares represents the total amount of deviation from the mean that all the points in a distribution have. We squared the deviations before adding them together, which helped us deal with the summing-to-zero problem. However, we still have another issue. Say we want to compare the variation scores for two datasets, one with 10 observations and one with 100. In the 10-observation dataset, the values all deviate from their mean by 1. In the 100-observation dataset, the values all differ from their mean by 0.5. We would think the bigger dataset has less spread because of this. But if we use the sum of squares equation, 100*(0.5)^2 is bigger than 10*(1)^2. Sum of squares goes up as a function of dataset size, not just data variation.</p>
-<div class="page-columns page-full"><p>This is why it’s also good to represent the amount of deviation in a distribution relative to how many data points are in it. This is a metric called the <strong>variance</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> . Variance is commonly given the short hand mathematical notations of <span class="math inline">\(var(x)\)</span> or <span class="math inline">\(s^2\)</span> (the reason for the second one will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>variance</strong> = a measure of variation calculated by dividing the sum of squares by n-1</span></div></div>
-<p><span id="eq-variance"><span class="math display">\[s^2 = \frac{\sum_{i=1}^{n} (x_i-\bar{x})^2}{n-1} \tag{5.4}\]</span></span></p>
-<p>It is very similar to the equation for sum of squares, except for one change. We take the sum of squares, and then divide the whole thing by n-1.</p>
+<p>When you ran the code above, what value did you get? Remember that we can never perfectly predict the value of one event - we only know its probability across many events. Thus, you likely got a different value than someone else did. In fact, if you execute the above code multiple times, you will get different results even though you didn’t change any code. Try it!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2511,20 +2417,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <span class="quarto-unresolved-ref">?sec-ch15</span>, so for now just take it on faith that this is correct.</p>
+<p>Note, if you ever want to make a random process in R spit out the same value every time you run it, include the function <code>set.seed()</code> on the line before. Put any number you want as the argument to this function. Each different number will operate as a separate “seed” from which your outcome now deterministically “grows.” Every sample generated from the same seed will produce the same sample. This is useful if you want to check your work or someone else needs to reproduce it.</p>
 </div>
 </div>
-<p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code>var()</code>.</p>
-<div id="qwebr-insertion-location-18"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now, what does the variance actually <em>mean</em>? This one is a little weird to interpret. It has some elegant mathematical properties that help a lot for deriving other statistical tools, but by itself it is not very helpful if you want to communicate about variation with another human. This is because variance is uninterpretable in terms of the original variable (this is true of sum of squares also). All the numbers have been squared so they don’t have meaningful units anymore. Because of this, we usually don’t interpret the number directly - we look at a ratio of different variances to see percent change, or we use it to calculate more interpretable quantities. For instance…</p>
-</section>
-<section id="standard-deviation" class="level3 page-columns page-full" data-number="5.6.5">
-<h3 data-number="5.6.5" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">5.6.5</span> Standard deviation</h3>
-<div class="page-columns page-full"><p>Since squaring the deviations is what took us away from the units of the variable originally, we could take the square root of the variance to get back to them. This is known as the <strong>standard deviation</strong>. While a variance of 13.07 inches-squared is weird to think about, it’s much easier to understand a standard deviation of 3.61 inches, since it’s expressed in the original units. Interpret it as the typical amount of deviation you expect any randomly-chosen data point to have from the sample mean.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standard deviation</strong> = a measure of variation calculated by taking the square root of the variance</span></div></div>
-<p>The mathematical notation for standard deviation is <span class="math inline">\(s\)</span>, though “sd” and “std dev” are also used at times as abbreviations of the term. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
-<p><span id="eq-stddev"><span class="math display">\[s = \sqrt{\frac{\sum_{i=1}^{n} (x_i-\bar{x})^2}{n-1}} \tag{5.5}\]</span></span></p>
-<p>This just puts a square root operation around the variance equation (which just divides the sum of squares equation by n-1 - it’s all connected!). The R function to calculate standard deviation is <code>sd()</code>.</p>
+<p>Now let’s generate data of many coin flips.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2535,28 +2433,36 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Find the standard deviation of <code>studentdata$Height</code> using <code>sd()</code>, and verify that it produces the same result as the square root of <code>var()</code>.</p>
+<p>Change the code below to create a sample of 1000 coin flips.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-19"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This gave us a distribution of data, generated probabilistically. In this case, we specified the data generation process ourselves. We set the possible values of the target variable (the sample space), and we set the value of the generating parameter (the probability of heads vs.&nbsp;tails). From that we didn’t get one output, because our data generation process in probabilistic. We got a distribution.</p>
+<p>If we want to include additional information that influences the data generation process, say we have two separate coins A and B. This time, which coin we are flipping (A or B) will determine the value of the generating parameter (the probability of heads vs.&nbsp;tails). The code below will do this by looping through a vector of coin labels and generating a flip with probability <span class="math inline">\(P(x=heads) = 0.5\)</span> if the coin is labeled A, or probability <span class="math inline">\(P(x=heads) = 0.67\)</span> if the coin is labeled B.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>What is the mean of the distribution of coin flips in the A vs.&nbsp;B panel? Does it look like the label of the coin we flipped influenced the distribution of the outcome?</p>
 </section>
-<section id="which-measure-of-variability-to-use" class="level3" data-number="5.6.6">
-<h3 data-number="5.6.6" class="anchored" data-anchor-id="which-measure-of-variability-to-use"><span class="header-section-number">5.6.6</span> Which measure of variability to use?</h3>
-<p>We’ve discussed quite a few measures of spread (range, IQR, sum of squares, variance, and standard deviation), and hinted at their strengths and weaknesses. Here’s a quick summary:</p>
+<section id="simulating-different-types-of-data" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="simulating-different-types-of-data"><span class="header-section-number">8.5</span> Simulating different types of data</h2>
+<p>When simulating data, we control the data generation process. We just saw an example of setting the generating parameter ourselves, and of adding information that influences the generating parameter. We can also choose the kind of distribution that is possible to generate with different R functions.</p>
+<p><code>sample()</code> will generate data that are discrete values, sampled from the sample space provided as an argument. If you want something more like the <code>Height</code> variable in <code>studentdata</code>, where you get continuous values as an output, you can use a function like <code>runif()</code>. This is short for “random uniform distribution”. This function takes three arguments:</p>
 <ul>
-<li>Range: Gives you the full spread of the data. It’s very vulnerable to outliers, and as a consequence it isn’t often used unless you have good reasons to talk about the extremes in the data.</li>
-<li>Interquartile range: Tells you how wide the “middle half” of the data is. It’s pretty robust, and complements the median nicely.</li>
-<li>Sum of squares: Tells you the total amount of squared deviations in a distribution. Rarely used to summarize a distribution by itself, but serves as the basis of other statistical tools.</li>
-<li>Variance: Tells you the average squared deviation from the mean. Similarly to sum of squares, it’s mathematically useful but infrequently used as a standalone summary statistic.</li>
-<li>Standard deviation: Square root of the variance. It’s fairly elegant mathematically, and it’s expressed in the same units as the data so it can be interpreted well. In situations where the mean is the measure of central tendency, this is the most popular measure of spread.</li>
+<li><code>n</code>: how many values to generate</li>
+<li><code>min</code>: the minimum value of the sample space</li>
+<li><code>max</code>: the maximum value of the sample space</li>
 </ul>
-</section>
-</section>
-<section id="sec-ch5-summarizing-nonnumeric-data" class="level2 page-columns page-full" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="sec-ch5-summarizing-nonnumeric-data"><span class="header-section-number">5.7</span> Summarizing non-numeric data</h2>
-<p>As you’ve probably noticed, the methods we’ve learned for describing a distributions are equations. We’ve mentioned a few times now that most statistical tools work this way and thus need quantitative data to operate. Thus, in order to summarize categorical data, we first need to turn them into numbers - we need to quantify them.</p>
-<p>Let’s start with a simple quantification problem first - a variable with only two categories. We have one like this in our <code>studentdata</code> dataset, <code>Sex</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. This variable has two values to start with - <code>Male</code> and <code>Female</code>. In <a href="chapter-2.html" class="quarto-xref"><span>Chapter 2</span></a> we learned about a data type in R that is specifically for variables with only two values - Boolean data. So we can simply convert the <code>Sex</code> variable from character to Boolean.</p>
+<p>While the generating parameter of <code>sample()</code> is the probability of each value in the sample space, we can’t determine that for an infinite number of possible decimal values in a continuous variable. Instead, the generating parameters of a uniform distribution are the minimum and maximum values of the sample space. Here is what a distribution of 1000 values might look like if generated from <code>runif()</code> with a minimum of 0 and a maximum of 5:</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Recall that a uniform distribution is one with no clear mode, and instead all values are equally likely to happen. This distribution doesn’t look perfectly uniform because this is a random process, and you aren’t <em>guaranteed</em> to draw every value the same number of times even though every value has an equal shot of occurring. The name of the distribution actually refers to the generating process, not the shape of the exact distribution that was generated (even though that’s how we first talked about a uniform distribution in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>). A distribution of data will tend to resemble the ideal shape it came from, but won’t exactly match it because of randomness.</p>
+<p><code>runif()</code> gives us data of continuous values resembling a uniform distribution, but if we want data that looks more like <code>Height</code>, a uniform distribution doesn’t seem like the right choice. In <code>Height</code>, some values are clearly more likely than others and the data was roughly symmetric unimodal. To get this sort of distribution shape instead, we use <code>rnorm()</code> (we will see in the next section why it’s named that way). This function takes three different arguments:</p>
+<ul>
+<li><code>n</code>: how many values to generate</li>
+<li><code>mean</code>: the mean of the distribution</li>
+<li><code>sd</code>: the standard deviation of the distribution</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2567,68 +2473,63 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make a new variable in <code>studentdata</code> called <code>Sex_bool</code>, where observations are TRUE if the original value is <code>Female</code> and FALSE if the original value is <code>Male</code>.</p>
+<p>Use the <code>rnorm()</code> function to generate a distribution of 1000 values with a mean of 65 and a standard deviation of 5.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-20"></div>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Reveal the answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>There are multiple ways you could do this, such as with a logic statement <code>studentdata$Sex_bool &lt;- studentdata$Sex == "Female"</code> or recoding with <code>studentdata$Sex_bool &lt;- dplyr::recode_values(studentdata$Sex, from = c("Male", "Female"), to = c(FALSE, TRUE))</code>.</p>
-</div>
-</div>
-</div>
-<p>A neat thing about Boolean data is that the computer actually treats a value of TRUE as 1 and a value of FALSE as 0 (this is the basis of computer binary code - 0s and 1s are just logic gates). So now that we have <code>Sex_bool</code> as a Boolean variable, we can perform math computations on it!</p>
-<div id="qwebr-insertion-location-21"></div>
+<p>As is becoming clear, these random data generation functions require information about how many data values to draw, and values for the generating parameters. Different types of possible distributions require different data generating parameters. Think of them as different machines that make different kinds of things, so of course they will have different settings to adjust.</p>
+<p>If we want to add information that influences the shape of the generated data distribution, the parameters that change are specific to whatever type of possible distribution you specified. See below for how we could simulate data like <code>Height</code> and make the distribution change based on the value of <code>Sex</code>.</p>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Turning binary categorical data into Boolean data is quite common in statistics, and is called making a <strong>dummy variable</strong>. The mean of a dummy variable is the proportion of observations that are TRUE, and the variance and standard deviation are measures of how much variation there is in the distribution of TRUE and FALSE values.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>dummy variable</strong> = quantification of a binary categorical variable, such that one category is set to 1 and the other to 0</span></div></div>
-<div class="page-columns page-full"><p>Note that these values being the mean and standard deviation of Boolean/binary data does not mean these values actually exist in the dataset (indeed, since they’re not 0 or 1, they cannot). It is more natural to think of the mean of a Boolean variable as the <strong>proportion</strong> of the variable that equals TRUE. The notation for proportion is traditionally <span class="math inline">\(p\)</span>, but just keep in mind for later that <span class="math inline">\(p = \bar{x}\)</span> when <span class="math inline">\(x\)</span> is binary. The variance and standard deviation of Boolean data don’t have a straightforward interpretation, but they will approach a max of <span class="math inline">\(s^2 = 0.25\)</span> (<span class="math inline">\(s = 0.5\)</span>) when the distribution is evenly split between TRUE and FALSE and will be 0 when the distribution is all TRUE or all FALSE (i.e., no variation).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>proportion</strong> = number of “successes” in a set divided by the total number of items in the set</span></div></div>
-<p>Now let’s consider a more complex categorical variable like <code>Ethnicity</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try to remember a function we learned about in this chapter to show which values are in this variable and how many observations are in each category. If you forgot, re-read <a href="#sec-ch5-distribution-center" class="quarto-xref"><span>Section 5.5</span></a> before peaking at the answer.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-22"></div>
+</section>
+<section id="mathematical-notation-for-data-generation-processes" class="level2 page-columns page-full" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</h2>
+<p>It may seem like a lot of words to talk about all the components of the data generation process - kind of possible distribution, information that influences the generating parameters, how this information is integrated. Because of this, there are again mathematical standards to efficiently notate each piece we are talking about.</p>
+<section id="notating-kind-of-possible-distribution" class="level3 page-columns page-full" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="notating-kind-of-possible-distribution"><span class="header-section-number">8.6.1</span> Notating kind of possible distribution</h3>
+<div class="page-columns page-full"><p>For the first component, the kind of distribution possible for the target variable, we saw in the coin flipping example that the data can only be one of two discrete values. A single coin flip will only give you a value of ‘heads’ or ‘tails’, not ‘purple’ or ‘23.3’. This kind of distribution is fairly common in nature, so mathematicians have given it a name. This is called a <strong>Bernoulli distribution</strong>, named after the mathematician who formally defined it. If we want to notate that we are talking about a Bernoulli distribution, we write:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Bernoulli distribution</strong> = a kind of distribution made by a binary variable with two possible outcomes; defined by the probability of those outcomes</span></div></div>
+<p><span id="eq-bernoulli"><span class="math display">\[Bernoulli(p) \tag{8.6}\]</span></span></p>
+<div class="page-columns page-full"><p>The name at the beginning of the term specifies the type of distribution, also called the <strong>distribution family</strong>. The letter in the parentheses is the generating parameter that affects how the distribution is shaped. We saw in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> that the mean of a binary variable is the proportion <span class="math inline">\(p\)</span>; a proportion is also what probability means, as we saw when we were changing how the distribution of coin flips looked when generated by <code>sample()</code>. Thus, this is the attribute that is relevant for determining how a Bernoulli distribution will be shaped. If you refer to a data generation process as <span class="math inline">\(Bernoulli(0.5)\)</span>, what you are saying is this data generation process will create data of one of two values, with a proportion/probability of the first value being 0.5.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>distribution family</strong> = a group of distributions that have the same generating parameters; different members of the family will have differents values of those parameters</span></div></div>
+<p>When we say a target variable is being generated by this process, we write that fully as:</p>
+<p><span id="eq-bernoulli-target"><span class="math display">\[y \sim Bernoulli(0.5) \tag{8.7}\]</span></span></p>
+<p>You should read this equation to mean “the variable y is generated from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is generated from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p>
+<p><span id="eq-deterministic-target"><span class="math display">\[y = 5 + 2x \tag{8.8}\]</span></span></p>
+<p>When there’s an equal sign, the value of <span class="math inline">\(y\)</span> is exactly determined by whatever is on the right side of the equation. When there’s a tilda, we are saying the value of <span class="math inline">\(y\)</span> is probabilistically generated by whatever is on the right side.</p>
+<div class="page-columns page-full"><p>If we are talking about a <strong>uniform distribution</strong> instead (continuous values of even probability), we notate that family as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>uniform distribution</strong> = a kind of distribution where all values are continuous and within a specified range are equally likely; defined by the minimum and maximum possible values</span></div></div>
+<p><span id="eq-uniform"><span class="math display">\[U(min, max) \tag{8.9}\]</span></span></p>
+<p>Where <span class="math inline">\(U\)</span> is short for “uniform”. To generate data from a data generation process <span class="math inline">\(U(0,5)\)</span> means the data will have a uniform distribution with a minimum value of 0 and a maximum value of 5.</p>
+<div class="page-columns page-full"><p>There are different distribution families that probabilistically produce continuous data with more or less probability, but the kind we’ve been playing with so far (symmetric unimodal values) is called a <strong>normal distribution</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> . This is why the R function to generate this kind of data is <code>rnorm()</code> (short for “random normal distribution”). We traditionally notate this family as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>normal distribution</strong> = a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation</span></div></div>
+<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.10}\]</span></span></p>
+<p>The shape of a normal distribution is not determined by a maximum or minimum score. In fact, the sample space of a normal distribution technically ranges from negative infinity to positive infinity (even though the probability of those huge values is vanishingly small). Instead, <span class="math inline">\(\mu\)</span> (“mu”, pronounced “mew”) refers to the mean of the distribution and <span class="math inline">\(\sigma\)</span> (sigma, pronounced “sig-ma”) to the standard deviation of the distribution.</p>
+<p>In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we said that the mean is notated as <span class="math inline">\(\bar{x}\)</span> and the standard deviation as <span class="math inline">\(s\)</span>, and that’s true of those summaries of <em>a specific distribution</em>. Using the Greek letters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> to notate the mean and standard deviation as <em>generating parameters</em> of a normal distribution helps us keep these ideas separate, since they won’t always be the same due to randomness:</p>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>There are many other distribution families out there that generate different types of data distributions. We won’t cover them in this book, but <a href="#fig-ch8-distributions" class="quarto-xref">Figure&nbsp;<span>8.3</span></a> shows some examples you might run into in the future:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch8-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch8-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-8_files/figure-html/fig-ch8-distributions-1.png" class="img-fluid figure-img" width="672">
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Reveal the answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>table()</code> is good for this.</p>
-</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: A) Binomial distribution B(n,p): sum of yeses in n yes/no trials with probability of yes = p.&nbsp;Sample space range [0, n]. Used for target variables like test scores. B) Poisson distribution Pois(lambda): Count of things occurring in a fixed time interval with occurrance rate lambda. Sample space range [0, infinity]. Used for target variables like group size. C) Gamma distribution Gamma(alpha, theta): Continuous values with positive skew, controlled by shape alpha and scale theta. Sample space range [0, infinity]. Used for target variables like reaction time. D) Beta distribution Beta(alpha, beta): Continuous values between 0 and 1, with alpha and beta controlling the relative weighting towards either end. Sample space range [0, 1]. Used for target variables like proportion of time spent on a task.
+</figcaption>
+</figure>
 </div>
 </div>
-<p>Because there are more than two categories in <code>Ethnicity</code>, we can’t turn it into Boolean data… or can we?</p>
-<div class="page-columns page-full"><p>Recall that Boolean data are the answer to a logical question, like “is this person female?” There’s no reason we couldn’t pose a similar logical question of this variable, such as “is this person Asian?” The answer to such a question will be TRUE for everyone who answered <code>Asian</code> and FALSE for everyone else. Leaving the variable like this means we lose information about how people answered if they did not select <code>Asian</code> on the survey. But we could ask successive logical questions about the other categories, effectively making multiple Boolean variables. We can then take the sum of the variances across all these dummy variables to get an <strong>index of qualitative variation (IQV)</strong> for the whole multilevel variable<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Along with the mode for central tendency, this is how we would use quantification to describe non-numeric data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>index of qualitative variation (IQV)</strong> = a measure of variation in a multilevel categorical variable, calculated as the sum of the variances for each of the variable’s corresponding dummy variables</span></div></div>
+</div>
+<p>Note that when choosing a distribution family to generate a target variable, the distribution family is <em>not</em> dictated by the the target data type. A variable like height can be recorded in inches, or as the answer to a Boolean question “tall enough to ride this roller coaster?”. But the fundamental nature of the variable - its scale of measurement - is interval with values that are more or less probable and symmetric. When choosing a distribution family to generate data such as heights, let the scale of measurement guide you and if necessary, transform the data into different values afterwards.</p>
+</section>
+<section id="notating-how-other-information-influences-generating-parameters" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="notating-how-other-information-influences-generating-parameters"><span class="header-section-number">8.6.2</span> Notating how other information influences generating parameters</h3>
+<p>We can notate the data generation process of a target variable with something like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we want those specific values of the generating parameters to stay static. But if want to indicate that they should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated. For instance, if we want some variable <span class="math inline">\(y\)</span> to be generated from a normal distribution, but the mean of that distribution is influenced by something else, we write two equations:</p>
+<p><span class="math display">\[y \sim \mathcal{N}(\mu, 5)\]</span> <span id="eq-normal-dgp"><span class="math display">\[\mu = 65 + 2x \tag{8.11}\]</span></span></p>
+<p>The first equation specifies the type of distribution and generating parameters. The second equation tells us that the value of the generating parameter <span class="math inline">\(\mu\)</span> is itself determined by a different feature variable, <span class="math inline">\(x\)</span>. This equation also specifies the input function of how that feature exerts influence. In this case <span class="math inline">\(\mu\)</span> is determined by adding 2 times the value of <span class="math inline">\(x\)</span> to a base value of 65. If we knew <span class="math inline">\(x_i\)</span> for some observation <span class="math inline">\(i\)</span>, we could plug that value into the second equation, calculate <span class="math inline">\(\mu\)</span>, and then use <span class="math inline">\(\mu\)</span> to generate a distribution of likely <span class="math inline">\(y\)</span> values that observation would have.</p>
+<p>These two equations together - how <span class="math inline">\(y\)</span> is probabilistically generated by a distribution family and parameters, and how those parameters are determined by other information - notate the whole data generation process. By controlling the pieces of these equations, we can create many possibilities of data.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2637,165 +2538,100 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(np(1-p)/(n-1)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> as</p>
-<p><span class="math display">\[\sum_{i=1}^{n}(x_i-p)^2\]</span></p>
-<p>Because <span class="math inline">\(x_i\)</span> in a binary variable can only be 0 or 1, the deviation part of the equation can only ever be <span class="math inline">\((1-p)^2\)</span> or <span class="math inline">\((0-p)^2 = p^2\)</span>. If we let <span class="math inline">\(m\)</span> equal the number of 1s and <span class="math inline">\(n-m\)</span> equal the number of 0s, we can break down the sum to get:</p>
-<p><span class="math display">\[m(1-p)^2 + (n-m)p^2\]</span></p>
-<p>Now, we replace <span class="math inline">\(m\)</span> with <span class="math inline">\(np\)</span>, since a count of 1s is the product of the proportion of 1s and the total sample size.</p>
-<p><span class="math display">\[np(1-p)^2 + n(1-p)p^2\]</span> Factor out <span class="math inline">\(np(1-p)\)</span>:</p>
-<p><span class="math display">\[np(1-p)(1-p + p)\]</span></p>
-<p><span class="math inline">\(1-p + p\)</span> is simply 1, so for the sum of squares of a binary variable we are left with:</p>
-<p><span class="math display">\[np(1-p)\]</span></p>
-<p>To get to variance of this variable, like we saw with getting variance out of the sum of squares for a numeric variable, we divide by <span class="math inline">\(n-1\)</span>:</p>
-<p><span class="math display">\[s^2 = \frac{np(1-p)}{n-1}\]</span></p>
-<p>To derive a generalized equation for a multilevel categorical variable, suppose there are <span class="math inline">\(k\)</span> categories and <span class="math inline">\(p_j\)</span> stands for the proportion of 1s in the jth dummy variable. Summing up the variances for each dummy variable gives us:</p>
-<p><span class="math display">\[\sum_{j=1}^{k} s_j^2 = \frac{n}{n-1} \sum_{j=1}^{k} p_j(1-p_j) = \frac{n}{n-1} (1 - \sum_{j=1}^{k} p_j^2)\]</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-ch5-zscores" class="level2 page-columns page-full" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="sec-ch5-zscores"><span class="header-section-number">5.8</span> Z-scores</h2>
-<p>The concepts we’ve covered in this chapter - shape, center, and spread - are all features of a distribution. As we mentioned as the beginning, they don’t apply to individual data points, only the whole. However, they can still be relevant for understanding specific data values, <em>in the context</em> of the whole variable.</p>
-<p>So far our data practice we have only dealt with relatively concrete variables, like <code>Height</code> measured in inches. When we calculate a mean of 66.2 and a standard deviation of 3.61, we know roughly what those amounts look like because we have experience looking at different heights. But what if we got the same standard deviation for a different variable, like light intensity of a light bulb? Do you have any instincts about how much 3.61 lumens is?</p>
-<p>Interpreting the meaning of a variable, and thus its summary statistics, depends on knowing about that variable in real life. It depends on knowing the context of what other values on this variable are typical. This may seem like a problem for doing statistics on variables we are unfamiliar with (which is likely to happen, if we are doing data analysis to understand something better!). However, there is a way we can translate any variable into the same units so that they’re easier to interpret and compare.</p>
-<p>For example, consider a student who is 64 inches tall. Good for them, but what does this mean? Is that a particularly tall height, or pretty normal? How can we know?</p>
-<p>Let’s consider this student’s height relative to the mean of our <code>Height</code> data. By comparing these two values, we know that the student is about 2.2 shorter than average. That helps us get a little closer to understanding what this one data point means. But because we have no idea about the spread of the distribution, we still don’t have a complete answer. Is a 2.2 difference still pretty close to the mean, or is it far away? It’s hard to tell without also knowing what the spread of <code>Height</code> values looks like.</p>
-<p>Standard deviation is useful for this. A standard deviation of 3.61 tells us that, on average, people’s heights are 3.61 away from the mean, both above and below. So although our selected student is below average in height, they are definitely not one of the shortest people in the distribution, or even that atypical - they are only about 0.61 of a standard deviation away from the mean. Check out the histogram in <a href="#fig-ch5-zscore" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> to see this visualized (the green line is the distribution average, while the red line is the selected student’s height).</p>
+<p>Even when we’re talking about probabilistic data generation and we don’t know everything that determines why a data point has a certain value, the distribution family we choose implies something about how that data value was created, not just the shape of the distribution that tends to occur for this variable.</p>
+<p>For instance, consider a uniformly-distribution target variable generated by <span class="math inline">\(U(0,6)\)</span>. This could be something like rolls on a 6 sided die. If we plotted this, we’d see roughly equal numbers of values on the range 0 to 6.</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(x), <span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-ch5-zscore" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch5-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter-5_files/figure-html/fig-ch5-zscore-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: a specific student’s heigh relative to the rest of the Height distribution
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="chapter-8_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Consider another example. Your friend tells you they just hit a new high score of 3,700 on a video game. Is that a big deal? Here are two possible distributions of high scores other people get on this game, with your friend’s score marked by the red line:</p>
+<p>Now say this isn’t actually our target variable, but the <em>sum</em> of several dice rolls is. When we roll 4 separate dice, sometimes we will roll a high number and sometimes a low number. Each roll by itself has an equal probability of happening, but the probability that <em>all</em> the dice roll high is lower than the chance that some roll high and some roll low. This is because there is only one way to get the highest score: 6 + 6 + 6 + 6 = 24. But there are multiple ways to get a score like 14: 6 + 6 + 1 + 1 = 14, 5 + 5 + 2 + 2 = 14, etc. So when we sum the results of multiple separate rolls, our total score distribution looks like:</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3 <span class="sc">+</span> x4</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(x), <span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-ch5-zscore2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch5-zscore2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter-5_files/figure-html/fig-ch5-zscore2-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5-zscore2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: your friend’s video game score relative to other possible score distributions
-</figcaption>
+<div>
+<figure class="figure">
+<p><img src="chapter-8_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Clearly your friend would be an outstanding player if distribution 1 were true. But if distribution 2 were true, they would be just slightly above average. Thus, it’s more useful to say something about a particular data point if we can also communicate about the mean and standard deviation of a distribution.</p>
-<p>In order to make this easier, so that we don’t have to report several numbers at once, we can treat standard deviation as a new unit on which to measure our data. Let’s convert the value of <code>Height</code> to be a data point’s deviation from the mean, divided by the standard deviation:</p>
-<div id="qwebr-insertion-location-23"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>This new unit tells us how much of a standard deviation any score is from the mean. This can be positive (above the mean), or negative (below the mean). This rescaled unit is called a <strong>z-score</strong>. It is a transformation of a variable so that the middle point of a distribution is always 0, and a value of 1 means one standard deviation above the middle (-1 is one standard deviation below the middle). To calculate it:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>z-score</strong> = a standardized unit all quantitative variables can be transformed to; 1 z-score corresponds to 1-SD away from the mean in the original variable units</span></div></div>
-<p><span id="eq-zscore"><span class="math display">\[z_i = \frac{(x_i - \bar{x})}{s} \tag{5.6}\]</span></span></p>
-<p>where <span class="math inline">\(s\)</span> is the standard deviation of <span class="math inline">\(x\)</span>. You can implement this equation in R (watch out for order of operations!), or you can also use the function <code>scale()</code>.</p>
-<div id="qwebr-insertion-location-24"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>A score of 3,700 on a game doesn’t mean much to someone who doesn’t play that game. But this way it’s easy to understand a z-score of 0.2 (a little above average, not too strange) or 3 (way above average, very unusual). The z-score <em>standardizes</em> the variable, so it’s always on the same scale as any other variable that has been standardized.</p>
-<div class="page-columns page-full"><p>Some things to know about summaries of standardized variables: subtracting the mean from every value is called <strong>centering</strong>. The mean of a z-scored variable will now always be 0, no matter what the original units were. Also, by dividing the centered variable with the standard deviation, putting a z-score into the variance equation makes that value cancel out, giving us always a variance and standard deviation of 1 for a z-scored variable. Verify these facts for yourself:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>centering</strong> = setting the mean of a variable to be 0</span></div></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
+<p>That looks a bit like a normal distribution, doesn’t it?</p>
+<p>Indeed, normally-distributed data in nature come about through combinations of many factors. And if there are many factors, it doesn’t matter what the underlying distribution family of those factors are - the sum of their values will approach a normal distribution shape. This is a useful mathematical idea known as the Central Limit Theorem that lets us assume the normal distribution is the generating distribution for a lot of target variables, even if we don’t know all the factors that influence them.</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Calculate the z-score of the <code>Hand</code> variable in <code>studentdata</code>, and then find the mean and standard deviation of the new z-scored variable.</p>
 </div>
-</div>
-<div id="qwebr-insertion-location-25"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>With the knowledge in this chapter - visualizing distributions, summarizing them, and talking about data values relative to their place in the distribution - you have the tools to describe just about any variable. You have created your first statistical answers to statistical questions such as “what are people like on this variable?”</p>
 </section>
-<section id="sec-ch5-resources" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="sec-ch5-resources"><span class="header-section-number">5.9</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="5.9.1">
-<h3 data-number="5.9.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">5.9.1</span> Learning goals</h3>
+</section>
+<section id="chapter-summary" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">8.7</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">8.7.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
-<li>Define “distribution”</li>
-<li>Describe what shape, center, and spread refers to about a distribution</li>
-<li>Plot a distribution of data in R</li>
-<li>Visually identify modality and skewness in a distribution</li>
-<li>Compute the mean, median, and mode for describing a variable’s central tendency</li>
-<li>Compute the range, interquartile range, sum of squares, variance, and standard deviation for describing a variable’s variation</li>
-<li>Compute and interpret a z-score for a data point in a distribution</li>
+<li>Explain what the data generation process is and why we would care about it</li>
+<li>Describe the different components of the data generation process</li>
+<li>Explain the difference between deterministic vs.&nbsp;probabilistic data generation</li>
+<li>Define probability concepts “elementary event”, “sample space”, and “sampling”.</li>
+<li>Write the three axioms of probability</li>
+<li>Use <code>sample()</code>, <code>runif()</code>, and <code>rnorm()</code> to probabilistically simulate data</li>
+<li>Formally notate the equations of a data generation process</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="5.9.2">
-<h3 data-number="5.9.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">5.9.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">8.7.2</span> New concepts</h3>
 <ul>
-<li><strong>descriptive statistics</strong>: A set of statistical tools used to describe a data sample.</li>
-<li><strong>distribution</strong>: The nature and shape of variation in the collective values of a variable.</li>
-<li><strong>histogram</strong>: A type of plot that visualizes a single-variable distribution, with variable values on the x-axis and number of observations with that value on the y-axis.</li>
-<li><strong>symmetrical distribution</strong>: a distribution shaped such that both halves look approximately mirrored.</li>
-<li><strong>skewed distribution</strong>: a distribution shaped such that one half of the distribution is more spread out than the other; a lopsided distribution.</li>
-<li><strong>unimodal distribution</strong>: a distribution with one clear peak.</li>
-<li><strong>bimodal distribution</strong>: a distribution with two clear peaks.</li>
-<li><strong>uniform distribution</strong>: a distribution with no clear peak and a roughly even number of observations across the range of possible values.</li>
-<li><strong>central tendency</strong>: the “middle” or “typical” value of a distribution, close to where most points are.</li>
-<li><strong>mean</strong>: a measure of central tendency calculated by summing all values and dividing by the number of values.</li>
-<li><strong>median</strong>: a measure of central tendency calculated by finding the middle value if all values were ordered smallest to largest.</li>
-<li><strong>mode</strong>: a measure of central tendency calculated by finding the most frequent value.</li>
-<li><strong>range</strong>: a measure of variation calculated by identifying the difference between the minimum and maximum values.</li>
-<li><strong>interquartile range (IQR)</strong>: a measure of variation calculated by finding the 25th and 75th percentile values.</li>
-<li><strong>sum of squares</strong>: a measure of variation calculated by summing the squares of all data points’ deviations from the mean.</li>
-<li><strong>variance</strong>: a measure of variation calculated by dividing the sum of squares by n-1.</li>
-<li><strong>standard deviation</strong>: a measure of variation calculated by taking the square root of the variance.</li>
-<li><strong>dummy variable</strong> = quantification of a binary categorical variable, such that one category is set to 1 and the other to 0.</li>
-<li><strong>proportion</strong> = number of “successes” in a set divided by the total number of items in the set.</li>
-<li><strong>index of qualitative variation (IQV)</strong> = a measure of variation in a multilevel categorical variable, calculated as the sum of the variances for each of the variable’s corresponding dummy variables.</li>
-<li><strong>z-score</strong>: a standardized unit all quantitative variables can be transformed to; 1 z-score corresponds to 1-SD away from the mean in the original variable units.</li>
-<li><strong>centering</strong> = setting the mean of a variable to be 0.</li>
+<li><strong>data generation process</strong>: the process by which data take on the values that they do.</li>
+<li><strong>target</strong>: the variable we are trying to predict or understand.</li>
+<li><strong>generating parameters</strong>: values that control the shape of a distribution of generated data.</li>
+<li><strong>features</strong>: variables that influence the generating parameters for a target variable.</li>
+<li><strong>input function</strong>: the mathematical algorithm that combines feature variables to determine the values of the generating parameters.</li>
+<li><strong>deterministic data generation</strong>: when everything is known about how a target value is generated, such that the values can be calculated exactly.</li>
+<li><strong>probabilistic data generation</strong>: when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur.</li>
+<li><strong>elementary event</strong>: one occurrence of data.</li>
+<li><strong>sample space</strong>: the set of possible values a variable can take on.</li>
+<li><strong>sampling</strong>: the process of generating one or more elementary events from the sample space.</li>
+<li><strong>simulation</strong>: the process of generating data based on provided information about the data generation process.</li>
+<li><strong>Bernoulli distribution</strong>: a kind of distribution made by a binary variable with two possible outcomes; defined by the probability of those outcomes</li>
+<li><strong>distribution family</strong>: a group of distributions that have the same generating parameters; different members of the family will have differents values of those parameters.</li>
+<li><strong>uniform distribution</strong>: a kind of distribution where all values are continuous and within a specified range are equally likely; defined by the minimum and maximum possible values.</li>
+<li><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="5.9.3">
-<h3 data-number="5.9.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">5.9.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="8.7.3">
+<h3 data-number="8.7.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">8.7.3</span> New R functionality</h3>
 <ul>
-<li><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot2::ggplot()</a></li>
-<li><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">ggplot2::geom_histogram()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean">mean()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/median">median()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/table">table()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/range">range()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile">quantile()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/summary">summary()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.5.2/topics/cor">var()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/sd">sd()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/rep">rep()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sample">sample()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Random">set.seed()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Uniform">runif()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Normal">rnorm()</a></li>
 </ul>
-</section>
-<section id="further-reading" class="level3" data-number="5.9.4">
-<h3 data-number="5.9.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.9.4</span> Further reading</h3>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-wickham2023b" class="csl-entry" role="listitem">
-Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: Elegant Graphics for Data Analysis (3e)</em>. <a href="https://ggplot2-book.org/" class="uri">Https://ggplot2-book.org/</a>; Springer.
-</div>
-</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>And sometimes we do use absolute values anyways. A less common measure of variation, the mean or median absolute deviation (MAD), uses absolute values.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>A note on terms here: statisticians are smart folks but naming things is not their strong suit. When we refer to “variation” or “variability”, we are talking about the general concept of spread in a distribution. “variance” refers to a specific metric for computing variation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>There is actually <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ele.70350">debate in biology</a> over whether sex in nature is truly binary categorical, but in our data we only have two values so we will analyze this variable as such.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>There are <a href="https://en.wikipedia.org/wiki/Qualitative_variation">a <em>lot</em></a> of other ways to quantify variation/diversity in categorical data, but this is one of the simplest and most comparable to variance in numeric data<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>actually even this situation isn’t so simple if we think about air resistance too, but let’s assume a vacuum for now like all those intro physics problems tend to<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>If that’s you, I know a few casinos we can hit<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>You will also see it called a “Gaussian distribution” after the mathematician Carl Friedrich Gauss<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -3202,13 +3038,13 @@ Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: El
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-4.html" class="pagination-link" aria-label="Cleaning Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cleaning Data</span></span>
+      <a href="./chapter-7.html" class="pagination-link" aria-label="Communicating Statistical Results">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-6.html" class="pagination-link" aria-label="Patterns Among Multiple Variables">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-9.html" class="pagination-link" aria-label="Modeling the Data Generation Process">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

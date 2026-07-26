@@ -1752,8 +1752,57 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Predicting &amp; Explaining Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Predicting &amp; Explaining Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Quality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Different Predictions for Different Groups</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multiple Predictor Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -2327,7 +2376,7 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 </section>
 <section id="sec-ch6-association-metrics" class="level2 page-columns page-full" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="sec-ch6-association-metrics"><span class="header-section-number">6.5</span> Association metrics</h2>
-<p>In this chapter we will focus on metrics we can use to describe monotonic associations.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>In this chapter we will focus on metrics we can use to describe monotonic associations.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The first metric we will look at is called <strong>covariance</strong>.]</p>
 <section id="covariance" class="level3 page-columns page-full" data-number="6.5.1">
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="covariance"><span class="header-section-number">6.5.1</span> Covariance</h3>
 <div class="page-columns page-full"><p>The first one is is for describing linear relationships and is called <strong>covariance</strong>. Covariance, often notated as <span class="math inline">\(s_{xy}\)</span> or <span class="math inline">\(cov(x,y)\)</span>, is defined as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>covariance</strong> = a measure of association between two variables, calculated by summing the products of their deviations and dividing the sum by n-1</span></div></div>
@@ -2373,7 +2422,7 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <section id="correlations-in-non-numeric-data" class="level3 page-columns page-full" data-number="6.5.3">
 <h3 data-number="6.5.3" class="anchored" data-anchor-id="correlations-in-non-numeric-data"><span class="header-section-number">6.5.3</span> Correlations in non-numeric data</h3>
 <p>As we saw in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>, categorical data can be quantified by turning it into dummy variables. Once represented with 0s and 1s, a Boolean variable can fit into a covariance or correlation equation just as well as a numeric variable can. So it is possible to compute the correlation between categorical and numeric variables, or between two categorical values.</p>
-<div class="page-columns page-full"><p>Statisticians use different names for these cases to keep it clear what type of variables are involved. While the basic correlation equation done with two numeric variables is called a Pearson correlation, this measure is called a <strong>point-biserial correlation</strong> when one variable is numeric and the other is Boolean. When both variables are Boolean, the correlation is called a <strong>phi coefficient</strong> (pronounced “fye”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>point-biserial correlation</strong> = the correlation between a numeric variable and a Boolean/binary variable</span><span class="margin-aside"><strong>phi coefficient</strong> = the correlation between two Boolean/binary variables</span></div></div>
+<div class="page-columns page-full"><p>Statisticians use different names for these cases to keep it clear what type of variables are involved. While the basic correlation equation done with two numeric variables is called a Pearson correlation, this measure is called a <strong>point-biserial correlation</strong> when one variable is numeric and the other is Boolean. When both variables are Boolean, the correlation is called a <strong>phi coefficient</strong> (pronounced “fye”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a Boolean/binary variable</span><span class="margin-aside"><strong>phi coefficient</strong> = Pearson correlation applied to two Boolean/binary variables</span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2403,7 +2452,8 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <h2 data-number="6.6" class="anchored" data-anchor-id="sec-ch6-summary-metrics-as-estimators"><span class="header-section-number">6.6</span> Summary metrics as estimators</h2>
 <p>Recall in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> our discussion of an estimand. This is the theoretical quantity we are interested in learning about when we look at data. We listed some possible estimands such as the typical score in a group, how variable a group is, the difference between one group and another, etc. We also discussed that an estimator is a mathematical algorithm used to to learn about an estimand in data; an estimate is the result produced by the estimator.</p>
 <p>We have now learned several different estimators that are useful for producing estimates of different estimands. For example, if our estimand was the typical score in a group, we could choose to use the equation for a mean as our estimator. In this case, our estimate of the estimand would be the number that equation spits out. Association can be our estimand of interest too; if we want to know how related two variables are, we could choose a Pearson correlation as our estimator.</p>
-<p>From these examples it should start to become clear why specifying your estimand at the beginning of data analysis is so important. Estimators can only provide insights about certain estimands - calculating a correlation doesn’t tell you what kinds of scores are typical in a group. Even similar estimators target slightly different estimands - e.g., a Pearson correlation tells you how strongly two variables are linearly associated, but a Spearman correlation tells you how strongly they are monotonically related more generally. So you need to be as specific as you can about the theoretical quantity you are trying to target. This specificity will guide you on what estimator to use. If you just pick an estimator based on, say, what is easiest to calculate, you might not be learning about the thing you actually care about. Or, someone else reading your results might think your statistical question is different than it actually was and misconstrue your message. If you aren’t clear with yourself about what you are trying to analyze, it’s hard to pick the appropriate method to do the analyzing.</p>
+<p>From these examples it should start to become clear why specifying your estimand at the beginning of data analysis is so important. Estimators can only provide insights about certain estimands - calculating a correlation doesn’t tell you what kinds of scores are typical in a group. Even similar estimators target slightly different estimands - e.g., a Pearson correlation tells you how strongly two variables are linearly associated, but a Spearman correlation tells you how strongly they are monotonically related more generally.</p>
+<p>So you need to be as specific as you can about the theoretical quantity you are trying to target. This specificity will guide you on what estimator to use. If you just pick an estimator based on, say, what is easiest to calculate, you might not be learning about the thing you actually care about. Or, someone else reading your results might think your statistical question is different than it actually was and misconstrue your message. If you aren’t clear with yourself about what you are trying to analyze, it’s hard to pick the appropriate method to do the analyzing.</p>
 </section>
 <section id="sec-ch6-resources" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="sec-ch6-resources"><span class="header-section-number">6.7</span> Chapter resources</h2>
@@ -2436,8 +2486,8 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <li><strong>covariance</strong> = a measure of association between two variables, calculated by summing the products of their deviations and dividing the sum by n-1.</li>
 <li><strong>correlation</strong> = a standardized measure of the linear association between two variables.</li>
 <li><strong>Pearson correlation</strong> = a measure of linear association between two variables, calculated by dividing the covariance of the two variables by the product of their standard deviations.</li>
-<li><strong>point-biserial correlation</strong> = the correlation between a numeric variable and a Boolean/binary variable.</li>
-<li><strong>phi coefficient</strong> = the correlation between two Boolean/binary variables.</li>
+<li><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a Boolean/binary variable.</li>
+<li><strong>phi coefficient</strong> = Pearson correlation applied to two Boolean/binary variables.</li>
 <li><strong>Spearman correlation</strong> = a measure of monotonic association between two variables, calculated by dividing the covariance of the two variables’ ranks by the product of their standard deviations.</li>
 </ul>
 </section>
@@ -2458,7 +2508,7 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <ol>
 <li id="fn1"><p>You may have an instinctual answer to this already, but it’s always good to back up our pre-concieved notions with data!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Note <em>on average</em>. For just one guess, you might get lucky and be right on target! Or get unlucky and be way off. If you repeatedly guessed though, the difference between your guess and the actual value would average to 3.61.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>It is possible to quantify non-monotonic associations too, but it is less common to do and the math is more complex. <a href="https://lcalem.github.io/blog/2018/10/17/mutual-information">This</a> is a decent explanation that will make sense once you’ve read <span class="quarto-unresolved-ref">?sec-ch8</span>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>It is possible to quantify non-monotonic associations too, but it is less common to do and the math is more complex. <a href="https://lcalem.github.io/blog/2018/10/17/mutual-information">This</a> is a decent explanation that will make sense once you’ve read <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a>). Also, when associations are weak, it can be hard to tell what specific form the association is supposed to have; a linear/monotonic association is a reasonable approximation in that case.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>read the <a href="https://www.rdocumentation.org/packages/pbdDMAT/versions/0.5-1/topics/covariance">documentation</a> for the <code>cov()</code> function to see what other <code>use =</code> options there are.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Named after the mathematician who invented it, Karl Pearson<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>In fact if you work with human data, you will rarely get an association this large. So enjoy it now!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

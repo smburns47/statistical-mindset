@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shannon Burns, PhD">
-<meta name="dcterms.date" content="2026-05-22">
 
-<title>Foundations for a Statistical Mindset</title>
+<title>12&nbsp; Predicting Continuous Change – Foundations for a Statistical Mindset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-1.html" rel="next">
+<link href="./chapter-13.html" rel="next">
+<link href="./chapter-11.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-12.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -205,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></span></a>
   </div>
 </li>
@@ -232,52 +231,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#not-another-teen-movie-psych-stats-book" id="toc-not-another-teen-movie-psych-stats-book" class="nav-link" data-scroll-target="#not-another-teen-movie-psych-stats-book">Not Another <del>Teen Movie</del> Psych Stats Book</a>
-  <ul class="collapse">
-  <li><a href="#psychologists-need-quantitative-literacy" id="toc-psychologists-need-quantitative-literacy" class="nav-link" data-scroll-target="#psychologists-need-quantitative-literacy">Psychologists Need Quantitative Literacy</a></li>
-  <li><a href="#quantitative-literacy-doesnt-need-to-start-with-math-stats" id="toc-quantitative-literacy-doesnt-need-to-start-with-math-stats" class="nav-link" data-scroll-target="#quantitative-literacy-doesnt-need-to-start-with-math-stats">Quantitative Literacy Doesn’t Need to <em>Start</em> with Math Stats</a></li>
-  </ul></li>
-  <li><a href="#foundations-of-this-book" id="toc-foundations-of-this-book" class="nav-link" data-scroll-target="#foundations-of-this-book">Foundations of this Book</a></li>
-  <li><a href="#who-this-book-is-for" id="toc-who-this-book-is-for" class="nav-link" data-scroll-target="#who-this-book-is-for">Who this Book is For:</a></li>
-  <li><a href="#intended-workflow" id="toc-intended-workflow" class="nav-link" data-scroll-target="#intended-workflow">Intended Workflow:</a></li>
-  <li><a href="#assumed-knowledge" id="toc-assumed-knowledge" class="nav-link" data-scroll-target="#assumed-knowledge">Assumed Knowledge:</a></li>
-  <li><a href="#code-versions" id="toc-code-versions" class="nav-link" data-scroll-target="#code-versions">Code Versions</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-12.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Foundations for a Statistical Mindset</h1>
+<h1 class="title"><span id="sec-ch12" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Shannon Burns, PhD </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -287,83 +256,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p><em>How we think about data about how we think</em></p>
-<section id="not-another-teen-movie-psych-stats-book" class="level2">
-<h2 class="anchored" data-anchor-id="not-another-teen-movie-psych-stats-book">Not Another <del>Teen Movie</del> Psych Stats Book</h2>
-<ul>
-<li>Why another intro psych stats book?</li>
-<li>We’ve been teaching it for a long time</li>
-<li>Something is rotten in the state of Denmark. Still big fundamental problems to the way psychology research is done.</li>
-<li>Increasingly other good resources available (links as aside), but most of them at a more advanced level - pitched at correcting misconceptions from intro stats rather than <em>being</em> the intro stats.</li>
-<li>This book comes out of two strong opinions:</li>
-</ul>
-<section id="psychologists-need-quantitative-literacy" class="level3">
-<h3 class="anchored" data-anchor-id="psychologists-need-quantitative-literacy">Psychologists Need Quantitative Literacy</h3>
-<ul>
-<li>The field nominally recognizes this by requiring all psych majors take a stats class, but it’s often treated as the unwanted stepchild of the psych curriculum, just a hurdle to jump over before you get to the meat of the scholarship.</li>
-<li>But all the problems in the literature suggest that better training is needed.</li>
-<li>Kelvin quote on something isn’t a science unless it can be quantified. Science isn’t the only valid way of knowledge about the universe and the human condition, but if we claim to be a psychological <em>science</em>, we need to walk the walk of that approach.</li>
-<li>Some argue that all science teams should have a stats consultant to do this work - don’t trust yourself to do the complicated stuff. Stats consultants are heroes in the academic world but it is still problematic to offload the statistical thinking to them because statistical models <em>are</em> the theories we are testing - if you can’t formalize your hypothesis as a model and clearly understand the assumptions of it, you don’t understand your data or your theory very well. Also, bad design decisions get made before a stats person comes onto the team, wasting research resources on a study that can’t answer anything useful.</li>
-</ul>
-</section>
-<section id="quantitative-literacy-doesnt-need-to-start-with-math-stats" class="level3">
-<h3 class="anchored" data-anchor-id="quantitative-literacy-doesnt-need-to-start-with-math-stats">Quantitative Literacy Doesn’t Need to <em>Start</em> with Math Stats</h3>
-<ul>
-<li>This may be a surprising thing to hear considering what was in the first opinion.</li>
-<li>Math stats classes get to the heart of the tools used in stats, with theorems and derivations. A lot of students learn well from that and come into scientific practice with a strong quantitative foundation.</li>
-<li>…And a lot don’t. Math is abstract and it is not always clear how it connects to the “why” of doing it. This feeds the psych researcher’s treatment of it as magic spells to chant to give them permission to publish. And if a student doesn’t become a researcher, they may not always connect how marble drawing problems in their probability class connects to risk assessment about vaccines in their own life.</li>
-<li>A different approach to teaching students to value quantitative skills is to start with the personally-relevant problems and the logic of answering them. In psych stats, that means talking a lot about concepts like uncertainty, making predictions, data quality, etc. before ever calculating a variance statistic.</li>
-<li>This also means the instructor doesn’t need to commit to one school of statistics at the beginning. Whether you are Bayesian or Frequentist, you have similar research goals that are served by different approaches/assumptions. Conversely, there are lots of other research approaches that traditionally fall outside of the psych stats curriculum but that are worthy of understanding and use.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> An intro curriculum can teach the variety of ways to pose and answer a statistical question, and why psychologists would care about these, without getting into deep math right away. Afterwards, a student can pursue the more formal math training with a foundational understanding of its importance and a stronger intrinsic motivation for it.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-</ul>
-</section>
-</section>
-<section id="foundations-of-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="foundations-of-this-book">Foundations of this Book</h2>
-<p>With those positions in mind, this is the book’s main learning goals:</p>
-<ul>
-<li>know your estimand</li>
-<li>there is uncertainty, variation in a variable we want to know about</li>
-<li>information from other variables can help us reduce that uncertainty (model building)</li>
-<li>research questions focus on different reasons for doing this: documenting the association (description), reducing the uncertainty as much as possible (prediction), understanding how important predictors change uncertainty in the outcome (explanation)</li>
-<li>different levels of specificity for hypotheses: any sort of uncertainty reduction (NHST), comparing different options for least uncertainty (model comparison), making point predictions</li>
-</ul>
-<p>And it’s strategy to achieving them:</p>
-<ul>
-<li>Organized around types of questions/needs, not specific tools or frameworks</li>
-<li>Model-based rather than collection of tools – build understanding. Leaves out some things that might otherwise appear in an intro stats class like chi-square tests, but builds a foundation that more flexibly prepares for future research possibilities with modeling.</li>
-<li>De-emphasize NHST</li>
-<li>Interpretation more than calculation</li>
-<li>Doing stats, with code</li>
-<li>Learning stats with domain-specific guidance</li>
-</ul>
-</section>
-<section id="who-this-book-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-this-book-is-for">Who this Book is For:</h2>
-<p>Undergraduates or early grad students who wish to read and conduct their own research. Brain &amp; behavior topics (neuro, psych, cog sci, behavioral science, etc.); non-academics who wish to be more critical consumers of cognitive &amp; behavioral research.</p>
-</section>
-<section id="intended-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="intended-workflow">Intended Workflow:</h2>
-<p>Read, practice inline code, do problem sets, keep this for reference.</p>
-</section>
-<section id="assumed-knowledge" class="level2">
-<h2 class="anchored" data-anchor-id="assumed-knowledge">Assumed Knowledge:</h2>
-<p>Mathematics up through algebra, familiarity with intro psych content</p>
-</section>
-<section id="code-versions" class="level2">
-<h2 class="anchored" data-anchor-id="code-versions">Code Versions</h2>
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>move over NHST.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>I speak with some experience in that learning journey, being a former math-phobe until a modeling class in grad school finally taught me why the hell I actually care about a derivative.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -768,10 +662,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter-11.html" class="pagination-link" aria-label="Different Predictions for Different Groups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Different Predictions for Different Groups</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="Statistics as a Way of Thinking">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-13.html" class="pagination-link" aria-label="Multiple Predictor Models">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multiple Predictor Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

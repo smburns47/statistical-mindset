@@ -52,6 +52,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-8.html" rel="next">
 <link href="./chapter-6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -1770,8 +1771,57 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Predicting &amp; Explaining Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Predicting &amp; Explaining Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Quality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Different Predictions for Different Groups</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multiple Predictor Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -1804,6 +1854,7 @@ window.Quarto = {
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">7.7.1</span> Learning goals</a></li>
   <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">7.7.2</span> New concepts</a></li>
   <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">7.7.3</span> New R functionality</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.7.4</span> Further reading</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2344,7 +2395,13 @@ Figure&nbsp;7.3: What various colors look like to individuals with the two most 
 <p>You can use these codes in the place of “orange” or “purple” in <code>scale_fill_manual()</code> to give you access to all possible colors. For instance, here are the first two colors of the plot theme used throughout this book:</p>
 <div id="qwebr-insertion-location-20"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>While choosing hex colors yourself gives you a lot of control, it is effortful to ensure their contrast is perceptually different enough<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. A plot like below would not be effective because someone with color blindness (or even someone with a different brightness setting on their computer monitor) would not be able to easily tell the difference between the categories:</p>
+<p>While choosing hex colors yourself gives you a lot of control, it is effortful to ensure their contrast is perceptually different enough<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Rules to follow when picking colors:</p>
+<ul>
+<li>For sequential data (ordered values running low to high): use one hue that ramps light to dark, so that dark = more. Don’t use a rainbow series, because the brightness of rainbow colors fluctuates and makes a center value look bigger.</li>
+<li>For diverging data (ordered values with a meaningful 0 midpoint): use two sequential ramping hues meeting at a neutral midpoint</li>
+<li>For categorical data (unordered values): use distinct hues that are of similar lightness, so that no group looks bigger than the other.</li>
+</ul>
+<p>A plot like below would not be effective because someone with color blindness (or even someone with a different brightness setting on their computer monitor) would not be able to easily tell the difference between the categories:</p>
 <div id="qwebr-insertion-location-21"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>If you’d like to use more interesting colors in your plot but don’t want to spend effort picking them yourself, many people have created <a href="https://r-graph-gallery.com/color-palette-finder">different color palettes</a> that you can download as additional R packages.</p>
@@ -2359,7 +2416,7 @@ Figure&nbsp;7.4: A 3D pie chart of religious affiliation percentages in the Unit
 </figcaption>
 </figure>
 </div>
-<p>This plot is terrible for several reasons. First, it is difficult to accurately perceive differences in the volume of shapes like pie wedges. Second, the 3D perspective distorts the relative volumes further, such that it’s hard to tell if something like Catholic is bigger or smaller than Mainline Protestant (it’s notably bigger, 19% vs.&nbsp;11%). Third, the large number of categories mean that the small ones are given almost no space in the graph, making it hard to refer to them.</p>
+<p>This plot is terrible for several reasons. First, it is difficult to accurately perceive differences in the volume of shapes like pie wedges. Second, the 3D perspective distorts the relative volumes further, such that it’s hard to tell if something like Catholic is bigger or smaller than Nothing in particular (they’re actually the same value, 19%). Third, the large number of categories mean that the small ones are given almost no space in the graph, making it hard to refer to them.</p>
 <p>This is a more reasonable approach:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2376,7 +2433,7 @@ Figure&nbsp;7.5: A clear visualization of religious affiliation percentages in t
 </div>
 </div>
 <p>In <a href="#fig-ch7-religion" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> we can see the pattern much more clearly. This plot allows the viewer to make comparisons based on just one feature - the the height of the bars. Humans tend to be more accurate when decoding differences this way vs.&nbsp;using area or volume. This plot may not look as flashy as the 3D pie chart, but it’s a much more effective representation of the data.</p>
-<p>That said, there is <a href="https://eagereyes.org/blog/2010/chart-junk-considered-useful-after-all">some</a> evidence that flashy plots are better for memory. You just want to be careful that your viewers are remembering the right things! For more resources on customizing plots to that they’re both eye-catching <em>and</em> communicative, check out <span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span> and <a href="https://r-graph-gallery.com/">r-graph-gallery</a>.</p>
+<p>That said, there is <a href="https://eagereyes.org/blog/2010/chart-junk-considered-useful-after-all">some</a> evidence that flashy plots are better for memory. You just want to be careful that your viewers are remembering the right things! For more resources on customizing plots so that they’re both eye-catching <em>and</em> communicative, check out <span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span> and <a href="https://r-graph-gallery.com/">r-graph-gallery</a>.</p>
 </section>
 <section id="sec-ch7-resources" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">7.7</span> Chapter resources</h2>
@@ -2408,11 +2465,14 @@ Figure&nbsp;7.5: A clear visualization of religious affiliation percentages in t
 <li><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">ggplot2::facet_wrap()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">ggplot2::geom_jitter()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">ggplot2::coord_cartesian()</a></li>
-<li><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggplot2::labs()</a>]</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggplot2::labs()</a></li>
 <li><a href="http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/">factor()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/scale_fill_manual.html">ggplot2::scale_fill_manual()</a></li>
 <li><a href="http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/">factor()</a></li>
 </ul>
+</section>
+<section id="further-reading" class="level3" data-number="7.7.4">
+<h3 data-number="7.7.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.7.4</span> Further reading</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -2839,6 +2899,9 @@ Wickham, Hadley, Danielle Navarro, and Thomas L. Pedersen. 2023. <em>Ggplot2: El
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-8.html" class="pagination-link" aria-label="Where Data Come From">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
