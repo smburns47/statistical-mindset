@@ -1785,42 +1785,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Quality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Different Predictions for Different Groups</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Predicting Continuous Change</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multiple Predictor Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2289,7 +2253,7 @@ Figure&nbsp;7.1: Four potential sets of data that all show a positive relationsh
 </div>
 </div>
 <p>In the first plot we don’t see the data points, just a line expressing the relationship between the data. This line implies a positive linear association between daily coffee intake and longevity. However, this plot is not optimal because we can’t actually see what the underlying data look like. We don’t know anything about the data spread or how well this line fits the data.</p>
-<p>The other plots show three possible instances of the actual data. The upper right plot look like real data – there’s a general trend, but the data are messy as data in the world usually are. Meanwhile, the lower left plot shows data where the apparent relationship is solely caused by one individual who happens to be a very long-lived coffee fanatic. We probably don’t want to conclude very much from a relationship that is driven by one data point. On the other hand, the lower right plot shows an association that is perhaps <em>too</em> perfect. Real trends in data about humans are never so clean, so we would be suspicious that these data are even real.</p>
+<p>The other plots show three possible instances of the actual data. The upper right plot look like real data – there’s a general trend, but the data are messy as data in the world usually are. Meanwhile, the lower left plot shows data where the apparent relationship is solely caused by one individual who happens to be a very long-lived coffee fanatic. We probably don’t want to conclude very much from a relationship that is driven by one data point - the trend might even be negative for everyone else. On the other hand, the lower right plot shows an association that is perhaps <em>too</em> perfect. Real trends in data about humans are never so clean, so we would be suspicious that these data are even real.</p>
 <p>This demonstrates the importance of the first principle of data visualization - where possible, show the data.</p>
 <p>When we made a scatter plot and histograms earlier, we were following this principle already. But when we made a histogram, we only saw a summary of the data. Luckily, the layering capabilities of <code>ggplot2</code> mean we can layer multiple types of plots over top each other. Using this functionality, we can add a point visualization on top of the boxplot in order to show the data.</p>
 <div id="qwebr-insertion-location-7"></div>
@@ -2311,7 +2275,7 @@ Figure&nbsp;7.1: Four potential sets of data that all show a positive relationsh
 <section id="dont-distort-the-data" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="dont-distort-the-data"><span class="header-section-number">7.4</span> Don’t distort the data</h2>
 <p>If you played around with the <code>width</code> argument for <code>geom_jitter()</code>, you may have noticed that it’s possible to set a jitter big enough that it is now unclear what category a data point belongs to. This is an example of how features of a visualization can hinder rather than help. In this case, too much jitter distorted the data, so we couldn’t understand their true values well.</p>
-<p>Data can also be distorted through other means. A common one is the use of different axis scaling to either exaggerate or hide a pattern in the data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In <a href="#fig-ch7-crime" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
+<p>Data can also be distorted through other means. A common one is the use of different axis scaling to either exaggerate or hide a pattern in the data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In <a href="#fig-ch7-crime" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, we can see data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The actual data values are the same, but they are shown in different contexts. The same data can tell two very different stories!</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch7-crime" class="quarto-float quarto-figure quarto-figure-center anchored">
