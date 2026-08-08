@@ -1756,11 +1756,94 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Uncertainty</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluating Model Coverage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interpreting Univariable Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multivariable Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Making Conclusions with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Generalized Linear Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Is the Effect Reliable?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Model Bias</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions with Data</span></span>
+ <span class="menu-text">Advanced Modeling &amp; Inference</span></span>
   </li>
     </ul>
     </div>
@@ -2251,6 +2334,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="page-columns page-full"><p><strong>Reverse coding</strong> is another common data cleaning step. It involves reassigning values to a variable like above, but in a reverse sequence. Sometimes surveys ask questions in a negatively-worded way, such that a <em>low</em> score on the question means a high value on the construct of interest (e.g.&nbsp;measuring extroversion with a question like “I usually prefer to be by myself”). In this case, we would want to reverse code the variable so that we don’t accidentally misinterpret what the values mean.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>reverse coding</strong> = changing the values of a variable so that low values become high and high become low</span></div></div>
 <div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><code>recode_values()</code> handles situations in which you want to change the values of all options for a variable. But it’s also possible to have a variable where some values are correct, but some values you want changed. For instance, you might have a survey question about number of children that a respondent has, and rather than asking them to type a number, the survey gives options 0-7 and then a top response option “8 or more”. Or, perhaps a survey question measures agreement with a statement but only some of the responses are labeled with a number, so the full range of options is something like “strongly disagree, 2, disagree, 4, 5, agree, 7, strongly agree”. In these cases, a similar function <code>replace_values()</code> is the appropriate option. You use it the same way, with <code>from=</code> and <code>to=</code> arguments, but the vectors passed to these arguments only concern the values you want to change. Everything not included in the <code>from</code> vector will remain unchanged.</p>
 <p>At this point, you may be noticing a trend in the code we’ve been learning. First, like there are multiple ways to write a paragraph to communicate the same overall message, there are multiple ways to write code that produce the same output. There is rarely one right answer to a coding problem<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="page-columns page-full"><p>Second, among the data cleaning options we’ve been learning, there is often a way to do an operation without any extra packages and a way to do it with a package like <code>dplyr</code>. When you perform actions without using any additional packages, that’s called coding in <strong>base R</strong>. Alternatively, <code>dplyr</code> is a popular package from a specific set of packages for data science called the <strong>tidyverse</strong>. When you search online for methods to do something in R, you’ll see mentions of base R vs.&nbsp;the tidyverse. Neither of these approaches is more correct than the other, so you can choose the general approach you like best for your own work (though it is good to be able to read code from both approaches so you can always tell what other people are doing).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>base R</strong> = the functionality of the R coding language without additional package downloads</span><span class="margin-aside"><strong>tidyverse</strong> = a popular set of R packages that share a common philosophy and are designed to work together for data science</span></div></div>
 </section>
@@ -2398,7 +2482,7 @@ Note
 <li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/NA">is.na()</a></li>
 <li><a href="https://rdrr.io/r/base/colnames.html">colnames()</a></li>
 <li><a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename()</a></li>
-<li><a href="https://dplyr.tidyverse.org/reference/recode_and_replace_values.html">dplyr::recode_values()</a></li>
+<li><a href="https://dplyr.tidyverse.org/reference/recode_and_replace_values.html">dplyr::recode_values() and dplyr::replace_values()</a></li>
 <li><a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></li>
 <li><a href="https://www.w3schools.com/r/r_functions_nested.asp">nested functions</a></li>
 <li><a href="https://www.datacamp.com/tutorial/pipe-r-tutorial">|&gt; pipe operator</a></li>
