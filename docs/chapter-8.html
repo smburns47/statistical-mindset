@@ -68,6 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-9.html" rel="next">
 <link href="./chapter-7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -1800,11 +1801,94 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Uncertainty</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluating Model Coverage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interpreting Univariable Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multivariable Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Making Conclusions with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Generalized Linear Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Is the Effect Reliable?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Model Bias</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions with Data</span></span>
+ <span class="menu-text">Advanced Modeling &amp; Inference</span></span>
   </li>
     </ul>
     </div>
@@ -2157,7 +2241,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <p><img src="images/header-ch8.png" class="img-fluid"></p>
 <p>We can learn a lot by examining distributions and summaries of a dataset. We can describe the current state of some situation for a clearer picture about reality around us. But in data analysis, our interest usually goes beyond these data alone. <em>Why</em> is the sample distribution shaped the way it is? What causes certain values to be what they are? What will future data look like?</p>
-<div class="page-columns page-full"><p>To be able to answer these sorts of questions, we need to understand and start thinking deeply about another fundamental idea in statistics - <strong>the data generation process</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>data generation process</strong> = the process by which data take on the values that they do</span></div></div>
+<div class="page-columns page-full"><p>To be able to answer these sorts of questions, we need to understand and start thinking deeply about another fundamental idea in statistics - the <strong>data generation process</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>data generation process</strong> = the process by which data take on the values that they do</span></div></div>
 <section id="sec-ch8-data-generation-process" class="level2 page-columns page-full" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-ch8-data-generation-process"><span class="header-section-number">8.1</span> The data generation process</h2>
 <p>So far we’ve described distributions of data, but have sort of acted like they just appeared in our hands - we didn’t discuss where they come from. We calculated associations between two variables and saw how much information about one variable reduces uncertainty about another, but didn’t talk very much about why those two variables would be associated in the first place, and why they are associated in the way they are.</p>
@@ -2297,13 +2381,13 @@ Figure&nbsp;8.1: The data generation process of pizza and of data
 </figcaption>
 </figure>
 </div>
-<p>In a probabilistic data generation process, we don’t know why observations with the same explanatory values end up with different target values. Our understanding of the data generation process is incomplete. In the pizza machine example, maybe there’s some extra “crust thickness” setting we don’t know about. For height data, it’s possible that we could eventually learn more about what determines someone’s height, such that we could perfectly predict how tall someone would grow up to be if we added all that information into the input function. But at the moment we don’t know that additional information - we can only say that <code>Hand</code> and <code>Sex</code> make certain values of <code>Height</code> more or less probable.</p>
-<p>Even though probabilistic data generation processes don’t let us predict outcome values exactly, it is still useful to study them. For one, almost everything that science studies is some kind of probabilistic process. There are very few phenomena that we understand so completely that we can predict what will happen exactly. In addition, a probabilistic data generation process still tells us what target values are more likely to happen than others, so they help us make decisions. Probabilistic data generation processes can also be simpler to use, because we don’t have to include so much explanatory information that we may or may not have.</p>
+<p>In a probabilistic data generation process, we don’t know why observations with the same explanatory values end up with different target values. Our understanding of the data generation process is incomplete. In the pizza machine example, maybe there’s some extra “crust thickness” setting we don’t know about. For height data, it’s possible that we could eventually learn more about what determines someone’s height (and eliminate measurement error), such that we could perfectly predict how tall someone would grow up to be if we added all that information into the input function. But at the moment we don’t know that additional information - we can only say that <code>Hand</code> and <code>Sex</code> make certain values of <code>Height</code> more or less probable.</p>
+<p>Even though probabilistic data generation processes don’t let us predict outcome values exactly, it is still useful to study them. For one, almost everything that science studies is some kind of probabilistic process. There are very few phenomena that we understand so completely (or can measure so perfectly) that we can predict what will happen exactly. In addition, a probabilistic data generation process still tells us what target values are more likely to happen than others, so they help us make decisions. Probabilistic data generation processes can also be simpler to use, because we don’t have to include so much explanatory information that we may or may not have.</p>
 <div class="page-columns page-full"><p>So don’t think of a probabilistic data generation process as a worse version of a deterministic process; rather, think of it as generating a different kind of thing - distributions rather than exact data values. In fact these distributions of possible values that are created by a probabilistic generation process have a special name: <strong>probability distributions</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probability distribution</strong> = how probable each possible value of a variable is likely to be when an instance of that variable is realized</span></div></div>
 </section>
 <section id="sec-ch8-probability-distributions" class="level2 page-columns page-full" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="sec-ch8-probability-distributions"><span class="header-section-number">8.4</span> Probability distributions</h2>
-<p>Let’s talk a bit more about probability distributions before moving on. It’s important to keep in mind what they are, and what they are not.</p>
+<p>Let’s talk more about probability distributions before moving on. It’s important to keep in mind what they are, and what they are not.</p>
 <section id="rules-of-probability" class="level3 page-columns page-full" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="rules-of-probability"><span class="header-section-number">8.4.1</span> Rules of probability</h3>
 <div class="page-columns page-full"><p>A probability distribution describes the probabilities of all possible values that could occur for a target variable. We can visualize it using what is known as a <strong>density plot</strong>. A density plot is much like a histogram, but it puts probability (“density” of probability at each value <span class="math inline">\(x\)</span>) on the y-axis instead of counts. Where a density plot is denser, that value is more likely to occur.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>density plot</strong> = a type of plot that shows the proportion of a distribution that has a specific value</span></div></div>
@@ -2321,8 +2405,8 @@ Figure&nbsp;8.2: A histogram of real data vs.&nbsp;a density plot of a theoretic
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>In <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>, we started talking about probabilities as our expectations about randomly drawing a value from a distribution like we draw a marble from a bag. This random drawing is called <strong>sampling</strong>. If 9/10ths of the marbles in the bag are blue and only 1/10th are red, when we randomly sample a marble from the bag we expect it to be blue and we are pretty confident about that. Likewise, if a data probability distribution says some target values is more likely to happen than others (that part of the density plot is higher), we expect those values to show up in our recorded data more often when the same input values are used.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling</strong> = the process of generating one or more elementary events from the sample space</span></div></div>
-<p>What is probable, however, does not <em>guarantee</em> what will actually happen. It is still possible to draw a red marble even when there’s a 90% chance of drawing blue. In fact, it is possible to draw multiple red marbles in a row, even though we’d be really surprised to see that. In a data probability distribution, it is possible that we end up with target data values that are surprising, and possibly at a higher rate than expected. For this reason, the distribution of data that we collect might not look the same as the probability distribution.</p>
+<div class="page-columns page-full"><p>In <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>, we started talking about probabilities as our expectations about randomly drawing a value from a distribution like we draw a marble from a bag. This random drawing is called <strong>sampling</strong>. If 9/10ths of the marbles in a bag are blue and only 1/10th are red, when we randomly sample a marble from the bag we expect it to be blue and we are pretty confident about that. Likewise, if a data probability distribution says some target values is more likely to happen than others (that part of the density plot is higher), we expect those values to show up in our recorded data more often when the same input values are used.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling</strong> = the process of generating one or more elementary events from the sample space</span></div></div>
+<p>What is probable, however, does not <em>guarantee</em> what will actually happen. It is still possible to draw a red marble even when there’s a 90% chance of drawing blue. In fact, it is possible to draw multiple red marbles in a row, even though we’d be really surprised to see that. In a data probability distribution, it is possible that we end up with target data values that are surprising, and possibly at a higher rate than expected. For this reason, the distribution of data that we collect might not look the same as the probability distribution. The probability distribution is what we <em>expect</em>, but that exact shape may not be what we get.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch8-sampling" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2345,8 +2429,8 @@ Figure&nbsp;8.3: Finite data samples drawn from a probability distribution can l
 <section id="kinds-of-probability-distributions" class="level3 page-columns page-full" data-number="8.4.2">
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="kinds-of-probability-distributions"><span class="header-section-number">8.4.2</span> Kinds of probability distributions</h3>
 <div class="page-columns page-full"><p>There are different kinds of probability distributions that apply to different kinds of variables. These different kinds fall into what are called <strong>distribution families</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>distribution family</strong> = a group of distributions that have the same parameters; different members of the family will have different values of those parameters</span></div></div>
-<div class="page-columns page-full"><p>For example, if you flipped a coin over and over and recorded each face as data, there could only be two possible values - heads and tails. Something like “purple” or “23.3” can never happen in these data. This kind of variable is fairly common in nature, so mathematicians have given it a name. This is called a <strong>Bernoulli distribution</strong>, after the mathematician who formally defined it. Other examples of Bernoulli-distributed variables include disease diagnosis (have it or not), question answers (correct or not), survival (dead or alive), etc. A probability distribution of a variable like this would only have two bars, one for probability of the first value and one for probability of the second. Any variable that has two possible discrete values has this kind of distribution, so we would say it is in the Bernoulli distribution family.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Bernoulli distribution</strong> = a kind of distribution made by a binary variable with two possible outcomes; defined by the probability of those outcomes</span></div></div>
-<div class="page-columns page-full"><p>But these distributions don’t have to look exactly the same. Some have a really low probability for the first option, some a high probability for it, some have middling probabilities for both options. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we learned to describe a binary variable with the proportion of the distribution that has a value of 1 (whatever category was given a ‘1’ label); differently-looking binary distributions have different proportions. The proportion of 1 values also describes how the probability distribution of a Bernoulli variable looks, like a setting dial we can turn. We call this the <strong>parameter</strong> of the distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parameter</strong> = a summary characteristic of a probability distribution that controls how the distribution is shaped</span></div></div>
+<div class="page-columns page-full"><p>For example, if you flipped a coin over and over and recorded each face as data, there could only be two possible values - heads and tails. Something like “purple” or “23.3” can never happen in these data. This set of possible values, called the <strong>sample space</strong>, would be written as <span class="math inline">\(\{heads, tails\}\)</span>. A variable with only two possible values is fairly common in nature, so mathematicians have given it a name. This is called a <strong>Bernoulli</strong> variable, after the mathematician who formally defined it. A Bernoulli variable is one that has a Bernoulli distribution - two possible values, occurring some proportion of the time. Other examples of Bernoulli-distributed variables include disease diagnosis (have it or not), question answers (correct or not), survival (dead or alive), etc.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sample space</strong> = the set of all possible values a variable can take</span><span class="margin-aside"><strong>Bernoulli distribution</strong> = a kind of distribution made by a binary variable with two possible outcomes; defined by the probability of those outcomes</span></div></div>
+<div class="page-columns page-full"><p>But Bernoulli distributions don’t have to look exactly the same. Some have a really low probability for the first option, some a high probability for it, some have middling probabilities for both options. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we learned to describe a binary variable with the proportion of the distribution that has a value of 1 (whatever category was given a ‘1’ label); differently-looking binary distributions have different proportions. The proportion of 1’s also describes how the probability distribution of a Bernoulli variable looks, like a setting dial we can turn. We call this the <strong>parameter</strong> of the distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parameter</strong> = a summary characteristic of a probability distribution that controls how the distribution is shaped</span></div></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2361,7 +2445,7 @@ Note
 </div>
 </div>
 <div class="page-columns page-full"><p>The probability distribution for a variable more like height, however, works differently. In this variable, any decimal value in a continuous range is possible. For this reason such a variable would belong to a different probability distribution family, like <strong>uniform distributions</strong>. In a uniform distribution, it makes less sense to describe it with a proportion for a specific value because there are infinitely many specific decimal values. For this reason, distributions in the uniform family take different parameters, like a different kind of machine has different kinds of settings. The parameters for any uniform distribution are instead the minimum and maximum values.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>uniform distribution</strong>: a kind of distribution where all values are continuous and equally likely; defined by the minimum and maximum value</span></div></div>
-<div class="page-columns page-full"><p>Or perhaps you know that a target variable has some values that are more likely than others with a clear mode. This is again another kind of probability distribution, the shape of which is described by different parameters. One of the most common families of unimodal distributions is the <strong>normal distribution</strong> family. The shape of this family is controlled by its mean and standard deviation. A normal distribution can be wide or narrow, centered on high or low values, but they are all unimodal and symmetric.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation</span></div></div>
+<div class="page-columns page-full"><p>Or perhaps you know that a target variable has some values that are more likely than others, with a clear mode. This is again another kind of probability distribution, the shape of which is described by different parameters. One of the most common families of unimodal distributions is the <strong>normal distribution</strong> family. This distribution is not controlled by a min and max - in fact, a normal distribution technically has a sample space from negative infinity to positive infinity, although extreme values are vanishingly rare. Instead the shape of this family is determined by the distribution’s mean and standard deviation. A normal distribution can be wide or narrow, centered on high or low values, but they are all unimodal and symmetric.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation</span></div></div>
 <div id="fig-normal-distribution" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-normal-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2446,18 +2530,26 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 </div>
 </div>
 </section>
-<section id="probability-axioms" class="level3" data-number="8.4.3">
+<section id="probability-axioms" class="level3 page-columns page-full" data-number="8.4.3">
 <h3 data-number="8.4.3" class="anchored" data-anchor-id="probability-axioms"><span class="header-section-number">8.4.3</span> Probability axioms</h3>
-<p>Lastly, let’s discuss the axioms of probability. Regardless of the kind or shape of a probability distribution, the following two rules are always true:</p>
+<p>Lastly, let’s discuss the axioms of probability. Regardless of the kind or shape of a probability distribution, the following three rules are always true:</p>
 <ol type="1">
-<li><strong>The probability of any value must be between 0 and 1</strong>; a value is either impossible to happen (0% chance), guaranteed to happen (100% chance), or something in between. There’s no such thing as a probability above 1 or a negative probability.</li>
+<li><strong>The probability of any value must be non-negative</strong></li>
 </ol>
-<p><span id="eq-axiom1"><span class="math display">\[0 \leq P(Y = y_i) \leq 1 \tag{8.3}\]</span></span></p>
+<p><span id="eq-axiom1"><span class="math display">\[P(Y = y_i) \geq 0 \tag{8.3}\]</span></span></p>
 <ol start="2" type="1">
-<li><strong>The total probability of all possible values in the distribution is 1</strong>; if we take the probability of each <span class="math inline">\(y_i\)</span> in a probability distribution and add them up, they must sum to 1. <em>Something</em> is always guaranteed to happen.</li>
+<li><strong>The total probability of all possible values in the distribution is 1</strong></li>
 </ol>
 <p><span id="eq-axiom2"><span class="math display">\[\sum_{i=1}^{n} P(Y = y_i) = 1 \tag{8.4}\]</span></span></p>
-<p>From these two rules, we can build up other facts about probability distributions that will be relevant to us later in the book. For now, hold onto the ideas of how to define probability, kinds of probability distributions, and why data distributions sampled from them may not look the same.</p>
+<ol start="3" type="1">
+<li><strong>The probability of any value cannot be greater than 1</strong></li>
+</ol>
+<p><span id="eq-axiom3"><span class="math display">\[P(Y = y_i) \leq 1 \tag{8.5}\]</span></span></p>
+<p>The plain-text meaning of these axioms is that any value in a probability is either impossible to happen (0% chance), guaranteed to happen (100% chance), or something in between. There’s no such thing as a probability above 1 or a negative probability. In addition, if we take the probability of each <span class="math inline">\(y_i\)</span> in a probability distribution and add them up, they must sum to 1. <em>Something</em> is always guaranteed to happen.</p>
+<p>From these three rules, we can build up other facts about probability distributions that will be relevant to us later in the book. For instance, the probability that some <span class="math inline">\(y_i\)</span> score will <em>not</em> equal a certain value is 1 minus the probability that it will: <span class="math inline">\(1 - P(Y = y_i)\)</span>. This is the subtraction rule for probability.</p>
+<div class="page-columns page-full"><p>The <strong>cumulative probability</strong> of a value <span class="math inline">\(Y = y_i\)</span> is using <span class="math inline">\(y_i\)</span> as a cutoff, and treating all values at or below that cutoff as the same outcome. To find the cumulative probability of <span class="math inline">\(y_i\)</span>, you sum the probabilities of all values less than or equal to <span class="math inline">\(y_i\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>cumulative probability</strong> = the probability of an observation having a value less than or equal to a cutoff value</span></div></div>
+<p><span id="eq-cumulative"><span class="math display">\[\sum P(Y \leq y_i) = P(Y = y_1) + P(Y = y_2) + ... + P(Y = y_i) \tag{8.6}\]</span></span></p>
+<p>An example of a cumulative probability is finding the chance that someone has a sub-clinical depression score. This would be the sum of probabilities of all depression score options that are below a clinical threshold.</p>
 </section>
 </section>
 <section id="sec-ch8-simulating-probabilistic-data" class="level2" data-number="8.5">
@@ -2466,7 +2558,7 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 <section id="simulating-bernoulli-data" class="level3" data-number="8.5.1">
 <h3 data-number="8.5.1" class="anchored" data-anchor-id="simulating-bernoulli-data"><span class="header-section-number">8.5.1</span> Simulating Bernoulli data</h3>
 <p>Let’s see a simple probabilistic data generation process as an example. Consider an everyday coin that has two sides, heads and tails. When we flip the coin one of the two sides will be showing. We want to predict what side will face up on a given flip of the coin; this means the coin face showing is our target variable and flipping the coin is the data generation process.</p>
-<p>When you flip the coin once, can you predict what side will be showing when it lands? Unless you’re a wizard<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, your answer is probably no. You can only say that it will be one of two values, heads or tails, a certain proportion of the time. That means the coin flip is a probabilistic process.</p>
+<p>When you flip the coin once, can you predict what side will be showing when it lands? Unless you’re a wizard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, your answer is probably no. You can only say that it will be one of two values, heads or tails, a certain proportion of the time. That means the coin flip is a probabilistic process.</p>
 <p>What sort of things influence the proportion of times a coin will come up heads? A random coin you find on the street is probably fair, in that heads and tails will come up about the same number of times over repeated flips. But an unfair coin that is weighted on the tails face will land heads up more often than tails up. So let’s create some explanatory data about whether or not a coin has a weight, and then write an input function that increases the chance of heads when the coin is weighted.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2574,38 +2666,38 @@ Note
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 </section>
-<section id="mathematical-notation-for-data-generation-processes" class="level2" data-number="8.6">
+<section id="mathematical-notation-for-data-generation-processes" class="level2 page-columns page-full" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</h2>
 <p>It’s a lot of words to talk about the components of the data generation process - set of input information, how to combine that information, and what kind of data is generated. Because of this, there are again mathematical standards to efficiently notate each piece we are talking about.</p>
-<section id="notating-the-target-probability-distribution" class="level3" data-number="8.6.1">
+<section id="notating-the-target-probability-distribution" class="level3 page-columns page-full" data-number="8.6.1">
 <h3 data-number="8.6.1" class="anchored" data-anchor-id="notating-the-target-probability-distribution"><span class="header-section-number">8.6.1</span> Notating the target probability distribution</h3>
 <p>There are different families of probability distributions, each with one or more parameters whose values specify the exact shape of the distribution. Notation of the probability distribution that generates target data needs to include all this information.</p>
 <p>If we want to notate that we are talking about a Bernoulli distribution, we write:</p>
-<p><span id="eq-bernoulli"><span class="math display">\[Bernoulli(p) \tag{8.5}\]</span></span></p>
+<p><span id="eq-bernoulli"><span class="math display">\[Bernoulli(p) \tag{8.7}\]</span></span></p>
 <p>The name at the beginning of the term specifies the distribution family. The letter in the parentheses is the generating parameter that affects how a distribution in that family is shaped (<span class="math inline">\(p\)</span> stands for proportion). If you refer to a probability distribution as <span class="math inline">\(Bernoulli(0.5)\)</span>, what you are saying is this data generation process will create data of one of two values, with a proportion/probability of the first value being 0.5.</p>
 <p>When we say a target variable is being generated by this distribution, we write that fully as:</p>
-<p><span id="eq-bernoulli-target"><span class="math display">\[y \sim Bernoulli(0.5) \tag{8.6}\]</span></span></p>
-<p>You should read this equation to mean “the variable y is sampled from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is sampled from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p>
-<p><span id="eq-deterministic-target"><span class="math display">\[y = 5 + 2x \tag{8.7}\]</span></span></p>
+<p><span id="eq-bernoulli-target"><span class="math display">\[y \sim Bernoulli(0.5) \tag{8.8}\]</span></span></p>
+<div class="page-columns page-full"><p>This equation is known as the <strong>observation model</strong>. You should read this equation to mean “the variable y is sampled from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is sampled from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>observation model</strong> = the part of a data generation process that specifies how observed values are generated from latent parameter(s)</span></div></div>
+<p><span id="eq-deterministic-target"><span class="math display">\[y = 5 + 2x \tag{8.9}\]</span></span></p>
 <p>When there’s an equal sign, the value of <span class="math inline">\(y\)</span> is exactly determined by whatever is on the right side of the equation. When there’s a tilda, we are saying the value of <span class="math inline">\(y\)</span> is probabilistically drawn from whatever is on the right side.</p>
 <p>If we are talking about a uniform distribution instead (continuous values of even probability), we notate that family as:</p>
-<p><span id="eq-uniform"><span class="math display">\[U(min, max) \tag{8.8}\]</span></span></p>
+<p><span id="eq-uniform"><span class="math display">\[U(min, max) \tag{8.10}\]</span></span></p>
 <p>Where <span class="math inline">\(U\)</span> is short for “uniform”. To sample data from a probability distribution <span class="math inline">\(U(0,5)\)</span> means the data will have a uniform distribution with a minimum value of 0 and a maximum value of 5.</p>
 <p>A normal probability distribution is notated as:</p>
-<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.9}\]</span></span></p>
+<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.11}\]</span></span></p>
 <p>The shape of a normal distribution is determined by a mean value and standard deviation. We traditionally use the Greek letters <span class="math inline">\(\mu\)</span> (“mu”, pronounced “mew”) and <span class="math inline">\(\sigma\)</span> (sigma, pronounced “sig-ma”) to represent the mean and standard deviation parameters of the normal probability distribution, respectively. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we said that the mean of a distribution is notated as <span class="math inline">\(\bar{x}\)</span> and the standard deviation as <span class="math inline">\(s\)</span>, and that’s true of those summaries of <em>a data distribution</em>. Using <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> to notate the mean and standard deviation as <em>parameters</em> of a probability distribution helps us keep these ideas separate, since they won’t always be the same due to randomness:</p>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="notating-the-input-function" class="level3" data-number="8.6.2">
 <h3 data-number="8.6.2" class="anchored" data-anchor-id="notating-the-input-function"><span class="header-section-number">8.6.2</span> Notating the input function</h3>
-<p>We can notate the data generation process of a target variable with something like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we want the values of the parameters to stay static - in other words, nothings affects them. But if we want to indicate that the parameters should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated.</p>
-<p>For instance, if we want there to be some explanatory variable <span class="math inline">\(x\)</span> that goes into the data generation process, and the output distribution depends on that variable, we write two equations:</p>
-<p><span id="eq-normal-dgp"><span class="math display">\[\mu = 65 + 2x \tag{8.10}\]</span></span></p>
+<p>We can notate the data generation process of a target variable with just an observation model like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we want the values of the parameters to stay static - in other words, nothings affects them. But if we want to indicate that the parameters should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated.</p>
+<p>For instance, if we want there to be some explanatory variable <span class="math inline">\(X\)</span> that goes into the data generation process, and the output distribution depends on that variable, we write two equations:</p>
+<p><span id="eq-normal-dgp"><span class="math display">\[\mu = 65 + 2X \tag{8.12}\]</span></span></p>
 <p><span class="math display">\[y \sim \mathcal{N}(\mu, 5)\]</span></p>
-<p>The first equation specifies the input function, which encodes how <span class="math inline">\(x\)</span> exerts influence. The product of this function is a value for the parameter of a probability distribution (<span class="math inline">\(\mu\)</span>). The second equation then tells us how <span class="math inline">\(y\)</span> data values are realized (randomly sampled from the specified probability distribution).</p>
-<p>In this case <span class="math inline">\(\mu\)</span> is determined by adding 2 times the value of <span class="math inline">\(x\)</span> to a base value of 65. If we knew <span class="math inline">\(x_i\)</span> for some observation <span class="math inline">\(i\)</span>, we could plug that value into the second equation, calculate <span class="math inline">\(\mu\)</span>, and then use <span class="math inline">\(\mu\)</span> to generate a distribution of likely values that <span class="math inline">\(y_i\)</span> would have.</p>
-<p>These two equations together - how <span class="math inline">\(y\)</span> is probabilistically generated by a probability family and parameters, and how those parameters are determined by other information - notate the whole data generation process. By controlling the pieces of these equations, we can create many possibilities of data.</p>
+<p>The first equation specifies the input function, which encodes how <span class="math inline">\(X\)</span> exerts influence. The product of this function is a value for the parameter of a probability distribution (<span class="math inline">\(\mu\)</span>). The second equation, the observation model, then tells us how observed <span class="math inline">\(Y\)</span> data values are realized (randomly sampled from the specified probability distribution).</p>
+<p>In this case <span class="math inline">\(\mu\)</span> is determined by adding 2 times the value of whatever <span class="math inline">\(X\)</span> is to a base value of 65. If we knew <span class="math inline">\(x_i\)</span> for some observation <span class="math inline">\(i\)</span>, we could plug that value into the second equation, calculate <span class="math inline">\(\mu\)</span>, and then use <span class="math inline">\(\mu\)</span> to generate a distribution of likely values that <span class="math inline">\(y_i\)</span> would have.</p>
+<p>These two equations together - how <span class="math inline">\(Y\)</span> is probabilistically generated by a probability family and parameters, and how those parameters are determined by other information - notate the whole data generation process. By controlling the pieces of these equations, we can create many possibilities of data.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2650,7 +2742,7 @@ Note
 </div>
 </div>
 <p>That looks a bit like a normal distribution, doesn’t it?</p>
-<p>Indeed, normally-distributed data in nature come about through combinations of many factors. And if there are many factors, it doesn’t matter what the underlying distribution family of those factors are - the sum of their values will approach a normal distribution shape. This is a useful mathematical idea known as the Central Limit Theorem that lets us assume the normal distribution is the generating distribution for a lot of target variables, even if we don’t know all the factors that influence them.</p>
+<p>Indeed, normally-distributed data in nature come about through combinations of many factors. And if there are many factors, it doesn’t matter what the underlying distribution family of those factors are - the sum of their values will approach a normal distribution shape. This is a useful mathematical idea known as the Central Limit Theorem that lets us assume the normal distribution is the approximate generating distribution for a lot of target variables, even if we don’t know all the factors that influence them.</p>
 </div>
 </div>
 </div>
@@ -2673,10 +2765,11 @@ Note
 <li>Explain what the data generation process is and why we would care about it</li>
 <li>Describe the different components of the data generation process</li>
 <li>Explain the difference between deterministic vs.&nbsp;probabilistic data generation</li>
-<li>Define probability concepts “sample space”, “sampling”, and “probability distribution.”</li>
-<li>Write the three axioms of probability</li>
-<li>Use <code>sample()</code>, <code>runif()</code>, and <code>rnorm()</code> to probabilistically simulate data</li>
-<li>Formally notate the equations of a data generation process</li>
+<li>Explain the difference between a probability distribution and a data distribution</li>
+<li>Compare and contrast Bernoulli, uniform, and normal probability distributions</li>
+<li>Recall the three axioms of probability</li>
+<li>Use <code>rbinom()</code>, <code>runif()</code>, and <code>rnorm()</code> to probabilistically simulate data</li>
+<li>Formally notate the input function and observation model to denote a data generation process</li>
 </ul>
 </section>
 <section id="new-concepts" class="level3" data-number="8.8.2">
@@ -2697,6 +2790,8 @@ Note
 <li><strong>parameter</strong>: a summary characteristic of a probability distribution that controls how the distribution is shaped.</li>
 <li><strong>uniform distribution</strong>: a kind of distribution where all values are continuous and equally likely; defined by the minimum and maximum value.</li>
 <li><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation.</li>
+<li><strong>cumulative probability</strong>: the probability of an observation having a value less than or equal to a cutoff value.</li>
+<li><strong>observation model</strong>: the part of a data generation process that specifies how observed values are generated from latent parameter(s).</li>
 </ul>
 </section>
 <section id="new-r-functionality" class="level3" data-number="8.8.3">
@@ -2717,7 +2812,8 @@ Note
 <ol>
 <li id="fn1"><p>Actually even this situation isn’t so simple if we think about air resistance too, but let’s assume a vacuum for now like all those intro physics problems tend to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Technically our equation could make negative numbers if we passed a negative number for gravity, but that would break the known laws of physics so we can safely assume that won’t happen.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>If that’s you, I know a few casinos we can hit<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>area under the probability curve up to that point, if you’re familiar with calculus.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>If that’s you, I know a few casinos we can hit<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -3129,6 +3225,9 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-9.html" class="pagination-link" aria-label="Modeling the Data Generation Process">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
