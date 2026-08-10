@@ -385,7 +385,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'performance', 'see'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -1807,84 +1807,11 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Uncertainty</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluating Model Coverage</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interpreting Univariable Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multivariable Models</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Making Conclusions with Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Generalized Linear Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Is the Effect Reliable?</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Model Bias</span></span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Making Conclusions with Data</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -1921,7 +1848,8 @@ window.Quarto = {
   <li><a href="#mathematical-notation-for-data-generation-processes" id="toc-mathematical-notation-for-data-generation-processes" class="nav-link" data-scroll-target="#mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</a>
   <ul class="collapse">
   <li><a href="#notating-the-target-probability-distribution" id="toc-notating-the-target-probability-distribution" class="nav-link" data-scroll-target="#notating-the-target-probability-distribution"><span class="header-section-number">8.6.1</span> Notating the target probability distribution</a></li>
-  <li><a href="#notating-the-input-function" id="toc-notating-the-input-function" class="nav-link" data-scroll-target="#notating-the-input-function"><span class="header-section-number">8.6.2</span> Notating the input function</a></li>
+  <li><a href="#notating-the-systematic-component" id="toc-notating-the-systematic-component" class="nav-link" data-scroll-target="#notating-the-systematic-component"><span class="header-section-number">8.6.2</span> Notating the systematic component</a></li>
+  <li><a href="#the-link-function" id="toc-the-link-function" class="nav-link" data-scroll-target="#the-link-function"><span class="header-section-number">8.6.3</span> The link function</a></li>
   </ul></li>
   <li><a href="#the-data-generation-process-in-research" id="toc-the-data-generation-process-in-research" class="nav-link" data-scroll-target="#the-data-generation-process-in-research"><span class="header-section-number">8.7</span> The data generation process in research</a></li>
   <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.8</span> Chapter summary</a>
@@ -2254,18 +2182,18 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><strong>How does the input information get transformed and combined?</strong> How do we weight and transform the input information in order to create an output?</li>
 <li><strong>What kind of data gets generated?</strong> What is the nature of the data that comes out? Are we always predicting the same target value given the same input information, or will it be a distribution of probable values?</li>
 </ol>
-<p>These steps are abstract right now, so let’s think about this with a metaphor to start. Say that you own a pizza making machine, that lets you dump in some ingredients and then makes a pizza for you. This is your pizza generation process.</p>
+<p>These steps are abstract right now, so let’s think about this with a metaphor to start. Say that you own a pizza making machine that lets you dump in some ingredients and then makes a pizza for you. This is your pizza generation process.</p>
 <p>Your machine can’t make pizzas out of nothing. There are some starting ingredients that are needed, like dough, sauce, and toppings. In addition, these toppings can be different things, and the specific pizza that comes out of the machine will depend on what ingredients you add at the beginning. In this way, the ingredients are the inputs that go into and influence your pizza generation process.</p>
 <p>Once the ingredients are added to the machine, the way they are combined could be straightforward or complicated. For a different sort of machine like a soup maker, you could just input the ingredients and they all get added as they are in a big pot. For your pizza making machine though, the ingredients need to be processed - the dough will get rolled flat, the sauce will be spread, the toppings will be sprinkled at a certain ratio of sauce to toppings, and the whole thing will be baked. This process of combining, weighting, and transforming is the algorithm for how the input ingredients integrate to generate a pizza.</p>
 <p>Finally, a pizza comes out of your machine. It could be a very high precision machine, so the same pizza will come out every time you put in the same ingredients. But it could also be a little random, so that sometimes adding the same amount of dough, sauce, and ingredients gets you pizzas with different crust thickness or topping distribution. However, you are never going to get an ice cream sundae out of this machine. This is the distribution of the kind of outputs you can expect from your pizza making process.</p>
 <div class="page-columns page-full"><p>Now think of that same process, but for a target variable like people’s heights. Other variables like genetics and environment can influence how tall a person is, so we would call these the input information or <strong>explanatory variables</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>explanatory variables</strong> = variables that influence the data generation process of a target variable</span></div></div>
-<div class="page-columns page-full"><p>If there are multiple explanatory variables, we need some way of combining that information. We could simply add up the values, multiply them, average them, etc. Whatever mathematical process we do to combine the explanatory variables, we call that the <strong>input function</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>input function</strong> = the mathematical algorithm that combines explanatory variables to determine the output of a data generation process</span></div></div>
+<div class="page-columns page-full"><p>If there are multiple explanatory variables, we need some way of combining that information. We could simply add up the values, multiply them, average them, etc. Whatever mathematical process we do to combine the explanatory variables, we call that the <strong>systematic component</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>systematic component</strong> = the mathematical algorithm that combines explanatory variables to determine the output of a data generation process</span></div></div>
 <p>Finally, we get some data out of the process. Importantly, it’s not just any type of data. Height can only be a real positive number, so we will never get a value like -12. Also, even if two siblings have the same genes and grew up in the same household, they might end up with different height values. So we don’t expect the data generation process to only ever give us one value, but a distribution of values with higher and lower probability.</p>
 </section>
 </section>
 <section id="sec-ch8-simulating-data" class="level2 page-columns page-full" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-ch8-simulating-data"><span class="header-section-number">8.2</span> Simulating data</h2>
-<div class="page-columns page-full"><p>Let’s practice these ideas by defining a data generation process of our own and generating data with it. Doing this is called <strong>simulating</strong> data. Simulation may sound complicated based on popular ideas of super computers and simulated realities. But simulation just means generating data based on provided information about the data generation process. To start we will play with a very simple data generation process, the distance traveled by a dropped ball.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>simulation</strong> = the process of generating data based on provided information about a data generation process</span></div></div>
+<div class="page-columns page-full"><p>Let’s practice these ideas by defining a data generation process of our own and generating data with it. Doing this is called <strong>simulating</strong> data. Simulation may sound complicated based on popular ideas of super computers and simulated realities. But simulation just means generating data based on provided information about the data generation process - running the data generation process yourself. To start we will play with a very simple data generation process, the distance traveled by a dropped ball.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>simulation</strong> = the process of generating data based on provided information about a data generation process</span></div></div>
 <p>If you took a physics class in school, you might recall calculating the falling distance of an object from the gravitational force exerted on that object and amount of time spent falling<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. If we want to generate data for distance as a target variable, the explanatory variables that matter are gravitational force and time.</p>
 <p>When calculating how those variables combine to create a distance score, there is a specific equation:</p>
 <p><span id="eq-gravity"><span class="math display">\[ d = \frac{1}{2} * g * t^2  \tag{8.1}\]</span></span></p>
@@ -2370,7 +2298,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><code>Hand</code> and <code>Sex</code> are related to <code>Height</code>, because they change the distribution of <code>Height</code> at each unique value of those input variables. However, there is still <em>some</em> distribution. Some variation in <code>Height</code> is left unaccounted for.</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>This is what’s known as a <strong>probabilistic</strong> data generation process. In this sort of process, the kind of data the process generates is not an exact data value, but a distribution of <em>possible</em> values. The target data we record is a random draw from these possibilities. If this were our pizza machine, we’d sometimes get deep dish vs.&nbsp;thin crust pizzas even if we put in the same ingredients.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probabilistic data generation</strong> = when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur</span></div></div>
+<div class="page-columns page-full"><p>This is what’s known as a <strong>probabilistic</strong> data generation process. In this sort of process, the kind of data the process generates is not an exact data value, but a distribution of <em>possible</em> values. The target data we record is a random value from these possibilities. If this were our pizza machine, we’d sometimes get deep dish vs.&nbsp;thin crust pizzas even if we put in the same ingredients.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probabilistic data generation</strong> = when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur</span></div></div>
 <div id="fig-ch8-dgp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch8-dgp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2381,8 +2309,10 @@ Figure&nbsp;8.1: The data generation process of pizza and of data
 </figcaption>
 </figure>
 </div>
-<p>In a probabilistic data generation process, we don’t know why observations with the same explanatory values end up with different target values. Our understanding of the data generation process is incomplete. In the pizza machine example, maybe there’s some extra “crust thickness” setting we don’t know about. For height data, it’s possible that we could eventually learn more about what determines someone’s height (and eliminate measurement error), such that we could perfectly predict how tall someone would grow up to be if we added all that information into the input function. But at the moment we don’t know that additional information - we can only say that <code>Hand</code> and <code>Sex</code> make certain values of <code>Height</code> more or less probable.</p>
-<p>Even though probabilistic data generation processes don’t let us predict outcome values exactly, it is still useful to study them. For one, almost everything that science studies is some kind of probabilistic process. There are very few phenomena that we understand so completely (or can measure so perfectly) that we can predict what will happen exactly. In addition, a probabilistic data generation process still tells us what target values are more likely to happen than others, so they help us make decisions. Probabilistic data generation processes can also be simpler to use, because we don’t have to include so much explanatory information that we may or may not have.</p>
+<p>In a probabilistic data generation process, we don’t know why observations with the same explanatory values end up with different target values. It could be that our understanding of the data generation process is incomplete. In the pizza machine example, maybe there’s some extra “crust thickness” setting we don’t know about. For height data, it’s possible that we could eventually learn more about what determines someone’s height (and eliminate measurement error), such that we could perfectly predict how tall someone would grow up to be if we added all that information into the input function.</p>
+<p>It could also be because there is some inherent randomness in the data generation process that can’t be resolved. When studying humans, we often focus on target variables like thoughts and feelings, which we can never measure directly - we call these latent variables. We have to rely on indirect measures like self-reports, behaviors, and/or physiological measurements. These are probably not exact signals of the measurement target, so even if a data generation process is deterministic for the latent variable, it will look probabilistic for the measured variable.</p>
+<p>But at the moment we don’t know that additional information. So it is often more productive to think about the data generation process not as producing a signal with noise, but as producing a distribution of possible values. We can then describe and have hypotheses about features of that distribution as an interesting consequence of the data generation process.</p>
+<p>Even though probabilistic data generation processes don’t let us predict outcome values exactly, it is still useful to study them. For one, almost everything that science studies is some kind of probabilistic process. There are very few phenomena that we understand so completely, or can measure so perfectly, that we can predict what will happen exactly. In addition, a probabilistic data generation process still tells us what target values are more likely to happen than others, so they help us make decisions. Probabilistic data generation processes can also be simpler to use, because we don’t have to include so much explanatory information that we may or may not have.</p>
 <div class="page-columns page-full"><p>So don’t think of a probabilistic data generation process as a worse version of a deterministic process; rather, think of it as generating a different kind of thing - distributions rather than exact data values. In fact these distributions of possible values that are created by a probabilistic generation process have a special name: <strong>probability distributions</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probability distribution</strong> = how probable each possible value of a variable is likely to be when an instance of that variable is realized</span></div></div>
 </section>
 <section id="sec-ch8-probability-distributions" class="level2 page-columns page-full" data-number="8.4">
@@ -2554,7 +2484,7 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 </section>
 <section id="sec-ch8-simulating-probabilistic-data" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="sec-ch8-simulating-probabilistic-data"><span class="header-section-number">8.5</span> Simulating probabilistic data</h2>
-<p>Now that we understand probability distributions better, let’s practice specifying a data generation process again and simulating data - this time probabilistically. To do so, we still define what explanatory variables to care about and what the input function is to combine them. But then, the thing that the input function generates is not a value for a target data point, but a parameter of the distribution of possible target values (i.e., the probability distribution). Once a data generation process has determined a parameter, getting any specific target data value is simply a matter of randomly sampling values from the described probability distribution.</p>
+<p>Now that we understand probability distributions better, let’s practice specifying a data generation process again and simulating data - this time probabilistically. To do so, we still define what explanatory variables to care about and what the input function is to combine them. But then, the thing that the systematic component generates is not a value for a target data point, but a parameter of the distribution of possible target values (i.e., the probability distribution). Once a data generation process has determined a parameter, getting any specific target data value is simply a matter of randomly sampling values from the described probability distribution.</p>
 <section id="simulating-bernoulli-data" class="level3" data-number="8.5.1">
 <h3 data-number="8.5.1" class="anchored" data-anchor-id="simulating-bernoulli-data"><span class="header-section-number">8.5.1</span> Simulating Bernoulli data</h3>
 <p>Let’s see a simple probabilistic data generation process as an example. Consider an everyday coin that has two sides, heads and tails. When we flip the coin one of the two sides will be showing. We want to predict what side will face up on a given flip of the coin; this means the coin face showing is our target variable and flipping the coin is the data generation process.</p>
@@ -2608,14 +2538,14 @@ Note
 <p>To review this data generation process:</p>
 <ul>
 <li>we specified the explanatory variable, <code>coin_weighted</code></li>
-<li>we specified the input function, <code>heads_prob</code> = 0.5 + 0.2*<code>coin_weighted</code></li>
-<li>we specified that this is a probabilistic data generation process, so the result of the input function <code>heads_prob</code> is the parameter of a probability distribution. Specifically it describes a Bernoulli data distribution (only two possible values).</li>
+<li>we specified the systematic component, <code>heads_prob</code> = 0.5 + 0.2*<code>coin_weighted</code></li>
+<li>we specified that this is a probabilistic data generation process, so the result of the systematic component <code>heads_prob</code> is the parameter of a probability distribution. Specifically it describes a Bernoulli data distribution (only two possible values).</li>
 </ul>
 <p>These are the three components of the data generation process. By defining all these pieces ourselves, we had enough info to create data.</p>
 </section>
 <section id="simulating-uniform-data" class="level3" data-number="8.5.2">
 <h3 data-number="8.5.2" class="anchored" data-anchor-id="simulating-uniform-data"><span class="header-section-number">8.5.2</span> Simulating uniform data</h3>
-<p>As we discussed in <a href="#sec-ch8-probability-distributions" class="quarto-xref"><span>Section 8.4</span></a>, different kinds of probability distributions go with different kinds of data. This means, when we’re defining the kind of data generated by a data generation process, we not only specify that it is a probability distribution but we specify what kind of distribution. The explanatory variables and input function then determine the parameter(s) of that distribution.</p>
+<p>As we discussed in <a href="#sec-ch8-probability-distributions" class="quarto-xref"><span>Section 8.4</span></a>, different kinds of probability distributions go with different kinds of data. This means, when we’re defining the kind of data generated by a data generation process, we not only specify that it is a probability distribution but we specify what kind of distribution. The systematic component then determines the parameter(s) of that distribution.</p>
 <p>If we wanted to generate uniform data instead of Bernoulli, we can use the function <code>runif()</code>. This is short for “random uniform distribution”. This function takes three arguments:</p>
 <ul>
 <li><code>n</code>: how many values to generate</li>
@@ -2677,9 +2607,9 @@ Note
 <p>The name at the beginning of the term specifies the distribution family. The letter in the parentheses is the generating parameter that affects how a distribution in that family is shaped (<span class="math inline">\(p\)</span> stands for proportion). If you refer to a probability distribution as <span class="math inline">\(Bernoulli(0.5)\)</span>, what you are saying is this data generation process will create data of one of two values, with a proportion/probability of the first value being 0.5.</p>
 <p>When we say a target variable is being generated by this distribution, we write that fully as:</p>
 <p><span id="eq-bernoulli-target"><span class="math display">\[y \sim Bernoulli(0.5) \tag{8.8}\]</span></span></p>
-<div class="page-columns page-full"><p>This equation is known as the <strong>observation model</strong>. You should read this equation to mean “the variable y is sampled from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is sampled from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>observation model</strong> = the part of a data generation process that specifies how observed values are generated from latent parameter(s)</span></div></div>
+<div class="page-columns page-full"><p>This equation is known as the <strong>observation model</strong>, because it describes how observations are realized from expectations generated by the systematic component. You should read this equation to mean “the variable y is sampled from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is sampled from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>observation model</strong> = the part of a data generation process that specifies how observed values are generated from latent parameter(s)</span></div></div>
 <p><span id="eq-deterministic-target"><span class="math display">\[y = 5 + 2x \tag{8.9}\]</span></span></p>
-<p>When there’s an equal sign, the value of <span class="math inline">\(y\)</span> is exactly determined by whatever is on the right side of the equation. When there’s a tilda, we are saying the value of <span class="math inline">\(y\)</span> is probabilistically drawn from whatever is on the right side.</p>
+<p>When there’s an equal sign, the value of <span class="math inline">\(y\)</span> is exactly determined by whatever is on the right side of the equation. When there’s a tilde, we are saying the value of <span class="math inline">\(y\)</span> is probabilistically drawn from whatever is on the right side.</p>
 <p>If we are talking about a uniform distribution instead (continuous values of even probability), we notate that family as:</p>
 <p><span id="eq-uniform"><span class="math display">\[U(min, max) \tag{8.10}\]</span></span></p>
 <p>Where <span class="math inline">\(U\)</span> is short for “uniform”. To sample data from a probability distribution <span class="math inline">\(U(0,5)\)</span> means the data will have a uniform distribution with a minimum value of 0 and a maximum value of 5.</p>
@@ -2689,15 +2619,26 @@ Note
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="notating-the-input-function" class="level3" data-number="8.6.2">
-<h3 data-number="8.6.2" class="anchored" data-anchor-id="notating-the-input-function"><span class="header-section-number">8.6.2</span> Notating the input function</h3>
-<p>We can notate the data generation process of a target variable with just an observation model like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we want the values of the parameters to stay static - in other words, nothings affects them. But if we want to indicate that the parameters should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated.</p>
-<p>For instance, if we want there to be some explanatory variable <span class="math inline">\(X\)</span> that goes into the data generation process, and the output distribution depends on that variable, we write two equations:</p>
-<p><span id="eq-normal-dgp"><span class="math display">\[\mu = 65 + 2X \tag{8.12}\]</span></span></p>
-<p><span class="math display">\[y \sim \mathcal{N}(\mu, 5)\]</span></p>
-<p>The first equation specifies the input function, which encodes how <span class="math inline">\(X\)</span> exerts influence. The product of this function is a value for the parameter of a probability distribution (<span class="math inline">\(\mu\)</span>). The second equation, the observation model, then tells us how observed <span class="math inline">\(Y\)</span> data values are realized (randomly sampled from the specified probability distribution).</p>
-<p>In this case <span class="math inline">\(\mu\)</span> is determined by adding 2 times the value of whatever <span class="math inline">\(X\)</span> is to a base value of 65. If we knew <span class="math inline">\(x_i\)</span> for some observation <span class="math inline">\(i\)</span>, we could plug that value into the second equation, calculate <span class="math inline">\(\mu\)</span>, and then use <span class="math inline">\(\mu\)</span> to generate a distribution of likely values that <span class="math inline">\(y_i\)</span> would have.</p>
-<p>These two equations together - how <span class="math inline">\(Y\)</span> is probabilistically generated by a probability family and parameters, and how those parameters are determined by other information - notate the whole data generation process. By controlling the pieces of these equations, we can create many possibilities of data.</p>
+<section id="notating-the-systematic-component" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="notating-the-systematic-component"><span class="header-section-number">8.6.2</span> Notating the systematic component</h3>
+<p>We can notate the data generation process of a target variable with just an observation model like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we don’t think anything influences the value of the parameters. But if we want to indicate that the parameters should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated.</p>
+<p>For instance, if we want there to be some explanatory variable <span class="math inline">\(X\)</span> that goes into the data generation process, we write:</p>
+<p><span id="eq-normal-dgp"><span class="math display">\[\theta = 65 + 2X \tag{8.12}\]</span></span></p>
+<p>This equation specifies the systematic component, which encodes how <span class="math inline">\(X\)</span> exerts influence. The product of this component is some value, indicated by the placeholder symbol (<span class="math inline">\(\theta\)</span>) (“theta”, pronounced thay-tah).</p>
+<p>Notice the equals sign in this equation. By including it, we are saying this part of the data generation process is deterministic (hence the name “systematic” component). The value of <span class="math inline">\(\theta\)</span> is always the same if the value of <span class="math inline">\(X\)</span> is the same. In this case <span class="math inline">\(\theta\)</span> is determined by adding 2 times the value of whatever <span class="math inline">\(X\)</span> is to a base value of 65.</p>
+</section>
+<section id="the-link-function" class="level3 page-columns page-full" data-number="8.6.3">
+<h3 data-number="8.6.3" class="anchored" data-anchor-id="the-link-function"><span class="header-section-number">8.6.3</span> The link function</h3>
+<p>We can now write equations for the systematic component and the observation model of the data generation process. This is like decomposing the data generation process into two pieces - a systematic component that deterministically produces probability expectations and a random component that probabilistically determines observations based on the probability. Now, how do we link them up?</p>
+<div class="page-columns page-full"><p>One last equation, called the <strong>link function</strong>, specifies how the output <span class="math inline">\(\theta\)</span> of the systematic component influences the observation model. This can be a really simple equation, like:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>link function</strong> = an equation that maps the output of the systematic component to a parameter of the observation model</span></div></div>
+<p><span id="eq-link-function"><span class="math display">\[\mu = \theta \tag{8.13}\]</span></span></p>
+<p>I.e., the output of the systematic component is the mean of the normal distribution. Or it can be more complex, like <span class="math inline">\(log(\mu) = \theta\)</span>, if the systematic component generates a negative <span class="math inline">\(\theta\)</span> value but the parameter of the observation model can never be negative. The link function is a way to turn whatever is generated by the systematic component into a possible parameter value for the observation model.</p>
+<div class="page-columns page-full"><p>Most of the time in this introductory book we will only use the simple link function above, also called the <strong>identity link function</strong>. In other words, we will focus on data generation processes where the systematic comonent is generating the mean of a normal probability distribution. Because of that we might not write the link function at all, and just write the systematic component as e.g.&nbsp;<span class="math inline">\(\mu = 65 + 2X\)</span> instead of <span class="math inline">\(\theta = 65 + 2X\)</span> and <span class="math inline">\(\theta = \mu\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. But it’s important to know that the link function exists, because in the future you might work with more complicated data generation processes that require transformation of the systematic component output before it can be used as a parameter in a non-normal observation model.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>identity link function</strong> = a link function that maps the output of the systematic component directly to the parameter of the observation model without any transformation</span></div></div>
+<p>These three equations together notate the whole data generation process - how <span class="math inline">\(X\)</span> influences an expectation about data and how <span class="math inline">\(Y\)</span> is probabilistically generated from that expectation.</p>
+<p><span id="eq-normal-dgp"><span class="math display">\[\theta = 65 + 2X \tag{8.14}\]</span></span></p>
+<p><span id="eq-link-function"><span class="math display">\[\mu = \theta \tag{8.15}\]</span></span></p>
+<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.16}\]</span></span></p>
+<p>By controlling the pieces of these equations, we can create many possibilities of data.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2751,8 +2692,8 @@ Note
 <section id="the-data-generation-process-in-research" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="the-data-generation-process-in-research"><span class="header-section-number">8.7</span> The data generation process in research</h2>
 <p>All the math notation and simulation of fake data we’ve done so far may not feel very useful right now. How does this connect to looking at patterns in a real dataset? As we progress in later chapters, it should become clear that defining a data generation process is deeply central to successfully using statistics to answer research questions.</p>
-<p>For researchers interested in description research goals, the estimand of interest is often some summary of what values are possible and probable in a population. Since these facts can be thought of as parameters of a probability distribution, we can say that description research goals focus on what type of data generation process is responsible for a target variable. This is often very important information to have before you’re able to pursue other research questions.</p>
-<p>For researchers interested in explanation, the form and components of the data generation process are the phenomena of interest more than any specific data value that comes out of it. The how, not just the what. While statistics alone can’t determine cause and effect, looking at data for evidence of the data generation process can give us important clues about the mechanisms of the human mind and society. In fact, what we normally think of as scientific research questions - e.g.&nbsp;“what aspects make a message more persuasive?” or “do children learn new languages better than adults?” - are really questions about the data generation process: How is persuasion generated from message design? How does age contribute to the process of language acquisition?</p>
+<p>For researchers interested in description research goals, the estimand of interest is often some summary of what values are possible and probable in a population. Since these summaries can be thought of as parameters of a probability distribution, we can say that description research goals focus on what type of data generation process is responsible for a target variable. This is often very important information to have before you’re able to pursue other research questions.</p>
+<p>For researchers interested in explanation, the form and components of the data generation process are the phenomena of interest more than any specific data value that comes out of it. The how, not just the what. While statistics alone can’t determine cause and effect, looking at data for evidence of the data generation process can give us important clues about the mechanisms of the human mind and society. In fact, what we normally think of as scientific research questions - e.g.&nbsp;“what aspects make a message more persuasive?” or “do children learn new languages better than adults?” - are really questions about the data generation process: How is persuasion generated from message design? How does age contribute to the process of language acquisition? Different scientific theories are ideas about the pieces and form of a data generation process.</p>
 <p>For researchers with prediction goals, the data generation process may not seem as immediately relevant if we are thinking about it as the causal process that creates data. In a prediction problem, we could use causal outcomes as indicators (e.g., health symptoms) to predict the cause as the target (e.g., disease). But the concept of the data generation process is still relevant for prediction goals if we think about what information causes our <em>guesses</em> about what the value of the target is.</p>
 <p>This is why thinking about the data generation process is so important, and why we will get much more practice with it as we go on.</p>
 </section>
@@ -2778,7 +2719,7 @@ Note
 <li><strong>data generation process</strong>: the process by which data take on the values that they do.</li>
 <li><strong>target variable</strong>: the variable we are trying to predict or understand.</li>
 <li><strong>explanatory variables</strong>: variables that influence the data generation process of a target variable.</li>
-<li><strong>input function</strong>: the mathematical algorithm that combines explanatory variables to determine the output of a data generation process.</li>
+<li><strong>systematic component</strong>: the mathematical algorithm that combines explanatory variables to determine the output of a data generation process.</li>
 <li><strong>simulation</strong>: the process of generating data based on provided information about the data generation process.</li>
 <li><strong>deterministic data generation</strong>: when everything is known about how a target value is generated, such that the values can be calculated exactly.</li>
 <li><strong>probabilistic data generation</strong>: when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur.</li>
@@ -2792,6 +2733,8 @@ Note
 <li><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation.</li>
 <li><strong>cumulative probability</strong>: the probability of an observation having a value less than or equal to a cutoff value.</li>
 <li><strong>observation model</strong>: the part of a data generation process that specifies how observed values are generated from latent parameter(s).</li>
+<li><strong>link function</strong>: an equation that maps the output of the systematic component to a parameter of the observation model.</li>
+<li><strong>identity link function</strong>: a link function that maps the output of the systematic component directly to the parameter of the observation model without any transformation.</li>
 </ul>
 </section>
 <section id="new-r-functionality" class="level3" data-number="8.8.3">
@@ -2814,6 +2757,7 @@ Note
 <li id="fn2"><p>Technically our equation could make negative numbers if we passed a negative number for gravity, but that would break the known laws of physics so we can safely assume that won’t happen.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>area under the probability curve up to that point, if you’re familiar with calculus.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>If that’s you, I know a few casinos we can hit<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Sometimes you’ll see even further short hand, like <span class="math inline">\(Y ~ N(65 + 2X, \sigma^2)\)</span> or <span class="math inline">\(Y = 65 + 2X + \epsilon\)</span> where <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> to account for the probabilistic distribution in <span class="math inline">\(Y\)</span>. In this book we will try to be as consistent as possible by using the notation presented in this section, but in the world there are different notations used by different people. It’s all just a matter of algebra, though, so keeping in mind the three components of the data generation process should help!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

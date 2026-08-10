@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-10.html" rel="next">
 <link href="./chapter-8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -350,7 +349,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'performance', 'see'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -372,7 +371,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/gss.csv\")\n\nhead(gss)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"observed_x <- gss$number_of_brothers_and_sisters[1]\nobserved_y <- gss$highest_year_of_school_completed[1]\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = #your code here, sd = #your code here)\n\n#density plot of simulated y values, with a line marking the observed y\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(47)\n\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mean <- -1*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mean, sd=4)\n  }\n}\n\nggplot(gss, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed vs. simulated years of education\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"observed_x <- gss$number_of_brothers_and_sisters[1]\nobserved_y <- gss$highest_year_of_school_completed[1]\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = 14.5 - 0.25*observed_x, sd = 2.8)\n\n#density plot of simulated y values, with a line marking the observed y\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(47)\n\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mean <- 14.5 - 0.25*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mean, sd=2.8)\n  }\n}\n\nggplot(gss, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed vs. simulated years of education\")","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\n\ncolnames(gss)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"observed_x <- gss$number_of_brothers_and_sisters[1]\nobserved_y <- gss$highest_year_of_school_completed[1]\nmu <- #your code here\nsigma <- #your code here\n\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = mu, sd = sigma)\n\n#density plot of simulated y values, with a line marking the observed y\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(47)\n\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mu <- -1*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mu, sd=5)\n  }\n}\n\n#note, resetting the aes() function within a plot layer lets you plot multiple variables/data sets on one image.\nggplot(gss, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed vs. simulated years of education\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"observed_x <- gss$number_of_brothers_and_sisters[1]\nobserved_y <- gss$highest_year_of_school_completed[1]\nmu <- 14.72 - 0.27*observed_x\nsigma <- 2.87\n\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = mu, sd = sigma)\n\n#density plot of simulated y values, with a line marking the observed y\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(47)\n\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mu <- 14.72 - 0.27*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mu, sd=2.87)\n  }\n}\n\nggplot(gss, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed vs. simulated years of education\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model <- lm(formula=highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=gss)\n\nmodel","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model2 <- #your code here\n  \nmodel2","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coefs <- model$coefficients\ncoefs","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"summary(model)$sigma","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coefs <- #your code here\nsigma <- #your code here\n\nobserved_x <- gss$number_of_brothers_and_sisters[1]\nobserved_y <- gss$highest_year_of_school_completed[1]\nmu <- coefs[1] + coefs[2]*observed_x\n\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = mu, sd = sigma)\n\n#density plot of simulated y values, with a line marking the observed y\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#simulating a new data point for the first observation in the dataset\nmu <- predict(model, newdata=gss[1,])\n\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = mu, sd = sigma)\n\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  labs(title = \"Probability distribution for observation 1\")","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"predict(model, newdata=gss[1,], interval='prediction')","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#plotting a probability distribution, prediction interval in blue, and observed data point in red\npred_int <- predict(model, newdata=gss[1,], interval='prediction')\nset.seed(47)\nsimulated_y <- rnorm(1000, mean = pred_int[1], sd = sigma)\n\nggplot(data.frame(simulated_y), aes(x=simulated_y)) +\n  geom_density() +\n  geom_vline(xintercept = observed_y, color = \"red\") + \n  geom_vline(xintercept = pred_int[2], color = \"blue\") +\n  geom_vline(xintercept = pred_int[3], color = \"blue\") +\n  labs(title = \"Probability distribution and prediction interval for observation 1\")","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"coefs <- model$coefficients\nsigma <- summary(model)$sigma\n\nset.seed(47)\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mu <- coefs[1] + coefs[2]*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mu, sd=sigma)\n  }\n}\n\nggplot(gss, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed vs. simulated years of education\")","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss$born_in_us_dummy <- recode_values(gss$born_in_us, \n                                      from=c(\"Yes\", \"No\"), \n                                      to=c(1, 0))\nmodel_bad <- lm(born_in_us_dummy ~ number_of_brothers_and_sisters, data=gss)\n\ncoefs <- model_bad$coefficients\nsigma <- summary(model_bad)$sigma\n\nset.seed(47)\nfor (i in 1:nrow(gss)) {\n  if (!is.na(gss$number_of_brothers_and_sisters[i])) {\n    mu <- coefs[1] + coefs[2]*gss$number_of_brothers_and_sisters[i]\n    gss$simulated_y[i] <- rnorm(1, mean=mu, sd=sigma)\n  }\n}\n\nggplot(gss, aes(x=born_in_us_dummy)) + \n  geom_histogram() + \n  geom_histogram(aes(x=simulated_y), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) born in US\")","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1658,7 +1657,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -1772,84 +1771,11 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Uncertainty</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluating Model Coverage</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interpreting Univariable Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Multivariable Models</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Making Conclusions with Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Models with Moderation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Generalized Linear Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Is the Effect Reliable?</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Model Comparison</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter-20.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Model Bias</span></span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Making Conclusions with Data</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -1865,28 +1791,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-naive-statistical-model" id="toc-a-naive-statistical-model" class="nav-link active" data-scroll-target="#a-naive-statistical-model"><span class="header-section-number">9.1</span> A naive statistical model</a></li>
+  <li><a href="#creating-a-statistical-model" id="toc-creating-a-statistical-model" class="nav-link active" data-scroll-target="#creating-a-statistical-model"><span class="header-section-number">9.1</span> Creating a statistical model</a></li>
   <li><a href="#automatically-fitting-a-model" id="toc-automatically-fitting-a-model" class="nav-link" data-scroll-target="#automatically-fitting-a-model"><span class="header-section-number">9.2</span> Automatically fitting a model</a></li>
-  <li><a href="#evaluating-the-model-predictions" id="toc-evaluating-the-model-predictions" class="nav-link" data-scroll-target="#evaluating-the-model-predictions"><span class="header-section-number">9.3</span> Evaluating the model predictions</a></li>
-  <li><a href="#interpretting-the-fitted-model" id="toc-interpretting-the-fitted-model" class="nav-link" data-scroll-target="#interpretting-the-fitted-model"><span class="header-section-number">9.4</span> Interpretting the fitted model</a></li>
-  <li><a href="#clear-and-useful-models" id="toc-clear-and-useful-models" class="nav-link" data-scroll-target="#clear-and-useful-models"><span class="header-section-number">9.5</span> Clear and useful models</a></li>
-  <li><a href="#models-as-estimators" id="toc-models-as-estimators" class="nav-link" data-scroll-target="#models-as-estimators"><span class="header-section-number">9.6</span> Models as estimators</a></li>
-  <li><a href="#modeling-workflow" id="toc-modeling-workflow" class="nav-link" data-scroll-target="#modeling-workflow"><span class="header-section-number">9.7</span> Modeling workflow</a></li>
-  <li><a href="#models-of-reality" id="toc-models-of-reality" class="nav-link" data-scroll-target="#models-of-reality"><span class="header-section-number">9.8</span> Models of reality</a></li>
-  <li><a href="#good-vs.-bad-models" id="toc-good-vs.-bad-models" class="nav-link" data-scroll-target="#good-vs.-bad-models"><span class="header-section-number">9.9</span> Good vs.&nbsp;bad models</a></li>
-  <li><a href="#from-hypotheses-to-models" id="toc-from-hypotheses-to-models" class="nav-link" data-scroll-target="#from-hypotheses-to-models"><span class="header-section-number">9.10</span> From hypotheses to models</a>
+  <li><a href="#reading-the-fitted-model" id="toc-reading-the-fitted-model" class="nav-link" data-scroll-target="#reading-the-fitted-model"><span class="header-section-number">9.3</span> Reading the fitted model</a></li>
+  <li><a href="#generating-new-data-with-the-model" id="toc-generating-new-data-with-the-model" class="nav-link" data-scroll-target="#generating-new-data-with-the-model"><span class="header-section-number">9.4</span> Generating new data with the model</a></li>
+  <li><a href="#models-as-formal-hypotheses" id="toc-models-as-formal-hypotheses" class="nav-link" data-scroll-target="#models-as-formal-hypotheses"><span class="header-section-number">9.5</span> Models as formal hypotheses</a></li>
+  <li><a href="#models-as-useful-simplifications" id="toc-models-as-useful-simplifications" class="nav-link" data-scroll-target="#models-as-useful-simplifications"><span class="header-section-number">9.6</span> Models as useful simplifications</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">9.7</span> Chapter summary</a>
   <ul class="collapse">
-  <li><a href="#making-statisticl-models-simple" id="toc-making-statisticl-models-simple" class="nav-link" data-scroll-target="#making-statisticl-models-simple"><span class="header-section-number">9.10.1</span> Making statisticl models simple</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">9.7.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">9.7.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">9.7.3</span> New R functionality</a></li>
   </ul></li>
-  <li><a href="#specifying-a-simple-statistical-model" id="toc-specifying-a-simple-statistical-model" class="nav-link" data-scroll-target="#specifying-a-simple-statistical-model"><span class="header-section-number">9.11</span> Specifying a simple statistical model</a></li>
-  <li><a href="#fitting-a-model-to-data" id="toc-fitting-a-model-to-data" class="nav-link" data-scroll-target="#fitting-a-model-to-data"><span class="header-section-number">9.12</span> Fitting a model to data</a></li>
-  <li><a href="#inspecting-model-parameters" id="toc-inspecting-model-parameters" class="nav-link" data-scroll-target="#inspecting-model-parameters"><span class="header-section-number">9.13</span> Inspecting model parameters</a></li>
-  <li><a href="#predicting-new-data" id="toc-predicting-new-data" class="nav-link" data-scroll-target="#predicting-new-data"><span class="header-section-number">9.14</span> Predicting new data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
 <script type="module" id="qwebr-monaco-editor-init">
 
@@ -2194,11 +2115,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><img src="images/header-ch9.png" class="img-fluid"></p>
 <p>Last chapter we learned about the data generating process. If we know something’s data generating process, that means we know what information goes into the generation process, how that information is processed, and what kind of outputs will happen. We practiced defining our own data generation processes and simulating data based on those… but simulated data is not real data. Rather than create data from a data generation process we already know, how do we find out the data generation process for data we’ve collected from the real world?</p>
 <p>Unfortunately it is possible for the same data to come from different data generation processes, and for the same data generation process to produce different data (as we saw with the probabilistic sampling last chapter). It is also possible, in fact almost guaranteed, that the true data generation process for our data is something complicated. Thus it is difficult to answer important “how” and “why” questions (group behavior, disease progression, climate evolution, etc.) when all we have is some data as snapshots of the process’ output.</p>
-<p>A dominant method for addressing this conundrum is, rather than expecting some data to tell us what caused it, we write down what we <em>think</em> the data generation process is. Then we compare the sort of data that could come out of such a process to the data we actually have, and see how much they agree. If there is a good match, we have a good idea of the data generation process<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. If they don’t match, we think of new ideas and try those next. This process of formally writing down and testing ideas of the data generation process is called <strong>statistical modeling</strong>. In this chapter, we will discuss what this process looks like in more detail.</p>
-<section id="a-naive-statistical-model" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="a-naive-statistical-model"><span class="header-section-number">9.1</span> A naive statistical model</h2>
-<p>In the last several chapters, we explored data pertaining to physical features and opinions of students in a statistics class. Now let’s switch to something that might be more like what we would see in a real research project.</p>
-<p>Imagine we are interested in education and what influences the level of education a person attains. We can find information about this in The <a href="https://www.norc.org/research/projects/gss.html">General Social Survey</a> (GSS), which is an extensive and long-running annual survey run by the National Opinion Research Center at the University of Chicago to assess demographics, attitudes, and behaviors in the U.S. For this demonstration, we’ve saved a portion of the data to a file called <code>gss.csv</code>.</p>
+<div class="page-columns page-full"><p>A dominant method for addressing this conundrum is, rather than expecting some data to tell us what caused it, we write down what we <em>think</em> the data generation process is. Our idea of the data generation process is called a <strong>statistical model</strong>. Then we compare the data that could come out of such a process to the data we actually have, and see how much they agree. If there is a good match, we have a good idea of the data generation process<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. If they don’t match, we think of new ideas and try those next.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>statistical model</strong> = a mathematical representation of one’s core ideas about a data generation process</span></div></div>
+<p>This process of formally writing down and testing ideas of the data generation process is called statistical modeling. In this chapter, we will discuss what this process looks like in more detail.</p>
+<section id="creating-a-statistical-model" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="creating-a-statistical-model"><span class="header-section-number">9.1</span> Creating a statistical model</h2>
+<p>When you were growing up, did you ever play with toy versions of something? Maybe a firetruck or a dollhouse. These toys were not actual emergency vehicles or buildings. They weren’t the same size and probably had fewer details. However, they <em>resembled</em> the real thing - they looked similar, had the most important features like wheels or a bedroom, and could perform typical actions like rolling or opening a door. These toys were <em>models</em> of something else. They efficiently represented the essence of what makes a firetruck or a house even if they weren’t an exact replica.</p>
+<p>As we can build physical models of concrete things, we can also build conceptual models of abstract things like a data generation process. When we wrote down equations for the data generation process last chapter - e.g.&nbsp;<span class="math inline">\(\mu = 65 + 2X\)</span> and <span class="math inline">\(Y \sim \mathcal{N}(\mu, 5)\)</span> - we were writing our ideas about how the values of a target variable comes about.</p>
+<p>In <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a> we knew the actual data generation process because we made it up. But for real data, we can still write down what we <em>think</em> is the data generation process. This might not be as detailed as the actual data generation process, but we hope that it captures the essence of the data generation mechanisms. In other words, we are creating a model of the data generation process and aiming to make it a good one. If we succeed, we can use the model to make reasonable predictions about future data and to explain the fundamental mechanisms of what we are studying.</p>
+<p>Let’s see what this model creation process might look like in a hypothetical research project. Imagine we are interested in education and what influences the level of education a person attains. We can find information about this in The <a href="https://www.norc.org/research/projects/gss.html">General Social Survey</a> (GSS), which is an extensive and long-running annual survey run by the National Opinion Research Center at the University of Chicago to assess demographics, attitudes, and behaviors in the U.S. For this demonstration, we’ve saved a portion of the data to a file called <code>GSS.csv</code>.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>There’s a variable in this dataset called <code>highest_year_of_school_completed</code>, which sounds like the sort of target variable we are interested in. Let’s look at this variable more closely to see what sorts of values it has.</p>
@@ -2234,14 +2158,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>According to this quick summary, the average person in the dataset has completed some amount of college education (13.73 years of education). There is quite a bit of variation though, so it stands to reason that there could be factors about a person that influences how much education they completed.</p>
-<p>This is when we start thinking about the potential data generation process. First, we need to make a guess about the first component of the data generation process - what information goes into the process. What might influence how much schooling someone finishes? Or, if we don’t want to think about causes just now, what other information might offer clues about education attainment? Let’s say that we have a theory about parental investment, and we think people with more siblings will pursue less education.</p>
-<p>Next, we decide on the second component of the data generation process - how the input information is transformed to generate an output, aka the input function. This step is tricky! What mathematical function is best to use for transforming a number of siblings into a number of education years? It’s hard to know at this point without any other information. Let’s start with a really basic input function, where the number of siblings directly translates into a number of years of education: <span class="math inline">\(output = x\)</span>.</p>
-<p>Lastly, we pick what kind of data is generated by the data generation process. Recall from <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a> that if our process is deterministic, this will be an exact value generated by the input function: e.g.&nbsp;<span class="math inline">\(y = x\)</span>. If our process is probabilistic, however, the output is a parameter of a probability distribution from which observed data points are sampled. This is probably the case for our educational attainment variable (it is unlikely to be fully determined by number of siblings). In this case, we need to pick a probability distribution / observation model. We saw in the histogram above that some education levels are more likely that others, so let’s assume a normal probability distribution for the observation model of <code>highest_year_of_school_completed</code>.</p>
-<p>If a normal probability distribution is the output of our data generation process, there are two parameters to be concerned with: the mean of the distribution <span class="math inline">\(\mu\)</span>, and the standard deviation <span class="math inline">\(\sigma\)</span>. Our theory predicts that more siblings will lead to less education, so that means we think the mean of the output distribution will decrease as a function of <span class="math inline">\(X\)</span>. We also need to specify the variation of the distribution - on average, for a given number of siblings, how much will respondent education vary? Another tricky decision. Let’s pick 4 for now and see how that does.</p>
-<p>Altogether, that means our proposed data generation process is:</p>
-<p><span class="math display">\[\mu = -X\]</span> <span class="math display">\[Y \sim \mathcal{N}(\mu, 4)\]</span></p>
-<p>Where <span class="math inline">\(X\)</span> is the number of siblings and <span class="math inline">\(Y\)</span> is number of years of education. <span class="math inline">\(\mu\)</span> is the mean of the normal probability distribution from which observed values are generated. This changes as a function of <span class="math inline">\(X\)</span> (decreases, specifically). The standard deviation <span class="math inline">\(\sigma\)</span> is set to a specific value of 1 and does not change as a function of <span class="math inline">\(X\)</span>.</p>
-<p>Let’s simulate data to see how good our model is! By simulating, we are creating new data that would plausibly be generated by this data generation process. If the data for <code>highest_year_of_school_completed</code> that we actually collected resembles our simulated data, then we might be on the right track.</p>
+<p>This is when we start thinking about the potential data generation process. First, we need to make a guess about the first component of the data generation process - what information goes into the process. What might influence how much schooling someone finishes? Or, if we don’t want to think about causes just now, what other information might offer clues about education attainment? Let’s say that we have a theory about parental investment being important for academic achievement, and we think people with more siblings will have gotten less parental attention and thus pursue less education. If we do a visual check of these variables together:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2252,7 +2169,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Finish the code below to write a simulation for generating 1000 data points for the first observation, based on the proposed data generation process.</p>
+<p>Plot a jitter plot of <code>number_of_brothers_and_sisters</code> on the x-axis and <code>highest_year_of_school_completed</code> on the y-axis.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-3"></div>
@@ -2269,95 +2186,191 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>simulated_y &lt;- rnorm(1000, mean = -1*observed_x, sd = 4)</code></p>
+<p><code>ggplot(gss, aes(x=number_of_brothers_and_sisters, y=highest_year_of_school_completed)) + geom_jitter()</code></p>
 </div>
 </div>
 </div>
-<p>In the plot above, we made a density plot to represent the probability distribution output by our proposed data generation process for the first observation in the dataset. We also added a line to the plot indicate where the real, recorded value of <code>highest_year_of_school_completed</code> is.</p>
-<p>Immediately on viewing this plot, we can see some problems with our data generation process. First, the range of likely values in our simulated distribution are mostly negative. It is impossible to have negative years of education. Second, the observed value of <code>highest_year_of_school_completed</code> is far outside the range of likely values in our simulated distribution. It could be that the data point we observed is just unusual by chance (the sample space of a normal distribution is negative infiinity to positive infinity, after all), but if we look at what a simulated dataset might look like against all the data points:</p>
+<p>It does seem like number of siblings could be an effective explanatory variable of education attainment.</p>
+<p>Next, we decide on the second component of the data generation process - how the input information is transformed to generate an output, aka the systematic component. This step is tricky! What mathematical function is best to use for transforming a number of siblings into a number of education years? It’s hard to know at this point without any other information. Let’s start with a really basic input function, where the the value of the output directly maps to the number of siblings: <span class="math inline">\(\theta = -X\)</span>.</p>
+<p>Lastly, we pick what kind of data is generated by the data generation process. Recall from <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a> that if our process is deterministic, this will be an exact value generated by the input function: e.g.&nbsp;<span class="math inline">\(Y = X\)</span>. If our process is probabilistic, however, the output is a probability distribution from which observed data points are sampled. This is probably the case for our educational attainment variable (it is unlikely to be fully determined by number of siblings). If so, we need to pick a probability distribution / observation model. Years of education has an interval scale of measurement and we saw in the histogram above that some education levels are more likely that others, so let’s assume a normal probability distribution for the observation model of <code>highest_year_of_school_completed</code>.</p>
+<p>If a normal probability distribution is the output of our data generation process, there are two parameters to be concerned with: the mean of the distribution <span class="math inline">\(\mu\)</span>, and the standard deviation <span class="math inline">\(\sigma\)</span>. Our theory predicts that more siblings will lead to less education - the central tendency or most probable education value will decrease as sibling number increases. So that means we think the mean of the output distribution will decrease as a function of <span class="math inline">\(X\)</span>; <span class="math inline">\(\mu = \theta\)</span> for our link function, or written into the systematic component as <span class="math inline">\(\mu = -X\)</span> for efficiency. We also need to specify the variation of the distribution - on average, for a given number of siblings, how much will respondent education vary? Another tricky decision. Let’s pick 5 for now and see how that does.</p>
+<p>Altogether, our proposed data generation process is:</p>
+<p><span class="math display">\[\mu = -X\]</span> <span class="math display">\[Y \sim \mathcal{N}(\mu, 5)\]</span></p>
+<p>Where <span class="math inline">\(X\)</span> is the number of siblings and <span class="math inline">\(Y\)</span> is number of years of education. <span class="math inline">\(\mu\)</span> is the mean of the normal probability distribution from which observed values are generated. This changes as a function of <span class="math inline">\(X\)</span> (decreases, specifically). The standard deviation <span class="math inline">\(\sigma\)</span> is set to a specific value of 5 and does not change as a function of <span class="math inline">\(X\)</span>.</p>
+<p>Let’s simulate data to see how good our proposal is! By simulating, we create new data that would plausibly be generated by this data generation process. If the data for <code>highest_year_of_school_completed</code> that we actually collected resembles our simulated data, then we might be on the right track.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Finish the code below to write a simulation for generating 1000 data points for the first observation, based on the proposed probabilistic data generation process. Set <code>mu</code> to be determined by the systematic component and <code>sigma</code> to be the standard deviation of the observation model.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We can see that the sort of distribution predicted by our proposed data generation process is notably shifted lower than the distribution of actual data. Additionally, it’s wider than the observed data distribution, which indicates that there is less uncertainty than we thought when taking into account <code>number_of_brothers_and_sisters</code>. So in sum, our idea of the data generation process is not a good match for the data we actually observed.</p>
-<p>Perhaps we can come up with a better idea of the data generation process. We could tweak our first versions of the input function and observation model in a number of ways: adding a baseline value to the input function, multiplying <span class="math inline">\(X\)</span> by a weight, choosing a different value for <span class="math inline">\(\sigma\)</span>, etc.</p>
-<p>For instance, let’s say our second proposal of the data generation process looks like:</p>
-<p><span class="math display">\[\mu = 14.5 -0.25*X\]</span> <span class="math display">\[Y \sim \mathcal{N}(\mu, 2.8)\]</span></p>
-<p>Now lets look at these plots again:</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal the answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>simulated_y &lt;- rnorm(1000, mean = -1*observed_x, sd = 5)</code></p>
+</div>
+</div>
+</div>
+<p>In the plot above, we made a density plot to represent the probability distribution output by our proposed data generation process for the first observation in the dataset. We also added a line to the plot indicating where the real, recorded value of <code>highest_year_of_school_completed</code> is.</p>
+<p>Immediately on viewing this plot, we can see some problems with our data generation process. First, the likely values in our simulated distribution are mostly negative. It is impossible to have negative years of education, so this distribution is not realistic. Second, the observed value of <code>highest_year_of_school_completed</code> is far outside the range of simulated likely values. It could be that the data point we observed is just unusual by chance (the sample space of a normal distribution is negative infiinity to positive infinity, after all), but if we look at what a simulated dataset might look like against all the data points:</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The probability distribution output by the data generation process for observation 1 now overlaps very well with the observed data value. Looking at a full simulated dataset:</p>
+<p>We can see that the sort of distribution predicted by our proposed data generation process is notably shifted lower than the distribution of actual data. Additionally, it’s wider than the observed data distribution, which indicates that there is actually less uncertainty than we thought when taking into account <code>number_of_brothers_and_sisters</code>. In sum, our idea of the data generation process is not a good match for the data we actually observed.</p>
+<p>Perhaps we can come up with a better idea of the data generation process. We could tweak our first versions of the input function and observation model in a number of ways: adding a baseline value to the input function, multiplying <span class="math inline">\(X\)</span> by a weight, choosing a different value for <span class="math inline">\(\sigma\)</span>, etc.</p>
+<p>For instance, let’s say our second proposal of the data generation process looks like:</p>
+<p><span class="math display">\[\mu = 14.72 -0.27X\]</span> <span class="math display">\[Y \sim \mathcal{N}(\mu, 2.87)\]</span></p>
+<p>Now lets look at these plots again:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The simulated and observed distributions don’t perfectly match, but they are must closer is resemblance. The central tendencies are close and the variation is approximately the same. Compared to the data generation process we proposed first, this one is a much better match to the data.</p>
-<p>But how did we come up with the specific input function and observation model for this? You can perhaps imagine that tweaking all these options for these and evaluating simulated results over and over would be very tedious. Luckily, thanks to some math and the power of computers, there is a better way!</p>
+<p>The probability distribution output by this new data generation process for observation 1 now has realistic values and overlaps very well with the observed data value. Looking at a full simulated dataset:</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The simulated and observed distributions don’t perfectly match, but they are must closer in resemblance. The central tendencies are close and the shape and variation are approximately the same. Compared to the data generation process we proposed first, this one is a much better match to the data.</p>
+<p>This process demonstrates the basic loop of statistical modeling: 1) propose a data generation process, 2) simulate data from it, 3) compare to real data. Once we have a decent model, we can go further and interpret what the pieces of the model mean for our topic of interest.</p>
+<p>But how did we come up with the equations for this statistical model? You can imagine that tweaking all the options for these and evaluating simulated results over and over would be very tedious. Luckily, thanks to some math and the power of computers, there is a better way!</p>
 </section>
-<section id="automatically-fitting-a-model" class="level2" data-number="9.2">
+<section id="automatically-fitting-a-model" class="level2 page-columns page-full" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="automatically-fitting-a-model"><span class="header-section-number">9.2</span> Automatically fitting a model</h2>
-<ul>
-<li>show fitting a model automatically</li>
-<li>choose variables, input function form, observation model form. It picks the values of the coefficients.</li>
-<li>mention maximum likelihood estimation, that the value chosen is the one that maximizes how likely the data is. Since in a normal distribution the maximum likelihood is at the mean, it’s the value that minimizes each data points’ distance from the mean.</li>
-</ul>
+<p>When we first simulated a probability distribution under the data generation process <span class="math inline">\(\mu = -X, Y \sim \mathcal{N}(\mu, 5)\)</span> and compared it to an observed data point, we saw that the observed value was on the far upper tail of the probability curve. This means such a value had a very low probability of being generated by the output probability distribution. Conversely, in our second try using the data generation process <span class="math inline">\(\mu = 14.72 -0.27X, Y \sim \mathcal{N}(\mu, 2.87)\)</span>, the observed value lined up almost exactly with the mode of the output probability distribution. This means that the observed value was one of the most likely values to happen under that data generation process.</p>
+<p>Due to the nature of probability, a data generation process in which data points are always surprising is probably not the true data generation process of those data. Likely values should happen more often than surprising ones. Instead, the best data generation process would be one where the observed data values are all likely to happen. So in order to say we have a good data generation process, we need a systematic component equation and observation model from which our observed data have a high probability of occurring.</p>
+<p>There are actually mathematical methods that will help us with this. We won’t cover the math in this book, but the methods are called “maximum likelihood estimation” if you would like to search for more info. To make maximum likelihood estimation work, we still have to make some choices - specifically about the <em>form</em> of the systematic component and the <em>family</em> of the observation model. However, once we decide on those attributes, maximum likelihood estimation algorithms can find the numbers within those equations that will make our observed data as likely as possible given the specified constraints. In other words, we just need to specify our data generation process as something like:</p>
+<p><span class="math display">\[\mu = ? + ?X\]</span> <span class="math display">\[Y \sim \mathcal{N}(\mu, ?)\]</span></p>
+<div class="page-columns page-full"><p>The algorithm will then fill in the blanks. Doing this - using a mathematical procedure to find the optimal numbers for the data generation process - is called <strong>fitting</strong> a statistical model to data.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>model fitting</strong> = the process of finding the optimal values in a statistical model given observed data</span></div></div>
+<p>There are a set of functions in R that help us do model fitting. The specific function you choose tells R what type of observation model to use. For instance, the function <code>lm()</code> (short for “linear model”) will use a normal distribution for the observation model. Choosing to fit a model with <code>lm()</code> means we are specifying that the systematic component produces a mean parameter <span class="math inline">\(\mu\)</span> and any observed data points will randomly vary around this parameter following a normal probability distribution.</p>
+<p>Then, this function requires two arguments. The first, <code>formula=</code>, specifies the variables and form of the systematic component. To write a formula, we write the names of the target and explanatory variables, separated by a tilde <code>~</code> to indicate how one variable is distributed as a function of the other. For instance, the formula for generating years of education based on number of siblings would be <code>highest_year_of_school_completed ~ number_of_brothers_and_sisters</code>.</p>
+<p>Finally, the second argument <code>data=</code> specifies the dataset to find these variables in.</p>
+<p>Altogether this is what the code looks like to fit our idea of the data generation process to the data and find the optimal numbers:</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the <code>lm()</code> function expects the formula to come first and data to come second in the command. If you put the arguments in that order, you don’t need to include the argument names; i.e.&nbsp;<code>lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, gss)</code> will work.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>lm()</code> to fit a different sort of data generation process, where <code>highest_year_of_school_completed</code> is influenced by <code>respondents_sex</code>.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="evaluating-the-model-predictions" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="evaluating-the-model-predictions"><span class="header-section-number">9.3</span> Evaluating the model predictions</h2>
-<ul>
-<li>(predicting deterministically with pred(), predicting probabilistically with pred(interval=‘prediction’))</li>
-<li>evaluating data uncertainty (size of prediction interval, stability of posterior predictive check)</li>
-<li>evaluating data fit (coverage of prediction interval, data distribution matching the posterior predictive check)</li>
-<li>in chapters 10 (evaluating model uncertainty) and 11 (evaluating model coverage) we will learn how to quantify these evaluations. For now, looking at the visualizations helps us get a sense for what a good or bad statistical model is.</li>
-</ul>
+<section id="reading-the-fitted-model" class="level2 page-columns page-full" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="reading-the-fitted-model"><span class="header-section-number">9.3</span> Reading the fitted model</h2>
+<p>We saved the results of the model fitting code to a model object. If we simply type the name of the object like we might when looking at the contents of a vector, we see some words and numbers.</p>
+<p>Do the numbers in <code>model</code> look familiar? Look again at the second set of equations we proposed for the data generation process that seemed to match the observed data well:</p>
+<p><span class="math display">\[\mu = 14.72 -0.27X\]</span></p>
+<p><span class="math display">\[Y \sim \mathcal{N}(\mu, 2.87)\]</span></p>
+<div class="page-columns page-full"><p>It looks like these numbers then are the optimal numbers to fit into the systematic component of the data generation process. These are called the <strong>coefficients</strong> of the systematic component - hence the “Coefficients:” line in the model information. We can access and save them as their own vector for use later by using the command <code>model$coefficients</code>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>model coefficients</strong> = the numeric values that define the strength of relationship between the explanatory and target variables in a statistical model</span></div></div>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The last number the fitting process finds, the 2.87 in the observation model, is also stored in the model object in a less obvious way. To see that number, we can use the command <code>summary(model)</code>, which will give us access to more detailed information about the model object. <code>summary(model)$sigma</code> specifically will give us:</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In <span class="quarto-unresolved-ref">?sec-ch10</span> through <span class="quarto-unresolved-ref">?sec-ch12</span> we’ll talk in more about what these values mean for making conclusions about the data generation process.</p>
+<p>Before we know what these values are, it is customary to write our ideas of the data generation process equations with symbols as stand ins for the unknown coefficients. For the systematic component, we would write:</p>
+<p><span class="math display">\[ \mu = \beta_0 + \beta_1X\]</span> The <span class="math inline">\(\beta\)</span> symbols (“beta”, pronounced bey-ta) are how we notate each coefficient in the systematic component irrespective of their value. Writing the systematic component this way allows us to talk about the form of the function before we know the value of the coefficients yet. Once we do, we can say:</p>
+<p><span class="math display">\[ \beta_0 = 14.72\]</span> <span class="math display">\[ \beta_1 = -0.27\]</span></p>
+<p>For the observation model, before we’ve fit the model we would notate our choice for the distribution family as we have before:</p>
+<p><span class="math display">\[Y \sim \mathcal{N}(\mu, \sigma)\]</span></p>
+<p>Once we fit the model, we can write:</p>
+<p><span class="math display">\[\sigma = 2.87\]</span></p>
 </section>
-<section id="interpretting-the-fitted-model" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="interpretting-the-fitted-model"><span class="header-section-number">9.4</span> Interpretting the fitted model</h2>
-<ul>
-<li>coefficients</li>
-<li>sigma</li>
-<li>in chapter 12 (univariable models) and 13 (multivariable models), we will discuss more how to think about the meaning of these numbers relative to our data and our estimand.</li>
-<li>For more advanced options of different data generation processes, check out the advanced unit.</li>
-</ul>
+<section id="generating-new-data-with-the-model" class="level2 page-columns page-full" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="generating-new-data-with-the-model"><span class="header-section-number">9.4</span> Generating new data with the model</h2>
+<p>With the information from the model, we can write new data simulation code to see how well the model-generated data match the real data - i.e., how well the predictions from the model match reality.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use commands we just learned about to access the vector of model coefficients and the value of sigma.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Alternatively, R has a built-in function to expedite this called <code>predict()</code>. By passing a model object to this function and an argument <code>newdata=</code> specifying the observation to generate data for, it will return a calculated output using the systematic component so we don’t have to write out the math ourselves.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Simulate the mean of the expected probability distribution for the 5th observation in the dataset using <code>predict()</code>.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>By default, <code>predict()</code> returns one number per observation that represents the result of the systematic component. In the case of the specific systematic component of this model, this value is <span class="math inline">\(output = 14.72 -0.27X\)</span>. Since we are modeling a probabilistic data generation process and our generated data is actually a normal probability distribution, we can interpret this output value as the mean of the probability distribution that then generates the observed data.</p>
+<p>If we also wanted to know the variation of the predicted probability distribution, we can pass the optional argument <code>interval='prediction'</code> to the <code>predict()</code> function.</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="page-columns page-full"><p>This returns three values: <code>fit</code>, <code>lwr</code>, and <code>upr</code>. <code>fit</code> is the output of the fitted systematic component; the <span class="math inline">\(\mu\)</span> of the probability distribution for generating the observation that we just saw. <code>lwr</code> and <code>upr</code> are the lower and upper values, respectively, between which 95% of the probability distribution lies. Since a normal distribution technically doesn’t have a minimum and maximum, this is an alternative solution to saying what the lowest and highest values you would reasonably expect to be generated by this probability distribution. This range is called the <strong>prediction interval</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>prediction interval</strong> = the range within which most future observations are expected to fall, given a fitted statistical model</span></div></div>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Besides simulating a probability distribution for each individual observation, we can also simulate entire new datasets as we did before.</p>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>For this we can use the <code>coefs</code> values directly or the result of <code>predict()</code> in a math equation that we loop over for each observation in the dataset.</p>
+<p>At this point you may be wondering - why would we bother simulating new data from a statistical model if we already have real data, and we know the model was fitted to have the optimal numbers for creating the observed data?</p>
+<p>While fitting a statistical model does find the numbers that would make the observed data most likely <em>given the provided systematic component form and observation model family</em>, that doesn’t mean that the systematic component form and observation model family are correct for these data. It is still possible that, even though this version of the specified data generation process has the best numbers according to maximum likelihood estimation, this version is still not very likely to make the data - it can never generate a dataset that resembles the one we actually collected.</p>
+<p>Here is an example of such a situation, where we fit a model to predict whether or not someone was born in the US based on their number of siblings and then use that model to simulate a dataset of birth origins.</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In this case our simulated dataset includes unrealistic values - there’s no way to have a score of 0.5 for a binary variable like this, but our model predicted continuous values anyways. It also way underestimated the number of people with a 1 score (born in the US). The fitting procedure did the best it could given the constraints we provided, but this is a signal that we are assuming the wrong kind of probability distribution for generating the observed data. The <code>born_in_us</code> variable has only two possible values, so we should have modeled it with a Bernoulli observation model.</p>
+<p>By inspecting the prediction intervals and simulated datasets and comparing them to real data, we can detect when we might be in a bad situation. If the prediction intervals contain most of the observed data values and the simulated datasets resemble the shape and values of the observed data distribution, then we can be confident that the specified data generation process is a good match for the observed data. If the prediction intervals miss many of the observations and the simulated datasets look very different from the observed data, then that is a sign that we are using the wrong systematic component form or observation model family for these data and we should change our ideas about the nature of the data generation process.</p>
+<p>A good modeling workflow always involves model fit checking before interpreting the coefficients. In the next few chapters we will visually look at simulated vs.&nbsp;real data to get an intuitive sense for when a model is a plausible generation process for the real data, but in chapter <span class="quarto-unresolved-ref">?sec-ch13</span> we’ll learn more about quantifiable diagnostics of fit, why poor fit might happen, and what to do if so.</p>
 </section>
-<section id="clear-and-useful-models" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="clear-and-useful-models"><span class="header-section-number">9.5</span> Clear and useful models</h2>
-<ul>
-<li>decomposition (next chapter more guidance on choosing and interpreting predictors)</li>
-<li>something about overfitting</li>
-<li>What models are not: not necessarily causal (parental education could affect respondent education because of SES, not necessarily values transmission), not necessarily correct</li>
-</ul>
-</section>
-<section id="models-as-estimators" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="models-as-estimators"><span class="header-section-number">9.6</span> Models as estimators</h2>
-</section>
-<section id="modeling-workflow" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="modeling-workflow"><span class="header-section-number">9.7</span> Modeling workflow</h2>
-<ul>
-<li>specify research goal and estimand</li>
-<li>formalize idea of the data generation process</li>
-<li>clean and evaluate data</li>
-<li>fit model</li>
-<li>evaluate model (uncertainty and data coverage of predictions)</li>
-<li>interpret model meaning</li>
-<li>make inference</li>
-<li>communicate results</li>
-</ul>
-</section>
-<section id="models-of-reality" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="models-of-reality"><span class="header-section-number">9.8</span> Models of reality</h2>
-<p>When you were growing up, did you ever play with toy versions of something? Maybe a firetruck or a dollhouse. These toys were not actual emergency vehicles or buildings. They weren’t the same size and probably had fewer details. However, they <em>resembled</em> the real thing - they looked similar, had the most important features like wheels or a bedroom, and could perform typical actions like rolling or opening a door. These toys were <em>models</em> of something else. They efficiently represented the essence of what makes a firetruck or a house even if they weren’t an exact replica.</p>
-<p>As we can build physical models of concrete things, we can also build conceptual models of abstract things like a data generation process. When we wrote out equations at the end of last chapter - e.g.&nbsp;<span class="math inline">\(\mu = 65 + 2X\)</span> and <span class="math inline">\(Y \sim \mathcal{N}(\mu, 5)\)</span> - we were codifying the nature of a data generation process we created. We were saying that some variable <span class="math inline">\(X\)</span> is important, that it influences the outcome parameter <span class="math inline">\(\mu\)</span> by weighting it and adding to a baseline value, and that some target variable <span class="math inline">\(Y\)</span> is probabilistically generated from a probability distribution controlled by the resulting parameter output.</p>
-<p>We made up this data generation process to simulate data, but if we already collected some real data, we could say these equations are what we <em>think</em> was the data generation process that produced the data. These equations together are a statistical model, representing our ideas about a data generation process.</p>
-</section>
-<section id="good-vs.-bad-models" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="good-vs.-bad-models"><span class="header-section-number">9.9</span> Good vs.&nbsp;bad models</h2>
-<p>Some models are better than others. A toy truck with rolling wheels and flashing lights is a better model of a firetruck than a square block painted red because it is more clear what the model represents.</p>
-<p>But that doesn’t mean something more detailed is always better. A toy firetruck that requires gas and windshield wiper fluid is a more detailed model, but those features aren’t <em>necessary</em> for being able to tell that this is a model of a firetruck. Plus, adding those features make it more difficult to use the model for play<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. If play is the whole purpose of having the model in the first place, this kind of toy would be a worse model than a simpler one.</p>
-<p>Thus, a good model is one that is clear, but simplified. It should be precise in what it represents, but no more complicated than necessary for accomplishing your goals with it<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
-<p>The same principles apply for making statistical models of data generation processes. They may not be exactly correct or as detailed as the true data generation process that produced the data. But they should have all the important features and <em>resemble</em> the true data generation process, so that they can be a useful stand in.</p>
-</section>
-<section id="from-hypotheses-to-models" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="from-hypotheses-to-models"><span class="header-section-number">9.10</span> From hypotheses to models</h2>
-<p>This process of proposing ideas, testing them, and refining them might sound like the scientific method. That’s because it is! But when we do it formally, using equations of the data generation process for hypotheses instead of just words, it lets us be more exact with our predictions and assumptions. That makes it easier to quantify the extent to which our hypotheses are supported.</p>
-<p>At the beginning of the chapter, we mentioned that statistical models are a formal way of writing a hypothesis. From other science courses, you may be used to stating hypotheses with words: e.g.&nbsp;“stress impairs performance.” If you ran an experiment to test this idea, you would say your hypothesis is supported if the data follow the proposed pattern. So why do we need to</p>
-<p>But this statement is rather flexible. It could imply that any amount of stress makes people worse at doing things, and thus we should avoid anything and everything stressful<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. It could also imply that only severe stress impairs performance, but mild to moderate stress is okay. Alternatively, maybe a consistent increase in stress is associated with a consistent decrease in performance, but only for specific types of tasks. These are very different realities that would lead to different recommendations for how to live your life, but the verbal hypothesis does not not differentiate them. Because of this, the statement “stress impairs performance” is not a very useful model of reality.</p>
+<section id="models-as-formal-hypotheses" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="models-as-formal-hypotheses"><span class="header-section-number">9.5</span> Models as formal hypotheses</h2>
+<p>This process of proposing ideas, testing them, and refining them might sound like the scientific method. That’s because it is! But when we do it formally, using equations of the data generation process instead of just words, it lets us be more exact with our predictions and assumptions. That makes it easier to quantify the extent to which our hypotheses are supported.</p>
+<p>For example: from other science courses, you may be used to stating hypotheses with words: e.g.&nbsp;“stress impairs performance.” Since we are hypothesizing what will happen for a target variable (performance) based on some other input information (stress), we are hypothesizing an idea of a data generation process. If you ran an experiment to test this idea, you would say your hypothesis is supported if the data follow the proposed pattern.</p>
+<p>But this statement is rather flexible. It could imply that any amount of stress makes people worse at doing things, and thus we should avoid anything and everything stressful<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. It could also imply that only severe stress impairs performance, but mild to moderate stress is okay. Alternatively, maybe a consistent increase in stress is associated with a consistent decrease in performance, but only for specific types of tasks. These are very different realities that would lead to different recommendations for how to live your life, but the verbal hypothesis does not differentiate them. Because of this, the statement “stress impairs performance” is not a very clear idea about a data generation process.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch9-stress-performance" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2372,40 +2385,57 @@ Figure&nbsp;9.1: Four examples of ways that stress can relate to task performanc
 </div>
 </div>
 </div>
-<p>Ambiguous, lots of things count as “different”.</p>
-<p>But that is a problem for science.</p>
-<p>Like operationalizing variables, we need the be specific about the associations between variables and data generation processes we are hypothesizing. Otherwise it can seem like our hypothesis is good even though very different realities can support it, making it not very useful for understanding.</p>
-<section id="making-statisticl-models-simple" class="level3" data-number="9.10.1">
-<h3 data-number="9.10.1" class="anchored" data-anchor-id="making-statisticl-models-simple"><span class="header-section-number">9.10.1</span> Making statisticl models simple</h3>
-<p>Attributes of a good model: - simplified - but usable - specific - encode our assumptions</p>
-<p>So how do you come up with a model to test? Scientific theory</p>
+<p>Like operationalizing variables, we need to be specific about our ideas of the form of the associations between variables and the data generation mechanisms we hypothesize. Otherwise it can seem like our hypotheses and theories are good even though they can’t explain the details of very different realities, making them not very useful for understanding<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. We’ve seen how hard it is to have an idea about every aspect of the data generation process and how easy it is to be wrong about the ideas we do have. But that’s ok! As long as we’re clear about what those ideas are, we can test them, refine them, or reject them in favor of something else. That is the process of science. If we are not clear about our hypothesis - with explicit assumptions about how the data are generated - we cannot rigorously test them and our results might not be helpful for advancing science.</p>
 </section>
+<section id="models-as-useful-simplifications" class="level2 page-columns page-full" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="models-as-useful-simplifications"><span class="header-section-number">9.6</span> Models as useful simplifications</h2>
+<p>While we want to be specific and detailed about our ideas of the data generation process and iteratively improve upon them, we should also get comfortable with the idea that our models will never be perfect. They are <em>models</em> after all, not the real thing. Often times they will seem like major simplifications that make the process less complicated than we know it to be.</p>
+<p>But in some ways, that can be a strength. Imagine again the firetruck model we mentioned at the beginning of the chapter. A toy truck with rolling wheels and flashing lights is a better model of a firetruck than a square block painted red because it is more clear what the model represents. But adding even more detail, e.g.&nbsp;requiring gas and windshield wiper fluid to operate, isn’t necessary to capture the essence of a firetruck. Plus, those features make it more difficult to use the model for play<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. If play is the whole purpose of having the model in the first place, this kind of toy would be less useful than a simpler one.</p>
+<div class="page-columns page-full"><p>Thus, a good model is one that is clear, but simplified - i.e., one that is <strong>parsimonious</strong>. It should be precise in what it represents, but no more complicated than necessary for accomplishing your goals with it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parsimonious</strong> = being no more detailed than is necessary for a specific use</span></div></div>
+<p>For a statistical model, we often leave out parts of the true data generation process purposefully. In the example model of this chapter, education attainment is obviously influenced by more things than just the number of siblings. But making a simple model let’s us focus in on one piece of the data generation process, understanding how that particular mechanism works and how important it is on its own. This gives us insights into the fundamental processes of human behavior and cognition without getting mired in too many details for us to make sense of. To repeat the famous quote from statistician George Box, “All models are wrong, but some are useful.” The trick is to figure out what level of complexity is necessary for our models to be useful for our research question.</p>
 </section>
-<section id="specifying-a-simple-statistical-model" class="level2" data-number="9.11">
-<h2 data-number="9.11" class="anchored" data-anchor-id="specifying-a-simple-statistical-model"><span class="header-section-number">9.11</span> Specifying a simple statistical model</h2>
+<section id="chapter-summary" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">9.7</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">9.7.1</span> Learning goals</h3>
+<p>After reading this chapter, you should be able to:</p>
 <ul>
-<li>write as a deterministic model: y = bx + e</li>
-<li>write as a probabilistic model: y ~ N(bx, s)</li>
+<li>Write the equations of a model for your ideas of a data generation process</li>
+<li>Automatically fit the coefficients of a statistical model using <code>lm()</code></li>
+<li>Identify the values of these coefficients</li>
+<li>Simulate data using that model</li>
+<li>Visually compare simulated data to observed data</li>
+<li>Explain why hypotheses should be formalized with models</li>
+<li>Explain how models can be useful simplifications of reality</li>
 </ul>
 </section>
-<section id="fitting-a-model-to-data" class="level2" data-number="9.12">
-<h2 data-number="9.12" class="anchored" data-anchor-id="fitting-a-model-to-data"><span class="header-section-number">9.12</span> Fitting a model to data</h2>
+<section id="new-concepts" class="level3" data-number="9.7.2">
+<h3 data-number="9.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">9.7.2</span> New concepts</h3>
+<ul>
+<li><strong>statistical model</strong>: a mathematical representation of one’s core ideas about a data generation process.</li>
+<li><strong>model fitting</strong>: the process of finding the optimal values in a statistical model given observed data.</li>
+<li><strong>model coefficients</strong>: the numeric values that define the strength of relationship between the explanatory and target variables in a statistical model.</li>
+<li><strong>prediction interval</strong>: the range within which most future observations are expected to fall, given a fitted statistical model.</li>
+<li><strong>parsimonious</strong>: being no more detailed than is necessary for a specific use.</li>
+</ul>
 </section>
-<section id="inspecting-model-parameters" class="level2" data-number="9.13">
-<h2 data-number="9.13" class="anchored" data-anchor-id="inspecting-model-parameters"><span class="header-section-number">9.13</span> Inspecting model parameters</h2>
-</section>
-<section id="predicting-new-data" class="level2" data-number="9.14">
-<h2 data-number="9.14" class="anchored" data-anchor-id="predicting-new-data"><span class="header-section-number">9.14</span> Predicting new data</h2>
+<section id="new-r-functionality" class="level3" data-number="9.7.3">
+<h3 data-number="9.7.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">9.7.3</span> New R functionality</h3>
+<ul>
+<li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm">lm()</a></li>
+<li><a href="https://www.geeksforgeeks.org/r-machine-learning/predict-function-in-r/">predict()</a></li>
+</ul>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>or at least <em>a</em> data generation process that is adequate for explaining the data - it might not be the only way these data could occur!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>If you thought “batteries not included” was the worst thing you could hear on Christmas morning, wait ’til you hear about oil changes!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>To quote statistician George Box: “all models are wrong - some are useful.”<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>No more exercise, socializing, scary movies…<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>No more exercise, socializing, scary movies…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>One of the most influential scholars in philosophy of science, Karl Popper, asserted that a scientific theory is only good if it is falsifiable. If our hypothesis is so generic that any way the data come out could be said to support it, then the hypothesis is not falsifiable and not very scientific. We should endeavor to subject our hypotheses to “extreme danger” of falsification because if it survives, we’ll know it is strong and useful.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>If you thought “batteries not included” was the worst thing you could hear on Christmas morning, wait ’til you hear about oil changes!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -2817,9 +2847,6 @@ Figure&nbsp;9.1: Four examples of ways that stress can relate to task performanc
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-10.html" class="pagination-link" aria-label="Evaluating Model Uncertainty">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluating Model Uncertainty</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
