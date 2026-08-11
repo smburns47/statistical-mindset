@@ -411,7 +411,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"grav_data <- data.frame(\n  g = c(9.8, 9.8, 9.8, 9.8, 9.8),\n  t = c(1, 2, 3, 4, 5)\n)\n\ngrav_data$d <- 0.5 * grav_data$g * grav_data$t^2 \n\ngrav_data$d","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- c(9.8, 3.7, 24.8, 8.9, 1.6)\nt <- c(1, 2, 3, 4, 5)\n\ngrav_data <- data.frame(\n  g_long = #your code here\n  t_long = #your code here\n)\n\ngrav_data$d <- 0.5 * grav_data$g_long * grav_data$t_long^2 \n\ngrav_data$d","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_point()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_jitter(width = 0.1, alpha = 0.5)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_grav <- grav_data |>\n  filter(g_long == 9.8, t_long == 1)\n\nggplot(subset_grav, aes(x=d)) + \n  geom_histogram() +\n  coord_cartesian(xlim = c(0, 10)) + \n  labs(subtitle = 'distribution of d values at t==1 and g==9.8')","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\n#your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_studentdata <- studentdata |>\n  filter(Hand == 160, Sex == 'Female')\n\nggplot(subset_studentdata, aes(x=Height)) + \n  geom_histogram() + \n  labs(subtitle = 'Distribution of Height when Sex==Female and Hand==160mm')","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#1 = weighted, 0 = not weighted\ncoin_weighted <- rep(c(1,0), 500)\nheads_prob <- 0.5 + 0.2*coin_weighted\ncoin_data <- data.frame(\n  coin_weighted = coin_weighted,\n  heads_prob = heads_prob\n)\n\nhead(coin_data)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"for (i in 1:nrow(coin_data)) {\n  coin_data$flip[i] <- rbinom(n=1, \n                              size=1, \n                              prob=coin_data$heads_prob[i])\n}\n\nggplot(coin_data, aes(x=flip)) + \n  geom_bar() + \n  facet_wrap(~coin_weighted)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"condition <- rep(c('A','B','C'), times = 100)\nuniform_data <- data.frame(condition)\n\nfor (i in 1:nrow(uniform_data)) {\n  if (uniform_data$condition[i] == 'A') {\n    min <- 0\n    max <- 10\n  } else if (uniform_data$condition[i] == 'B') {\n    min <- 5\n    max <- 15\n  } else {\n    min <- 10\n    max <- 20\n  }\n  \n  uniform_data$target[i] <- runif(n=1, min=#???, max=#???)\n}\n\nggplot(uniform_data, aes(x=target, fill=condition)) + \n  geom_histogram() ","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#explanatory variable: x\n#input function: mean = 5 + 2*x\n#type of generated data: probabilistic from a normal distribution\nx <- runif(n=100, min=0, max=10)\nnormal_data <- data.frame(x)\n\nfor (i in 1:nrow(normal_data)) {\n  mean <- 5 + 2*normal_data$x[i]\n  normal_data$y[i] <- rnorm(1, mean=mean, sd=8)\n}\n\nggplot(normal_data, aes(x=x, y=y)) + \n  geom_point() ","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"param_mean <- 65\ndata <- rnorm(n=50, mean=param_mean, sd=5)\n\nprint('Probability parameter mu:')\nparam_mean\nprint('Sample mean x_bar:')\nmean(data)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"grav_data <- data.frame(\n  g = c(9.8, 9.8, 9.8, 9.8, 9.8),\n  t = c(1, 2, 3, 4, 5)\n)\n\ngrav_data$d <- 0.5 * grav_data$g * grav_data$t^2 \n\ngrav_data$d","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- c(9.8, 3.7, 24.8, 8.9, 1.6)\nt <- c(1, 2, 3, 4, 5)\n\ngrav_data <- data.frame(\n  g_long = #your code here\n  t_long = #your code here\n)\n\ngrav_data$d <- 0.5 * grav_data$g_long * grav_data$t_long^2 \n\ngrav_data$d","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_point()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_jitter(width = 0.1, alpha = 0.5)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_grav <- grav_data |>\n  filter(g_long == 9.8, t_long == 1)\n\nggplot(subset_grav, aes(x=d)) + \n  geom_histogram() +\n  coord_cartesian(xlim = c(0, 10)) + \n  labs(subtitle = 'distribution of d values at t==1 and g==9.8')","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\n#your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_studentdata <- studentdata |>\n  filter(Hand == 160, Sex == 'Female')\n\nggplot(subset_studentdata, aes(x=Height)) + \n  geom_histogram() + \n  labs(subtitle = 'Distribution of Height when Sex==Female and Hand==160mm')","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"uniform_data <- runif(#your code here)\n\nggplot(data.frame(uniform_data), aes(x=uniform_data)) + \n  geom_histogram() ","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"normal_data <- #your code here\n\nggplot(data.frame(normal_data), aes(x=normal_data)) + \n  geom_histogram() ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#1 = weighted, 0 = not weighted\ncoin_weighted <- rep(c(1,0), 500)\nheads_prob <- 0.5 + 0.2*coin_weighted\ncoin_data <- data.frame(\n  coin_weighted = coin_weighted,\n  heads_prob = heads_prob\n)\n\nhead(coin_data)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"for (i in 1:nrow(coin_data)) {\n  coin_data$flip[i] <- rbinom(n=1, \n                              size=1, \n                              prob=coin_data$heads_prob[i])\n}\n\nggplot(coin_data, aes(x=flip)) + \n  geom_bar() + \n  facet_wrap(~coin_weighted)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"condition <- rep(c('A','B','C'), times = 100)\nuniform_data <- data.frame(condition)\n\nfor (i in 1:nrow(uniform_data)) {\n  if (uniform_data$condition[i] == 'A') {\n    min_i <- 0\n    max_i <- 10\n  } else if (uniform_data$condition[i] == 'B') {\n    min_i <- 5\n    max_i <- 15\n  } else {\n    min_i <- 10\n    max_i <- 20\n  }\n  \n  uniform_data$target[i] <- runif(n=1, min=#???, max=#???)\n}\n\nggplot(uniform_data, aes(x=target, fill=condition)) + \n  geom_histogram() ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#explanatory variable: x\n#input function: mean = 5 + 2*x\n#type of generated data: probabilistic from a normal distribution\nx <- runif(n=100, min=0, max=10)\nnormal_data <- data.frame(x)\n\nfor (i in 1:nrow(normal_data)) {\n  mean <- 5 + 2*normal_data$x[i]\n  normal_data$y[i] <- rnorm(1, mean=mean, sd=8)\n}\n\nggplot(normal_data, aes(x=x, y=y)) + \n  geom_point() ","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2023,18 +2023,14 @@ window.Quarto = {
   <li><a href="#simulating-uniform-data" id="toc-simulating-uniform-data" class="nav-link" data-scroll-target="#simulating-uniform-data"><span class="header-section-number">8.5.2</span> Simulating uniform data</a></li>
   <li><a href="#simulating-normal-data" id="toc-simulating-normal-data" class="nav-link" data-scroll-target="#simulating-normal-data"><span class="header-section-number">8.5.3</span> Simulating normal data</a></li>
   </ul></li>
-  <li><a href="#mathematical-notation-for-data-generation-processes" id="toc-mathematical-notation-for-data-generation-processes" class="nav-link" data-scroll-target="#mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</a>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">8.6</span> Conditional probability</a></li>
+  <li><a href="#simulating-conditional-probabilistic-data" id="toc-simulating-conditional-probabilistic-data" class="nav-link" data-scroll-target="#simulating-conditional-probabilistic-data"><span class="header-section-number">8.7</span> Simulating conditional probabilistic data</a></li>
+  <li><a href="#the-data-generation-process-in-research" id="toc-the-data-generation-process-in-research" class="nav-link" data-scroll-target="#the-data-generation-process-in-research"><span class="header-section-number">8.8</span> The data generation process in research</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.9</span> Chapter summary</a>
   <ul class="collapse">
-  <li><a href="#notating-the-target-probability-distribution" id="toc-notating-the-target-probability-distribution" class="nav-link" data-scroll-target="#notating-the-target-probability-distribution"><span class="header-section-number">8.6.1</span> Notating the target probability distribution</a></li>
-  <li><a href="#notating-the-systematic-component" id="toc-notating-the-systematic-component" class="nav-link" data-scroll-target="#notating-the-systematic-component"><span class="header-section-number">8.6.2</span> Notating the systematic component</a></li>
-  <li><a href="#the-link-function" id="toc-the-link-function" class="nav-link" data-scroll-target="#the-link-function"><span class="header-section-number">8.6.3</span> The link function</a></li>
-  </ul></li>
-  <li><a href="#the-data-generation-process-in-research" id="toc-the-data-generation-process-in-research" class="nav-link" data-scroll-target="#the-data-generation-process-in-research"><span class="header-section-number">8.7</span> The data generation process in research</a></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">8.8</span> Chapter summary</a>
-  <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">8.8.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">8.8.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">8.8.3</span> New R functionality</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">8.9.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">8.9.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">8.9.3</span> New R functionality</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2496,7 +2492,7 @@ Figure&nbsp;8.1: The data generation process of pizza and of data
 </section>
 <section id="sec-ch8-probability-distributions" class="level2 page-columns page-full" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="sec-ch8-probability-distributions"><span class="header-section-number">8.4</span> Probability distributions</h2>
-<p>Let’s talk more about probability distributions before moving on. It’s important to keep in mind what they are, and what they are not.</p>
+<p>Because probabilistic data generation processes are so ubiquitous, and the kind of data they create are probability distributions, let’s discuss more what probability distribution are and how they work.</p>
 <section id="rules-of-probability" class="level3 page-columns page-full" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="rules-of-probability"><span class="header-section-number">8.4.1</span> Rules of probability</h3>
 <div class="page-columns page-full"><p>A probability distribution describes the probabilities of all possible values that could occur for a target variable. We can visualize it using what is known as a <strong>density plot</strong>. A density plot is much like a histogram, but it puts probability (“density” of probability at each value <span class="math inline">\(x\)</span>) on the y-axis instead of counts. Where a density plot is denser, that value is more likely to occur.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>density plot</strong> = a type of plot that shows the proportion of a distribution that has a specific value</span></div></div>
@@ -2514,7 +2510,7 @@ Figure&nbsp;8.2: A histogram of real data vs.&nbsp;a density plot of a theoretic
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>In <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>, we started talking about probabilities as our expectations about randomly drawing a value from a distribution like we draw a marble from a bag. This random drawing is called <strong>sampling</strong>. If 9/10ths of the marbles in a bag are blue and only 1/10th are red, when we randomly sample a marble from the bag we expect it to be blue and we are pretty confident about that. Likewise, if a data probability distribution says some target values is more likely to happen than others (that part of the density plot is higher), we expect those values to show up in our recorded data more often when the same input values are used.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling</strong> = the process of generating one or more elementary events from the sample space</span></div></div>
+<div class="page-columns page-full"><p>In <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> we started talking about probabilities as our expectations about randomly drawing a value from a distribution like we draw a marble from a bag. This random drawing is called <strong>sampling</strong>. If 9/10ths of the marbles in a bag are blue and only 1/10th are red, when we randomly sample a marble from the bag we expect it to be blue and we are pretty confident about that. Likewise, if a data probability distribution says some target values is more likely to happen than others (that part of the density plot is higher), we expect those values to show up in our recorded data more often when the same input values are used. The densest parts of the probability distribution are the most likely values.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling</strong> = the process of generating one or more elementary events from the sample space</span></div></div>
 <p>What is probable, however, does not <em>guarantee</em> what will actually happen. It is still possible to draw a red marble even when there’s a 90% chance of drawing blue. In fact, it is possible to draw multiple red marbles in a row, even though we’d be really surprised to see that. In a data probability distribution, it is possible that we end up with target data values that are surprising, and possibly at a higher rate than expected. For this reason, the distribution of data that we collect might not look the same as the probability distribution. The probability distribution is what we <em>expect</em>, but that exact shape may not be what we get.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2531,7 +2527,7 @@ Figure&nbsp;8.3: Finite data samples drawn from a probability distribution can l
 </div>
 </div>
 <p>To talk more formally about probability, it is defined as the proportion of times a certain value will occur in a very, very large sample - an infinitely large one. We will notate this infinitely large variable as capital <span class="math inline">\(Y\)</span>, while the finite set of data values in a dataset is <span class="math inline">\(y\)</span>. The distribution of values in <span class="math inline">\(y\)</span> is not guaranteed to be the same as in <span class="math inline">\(Y\)</span>.</p>
-<p>To notate the probability of a specific value within <span class="math inline">\(Y\)</span>, we use the letter <span class="math inline">\(P\)</span>. For instance, the probability of randomly getting a red marble out of a bag is:</p>
+<p>To notate the probability of sampling a specific value within <span class="math inline">\(Y\)</span>, we use the letter <span class="math inline">\(P\)</span>. For instance, the probability of randomly getting a red marble out of a bag is:</p>
 <p><span id="eq-probability"><span class="math display">\[P(Y = red) \tag{8.2}\]</span></span></p>
 <p>If the probabilities in the bag were 90% blue / 10% red, then <span class="math inline">\(P(Y = red) = 0.1\)</span> as red would only appear 10% of the time in an infinitely large sample of random bag draws. But a finite sample of 100 marble draws might have 15 red marbles, or 8, or even 0. The proportion of values in a data sample is likely to be close to the underlying probability, but it won’t be exactly the same due to randomness.</p>
 </section>
@@ -2539,7 +2535,7 @@ Figure&nbsp;8.3: Finite data samples drawn from a probability distribution can l
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="kinds-of-probability-distributions"><span class="header-section-number">8.4.2</span> Kinds of probability distributions</h3>
 <div class="page-columns page-full"><p>There are different kinds of probability distributions that apply to different kinds of variables. These different kinds fall into what are called <strong>distribution families</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>distribution family</strong> = a group of distributions that have the same parameters; different members of the family will have different values of those parameters</span></div></div>
 <div class="page-columns page-full"><p>For example, if you flipped a coin over and over and recorded each face as data, there could only be two possible values - heads and tails. Something like “purple” or “23.3” can never happen in these data. This set of possible values, called the <strong>sample space</strong>, would be written as <span class="math inline">\(\{heads, tails\}\)</span>. A variable with only two possible values is fairly common in nature, so mathematicians have given it a name. This is called a <strong>Bernoulli</strong> variable, after the mathematician who formally defined it. A Bernoulli variable is one that has a Bernoulli distribution - two possible values, occurring some proportion of the time. Other examples of Bernoulli-distributed variables include disease diagnosis (have it or not), question answers (correct or not), survival (dead or alive), etc.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sample space</strong> = the set of all possible values a variable can take</span><span class="margin-aside"><strong>Bernoulli distribution</strong> = a kind of distribution made by a binary variable with two possible outcomes; defined by the probability of those outcomes</span></div></div>
-<div class="page-columns page-full"><p>But Bernoulli distributions don’t have to look exactly the same. Some have a really low probability for the first option, some a high probability for it, some have middling probabilities for both options. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we learned to describe a binary variable with the proportion of the distribution that has a value of 1 (whatever category was given a ‘1’ label); differently-looking binary distributions have different proportions. The proportion of 1’s also describes how the probability distribution of a Bernoulli variable looks, like a setting dial we can turn. We call this the <strong>parameter</strong> of the distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parameter</strong> = a summary characteristic of a probability distribution that controls how the distribution is shaped</span></div></div>
+<div class="page-columns page-full"><p>But Bernoulli distributions don’t have to look exactly the same. Some have a really low probability for the first option, some a high probability for it, some have middling probabilities for both options. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we learned to describe a binary variable with the proportion of the distribution that has a value of 1 (whatever category was given a ‘1’ label); different-looking binary distributions have different proportions. The proportion of 1’s also describes how the probability distribution of a Bernoulli variable looks, like a setting dial we can turn. We call this the <strong>parameter</strong> of the distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parameter</strong> = a summary characteristic of a probability distribution that controls how the distribution is shaped</span></div></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2641,7 +2637,7 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 </section>
 <section id="probability-axioms" class="level3 page-columns page-full" data-number="8.4.3">
 <h3 data-number="8.4.3" class="anchored" data-anchor-id="probability-axioms"><span class="header-section-number">8.4.3</span> Probability axioms</h3>
-<p>Lastly, let’s discuss the axioms of probability. Regardless of the kind or shape of a probability distribution, the following three rules are always true:</p>
+<p>There are three axioms of probability which describe how all probability distributions work. Regardless of the kind or shape of a probability distribution, the following three rules are always true:</p>
 <ol type="1">
 <li><strong>The probability of any value must be non-negative</strong></li>
 </ol>
@@ -2654,25 +2650,22 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 <li><strong>The probability of any value cannot be greater than 1</strong></li>
 </ol>
 <p><span id="eq-axiom3"><span class="math display">\[P(Y = y_i) \leq 1 \tag{8.5}\]</span></span></p>
-<p>The plain-text meaning of these axioms is that any value in a probability is either impossible to happen (0% chance), guaranteed to happen (100% chance), or something in between. There’s no such thing as a probability above 1 or a negative probability. In addition, if we take the probability of each <span class="math inline">\(y_i\)</span> in a probability distribution and add them up, they must sum to 1. <em>Something</em> is always guaranteed to happen.</p>
-<p>From these three rules, we can build up other facts about probability distributions that will be relevant to us later in the book. For instance, the probability that some <span class="math inline">\(y_i\)</span> score will <em>not</em> equal a certain value is 1 minus the probability that it will: <span class="math inline">\(1 - P(Y = y_i)\)</span>. This is the subtraction rule for probability.</p>
-<div class="page-columns page-full"><p>The <strong>cumulative probability</strong> of a value <span class="math inline">\(Y = y_i\)</span> is using <span class="math inline">\(y_i\)</span> as a cutoff, and treating all values at or below that cutoff as the same outcome. To find the cumulative probability of <span class="math inline">\(y_i\)</span>, you sum the probabilities of all values less than or equal to <span class="math inline">\(y_i\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>cumulative probability</strong> = the probability of an observation having a value less than or equal to a cutoff value</span></div></div>
-<p><span id="eq-cumulative"><span class="math display">\[\sum P(Y \leq y_i) = P(Y = y_1) + P(Y = y_2) + ... + P(Y = y_i) \tag{8.6}\]</span></span></p>
+<p>The plain-text meaning of these axioms is that any value in a probability is either impossible to happen (0% chance), guaranteed to happen (100% chance), or something in between. There’s no such thing as a probability above 1 or a negative probability. In addition, if we take the probability of each possible value of <span class="math inline">\(Y\)</span> in a probability distribution and add them up, they must sum to 1. <em>Something</em> is always guaranteed to happen.</p>
+<p>From these three rules, we can build up other facts about probability distributions. For instance, the probability that some <span class="math inline">\(Y\)</span> score will <em>not</em> equal a certain value is 1 minus the probability that it will: <span id="eq-subtraction"><span class="math display">\[P(Y \neq y_i) = 1 - P(Y = y_i) \tag{8.6}\]</span></span></p>
+<p>This is the subtraction rule for probability.</p>
+<div class="page-columns page-full"><p>The <strong>cumulative probability</strong> of a value <span class="math inline">\(Y = y_i\)</span> uses <span class="math inline">\(y_i\)</span> as a cutoff and treats all values at or below that cutoff as the same outcome. To find the cumulative probability of <span class="math inline">\(y_i\)</span>, you sum the probabilities of all values less than or equal to <span class="math inline">\(y_i\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>cumulative probability</strong> = the probability of an observation having a value less than or equal to a cutoff value</span></div></div>
+<p><span id="eq-cumulative"><span class="math display">\[\sum P(Y \leq y_i) = P(Y = y_1) + P(Y = y_2) + ... + P(Y = y_i) \tag{8.7}\]</span></span></p>
 <p>An example of a cumulative probability is finding the chance that someone has a sub-clinical depression score. This would be the sum of probabilities of all depression score options that are below a clinical threshold.</p>
 </section>
 </section>
 <section id="sec-ch8-simulating-probabilistic-data" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="sec-ch8-simulating-probabilistic-data"><span class="header-section-number">8.5</span> Simulating probabilistic data</h2>
-<p>Now that we understand probability distributions better, let’s practice specifying a data generation process again and simulating data - this time probabilistically. To do so, we still define what explanatory variables to care about and what the input function is to combine them. But then, the thing that the systematic component generates is not a value for a target data point, but a parameter of the distribution of possible target values (i.e., the probability distribution). Once a data generation process has determined a parameter, getting any specific target data value is simply a matter of randomly sampling values from the described probability distribution.</p>
+<p>A probabilistic data generation process generates a probability distribution, not exactly the same data values every time. The target variable values we happen to record in a dataset are randomly sampled. We can simulate this random sampling process to produce data values from a probability distribution we specify.</p>
 <section id="simulating-bernoulli-data" class="level3" data-number="8.5.1">
 <h3 data-number="8.5.1" class="anchored" data-anchor-id="simulating-bernoulli-data"><span class="header-section-number">8.5.1</span> Simulating Bernoulli data</h3>
 <p>Let’s see a simple probabilistic data generation process as an example. Consider an everyday coin that has two sides, heads and tails. When we flip the coin one of the two sides will be showing. We want to predict what side will face up on a given flip of the coin; this means the coin face showing is our target variable and flipping the coin is the data generation process.</p>
-<p>When you flip the coin once, can you predict what side will be showing when it lands? Unless you’re a wizard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, your answer is probably no. You can only say that it will be one of two values, heads or tails, a certain proportion of the time. That means the coin flip is a probabilistic process.</p>
-<p>What sort of things influence the proportion of times a coin will come up heads? A random coin you find on the street is probably fair, in that heads and tails will come up about the same number of times over repeated flips. But an unfair coin that is weighted on the tails face will land heads up more often than tails up. So let’s create some explanatory data about whether or not a coin has a weight, and then write an input function that increases the chance of heads when the coin is weighted.</p>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This data generation process we have defined specifies the probability distribution of what values are possible and probable for a coin flip to have. By defining <code>heads_prob &lt;- 0.5 + 0.2*coin_weighted</code>, we are saying that an unweighted coin (<code>coin_weighted == 0</code>, cancelling out of the equation) will have a heads probability of 0.5 and a weighted coin (<code>coin_weighted == 1</code>) will have a probability of 0.5 + 0.2*1 = 0.7.</p>
-<p>A probability distribution tells us what values are possible and probable for a target variable, but it doesn’t give us target data yet. For that, we have to randomly sample from the probability distribution. We can use the <code>rbinom()</code> function for this. It is short for “random binomial distribution” and it randomly samples values from a distribution that you specify. To do so, there are three arguments:</p>
+<p>When you flip the coin once, can you predict what side will be showing when it lands? Unless you’re a wizard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, your answer is probably no. You can only say that it will be one of two values, heads or tails, a certain proportion of the time. That means the coin flip is a probabilistic process that produces a probability distribution of possible outcomes.</p>
+<p>A probability distribution tells us what values are possible and probable for a target variable, but it doesn’t give us any actual target data yet. For that, we have to randomly sample from the probability distribution. We can use the <code>rbinom()</code> function for this. It is short for “random binomial distribution” and it randomly samples values from a distribution that you specify. To do so, there are three arguments:</p>
 <ul>
 <li><code>n</code>: how many data points to sample from the probability distribution.</li>
 <li><code>size</code>: how many “trials” per observation. In our case, this is how many flips we do before writing down a face (just 1 flip).<br>
@@ -2680,7 +2673,7 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 <li><code>prob</code>: probability of getting a “success” in each “trial”. A “success” for us can be getting heads vs.&nbsp;tails, so this is the probability of getting heads.</li>
 </ul>
 <p>With this information, <code>rbinom()</code> will randomly choose values from the probability distribution specified. Here is some code that generates 1 coin flip from a fair coin probability distribution:</p>
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>When you ran the code above, what value did you get? Remember that we can never perfectly predict what value in a probabilistic process will come next - we only know the probability across many samplings. Thus, you likely got a different value than someone else did. In fact, if you execute the above code multiple times, you will get different results even though you didn’t change any code. Try it!</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -2706,25 +2699,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try changing the arguments in the <code>rbinom()</code> function to see how that changes the output.</p>
+<p>Try changing the arguments in the <code>rbinom()</code> function to simulate 10 coin flips.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now let’s generate coin flips based on the data generation process we specified earlier, where coin weight influenced the probability of heads vs.&nbsp;tails. We will loop through each row of the dataset and record a coin flip based on the parameter <code>heads_prob</code> for that row. Make sure you read carefully what each line of code is doing!</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>To review this data generation process:</p>
-<ul>
-<li>we specified the explanatory variable, <code>coin_weighted</code></li>
-<li>we specified the systematic component, <code>heads_prob</code> = 0.5 + 0.2*<code>coin_weighted</code></li>
-<li>we specified that this is a probabilistic data generation process, so the result of the systematic component <code>heads_prob</code> is the parameter of a probability distribution. Specifically it describes a Bernoulli data distribution (only two possible values).</li>
-</ul>
-<p>These are the three components of the data generation process. By defining all these pieces ourselves, we had enough info to create data.</p>
 </section>
 <section id="simulating-uniform-data" class="level3" data-number="8.5.2">
 <h3 data-number="8.5.2" class="anchored" data-anchor-id="simulating-uniform-data"><span class="header-section-number">8.5.2</span> Simulating uniform data</h3>
-<p>As we discussed in <a href="#sec-ch8-probability-distributions" class="quarto-xref"><span>Section 8.4</span></a>, different kinds of probability distributions go with different kinds of data. This means, when we’re defining the kind of data generated by a data generation process, we not only specify that it is a probability distribution but we specify what kind of distribution. The systematic component then determines the parameter(s) of that distribution.</p>
 <p>If we wanted to generate uniform data instead of Bernoulli, we can use the function <code>runif()</code>. This is short for “random uniform distribution”. This function takes three arguments:</p>
 <ul>
 <li><code>n</code>: how many values to generate</li>
@@ -2741,27 +2723,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Finish the code in line 16 below to generate data from a uniform probability distribution where the min and max parameters are a function of <code>condition</code>.</p>
+<p>Finish the code below to generate 100 uniformly distributed values between 0 and 10.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-13"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled" title="Reveal answer">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Reveal answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>uniform_data$value[i] &lt;- runif(n=1, min=min, max=max)</code></p>
-</div>
-</div>
-</div>
 </section>
 <section id="simulating-normal-data" class="level3" data-number="8.5.3">
 <h3 data-number="8.5.3" class="anchored" data-anchor-id="simulating-normal-data"><span class="header-section-number">8.5.3</span> Simulating normal data</h3>
@@ -2771,55 +2737,168 @@ Note
 <li><code>mean</code>: the mean of the probability distribution</li>
 <li><code>sd</code>: the standard deviation of the probability distribution</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write code that will generate 200 normally distributed values with a mean of 5 and a standard deviation of 2.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="conditional-probability" class="level2 page-columns page-full" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="conditional-probability"><span class="header-section-number">8.6</span> Conditional probability</h2>
+<p>It is possible to say that a data generation process has <em>no</em> inputs, and only produces a set probability distribution all of the time. This would be the case if we know no other information that might influence a target variable, so all we can do to describe how the target values come about is through some probabilty <span class="math inline">\(P(Y)\)</span>.</p>
+<div class="page-columns page-full"><p>However, because we are usually interested in how explanatory variables influence a target variable, we assume that <span class="math inline">\(P(Y)\)</span> is going to <em>change</em> as a function of whatever the explanatory variable’s value is. This is how we first talked about associations in <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>: knowing the value of <span class="math inline">\(X\)</span> changes our predictions about what <span class="math inline">\(Y\)</span> will be. If our predictions about <span class="math inline">\(Y\)</span> are based on the probability distribution that <span class="math inline">\(Y\)</span> values could take, this means there should be a different <span class="math inline">\(P(Y)\)</span> distribution for each separate value of <span class="math inline">\(X\)</span>. In other words, the probability of <span class="math inline">\(Y\)</span> is conditional on the value of <span class="math inline">\(X\)</span>.This is called the <strong>conditional probability</strong>, written as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>conditional probability</strong> = the probability of a target variable given the value of an explanatory variable</span></div></div>
+<p><span class="math display">\[P(Y|X)\]</span></p>
+<p>You would pronounce this as “the probability of <span class="math inline">\(Y\)</span>, given <span class="math inline">\(X\)</span>”.</p>
+<div class="page-columns page-full"><p><span class="math inline">\(P(Y|X)\)</span> is not the same as the overall <span class="math inline">\(P(Y)\)</span>, also called the <strong>marginal probability</strong> of <span class="math inline">\(Y\)</span>. Consider our red and blue marbles example again, but this time there are red and blue dice in the bag as well. Now we have two variables: object color and object shape. The probabilities that a random object you pick out of the bag is both a certain color <em>and</em> shape break down as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>marginal probability</strong> = the probability of a target variable without considering any explanatory variables</span></div></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Marble</strong></td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Dice</strong></td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.2</td>
+</tr>
+</tbody>
+</table>
+<div class="page-columns page-full"><p>Each of these values is the probability of picking an object of a certain color <em>and</em> shape - a combination of specific values for the two variables. This is known as the <strong>joint probability</strong> and is written as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>joint probability</strong> = the probability of a target variable value and an explanatory variable value occurring together</span></div></div>
+<p><span id="eq-joint-probability"><span class="math display">\[P(X,Y) \tag{8.8}\]</span></span></p>
+<p>E.g., we would say the joint probability of picking a blue marble is <span class="math inline">\(P(X=marble, Y=blue) = 0.5\)</span>.</p>
+<p>If we didn’t care what shape an object was and just wanted to know the probability that whatever we pick out of the bag will be red, we find the cumulative probability of all the red objects; <span class="math inline">\(P(Y = red) = 0.05 + 0.25 = 0.3\)</span>. This is called the marginal probability because it’s like summing up the whole red column in this table and writing that sum in the margin of the page:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 27%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Red</th>
+<th style="text-align: center;">Blue</th>
+<th style="text-align: center;">P(X)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Marble</strong></td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;"><span class="math inline">\(P(X=marble) = 0.6\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Dice</strong></td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;"><span class="math inline">\(P(X=dice) = 0.4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>P(Y)</strong></td>
+<td style="text-align: center;"><span class="math inline">\(P(Y=red) = 0.3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P(Y=blue) = 0.7\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>But what if, when we reached into the bag and grabbed something, we could feel that we had a marble before seeing it? Now, we have information about the shape variable. If we want to know the probability that the object we will draw is red, but we already know it’s one of the marbles, we can ignore all possibilities of non-marble objects being our selection. We are now only considering the probabilities on the first row - the probability of picking something red given it is a marble: <span class="math inline">\(P(Y = red | X = marble)\)</span>. To calculate this, we take the joint probably of picking a red marble and divide it by the marginal probability of picking any marble - i.e.&nbsp;finding what proportion of the marble options are red. Written out mathematically,</p>
+<p><span id="eq-conditional-probability"><span class="math display">\[P(Y | X) = \frac{P(X,Y)}{P(X)} \tag{8.9}\]</span></span></p>
+<p>In our case, <span class="math inline">\(P(Y = red | X = marble) = 0.1 / 0.6 = 0.1667\)</span>.</p>
+<p>Alternatively, if we had grabbed something that felt square, we would only consider the second row of the table as now all the marble values are no longer possible. The probability that the dice we grabbed is red is <span class="math inline">\(P(Y = red | X = dice) = 0.2 / 0.4 = 0.5\)</span>.</p>
+<p>Interesting! If we didn’t know what shape we were going to draw, our probability of drawing something red was 0.3. If we knew it was a marble, that probability dropped to 0.1667. But if we knew it was a die, that probability increased to 0.5. Thus, the marginal probability is not the same as the conditional probability. Additionally, the probability <span class="math inline">\(P(Y|X)\)</span> is different depending on what <span class="math inline">\(X\)</span>’s value is.</p>
+<p>Notably, the conditional probability of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> is also not the same as the conditional probability of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y\)</span>. For instance, if we know that we picked a marble, the probability that it is red is <span class="math inline">\(P(Y = red | X = marble) = 0.1 / 0.6 = 0.1667\)</span>. But if we know that we picked a red object, the probability that it is a marble is <span class="math inline">\(P(X = marble | Y = red) = 0.1 / 0.3 = 0.3333\)</span>. For a more intuitive example, what is the probability that someone is really tall, given they play professional basketball? Probably pretty high - the average height in the NBA was 6’7” in 2025-2026. Now what is the probability that someone plays professional basketball, given that they are really tall? Very few people can become professional athletes, even if they are tall!</p>
+<p>Zooming back out to the idea of a data generation process, if we don’t know anything about why a target observation has the value that it has, we can only describe it as coming from a marginal probability distribution <span class="math inline">\(P(Y)\)</span>. But if there are explanatory variables <span class="math inline">\(X\)</span> that go into the data generation process and influence the likely values of <span class="math inline">\(Y\)</span>, then there are conditional probability distributions <span class="math inline">\(P(Y|X)\)</span> that are different than the marginal distribution, and different from each other. Knowing <span class="math inline">\(X\)</span> lets us know which conditional probability distribution to use.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch8-cond-prob" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch8-cond-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-8_files/figure-html/fig-ch8-cond-prob-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8-cond-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.6: Not knowing anything about X, the probability distribution of Y is centered on 0 with an sd of approx. 1.4. But if we know X=1, the probability distribution of Y shifts to being centered on 1 with an sd of 1. If we know X=0, the probability distribution of Y shifts to being centered on -1 with an sd of 1.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="simulating-conditional-probabilistic-data" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="simulating-conditional-probabilistic-data"><span class="header-section-number">8.7</span> Simulating conditional probabilistic data</h2>
+<p>Let’s practice specifying a full data generation process and simulating data probabilistically, with different probability distributions for the target variable depending on the value of the explanatory variable. To do so, we still define what explanatory variables to care about and what the systematic component is to combine them. But then, the thing that the systematic component generates is not a value for a target data point, but a distribution of possible target values given the input value (i.e., a conditional probability distribution).</p>
+<p>Back to the Bernoulli example with coin flipping. What sort of things influence the proportion of times a coin will come up heads? A random coin you find on the street is probably fair, in that heads and tails will come up about the same number of times over repeated flips. But an unfair coin that is weighted on the tails face will land heads up more often than tails up. So let’s create some explanatory data about whether or not a coin has a weight, and then write a systematic component that increases the chance of heads when the coin is weighted.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This data generation process we have defined specifies the probability distribution of what values are possible and probable for a coin flip to have. By defining <code>heads_prob &lt;- 0.5 + 0.2*coin_weighted</code>, we are saying that an unweighted coin (<code>coin_weighted == 0</code>, cancelling out of the equation) will have a heads probability of 0.5 and a weighted coin (<code>coin_weighted == 1</code>) will have a probability of 0.5 + 0.2*1 = 0.7.</p>
+<p>Now we can use <code>rbinom()</code> again to simulate coin flips, but this time for each row of the dataset the <code>prob</code> argument will change depending on the value of <code>heads_prob</code> for that row. We will loop through each row of the dataset and record a coin flip based on this process. Make sure you read carefully what each line of code is doing!</p>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-</section>
-<section id="mathematical-notation-for-data-generation-processes" class="level2 page-columns page-full" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="mathematical-notation-for-data-generation-processes"><span class="header-section-number">8.6</span> Mathematical notation for data generation processes</h2>
-<p>It’s a lot of words to talk about the components of the data generation process - set of input information, how to combine that information, and what kind of data is generated. Because of this, there are again mathematical standards to efficiently notate each piece we are talking about.</p>
-<section id="notating-the-target-probability-distribution" class="level3 page-columns page-full" data-number="8.6.1">
-<h3 data-number="8.6.1" class="anchored" data-anchor-id="notating-the-target-probability-distribution"><span class="header-section-number">8.6.1</span> Notating the target probability distribution</h3>
-<p>There are different families of probability distributions, each with one or more parameters whose values specify the exact shape of the distribution. Notation of the probability distribution that generates target data needs to include all this information.</p>
-<p>If we want to notate that we are talking about a Bernoulli distribution, we write:</p>
-<p><span id="eq-bernoulli"><span class="math display">\[Bernoulli(p) \tag{8.7}\]</span></span></p>
-<p>The name at the beginning of the term specifies the distribution family. The letter in the parentheses is the generating parameter that affects how a distribution in that family is shaped (<span class="math inline">\(p\)</span> stands for proportion). If you refer to a probability distribution as <span class="math inline">\(Bernoulli(0.5)\)</span>, what you are saying is this data generation process will create data of one of two values, with a proportion/probability of the first value being 0.5.</p>
-<p>When we say a target variable is being generated by this distribution, we write that fully as:</p>
-<p><span id="eq-bernoulli-target"><span class="math display">\[y \sim Bernoulli(0.5) \tag{8.8}\]</span></span></p>
-<div class="page-columns page-full"><p>This equation is known as the <strong>observation model</strong>, because it describes how observations are realized from expectations generated by the systematic component. You should read this equation to mean “the variable y is sampled from a Bernoulli distribution with a probability of 0.5.” The tilde symbol <span class="math inline">\(\sim\)</span> is read as “is sampled from” or “is distributed as”. This is different than how we would notate a deterministic data generation process, e.g.:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>observation model</strong> = the part of a data generation process that specifies how observed values are generated from latent parameter(s)</span></div></div>
-<p><span id="eq-deterministic-target"><span class="math display">\[y = 5 + 2x \tag{8.9}\]</span></span></p>
-<p>When there’s an equal sign, the value of <span class="math inline">\(y\)</span> is exactly determined by whatever is on the right side of the equation. When there’s a tilde, we are saying the value of <span class="math inline">\(y\)</span> is probabilistically drawn from whatever is on the right side.</p>
-<p>If we are talking about a uniform distribution instead (continuous values of even probability), we notate that family as:</p>
-<p><span id="eq-uniform"><span class="math display">\[U(min, max) \tag{8.10}\]</span></span></p>
-<p>Where <span class="math inline">\(U\)</span> is short for “uniform”. To sample data from a probability distribution <span class="math inline">\(U(0,5)\)</span> means the data will have a uniform distribution with a minimum value of 0 and a maximum value of 5.</p>
-<p>A normal probability distribution is notated as:</p>
-<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.11}\]</span></span></p>
-<p>The shape of a normal distribution is determined by a mean value and standard deviation. We traditionally use the Greek letters <span class="math inline">\(\mu\)</span> (“mu”, pronounced “mew”) and <span class="math inline">\(\sigma\)</span> (sigma, pronounced “sig-ma”) to represent the mean and standard deviation parameters of the normal probability distribution, respectively. In <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> we said that the mean of a distribution is notated as <span class="math inline">\(\bar{x}\)</span> and the standard deviation as <span class="math inline">\(s\)</span>, and that’s true of those summaries of <em>a data distribution</em>. Using <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> to notate the mean and standard deviation as <em>parameters</em> of a probability distribution helps us keep these ideas separate, since they won’t always be the same due to randomness:</p>
+<p>To review this data generation process:</p>
+<ul>
+<li>we specified the explanatory variable, <code>coin_weighted</code></li>
+<li>we specified the systematic component, <code>heads_prob</code> = 0.5 + 0.2*<code>coin_weighted</code></li>
+<li>we specified that this is a probabilistic data generation process, so the result of the data generation process is a probability rather than an exact value every time. Target data are then randomly sampled from this probability distribution.</li>
+</ul>
+<p>To be specific, the output of the systematic component is a <em>parameter</em> of the probability distribution, since an equation like this only spits out one number. We then use this parameter to describe the kind of probability distribution that will generate the target data.</p>
+<p>For instance, we can change our idea of the data generation process to generate a uniform probability distribution of values instead of Bernoulli. In that case, the systematic component determines one or more of the parameters of the uniform distribution - the min/max.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Finish the code in line 16 below to generate data from a uniform probability distribution where the min and max parameters are a function of <code>condition</code>.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="notating-the-systematic-component" class="level3" data-number="8.6.2">
-<h3 data-number="8.6.2" class="anchored" data-anchor-id="notating-the-systematic-component"><span class="header-section-number">8.6.2</span> Notating the systematic component</h3>
-<p>We can notate the data generation process of a target variable with just an observation model like <span class="math inline">\(\mathcal{N}(65, 5)\)</span> if we don’t think anything influences the value of the parameters. But if we want to indicate that the parameters should change based on other information, we need to add additional notation. Specifically, we write another equation that determines how the parameter value should be calculated.</p>
-<p>For instance, if we want there to be some explanatory variable <span class="math inline">\(X\)</span> that goes into the data generation process, we write:</p>
-<p><span id="eq-normal-dgp"><span class="math display">\[\theta = 65 + 2X \tag{8.12}\]</span></span></p>
-<p>This equation specifies the systematic component, which encodes how <span class="math inline">\(X\)</span> exerts influence. The product of this component is some value, indicated by the placeholder symbol (<span class="math inline">\(\theta\)</span>) (“theta”, pronounced thay-tah).</p>
-<p>Notice the equals sign in this equation. By including it, we are saying this part of the data generation process is deterministic (hence the name “systematic” component). The value of <span class="math inline">\(\theta\)</span> is always the same if the value of <span class="math inline">\(X\)</span> is the same. In this case <span class="math inline">\(\theta\)</span> is determined by adding 2 times the value of whatever <span class="math inline">\(X\)</span> is to a base value of 65.</p>
-</section>
-<section id="the-link-function" class="level3 page-columns page-full" data-number="8.6.3">
-<h3 data-number="8.6.3" class="anchored" data-anchor-id="the-link-function"><span class="header-section-number">8.6.3</span> The link function</h3>
-<p>We can now write equations for the systematic component and the observation model of the data generation process. This is like decomposing the data generation process into two pieces - a systematic component that deterministically produces probability expectations and a random component that probabilistically determines observations based on the probability. Now, how do we link them up?</p>
-<div class="page-columns page-full"><p>One last equation, called the <strong>link function</strong>, specifies how the output <span class="math inline">\(\theta\)</span> of the systematic component influences the observation model. This can be a really simple equation, like:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>link function</strong> = an equation that maps the output of the systematic component to a parameter of the observation model</span></div></div>
-<p><span id="eq-link-function"><span class="math display">\[\mu = \theta \tag{8.13}\]</span></span></p>
-<p>I.e., the output of the systematic component is the mean of the normal distribution. Or it can be more complex, like <span class="math inline">\(log(\mu) = \theta\)</span>, if the systematic component generates a negative <span class="math inline">\(\theta\)</span> value but the parameter of the observation model can never be negative. The link function is a way to turn whatever is generated by the systematic component into a possible parameter value for the observation model.</p>
-<div class="page-columns page-full"><p>Most of the time in this introductory book we will only use the simple link function above, also called the <strong>identity link function</strong>. In other words, we will focus on data generation processes where the systematic comonent is generating the mean of a normal probability distribution. Because of that we might not write the link function at all, and just write the systematic component as e.g.&nbsp;<span class="math inline">\(\mu = 65 + 2X\)</span> instead of <span class="math inline">\(\theta = 65 + 2X\)</span> and <span class="math inline">\(\theta = \mu\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. But it’s important to know that the link function exists, because in the future you might work with more complicated data generation processes that require transformation of the systematic component output before it can be used as a parameter in a non-normal observation model.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>identity link function</strong> = a link function that maps the output of the systematic component directly to the parameter of the observation model without any transformation</span></div></div>
-<p>These three equations together notate the whole data generation process - how <span class="math inline">\(X\)</span> influences an expectation about data and how <span class="math inline">\(Y\)</span> is probabilistically generated from that expectation.</p>
-<p><span id="eq-normal-dgp"><span class="math display">\[\theta = 65 + 2X \tag{8.14}\]</span></span></p>
-<p><span id="eq-link-function"><span class="math display">\[\mu = \theta \tag{8.15}\]</span></span></p>
-<p><span id="eq-normal"><span class="math display">\[\mathcal{N}(\mu, \sigma) \tag{8.16}\]</span></span></p>
-<p>By controlling the pieces of these equations, we can create many possibilities of data.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal the answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>uniform_data$target[i] &lt;- runif(n=1, min=min_i, max=max_i)</code></p>
+</div>
+</div>
+</div>
+<p>It is very common to define a data generation process that creates data that is normally distributed, conditional on some explanatory variable. In this common approach, the systematic component determines the most likely value of the target variable (the mean of a <span class="math inline">\(P(Y|X)\)</span> distribution), and real data values are randomly and equally distributed around that likely value.</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>By controlling these three pieces of the data generation process - the input variables, the way those variables are combined, and the type of output created - we can generate many possibilities of data.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2828,10 +2907,10 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Even when we’re talking about probabilistic data generation and we don’t know everything that determines why a data point has a certain value, the distribution family we choose implies something about how that data value was created, not just the shape of the distribution that tends to occur for this variable.</p>
-<p>For instance, consider a uniformly-distribution target variable generated by <span class="math inline">\(U(0,6)\)</span>. This could be something like rolls on a 6 sided die. If we plotted this, we’d see roughly equal numbers of values on the range 0 to 6.</p>
+<p>Even when we’re talking about probabilistic data generation and we don’t know everything that determines why a data point has a certain value, the type of distribution we choose implies something about how that data value was created, not just the shape of the distribution that tends to occur for this variable.</p>
+<p>For instance, consider a uniformly-distributed target variable with a min of 0 and max of 6. This could be something like rolls on a 6 sided die. If we plotted this, we’d see roughly equal numbers of values on the range 0 to 6.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">6</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(x), <span class="fu">aes</span>(<span class="at">x=</span>x)) <span class="sc">+</span> </span>
@@ -2862,24 +2941,23 @@ Note
 </div>
 </div>
 <p>That looks a bit like a normal distribution, doesn’t it?</p>
-<p>Indeed, normally-distributed data in nature come about through combinations of many factors. And if there are many factors, it doesn’t matter what the underlying distribution family of those factors are - the sum of their values will approach a normal distribution shape. This is a useful mathematical idea known as the Central Limit Theorem that lets us assume the normal distribution is the approximate generating distribution for a lot of target variables, even if we don’t know all the factors that influence them.</p>
+<p>Indeed, normally-distributed data in nature come about through combinations of many factors. And if there are many factors, it doesn’t matter what the underlying distribution of those factors are - the sum of their values will approach a normal distribution shape. This is a useful mathematical idea known as the Central Limit Theorem that lets us assume the normal distribution is the approximate conditional distribution for a lot of target variables, even if we don’t know all the factors that influence them.</p>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="the-data-generation-process-in-research" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="the-data-generation-process-in-research"><span class="header-section-number">8.7</span> The data generation process in research</h2>
-<p>All the math notation and simulation of fake data we’ve done so far may not feel very useful right now. How does this connect to looking at patterns in a real dataset? As we progress in later chapters, it should become clear that defining a data generation process is deeply central to successfully using statistics to answer research questions.</p>
+<section id="the-data-generation-process-in-research" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="the-data-generation-process-in-research"><span class="header-section-number">8.8</span> The data generation process in research</h2>
+<p>All the simulation of fake data we’ve done so far may not feel very useful right now. How does this connect to looking at patterns in a real dataset? As we progress in later chapters, it should become clear that defining a data generation process is deeply central to successfully using statistics to answer research questions.</p>
 <p>For researchers interested in description research goals, the estimand of interest is often some summary of what values are possible and probable in a population. Since these summaries can be thought of as parameters of a probability distribution, we can say that description research goals focus on what type of data generation process is responsible for a target variable. This is often very important information to have before you’re able to pursue other research questions.</p>
 <p>For researchers interested in explanation, the form and components of the data generation process are the phenomena of interest more than any specific data value that comes out of it. The how, not just the what. While statistics alone can’t determine cause and effect, looking at data for evidence of the data generation process can give us important clues about the mechanisms of the human mind and society. In fact, what we normally think of as scientific research questions - e.g.&nbsp;“what aspects make a message more persuasive?” or “do children learn new languages better than adults?” - are really questions about the data generation process: How is persuasion generated from message design? How does age contribute to the process of language acquisition? Different scientific theories are ideas about the pieces and form of a data generation process.</p>
 <p>For researchers with prediction goals, the data generation process may not seem as immediately relevant if we are thinking about it as the causal process that creates data. In a prediction problem, we could use causal outcomes as indicators (e.g., health symptoms) to predict the cause as the target (e.g., disease). But the concept of the data generation process is still relevant for prediction goals if we think about what information causes our <em>guesses</em> about what the value of the target is.</p>
 <p>This is why thinking about the data generation process is so important, and why we will get much more practice with it as we go on.</p>
 </section>
-<section id="chapter-summary" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">8.8</span> Chapter summary</h2>
-<section id="learning-goals" class="level3" data-number="8.8.1">
-<h3 data-number="8.8.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">8.8.1</span> Learning goals</h3>
+<section id="chapter-summary" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">8.9</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="8.9.1">
+<h3 data-number="8.9.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">8.9.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
 <li>Explain what the data generation process is and why we would care about it</li>
@@ -2887,13 +2965,13 @@ Note
 <li>Explain the difference between deterministic vs.&nbsp;probabilistic data generation</li>
 <li>Explain the difference between a probability distribution and a data distribution</li>
 <li>Compare and contrast Bernoulli, uniform, and normal probability distributions</li>
-<li>Recall the three axioms of probability</li>
-<li>Use <code>rbinom()</code>, <code>runif()</code>, and <code>rnorm()</code> to probabilistically simulate data</li>
-<li>Formally notate the input function and observation model to denote a data generation process</li>
+<li>Recite the three axioms of probability</li>
+<li>Define and notate marginal, cumulative, conditional, and joint probability</li>
+<li>Use <code>rbinom()</code>, <code>runif()</code>, and <code>rnorm()</code> to probabilistically simulate data, with and without influences from explanatory variables</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="8.8.2">
-<h3 data-number="8.8.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">8.8.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="8.9.2">
+<h3 data-number="8.9.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">8.9.2</span> New concepts</h3>
 <ul>
 <li><strong>data generation process</strong>: the process by which data take on the values that they do.</li>
 <li><strong>target variable</strong>: the variable we are trying to predict or understand.</li>
@@ -2911,13 +2989,13 @@ Note
 <li><strong>uniform distribution</strong>: a kind of distribution where all values are continuous and equally likely; defined by the minimum and maximum value.</li>
 <li><strong>normal distribution</strong>: a kind of distribution where all values are continuous and symmetrically unimodal; defined by the mean and standard deviation.</li>
 <li><strong>cumulative probability</strong>: the probability of an observation having a value less than or equal to a cutoff value.</li>
-<li><strong>observation model</strong>: the part of a data generation process that specifies how observed values are generated from latent parameter(s).</li>
-<li><strong>link function</strong>: an equation that maps the output of the systematic component to a parameter of the observation model.</li>
-<li><strong>identity link function</strong>: a link function that maps the output of the systematic component directly to the parameter of the observation model without any transformation.</li>
+<li><strong>conditional probability</strong>: the probability of a target variable given the value of an explanatory variable.</li>
+<li><strong>marginal probability</strong>: the probability of a target variable without considering any explanatory variables.</li>
+<li><strong>joint probability</strong>: the probability of a target variable value and an explanatory variable value occurring together.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="8.8.3">
-<h3 data-number="8.8.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">8.8.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="8.9.3">
+<h3 data-number="8.9.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">8.9.3</span> New R functionality</h3>
 <ul>
 <li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/rep">rep()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Binomial">rbinom()</a></li>
@@ -2936,7 +3014,6 @@ Note
 <li id="fn2"><p>Technically our equation could make negative numbers if we passed a negative number for gravity, but that would break the known laws of physics so we can safely assume that won’t happen.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>area under the probability curve up to that point, if you’re familiar with calculus.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>If that’s you, I know a few casinos we can hit<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Sometimes you’ll see even further short hand, like <span class="math inline">\(Y ~ N(65 + 2X, \sigma^2)\)</span> or <span class="math inline">\(Y = 65 + 2X + \epsilon\)</span> where <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> to account for the probabilistic distribution in <span class="math inline">\(Y\)</span>. In this book we will try to be as consistent as possible by using the notation presented in this section, but in the world there are different notations used by different people. It’s all just a matter of algebra, though, so keeping in mind the three components of the data generation process should help!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
