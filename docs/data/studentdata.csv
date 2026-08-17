@@ -1,6 +1,6 @@
 SurveyYear,Sex,Ethnicity,IDLast,Siblings,CollegeYear,Job,SleepHours,Nose,Ear,Hand,Height,StatsExperience,StatsEmotions_1,StatsEmotions_2,StatsEmotions_3,StatsEmotions_4,StatsEmotions_5,StatsEmotions_6,StatsEmotions_7,StatsEmotions_8,StatsEmotions_9,StatsEmotions_10,StatsBeliefs_1,StatsBeliefs_2,StatsBeliefs_3,StatsBeliefs_4
 2022,Female,Asian,2,2,1,Not Working,8,55,72,150,65,No,,,,,,,,,,A little,,,,
-2022,Male,Asian,2,5,2,Not Working,8,50,65,146,65,No,,,,,,,,,,A little,,,,
+2022,Male,Asian,2,5,soph,Not Working,8,50,65,146,65,No,,,,,,,,,,A little,,,,
 2022,Female,Asian,0,3,1,Not Working,6,64,80,169,64,No,,,,,,,,,,Somewhat,,,,
 2022,Female,Black,6,0,2,Part-time Job,8,56,84,193,65,No,,,,,,,,,,Quite a bit,,,,
 2022,Female,Latino,0,1,7,Part-time Job,5,60,90,200,64,No,,,,,,,,,,Very strongly,,,,

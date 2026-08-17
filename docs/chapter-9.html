@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -2582,12 +2601,13 @@ Figure&nbsp;9.1: Four examples of ways that stress can relate to task performanc
 </div>
 </div>
 </div>
-<p>Like operationalizing variables, we need to be specific about our ideas of the form of the associations between variables and the data generation mechanisms we hypothesize. Otherwise it can seem like our hypotheses and theories are good even though they can’t explain the details of very different realities, making them not very useful for understanding<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. We’ve seen how hard it is to have an idea about every aspect of the data generation process and how easy it is to be wrong about the ideas we do have. But that’s ok! As long as we’re clear about what those ideas are, we can test them, refine them, or reject them in favor of something else. That is the process of science. If we are not clear about our hypothesis - making explicit our assumptions about how the data are generated - we cannot rigorously test them and our results might not be helpful for advancing science.</p>
+<p>Like operationalizing variables, we need to be specific about our ideas of the form of the associations between variables and the data generation mechanisms we hypothesize. We need to have clear ideas about the parts of the system we are studying and how the system works. Otherwise it can seem like our hypotheses and theories are good even though they can’t explain the differences between very different realities, making them not very useful for understanding<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>We’ve seen how hard it is to have an idea about every aspect of the data generation process and how easy it is to be wrong about the ideas we do have. But that’s ok! As long as we’re clear about what those ideas are, we can test them, refine them, or reject them in favor of something else. That is the process of science. Think of statistical modeling as running a logic engine, turning assumptions into conclusions. Only by making explicit our assumptions about the parts and mechanisms of a system can we clearly assess the conclusions they imply. When those conclusions are almost inevitably different than reality, we can evaluate <em>how</em> they are different, and use that information to inform future theories and become less wrong. If we are not clear about our hypothesis, we cannot rigorously test them and our results won’t be as helpful for advancing science.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 </section>
 <section id="models-as-useful-simplifications" class="level2 page-columns page-full" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="models-as-useful-simplifications"><span class="header-section-number">9.8</span> Models as useful simplifications</h2>
 <p>While we want to be specific and detailed about our ideas of the data generation process and iteratively improve upon them, we should also get comfortable with the idea that our models will never be perfect. They are <em>models</em> after all, not the real thing. Often times they will seem like major simplifications that make the process less complicated than we know it to be.</p>
-<p>But in some ways, that can be a strength. Imagine again the firetruck model we mentioned at the beginning of the chapter. A toy truck with rolling wheels and flashing lights is a better model of a firetruck than a square block painted red because it is more clear what the model represents. But adding even more detail, e.g.&nbsp;requiring gas and windshield wiper fluid to operate, isn’t necessary to capture the essence of a firetruck. Plus, those features make it more difficult to use the model for play<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. If play is the whole purpose of having the model in the first place, this kind of toy would be less useful than a simpler one.</p>
+<p>But in some ways, that can be a strength. Imagine again the firetruck model we mentioned at the beginning of the chapter. A toy truck with rolling wheels and flashing lights is a better model of a firetruck than a square block painted red because it is more clear what the model represents. But adding even more detail, e.g.&nbsp;requiring gas and windshield wiper fluid to operate, isn’t necessary to capture the essence of a firetruck. Plus, those features make it more difficult to use the model for play<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. If play is the whole purpose of having the model in the first place, this kind of toy would be less useful than a simpler one.</p>
 <div class="page-columns page-full"><p>Thus, a good model is one that is clear, but simplified - one that is <strong>parsimonious</strong>. It should be precise in what it represents, but no more complicated than necessary for accomplishing your goals with it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parsimonious</strong> = being no more detailed than is necessary for a specific use</span></div></div>
 <p>For a statistical model, we often leave out parts of the true data generation process purposefully. In the example model of this chapter, education attainment is obviously influenced by more things than just the number of siblings. But making a simple model lets us focus in on one piece of the data generation process, understanding how that particular mechanism works and how important it is on its own. This gives us insights into the fundamental processes of human behavior and cognition without getting mired in too many details for us to make sense of. To repeat the famous quote from statistician George Box, “All models are wrong, but some are useful.” The trick is to figure out what level of complexity is necessary for our models to be useful for our research question.</p>
 </section>
@@ -2624,6 +2644,14 @@ Figure&nbsp;9.1: Four examples of ways that stress can relate to task performanc
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-mcelreath2020" class="csl-entry" role="listitem">
+McElreath, Richard. 2020. <em>Statistical Rethinking: A Bayesian Course with Examples in r and STAN</em>. CRC Press.
+</div>
+<div id="ref-smaldino2023" class="csl-entry" role="listitem">
+Smaldino, Paul E. 2023. <em>Modeling Social Behavior: Mathematical and Agent-Based Models of Social Dynamics and Cultural Evolution</em>. Princeton University Press.
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -2634,7 +2662,8 @@ Figure&nbsp;9.1: Four examples of ways that stress can relate to task performanc
 <li id="fn3"><p>The advanced chapter <span class="quarto-unresolved-ref">?sec-ch22</span> covers how to do this!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>No more exercise, socializing, scary movies…<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>One of the most influential scholars in philosophy of science, Karl Popper, asserted that a scientific theory is only good if it is falsifiable. If our hypothesis is so generic that any way the data come out could be said to be consistent with it, then the hypothesis is not falsifiable and not very scientific. We should endeavor to subject our hypotheses to “extreme danger” of falsification because if it survives, we’ll know it is strong and useful.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>If you thought “batteries not included” was the worst thing you could hear on Christmas morning, wait ’til you hear about oil changes!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Statistical modeling as a framework for advancing knowledge is foundational to many areas of science. Two great books that go more into depth in this type of thinking and using it for data analysis are <span class="citation" data-cites="mcelreath2020">McElreath (<a href="#ref-mcelreath2020" role="doc-biblioref">2020</a>)</span> and <span class="citation" data-cites="smaldino2023">Smaldino (<a href="#ref-smaldino2023" role="doc-biblioref">2023</a>)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>If you thought “batteries not included” was the worst thing you could hear on Christmas morning, wait ’til you hear about oil changes!<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
