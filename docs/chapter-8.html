@@ -58,7 +58,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -411,7 +430,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"grav_data <- data.frame(\n  g = c(9.8, 9.8, 9.8, 9.8, 9.8),\n  t = c(1, 2, 3, 4, 5)\n)\n\ngrav_data$d <- 0.5 * grav_data$g * grav_data$t^2 \n\ngrav_data$d","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- c(9.8, 3.7, 24.8, 8.9, 1.6)\nt <- c(1, 2, 3, 4, 5)\n\ngrav_data <- data.frame(\n  g_long = #your code here\n  t_long = #your code here\n)\n\ngrav_data$d <- 0.5 * grav_data$g_long * grav_data$t_long^2 \n\ngrav_data$d","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_point()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_jitter(width = 0.1, alpha = 0.5)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_grav <- grav_data |>\n  filter(g_long == 9.8, t_long == 1)\n\nggplot(subset_grav, aes(x=d)) + \n  geom_histogram() +\n  coord_cartesian(xlim = c(0, 10)) + \n  labs(subtitle = 'distribution of d values at t==1 and g==9.8')","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\n#your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_studentdata <- studentdata |>\n  filter(Hand == 160, Sex == 'Female')\n\nggplot(subset_studentdata, aes(x=Height)) + \n  geom_histogram() + \n  labs(subtitle = 'Distribution of Height when Sex==Female and Hand==160mm')","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"uniform_data <- runif(#your code here)\n\nggplot(data.frame(uniform_data), aes(x=uniform_data)) + \n  geom_histogram() ","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"normal_data <- #your code here\n\nggplot(data.frame(normal_data), aes(x=normal_data)) + \n  geom_histogram() ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#1 = weighted, 0 = not weighted\ncoin_weighted <- rep(c(1, 0), 500)\nheads_prob <- rep(c(0.7, 0.5), 500)\ncoin_data <- data.frame(coin_weighted, heads_prob)\n\nhead(coin_data)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"for (i in 1:nrow(coin_data)) {\n  coin_data$flip[i] <- rbinom(n=1, \n                              size=1, \n                              prob=coin_data$heads_prob[i])\n}\n\nggplot(coin_data, aes(x=flip)) + \n  geom_bar() + \n  facet_wrap(~coin_weighted)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"condition <- rep(c('A','B','C'), times = 100)\nuniform_data <- data.frame(condition)\n\nfor (i in 1:nrow(uniform_data)) {\n  if (uniform_data$condition[i] == 'A') {\n    max_i <- 5\n  } else if (uniform_data$condition[i] == 'B') {\n    max_i <- 10\n  } else {\n    max_i <- 15\n  }\n  \n  uniform_data$target[i] <- runif(n=1, min=0, max=#???)\n}\n\nggplot(uniform_data, aes(x=target, fill=condition)) + \n  geom_histogram() ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# target variable: y, continuous and probabilistic with a normal distribution \n# explanatory variable: x\n# target parameter influenced by explanatory var: the mean\n#prediction equation: mean = 5 + 2*x\nx <- runif(n=100, min=0, max=10)\nnormal_data <- data.frame(x)\n\nfor (i in 1:nrow(normal_data)) {\n  mean <- 5 + 2*normal_data$x[i]\n  normal_data$y[i] <- rnorm(1, mean=mean, sd=8) \n}\n\nggplot(normal_data, aes(x=x, y=y)) + \n  geom_point() ","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\nstudentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"grav_data <- data.frame(\n  g = c(9.8, 9.8, 9.8, 9.8, 9.8),\n  t = c(1, 2, 3, 4, 5)\n)\n\ngrav_data$d <- 0.5 * grav_data$g * grav_data$t^2 \n\ngrav_data$d","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- c(9.8, 3.7, 24.8, 8.9, 1.6)\nt <- c(1, 2, 3, 4, 5)\n\ngrav_data <- data.frame(\n  g_long = #your code here\n  t_long = #your code here\n)\n\ngrav_data$d <- 0.5 * grav_data$g_long * grav_data$t_long^2 \n\ngrav_data$d","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_point()","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(grav_data, aes(x=t_long, y=d, color=g_long)) + \n  geom_jitter(width = 0.1, alpha = 0.5)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_grav <- grav_data |>\n  filter(g_long == 9.8, t_long == 1)\n\nggplot(subset_grav, aes(x=d)) + \n  geom_histogram() +\n  coord_cartesian(xlim = c(0, 10)) + \n  labs(subtitle = 'distribution of d values at t==1 and g==9.8')","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\n#your code here","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"subset_studentdata <- studentdata |>\n  filter(Hand == 160, Sex == 'Female')\n\nggplot(subset_studentdata, aes(x=Height)) + \n  geom_histogram() + \n  labs(subtitle = 'Distribution of Height when Sex==Female and Hand==160mm')","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rbinom(n=1, size=1, prob=0.5)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"uniform_data <- runif(#your code here)\n\nggplot(data.frame(uniform_data), aes(x=uniform_data)) + \n  geom_histogram() ","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"normal_data <- #your code here\n\nggplot(data.frame(normal_data), aes(x=normal_data)) + \n  geom_histogram() ","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#1 = weighted, 0 = not weighted\ncoin_weighted <- rep(c(1, 0), 500)\nheads_prob <- rep(c(0.7, 0.5), 500)\ncoin_data <- data.frame(coin_weighted, heads_prob)\n\nhead(coin_data)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"for (i in 1:nrow(coin_data)) {\n  coin_data$flip[i] <- rbinom(n=1, \n                              size=1, \n                              prob=coin_data$heads_prob[i])\n}\n\nggplot(coin_data, aes(x=flip)) + \n  geom_bar() + \n  facet_wrap(~coin_weighted)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"condition <- rep(c('A','B','C'), times = 100)\nuniform_data <- data.frame(condition)\n\nfor (i in 1:nrow(uniform_data)) {\n  if (uniform_data$condition[i] == 'A') {\n    max_i <- 5\n  } else if (uniform_data$condition[i] == 'B') {\n    max_i <- 10\n  } else {\n    max_i <- 15\n  }\n  \n  uniform_data$target[i] <- runif(n=1, min=0, max=#???)\n}\n\nggplot(uniform_data, aes(x=target, fill=condition)) + \n  geom_histogram() ","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# target variable: y, continuous and probabilistic with a normal distribution \n# explanatory variable: x\n# target parameter influenced by explanatory var: the mean\n#prediction equation: mean = 5 + 2*x\nx <- runif(n=100, min=0, max=10)\nnormal_data <- data.frame(x)\n\nfor (i in 1:nrow(normal_data)) {\n  mean <- 5 + 2*normal_data$x[i]\n  normal_data$y[i] <- rnorm(1, mean=mean, sd=8) \n}\n\nggplot(normal_data, aes(x=x, y=y)) + \n  geom_point() ","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2037,6 +2056,7 @@ window.Quarto = {
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">8.9.1</span> Learning goals</a></li>
   <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">8.9.2</span> New concepts</a></li>
   <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">8.9.3</span> New R functionality</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">8.9.4</span> Further reading</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2349,6 +2369,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 
 <p><img src="images/header-ch8.png" class="img-fluid"></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>We can learn a lot by examining distributions and summaries of a dataset. We can describe the current state of some situation for a clearer picture about reality around us. But in data analysis, our interest usually goes beyond these data alone. <em>Why</em> is the sample distribution shaped the way it is? What causes certain values to be what they are? What will future data look like?</p>
 <div class="page-columns page-full"><p>To be able to answer these sorts of questions, we need to understand and start thinking deeply about another fundamental idea in statistics - the <strong>data generation process</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>data generation process</strong> = the process by which data take on the values that they do</span></div></div>
 <section id="sec-ch8-data-generation-process" class="level2 page-columns page-full" data-number="8.1">
@@ -2385,7 +2407,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><span class="math display">\[ d = \frac{1}{2} * g * t^2 \]</span></p>
 <p>Here <span class="math inline">\(g\)</span> is gravitational force, <span class="math inline">\(t\)</span> is time since the object was dropped, and <span class="math inline">\(d\)</span> is the resulting distance. This is the prediction equation that controls how the explanatory variables are combined. It also implies that the feature of the target variable that is influenced by gravitational force and time is the exact value of distance. To generate distance data, we simply need to pass values of the explanatory variables into this equation and the result will be values of our target variable, distance.</p>
 <p>Let’s do that now, in code:</p>
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>If we wanted to generate a lot more data without a bunch of typing, a handy function <code>rep()</code> in R lets us make a new vector by repeating values of an existing vector. If we write <code>rep(x, times = n)</code>, the whole vector <code>x</code> will be repeated <code>n</code> times. If we write <code>rep(x, each = n)</code>, each individual element of the vector <code>x</code> will be repeated n times before moving on to the next element. Try it in the code block below to generate distance values for different inputs of time and gravity, as if we were repeating this experiment on different planets.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
@@ -2401,7 +2423,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Use <code>rep()</code> to make bigger data vectors for <code>t_long</code> and <code>g_long</code>. <code>t_long</code> should be <code>t</code> repeated 30 times, while <code>g_long</code> should be each value of <code>g</code> repeated 30 times.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="sec-ch8-deterministic-vs-probabilistic" class="level2 page-columns page-full" data-number="8.3">
@@ -2420,7 +2442,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Use <code>ggplot()</code> code from a previous chapter to visualize the distribution of distance values. Reread <a href="chapter-5.html#sec-ch5-visualizing-distributions" class="quarto-xref"><span>Section 5.2</span></a> if you need a refresher.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -2439,14 +2461,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>Let’s also visualize all the data together - we’ll make a scatter plot of distance, gravity, and time in one plot. So far we’ve only made plots for two variables at a time, but we can easily expand to three by using our <code>ggplot2</code> knowledge to put two variables on each axis and coloring different dots by the third variable.</p>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Now we can also see the distribution of <code>d</code> within each value of <code>g</code> and <code>t</code>.</p>
 <p>But wait, it looks like there’s only one data point at each combination of <code>g</code> and <code>t</code>. We repeated the <code>g</code> and <code>t</code> vectors 30 times, so shouldn’t there should be 30 * 5 data points on the plot? This isn’t wrong; look at a jittered version of the plot:</p>
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>The reason we couldn’t see all the data in the first scatter plot was because the data points at the same values of <code>g</code> and <code>t</code> were overlapping. This happened because we said exact values will be produced by the data generation process. When multiple data points have the same value of <code>g</code> and <code>t</code>, they will also have the same value of <code>d</code>. In other words, <code>g</code> and <code>t</code> entirely account for the variation in <code>d</code>; the distribution of <code>d</code> values for specific values of <code>g</code> and <code>t</code> isn’t really a distribution at all:</p>
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="page-columns page-full"><p>When a data generation process produces exactly the same target values for the same inputs, we are dealing with what is called a <strong>deterministic</strong> data generation process. The input function entirely determines the target values. This is like if our pizza making machine always produced the exact same pizza whenever we gave it the same ingredients.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>deterministic data generation</strong> = when everything is known about how a target value is generated, such that the values can be calculated exactly</span></div></div>
 <p>In contrast, let’s look at data from humans in the <code>studentdata</code> dataset. We will plot <code>Hand</code> and <code>Sex</code> as explanatory variables of the target variable <code>Height</code>.</p>
@@ -2463,7 +2485,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Make a scatter plot with <code>Height</code> on the y-axis, <code>Hand</code> on the x-axis, and color the points by <code>Sex</code>.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -2482,7 +2504,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p><code>Hand</code> and <code>Sex</code> are related to <code>Height</code>, because they change the distribution of <code>Height</code> at each unique value of those input variables. However, there is still <em>some</em> distribution. Some variation in <code>Height</code> is left unaccounted for.</p>
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="page-columns page-full"><p>This is what’s known as a <strong>probabilistic</strong> data generation process. In this sort of process, what is generated is not an exact data value, but a distribution of <em>possible</em> values. The explanatory variables influence a feature of this distribution (its center, spread, etc.), but the target data we record is a random value from these possibilities. If this were our pizza machine, we’d sometimes get deep dish vs.&nbsp;thin crust pizzas even if we put in the same ingredients.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>probabilistic data generation</strong> = when not everything is known about how a target value is generated, so there is still uncertainty in what target values will occur</span></div></div>
 <div id="fig-ch8-dgp" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2684,7 +2706,7 @@ Figure&nbsp;8.5: A) Binomial distribution B(n,p): sum of yeses in n yes/no trial
 <li><code>prob</code>: probability of getting a “success” in each “trial”. A “success” for us can be getting heads vs.&nbsp;tails, so this is the probability of getting heads.</li>
 </ul>
 <p>With this information, <code>rbinom()</code> will randomly choose values from the probability distribution specified. Here is some code that generates 1 coin flip from a fair coin probability distribution:</p>
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>When you ran the code above, what value did you get? Remember that we can never perfectly predict what value in a probabilistic process will come next - we only know the probability across many samplings. Thus, you likely got a different value than someone else did. In fact, if you execute the above code multiple times, you will get different results even though you didn’t change any code. Try it!</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -2713,7 +2735,7 @@ Note
 <p>Try changing the arguments in the <code>rbinom()</code> function to simulate 10 coin flips.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-10"></div>
+<div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="simulating-uniform-data" class="level3" data-number="8.5.2">
@@ -2737,7 +2759,7 @@ Note
 <p>Finish the code below to generate 100 uniformly distributed values between 0 and 10.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-11"></div>
+<div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="simulating-normal-data" class="level3" data-number="8.5.3">
@@ -2761,7 +2783,7 @@ Note
 <p>Write code that will generate 200 normally distributed values with a mean of 5 and a standard deviation of 2.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-12"></div>
+<div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 </section>
@@ -2836,17 +2858,17 @@ Figure&nbsp;8.9: A 2D density plot of a theoretical joint probability distributi
 </div>
 <p>At a specific value of <span class="math inline">\(X=0\)</span>, the conditional probability distribution <span class="math inline">\(P(Y|X=0)\)</span> is narrow and normally distributed. But at a specific value of <span class="math inline">\(Y=0\)</span>, there are more likely possibilities of <span class="math inline">\(X\)</span> and <span class="math inline">\(P(X|Y=0)\)</span> is centered differently, with considerable skew.</p>
 <p>For a more concrete example, what is the probability that someone is really tall, given they play professional basketball? Probably pretty high - the average height in the NBA was 6’7” in 2025-2026. Now what is the probability that someone plays professional basketball, given that they are really tall? Very few people can become professional athletes, even if they are tall! <span class="math inline">\(P(Y|X) \neq P(X|Y)\)</span> will be important knowledge for us later when we reason about what outcomes are likely to happen given known inputs vs.&nbsp;what unknown causes likely created observations we already have.</p>
-<p>In sum, if we don’t know anything about why a target observation has the value that it has, we can only describe it as coming from a marginal probability distribution <span class="math inline">\(P(Y)\)</span>. But if there are explanatory variables <span class="math inline">\(X\)</span> that go into the data generation process and influence the likely values of <span class="math inline">\(Y\)</span>, then there are conditional probability distributions <span class="math inline">\(P(Y|X)\)</span> that are different than the marginal distribution, and different from each other. Knowing <span class="math inline">\(X\)</span> lets us know which conditional probability distribution to use.</p>
+<p>In sum, if we don’t know anything about why a target observation has the value that it has, we can only describe it as coming from a marginal probability distribution <span class="math inline">\(P(Y)\)</span>. But if there are explanatory variables <span class="math inline">\(X\)</span> that go into the data generation process and influence the likely values of <span class="math inline">\(Y\)</span>, then there are conditional probability distributions <span class="math inline">\(P(Y|X)\)</span> that are different than the marginal distribution, and different from each other. Knowing <span class="math inline">\(X\)</span> lets us know which conditional probability distribution to use.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 </section>
 <section id="simulating-conditional-probabilistic-data" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="simulating-conditional-probabilistic-data"><span class="header-section-number">8.7</span> Simulating conditional probabilistic data</h2>
 <p>Let’s practice specifying a full data generation process and simulating data probabilistically, with the target’s conditional probability distribution depending on the value of the explanatory variable. To do so, we still define what target variable we are interested in, what explanatory variables to care about, and what the prediction equation is to combine them. But then, the thing that the prediction equation produces is not an exact value for a target data point, but an attribute of the distribution of possible target values.</p>
 <p>Back to the Bernoulli example with coin flipping. What sort of things influence flipping heads? A random coin you find on the street is probably fair, in that heads and tails will come up about the same number of times over repeated flips. But an unfair coin that is weighted on the tails face will land heads up more often than tails up - the proportion of heads will be different. So let’s create some explanatory data about whether or not a coin has a weight, and then have the proportion of heads vary with that explanatory variable.</p>
-<div id="qwebr-insertion-location-13"></div>
+<div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>This data generation process we have defined specifies the probability distribution of what values are possible and probable for a coin flip to have. Specifically, we defined <code>heads_prob</code> to be 0.7 when the corresponding <code>coin_weighted</code> value is 1, or to be 0.5 when <code>coin_weighted</code> is 0. Written formally, <span class="math inline">\(P(Y = heads | X = weighted) = 0.7\)</span> and <span class="math inline">\(P(Y = heads | X = not\ weighted) = 0.5\)</span>. This proportion is the attribute of the target’s conditional probability distribution that is influenced by the explanatory variable, coin weight.</p>
 <p>Now we can use <code>rbinom()</code> again to simulate coin flips, but this time for each row of the dataset the <code>prob</code> argument will change depending on the value of <code>heads_prob</code> for that row. We will loop through each row of the dataset and record a coin flip based on this process. Make sure you read carefully what each line of code is doing!</p>
-<div id="qwebr-insertion-location-14"></div>
+<div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>To review this data generation process:</p>
 <ul>
@@ -2870,7 +2892,7 @@ Figure&nbsp;8.9: A 2D density plot of a theoretical joint probability distributi
 <p>Finish the code in line 16 below to generate data from a uniform probability distribution where the min and max parameters are a function of <code>condition</code>.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-15"></div>
+<div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -2889,8 +2911,8 @@ Figure&nbsp;8.9: A 2D density plot of a theoretical joint probability distributi
 </div>
 </div>
 <p>Based on the code above, can you figure out what feature of the target variable probability distribution is influenced by the explanatory variable?</p>
-<p>It is very common to define a data generation process that creates normally distributed data, conditional on some explanatory variable. In the most common approach, the prediction equation determines the most likely value of the target variable (the mean of a <span class="math inline">\(P(Y|X)\)</span> distribution)<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Real data values are randomly and equally distributed around that likely value.</p>
-<div id="qwebr-insertion-location-16"></div>
+<p>It is very common to define a data generation process that creates normally distributed data, conditional on some explanatory variable. In the most common approach, the prediction equation determines the most likely value of the target variable (the mean of a <span class="math inline">\(P(Y|X)\)</span> distribution)<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Real data values are randomly and equally distributed around that likely value.</p>
+<div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>By controlling these three pieces of the data generation process - the input variables, the way those variables are combined, and the type of output created - we can generate many possibilities of data.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
@@ -2999,8 +3021,16 @@ Figure&nbsp;8.9: A 2D density plot of a theoretical joint probability distributi
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Uniform">runif()</a></li>
 <li><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Normal">rnorm()</a></li>
 </ul>
+</section>
+<section id="further-reading" class="level3" data-number="8.9.4">
+<h3 data-number="8.9.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">8.9.4</span> Further reading</h3>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-pishronik2014" class="csl-entry" role="listitem">
+Pishro-Nik, Hossein. 2014. <em>Introduction to Probability, Statistics, and Random Processes</em>. <a href="https://www.probabilitycourse.com/preface.php" class="uri">Https://www.probabilitycourse.com/preface.php</a>; Kappa Research.
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -3011,7 +3041,8 @@ Figure&nbsp;8.9: A 2D density plot of a theoretical joint probability distributi
 <li id="fn3"><p>Actually even this situation isn’t so simple if we think about air resistance too, but let’s assume a vacuum for now like all those intro physics problems tend to.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>area under the probability curve up to that point, if you’re familiar with calculus.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>If that’s you, I know a few casinos we can hit<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p><a href="https://www.nature.com/articles/s43586-026-00498-z">The prediction equation can influence the standard deviation</a> of the conditional probability distribution also, but this is a rarer use case<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>This chapter often presents probability distributions visually to give you an intuition for shapes and locations, but actual calculation of values for <span class="math inline">\(P(Y)\)</span> and <span class="math inline">\(P(Y|X)\)</span> are done with math. For more in-depth instruction about this math, see <span class="citation" data-cites="pishronik2014">Pishro-Nik (<a href="#ref-pishronik2014" role="doc-biblioref">2014</a>)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://www.nature.com/articles/s43586-026-00498-z">The prediction equation can influence the standard deviation</a> of the conditional probability distribution also, but this is a rarer use case<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
