@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; What are Data – Foundations for a Statistical Mindset</title>
+<title>11&nbsp; Interpreting Model Uncertainty – Foundations for a Statistical Mindset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +33,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter-3.html" rel="next">
-<link href="./chapter-1.html" rel="prev">
+<link href="./chapter-10.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -395,7 +375,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Here is the code to create two vectors my_vector and my_vector2. We just made up those names.\n\n# Run the code and see what happens\nmy_vector <- c(2,4,6,8,10)\nmy_vector2 <- c(10,10,10,10,10)\n\n# Now write some code to return these two vectors in the R console. Run the code and see what happens.","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Use max() to find the largest value in my_vector","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Write code to get the 4th value in my_vector","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# This code returns both the 2nd and 4th value in my_vector\nmy_vector[c(2,4)]","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# This code returns the 1st through the 4th values in my_vector\nmy_vector[1:4]","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# This code returns my_vector, but without the 3rd item\nmy_vector[-3]\n\n# Use the colon operator to return (2,3,4,5) from my_vector:\n\n# Now try the negative indexing method to get the same answer:","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#example of a character value\nmy_character <- \"I am a character.\"\nmy_character","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"many_hellos <- c(\"shalom\", \"hello\", \"hola\", \"bonjour\", \"ni hao\", \"merhaba\")\n\n# Write code to print out the 5th way of saying hello in this vector","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"A <- 1\nB <- 5\n\ncomparison <- A > B\n\ncomparison","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"object1 <- \"What am I?\"\nobject2 <- TRUE\nobject3 <- 30\n\nstr(object1)\nstr(object2)\nstr(object3)\n\n#Pass my_vector as an argument to str(). What does the output mean?","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"zipcodes <- c(01267, 01002, 19081, 91711, 02481, 04011, 21402, 91711, 55057, 05753)\nstr(zipcodes)\n\n# Use the as.character() function on zipcodes, assign it to zipcodes_char, and then return the type \n# of that new object\nzipcodes_char <- #replace this comment with your code\nstr(zipcodes_char)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"zipcodes_numeric <- as.numeric(zipcodes_char)\nstr(zipcodes_numeric)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"my_vector <- c(1,2,3,4,5)\n\n# write code to multiply each number in my_vector by 100","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Run the code below to see what happens\nmy_vector <- c(1,2,3,4,5)\nmy_vector * 100\n\n# This will return my_vector\nmy_vector","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# This creates `my_vector` and stores 1, 2, 3, 4, 5 in it\nmy_vector <- c(1,2,3,4,5)\n\n# Now write code to save `my_vector * 100` back into `my_vector`\nmy_vector <- #replace this comment with your code\n  ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"handedness <- c(2,1,1,1,1,2,1,1,1)\nhandedness_bool <- handedness == 1\n\nhandedness_bool","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"end_score <- c(1400, 1450, 1500, 1200, 1150, 1600)\nbeginning_score <- c(1350, 1400, 1400, 1200, 1100, 1400)\n\nchange_score <- #write your code here\n  ","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"handedness <- c(2,1,1,1,1,2,1,1,1)\nfootedness <- c(2,1,1,1,1,1,1,2,1)\n\nhand_foot_alignment <- handedness == footedness\nhand_foot_alignment","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\ngss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\ngss_4 <- gss |>\n  filter(\n    number_of_brothers_and_sisters == 4\n    )\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model <- lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=gss)\nYhat_4 <- predict(model, newdata=data.frame(number_of_brothers_and_sisters=4))\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  geom_vline(xintercept = Yhat_4, color = \"red\") +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_4$education_diffs <- gss_4$highest_year_of_school_completed - Yhat_4\n\nggplot(gss_4, aes(x=education_diffs)) +\n  geom_histogram() +\n  labs(title = \"Wrong guesses about education when predicting 13.62 for people with 4 siblings\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed),\n    !is.na(number_of_brothers_and_sisters)\n  )\n\ngss_clean$residuals <- #your code here\n  \nggplot(gss_clean, aes(x=residuals)) +\n  geom_histogram() +\n  labs(title = \"Model residuals\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sum(gss_clean$residuals)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sse <- #your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model2 <- lm(highest_year_of_school_completed ~ respondents_sex, \n             data=gss_clean)\n\ngss_clean$residuals2 <- resid(model2)\n\nsum(gss_clean$residuals2^2)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#k = 2 when we have beta0 and beta1\nmse <- sse / (nrow(gss_clean) - 2)\nmse","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rmse <- sqrt(mse)\nrmse","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sigma(model)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1649,6 +1629,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1832,7 +1841,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What are Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-11.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1883,7 +1892,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What are Data</span></span></a>
   </div>
 </li>
@@ -1948,7 +1957,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></span></a>
   </div>
 </li>
@@ -1972,30 +1981,14 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-ch2-scales-measurement" id="toc-sec-ch2-scales-measurement" class="nav-link active" data-scroll-target="#sec-ch2-scales-measurement"><span class="header-section-number">2.1</span> Scales of measurement</a></li>
-  <li><a href="#sec-ch2-representing-data" id="toc-sec-ch2-representing-data" class="nav-link" data-scroll-target="#sec-ch2-representing-data"><span class="header-section-number">2.2</span> Representing data in R</a></li>
-  <li><a href="#sec-ch2-data-types" id="toc-sec-ch2-data-types" class="nav-link" data-scroll-target="#sec-ch2-data-types"><span class="header-section-number">2.3</span> Data types</a>
-  <ul class="collapse">
-  <li><a href="#qualitative-data" id="toc-qualitative-data" class="nav-link" data-scroll-target="#qualitative-data"><span class="header-section-number">2.3.1</span> Qualitative data</a></li>
-  <li><a href="#numeric-data" id="toc-numeric-data" class="nav-link" data-scroll-target="#numeric-data"><span class="header-section-number">2.3.2</span> Numeric data</a></li>
-  <li><a href="#boolean-data" id="toc-boolean-data" class="nav-link" data-scroll-target="#boolean-data"><span class="header-section-number">2.3.3</span> Boolean data</a></li>
-  </ul></li>
-  <li><a href="#sec-ch2-converting-data" id="toc-sec-ch2-converting-data" class="nav-link" data-scroll-target="#sec-ch2-converting-data"><span class="header-section-number">2.4</span> Converting data</a></li>
-  <li><a href="#sec-ch2-data-quality" id="toc-sec-ch2-data-quality" class="nav-link" data-scroll-target="#sec-ch2-data-quality"><span class="header-section-number">2.5</span> What makes good data?</a>
-  <ul class="collapse">
-  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability"><span class="header-section-number">2.5.1</span> Reliability</a></li>
-  <li><a href="#validity" id="toc-validity" class="nav-link" data-scroll-target="#validity"><span class="header-section-number">2.5.2</span> Validity</a></li>
-  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link" data-scroll-target="#measurement-error"><span class="header-section-number">2.5.3</span> Measurement error</a></li>
-  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers"><span class="header-section-number">2.5.4</span> Outliers</a></li>
-  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">2.5.5</span> Missing data</a></li>
-  </ul></li>
-  <li><a href="#sec-ch2-resources" id="toc-sec-ch2-resources" class="nav-link" data-scroll-target="#sec-ch2-resources"><span class="header-section-number">2.6</span> Chapter resources</a>
-  <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">2.6.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">2.6.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">2.6.3</span> New R functionality</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">2.6.4</span> Further reading</a></li>
-  </ul></li>
+  <li><a href="#prediction-accuracy" id="toc-prediction-accuracy" class="nav-link active" data-scroll-target="#prediction-accuracy"><span class="header-section-number">11.1</span> Prediction accuracy</a></li>
+  <li><a href="#quantifying-prediction-accuracy" id="toc-quantifying-prediction-accuracy" class="nav-link" data-scroll-target="#quantifying-prediction-accuracy"><span class="header-section-number">11.2</span> Quantifying prediction accuracy</a></li>
+  <li><a href="#prediction-improvement" id="toc-prediction-improvement" class="nav-link" data-scroll-target="#prediction-improvement"><span class="header-section-number">11.3</span> Prediction improvement</a></li>
+  <li><a href="#standardized-prediction-accuracy" id="toc-standardized-prediction-accuracy" class="nav-link" data-scroll-target="#standardized-prediction-accuracy"><span class="header-section-number">11.4</span> Standardized prediction accuracy</a></li>
+  <li><a href="#relationship-with-correlation" id="toc-relationship-with-correlation" class="nav-link" data-scroll-target="#relationship-with-correlation"><span class="header-section-number">11.5</span> Relationship with correlation</a></li>
+  <li><a href="#sources-of-unexplained-uncertainty" id="toc-sources-of-unexplained-uncertainty" class="nav-link" data-scroll-target="#sources-of-unexplained-uncertainty"><span class="header-section-number">11.6</span> Sources of unexplained uncertainty</a></li>
+  <li><a href="#estimands-in-statistical-models" id="toc-estimands-in-statistical-models" class="nav-link" data-scroll-target="#estimands-in-statistical-models"><span class="header-section-number">11.7</span> Estimands in statistical models</a></li>
+  <li><a href="#connection-to-correlation" id="toc-connection-to-correlation" class="nav-link" data-scroll-target="#connection-to-correlation"><span class="header-section-number">11.8</span> connection to correlation</a></li>
   </ul>
 </nav>
     </div>
@@ -2287,9 +2280,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-1.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./chapter-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What are Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-8.html">Predicting &amp; Explaining Data</a></li><li class="breadcrumb-item"><a href="./chapter-11.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What are Data</span></span></h1>
+<h1 class="title"><span id="sec-ch11" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></span></h1>
 </div>
 
 
@@ -2306,501 +2299,195 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p><img src="images/header-ch2.png" class="img-fluid"></p>
-<p>Although we can apply statistical techniques to any bunch of numbers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, we generally want to analyze numbers that represent something about the world. These numbers we refer to as data. Data are the focus and currency of statistics - you can’t do it without data, and qualities about the data determine the type of reliability of your analyses. In this chapter, we will discuss different kinds of data, how they are represented in R, and how to reason about when data are good quality or not.</p>
-<section id="sec-ch2-scales-measurement" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="sec-ch2-scales-measurement"><span class="header-section-number">2.1</span> Scales of measurement</h2>
-<p>Think of all the things you could measure about a person - their physical attributes, their personality, their beliefs and opinions… Now, think about how you would measure those attributes. Would we write down numbers, or words? What kind of values would be valid entries? How would those values relate to each other?</p>
-<div class="page-columns page-full"><p>We talked last chapter about operationalizing our variables, and part of that means being specific about what concepts you are measuring. But in even more detail, operationalization involves specifying the <strong>scale of measurement</strong>. for a variable - the nature of values the variable can take and how those values relate to each other.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>scale of measurement</strong> = the way values of a variable inherently relate to each other in the real world</span></div></div>
-<div class="page-columns page-full"><p>A <strong>categorical</strong> variable (also called a nominal variable) is one where each value of the variable represents a different category of something. These categories are distinct, and they’re not inherently sortable. For example, say we ran a survey in class that asked “What is your favorite food?” Some of the answers may be: blueberries, chocolate, tamales, pasta, and pizza. These data do not have any true ordered relationship with one another - chocolate is not more or less than pasta in some way. The values are just labels for different categories.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>categorical</strong> = a scale of measurement where data values cannot be ranked or numerically calculated on, only classified</span></div></div>
-<div class="page-columns page-full"><p>An <strong>ordinal</strong> variable has values where the magnitude matters, but only for ordering the values, not for determining how far apart any of the levels are from each other. For example, we might ask a person with chronic pain to complete a form assessing how bad their pain is, using a 1-7 numeric scale. While the person is presumably feeling more pain on a day when they report a 6 versus a day when they report a 3, it doesn’t mean their pain is twice as bad on the former versus the latter day. There isn’t a unit of measurement available, only a sense of one option being stronger than another. The ordering gives us information about relative magnitude, but the differences between values are not necessarily equal in magnitude.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>ordinal</strong> = a scale of measurement where data values have a natural order, but the distance between each level is not physically defined</span></div></div>
-<div class="page-columns page-full"><p>An <strong>interval</strong> variable (also called a continuous variable) has all of the features of an ordinal scale, but in addition the distance between units on the measurement scale are measurable and consistent. A standard example is temperature; the physical difference between 10 and 20 degrees is the same as the physical difference between 90 and 100 degrees.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>interval</strong> = a scale of measurement where data values have a natural order, the distance between each level is physically defined, and there is equal distance between each subsequent value</span></div></div>
-</section>
-<section id="sec-ch2-representing-data" class="level2 page-columns page-full" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sec-ch2-representing-data"><span class="header-section-number">2.2</span> Representing data in R</h2>
-<p>Our above discussion of scales of measurement imply something about the way data are recorded - with numbers and words. How do we work with these data in code?</p>
-<div class="page-columns page-full"><p>We’ve used R objects so far to store a single number or message. But in statistics we are dealing with many values. Luckily, an R object can also store a whole set of values. This set together is called a <strong>vector</strong>. You can think of a vector as a list of many elements.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>vector</strong> = a type of data structure in R that stores a list of elements</span></div></div>
-<p>The R function <code>c()</code> can be used to combine a list of individual values into a vector. You could think of the “c” as standing for “combine.”</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the following code we have created two vectors (we just named them <code>my_vector</code> and <code>my_vector2</code>) and put a list of values into each vector. Run the code to see what happens, and then write some code to return them in the console.</p>
-</div>
-</div>
+<p><img src="images/header-ch11.png" class="img-fluid"></p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Many functions will take a vector as the input/argument.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For example, try using <code>max()</code> to find the largest number in <code>my_vector</code>.</p>
-</div>
-</div>
+<p>So far we have learned how to write down our ideas of the data generation process as a statistical model, automatically fit the model, assess fit, and interpret the <span class="math inline">\(\beta\)</span> coefficients for what they mean about the role of an explanatory variable. This is useful information both for explanation research goals (e.g.&nbsp;“how big is the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>?”) and for prediction goals (e.g.&nbsp;“what is the most likely value of <span class="math inline">\(Y\)</span> given what we know about <span class="math inline">\(X\)</span>?”).</p>
+<p>Stopping our model interpretation here, however, can leave us with an incomplete understanding. Seeing a big number for <span class="math inline">\(\beta\)</span> might make us think that <span class="math inline">\(X\)</span> is the most important variable for explaining <span class="math inline">\(Y\)</span>, when in fact this model of the data generation process is critically incomplete and there is still uncertainty in <span class="math inline">\(Y\)</span> that could be explained better with other information. Similarly, making a prediction for some value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> doesn’t tell us how good that guess is - how far off will we be when we make such a prediction?</p>
+<p>In order to have a more complete understanding of our statistical model’s performance, we also need to interpret the other parameter that the model fitting procedure gives us: <span class="math inline">\(\sigma\)</span>, in the observation model <span class="math inline">\(Y \sim N(\mu, \sigma)\)</span>. In this chapter we will cover this interpretation step.</p>
+<section id="prediction-accuracy" class="level2 page-columns page-full" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="prediction-accuracy"><span class="header-section-number">11.1</span> Prediction accuracy</h2>
+<p>Sometimes in a prediction goal, we want to predict the summary statistic of a large group of data. This is useful to do when our research is about group-level attributes, like overall student graduation rate under different financial aid strategies or the average number of customer service calls to expect at different times of day.</p>
+<p>However, other times your goal is to make predictions about individual data points. In this case the estimand is not a summary statistic of a group, such as <span class="math inline">\(\mu_{Y|X}\)</span>, but the value of the target variable for one specific observation, <span class="math inline">\(y_i\)</span> when <span class="math inline">\(X=x_i\)</span>.</p>
+<p>We face some difficulty in doing this when we’re dealing with a probabilistic data generation process. Recall that in this sort of process, we <em>can’t</em> perfectly predict specific data values, only their probability of happening via the parameter of the probability distribution output by the prediction equation. For instance, here is a plot of the distribution of <code>highest_year_of_school_completed</code> values in the GSS dataset for people who have 4 siblings specifically:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>There may be times when you just want to know a subset of the values in a vector, not all of the values. We can <strong>index</strong> a position in the vector by using brackets with a number in it like this: <code>[1]</code>. So if we wanted to print out just the first item in <code>my_vector</code>, we could write <code>my_vector[1]</code>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>index</strong> = the position of a particular value in a vector</span></div></div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write code to get the 4th value in my_vector.</p>
-</div>
-</div>
+<p>Despite having the same value on the explanatory variable, these people still vary in their education attainment. So what do we do if we need to guess one specific value to accomplish our research goal?</p>
+<p>If we don’t know someone’s <span class="math inline">\(y_i\)</span> value, but we do know their <span class="math inline">\(x_i\)</span> value and we have a best-fitting statistical model that tells us <span class="math inline">\(P(Y|X)\)</span>, we could go with whatever value of <span class="math inline">\(Y\)</span> is <em>most likely</em> to happen when <span class="math inline">\(X=x_i\)</span>. In the model we’ve been working with the last couple chapters, <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma)\)</span> and <span class="math inline">\(\mu = \beta_0 + \beta_1 X\)</span>, we are assuming the output of the data generation process is a normal probability distribution influenced by <span class="math inline">\(X\)</span>. If this is correct, then the most likely value to happen is the mean of that distribution, <span class="math inline">\(\mu\)</span>. So we can use our model to predict the most likely value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> by calculating <span class="math inline">\(\mu = \beta_0 + \beta_1 X\)</span>. We will call our prediction about someone’s <span class="math inline">\(Y\)</span> value <span class="math inline">\(\hat{Y}\)</span>, or “Y hat,” to distinguish it from the true value of <span class="math inline">\(Y\)</span> for that person, <span class="math inline">\(y_i\)</span>. Essentially, by making a prediction <span class="math inline">\(\hat{Y} = \beta_0 + \beta_1 X\)</span>, we are treating the data generation process as deterministic.</p>
+<p>Here is the predicted <span class="math inline">\(\hat{Y}\)</span> value for people with <span class="math inline">\(X=4\)</span>, drawn as a red line on the previous histogram:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We’re not limited to indexing only one position at a time. We can also pass a vector of multiple index positions inside the brackets to return only those positions:</p>
+<div class="page-columns page-full"><p>Even though 13.62 is the most likely value in this conditional probability distribution, if we had guessed this value as the years of education for everyone with 4 siblings, clearly we’d be wrong most of the time<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Written mathematically, <span class="math inline">\(Y - \hat{Y} \neq 0\)</span>. We’d be <em>less</em> wrong on average than if we had guessed any other number, but still wrong because there is a difference between our prediction <span class="math inline">\(\hat{Y}\)</span> and the true value <span class="math inline">\(y_i\)</span> for each person. This is known as the prediction error or <strong>residual</strong> for that person under our current statistical model. It is often denoted as <span class="math inline">\(\epsilon\)</span>, such that:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual</strong> = the difference between what a statistical model predicts for an individual observation and the observation’s true value.</span></div></div>
+<p><span id="eq-residual"><span class="math display">\[\epsilon = Y - \hat{Y} \tag{11.1}\]</span></span></p>
+<p>How big is our prediction error for each person? We can again plot this, but this time plot the difference between our guess and the true value.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>And if we want to return a whole chunk of the vector (say, the 1st through the 4th position), we don’t have to type out <code>c(1,2,3,4)</code> within the brackets. The <code>:</code> operator works like the word “through”, such that the code <code>1:4</code> means “every value from the 1st through the 4th, inclusive”.</p>
+<p>The shape of the histogram didn’t change, but the values on the x-axis did. Now, we are looking at the difference between our guess <span class="math inline">\(\hat{Y}\)</span> (for which we are using the mean of the conditional probability distribution, <span class="math inline">\(\mu_{Y|X=4}\)</span>) and each real data point (<span class="math inline">\(y_i\)</span>). Think of these residual values as how much our guess missed by.</p>
+<p>Now let’s plot the residuals for every data point in this data set, not just the people with 4 siblings. We can find these quickly with the function <code>resid()</code>, where the argument is the model object.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>resid()</code> to calculate the residuals for every data point in the GSS dataset and store them in a new column called <code>residuals</code>.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Finally, what if we want to return every item in a vector <em>except</em> a particular one? Then we get to use negative indexing! Simply put a negative sign in front of an index position, and that will <em>remove</em> the item at that position from the output.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try using both the colon method and the negative indexing method below.</p>
-</div>
-</div>
+<div class="page-columns page-full"><p>We can think of each residual as a prediction error. We used a different value for <span class="math inline">\(\hat{Y}\)</span> for each person depending on what their <span class="math inline">\(x_i\)</span> value is and what the prediction equation <span class="math inline">\(\beta_0 + \beta_1 X\)</span> calculated, but we can still compute <span class="math inline">\(Y - \hat{Y}\)</span> for everyone and thus get a residual value. The distribution of all of them together is called the <strong>error distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>error distribution</strong> = the distribution of residuals from a statistical model.</span></div></div>
+</section>
+<section id="quantifying-prediction-accuracy" class="level2 page-columns page-full" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="quantifying-prediction-accuracy"><span class="header-section-number">11.2</span> Quantifying prediction accuracy</h2>
+<p>If prediction for any individual observation is our goal, we would like to quantify how good our model is for making predictions regardless of what someone’s value on <span class="math inline">\(X\)</span> may be. In other words, it would be useful to summarize this error distribution. We can lean on the distribution summary metrics we already know to do this.</p>
+<p>Recall when we first learned about spread metrics in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>. We first saw that trying to quantify spread as simply the sum of all deviations from a central value didn’t work, because some values were negative and positive and they canceled each other out. Because model residuals can also be positive or negative (we can guess too low or too high), this same reality applies:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="sec-ch2-data-types" class="level2 page-columns page-full" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sec-ch2-data-types"><span class="header-section-number">2.3</span> Data types</h2>
-<div class="page-columns page-full"><p>There are different values we can use to represent data when we store it in vectors. Compared to a variable’s scale of measurement, which refers to the nature of the values in the real world, a variable’s <strong>data type</strong> is the set of possible values the variable can take when we record it and put it into a computer. In some instances a variable’s scale of measurement implies what it’s data type will be when written down, but this is not always the case.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>data type</strong> = the way values of a variable are stored in a computer</span></div></div>
-<section id="qualitative-data" class="level3 page-columns page-full" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="qualitative-data"><span class="header-section-number">2.3.1</span> Qualitative data</h3>
-<div class="page-columns page-full"><p>Some data are represented <strong>qualitatively</strong>, meaning that the values are words/labels. In R, data written as words or letters use the <strong>character</strong> data type. Remember at the beginning of <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> when you printed out <code>"hello world!"</code>? By putting those words within a set of quotation marks, we created a character-type object. This is also known in other programming languages as a “string”. If we forget the quotes, R will think that a word is a name of an object instead of a character value.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>qualitative data</strong> = non-numerical information that represent characteristics or qualities</span><span class="margin-aside"><strong>character</strong> = a data type in R used for representing qualitative data; with alphanumeric symbols surrounded by quotes</span></div></div>
-<p>Anything you can type with a keyboard can be stored as a character data type, so long as it is between quotes. Note that this includes numbers - for example, when 20 is in quotation marks like “20”, it will be treated as a character value, even though it includes a number. R doesn’t care whether you use single quotes, ‘like this’, or double quotes, ”like that”.</p>
+<div class="page-columns page-full"><p>Instead, if we make sure all deviation values are positive by squaring them, we can calculate the sum of squares. Specifically, when talking about residuals, we can sum up the squared residuals to do the same thing since a residual is a deviation score between a predicted value and a true value. This metric, when talking about model residuals, is called the residual sum of squares (RSS) or <strong>sum of squared errors</strong> (SSE).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sum of squared errors</strong> = sum of squares calculated for an error distribution.</span></div></div>
+<p><span id="eq-sse"><span class="math display">\[SSE = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 \tag{11.2}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the sum of squared errors of the residuals.</p>
+</div>
+</div>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You can also put character objects into a vector, to represent a set of qualitative data.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write code to print out the 5th way of saying hello in this vector.</p>
-</div>
-</div>
+<p>Because this is just the sum of squares equation applied to a vector of residuals, the same interpretation applies to this value as we would make with any other sum of squares. For the same set of data, a larger value means more spread in the residuals, which means our model is worse at predicting individual data points. Here’s the sum of squared error calculated for the model predicting education using respondent sex. Which model do you think would make more accurate predictions - the one above using number of siblings, or using sex?</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="numeric-data" class="level3 page-columns page-full" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="numeric-data"><span class="header-section-number">2.3.2</span> Numeric data</h3>
-<div class="page-columns page-full"><p><strong>Quantitative</strong> data, on the other hand, are represented as numbers exclusively. In R, when the program sees typed numbers, it will usually assume you’re talking about a <strong>numeric</strong> value type.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>quantitative data</strong> = Information that is represented with numbers</span><span class="margin-aside"><strong>numeric</strong> = a data type in R used for representing quantitative data</span></div></div>
-<p>Based on these definitions of quantitative and qualitative data types, it may seem like categorical data (scale of measurement in the world) should always be represented as character data (data type in a computer) while ordinal or interval data should always be represented numerically. However, it is possible to use multiple data types for the same scale of measurement. For example, this table shows the results from the same class favorite food survey, but presented in a different way:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Food choice</th>
-<th style="text-align: center;">Number of students</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">blueberries</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">chocolate</td>
-<td style="text-align: center;">8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">tamales</td>
-<td style="text-align: center;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">pasta</td>
-<td style="text-align: center;">6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">pizza</td>
-<td style="text-align: center;">10</td>
-</tr>
-</tbody>
-</table>
-<p>The students’ answers were qualitative, but we recorded a quantitative representation of them by counting how many students gave each response.</p>
-<p>Likewise, a researcher might choose to use numbers as a sort of code or label in place of a full qualitative description. For example, if they recorded what hand every student in a class used to write with, they could save the variable as:</p>
-<p><code>handedness_word &lt;- c("left","right","right","right","right","left","right","right","right")</code></p>
-<p>That’s a lot of typing though. Instead, they could choose to assign “right” the value of 1, and “left” the value of 2. This would create a vector like:</p>
-<p><code>handedness_label &lt;- c(2,1,1,1,1,2,1,1,1)</code></p>
-<p>This is much easier to type! More consequentially, the majority of the statistical tools we will use to analyze data are equations that need quantitative values to operate on. For this reason, researchers often need to quantify their data by turning it into numbers in some way. So don’t assume what scale of measurement a variable has based simply on it’s data type when recorded in a dataset. Instead, think about the nature of what those values represent in the real world.</p>
-</section>
-<section id="boolean-data" class="level3 page-columns page-full" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="boolean-data"><span class="header-section-number">2.3.3</span> Boolean data</h3>
-<div class="page-columns page-full"><p><strong>Boolean</strong> values<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (also called “logical” or “binary” values) are another common data type in R. Boolean data represent the truth of something and can only have one of two values, True or False. For example, maybe we have a statement such as: “the value of A is greater than the value of B”. We can ask R to evaluate this and return the answer <code>TRUE</code> or <code>FALSE</code>. We can do that by using logical operators like <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, and <code>==</code>. There is also a logical operator to check whether values are not equal: <code>!=</code>. For example, <code>5 != 3</code> is a True statement. When we save the results of this statement in an object, we have stored a Boolean data type.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Boolean</strong> = a data type that can have only two possible values, true or false</span></div></div>
-<p>Below is a table of the logic operators in R that you can use for making logic statements.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: left;">Example use</th>
-<th style="text-align: left;">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">&lt;</td>
-<td style="text-align: left;">A &lt; B</td>
-<td style="text-align: left;">A is less than B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">&gt;</td>
-<td style="text-align: left;">A &gt; B</td>
-<td style="text-align: left;">A is greater than B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">==</td>
-<td style="text-align: left;">A == B</td>
-<td style="text-align: left;">A is equal to B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">&lt;=</td>
-<td style="text-align: left;">A &lt;= B</td>
-<td style="text-align: left;">A is less than or equal to B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">&gt;=</td>
-<td style="text-align: left;">A &gt;= B</td>
-<td style="text-align: left;">A is greater than or equal to B</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">!=</td>
-<td style="text-align: left;">A != B</td>
-<td style="text-align: left;">A is not equal to B</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">%in%</td>
-<td style="text-align: left;">A %in% c(B1, B2, B3)</td>
-<td style="text-align: left;">A is in the set [B1, B2, B3]</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">%notin%</td>
-<td style="text-align: left;">A %notin% c(B1, B2, B3)</td>
-<td style="text-align: left;">A is not in the set [B1, B2, B3]</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">&amp;</td>
-<td style="text-align: left;">A == B &amp; C == D</td>
-<td style="text-align: left;">A equals B AND C equals D (both statements are true)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">|</td>
-<td style="text-align: left;">A == B | C == D</td>
-<td style="text-align: left;">A equals B OR C equals D (either statement is true)</td>
-</tr>
-</tbody>
-</table>
-<p>In R, if you want to know whether A is equal to B, use the double equal sign, <code>==</code>. The single equal sign is sometimes used instead of the assignment operator, <code>&lt;-</code>, but in more niche cases that you’ll learn later. Use the arrow <code>&lt;-</code> to assign values to an R object, and <code>==</code> to ask whether two values are equal.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Read this code and predict what value will come out of the R console. Then run the code and see if you were right.</p>
-</div>
-</div>
+<div class="page-columns page-full"><p>However, a larger <span class="math inline">\(SSE\)</span> value can also occur just because there are more data points. So we can also calculate the typical amount of squared error per observation, called the <strong>mean squared error</strong> (MSE). This is similar to calculating the variance of the error distribution, except instead of dividing but <span class="math inline">\(n-1\)</span>, we divide by <span class="math inline">\(n-k\)</span> where <span class="math inline">\(k\)</span> is the number of coefficients in the prediction equation of the model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean squared error</strong> = variance of the error distribution.</span></div></div>
+<p><span id="eq-sse"><span class="math display">\[MSE = \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k} \tag{11.3}\]</span></span></p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Similarly to how the same scale of measurement can be represented with qualitative or quantitative data types, lots of things can be represented as Boolean data if you think about it. For example, the researcher above could choose to represent handedness as a Boolean by conceptualizing the variable as the truth of the statement: “this person is right-handed.”</p>
-<p><code>handedness_bool &lt;- c(FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE).</code></p>
-<p>If the same scale of measurement can be represented with different data types, how do you pick which type to use when you’re writing data down? A good idea is to think about what operations you plan to do on the data when analyzing it. This will guide you on what type the value needs to be for that operation to make sense.</p>
-<p>Sometimes you forget what type an object was that you created a while ago, or you will receive some data from somewhere else with pre-defined objects. If you ever need to find out the type of an object, you can simply use the command <code>str(OBJECT_NAME)</code>. Str is short for “structure.” It will print out the type of the object, its value(s), and its size if the object is storing more than one value.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try it out here:</p>
-</div>
-</div>
+<div class="page-columns page-full"><p>Finally, because MSE is in units of squared residuals, it is tough to interpret by how much our guesses are typically wrong. So we can take the square root of MSE to get back to the original units of the target variable. This is called the <strong>root mean squared error</strong> (RMSE), and is like calculating the standard deviation of the error distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>root mean squared error</strong> = standard deviation of the error distribution.</span></div></div>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are technically subtypes of values within the umbrella of numeric (double, integer, etc.) or qualitative (character or factor). You don’t need to know the difference for this book, just remember that when R returns one of these for a data type, it’s a sort of number or qualitative value.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="sec-ch2-converting-data" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-ch2-converting-data"><span class="header-section-number">2.4</span> Converting data</h2>
-<p>Sometimes you will have data in one format that you would prefer to have in another - e.g., you have a variable for someone’s zip code, but R is trying to evaluate that data type as quantitative instead of qualitative. That doesn’t make sense - the zip code 91711 isn’t quantitatively comparable to 01434, it’s just using numbers to denote a category. How would you convince R to treat these numbers as a qualitative variable?</p>
-<p>Luckily, you don’t need to rewrite the whole data vector with quotations manually. You can use a function to recast the vector of numbers into a character data type. The function that converts numerical data to character is <code>as.character()</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try it out below:</p>
-</div>
-</div>
+<p>When we first learned about standard deviation, we learned that the straightforward interpretation of it is the typical amount of deviation from the mean within a data distribution - if someone guessed the mean value for every data point, on average they would be off by plus or minus the standard deviation amount. We can interpret the RMSE of the error distribution the same way - it is the typical amount of prediction error our statistical model makes when predicting individual data points.</p>
+<p>Now let’s look back at what our model fitting procedure identified as the <span class="math inline">\(\sigma\)</span> parameter for the observation model:</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>When we encode the values of a variable using numbers, it is always important to keep in mind what the numbers mean - their true scale of measurement. The value 2 has a very different meaning if it represents the handedness of a person (categorical; 2 is a convenient label) than if it represents their age (interval; 2 is a count of years). When we use statistical software to analyze data, the software processes the numbers. But the software doesn’t know what the numbers actually mean. Only you know that.</p>
-<p>We can also turn a character variable into a numeric variable by using the <code>as.numeric()</code> function, if possible. This is useful in the case where a dataset has numbers that accidentally get saved as character types.</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Besides just the data types, we can also convert the actual <em>values</em> of data within variables into something else. For example, imagine you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in the vector holding that data.</p>
-<p>Again, you don’t have to manually retype the vector to do this. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the water depth example, you could write <code>water_depth / 12</code> to convert every measurement in the <code>water_depth</code> vector from inches to feet. When you use an operation between a vector and a single value, R will apply that operation to every item in the vector individually.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try it here:</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-13"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Notice that when you do a calculation with a vector, you’ll get a vector of numbers as the answer, not just a single number.</p>
-<p>After you multiply <code>my_vector</code> by 100, what will happen if you return <code>my_vector</code>? Will you get the original vector <code>(1,2,3,4,5)</code>, or one that has the hundreds <code>(100,200,300,400,500)</code>? Try running this code to see what happens.</p>
-<div id="qwebr-insertion-location-14"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Remember, R will do the calculations. But if you want something saved, you have to assign it to an object.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write some code to compute <code>my_vector * 100</code> and then assign the result back into <code>my_vector</code>. If you do this, it will replace the old contents of <code>my_vector</code> with the new contents (i.e., the product of <code>my_vector</code> and 100). (Hint: you can use objects in the same command where you redefine their values).</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-15"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We can also create Boolean vectors by subjecting a whole vector to a logical statement. Since a logical statement is an operation, R will apply it to every item in the handedness vector.</p>
-<div id="qwebr-insertion-location-16"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Sometimes you will need to do something more complicated. Instead of modifying each value in a vector by the same amount, you might want to make a different modification. E.g., say you want to know how much each person improved their SAT scores with practice, but you only have their first and last scores saved as data. Everyone improves at different rates, so you can’t add the same score to each person. Instead, you could do <code>end_score - beginning_score</code>. If both <code>end_score</code> and <code>beginning_score</code> are vectors of the same length, R will apply the operation to each item <em>pairwise</em>: the first item of <code>beginning_score</code> will be subtracted from the first item of <code>end_score</code>, the second from the second, third from the third, and so on.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write code that will subtract <code>beginning_score</code> from <code>end_score</code>, and return the resulting vector.</p>
-</div>
-</div>
-<div id="qwebr-insertion-location-17"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>What do you expect from the code below? Make a guess first, then run the code to see what happens.</p>
-<div id="qwebr-insertion-location-18"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Look familiar? This is the same value as the RMSE we just calculated. So we can interpret <span class="math inline">\(\sigma\)</span> in the observation model as the typical amount of prediction error our statistical model makes when predicting individual data points. The larger the <span class="math inline">\(\sigma\)</span> value in our model, the less accurate our predictions will be.</p>
 </section>
-<section id="sec-ch2-data-quality" class="level2 page-columns page-full" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-ch2-data-quality"><span class="header-section-number">2.5</span> What makes good data?</h2>
-<div class="blue-text">
-<p><em>You can’t fix by analysis what you bungled by design.</em></p>
-<p>– RJ Light, JD Singer, and JB Willett <em>By Design: Planning Research on Higher Education</em></p>
-</div>
-<div class="page-columns page-full"><p>Data are meant to be a clear and accurate recording of some value out in the world. However, in many fields such as psychology, the thing that we are measuring is not a physical feature, but instead an unobservable theoretical concept, which we refer to as a <strong>construct</strong>. This can make data collection tough.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>construct</strong> = a theoretical phenomenon one wishes to study</span></div></div>
-<p>For example, let’s say that we want to test how well you understand the distinction between categorical, ordinal, and interval scales of measurement (do you remember? test yourself!). Unfortunately, we can’t pop open your skull and look at how big the “stats knowledge” part of your brain has grown. The only way we have to measure this construct is indirectly - maybe a quiz that asks several questions about these concepts and count how many you got right, or a self report about how confident you feel in knowing the material.</p>
-<p>As you can imagine, there are reasons a <em>measured</em> value might not match the <em>true</em> value when you’re dealing with indirect measurements. A low quiz score could mean low knowledge, or the test-taker happened to be sick that day. Maybe the quiz asked for written code instead of conceptual understanding, so the kind of knowledge it assessed was different than purported. For these reasons, everyone who works with human data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> needs to be able to evaluate how good their data are. This will have large implications for how much you can trust analyses of the data.</p>
-<section id="reliability" class="level3 page-columns page-full" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="reliability"><span class="header-section-number">2.5.1</span> Reliability</h3>
-<div class="page-columns page-full"><p><strong>Reliability</strong> refers to the consistency of our measurements across repeated recording. In other words, if you measure the same thing several times, do you get the same value?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>reliability</strong> = consistency of measured values when the true underlying score doesn’t change</span></div></div>
-<div class="page-columns page-full"><p>There are different kinds of reliability that refer to different kinds of repetition. <strong>Test-retest reliability</strong> refers to the similarity of measurements across time. For example, someone might give you a cognitive test of spatial reasoning twice, once today and once tomorrow, and compare your scores on the two days. If the reliable measure of your true spatial reasoning ability (which shouldn’t change on such a short time scale), we would hope that the scores would be very similar to one another.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>test-retest reliability</strong> = consistency of measured values across time</span></div></div>
-<div class="page-columns page-full"><p>Another form of reliability is <strong>internal consistency</strong>. This refers to the similarity of measurements across items that are supposed to measure the same construct. This type of reliability is a focus of survey research, where researchers include several questions that are all supposed to measure the same thing. If they actually do, then the answers to those questions should be similar to one another. If participants give very different answers to some of the questions, then the survey is not internally consistent.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>internal consistency</strong> = similarity of measurements across items that are supposed to measure the same construct</span></div></div>
-<div class="page-columns page-full"><p>Another way to assess reliability comes in cases where the data consist of judgments by different people. For example, let’s say that a researcher wants to determine whether a treatment changes how well an autistic child interacts with other children, which is measured by having experts watch the child and rate their interactions with the other children. In this case the expert raters are the measurement instrument and we want to know how much we should trust the ratings they generate. If multiple judges give very similar scores to each autistic child they saw, the judges have high <strong>inter-rater reliability</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>inter-rater reliability</strong> = consistency of ratings provided by multiple judges</span></div></div>
-<div id="fig-ch2-reliability" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="prediction-improvement" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="prediction-improvement"><span class="header-section-number">11.3</span> Prediction improvement</h2>
+<p>The above discussion hopefully makes it clear how we can interpret the fitted estimates from a statistical model when we have prediction goals. The prediction equation coefficients tell you how to generate predictions for new data, while the <span class="math inline">\(\sigma\)</span> coefficient tells you how much those predictions will be wrong by, on average.</p>
+<p>Understanding the <span class="math inline">\(\sigma\)</span> estimate also helps us with explanation goals too, in that it helps us understand how much <em>uncertainty</em> is in our model of the data generation process. When we were first learning about probability, we saw that if two variables are associated, knowing the value of one variable changes our guesses about the value of another. In <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> we saw that this change in prediction is a change in the mean of the target’s conditional probability distribution, such that a 1-unit increase in the explanatory variable shifts our expectation about the mean target value in some direction.</p>
+<p>But if <span class="math inline">\(X\)</span> is an explanatory variable of <span class="math inline">\(Y\)</span>, it should also change our predictions about <span class="math inline">\(Y\)</span> by narrowing the <em>spread</em> of the conditional probability distribution as well. In other words, before we know anything about <span class="math inline">\(X\)</span>, the marginal probability distribution for the <span class="math inline">\(Y\)</span> values we could draw into our sample is wide. But once we know <span class="math inline">\(X\)</span>, if it contains information about what <span class="math inline">\(Y\)</span> will be, then we should be able to reduce the options we’d expect for <span class="math inline">\(Y\)</span> and be more confident that a narrower range of <span class="math inline">\(Y\)</span> options will happen instead. It’s like if we are in a windowless room, we are pretty uncertain about what the weather is outside. But if we know it is August 15th in California, we can be pretty confident that it’s not snowing outside! Once we knew our date and location, the list of likely options about the weather got narrower, with our guesses more confident and accurate.</p>
+<p>Thus the more accurately we can predict individual data points, the more we understand about what influences the target variable, and the less uncertain we will be about what someone’s <span class="math inline">\(Y\)</span> value will be given their known <span class="math inline">\(X\)</span> value.</p>
+<p>Uncertainty relative to what?</p>
+<ul>
+<li>prediction accuracy as variance explanation / variance reduction</li>
+<li>null model</li>
+<li>variance explained: SSmodel = SStotal - SSerror</li>
+</ul>
+</section>
+<section id="standardized-prediction-accuracy" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="standardized-prediction-accuracy"><span class="header-section-number">11.4</span> Standardized prediction accuracy</h2>
+<ul>
+<li>R2</li>
+</ul>
+</section>
+<section id="relationship-with-correlation" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="relationship-with-correlation"><span class="header-section-number">11.5</span> Relationship with correlation</h2>
+</section>
+<section id="sources-of-unexplained-uncertainty" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="sources-of-unexplained-uncertainty"><span class="header-section-number">11.6</span> Sources of unexplained uncertainty</h2>
+<p>Another reason to look at data predictions is to understand how much uncertainty is in the model. Even if the simulated data is a good fit for real data, if the prediction intervals are very wide, that means our explanatory variables don’t contain that much information about the target variable. Taking them into account doesn’t help our predictions of exact data values very much. Alternatively, if the prediction intervals are narrow, that tells us that knowing the explanatory variables changes our expectations for the target variable by a lot. We are confident about what that value will be if we know the explanatory variable values. In other words, we are much closer to understanding all the influences on the target variable and having a deterministic idea of the data generation process.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch9-pred-ints" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch2-reliability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ch2-reliability.png" class="img-fluid figure-img">
+<div aria-describedby="fig-ch9-pred-ints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-11_files/figure-html/fig-ch9-pred-ints-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-reliability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Example of high vs.&nbsp;low reliability in intelligence measurement.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-pred-ints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Prediction intervals when using occupation to predict respondent’s education level, vs.&nbsp;using respondent’s sex to predict respondent’s education level. Occupation is a more accurate predictor of respondent education because it leads to a narrower prediction interval.
 </figcaption>
 </figure>
 </div>
-<p>Reliability is important if we want to compare one measurement to another, because the relationship between two different variables can’t be any stronger than the relationship between either of the variables and itself (i.e., its reliability). An unreliable measure will never have a strong statistical relationship with any other measure. For this reason, researchers developing a new measurement (such as a new survey) will often go to great lengths to establish and improve its reliability.</p>
-<p>However, reliability should only be assessed in cases where the true value <em>shouldn’t</em> be changing. We wouldn’t expect reliability of self-reported anxiety scores administered one year apart because someone’s mental health can certainly evolve in that time. Nor should we expect reliability of judgments from raters who were trained differently. In these cases, we’d expect the underlying true value to be different between measurement instances, so the measured scores should be different as well.</p>
-</section>
-<section id="validity" class="level3 page-columns page-full" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="validity"><span class="header-section-number">2.5.2</span> Validity</h3>
-<div class="page-columns page-full"><p>If a measured variable proves to be unreliable, there are a few possible reasons why. One is the <strong>validity</strong> of the variable. This is the extent to which our measurements actually reflect the true construct of interest. Imagine you are trying to measure someone’s extroversion by counting how frequently they go out with friends each day. Personality theory asserts that extroversion should be pretty consistent across years of someone’s life, but your measurements about social activity are very different on each day within the same person. That might be because your social activity measure is not a completely valid measure of extroversion - it is also caused by other unrelated things, like mood and work schedule. So daily changes in social activity don’t reflect changes in extroversion so much as they reflect other things.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>validity</strong> = correspondence between what a measure intends to capture and what it actually does</span></div></div>
-<p>Note that if a measure <em>is</em> reliable, that doesn’t automatically mean it’s valid. We could score your well-being as “excellent” every day that you aren’t in the hospital, which would probably have high test-retest reliability. But that misses important variations in mental health, financial security, social connection, etc. that would impact your sense of wellness. In this way, hospitalization is not an entirely valid measure of well-being.</p>
-<div class="page-columns page-full"><p>There are a few common ways to assess the validity of measure. One is <strong>face validity</strong> - does the measurement make sense on its face? If I were to tell you that I was going to measure a person’s blood pressure by looking at the color of their tongue, you would probably think that this was not a valid measure on its face. On the other hand, using a blood pressure cuff would have face validity. This is a first reality check before we dive into more complicated aspects of validity. If you read about a construct measurement that doesn’t seem face valid to you (e.g., “what your shirt color says about you!!”), you should be immediately suspicious of it until there is good evidence of other validity.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>face validity</strong> = a sense of the appropriateness of a measure based on one’s general understanding of the domain</span></div></div>
-<div class="page-columns page-full"><p>Other approaches to assessing validity include <strong>convergent</strong> and <strong>divergent validity</strong>. These mean that, if the measurement is valid, there should be an association between it and theoretically similar constructs and no association between it and unrelated constructs. For example, a valid measure of impulsiveness should be associated with a measure of risk-taking, but not associated with political beliefs.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>convergent validity</strong> = extent to which a measure is statistically associated with a theoretically similar construct</span><span class="margin-aside"><strong>divergent validity</strong> = extent to which a measure is statistically unrelated to irrelevant constructs</span></div></div>
-</section>
-<section id="measurement-error" class="level3 page-columns page-full" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">2.5.3</span> Measurement error</h3>
-<div class="page-columns page-full"><p>Another reason for low reliability in data is <strong>measurement error</strong>. Even if we are measuring a valid construct, our recorded values may be different from reality because of an imperfect measurement system. Measurement error can come from lots of places - a poorly calibrated timer, participant motion during a brain imaging session, imperfect self insight while filling out a survey, etc.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>measurement error</strong> = random deviations between a true value and what is measured due to an imperfect measurement process</span></div></div>
-<p>Measurement error is typically considered to be random differences between a true score and a measured score - the measured values fluctuate more than the true score does, but on average they fall around the true score. Validity on the other hand is more about systematic differences between a true score and a measured score, such as other constructs causing the measured value. As invalid measure will be systematically the wrong score.</p>
-<div id="fig-ch2-validity-error" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch2-validity-error-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ch2-validity-error.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-validity-error-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: Example of high vs.&nbsp;low validity and measurement error in anxiety assessment.
-</figcaption>
-</figure>
 </div>
-<p>We generally want our measurement error to be as low as possible, so you’ll need to think hard about how you can improve the quality of your measurement system (for example, using a better timer to measure reaction time). Another option to improve measurement error if your measurement system can’t be perfected is to measure many times and average the values together, since the deviations are random. This is what is happening when you answer a survey with many similar questions, or do a psych study with many trials.</p>
-<p>Note that when evaluating the reliability, validity, and measurement error of a measurement process, we don’t say it is “good” or “bad” in an absolute sense. No indirect measure is perfectly valid or invalid; almost nothing about a human can be measured without some measurement error. Instead, we evaluate whether our data quality are good enough for a particular purpose, or if they are better/worse than some other measurement approach. It’s about evaluating the limits of what these data can tell us, not about accepting them uncritically or completely throwing them out.</p>
 </section>
-<section id="outliers" class="level3 page-columns page-full" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="outliers"><span class="header-section-number">2.5.4</span> Outliers</h3>
-<p>Reliability, validity, and measurement error are properties of how an entire variable was collected, meaning all data values recorded are affected in some way. However not every research participant is the same, so not every participant will have the same experience in your study. It is possible that most data points in your dataset are good data, but a few people misunderstand a question or skip it for some personal reason. Humans are messy like that. In these cases, you’ll have a few data points that don’t represent the correct real world value.</p>
-<div class="page-columns page-full"><p>If some data point is very unusual compared to the rest of the dataset (e.g.&nbsp;someone reporting their age as “211” when everyone else is 18-24), that is called an <strong>outlier</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>outlier</strong> = a data value that is very different than the rest of the sample it belongs to</span></div></div>
-<p>Not all outliers are invalid data points - it’s possible to get a very tall person in your sample of otherwise short people, for instance. But if a data value is unusual because it is not recorded correctly, that is the kind of bad outlier than can mess up analyses.</p>
+<section id="estimands-in-statistical-models" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="estimands-in-statistical-models"><span class="header-section-number">11.7</span> Estimands in statistical models</h2>
+<p>An estimand says precisely what quantity about the population/data-generating process you want to know.</p>
+<p>Then the model gives you a way of thinking about the estimand</p>
 </section>
-<section id="missing-data" class="level3 page-columns page-full" data-number="2.5.5">
-<h3 data-number="2.5.5" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">2.5.5</span> Missing data</h3>
-<div class="page-columns page-full"><p>If a data point is missing entirely, that is a <strong>missing value</strong>. Some analyses can be computed with missing values among the data, but some others mathematically break and thus need researcher intervention.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>missing value</strong> = a data point whose value is not recorded</span></div></div>
-<div class="page-columns page-full"><p>There are different opinions about what to do if there are outliers and/or missing values in your data. Some people remove the data for observations with missing values so that they’re not included in analysis, while others use <strong>imputation</strong> (replace what is recorded with a reasonable value). Some people do also do for all unusual outliers, or only those that are obviously wrong values. In later chapters of this book we will do some simple outlier/missing data handling when learning about data cleaning, but it is outside the scope of this course to tell you what to do with your missing data and outliers in all situations because the answers are complex and debated. If you’d like to go deeper into the topic after you’ve finished this intro book, there are some great advanced texts such as <em>Outliers in Statistical Data</em> by <span class="citation" data-cites="barnett1994">Barnett and Lewis (<a href="#ref-barnett1994" role="doc-biblioref">1994</a>)</span> and <em>Applied Missing Data Analysis</em> by <span class="citation" data-cites="enders2022">Enders (<a href="#ref-enders2022" role="doc-biblioref">2022</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>imputation</strong> = the principled process of replacing some data values with other values</span></div></div>
-</section>
-</section>
-<section id="sec-ch2-resources" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-ch2-resources"><span class="header-section-number">2.6</span> Chapter resources</h2>
-<section id="learning-goals" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">2.6.1</span> Learning goals</h3>
-<p>After reading this chapter, you should be able to:</p>
-<ul>
-<li>Explain the difference between categorical, ordinal, and interval data</li>
-<li>Make a vector in R</li>
-<li>Describe the difference between qualitative and quantitative data</li>
-<li>Covert vectors of data into different data types</li>
-<li>Do basic math operations on vectors</li>
-<li>Explain reliability, validity, and measurement error as they pertain to data quality</li>
-</ul>
-</section>
-<section id="new-concepts" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">2.6.2</span> New concepts</h3>
-<ul>
-<li><strong>scale of measurement</strong>: The way values of a variable inherently relate to each other in the real world.</li>
-<li><strong>categorical data</strong>: A scale of measurement where data values cannot be ranked or numerically calculated on, only classified.</li>
-<li><strong>ordinal data</strong>: A scale of measurement where data values have a natural order, but the distance between each level is not physically defined.</li>
-<li><strong>interval data</strong>: A scale of measurement where data values have a natural order, the distance between each level is physically defined, and there is equal distance between each subsequent value.</li>
-<li><strong>vector</strong>: A type of data structure in R that stores a list of elements.</li>
-<li><strong>index</strong>: The position of a particular value in a vector.</li>
-<li><strong>data type</strong>: The way values of a variable are stored in a computer.</li>
-<li><strong>qualitative data</strong>: Non-numerical information that represent characteristics or qualities.</li>
-<li><strong>character</strong>: A data type in R used for representing qualitative data; with alphanumeric symbols surrounded by quotes.</li>
-<li><strong>quantitative data</strong>: Information that is represented with numbers.</li>
-<li><strong>numeric</strong>: A data type in R used for representing quantitative data.</li>
-<li><strong>Boolean</strong>: A data type that can have only two possible values, true or false.</li>
-<li><strong>construct</strong>: A theoretical phenomenon one wishes to study.</li>
-<li><strong>reliability</strong>: Consistency of measured values when the true underlying score doesn’t change.</li>
-<li><strong>test-retest reliability</strong>: Consistency of measured values across time.</li>
-<li><strong>internal consistency</strong>: Similarity of measurements across items that are supposed to measure the same construct.</li>
-<li><strong>inter-rater reliability</strong>: Consistency of ratings provided by multiple judges.</li>
-<li><strong>validity</strong>: Correspondence between what a measure intends to capture and what it actually does.</li>
-<li><strong>face validity</strong>: A sense of the appropriateness of a measure based on one’s general understanding of the domain.</li>
-<li><strong>convergent validity</strong>: Extent to which a measure is statistically associated with a theoretically similar construct.</li>
-<li><strong>divergent validity</strong>: Extent to which a measure is statistically unrelated to irrelevant constructs.</li>
-<li><strong>measurement error</strong>: Random deviations between a true value and what is measured due to an imperfect measurement process.</li>
-<li><strong>outlier</strong>: A data value that is very different than the rest of the sample it belongs to.</li>
-<li><strong>missing value</strong>: A data point whose value is not recorded.</li>
-<li><strong>imputation</strong>: The principled process of replacing some data values with other values.</li>
-</ul>
-</section>
-<section id="new-r-functionality" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">2.6.3</span> New R functionality</h3>
-<ul>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c">c()</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/min-max-in-r">max() &amp; min()</a></li>
-<li><a href="https://rspatial.org/intr/4-indexing.html">indexing</a></li>
-<li><a href="https://www.geeksforgeeks.org/r-data-types/">data types</a></li>
-<li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/str">str()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/character">as.character()</a></li>
-<li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/numeric">as.numeric()</a></li>
-</ul>
-</section>
-<section id="further-reading" class="level3" data-number="2.6.4">
-<h3 data-number="2.6.4" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">2.6.4</span> Further reading</h3>
+<section id="connection-to-correlation" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="connection-to-correlation"><span class="header-section-number">11.8</span> connection to correlation</h2>
+<p>sd when simulating Y|X with given correlation r</p>
+<p><span class="math display">\[\sigma_{Y|X}^2 = \sigma_Y^2 - \frac{\text{Cov}(X,Y)^2}{\sigma_X^2}\]</span></p>
+<p><span class="math display">\[Var(Y|X) = Var(Y) - \frac{Cov(X,Y)^2}{Var(X)}\]</span></p>
+<p><span class="math display">\[Var(Y|X) = Var(Y)*(1 - r^2)\]</span></p>
+<ol start="2" type="1">
+<li>Decompose the total variation in Y</li>
+</ol>
+<p>Write</p>
+<p><span class="math display">\[Y=\hat{Y}+\epsilon\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\hat{Y} = \beta_0 + \beta_1X\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[Var(Y)=Var(\hat{Y}+\epsilon)\]</span></p>
+<p>Using the variance-of-a-sum formula:</p>
+<p><span class="math display">\[Var(Y)=Var(\hat{Y})+Var(\epsilon)+2Cov(\hat{Y},\epsilon)\]</span></p>
+<p>In ordinary least squares, the predicted values and residuals are uncorrelated, so</p>
+<p><span class="math display">\[Cov(\hat{Y},\epsilon)=0.\]</span></p>
+<p>Thus:</p>
+<p><span class="math display">\[Var(Y)=Var(\hat{Y}) + Var(\epsilon)\]</span></p>
+<p>This is the population version of the familiar regression decomposition:</p>
+<p>total variation=explained variation+unexplained variation</p>
+<ol start="3" type="1">
+<li>Express the variance of the predictions in terms of r</li>
+</ol>
+<p>Because <span class="math inline">\(\hat{Y} = \beta_0 + \beta_1X\)</span>, the intercept doesn’t affect the variance:</p>
+<p><span class="math display">\[Var(\hat{Y})=\beta_1^2 Var(X)\]</span></p>
+<p>For simple linear regression,</p>
+<p><span class="math display">\[\beta_1 = \frac{Cov(X,Y)}{Var(X)}\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[Var(\hat{Y})=\frac{Cov(X,Y)^2}{Var(X)}\]</span></p>
+<p>Now use</p>
+<p><span class="math display">\[r= \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}\]</span> Squaring:</p>
+<p><span class="math display">\[r^2 = \frac{Cov(X,Y)^2}{Var(X)Var(Y)}\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[Var(\hat{Y})=r^2 Var(Y)\]</span></p>
+<ol start="4" type="1">
+<li>Substitute into the variance decomposition</li>
+</ol>
+<p>We had</p>
+<p><span class="math display">\[Var(Y)=Var(\hat{Y})+Var(\epsilon)\]</span></p>
+<p>Substitute</p>
+<p><span class="math display">\[Var(\hat{Y})=r^2 Var(Y):\]</span> <span class="math display">\[Var(Y)=r^2 Var(Y)+Var(\epsilon)\]</span> Therefore,</p>
+<p><span class="math display">\[Var(\epsilon)=Var(Y)−r^2 Var(Y)\]</span> and hence</p>
+<p><span class="math display">\[Var(\epsilon)=Var(Y)(1−r^2)\]</span></p>
+<p>Under the homoscedastic regression model,</p>
+<p><span class="math display">\[Var(Y∣X)=Var(\epsilon)\]</span>,</p>
+<p>so:</p>
+<p><span class="math display">\[Var(Y∣X)=Var(Y)(1−r^2)\]</span></p>
+<p>This gives a very nice interpretation of r^2:</p>
+<p><span class="math display">\[\frac{Var(Y∣X)}{Var(Y)}=1−r^2\]</span></p>
+<p>In words, the proportion of variability in Y that remains within the conditional distribution, after accounting for X, is 1−r^2.</p>
+<p>Equivalently,</p>
+<p><span class="math display">\[r^2=1-\frac{Var(Y∣X)}{Var(Y)}\]</span> So r^2 isn’t just an abstract “proportion of variance explained.” It tells us how much the predictor reduces the variance of the target distribution relative to its unconditional variance.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-barnett1994" class="csl-entry" role="listitem">
-Barnett, Vic, and Toby Lewis. 1994. <em>Outliers in Statistical Data</em>. John Wiley &amp; Sons.
-</div>
-<div id="ref-enders2022" class="csl-entry" role="listitem">
-Enders, Craig K. 2022. <em>Applied Missing Data Analysis</em>. Guilford Publications.
-</div>
-</div>
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Even made up numbers! More later on why we would want to do that…<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Named after English mathematician George Boole, who developed a system of logic that is the basis for modern computer science.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Actually this applies to everyone, but the physical sciences have it on easy mode with all their direct measures and sensitive instruments.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Actually all of the time, since people only responded with whole numbers for years.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>again, <span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we’re dividing by not quite <span class="math inline">\(n\)</span>. Patience a little longer…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -3220,14 +2907,11 @@ Enders, Craig K. 2022. <em>Applied Missing Data Analysis</em>. Guilford Publicat
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter-1.html" class="pagination-link" aria-label="Statistics as a Way of Thinking">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></span>
+      <a href="./chapter-10.html" class="pagination-link" aria-label="Interpreting Model Coefficients">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Interpreting Model Coefficients</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter-3.html" class="pagination-link" aria-label="Organizing Data">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Organizing Data</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

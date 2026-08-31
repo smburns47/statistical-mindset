@@ -1975,6 +1975,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Interpreting Model Coefficients</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2535,8 +2541,9 @@ Warning
 <h3 data-number="5.5.4" class="anchored" data-anchor-id="which-measure-of-central-tendency-to-use"><span class="header-section-number">5.5.4</span> Which measure of central tendency to use?</h3>
 <p>When do you pick between mean, median, and mode to describe a distribution? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some things to think about when making your decision:</p>
 <ul>
-<li>The mean is a good default - many statistical tools are based on the mean, and lots of people know what it is.</li>
-<li>As already mentioned, if you have a highly skewed distribution, median may be better than mean for describing the middle of the data.</li>
+<li>Each central tendency measure tells you something slightly different. The mean is the value that the distribution is centered on; the median is the middle value in the ordered set; and the mode is the most common/typical value to expect.</li>
+<li>The mean is a good default if you aren’t sure what to use - many statistical tools are based on the mean, and lots of people know what it is.</li>
+<li>If you have a highly skewed distribution, median may be better than mean for describing where the bulk of the distribution is.</li>
 <li>If your data are categorical, it doesn’t make sense to calculate the mean or the median. Both the mean and the median rely on the idea that the numbers assigned to values are meaningful - i.e., can you say what the mean is of {apple, orange, banana, watermelon}? If data values aren’t related numerically, use the mode.</li>
 <li>If your data are whole number counts, you’re more likely to want to use the median than the mean. For instance, when measuring the typical number of children that an American household has, you can only have whole-numbered children. However, if we calculate the <a href="https://www.statista.com/statistics/718084/average-number-of-own-children-per-family">average child number per family in 2020</a>, we get 1.93. A partial amount of a child doesn’t really make sense when discussing the typical number of children one might find in a household. Instead, it would make more sense to use the median: 2.</li>
 </ul>
@@ -2656,7 +2663,7 @@ Warning
 </section>
 <section id="variance" class="level3 page-columns page-full" data-number="5.6.4">
 <h3 data-number="5.6.4" class="anchored" data-anchor-id="variance"><span class="header-section-number">5.6.4</span> Variance</h3>
-<p>Sum of squares represents the total amount of deviation from the mean that all the points in a distribution have. We squared the deviations before adding them together, which helped us deal with the summing-to-zero problem. However, we still have another issue. Say we want to compare the variation scores for two datasets, one with 10 observations and one with 100. In the 10-observation dataset, the values all deviate from their mean by 1. In the 100-observation dataset, the values all differ from their mean by 0.5. We would think the bigger dataset has less spread because of this. But if we use the sum of squares equation, 100*(0.5)^2 is bigger than 10*(1)^2. Sum of squares goes up as a function of dataset size, not just data variation.</p>
+<p>Sum of squares represents the total amount of deviation from the mean that all the points in a distribution have. We squared the deviations before adding them together, which helped us deal with the summing-to-zero problem. However, we still have another issue. Say we want to compare the variation scores for two datasets, one with 10 observations and one with 100. In the 10-observation dataset, the values all deviate from their mean by 1. In the 100-observation dataset, the values all differ from their mean by 0.5. We would think the bigger dataset has less spread because of this. But if we use the sum of squares equation, <span class="math inline">\(100*0.5^2\)</span> is bigger than <span class="math inline">\(10*1^2\)</span>. Sum of squares goes up as a function of dataset size, not just data variation.</p>
 <div class="page-columns page-full"><p>This is why it’s also good to represent the amount of deviation in a distribution relative to how many data points are in it. This is a metric called the <strong>variance</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> . Variance is commonly given the short hand mathematical notations of <span class="math inline">\(var(x)\)</span> or <span class="math inline">\(s^2\)</span> (the reason for the second one will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>variance</strong> = a measure of variation calculated by dividing the sum of squares by n-1</span></div></div>
 <p><span id="eq-variance"><span class="math display">\[s^2 = \frac{\sum_{i=1}^{n} (x_i-\bar{x})^2}{n-1} \tag{5.4}\]</span></span></p>
 <p>It is very similar to the equation for sum of squares, except for one change. We take the sum of squares, and then divide the whole thing by n-1.</p>
@@ -2798,7 +2805,7 @@ Note
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(np(1-p)/(n-1)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> as</p>
+<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(p(1-p)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.3</span></a> as</p>
 <p><span class="math display">\[\sum_{i=1}^{n}(x_i-p)^2\]</span></p>
 <p>Because <span class="math inline">\(x_i\)</span> in a binary variable can only be 0 or 1, the deviation part of the equation can only ever be <span class="math inline">\((1-p)^2\)</span> or <span class="math inline">\((0-p)^2 = p^2\)</span>. If we let <span class="math inline">\(m\)</span> equal the number of 1s and <span class="math inline">\(n-m\)</span> equal the number of 0s, we can break down the sum to get:</p>
 <p><span class="math display">\[m(1-p)^2 + (n-m)p^2\]</span></p>
@@ -2807,8 +2814,9 @@ Note
 <p><span class="math display">\[np(1-p)(1-p + p)\]</span></p>
 <p><span class="math inline">\(1-p + p\)</span> is simply 1, so for the sum of squares of a binary variable we are left with:</p>
 <p><span class="math display">\[np(1-p)\]</span></p>
-<p>To get to variance of this variable, like we saw with getting variance out of the sum of squares for a numeric variable, we divide by <span class="math inline">\(n-1\)</span>:</p>
+<p>To get to variance of this variable, if we divide by <span class="math inline">\(n\)</span> (to calculate an “average deviation per observation”), we would end up with <span class="math inline">\(p(1-p)\)</span>, the commonly-referenced equation for the variance of a binary variable. However if we divide by <span class="math inline">\(n-1\)</span> instead to calculate variance like we did earlier in this chapter with the interval variable, we get:</p>
 <p><span class="math display">\[s^2 = \frac{np(1-p)}{n-1}\]</span></p>
+<p><span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we usually use <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>.</p>
 <p>To derive a generalized equation for a multilevel categorical variable, suppose there are <span class="math inline">\(k\)</span> categories and <span class="math inline">\(p_j\)</span> stands for the proportion of 1s in the jth dummy variable. Summing up the variances for each dummy variable gives us:</p>
 <p><span class="math display">\[\sum_{j=1}^{k} s_j^2 = \frac{n}{n-1} \sum_{j=1}^{k} p_j(1-p_j) = \frac{n}{n-1} (1 - \sum_{j=1}^{k} p_j^2)\]</span></p>
 </div>
