@@ -403,16 +403,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
   <ul class="collapse">
-  <li><a href="#not-another-teen-movie-psych-stats-book" id="toc-not-another-teen-movie-psych-stats-book" class="nav-link" data-scroll-target="#not-another-teen-movie-psych-stats-book">Not Another <del>Teen Movie</del> Psych Stats Book</a>
-  <ul class="collapse">
-  <li><a href="#psychologists-need-quantitative-literacy" id="toc-psychologists-need-quantitative-literacy" class="nav-link" data-scroll-target="#psychologists-need-quantitative-literacy">Psychologists Need Quantitative Literacy</a></li>
-  <li><a href="#quantitative-literacy-doesnt-need-to-start-with-math-stats" id="toc-quantitative-literacy-doesnt-need-to-start-with-math-stats" class="nav-link" data-scroll-target="#quantitative-literacy-doesnt-need-to-start-with-math-stats">Quantitative Literacy Doesn’t Need to <em>Start</em> with Math Stats</a></li>
-  </ul></li>
-  <li><a href="#foundations-of-this-book" id="toc-foundations-of-this-book" class="nav-link" data-scroll-target="#foundations-of-this-book">Foundations of this Book</a></li>
-  <li><a href="#who-this-book-is-for" id="toc-who-this-book-is-for" class="nav-link" data-scroll-target="#who-this-book-is-for">Who this Book is For:</a></li>
-  <li><a href="#intended-workflow" id="toc-intended-workflow" class="nav-link" data-scroll-target="#intended-workflow">Intended Workflow:</a></li>
-  <li><a href="#assumed-knowledge" id="toc-assumed-knowledge" class="nav-link" data-scroll-target="#assumed-knowledge">Assumed Knowledge:</a></li>
-  <li><a href="#code-versions" id="toc-code-versions" class="nav-link" data-scroll-target="#code-versions">Code Versions</a></li>
+  <li><a href="#not-another-teen-movie-psych-stats-book" id="toc-not-another-teen-movie-psych-stats-book" class="nav-link" data-scroll-target="#not-another-teen-movie-psych-stats-book">Not Another <del>Teen Movie</del> Psych Stats Book</a></li>
+  <li><a href="#core-ideas-of-this-book" id="toc-core-ideas-of-this-book" class="nav-link" data-scroll-target="#core-ideas-of-this-book">Core Ideas of this Book</a></li>
+  <li><a href="#who-this-book-is-for" id="toc-who-this-book-is-for" class="nav-link" data-scroll-target="#who-this-book-is-for">Who this Book is For</a></li>
+  <li><a href="#intended-workflow" id="toc-intended-workflow" class="nav-link" data-scroll-target="#intended-workflow">Intended Workflow</a></li>
+  <li><a href="#assumed-knowledge" id="toc-assumed-knowledge" class="nav-link" data-scroll-target="#assumed-knowledge">Assumed Knowledge</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -458,68 +453,46 @@ ul.task-list li input[type="checkbox"] {
 <section id="not-another-teen-movie-psych-stats-book" class="level2">
 <h2 class="anchored" data-anchor-id="not-another-teen-movie-psych-stats-book">Not Another <del>Teen Movie</del> Psych Stats Book</h2>
 <p>Every university program in the psychological and brain sciences requires its students to take a statistics class at some point. The students dutifully comply in order to get their degree, though some with more enthusiasm than others.</p>
-<p>In my own psychological training, years ago, the only thing I remember of my undergraduate stats class was that there was a lot of memorization and I didn’t really want to be there.</p>
-<ul>
-<li>Why another intro psych stats book?</li>
-<li>We’ve been teaching it for a long time</li>
-<li>Something is rotten in the state of Denmark. Still big fundamental problems to the way psychology research is done.</li>
-<li>Increasingly other good resources available (links as aside), but most of them at a more advanced level - pitched at correcting misconceptions from intro stats rather than <em>being</em> the intro stats.</li>
-<li>This book comes out of two strong opinions:</li>
-</ul>
-<section id="psychologists-need-quantitative-literacy" class="level3">
-<h3 class="anchored" data-anchor-id="psychologists-need-quantitative-literacy">Psychologists Need Quantitative Literacy</h3>
-<ul>
-<li>The field nominally recognizes this by requiring all psych majors take a stats class, but it’s often treated as the unwanted stepchild of the psych curriculum, just a hurdle to jump over before you get to the meat of the scholarship.</li>
-<li>But all the problems in the literature suggest that better training is needed.</li>
-<li>Kelvin quote on something isn’t a science unless it can be quantified. Science isn’t the only valid way of knowledge about the universe and the human condition, but if we claim to be a psychological <em>science</em>, we need to walk the walk of that approach.</li>
-<li>Some argue that all science teams should have a stats consultant to do this work - don’t trust yourself to do the complicated stuff. Stats consultants are heroes in the academic world but it is still problematic to offload the statistical thinking to them because statistical models <em>are</em> the theories we are testing - if you can’t formalize your hypothesis as a model and clearly understand the assumptions of it, you don’t understand your data or your theory very well. Also, bad design decisions get made before a stats person comes onto the team, wasting research resources on a study that can’t answer anything useful.</li>
-</ul>
+<p>In my own psychological training, years ago, the only thing I remember of my undergraduate stats class was that I didn’t really want to be there. It felt like a book of magic spells I was supposed to memorize in order to be allowed to do what I was actually in interested in, studying the basics of why people do what they do.</p>
+<p>It wasn’t until half way through graduate school when I enrolled in a statistical modeling class, and things finally <em>made sense</em>. The logic of what statistical models mean, why they are useful, and how they are deeply relevant to testing scientific theories (indeed, <em>are</em> the theories) was finally clear. Not only did I finally understand statistics better, I became more passionate about it.</p>
+<p>I don’t think this is an uncommon experience for psychology students. I have been consulting on and teaching data analysis methods to undergraduate students for many years now, and very frequently new students ask me “what kind of test can I use on my data?” while looking at a drop down list from a stats software menu, without understanding what that test is <em>testing</em> or whether it would even answer their research question. Worse, sometimes they don’t even <em>have</em> a quantifiable research question and are just designing datasets around a memory that analysts are supposed to compare two groups to each other somehow.</p>
+<p>It is also common in the wider psychological research community to see fundamental problems with the ways people perform and interpret their data analyses, despite the fact that statistics has been required as part of undergraduate and graduate training for a century<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>I think this lack of understanding stems from the way statistics is traditionally taught to psychology students. It is often taught as a collection of tools, focusing on hand calculation with toy data (and thus limited to analyses that are hand calculable.) It emphasizes population inference early and elevates null hypothesis testing as the best way to answer research questions. But this doesn’t really connect with the <em>reason</em> students are in the classroom in the first place: to understand the “how” and “why” of human cognition and behavior.</p>
+<p>My gamble is that we can teach psychological statistics in a way that connects with and satisfies this fundamental motivation more directly - by focusing on data generation processes more than specific tests; seeing data emerge through simulation rather than only viewing it after it’s written down; and exploring different types of research questions about the data generation process instead of limiting our imagination to a null hypothesis. I believe this approach inspires more persistence and passion in further analytic training and eventually better theory building in the field.</p>
+<p>I am not alone in this thinking, and this book makes reference to many other excellent resources that take such an approach. However, most of these resources are pitched for advanced students, written to help them overcome misconceptions they learned previously. I haven’t seen as many good resources written for introductory students, aimed at instilling modern statistical instincts from the beginning.</p>
+<p>That is the genesis of this book. Readers should not expect it to be a thorough reference for all statistical modeling approaches or a deep dive into the mathematical derivations of modeling tools. However, I hope it can function as a sort of statistical “stem cell,” giving students foundational ways of thinking about models and how they are useful. It will then motivate and facilitate further training in modern statistical modeling and data analysis.</p>
 </section>
-<section id="quantitative-literacy-doesnt-need-to-start-with-math-stats" class="level3">
-<h3 class="anchored" data-anchor-id="quantitative-literacy-doesnt-need-to-start-with-math-stats">Quantitative Literacy Doesn’t Need to <em>Start</em> with Math Stats</h3>
+<section id="core-ideas-of-this-book" class="level2">
+<h2 class="anchored" data-anchor-id="core-ideas-of-this-book">Core Ideas of this Book</h2>
+<p>With that background in mind, these are the book’s main learning goals:</p>
 <ul>
-<li>This may be a surprising thing to hear considering what was in the first opinion.</li>
-<li>Math stats classes get to the heart of the tools used in stats, with theorems and derivations. A lot of students learn well from that and come into scientific practice with a strong quantitative foundation.</li>
-<li>…And a lot don’t. Math is abstract and it is not always clear how it connects to the “why” of doing it. This feeds the psych researcher’s treatment of it as magic spells to chant to give them permission to publish. And if a student doesn’t become a researcher, they may not always connect how marble drawing problems in their probability class connects to risk assessment about vaccines in their own life.</li>
-<li>A different approach to teaching students to value quantitative skills is to start with the personally-relevant problems and the logic of answering them. In psych stats, that means talking a lot about concepts like uncertainty, making predictions, data quality, etc. before ever calculating a variance statistic.</li>
-<li>This also means the instructor doesn’t need to commit to one school of statistics at the beginning. Whether you are Bayesian or Frequentist, you have similar research goals that are served by different approaches/assumptions. Conversely, there are lots of other research approaches that traditionally fall outside of the psych stats curriculum but that are worthy of understanding and use.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> An intro curriculum can teach the variety of ways to pose and answer a statistical question, and why psychologists would care about these, without getting into deep math right away. Afterwards, a student can pursue the more formal math training with a foundational understanding of its importance and a stronger intrinsic motivation for it.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-</ul>
-</section>
-</section>
-<section id="foundations-of-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="foundations-of-this-book">Foundations of this Book</h2>
-<p>With those positions in mind, this is the book’s main learning goals:</p>
-<ul>
-<li>know your estimand</li>
+<li>be specific: about your research focus, question, measurements, population, hypotheses</li>
 <li>there is uncertainty, variation in a variable we want to know about</li>
 <li>information from other variables can help us reduce that uncertainty (model building)</li>
 <li>research questions focus on different reasons for doing this: documenting the association (description), reducing the uncertainty as much as possible (prediction), understanding how important predictors change uncertainty in the outcome (explanation)</li>
 <li>different levels of specificity for hypotheses: any sort of uncertainty reduction (NHST), comparing different options for least uncertainty (model comparison), making point predictions</li>
 </ul>
-<p>And it’s strategy to achieving them:</p>
+<p>And its strategy to achieving them:</p>
 <ul>
-<li>Organized around types of questions/needs, not specific tools or frameworks</li>
+<li>Organized around types of questions/needs, not specific tools</li>
 <li>Model-based rather than collection of tools – build understanding. Leaves out some things that might otherwise appear in an intro stats class like chi-square tests, but builds a foundation that more flexibly prepares for future research possibilities with modeling.</li>
-<li>De-emphasize NHST</li>
+<li>De-emphasize hypothesis testing</li>
 <li>Interpretation more than calculation</li>
 <li>Doing stats, with code</li>
 <li>Learning stats with domain-specific guidance</li>
 </ul>
 </section>
 <section id="who-this-book-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-this-book-is-for">Who this Book is For:</h2>
+<h2 class="anchored" data-anchor-id="who-this-book-is-for">Who this Book is For</h2>
 <p>Undergraduates or early grad students who wish to read and conduct their own research. Brain &amp; behavior topics (neuro, psych, cog sci, behavioral science, etc.); non-academics who wish to be more critical consumers of cognitive &amp; behavioral research.</p>
 </section>
 <section id="intended-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="intended-workflow">Intended Workflow:</h2>
+<h2 class="anchored" data-anchor-id="intended-workflow">Intended Workflow</h2>
 <p>Read, practice inline code, do problem sets, keep this for reference.</p>
 </section>
 <section id="assumed-knowledge" class="level2">
-<h2 class="anchored" data-anchor-id="assumed-knowledge">Assumed Knowledge:</h2>
+<h2 class="anchored" data-anchor-id="assumed-knowledge">Assumed Knowledge</h2>
 <p>Mathematics up through algebra, familiarity with intro psych content</p>
-</section>
-<section id="code-versions" class="level2">
-<h2 class="anchored" data-anchor-id="code-versions">Code Versions</h2>
 
 
 </section>
@@ -527,8 +500,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>move over NHST.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>I speak with some experience in that learning journey, being a former math-phobe until a modeling class in grad school finally taught me why the hell I actually care about a derivative.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Psychologist and philosopher of science Paul Meehl put it harshly but perhaps not incorrectly: “The failure of some in our profession to recognize solutions to quantitative problems or to apply them to controversies is partly due to self-selection in the social sciences for poor quantitative talent; but in psychology it is due even more to the lamentable lack of mathematical education of psychology majors.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
