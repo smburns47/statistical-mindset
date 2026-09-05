@@ -375,7 +375,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\ngss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\ngss_4 <- gss |>\n  filter(\n    number_of_brothers_and_sisters == 4\n    )\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model <- lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=gss)\nYhat_4 <- predict(model, newdata=data.frame(number_of_brothers_and_sisters=4))\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  geom_vline(xintercept = Yhat_4, color = \"red\") +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_4$education_diffs <- gss_4$highest_year_of_school_completed - Yhat_4\n\nggplot(gss_4, aes(x=education_diffs)) +\n  geom_histogram() +\n  labs(title = \"Wrong guesses about education when predicting 13.62 for people with 4 siblings\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed),\n    !is.na(number_of_brothers_and_sisters)\n  )\n\ngss_clean$residuals <- #your code here\n  \nggplot(gss_clean, aes(x=residuals)) +\n  geom_histogram() +\n  labs(title = \"Model residuals\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sum(gss_clean$residuals)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sse <- #your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model2 <- lm(highest_year_of_school_completed ~ respondents_sex, \n             data=gss_clean)\n\ngss_clean$residuals2 <- resid(model2)\n\nsum(gss_clean$residuals2^2)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#k = 2 when we have beta0 and beta1\nmse <- sse / (nrow(gss_clean) - 2)\nmse","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rmse <- sqrt(mse)\nrmse","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sigma(model)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\ngss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\ngss_4 <- gss |>\n  filter(\n    number_of_brothers_and_sisters == 4\n    )\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model <- lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=gss)\nYhat_4 <- predict(model, newdata=data.frame(number_of_brothers_and_sisters=4))\n\nggplot(gss_4, aes(x=highest_year_of_school_completed)) +\n  geom_histogram() +\n  geom_vline(xintercept = Yhat_4, color = \"red\") +\n  labs(title = \"Education attainment among people with 4 siblings\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_4$education_diffs <- gss_4$highest_year_of_school_completed - Yhat_4\n\nggplot(gss_4, aes(x=education_diffs)) +\n  geom_histogram() +\n  labs(title = \"Wrong guesses about education when predicting 13.62 for people with 4 siblings\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed),\n    !is.na(number_of_brothers_and_sisters)\n  )\n\ngss_clean$residuals <- #your code here\n  \nggplot(gss_clean, aes(x=residuals)) +\n  geom_histogram() +\n  labs(title = \"Model residuals\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sum(gss_clean$residuals)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sse <- #your code here","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model2 <- lm(highest_year_of_school_completed ~ respondents_sex, \n             data=gss_clean)\n\ngss_clean$residuals2 <- resid(model2)\n\nsum(gss_clean$residuals2^2)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#k = 2 when we have beta0 and beta1\nmse <- sse / (nrow(gss_clean) - 2)\nmse","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"rse <- sqrt(mse)\nrse","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sigma(model)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(gss, \n       aes(x=number_of_brothers_and_sisters, \n           y=highest_year_of_school_completed)) +\n  geom_jitter() +\n  geom_hline(yintercept = 14.72, color=\"red\")","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"null_model <- lm(highest_year_of_school_completed ~ NULL, \n                 data=gss_clean)\nnull_model\n\n#should be the same as:\nmean(gss_clean$highest_year_of_school_completed)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sigma(null_model)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sst <- sum(resid(null_model)^2)\nsst","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sst - sse","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#calulate R2 ","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"summary(model)","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model_summary <- summary(model)\nstr(model_summary)","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#your code here","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1983,12 +1983,21 @@ window.Quarto = {
   <ul>
   <li><a href="#prediction-accuracy" id="toc-prediction-accuracy" class="nav-link active" data-scroll-target="#prediction-accuracy"><span class="header-section-number">11.1</span> Prediction accuracy</a></li>
   <li><a href="#quantifying-prediction-accuracy" id="toc-quantifying-prediction-accuracy" class="nav-link" data-scroll-target="#quantifying-prediction-accuracy"><span class="header-section-number">11.2</span> Quantifying prediction accuracy</a></li>
-  <li><a href="#prediction-improvement" id="toc-prediction-improvement" class="nav-link" data-scroll-target="#prediction-improvement"><span class="header-section-number">11.3</span> Prediction improvement</a></li>
-  <li><a href="#standardized-prediction-accuracy" id="toc-standardized-prediction-accuracy" class="nav-link" data-scroll-target="#standardized-prediction-accuracy"><span class="header-section-number">11.4</span> Standardized prediction accuracy</a></li>
-  <li><a href="#relationship-with-correlation" id="toc-relationship-with-correlation" class="nav-link" data-scroll-target="#relationship-with-correlation"><span class="header-section-number">11.5</span> Relationship with correlation</a></li>
-  <li><a href="#sources-of-unexplained-uncertainty" id="toc-sources-of-unexplained-uncertainty" class="nav-link" data-scroll-target="#sources-of-unexplained-uncertainty"><span class="header-section-number">11.6</span> Sources of unexplained uncertainty</a></li>
-  <li><a href="#estimands-in-statistical-models" id="toc-estimands-in-statistical-models" class="nav-link" data-scroll-target="#estimands-in-statistical-models"><span class="header-section-number">11.7</span> Estimands in statistical models</a></li>
-  <li><a href="#connection-to-correlation" id="toc-connection-to-correlation" class="nav-link" data-scroll-target="#connection-to-correlation"><span class="header-section-number">11.8</span> connection to correlation</a></li>
+  <li><a href="#the-null-model" id="toc-the-null-model" class="nav-link" data-scroll-target="#the-null-model"><span class="header-section-number">11.3</span> The null model</a></li>
+  <li><a href="#prediction-improvement-over-the-null-model" id="toc-prediction-improvement-over-the-null-model" class="nav-link" data-scroll-target="#prediction-improvement-over-the-null-model"><span class="header-section-number">11.4</span> Prediction improvement over the null model</a></li>
+  <li><a href="#standardized-prediction-accuracy" id="toc-standardized-prediction-accuracy" class="nav-link" data-scroll-target="#standardized-prediction-accuracy"><span class="header-section-number">11.5</span> Standardized prediction accuracy</a></li>
+  <li><a href="#prediction-error-as-uncertainty" id="toc-prediction-error-as-uncertainty" class="nav-link" data-scroll-target="#prediction-error-as-uncertainty"><span class="header-section-number">11.6</span> Prediction error as uncertainty</a></li>
+  <li><a href="#sources-of-uncertainty" id="toc-sources-of-uncertainty" class="nav-link" data-scroll-target="#sources-of-uncertainty"><span class="header-section-number">11.7</span> Sources of uncertainty</a>
+  <ul class="collapse">
+  <li><a href="#missing-parts-of-the-data-generation-process" id="toc-missing-parts-of-the-data-generation-process" class="nav-link" data-scroll-target="#missing-parts-of-the-data-generation-process"><span class="header-section-number">11.7.1</span> Missing parts of the data generation process</a></li>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link" data-scroll-target="#measurement-error"><span class="header-section-number">11.7.2</span> Measurement error</a></li>
+  </ul></li>
+  <li><a href="#different-model-pieces-as-different-estimands" id="toc-different-model-pieces-as-different-estimands" class="nav-link" data-scroll-target="#different-model-pieces-as-different-estimands"><span class="header-section-number">11.8</span> Different model pieces as different estimands</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">11.9</span> Chapter summary</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">11.9.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">11.9.2</span> New concepts</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2302,27 +2311,27 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><img src="images/header-ch11.png" class="img-fluid"></p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>So far we have learned how to write down our ideas of the data generation process as a statistical model, automatically fit the model, assess fit, and interpret the <span class="math inline">\(\beta\)</span> coefficients for what they mean about the role of an explanatory variable. This is useful information both for explanation research goals (e.g.&nbsp;“how big is the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>?”) and for prediction goals (e.g.&nbsp;“what is the most likely value of <span class="math inline">\(Y\)</span> given what we know about <span class="math inline">\(X\)</span>?”).</p>
-<p>Stopping our model interpretation here, however, can leave us with an incomplete understanding. Seeing a big number for <span class="math inline">\(\beta\)</span> might make us think that <span class="math inline">\(X\)</span> is the most important variable for explaining <span class="math inline">\(Y\)</span>, when in fact this model of the data generation process is critically incomplete and there is still uncertainty in <span class="math inline">\(Y\)</span> that could be explained better with other information. Similarly, making a prediction for some value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> doesn’t tell us how good that guess is - how far off will we be when we make such a prediction?</p>
+<p>Last chapter we interpreted the <span class="math inline">\(\beta\)</span> coefficients in the prediction equation of a statistical model and evaluated what they mean about the role of an explanatory variable in a data generation process. This is useful information both for explanation research goals (e.g.&nbsp;“how big is the effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>?”) and for prediction goals (e.g.&nbsp;“what is the most likely value of <span class="math inline">\(Y\)</span> given what we know about <span class="math inline">\(X\)</span>?”).</p>
+<p>Stopping our model interpretation here, however, can leave us with an incomplete understanding. Seeing a big number for <span class="math inline">\(\beta\)</span> might make us think that <span class="math inline">\(X\)</span> is the most important variable for explaining <span class="math inline">\(Y\)</span>, when this model of the data generation process could actually be critically incomplete and there is still uncertainty in <span class="math inline">\(Y\)</span> that would be explained better with other information. Similarly, making a prediction for some value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> doesn’t tell us how good that guess is - how far off will we be when we make such a prediction?</p>
 <p>In order to have a more complete understanding of our statistical model’s performance, we also need to interpret the other parameter that the model fitting procedure gives us: <span class="math inline">\(\sigma\)</span>, in the observation model <span class="math inline">\(Y \sim N(\mu, \sigma)\)</span>. In this chapter we will cover this interpretation step.</p>
 <section id="prediction-accuracy" class="level2 page-columns page-full" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="prediction-accuracy"><span class="header-section-number">11.1</span> Prediction accuracy</h2>
 <p>Sometimes in a prediction goal, we want to predict the summary statistic of a large group of data. This is useful to do when our research is about group-level attributes, like overall student graduation rate under different financial aid strategies or the average number of customer service calls to expect at different times of day.</p>
-<p>However, other times your goal is to make predictions about individual data points. In this case the estimand is not a summary statistic of a group, such as <span class="math inline">\(\mu_{Y|X}\)</span>, but the value of the target variable for one specific observation, <span class="math inline">\(y_i\)</span> when <span class="math inline">\(X=x_i\)</span>.</p>
+<p>However, other times your goal is to make predictions about individual data points. In this case the estimand is not a summary statistic of a group, such as <span class="math inline">\(\mu_{Y|X}\)</span>, but the value of the target variable for one specific observation <span class="math inline">\(y_i\)</span> when <span class="math inline">\(X=x_i\)</span>.</p>
 <p>We face some difficulty in doing this when we’re dealing with a probabilistic data generation process. Recall that in this sort of process, we <em>can’t</em> perfectly predict specific data values, only their probability of happening via the parameter of the probability distribution output by the prediction equation. For instance, here is a plot of the distribution of <code>highest_year_of_school_completed</code> values in the GSS dataset for people who have 4 siblings specifically:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Despite having the same value on the explanatory variable, these people still vary in their education attainment. So what do we do if we need to guess one specific value to accomplish our research goal?</p>
-<p>If we don’t know someone’s <span class="math inline">\(y_i\)</span> value, but we do know their <span class="math inline">\(x_i\)</span> value and we have a best-fitting statistical model that tells us <span class="math inline">\(P(Y|X)\)</span>, we could go with whatever value of <span class="math inline">\(Y\)</span> is <em>most likely</em> to happen when <span class="math inline">\(X=x_i\)</span>. In the model we’ve been working with the last couple chapters, <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma)\)</span> and <span class="math inline">\(\mu = \beta_0 + \beta_1 X\)</span>, we are assuming the output of the data generation process is a normal probability distribution influenced by <span class="math inline">\(X\)</span>. If this is correct, then the most likely value to happen is the mean of that distribution, <span class="math inline">\(\mu\)</span>. So we can use our model to predict the most likely value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> by calculating <span class="math inline">\(\mu = \beta_0 + \beta_1 X\)</span>. We will call our prediction about someone’s <span class="math inline">\(Y\)</span> value <span class="math inline">\(\hat{Y}\)</span>, or “Y hat,” to distinguish it from the true value of <span class="math inline">\(Y\)</span> for that person, <span class="math inline">\(y_i\)</span>. Essentially, by making a prediction <span class="math inline">\(\hat{Y} = \beta_0 + \beta_1 X\)</span>, we are treating the data generation process as deterministic.</p>
+<p>If we don’t know someone’s <span class="math inline">\(y_i\)</span> value, but we do know their <span class="math inline">\(x_i\)</span> value and we have a best-fitting statistical model that tells us <span class="math inline">\(P(Y|X)\)</span>, we could go with whatever value of <span class="math inline">\(Y\)</span> is <em>most likely</em> to happen when <span class="math inline">\(X=x_i\)</span>. We will call this guess we make for the target value <span class="math inline">\(\hat{Y}\)</span> (“Y hat”) to distinguish it from real <span class="math inline">\(Y\)</span> values. In the model we’ve been working with the last couple chapters, <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma)\)</span> and <span class="math inline">\(\mu = \beta_0 + \beta_1 X\)</span>, we are assuming the output of the data generation process is a normal probability distribution influenced by <span class="math inline">\(X\)</span>. If this is correct, then the most likely value to happen, and the one we should use for <span class="math inline">\(\hat{Y}\)</span>, is the mean of that distribution <span class="math inline">\(\mu\)</span>. So we can use our model to predict the most likely value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span> by calculating <span class="math inline">\(\hat{Y} = \mu = \beta_0 + \beta_1 X\)</span>. This is essentially treating the prediction equation as deterministic of an output value, even though we know the data generation process is probabilistic.</p>
 <p>Here is the predicted <span class="math inline">\(\hat{Y}\)</span> value for people with <span class="math inline">\(X=4\)</span>, drawn as a red line on the previous histogram:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Even though 13.62 is the most likely value in this conditional probability distribution, if we had guessed this value as the years of education for everyone with 4 siblings, clearly we’d be wrong most of the time<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Written mathematically, <span class="math inline">\(Y - \hat{Y} \neq 0\)</span>. We’d be <em>less</em> wrong on average than if we had guessed any other number, but still wrong because there is a difference between our prediction <span class="math inline">\(\hat{Y}\)</span> and the true value <span class="math inline">\(y_i\)</span> for each person. This is known as the prediction error or <strong>residual</strong> for that person under our current statistical model. It is often denoted as <span class="math inline">\(\epsilon\)</span>, such that:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual</strong> = the difference between what a statistical model predicts for an individual observation and the observation’s true value.</span></div></div>
+<div class="page-columns page-full"><p>Even though 13.62 is the most likely value in this conditional probability distribution, if we had guessed this value as the years of education for everyone with 4 siblings, clearly we’d be wrong most of the time<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Written mathematically, <span class="math inline">\(Y - \hat{Y} \neq 0\)</span>. We’d be <em>less</em> wrong on average than if we had guessed any other number since this is the most likely value of the normal conditional probability distribution, but we’re still wrong because there is a difference between our prediction <span class="math inline">\(\hat{Y}\)</span> and the true value <span class="math inline">\(y_i\)</span> for each person. This is known as the prediction error or <strong>residual</strong> for that person under our current statistical model. It is often denoted as <span class="math inline">\(\epsilon\)</span>, such that:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual</strong> = the difference between what a statistical model predicts for an individual observation and the observation’s true value.</span></div></div>
 <p><span id="eq-residual"><span class="math display">\[\epsilon = Y - \hat{Y} \tag{11.1}\]</span></span></p>
 <p>How big is our prediction error for each person? We can again plot this, but this time plot the difference between our guess and the true value.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The shape of the histogram didn’t change, but the values on the x-axis did. Now, we are looking at the difference between our guess <span class="math inline">\(\hat{Y}\)</span> (for which we are using the mean of the conditional probability distribution, <span class="math inline">\(\mu_{Y|X=4}\)</span>) and each real data point (<span class="math inline">\(y_i\)</span>). Think of these residual values as how much our guess missed by.</p>
+<p>The shape of the histogram didn’t change, but the values on the x-axis did. Now, we are looking at the difference between our guess <span class="math inline">\(\hat{Y}\)</span> and each real data point. Think of these residual values as how much our guess missed by.</p>
 <p>Now let’s plot the residuals for every data point in this data set, not just the people with 4 siblings. We can find these quickly with the function <code>resid()</code>, where the argument is the model object.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
@@ -2339,15 +2348,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>We can think of each residual as a prediction error. We used a different value for <span class="math inline">\(\hat{Y}\)</span> for each person depending on what their <span class="math inline">\(x_i\)</span> value is and what the prediction equation <span class="math inline">\(\beta_0 + \beta_1 X\)</span> calculated, but we can still compute <span class="math inline">\(Y - \hat{Y}\)</span> for everyone and thus get a residual value. The distribution of all of them together is called the <strong>error distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>error distribution</strong> = the distribution of residuals from a statistical model.</span></div></div>
+<div class="page-columns page-full"><p>We can think of each residual as a prediction error. We used a different value for <span class="math inline">\(\hat{y}_i\)</span> for each person depending on what their <span class="math inline">\(x_i\)</span> value is and what the prediction equation <span class="math inline">\(\beta_0 + \beta_1 x_i\)</span> calculated, but we can still compute <span class="math inline">\(y_i - \hat{y}_i\)</span> for everyone and thus get a residual value. The distribution of all of them together is called the error distribution or <strong>residual distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual distribution</strong> = the distribution of residuals from a statistical model; also known as the error distribution.</span></div></div>
 </section>
 <section id="quantifying-prediction-accuracy" class="level2 page-columns page-full" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="quantifying-prediction-accuracy"><span class="header-section-number">11.2</span> Quantifying prediction accuracy</h2>
-<p>If prediction for any individual observation is our goal, we would like to quantify how good our model is for making predictions regardless of what someone’s value on <span class="math inline">\(X\)</span> may be. In other words, it would be useful to summarize this error distribution. We can lean on the distribution summary metrics we already know to do this.</p>
+<p>If prediction for any individual observation is our goal, we would like to quantify how good our model is for making predictions regardless of what someone’s value on <span class="math inline">\(X\)</span> may be. In other words, it would be useful to summarize this whole residual distribution. We can lean on the distribution summary metrics we already know to do this.</p>
 <p>Recall when we first learned about spread metrics in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>. We first saw that trying to quantify spread as simply the sum of all deviations from a central value didn’t work, because some values were negative and positive and they canceled each other out. Because model residuals can also be positive or negative (we can guess too low or too high), this same reality applies:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Instead, if we make sure all deviation values are positive by squaring them, we can calculate the sum of squares. Specifically, when talking about residuals, we can sum up the squared residuals to do the same thing since a residual is a deviation score between a predicted value and a true value. This metric, when talking about model residuals, is called the residual sum of squares (RSS) or <strong>sum of squared errors</strong> (SSE).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sum of squared errors</strong> = sum of squares calculated for an error distribution.</span></div></div>
+<div class="page-columns page-full"><p>Instead, if we make sure all deviation values are positive by squaring them, we can calculate the sum of squares. Specifically, when talking about residuals, we can sum up the squared residuals since a residual is a deviation score between a predicted value and a true value. This metric, when talking about model residuals, is called the residual sum of squares or <strong>sum of squared errors</strong> (SSE)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sum of squared errors (SSE)</strong> = sum of squares calculated for a model’s residual distribution; also known as the residual sum of squares</span></div></div>
 <p><span id="eq-sse"><span class="math display">\[SSE = \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2 \tag{11.2}\]</span></span></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
@@ -2359,135 +2368,303 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Calculate the sum of squared errors of the residuals.</p>
+<p>Calculate the sum of squared errors for the predictions <code>model</code> makes.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Because this is just the sum of squares equation applied to a vector of residuals, the same interpretation applies to this value as we would make with any other sum of squares. For the same set of data, a larger value means more spread in the residuals, which means our model is worse at predicting individual data points. Here’s the sum of squared error calculated for the model predicting education using respondent sex. Which model do you think would make more accurate predictions - the one above using number of siblings, or using sex?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>sse &lt;- sum(gss_clean$residuals^2)</code></p>
+</div>
+</div>
+</div>
+<div id="fig-ch11-sse" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch11-sse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch11-sse.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch11-sse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Visualization of where the magnitudes come from for residuals vs.&nbsp;squared residual vs.&nbsp;sum of the squared residuals (sum of squared error).
+</figcaption>
+</figure>
+</div>
+<p>Because this is just the sum of squares equation applied to a vector of residuals, the same interpretation applies to this value as we would make with any other sum of squares. For the same set of data, a larger value means more spread in the residual distribution. More spread in the residuals means there are more large errors relative to small ones - our model is worse at predicting individual data points.</p>
+<p>Here’s the sum of squared error calculated for the model predicting education using respondent sex. Which model do you think would make more accurate predictions - the one above using number of siblings, or using sex?</p>
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>However, a larger <span class="math inline">\(SSE\)</span> value can also occur just because there are more data points. So we can also calculate the typical amount of squared error per observation, called the <strong>mean squared error</strong> (MSE). This is similar to calculating the variance of the error distribution, except instead of dividing but <span class="math inline">\(n-1\)</span>, we divide by <span class="math inline">\(n-k\)</span> where <span class="math inline">\(k\)</span> is the number of coefficients in the prediction equation of the model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean squared error</strong> = variance of the error distribution.</span></div></div>
-<p><span id="eq-sse"><span class="math display">\[MSE = \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k} \tag{11.3}\]</span></span></p>
+<div class="page-columns page-full"><p>However, a larger SSE value can also occur just because there are more data points. So we can also calculate the typical amount of squared error per observation, called the <strong>mean squared error</strong> (MSE). This is similar to calculating the variance of the error distribution, except instead of dividing by <span class="math inline">\(n-1\)</span>, we divide by <span class="math inline">\(n-k\)</span> where <span class="math inline">\(k\)</span> is the number of coefficients in the prediction equation of the model<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean squared error (MSE)</strong> = variance of the residual distribution.</span></div></div>
+<p><span id="eq-mse"><span class="math display">\[MSE = \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k} \tag{11.3}\]</span></span></p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Finally, because MSE is in units of squared residuals, it is tough to interpret by how much our guesses are typically wrong. So we can take the square root of MSE to get back to the original units of the target variable. This is called the <strong>root mean squared error</strong> (RMSE), and is like calculating the standard deviation of the error distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>root mean squared error</strong> = standard deviation of the error distribution.</span></div></div>
+<div class="page-columns page-full"><p>Finally, because MSE is in units of squared residuals, it is tough to interpret by how much our guesses are typically wrong. So we can take the square root of MSE to get back to the original units of the target variable. This is called the <strong>residual standard error</strong> (RSE), and is like calculating the standard deviation of the error distribution:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual standard error (RSE)</strong> = expected standard deviation of the residual distribution from a model.</span></div></div>
+<p><span id="eq-rmse"><span class="math display">\[RSE = \sqrt{\frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k}} \tag{11.4}\]</span></span></p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>When we first learned about standard deviation, we learned that the straightforward interpretation of it is the typical amount of deviation from the mean within a data distribution - if someone guessed the mean value for every data point, on average they would be off by plus or minus the standard deviation amount. We can interpret the RMSE of the error distribution the same way - it is the typical amount of prediction error our statistical model makes when predicting individual data points.</p>
+<p>When we first learned about standard deviation, we learned that the straightforward interpretation of it is the typical amount of deviation from the mean within a data distribution - if someone guessed the mean value for every data point, on average they would be off by plus or minus the standard deviation amount. We can interpret the RSE of the residual distribution the same way - it is the typical amount of prediction error our statistical model makes when predicting individual data points.</p>
 <p>Now let’s look back at what our model fitting procedure identified as the <span class="math inline">\(\sigma\)</span> parameter for the observation model:</p>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Look familiar? This is the same value as the RMSE we just calculated. So we can interpret <span class="math inline">\(\sigma\)</span> in the observation model as the typical amount of prediction error our statistical model makes when predicting individual data points. The larger the <span class="math inline">\(\sigma\)</span> value in our model, the less accurate our predictions will be.</p>
+<p>Look familiar? This is the same value as the RSE we just calculated from the residuals. So we can interpret <span class="math inline">\(\sigma\)</span> in the observation model as the typical amount of prediction error our statistical model makes when predicting individual data points. The larger the <span class="math inline">\(\sigma\)</span> value in our model, the less accurate our predictions will be.</p>
 </section>
-<section id="prediction-improvement" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="prediction-improvement"><span class="header-section-number">11.3</span> Prediction improvement</h2>
-<p>The above discussion hopefully makes it clear how we can interpret the fitted estimates from a statistical model when we have prediction goals. The prediction equation coefficients tell you how to generate predictions for new data, while the <span class="math inline">\(\sigma\)</span> coefficient tells you how much those predictions will be wrong by, on average.</p>
-<p>Understanding the <span class="math inline">\(\sigma\)</span> estimate also helps us with explanation goals too, in that it helps us understand how much <em>uncertainty</em> is in our model of the data generation process. When we were first learning about probability, we saw that if two variables are associated, knowing the value of one variable changes our guesses about the value of another. In <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> we saw that this change in prediction is a change in the mean of the target’s conditional probability distribution, such that a 1-unit increase in the explanatory variable shifts our expectation about the mean target value in some direction.</p>
-<p>But if <span class="math inline">\(X\)</span> is an explanatory variable of <span class="math inline">\(Y\)</span>, it should also change our predictions about <span class="math inline">\(Y\)</span> by narrowing the <em>spread</em> of the conditional probability distribution as well. In other words, before we know anything about <span class="math inline">\(X\)</span>, the marginal probability distribution for the <span class="math inline">\(Y\)</span> values we could draw into our sample is wide. But once we know <span class="math inline">\(X\)</span>, if it contains information about what <span class="math inline">\(Y\)</span> will be, then we should be able to reduce the options we’d expect for <span class="math inline">\(Y\)</span> and be more confident that a narrower range of <span class="math inline">\(Y\)</span> options will happen instead. It’s like if we are in a windowless room, we are pretty uncertain about what the weather is outside. But if we know it is August 15th in California, we can be pretty confident that it’s not snowing outside! Once we knew our date and location, the list of likely options about the weather got narrower, with our guesses more confident and accurate.</p>
-<p>Thus the more accurately we can predict individual data points, the more we understand about what influences the target variable, and the less uncertain we will be about what someone’s <span class="math inline">\(Y\)</span> value will be given their known <span class="math inline">\(X\)</span> value.</p>
-<p>Uncertainty relative to what?</p>
+<section id="the-null-model" class="level2 page-columns page-full" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="the-null-model"><span class="header-section-number">11.3</span> The null model</h2>
+<p>We now know what <span class="math inline">\(\sigma\)</span> aka RSE means about our model, so let’s practice interpreting the actual value from this example: 2.87. This is in units of years of education, so this value means that using the prediction equation output to make a guess for each observation will result in a missed guess by about 2.87 years on average.</p>
+<p>Is this a good prediction performance, or bad? The answer is probably relative to what your goals are, and whether a miscalculation of 2-3 years will still be useful information or not.</p>
+<p>Alternatively, we can judge our model by how much our prediction accuracy <em>improves</em> relative to some other method of guessing. In other words, even if we can’t predict the target variable perfectly, can we at least do better than random guessing by taking into account the explanatory variable?</p>
+<p>Imagine we had to predict someone’s education attainment, but we had no other information about them. In that case, all we can do is use the central tendency of all <span class="math inline">\(Y\)</span> values as our best guess for each person. In this specific example, we would calculate our prediction as <span class="math inline">\(\hat{Y} = \mu_Y = 13.74\)</span>, since 13.74 is the mean of all <code>highest_year_of_school_completed</code> values.</p>
+<div class="page-columns page-full"><p><span class="math inline">\(\mu = 13.74\)</span> is still a prediction equation, albeit a simple one without any explanatory variables. When we make a prediction/calculate an output parameter for the target variable without taking into account any explanatory variables, we are using what’s called the <strong>null model</strong>. Formally notated, the prediction equation of the null model is:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>null model</strong> = a statistical model that makes the same prediction about the target variable for every observation, with no inputs from any explanatory variables.</span></div></div>
+<p><span id="eq-null-model"><span class="math display">\[\mu = \beta_0 \tag{11.5}\]</span></span></p>
+<p>where <span class="math inline">\(\beta_0\)</span> is the mean of all <span class="math inline">\(Y\)</span> values.</p>
+<p>We can actually visualize the null model with a line, like we did the linear model equation with an explanatory variable and line of best fit. It would just be a flat line with a y-intercept of 13.74, effectively making the same prediction for <span class="math inline">\(\mu_Y\)</span> at every level of some <span class="math inline">\(X\)</span>.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We can fit this null model to find the best estimate of <span class="math inline">\(\beta_0\)</span> using <code>lm()</code>, except this time since there is no explanatory variable to include, we put <code>NULL</code> on the right side of the formula instead of the name of any explanatory variable.</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Our interpretation of <span class="math inline">\(\beta_0\)</span> is a little bit different now than what it was last chapter. In <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a>, we said <span class="math inline">\(\beta_0\)</span> was the expected value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=0\)</span>. Here there is no <span class="math inline">\(X\)</span> variable in the model, so that second part of the statement wouldn’t make sense. But we still use <span class="math inline">\(\beta_0\)</span> to generate predictions for <span class="math inline">\(Y\)</span>. Just in this case, it’s the expected value for <em>all</em> observations.</p>
+</section>
+<section id="prediction-improvement-over-the-null-model" class="level2 page-columns page-full" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="prediction-improvement-over-the-null-model"><span class="header-section-number">11.4</span> Prediction improvement over the null model</h2>
+<p>Now that we have a null model, let’s interpret what its <span class="math inline">\(\sigma\)</span> value is:</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This number means that, under the null model, standard deviation/RSE of the marginal target probability distribution is 2.97. In other words, we would be wrong by 2.97 years on average if we used the null model to guide our predictions for target variable values. Compare that to the 2.87 <span class="math inline">\(\sigma\)</span> value we got from the model with <code>number_of_brothers_and_sisters</code> as an explanatory variable. 2.87 is less than 2.97, which means taking into account <code>number_of_brothers_and_sisters</code> improves our predictions about the target variable.</p>
+<div class="page-columns page-full"><p>To quantify this difference, we first need to calculate the sum of squares of the null model’s error distribution. We will call this the <strong>total sum of squares</strong> (SSTotal), since it is the total amount of variation in the target variable before taking into account any explanatory variables.es.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>total sum of squares</strong> = the total amount of variation in the target variable before taking into account any explanatory variables.</span></div></div>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now, if we subtracted the sum of squared errors of our model with <code>number_of_brothers_and_sisters</code> from the total sum of squares, we calculate the difference between these amounts:</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="page-columns page-full"><p>The only difference between the null model and the original one we’ve been working with (we’ll call it the “full model” for contrast) is that that the full model has an explanatory variable in it, while the null model doesn’t. Thus, the difference between SSTotal and SSE is the amount of target variation that the explanatory variable is able to explain away. This is called the <strong>model sum of squares</strong> (SSModel).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>model sum of squares</strong> = the amount of variation in the target variable that the explanatory variable is able to explain.</span></div></div>
+<p><span id="eq-ssmodel"><span class="math display">\[SSModel = SSTotal - SSError \tag{11.6}\]</span></span></p>
+</section>
+<section id="standardized-prediction-accuracy" class="level2 page-columns page-full" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="standardized-prediction-accuracy"><span class="header-section-number">11.5</span> Standardized prediction accuracy</h2>
+<p>SSModel is expressed in squared units of the target variable, so again it may be valuable to standardize this value in order to compare it to other models and standards of prediction quality. Indeed, not only might the units of the target variable be hard to interpret, but we might also think a small <span class="math inline">\(\sigma\)</span> for our model means our explanatory variable has a large effect, even though there was low variation in the target variable to begin with.</p>
+<div class="page-columns page-full"><p>A common way to calculate a standardized metric of prediction accuracy is to find the ratio between SSModel and SSTotal. This is called the <strong>coefficient of determination</strong> (<span class="math inline">\(R^2\)</span> for short).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>coefficient of determination (<span class="math inline">\(R^2\)</span>)</strong> = the proportion of variation in the target variable that is explained by the explanatory variable(s).</span></div></div>
+<p><span id="eq-r2"><span class="math display">\[R^2 = \frac{SSModel}{SSTotal} = \frac{SSTotal - SSError}{SSTotal} \tag{11.7}\]</span></span></p>
+<p><span class="math inline">\(R^2\)</span> is a proportion, so its value is always between 0 and 1. We should interpret this value as the percentage of marginal variation in the target variable that the prediction equation can explain away - i.e., how much narrower the residual distribution is when we include an explanatory variable vs.&nbsp;when we don’t. If our model’s <span class="math inline">\(R^2\)</span> value is near 0, that means the explanatory variable doesn’t really help us make better predictions about the target variable. It explains very little variation in the target. The closer our <span class="math inline">\(R^2\)</span> gets to 1, the closer we are to explaining away all the variation in the target.</p>
+<p>You might also see <span class="math inline">\(R^2\)</span> written as:</p>
+<p><span class="math display">\[R^2 = 1 - \frac{SSError}{SSTotal}\]</span></p>
+<p>which is equivalent. <span class="math inline">\(\frac{SSError}{SSTotal}\)</span> is the proportion of original error that is still present in our predictions once we take <span class="math inline">\(X\)</span> into account. If SSE is very small relative to SSTotal, that means <span class="math inline">\(X\)</span> has explained away most variance.</p>
+<div id="fig-ch11-r2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch11-r2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch11-r2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch11-r2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Visualization of the relative magnitudes of sum of squared errors in the prediction model fitted with an explanatory variable (red; SSError) vs.&nbsp;the null model (blue; SSTotal).
+</figcaption>
+</figure>
+</div>
+<p>Let’s calculate the <span class="math inline">\(R^2\)</span> for our <code>model</code> object, by finding the ratio of SSE and SSTotal and subtracted from 1:</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate <span class="math inline">\(R^2\)</span> using the equation <span class="math display">\[R^2 = 1 - \frac{SSError}{SSTotal}\]</span> Remember that we saved SSE as <code>sse</code> and SSTotal as <code>sst</code>.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We can also access this value about our model a quicker way. When we save the output of an <code>lm()</code> call to an object, typing that object name gives us info about what model formula we fit and the best-fitting values for the prediction equation coefficients. But if we use the function <code>summary()</code> with our model object as an argument, we get a lot more info about it:</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>There is some information here we don’t understand yet (don’t worry, we’ll get to it all by the end of the book!), but for now focus on the following sections:</p>
 <ul>
-<li>prediction accuracy as variance explanation / variance reduction</li>
-<li>null model</li>
-<li>variance explained: SSmodel = SStotal - SSerror</li>
+<li><strong>Residuals:</strong> this is a summary of the error distribution. It’s as if we calculated summary statistics on <code>gss_clean$residuals</code>.</li>
+<li><strong>Residual standard error:</strong> this is the RSE value we calculated, and is the same as the <span class="math inline">\(\sigma\)</span> parameter in the observation model. There’s a mention of “2338 degrees of freedom”, which is the name of the <span class="math inline">\(n-k\)</span> denominator used for calculating MSE and RSE.</li>
+<li><strong>Multiple R-squared:</strong> this is the <span class="math inline">\(R^2\)</span> value we calculated by hand; the proportion of variation in the target variable that is explained away by the explanatory variable. “Multiple” is used because <span class="math inline">\(R^2\)</span> can also be calculated for a model with multiple explanatory variables. We’ll see that in action next chapter.</li>
 </ul>
+<p>To get any of these values individually, something cool to know is that the output of <code>summary(model)</code> can itself be saved to an object, and that object will have all these values as properties. We can access each of these properties with <code>$</code> in the same way we access individual variables in a data frame. Here are all the properties of the model summary:</p>
+<div id="qwebr-insertion-location-19"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>There are many properties in here that we previously used a function or hand calculation to produce: <code>residuals</code>, <code>coefficients</code>, <code>sigma</code>, and <code>r.squared</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the <code>$</code> operator to output to the console just the <code>r.squared</code> property of <code>model_summary</code>.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-20"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Optional: going deeper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you noticed that <span class="math inline">\(R^2\)</span> is using the same letter as correlation <span class="math inline">\(r\)</span>, that is because <span class="math inline">\(R^2\)</span> for a model is mathematically the square of the Pearson correlation between what the model predicts for the target values and what the values actually are.</p>
+<p>To see how this works, first remember the definition of a residual we wrote in <a href="#eq-residual" class="quarto-xref">Equation&nbsp;<span>11.1</span></a>:</p>
+<p><span class="math display">\[\epsilon = Y - \hat{Y}\]</span></p>
+<p>Rearranging this equation:</p>
+<p><span class="math display">\[ Y = \hat{Y} + \epsilon\]</span></p>
+<p>The covariance of <span class="math inline">\(Y\)</span> and <span class="math inline">\(\hat{Y}\)</span> is:</p>
+<p><span class="math display">\[ Cov(Y, \hat{Y}) = Cov(\hat{Y} + \epsilon, \hat{Y}) = Cov(\hat{Y}, \hat{Y}) + Cov(\epsilon, \hat{Y})\]</span></p>
+<p>When using a normal distribution for an observation model, there should be no association between what the mean of the conditional distribution is and what the variance is. Thus, <span class="math inline">\(Cov(\epsilon, \hat{Y}) = 0\)</span> and drops out of the equation. Thus,</p>
+<p><span class="math display">\[Cov(Y, \hat{Y}) = Cov(\hat{Y}, \hat{Y}) = Var(\hat{Y})\]</span></p>
+<p>Now, recall the formula for Pearson correlation:</p>
+<p><span class="math display">\[Cor(Y, \hat{Y}) = \frac{Cov(Y, \hat{Y})}{sd(Y)sd(\hat{Y})} = \frac{Var(\hat{Y})}{sd(Y)sd(\hat{Y})}\]</span></p>
+<p>Since <span class="math inline">\(Var(\hat{Y}) = sd(\hat{Y})^2\)</span>, we can simplify this to:</p>
+<p><span class="math display">\[Cor(Y, \hat{Y}) = \frac{sd(\hat{Y})}{sd(Y)}\]</span></p>
+<p>Squaring both sides gives us:</p>
+<p><span class="math display">\[Cor(Y, \hat{Y})^2 = \frac{Var(\hat{Y})}{Var(Y)}\]</span></p>
+<p>Which is just a different way of writing:</p>
+<p><span class="math display">\[r^2 = \frac{\frac{SS_\hat{Y}}{n-1}}{\frac{SS_Y}{n-1}} = \frac{\frac{SSModel}{n-1}}{\frac{SSTotal}{n-1}} = \frac{SSModel}{SSTotal}\]</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="standardized-prediction-accuracy" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="standardized-prediction-accuracy"><span class="header-section-number">11.4</span> Standardized prediction accuracy</h2>
-<ul>
-<li>R2</li>
-</ul>
-</section>
-<section id="relationship-with-correlation" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="relationship-with-correlation"><span class="header-section-number">11.5</span> Relationship with correlation</h2>
-</section>
-<section id="sources-of-unexplained-uncertainty" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="sources-of-unexplained-uncertainty"><span class="header-section-number">11.6</span> Sources of unexplained uncertainty</h2>
-<p>Another reason to look at data predictions is to understand how much uncertainty is in the model. Even if the simulated data is a good fit for real data, if the prediction intervals are very wide, that means our explanatory variables don’t contain that much information about the target variable. Taking them into account doesn’t help our predictions of exact data values very much. Alternatively, if the prediction intervals are narrow, that tells us that knowing the explanatory variables changes our expectations for the target variable by a lot. We are confident about what that value will be if we know the explanatory variable values. In other words, we are much closer to understanding all the influences on the target variable and having a deterministic idea of the data generation process.</p>
+<section id="prediction-error-as-uncertainty" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="prediction-error-as-uncertainty"><span class="header-section-number">11.6</span> Prediction error as uncertainty</h2>
+<p>We can also think about <span class="math inline">\(\sigma\)</span> as how much uncertainty there is in <span class="math inline">\(Y|X\)</span> after taking into account the explanatory variable.</p>
+<p>When we were first learning about probability, we saw that if two variables are associated, knowing the value of one variable changes our guesses about the value of another. In <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> we saw that this change in guessing is a change in the mean of the target’s conditional probability distribution, such that a 1-unit increase in the explanatory variable shifts our expectation about the mean target value in some direction; the mean of <span class="math inline">\(Y|X\)</span> changes as <span class="math inline">\(X\)</span> changes.</p>
+<p>But if <span class="math inline">\(X\)</span> is an explanatory variable of <span class="math inline">\(Y\)</span> and helps us make better predictions, <span class="math inline">\(Y|X\)</span> doesn’t just change position - its spread should also get narrower. In other words, before we know anything about <span class="math inline">\(X\)</span>, the marginal probability distribution for the <span class="math inline">\(Y\)</span> values we could draw into our sample is wide and we are uncertain what any one <span class="math inline">\(y_i\)</span> value will be. But once we know <span class="math inline">\(X\)</span>, if it provides information about <span class="math inline">\(Y\)</span>, then we should be able to reduce the options we’d expect for <span class="math inline">\(Y\)</span> and be more confident in a guess of <span class="math inline">\(y_i\)</span>. It’s like if we are in a windowless room, we are uncertain about what the weather is outside. But if we know it is August 15th in California, we can be pretty confident that it’s not snowing! Once we knew our date and location, the list of likely options about the weather got narrower, with our guesses more confident and accurate.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-ch9-pred-ints" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-ch11-uncertainty" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch9-pred-ints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter-11_files/figure-html/fig-ch9-pred-ints-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-ch11-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-11_files/figure-html/fig-ch11-uncertainty-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-pred-ints-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.1: Prediction intervals when using occupation to predict respondent’s education level, vs.&nbsp;using respondent’s sex to predict respondent’s education level. Occupation is a more accurate predictor of respondent education because it leads to a narrower prediction interval.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch11-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.3: Visualization of the spread still in Y|X for a model with a lot of uncertainty / poor prediction accuracy, vs.&nbsp;a model with low uncertainty / good prediction accuracy.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>If <span class="math inline">\(\sigma\)</span> is the raw uncertainty in <span class="math inline">\(Y|X\)</span>, then <span class="math inline">\(R^2\)</span> is how much more certain we’ve become relative to before we knew any explanatory information. It is the proportional reduction in the spread of <span class="math inline">\(Y|X\)</span> relative to the spread of <span class="math inline">\(Y\)</span>. We could equivalently write <span class="math inline">\(R^2\)</span> as:</p>
+<p><span class="math display">\[R^2 = 1 - \frac{Var(Y|X)}{Var(Y)}\]</span></p>
+<p>Thus the more accurately we can predict individual data points, the less uncertainty is left in the target variable after taking into account the explanatory variable. This means interpreting our model’s <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(R^2\)</span> estimate isn’t only useful for prediction goals, but also for explanation goals. A larger <span class="math inline">\(R^2\)</span> tells us that we understand more about what explains the target variable. If we somehow came up with a model that produced an <span class="math inline">\(R^2\)</span> of 1, that would mean there would be no uncertainty in the target variable after taking into account the explanatory variable; we could predict the target variable perfectly and would have a complete data generation process.</p>
 </section>
-<section id="estimands-in-statistical-models" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="estimands-in-statistical-models"><span class="header-section-number">11.7</span> Estimands in statistical models</h2>
-<p>An estimand says precisely what quantity about the population/data-generating process you want to know.</p>
-<p>Then the model gives you a way of thinking about the estimand</p>
+<section id="sources-of-uncertainty" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="sources-of-uncertainty"><span class="header-section-number">11.7</span> Sources of uncertainty</h2>
+<p>Besides just quantifying uncertainty in our models, it’s good to think about why there is uncertainty in the first place, and where it comes from. We know we are modeling probabilistic processes, which means different things can happen even with the same inputs; we are unlikely to ever be able to perfectly predict data about humans and explain away all the uncertainty. But it’s important to remember <em>why</em> that is.</p>
+<section id="missing-parts-of-the-data-generation-process" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="missing-parts-of-the-data-generation-process"><span class="header-section-number">11.7.1</span> Missing parts of the data generation process</h3>
+<p>In a simple model like the one we’ve been working with - just one explanatory variable in a linear form - it’s unlikely that we have captured all the important pieces of information that explain the target variable. For instance, imagine you are a depression researcher trying to understand what causes debilitating depression. One reason could be a significant stressor like losing a loved one. But there are many people who bounce back fairly healthy after such a stressor, while there are many people with depression who have not had such an experience. People are multifaceted and complicated, so just knowing this one piece of information about somebody doesn’t resolve all the uncertainty about whether they will develop depression. Modeling depression as the product of just one input means we’re probably missing fundamental pieces of the data generation process.</p>
+<p>If we did know what <em>else</em> can cause depression, we could include that information in our model as well. Perhaps a significant stressor increases the risk of depression, but so do things like genetics, social connection, or neuroticism. By taking all that information into consideration, rather than making decisions based on just one explanatory variable, we could explain additional variance in depression and make better predictions. In the next chapter we will discuss how to make and interpret statistical models with multiple inputs.</p>
 </section>
-<section id="connection-to-correlation" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="connection-to-correlation"><span class="header-section-number">11.8</span> connection to correlation</h2>
-<p>sd when simulating Y|X with given correlation r</p>
-<p><span class="math display">\[\sigma_{Y|X}^2 = \sigma_Y^2 - \frac{\text{Cov}(X,Y)^2}{\sigma_X^2}\]</span></p>
-<p><span class="math display">\[Var(Y|X) = Var(Y) - \frac{Cov(X,Y)^2}{Var(X)}\]</span></p>
-<p><span class="math display">\[Var(Y|X) = Var(Y)*(1 - r^2)\]</span></p>
-<ol start="2" type="1">
-<li>Decompose the total variation in Y</li>
-</ol>
-<p>Write</p>
-<p><span class="math display">\[Y=\hat{Y}+\epsilon\]</span></p>
-<p>where</p>
-<p><span class="math display">\[\hat{Y} = \beta_0 + \beta_1X\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[Var(Y)=Var(\hat{Y}+\epsilon)\]</span></p>
-<p>Using the variance-of-a-sum formula:</p>
-<p><span class="math display">\[Var(Y)=Var(\hat{Y})+Var(\epsilon)+2Cov(\hat{Y},\epsilon)\]</span></p>
-<p>In ordinary least squares, the predicted values and residuals are uncorrelated, so</p>
-<p><span class="math display">\[Cov(\hat{Y},\epsilon)=0.\]</span></p>
-<p>Thus:</p>
-<p><span class="math display">\[Var(Y)=Var(\hat{Y}) + Var(\epsilon)\]</span></p>
-<p>This is the population version of the familiar regression decomposition:</p>
-<p>total variation=explained variation+unexplained variation</p>
-<ol start="3" type="1">
-<li>Express the variance of the predictions in terms of r</li>
-</ol>
-<p>Because <span class="math inline">\(\hat{Y} = \beta_0 + \beta_1X\)</span>, the intercept doesn’t affect the variance:</p>
-<p><span class="math display">\[Var(\hat{Y})=\beta_1^2 Var(X)\]</span></p>
-<p>For simple linear regression,</p>
-<p><span class="math display">\[\beta_1 = \frac{Cov(X,Y)}{Var(X)}\]</span></p>
-<p>Therefore,</p>
-<p><span class="math display">\[Var(\hat{Y})=\frac{Cov(X,Y)^2}{Var(X)}\]</span></p>
-<p>Now use</p>
-<p><span class="math display">\[r= \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}\]</span> Squaring:</p>
-<p><span class="math display">\[r^2 = \frac{Cov(X,Y)^2}{Var(X)Var(Y)}\]</span></p>
-<p>Therefore,</p>
-<p><span class="math display">\[Var(\hat{Y})=r^2 Var(Y)\]</span></p>
-<ol start="4" type="1">
-<li>Substitute into the variance decomposition</li>
-</ol>
-<p>We had</p>
-<p><span class="math display">\[Var(Y)=Var(\hat{Y})+Var(\epsilon)\]</span></p>
-<p>Substitute</p>
-<p><span class="math display">\[Var(\hat{Y})=r^2 Var(Y):\]</span> <span class="math display">\[Var(Y)=r^2 Var(Y)+Var(\epsilon)\]</span> Therefore,</p>
-<p><span class="math display">\[Var(\epsilon)=Var(Y)−r^2 Var(Y)\]</span> and hence</p>
-<p><span class="math display">\[Var(\epsilon)=Var(Y)(1−r^2)\]</span></p>
-<p>Under the homoscedastic regression model,</p>
-<p><span class="math display">\[Var(Y∣X)=Var(\epsilon)\]</span>,</p>
-<p>so:</p>
-<p><span class="math display">\[Var(Y∣X)=Var(Y)(1−r^2)\]</span></p>
-<p>This gives a very nice interpretation of r^2:</p>
-<p><span class="math display">\[\frac{Var(Y∣X)}{Var(Y)}=1−r^2\]</span></p>
-<p>In words, the proportion of variability in Y that remains within the conditional distribution, after accounting for X, is 1−r^2.</p>
-<p>Equivalently,</p>
-<p><span class="math display">\[r^2=1-\frac{Var(Y∣X)}{Var(Y)}\]</span> So r^2 isn’t just an abstract “proportion of variance explained.” It tells us how much the predictor reduces the variance of the target distribution relative to its unconditional variance.</p>
+<section id="measurement-error" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">11.7.2</span> Measurement error</h3>
+<p>Even if we correctly identify and model all important pieces of a data generation process, we can still have uncertainty and prediction error in the target variable because of the way we <em>measured</em> those pieces.</p>
+<p>Consider our depression research again - how do we measure someone’s depression level? If you’re like many other researchers, you might think a series of questions about depression symptoms is a good idea: “In the last week I: 1) felt sad (1-7); 2) had little interest in activities (1-7); 3) felt worthless (1-7); etc.”. People with and without depression probably answer these questions differently, but responses to these questions aren’t perfect measurements of depression because they are subjective and possibly produced by other things too. These <em>measured</em> survey values are probably related to the <em>true, latent</em> depression values, but they’re not exactly the same.</p>
+<p>Statistical model uncertainty can come from an incomplete understanding of what predicts depression, but also an incomplete understanding of how latent constructs cause the measurements we have. The less well our measurements reflect the true target or explanatory variable of interest - i.e.&nbsp;the more measurement error there is - the more uncertainty will remain in our model even if it captures the correct data generation mechansism for the latent constructs.</p>
+<p>A class of statistical models known as measurement models are designed to acknowledge this reality and explicitly model ideas of the data generation process between latent and measured values. Things we’ve talked about before concerning measurement error, like assuming that the error is random and repeated measures of the same thing will vary evenly around the true value, are examples of assumptions from a measurement model called classical test theory. In this case, such an assumption would be encoded as an observation model like <span class="math inline">\(Y_{measured} \sim \mathcal{N}(Y_{true}, \sigma)\)</span> where <span class="math inline">\(\sigma\)</span> is magnitude of measurement error. If you’ve heard of analysis tools like factor analysis, item response theory, or structural equation modeling, these are all examples of approaches to measurement modeling.</p>
+</section>
+</section>
+<section id="different-model-pieces-as-different-estimands" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="different-model-pieces-as-different-estimands"><span class="header-section-number">11.8</span> Different model pieces as different estimands</h2>
+<p>At this point, let’s take stock of what we know about statistical models so far. We know that models are how we quantify our ideas of a data generation process so that we can fit them, simulate from them, and test them against real data. We know how to write equations that encode the four components of a data generation process, and we know how to interpret the numbers in those equations.</p>
+<p>Each of these numbers - the coefficients of the prediction equation, the parameters of the observation model, predictions that the model makes - are all quantities about the data generation process we might have hypotheses about. Thus, each of these are estimates of different estimands. Below is a table of some example estimands we might be interested in as researchers, and the part of our statistical model that would give us the corresponding estimate.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Estimand</th>
+<th style="text-align: center;">Estimate in statistical model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Central tendency of <span class="math inline">\(Y\)</span> scores</td>
+<td style="text-align: center;"><span class="math inline">\(\beta_0\)</span> in null model</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Variation of <span class="math inline">\(Y\)</span> scores</td>
+<td style="text-align: center;"><span class="math inline">\(\sigma\)</span> in null model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">How much <span class="math inline">\(X\)</span> shifts predictions of <span class="math inline">\(Y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\beta_1\)</span> in full model</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Prediction accuracy of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sigma\)</span> in full model</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">How much variation in <span class="math inline">\(Y\)</span> is explained by <span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(R^2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Predicted <span class="math inline">\(Y\)</span> value for a specific observation</td>
+<td style="text-align: center;"><span class="math inline">\(\hat{Y}\)</span> for a given <span class="math inline">\(X=x_i\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When we interpret one estimate from a model for what it means about the estimand we are interested in, it’s important to remember that this interpretation is only valid in the context of the rest of the model. E.g., the effect of <code>number_of_brothers_and_sisters</code> on <code>highest_year_of_school_completed</code> is only -0.27 if we accept the assumptions that the form of the data generation process is linear, that the observation model is a normal distribution, and that there are no other important explanatory variables we are missing. If any of those assumptions are wrong, then our estimate of the effect may not be accurate for what the data generation process actually is. Building good scientific theory is hard work!</p>
+</section>
+<section id="chapter-summary" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">11.9</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">11.9.1</span> Learning goals</h3>
+<p>After reading this chapter, you should be able to:</p>
+<ul>
+<li>Make predictions for individual data points using a fitted statistical model</li>
+<li>Quantify prediction accuracy for one data point and for the model overall</li>
+<li>Define a null vs.&nbsp;full model</li>
+<li>Quantify prediction accuracy for the full vs.&nbsp;null model</li>
+<li>Explain sources of uncertainty in statistical models</li>
+<li>Identify estimates of different estimands in a statistical model</li>
+</ul>
+</section>
+<section id="new-concepts" class="level3" data-number="11.9.2">
+<h3 data-number="11.9.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">11.9.2</span> New concepts</h3>
+<ul>
+<li><strong>residual</strong>: The difference between what a statistical model predicts for an individual observation and the observation’s true value.</li>
+<li><strong>residual distribution</strong>: The distribution of residuals from a statistical model; also known as the error distribution.</li>
+<li><strong>sum of squared errors (SSE)</strong>: Sum of squares calculated for a model’s residual distribution; also known as the residual sum of squares.</li>
+<li><strong>mean squared error (MSE)</strong>: Variance of the residual distribution in a model.</li>
+<li><strong>residual standard error (RSE)</strong>: Expected standard deviation of the residual distribution from a model.</li>
+<li><strong>null model</strong>: A statistical model that makes the same prediction about the target variable for every observation, with no inputs from any explanatory variables.</li>
+<li><strong>total sum of squares</strong>: The total amount of variation in the target variable before taking into account any explanatory variables.</li>
+<li><strong>model sum of squares</strong>: The amount of variation in the target variable that the explanatory variable is able to explain.</li>
+<li><strong>coefficient of determination (<span class="math inline">\(R^2\)</span>)</strong>: The proportion of variation in the target variable that is explained by the explanatory variable(s).</li>
+</ul>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Actually all of the time, since people only responded with whole numbers for years.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>again, <span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we’re dividing by not quite <span class="math inline">\(n\)</span>. Patience a little longer…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Another name for the method of finding the best model coefficients of a linear model is ordinary least-squares regression (OLS regression), because the optimal coefficient values are the ones that make a line which minimizes the sum of squared errors; making the data points “regress” towards the line of best fit as much as possible.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we’re dividing by not quite <span class="math inline">\(n\)</span>. Patience a little longer…<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

@@ -2588,8 +2588,8 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 </section>
 <section id="correlations-in-non-numeric-data" class="level3 page-columns page-full" data-number="6.5.3">
 <h3 data-number="6.5.3" class="anchored" data-anchor-id="correlations-in-non-numeric-data"><span class="header-section-number">6.5.3</span> Correlations in non-numeric data</h3>
-<p>As we saw in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>, categorical data can be quantified by turning it into dummy variables. Once represented with 0s and 1s, a Boolean variable can fit into a covariance or correlation equation just as well as a numeric variable can. So it is possible to compute the correlation between categorical and numeric variables, or between two categorical values.</p>
-<div class="page-columns page-full"><p>Statisticians use different names for these cases to keep it clear what type of variables are involved. While the basic correlation equation done with two numeric variables is called a Pearson correlation, this measure is called a <strong>point-biserial correlation</strong> when one variable is numeric and the other is Boolean. When both variables are Boolean, the correlation is called a <strong>phi coefficient</strong> (pronounced “fye”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a Boolean/binary variable</span><span class="margin-aside"><strong>phi coefficient</strong> = Pearson correlation applied to two Boolean/binary variables</span></div></div>
+<p>As we saw in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>, categorical data can be quantified by turning it into dummy variables. Once represented with 0s and 1s, a binary variable can fit into a covariance or correlation equation just as well as a numeric variable can. So it is possible to compute the correlation between categorical and numeric variables, or between two categorical values.</p>
+<div class="page-columns page-full"><p>Statisticians use different names for these cases to keep it clear what type of variables are involved. While the basic correlation equation done with two numeric variables is called a Pearson correlation, this measure is called a <strong>point-biserial correlation</strong> when one variable is numeric and the other is binary. When both variables are binary, the correlation is called a <strong>phi coefficient</strong> (pronounced “fye”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a logical/binary variable</span><span class="margin-aside"><strong>phi coefficient</strong> = Pearson correlation applied to two logical/binary variables</span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2600,7 +2600,7 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Find the phi coefficient between the two Boolean variables below. Since it’s the same math as a Pearson correlation, use the same R function.</p>
+<p>Find the phi coefficient between the two logical variables below. Since it’s the same math as a Pearson correlation, use the same R function.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-11"></div>
@@ -2653,8 +2653,8 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <li><strong>covariance</strong> = a measure of association between two variables, calculated by summing the products of their deviations and dividing the sum by n-1.</li>
 <li><strong>correlation</strong> = a standardized measure of the linear association between two variables.</li>
 <li><strong>Pearson correlation</strong> = a measure of linear association between two variables, calculated by dividing the covariance of the two variables by the product of their standard deviations.</li>
-<li><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a Boolean/binary variable.</li>
-<li><strong>phi coefficient</strong> = Pearson correlation applied to two Boolean/binary variables.</li>
+<li><strong>point-biserial correlation</strong> = Pearson correlation applied to a numeric variable and a logical/binary variable.</li>
+<li><strong>phi coefficient</strong> = Pearson correlation applied to two logical/binary variables.</li>
 <li><strong>Spearman correlation</strong> = a measure of monotonic association between two variables, calculated by dividing the covariance of the two variables’ ranks by the product of their standard deviations.</li>
 </ul>
 </section>
