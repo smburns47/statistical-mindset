@@ -42,14 +42,14 @@ function initQuartileWidget({
 
     const filtered = data.filter(d => d.x_bin === selectedQuartile);
     histContainer.replaceChildren(Plot.plot({
-      width: scatterContainer.clientWidth,
-      x: { axis: null },
-      y: { domain: yExtent, axis: null },
-      style: { fontSize: histFontSize },
-      height: histHeight,
-      marks: [
-        Plot.rectX(filtered, Plot.binY({ x: "count" }, { y: yVar, fill: highlightColor, thresholds }))
-      ]
+        width: histContainer.clientWidth,
+        x: { axis: null },
+        y: { domain: yExtent, axis: null },
+        style: { fontSize: histFontSize },
+        height: histHeight,
+        marks: [
+            Plot.rectX(filtered, Plot.binY({ x: "count" }, { y: yVar, fill: highlightColor, thresholds }))
+        ]
     }));
   }
 
