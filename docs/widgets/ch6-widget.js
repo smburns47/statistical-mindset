@@ -25,6 +25,7 @@ function initQuartileWidget({
     if (valueLabel) valueLabel.textContent = selectedQuartile;
 
     scatterContainer.replaceChildren(Plot.plot({
+      width: scatterContainer.clientWidth,
       height: scatterHeight,
       marginBottom: 40,
       style: { fontSize: scatterFontSize },
@@ -41,6 +42,7 @@ function initQuartileWidget({
 
     const filtered = data.filter(d => d.x_bin === selectedQuartile);
     histContainer.replaceChildren(Plot.plot({
+      width: scatterContainer.clientWidth,
       x: { axis: null },
       y: { domain: yExtent, axis: null },
       style: { fontSize: histFontSize },

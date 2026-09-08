@@ -2421,7 +2421,7 @@ Figure&nbsp;6.1: A scatter plot of two variables is a 2D intersection of the var
       xVar: "Hand",
       yVar: "Height",
       scatterHeight: 400,
-      histHeight: 1450
+      histHeight: 400
     });
   };
   document.body.appendChild(script);
@@ -2487,7 +2487,7 @@ Note
 <p>These values are not all that different. When comparing the new standard deviations with that of the overall <code>SleepHours</code> distribution:</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>Knowing someone’s hand size doesn’t help our uncertainty about their sleep hours - in fact it makes our uncertainty worse! In this case, we wouldn’t say that hand size is associated with sleep hours. We would say these variables are <strong>independent</strong> of each other.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>independence</strong> = a relationship between variables where one variable contains no information to help make predictions about the value of the other variable</span></div></div>
+<div class="page-columns page-full"><p>Knowing someone’s hand size doesn’t really help our uncertainty about their sleep hours either. In this case, we wouldn’t say that hand size is associated with sleep hours. We would say these variables are <strong>independent</strong> of each other.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>independence</strong> = a relationship between variables where one variable contains no information to help make predictions about the value of the other variable</span></div></div>
 <p>It’s important to emphasize here that when we say one variable <span class="math inline">\(x\)</span> is associated with another variable <span class="math inline">\(y\)</span>, we don’t always mean that one <em>causes</em> the other. An association between the two just means that knowing the value of some observation on <span class="math inline">\(x\)</span> improves our guess about what <span class="math inline">\(y\)</span> is. This <em>could</em> be because of causation, but there are many other reasons two variables could be associated. Whenever we use the word “associated” in this book, make sure you’re not automatically assuming that a causal relationship is involved.</p>
 </section>
 <section id="sec-ch6-types-of-association" class="level2 page-columns page-full" data-number="6.4">
@@ -2584,7 +2584,7 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 </div>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>A Pearson correlation of 0.35 is not the strongest it could be (that would be 1). But it is not too shabby either.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>A Pearson correlation of 0.35 is not the strongest it could be (that would be 1). But it is not too shabby either.</p>
 </section>
 <section id="correlations-in-non-numeric-data" class="level3 page-columns page-full" data-number="6.5.3">
 <h3 data-number="6.5.3" class="anchored" data-anchor-id="correlations-in-non-numeric-data"><span class="header-section-number">6.5.3</span> Correlations in non-numeric data</h3>
@@ -2605,11 +2605,11 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 </div>
 <div id="qwebr-insertion-location-11"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Giving these cases different names is good for explicitly declaring what type of variables you are talking about<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. However, it can be hard in practice to remember all these terms. The important thing to know about these correlation measures is that they actually aren’t different under the hood. They are all calculated the same way. You don’t have to learn how to do anything different.</p>
+<p>Giving these cases different names is good for explicitly declaring what type of variables you are talking about<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. However, it can be hard in practice to remember all these terms. The important thing to know about these correlation measures is that they actually aren’t different under the hood. They are all calculated the same way. You don’t have to learn how to do anything different.</p>
 </section>
 <section id="spearman-correlation" class="level3 page-columns page-full" data-number="6.5.4">
 <h3 data-number="6.5.4" class="anchored" data-anchor-id="spearman-correlation"><span class="header-section-number">6.5.4</span> Spearman Correlation</h3>
-<div class="page-columns page-full"><p>Another popular correlation metric is called the <strong>Spearman correlation</strong> <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. This one again involves dividing the covariance of the variables by the product of their standard deviations, but this time there is an additional step - we first rank the values of each variable. Ranking the variables means the smallest value in the variable becomes a 1, the second smallest becomes a 2, and so on. Ranking essentially puts all the values of a variable in order but removes information about how far apart those values are. This makes it a good metric for seeing how strong a monotonic relationship is that might not be strictly linear.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Spearman correlation</strong> = a measure of monotonic association between two variables, calculated by dividing the covariance of the two variables’ ranks by the product of their standard deviations</span></div></div>
+<div class="page-columns page-full"><p>Another popular correlation metric is called the <strong>Spearman correlation</strong> <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. This one again involves dividing the covariance of the variables by the product of their standard deviations, but this time there is an additional step - we first rank the values of each variable. Ranking the variables means the smallest value in the variable becomes a 1, the second smallest becomes a 2, and so on. Ranking essentially puts all the values of a variable in order but removes information about how far apart those values are. This makes it a good metric for seeing how strong a monotonic relationship is that might not be strictly linear.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Spearman correlation</strong> = a measure of monotonic association between two variables, calculated by dividing the covariance of the two variables’ ranks by the product of their standard deviations</span></div></div>
 <p>If we wanted to calculate the Spearman correlation by hand, we could use the <code>rank()</code> function on our variables before passing them to <code>cor()</code>. But <code>cor()</code> also gives us an option to skip this step and compute the Spearman correlation directly if we add the argument <code>method = spearman</code>.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2678,9 +2678,8 @@ Figure&nbsp;6.4: Three examples of weak association between two variables.
 <li id="fn3"><p>It is possible to quantify non-monotonic associations too, but it is less common to do and the math is more complex. <a href="https://lcalem.github.io/blog/2018/10/17/mutual-information">This</a> is a decent explanation that will make sense once you’ve read <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a>. Also, when associations are weak, it can be hard to tell what specific form the association is supposed to have; a linear/monotonic association is a reasonable approximation a lot of the time.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>read the <a href="https://www.rdocumentation.org/packages/pbdDMAT/versions/0.5-1/topics/covariance">documentation</a> for the <code>cov()</code> function to see what other <code>use =</code> options there are.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Named after the mathematician who invented it, Karl Pearson<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>In fact if you work with human data, you will rarely get an association this large. Enjoy it now!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>and you get more professional recognition if you publish a “new” measure<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Named after another inventive mathematician, Charles Spearman<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>and you get more professional recognition if you publish a “new” measure<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Named after another inventive mathematician, Charles Spearman<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
