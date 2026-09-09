@@ -2343,7 +2343,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, so if you do need to report it, just write it as <em>Mode</em>. Numbers should be reported to two decimal places. Reporting the mean in the body of some text may look like:</p>
 <p>“The average sleep duration in our sample was below the recommended 8 hours (<em>M</em> = 7.15).”</p>
 <p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
-<p>“The median nightly sleep duration for sophomores was 7, compared to a median of 7 for seniors.”</p>
+<p>“The median nightly sleep duration for sophomores was 7, compared to a median of 6.5 for seniors.”</p>
 <p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the median sleep duration for first through fourth year students in <code>studentdata</code>. Notice that the title of the table is a clear description of what kind of information is in it.</p>
 <p><strong>Median Nightly Sleep Hours, by College Year</strong></p>
 <table class="caption-top table">
@@ -2356,7 +2356,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">First</td>
-<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Sophomore</td>
@@ -2368,7 +2368,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </tr>
 <tr class="even">
 <td style="text-align: center;">Senior</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: center;">6.5</td>
 </tr>
 </tbody>
 </table>
@@ -2412,7 +2412,7 @@ Note
 <section id="spread" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="spread"><span class="header-section-number">7.1.2</span> Spread</h3>
 <p>Summary statistics of variables involving numeric values often report both measurements of central tendency and spread together. Usually, standard deviation is the variation score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> (e.g., IQR and IQV) or just the word of the measure. For example:</p>
-<p>“The median nightly sleep duration in sophomores (<em>M</em> = 7, <em>SD</em> = 1.41) was longer than that of seniors (<em>M</em> = 7, <em>SD</em> = 1.67).”</p>
+<p>“The median nightly sleep duration in sophomores (<em>M</em> = 7, <em>SD</em> = 1.14) was longer than that of seniors (<em>M</em> = 6.5, <em>SD</em> = 1.57).”</p>
 <p>When reporting the descriptive statistical summaries of many groups, the results may be summarized in a table as well. <code>summarize()</code> lets you declare multiple new variables to create, so we can produce summaries of central tendency and spread at the same time:</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2420,7 +2420,7 @@ Note
 <section id="shape" class="level3" data-number="7.1.3">
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="shape"><span class="header-section-number">7.1.3</span> Shape</h3>
 <p>Generally distribution shapes aren’t reported<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your summaries. So a complete reporting in APA style would look something like:</p>
-<p>“The median nightly sleep duration in sophomores (<em>M</em> = 7, <em>SD</em> = 1.41, <em>N</em> = 2) was longer than that of seniors (<em>M</em> = 7, <em>SD</em> = 1.67, <em>N</em> = 25).”</p>
+<p>“The median nightly sleep duration in sophomores (<em>M</em> = 7, <em>SD</em> = 1.14, <em>N</em> = 52) was longer than that of seniors (<em>M</em> = 6.5, <em>SD</em> = 1.57, <em>N</em> = 10).”</p>
 <p>A quick function <code>n()</code> with no arguments lets <code>summarize()</code> return this information per group:</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
