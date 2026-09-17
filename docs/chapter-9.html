@@ -2418,6 +2418,21 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>It does seem like number of siblings could be an explanatory variable of education attainment (even if not a very strong one). Put another way, if we look at how the dots cluster on the y-axis for each value on the x-axis, it looks like the clusters are shifting downward slightly - the conditional distribution of <code>highest_year_of_school_completed</code> is changing as a function of <code>number_of_brothers_and_sisters</code>. So we decide that <code>number_of_brothers_and_sisters</code> is the explanatory variable of the data generation process.</p>
+<p>At this stage, we’ve decided on the data generation process input and output. If we wanted to depict that visually to keep it clear in mind, we could draw a diagram like in <a href="#fig-ch9-dag" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch9-dag" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch9-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-9_files/figure-html/fig-ch9-dag-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Idea of the input and output of a data generation process.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>Next, we specify the third component of the data generation process: what about the target variable is influenced by the explanatory variable. Recall from <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a> that if our process is deterministic, the explanatory variable will determine the exact value of the target; e.g.&nbsp;<span class="math inline">\(Y = -X\)</span>. If our process is probabilistic, however, the output of the process is a probability distribution from which observed data points are sampled (being exact, the explanatory variable will determine a parameter of the conditional probability distribution). This is probably the case for our educational attainment variable - it is unlikely to be fully determined by number of siblings.</p>
 <p>If this is so, is there at least something about this conditional probability distribution that changes as a function of the explanatory variable? This is the crux of our decision for the third component. Let’s say we believe number of siblings influences the central tendency of education attainment - what amount of education someone is most likely to have. But we recognize that individual people could have more or less than that amount of education, with increasingly lower likelihood of scores farther away from this typical value. For these reasons, let’s assume that the data generation process produces normally-distributed conditional probability distributions for <code>highest_year_of_school_completed</code>, and that the center/mean of these distributions changes as a function of number of siblings.</p>
 <p>Remember that a normal distribution has two parameters - the mean and the standard deviation. We’ve decided the explanatory variable should determine the mean of the target’s conditional probability distribution, but how wide or narrow should that distribution be? How much can education attainment vary around the typical score? This is tricky. Let’s pick a standard deviation of 5 for now and see how that goes. In other words, we expect the most likely value of <code>highest_year_of_school_completed</code> to change as a function of <code>number_of_brothers_and_sisters</code>, but we also expect a lot of variation in what the actual observations will turn out to be (and that variation won’t change as a function of the explanatory variable).</p>
@@ -2618,7 +2633,7 @@ Note
 <img src="chapter-9_files/figure-html/fig-ch9-stress-performance-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch9-stress-performance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9.1: Four examples of ways that stress can relate to task performance. a) Performance gets worse across the full range of stress; b) Performance only starts decreasing at high stress levels; c) Performance only decreases with stress in certain situations; d) Performance gets more sporadic, but is still centered on the same average. All these situations would support the general hypothesis “stress impairs performance,” even though they are very different.
+Figure&nbsp;9.2: Four examples of ways that stress can relate to task performance. a) Performance gets worse across the full range of stress; b) Performance only starts decreasing at high stress levels; c) Performance only decreases with stress in certain situations; d) Performance gets more sporadic, but is still centered on the same average. All these situations would support the general hypothesis “stress impairs performance,” even though they are very different.
 </figcaption>
 </figure>
 </div>

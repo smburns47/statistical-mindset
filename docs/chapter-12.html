@@ -1991,7 +1991,7 @@ window.Quarto = {
   <li><a href="#specifying-a-multivariable-model" id="toc-specifying-a-multivariable-model" class="nav-link" data-scroll-target="#specifying-a-multivariable-model"><span class="header-section-number">12.2</span> Specifying a multivariable model</a></li>
   <li><a href="#fitting-the-multivariable-model" id="toc-fitting-the-multivariable-model" class="nav-link" data-scroll-target="#fitting-the-multivariable-model"><span class="header-section-number">12.3</span> Fitting the multivariable model</a></li>
   <li><a href="#interpreting-the-multivariable-coefficients" id="toc-interpreting-the-multivariable-coefficients" class="nav-link" data-scroll-target="#interpreting-the-multivariable-coefficients"><span class="header-section-number">12.4</span> Interpreting the multivariable coefficients</a></li>
-  <li><a href="#variance-explanation-and-partitioning" id="toc-variance-explanation-and-partitioning" class="nav-link" data-scroll-target="#variance-explanation-and-partitioning"><span class="header-section-number">12.5</span> Variance explanation and partitioning</a></li>
+  <li><a href="#variance-explained-in-the-model" id="toc-variance-explained-in-the-model" class="nav-link" data-scroll-target="#variance-explained-in-the-model"><span class="header-section-number">12.5</span> Variance explained in the model</a></li>
   <li><a href="#variables-of-different-data-types" id="toc-variables-of-different-data-types" class="nav-link" data-scroll-target="#variables-of-different-data-types"><span class="header-section-number">12.6</span> Variables of different data types</a>
   <ul class="collapse">
   <li><a href="#categorical-explanatory-variables" id="toc-categorical-explanatory-variables" class="nav-link" data-scroll-target="#categorical-explanatory-variables"><span class="header-section-number">12.6.1</span> Categorical explanatory variables</a></li>
@@ -1999,13 +1999,12 @@ window.Quarto = {
   <li><a href="#ordinal-explanatory-variables" id="toc-ordinal-explanatory-variables" class="nav-link" data-scroll-target="#ordinal-explanatory-variables"><span class="header-section-number">12.6.3</span> Ordinal explanatory variables</a></li>
   <li><a href="#mixed-explanatory-variable-types" id="toc-mixed-explanatory-variable-types" class="nav-link" data-scroll-target="#mixed-explanatory-variable-types"><span class="header-section-number">12.6.4</span> Mixed explanatory variable types</a></li>
   </ul></li>
-  <li><a href="#visualizing-multivariable-models" id="toc-visualizing-multivariable-models" class="nav-link" data-scroll-target="#visualizing-multivariable-models"><span class="header-section-number">12.7</span> Visualizing multivariable models</a></li>
-  <li><a href="#potential-pitfalls-of-multivariable-models" id="toc-potential-pitfalls-of-multivariable-models" class="nav-link" data-scroll-target="#potential-pitfalls-of-multivariable-models"><span class="header-section-number">12.8</span> Potential pitfalls of multivariable models</a>
+  <li><a href="#other-ways-to-improve-a-model" id="toc-other-ways-to-improve-a-model" class="nav-link" data-scroll-target="#other-ways-to-improve-a-model"><span class="header-section-number">12.7</span> Other ways to improve a model</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">12.8</span> Chapter summary</a>
   <ul class="collapse">
-  <li><a href="#causal-specification" id="toc-causal-specification" class="nav-link" data-scroll-target="#causal-specification"><span class="header-section-number">12.8.1</span> Causal specification</a></li>
-  <li><a href="#overfitting" id="toc-overfitting" class="nav-link" data-scroll-target="#overfitting"><span class="header-section-number">12.8.2</span> Overfitting</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">12.8.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">12.8.2</span> New concepts</a></li>
   </ul></li>
-  <li><a href="#other-ways-to-improve-a-model" id="toc-other-ways-to-improve-a-model" class="nav-link" data-scroll-target="#other-ways-to-improve-a-model"><span class="header-section-number">12.9</span> Other ways to improve a model</a></li>
   </ul>
 </nav>
     </div>
@@ -2323,12 +2322,41 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="page-columns page-full"><p>But we weren’t able to explain away <em>all</em> the variance in the target variable - there is still a lot of unaccounted for variation in the models we’ve worked with so far. Our predictions have been wrong, perhaps by an unacceptable amount depending on our goals. So if taking one explanatory variable into account helps a statistical model, it stands to reason that considering multiple explanatory variables at once can help us further. After all, most real world processes aren’t so simple that they are created or influenced by only one input. So let’s see how we can build more complex models with multiple variables. These are called <strong>multivariable models</strong> or multiple regression.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>multivariable model</strong> = a statistical model that includes more than one explanatory variable.</span></div></div>
 <section id="the-case-for-multiple-predictors" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="the-case-for-multiple-predictors"><span class="header-section-number">12.1</span> The case for multiple predictors</h2>
-<p>Yet again going back to our research question about education attainment, we previously fit a simple statistical model with a general linear form to see how a person’s number of siblings predicted or influenced how many years of education they pursued:</p>
+<p>Yet again going back to our research question about education attainment:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch12-sibling-dag" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch12-sibling-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-12_files/figure-html/fig-ch12-sibling-dag-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-sibling-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Visualization of the proposed data generation process for education attainment, with number of siblings as an explanatory variable.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We previously defined and fit a simple statistical model of this data generation process with a general linear form and normal observation model family:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Assuming the data generation process takes the form <span class="math inline">\(Y_i \sim \mathcal{N}(\mu_i, \sigma)\)</span> and <span class="math inline">\(\mu_i = \beta_0 + \beta_1 X_{i}\)</span>, we found the best-fitting coefficient values for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> - i.e., the best-fitting line through the data that minimized the sum of squared prediction errors. We also found a non-zero residual standard error / <span class="math inline">\(\sigma\)</span> value, meaning there is still uncertainty in what the target education value for a person will be after taking into account their number of siblings. However, the uncertainty in this model is improved relative to the null model that didn’t taking into account any explanatory variables, as indicated by the <span class="math inline">\(R^2\)</span> value. Can you remember how to find all that information in the model summary output? Refer back the <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> and <a href="chapter-11.html" class="quarto-xref"><span>Chapter 11</span></a> for a reminder.</p>
+<p>Assuming the data generation process takes this form <span class="math inline">\(Y_i \sim \mathcal{N}(\mu_i, \sigma)\)</span> and <span class="math inline">\(\mu_i = \beta_0 + \beta_1 X_{i}\)</span>, we found the best-fitting coefficient values for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> - i.e., the best-fitting line through the data that minimized the sum of squared prediction errors. We also found a non-zero residual standard error / <span class="math inline">\(\sigma\)</span> value, meaning there is still uncertainty in what the target education value for a person will be after taking into account their number of siblings. However, the uncertainty in this model is improved relative to the null model that didn’t taking into account any explanatory variables, as indicated by the <span class="math inline">\(R^2\)</span> value. Can you remember how to find all that information in the model summary output? Refer back the <a href="chapter-10.html" class="quarto-xref"><span>Chapter 10</span></a> and <a href="chapter-11.html" class="quarto-xref"><span>Chapter 11</span></a> for a reminder.</p>
 <p>This all seems like our theory about parental investment and education outcomes holds some water - assuming the form and family of the model we specified, number of siblings explains some of the variance in people’s education levels and more siblings corresponds with lower education on average.</p>
 <p>However, what if your colleague across the hall has a competing theory, that cultural values placed on education are transmitted through families? While you were doing your research with number of siblings, they instead proposed a data generation process where a father’s education level linearly influences how much education their child will get on average.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch12-father-dag" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch12-father-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-12_files/figure-html/fig-ch12-father-dag-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-father-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Visualization of the proposed data generation process for education attainment, with father’s education as an explanatory variable.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2339,16 +2367,30 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fit a statistical model with <code>lm()</code> that uses <code>highest_year_school_completed_father</code> as the only explanatory variable in the formula.</p>
+<p>Fit a statistical model with <code>lm()</code> that uses <code>highest_year_school_completed_father</code> as the explanatory variable in the formula.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>It looks like your colleague’s model <em>also</em> has some interesting results. Here, someone who’s father received no education is predicted to leave schooling after 10.67 years of education (the estimate for <span class="math inline">\(\beta_0\)</span>). For every additional year of education their father got, their own education is expected to increase by 0.29 years (the estimate for <span class="math inline">\(\beta_1\)</span>). Using this model to make predictions would result in education guesses that are wrong by 2.66 years on average (the estimate for RSE), and this is an uncertainty reduction of 17% relative to the null model (the <span class="math inline">\(R^2\)</span> value).</p>
+<p>It looks like your colleague’s model <em>also</em> has some interesting results. Here, someone whose father received no education is predicted to leave school after 10.67 years (the estimate for <span class="math inline">\(\beta_0\)</span>). For every additional year of education their father got, their own education is expected to increase by 0.29 years (the estimate for <span class="math inline">\(\beta_1\)</span>). Using this model to make predictions would result in education guesses that are wrong by 2.66 years on average (the estimate for RSE), and this is an uncertainty reduction of 17% relative to the null model (the <span class="math inline">\(R^2\)</span> value).</p>
 <p>Is one of you right and the other wrong? Not necessarily. In <a href="chapter-9.html" class="quarto-xref"><span>Chapter 9</span></a> we talked about how parsimonious models can be simpler than the real data generation process but still useful for understanding fundamental mechanisms. Is one model then more <em>useful</em> than the other? For an explanation goal, since each of you had a different estimand (the effect of family size vs.&nbsp;the effect of parental education), the models serve different purposes. Both explain how the target data will change and what uncertainty remains under different conditions and focuses, so both might be useful.</p>
 <p>For a prediction goal however, one model has less uncertainty than the other and would make more accurate predictions (RSE of 2.87 vs.&nbsp;2.66). If this is why you’re developing a statistical model, then <code>father_model</code> is better at making predictions than <code>sibling_model</code>.</p>
-<p>But before you despair over having a “worse” prediction model than your colleague, neither model is explaining <em>all</em> the variance in education attainment because neither of these explanatory variables is the whole story. In addition, even if you only cared about the effect of family size on education attainment, maybe you <em>should</em> cared about it different contexts, like when parents have different amounts of education. So what if you and your colleague combined forces?</p>
-<p>Here’s a plot to show why this might be beneficial. This scatter plot shows the linear association between <code>highest_year_school_completed_father</code> on the x-axis and <code>highest_year_of_school_completed</code> on the y-axis, with points colored by <code>number_of_brothers_and_sisters</code>.</p>
+<p>But before you despair over having a “worse” prediction model than your colleague, neither model is explaining <em>all</em> the variance in education attainment because neither of these explanatory variables is the whole story. It’s possible that a person’s education has multiple explanations, and <em>both</em> number of siblings and father’s education level make contributions. So what if you and your colleague combined forces, and suggested a data generation process with both of these explanatory variables at once?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch12-multi-dag" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch12-multi-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-12_files/figure-html/fig-ch12-multi-dag-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-multi-dag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: A more complex data generation process idea with multiple explanatory variables.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s a plot to show why this might be a possibility for our data. This scatter plot shows the linear association between <code>highest_year_school_completed_father</code> on the x-axis and <code>highest_year_of_school_completed</code> on the y-axis, with points colored by <code>number_of_brothers_and_sisters</code>.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Notice that the light-colored dots (people with a lot of siblings) are mostly below the line of best fit. This indicates that people with more siblings generally have fewer years of education than <code>father_model</code> predicts. In order to predict them more accurately, after taking into account father education, we should <em>also</em> take into account number of siblings to further adjust our predictions up or down. Even though <code>highest_year_school_completed_father</code> explained more variance in <code>highest_year_of_school_completed</code> than <code>number_of_brothers_and_sisters</code> did in separate models, considering both of their influence at the same time in the same model could reduce target uncertainty even more.</p>
@@ -2391,7 +2433,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>The fit is not perfect (we’re underestimating how many people reply with 12 or 16, the cut-offs for a high school and college degree respectively), but we’re generating data that has roughly the same center and spread as the real data, so we will proceed for now (if the center and spread had been way off, we should think of different ideas for the prediction equation or observation model).</p>
 </section>
-<section id="interpreting-the-multivariable-coefficients" class="level2" data-number="12.4">
+<section id="interpreting-the-multivariable-coefficients" class="level2 page-columns page-full" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="interpreting-the-multivariable-coefficients"><span class="header-section-number">12.4</span> Interpreting the multivariable coefficients</h2>
 <p>After checking model fit, we proceed to looking at what the fitted coefficients of the model mean for the relationship between the explanatory variables and the target variable.</p>
 <div id="qwebr-insertion-location-7"></div>
@@ -2417,27 +2459,26 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>This is because we held <span class="math inline">\(X_2\)</span> constant. So the full meaning of <span class="math inline">\(\beta_1\)</span> in a multivariable model is the change in <span class="math inline">\(\mu\)</span> for every one-unit increase in <span class="math inline">\(X_1\)</span>, <em>when all other explanatory variables are held constant</em>. The difference between <span class="math inline">\(\mu\)</span> for <span class="math inline">\(X_1 = j\)</span> and <span class="math inline">\(\mu\)</span> for <span class="math inline">\(X_1 = j + 1\)</span> is always the same, regardless of what the other explanatory variables are. This is like comparing the mean education levels of two people who have the same number of siblings but only differ in what their father’s education level was. In effect, we are fitting a separate line of best fit for each value of <span class="math inline">\(X_2\)</span> - the slope of those lines is always the same, but the intercepts vary depending on the value of <span class="math inline">\(X_2\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-ch11-conditional" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-ch12-conditional" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ch11-conditional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter-12_files/figure-html/fig-ch11-conditional-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-ch12-conditional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-12_files/figure-html/fig-ch12-conditional-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch11-conditional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.1: Different lines of best fit for the relationship between number of siblings and education attainment, depending on father’s education level.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch12-conditional-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Different lines of best fit for the relationship between number of siblings and education attainment, depending on father’s education level.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>plot this</strong></p>
 <p>Conversely, let’s now generate multiple predictions for different values of <span class="math inline">\(X_2\)</span>, while holding <span class="math inline">\(X_1\)</span> constant:</p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>This is the meaning of <span class="math inline">\(\beta_2\)</span> in a multivariable model - the change in <span class="math inline">\(\mu\)</span> for every one-unit increase in <span class="math inline">\(X_2\)</span>, when all other explanatory variables are held constant. It’s the difference in education attainment for two people who have the same father’s education level but differ by 1 in how many siblings they have<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>In statistics we also use the terms “partial effect” and “over and above” for this interpretation. <span class="math inline">\(\beta_1\)</span> is the partial effect of <span class="math inline">\(X_1\)</span> on <span class="math inline">\(\mu_i\)</span>, over and above the effect of <span class="math inline">\(X_2\)</span>. Phrasing the interpretation this way makes clear that <span class="math inline">\(X_1\)</span> is not the only influence on <span class="math inline">\(Y\)</span>, but we can still interpret how big its individual effect is. Since <span class="math inline">\(\beta_1\)</span> is 0.26 and <span class="math inline">\(\beta_2\)</span> is -0.14, we can say that there is a positive effect of father’s education on a person’s education attainment over and above the effect of sibling number, while there is a negative effect of sibling number on education attainment over and above the effect of father’s education.</p>
+<div class="page-columns page-full"><p>In statistics we also use the terms <strong>partial effect</strong> and “over and above” for this interpretation. <span class="math inline">\(\beta_1\)</span> is the partial effect of <span class="math inline">\(X_1\)</span> on <span class="math inline">\(\mu_i\)</span>, over and above the effect of <span class="math inline">\(X_2\)</span>. Phrasing the interpretation this way makes clear that <span class="math inline">\(X_1\)</span> is not the only influence on <span class="math inline">\(Y\)</span>, but we can still interpret how big its individual effect is. Since <span class="math inline">\(\beta_1\)</span> is 0.26 and <span class="math inline">\(\beta_2\)</span> is -0.14, we can say that there is a positive effect of father’s education on a person’s education attainment over and above the effect of sibling number, while there is a negative effect of sibling number on education attainment over and above the effect of father’s education.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>partial effect</strong> = the effect of an explanatory variable on a target variable, when holding the value of other explanatory variables constant.</span></div></div>
 </section>
-<section id="variance-explanation-and-partitioning" class="level2 page-columns page-full" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="variance-explanation-and-partitioning"><span class="header-section-number">12.5</span> Variance explanation and partitioning</h2>
+<section id="variance-explained-in-the-model" class="level2 page-columns page-full" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="variance-explained-in-the-model"><span class="header-section-number">12.5</span> Variance explained in the model</h2>
 <p>The concepts we developed for prediction error and uncertainty in simpler models also apply to multivariable models. In all cases, a prediction equation generates a parameter for the observation model of a target; any amount of stuff can go into that prediction equation. We quantify how much variance in the target the input variables can collectively account for by looking at the reduction in spread of <span class="math inline">\(Y|X\)</span> vs.&nbsp;<span class="math inline">\(Y\)</span>, via the model’s <span class="math inline">\(R^2\)</span> value.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
@@ -2470,7 +2511,7 @@ Figure&nbsp;12.1: Different lines of best fit for the relationship between numbe
 </div>
 </div>
 </div>
-<p>Or from a prediction perspective, we quantify how accurate our model’s predictions are by finding the RSE of the model residuals, where the <span class="math inline">\(\hat{Y}\)</span> predictions are created with multiple input variables.</p>
+<p>Or for a prediction accuracy estimand, we quantify how accurate our model’s predictions are by finding the RSE of the model residuals, where the <span class="math inline">\(\hat{Y}\)</span> predictions are created with multiple input variables.</p>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>These values represent the model’s performance as a whole - how much variance we can explain, or how accurately we can predict target values, by accounting for both number of siblings and father’s level of education. Notably, these scores suggest this multivariable model explains more variance in the target than either of the single-variable models did.</p>
@@ -2487,15 +2528,15 @@ Figure&nbsp;12.1: Different lines of best fit for the relationship between numbe
 <p>According to this, fathers with more education tend to have fewer children.</p>
 <p>When two variables are associated with each other, that means one variable provides some information about the value of the other. If <code>highest_year_school_completed_father</code> carries information about <code>number_of_brothers_and_sisters</code>, then that means that part of the explanatory power of <code>number_of_brothers_and_sisters</code> on <code>highest_year_of_school_completed</code> is already accounted for by <code>highest_year_school_completed_father</code>. In other words, there is less utility than you might think by adding number of siblings to a model with father’s education already accounted for. Given that father’s education and sibling number have overlapping information, some of the variance in respondents’ education attainment that sibling number can explain is <em>already</em> explained by father’s education. The two variables don’t explain completely separate amounts of variance in the target variable.</p>
 <p>For a more obvious example, imagine looking at children’s reading scores explained by their age in years and age in months. Age in years is wholly determined by age in months (it’s just a mathematical transformation). So if we know the average reading score for children who are 50 months old, taking into account their age in years as well doesn’t change our ideas at all. We already knew the information about age that helps explain variation in reading scores. Conditional on knowing age in months already, we don’t update our guesses about reading scores anymore by also knowing age in years.</p>
-<p>So when interpreting the variance attributable to each explanatory variable, we ask: after knowing how much variance <span class="math inline">\(X_1\)</span> can explain, how much <em>more</em> can <span class="math inline">\(X_2\)</span> explain when we consider it too? What additional value is there in considering <span class="math inline">\(X_2\)</span>, after I’ve already taken <span class="math inline">\(X_1\)</span> into account? If <span class="math inline">\(X_1\)</span> already explains all the variance that <span class="math inline">\(X_2\)</span> would help with, then there’s no value to adding it to the model.</p>
-<p>Let’s look at whether we have a case like this with our data. First, we will compare the variance explained in the simple <code>sibling_model</code> with that explained in the full <code>multi_model</code>. The only difference between these models is that <code>multi_model</code> includes father’s education as another explanatory variable. So, like we compared a model with an explanatory variable to the null model in <a href="chapter-11.html" class="quarto-xref"><span>Chapter 11</span></a>, we can compare the more complex model (with two input variables) to the simpler model (with one input variable) to see how much additional variance is explained by father’s education, after already taking number of siblings into account. Once we adjust our guesses about education attainment based on information about siblings, should we further adjust our guesses when we also know father’s education level?</p>
+<div class="page-columns page-full"><p>So when interpreting the variance attributable to each explanatory variable, we ask: after knowing how much variance <span class="math inline">\(X_1\)</span> can explain, how much <em>more</em> can <span class="math inline">\(X_2\)</span> explain when we consider it too? What additional value is there in considering <span class="math inline">\(X_2\)</span>, after I’ve already taken <span class="math inline">\(X_1\)</span> into account? If <span class="math inline">\(X_1\)</span> already explains all the variance that <span class="math inline">\(X_2\)</span> would help with, then there’s no value to adding it to the model. This process, asking about the unique effect of <span class="math inline">\(X_2\)</span> after considering <span class="math inline">\(X_1\)</span>, is called conditioning on or <strong>controlling for</strong> <span class="math inline">\(X_1\)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>statistical control</strong> = The process of accounting for variance attributable to a variable so that the unique, partial effect of a different variable can be identified.</span></div></div>
+<p>Let’s look at whether we have a case like this with our data. First, we will compare the variance explained in the simple <code>sibling_model</code> with that explained in the full <code>multi_model</code>. The only difference between these models is that <code>multi_model</code> includes father’s education as another explanatory variable. So, like we compared a model with an explanatory variable to the null model in <a href="chapter-11.html" class="quarto-xref"><span>Chapter 11</span></a>, we can compare the more complex model (with two input variables) to the simpler model (with one input variable) to see how much additional variance is explained by father’s education, after already taking number of siblings into account. Once we adjust our guesses about education attainment based on information about siblings, should we further adjust our guesses when we also know father’s education level? Is there a unique effect of father education, controlling for number of siblings?</p>
 <div id="qwebr-insertion-location-16"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>The full model explains 18.63% of the variance in education attainment, while sibling information only explains 6.95%. Thus, father education explains an additional 11.68% of the variance in education attainment when we take it into account as well. We call this difference a <strong>change in <span class="math inline">\(R^2\)</span></strong>, notated as <span class="math inline">\(\Delta R^2\)</span> (“delta R-squared”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>change in <span class="math inline">\(R^2\)</span></strong> = the difference in amount of variation in a target variable explained by different statistical model specifications</span></div></div>
+<div class="page-columns page-full"><p>The full model explains 18.63% of the variance in education attainment, while sibling information only explains 6.95%. Thus, father education explains an additional 11.68% of the variance in education attainment when we take it into account as well. We call this difference a <strong>change in <span class="math inline">\(R^2\)</span></strong>, notated as <span class="math inline">\(\Delta R^2\)</span> (“delta R-squared”).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong><span class="math inline">\(\Delta R^2\)</span></strong> = the difference in amount of variation in a target variable explained by different statistical model specifications</span></div></div>
 <p>Conversely, here’s the comparison of <span class="math inline">\(R^2\)</span> score between <code>father_model</code> and <code>multi_model</code>:</p>
 <div id="qwebr-insertion-location-17"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now, <span class="math inline">\(\Delta R^2\)</span> is 0.0158 - number of siblings only explains 1.58% additional variance in education attainment after we already know father’s education. Thus, it doesn’t seem to carry much unique information about education attainment. We already know what changes to expect in education attainment by learning father’s education. Number of siblings is mostly redundant for that information<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Now, <span class="math inline">\(\Delta R^2\)</span> is 0.0158 - number of siblings only explains 1.58% additional variance in education attainment after we already know father’s education. Thus, it doesn’t seem to carry much unique information about education attainment. We already know what changes to expect in education attainment by learning father’s education. Number of siblings is mostly redundant for that information.</p>
 <p>When our estimand is how well in general we can explain variation in a target variable, the estimator we can use is <span class="math inline">\(R^2\)</span>. In this case, our estimate of the estimand is 0.186. When our estimand is how much a particular explanatory variable can explain variance, <em>in the context</em> of other explanatory variables, we can use the <span class="math inline">\(\Delta R^2\)</span> estimator. Our estimate of that for the effect of number of siblings over and above the effect of father education is 0.0158. When we focus on one variable’s effect after accounting for others, we call this conditioning on or controlling for the other variable(s).</p>
 </section>
 <section id="variables-of-different-data-types" class="level2" data-number="12.6">
@@ -2582,44 +2623,48 @@ Figure&nbsp;12.1: Different lines of best fit for the relationship between numbe
 <p>We still get fitted coefficient estimates, just as we have been doing all throughout this chapter. In this case, remember to interpret them in the context of how their variables were recorded. <span class="math inline">\(\beta_1\)</span> is the change in mean education years due to a one-unit increase in their father’s education level, over and above the effect of being born in the US. <span class="math inline">\(\beta_2\)</span> is the change in mean education years due to being born in the US vs.&nbsp;not, over and above the effect of father’s education. <span class="math inline">\(\beta_0\)</span> is the average education when both <span class="math inline">\(X_1=0\)</span> (their father had no years of formal education) and <span class="math inline">\(X_2=0\)</span> (they were not born in the US).</p>
 </section>
 </section>
-<section id="visualizing-multivariable-models" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="visualizing-multivariable-models"><span class="header-section-number">12.7</span> Visualizing multivariable models</h2>
-</section>
-<section id="potential-pitfalls-of-multivariable-models" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="potential-pitfalls-of-multivariable-models"><span class="header-section-number">12.8</span> Potential pitfalls of multivariable models</h2>
-<p>https://journals.sagepub.com/doi/10.1177/00491241231176851</p>
-<p>Seems like we can include as many variables as we want without thinking too much. But there are potential problems with doing this.</p>
-<section id="causal-specification" class="level3" data-number="12.8.1">
-<h3 data-number="12.8.1" class="anchored" data-anchor-id="causal-specification"><span class="header-section-number">12.8.1</span> Causal specification</h3>
-</section>
-<section id="overfitting" class="level3" data-number="12.8.2">
-<h3 data-number="12.8.2" class="anchored" data-anchor-id="overfitting"><span class="header-section-number">12.8.2</span> Overfitting</h3>
-<p>Since the general linear model allows us to account for an additional predictor via addition, it assuredly allows us to add even more than two.</p>
-<p>When prediction is our main goal, adding as many predictors as possible can be helpful. In general, the more parameters we add to a model, the less error there is left unexplained. Because we have said that the goal of an analyst is to reduce error, this seems like a good thing. And it is, but only to a point.</p>
-<p>Let’s do a little thought experiment. You know already that the three-parameter model <code>multi_model</code> explained more variation than either of the two-parameter models <code>father_model</code> or <code>sibling_model</code>. Something with four parameters would explain more than the three-parameter model. And so on. What would happen if we kept adding variables until there were as many predictors as datapoints?</p>
-<p>In this case, the model error would be reduced to 0. Why? Because each person would have their own parameter in the model. If each person had their own parameter, then the predicted score for that person would just be the person’s actual score. And there would be no residual between the predicted and actual score. The problem with this is that even though the model fits our <em>current</em> data perfectly, it would not fit if we were to choose another sample. Getting better at making in-sample predictions, but getting worse at making out-of-sample predictions, is called <strong>overfitting</strong>.</p>
-<p><img src="images/ch13-overfitting.png" width="500"></p>
-<p>Although we can improve model fit by adding parameters to a model, there is always a trade-off involved between reducing error (by adding more parameters to a model) on one hand, and increasing the intelligibility and generalizability of a model on the other.</p>
-<p>This is a limitation of PRE as a measure of our success. If we get a PRE of .40, for example, that would be quite an accomplishment if we had only added a single parameter to the model. But if we had achieved that level by adding 30 parameters to the model, it’s just not as impressive.</p>
-<p>There is a quote attributed to Einstein that sums up things pretty well: “Everything should be made as simple as possible, but not simpler.” A certain amount of complexity is required in our models just because of complexity in the world. But if we can keep our model as simple as possible while still making some sense of the complexity, we can make predictions that are “good enough” across many samples. The trick is finding what model will be good enough!</p>
-</section>
-</section>
-<section id="other-ways-to-improve-a-model" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="other-ways-to-improve-a-model"><span class="header-section-number">12.9</span> Other ways to improve a model</h2>
+<section id="other-ways-to-improve-a-model" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="other-ways-to-improve-a-model"><span class="header-section-number">12.7</span> Other ways to improve a model</h2>
+<p>We saw in this chapter how to change our statistical model to reflect a new idea of the data generation process - namely, that there are multiple explanatory variables that all influence a target variable. We made this change by adding another <span class="math inline">\(X\)</span> to the prediction equation, but we kept the same general equation form (linear, additive effects on <span class="math inline">\(Y\)</span>) and the same observation model (<span class="math inline">\(Y|X\)</span> is normally distributed). These too are features of the data generation process idea; they are assumptions we encode into the model via the equations we choose. If we had different ideas about these features, we could make further changes to the statistical model equations.</p>
+<p>We won’t get into to the details of how to make these changes in this introductory unit. If you want to see a deeper dive, there are more advanced chapters at the end of this book. But to give you a taste of what’s possible to think about, here are some other common ideas of data generation processes that involve specific changes to the statistical model:</p>
 <ul>
-<li>different prediction equation forms (e.g.&nbsp;interaction, transformations). Some can be linearized, some cannot</li>
-<li>different observational models</li>
-<li>multilevel models</li>
+<li><strong>different observation models</strong> (<span class="quarto-unresolved-ref">?sec-ch21</span>): It’s common to use a normal observation model and assume that target values are symmetrically distributed around a predicted mean. Such an assumption often comes from the idea that the target values are measured with random error, but that the true latent value is the mean. However this isn’t always a good assumption for a data generation process. In particular, it’s not a good assumption if it’s not <em>possible</em> for a variable to be normally distributed due to its scale of measurement. For instance, a binary target variable can only be Bernoulli distributed. In cases like this, we can use different observation models to encode our ideas of how the probabilistic piece of a data generation process works.</li>
+<li><strong>non-linear associations</strong> (<span class="quarto-unresolved-ref">?sec-ch22</span>): It is also common to use a linear prediction equation. This is because many relationships in real data are weak (or measured with a lot of error), so it’s hard to tell what the form of the association should be. Alternatively, your theories are underdeveloped at this time and you don’t know what form to expect. In such situations, a linear form is a good default because it’s easy to interpret. But again, this might not be appropriate for all cases. You can draw differently-shaped best fitting lines through the data by using different functional forms for the prediction equation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.<br>
+</li>
+<li><strong>interaction effects</strong> (<span class="quarto-unresolved-ref">?sec-ch23</span>): In this chapter we saw an example of a data generation process idea where the effect of one explanatory variable was assumed to be consistent regardless of the value of another variable. But you can probably think of situations where this isn’t true. For example, there might be a negative relationship between screen time and mental health, but <em>only</em> among people who use that screen time for scrolling social media instead of other uses. In this case, there would be what’s called an interaction effect between screen time and type of screen use - the value of the effect of screen time depends on the value of the screen use type variable. To encode this in a statistical model, one needs to add terms that make <span class="math inline">\(\beta_1\)</span> itself a function of another variable.</li>
+<li><strong>multilevel models</strong> (<span class="quarto-unresolved-ref">?sec-ch24</span>): Speaking of different effects for different situations, not all people respond to stimuli in the same way. A therapy regime may be very effective for some people, somewhat so for others, or possibly even harmful for a few. There could be a distribution of effects across people. To accommodate an idea like this, we can assume each person has their own prediction equation, and the coefficients of the equations are themselves data that can be modeled by another prediction equation at a higher level.</li>
+</ul>
+</section>
+<section id="chapter-summary" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">12.8</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">12.8.1</span> Learning goals</h3>
+<p>After reading this chapter, you should be able to:</p>
+<ul>
+<li>Turn ideas of a multi-input generation process into models with more than one explanatory variable</li>
+<li>Fit a multivariable model in R, with different types of explanatory variables</li>
+<li>Interpret each coefficient in a multivariable model, in the context of the other variables</li>
+<li>Estimate the variance explained by a whole model, or uniquely by a piece of the model</li>
+</ul>
+</section>
+<section id="new-concepts" class="level3" data-number="12.8.2">
+<h3 data-number="12.8.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">12.8.2</span> New concepts</h3>
+<ul>
+<li><strong>multivariable model</strong>: a statistical model that includes more than one explanatory variable.</li>
+<li><strong>partial effect</strong>: the effect of an explanatory variable on a target variable, when holding the value of other explanatory variables constant.</li>
+<li><strong>statistical control</strong>: the process of accounting for variance attributable to a variable so that the unique, partial effect of a different variable can be identified.</li>
+<li><strong><span class="math inline">\(\Delta R^2\)</span></strong>: the difference in amount of variation in a target variable explained by different statistical model specifications.</li>
 </ul>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>In the <span class="math inline">\(Y|X\)</span> notation, if we have multiple explanatory variables, <span class="math inline">\(X\)</span> means the <em>set</em> of all the separate <span class="math inline">\(X_{1,2,...k}\)</span> variables<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Note that in this interpretation, we expect two people who differ by one siblings to have the same difference in education attainment whether their father has no education, or has a PhD. The effect of siblings is consistent regardless of father’s education level. This is a strong assumption to encode into the model. Maybe you would expect sibling number to have a stronger effect on education attainment among people whose fathers had no education, than among people whose fathers have a higher degree. If so that’s a further model complication called an interaction. Read the advanced chapter <span class="quarto-unresolved-ref">?sec-ch21</span> for more info.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><em>Why</em> is it redundant? This gets into the realm of causal inference. See <span class="quarto-unresolved-ref">?sec-ch13</span> for more discussion on ideas of causal relationships and how statistical model results can support or refute those.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>and actually there are mathematical tricks you can do to <em>linearize</em> a non-linear relationship, by transforming the units of the explanatory variable.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
