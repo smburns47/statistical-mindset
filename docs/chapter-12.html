@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-13.html" rel="next">
 <link href="./chapter-11.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -353,7 +354,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'performance', 'see'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -1967,6 +1968,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Making a Model More Detailed</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evaluating Model Fit</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2431,7 +2438,7 @@ Figure&nbsp;12.3: A more complex data generation process idea with multiple expl
 <p>As before in our modeling workflow, after specifying and fitting the model, we should check the fit - simulate data with the model to make sure it can plausibly generate data that resemble the real dataset. That means using the prediction equation to create predictions for all observations based on their explanatory values. Since the prediction equation now has two variables in it, we need to use all of that information to generate the parameters used for the simulation.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The fit is not perfect (we’re underestimating how many people reply with 12 or 16, the cut-offs for a high school and college degree respectively), but we’re generating data that has roughly the same center and spread as the real data, so we will proceed for now (if the center and spread had been way off, we should think of different ideas for the prediction equation or observation model).</p>
+<p>The fit is not perfect - we’re underestimating how many people reply with 12 or 16, the cut-offs for a high school and college degree respectively), but we’re generating data that has roughly the same center and spread as the real data, so we will proceed for now (if the center and spread had been way off, we should think of different ideas for the prediction equation or observation model).</p>
 </section>
 <section id="interpreting-the-multivariable-coefficients" class="level2 page-columns page-full" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="interpreting-the-multivariable-coefficients"><span class="header-section-number">12.4</span> Interpreting the multivariable coefficients</h2>
@@ -2628,11 +2635,10 @@ Figure&nbsp;12.4: Different lines of best fit for the relationship between numbe
 <p>We saw in this chapter how to change our statistical model to reflect a new idea of the data generation process - namely, that there are multiple explanatory variables that all influence a target variable. We made this change by adding another <span class="math inline">\(X\)</span> to the prediction equation, but we kept the same general equation form (linear, additive effects on <span class="math inline">\(Y\)</span>) and the same observation model (<span class="math inline">\(Y|X\)</span> is normally distributed). These too are features of the data generation process idea; they are assumptions we encode into the model via the equations we choose. If we had different ideas about these features, we could make further changes to the statistical model equations.</p>
 <p>We won’t get into to the details of how to make these changes in this introductory unit. If you want to see a deeper dive, there are more advanced chapters at the end of this book. But to give you a taste of what’s possible to think about, here are some other common ideas of data generation processes that involve specific changes to the statistical model:</p>
 <ul>
-<li><strong>different observation models</strong> (<span class="quarto-unresolved-ref">?sec-ch21</span>): It’s common to use a normal observation model and assume that target values are symmetrically distributed around a predicted mean. Such an assumption often comes from the idea that the target values are measured with random error, but that the true latent value is the mean. However this isn’t always a good assumption for a data generation process. In particular, it’s not a good assumption if it’s not <em>possible</em> for a variable to be normally distributed due to its scale of measurement. For instance, a binary target variable can only be Bernoulli distributed. In cases like this, we can use different observation models to encode our ideas of how the probabilistic piece of a data generation process works.</li>
-<li><strong>non-linear associations</strong> (<span class="quarto-unresolved-ref">?sec-ch22</span>): It is also common to use a linear prediction equation. This is because many relationships in real data are weak (or measured with a lot of error), so it’s hard to tell what the form of the association should be. Alternatively, your theories are underdeveloped at this time and you don’t know what form to expect. In such situations, a linear form is a good default because it’s easy to interpret. But again, this might not be appropriate for all cases. You can draw differently-shaped best fitting lines through the data by using different functional forms for the prediction equation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.<br>
-</li>
-<li><strong>interaction effects</strong> (<span class="quarto-unresolved-ref">?sec-ch23</span>): In this chapter we saw an example of a data generation process idea where the effect of one explanatory variable was assumed to be consistent regardless of the value of another variable. But you can probably think of situations where this isn’t true. For example, there might be a negative relationship between screen time and mental health, but <em>only</em> among people who use that screen time for scrolling social media instead of other uses. In this case, there would be what’s called an interaction effect between screen time and type of screen use - the value of the effect of screen time depends on the value of the screen use type variable. To encode this in a statistical model, one needs to add terms that make <span class="math inline">\(\beta_1\)</span> itself a function of another variable.</li>
-<li><strong>multilevel models</strong> (<span class="quarto-unresolved-ref">?sec-ch24</span>): Speaking of different effects for different situations, not all people respond to stimuli in the same way. A therapy regime may be very effective for some people, somewhat so for others, or possibly even harmful for a few. There could be a distribution of effects across people. To accommodate an idea like this, we can assume each person has their own prediction equation, and the coefficients of the equations are themselves data that can be modeled by another prediction equation at a higher level.</li>
+<li><strong>interaction effects</strong> (<span class="quarto-unresolved-ref">?sec-ch21</span>): In this chapter we saw an example of a data generation process idea where the effect of one explanatory variable was assumed to be consistent regardless of the value of another variable. But you can probably think of situations where this isn’t true. For example, there might be a negative relationship between screen time and mental health, but <em>only</em> among people who use that screen time for scrolling social media instead of other uses. In this case, there would be what’s called an interaction effect between screen time and type of screen use - the value of the effect of screen time depends on the value of the screen use type variable. To encode this in a statistical model, one needs to add terms that make <span class="math inline">\(\beta_1\)</span> itself a function of another variable.</li>
+<li><strong>non-linear associations</strong> (<span class="quarto-unresolved-ref">?sec-ch22</span>): It’s common to use a linear prediction equation. This is because many relationships in real data are weak (or measured with a lot of error), so it’s hard to tell what the form of the association should be. Alternatively, your theories are underdeveloped at this time and you don’t know what form to expect. In such situations, a linear form is a good default because it’s easy to interpret. But this might not be appropriate for all cases. You can draw differently-shaped best fitting lines through the data by using different functional forms for the prediction equation<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
+<li><strong>different observation models</strong> (<span class="quarto-unresolved-ref">?sec-ch23</span>): It is also common to use a normal observation model and assume that target values are symmetrically distributed around a predicted mean. Such an assumption often comes from the idea that the target values are measured with random error, but that the true latent value is the mean. However this isn’t always a good assumption for a data generation process. In particular, it’s not a good assumption if it’s not <em>possible</em> for a variable to be normally distributed due to its scale of measurement. For instance, a binary target variable can only be Bernoulli distributed. In cases like this, we can use different observation models to encode our ideas of how the probabilistic piece of a data generation process works.</li>
+<li><strong>multilevel models</strong> (<span class="quarto-unresolved-ref">?sec-ch24</span>): Not all people respond to stimuli in the same way. A therapy regime may be very effective for some people, somewhat so for others, or possibly even harmful for a few. There could be a distribution of effects across people. To accommodate an idea like this, we can assume each person has their own prediction equation, and the coefficients of the equations are themselves data that can be modeled by another prediction equation at a higher level.</li>
 </ul>
 </section>
 <section id="chapter-summary" class="level2" data-number="12.8">
@@ -3089,6 +3095,9 @@ Figure&nbsp;12.4: Different lines of best fit for the relationship between numbe
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-13.html" class="pagination-link" aria-label="Evaluating Model Fit">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evaluating Model Fit</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

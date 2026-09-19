@@ -354,7 +354,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'performance', 'see'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -1968,6 +1968,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Making a Model More Detailed</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evaluating Model Fit</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2413,12 +2419,12 @@ Figure&nbsp;11.1: Visualization of where the magnitudes come from for residuals 
 </figcaption>
 </figure>
 </div>
-<div class="page-columns page-full"><p>However, a larger SSE value can also occur just because there are more data points. So we can also calculate the typical amount of squared error per observation, called the <strong>mean squared error</strong> (MSE). This is similar to calculating the variance of the error distribution, except instead of dividing by <span class="math inline">\(n-1\)</span>, we divide by <span class="math inline">\(n-k\)</span> where <span class="math inline">\(k\)</span> is the number of coefficients in the prediction equation of the model<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean squared error (MSE)</strong> = variance of the residual distribution</span></div></div>
-<p><span id="eq-mse"><span class="math display">\[MSE = \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k} \tag{11.3}\]</span></span></p>
+<div class="page-columns page-full"><p>However, a larger SSE value can also occur just because there are more data points. So we can also calculate the typical amount of squared error per observation, called the <strong>mean squared error</strong> (MSE). This is similar to calculating the variance of the error distribution, except instead of dividing by <span class="math inline">\(n-1\)</span>, we divide by <span class="math inline">\(n-k-1\)</span> where <span class="math inline">\(k\)</span> is the number of unknown coefficients and parameters that the model fitting procedure had to estimate<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean squared error (MSE)</strong> = variance of the residual distribution</span></div></div>
+<p><span id="eq-mse"><span class="math display">\[MSE = \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k-1} \tag{11.3}\]</span></span></p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="page-columns page-full"><p>Finally, because MSE is in units of squared residuals, it is tough to concretely interpret by how much our guesses are typically wrong. So we can take the square root of MSE to get back to the original units of the target variable. This is called the <strong>residual standard error</strong> (RSE), and is like calculating the standard deviation of the error distribution:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>residual standard error (RSE)</strong> = expected standard deviation of the residual distribution from a model</span></div></div>
-<p><span id="eq-rmse"><span class="math display">\[RSE = \sqrt{\frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k}} \tag{11.4}\]</span></span></p>
+<p><span id="eq-rmse"><span class="math display">\[RSE = \sqrt{\frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2}{n-k-1}} \tag{11.4}\]</span></span></p>
 <div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>When we first learned about standard deviation, we learned that the straightforward interpretation of it is the typical amount of deviation from the mean within a data distribution - if someone guessed the mean value for every data point, on average they would be off by plus or minus the standard deviation amount. We can interpret the RSE of the residual distribution the same way - it is the typical amount of prediction error our statistical model makes when predicting individual data points.</p>
