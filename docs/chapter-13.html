@@ -353,7 +353,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'gt', 'bayesplot'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -2641,7 +2641,7 @@ Figure&nbsp;13.1: The point of optimal model complexity it where the data likeli
 <li>Visualize prediction intervals from a fitted model</li>
 <li>Reason about how the prediction equation can be misspecified</li>
 <li>Reason about how the observation model can be misspecified</li>
-<li>Understand and compute the likelihood of a data sample given a model</li>
+<li>Understand and compute the log-likelihood of a data sample given a model</li>
 </ul>
 </section>
 <section id="new-concepts" class="level3" data-number="13.7.2">
