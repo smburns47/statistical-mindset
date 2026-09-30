@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-14.html" rel="next">
 <link href="./chapter-12.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -1976,8 +1977,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions with Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Making Conclusions with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -2608,6 +2622,12 @@ Note
 </section>
 <section id="responding-to-poor-model-fit" class="level2 page-columns page-full" data-number="13.6">
 <h2 data-number="13.6" class="anchored" data-anchor-id="responding-to-poor-model-fit"><span class="header-section-number">13.6</span> Responding to poor model fit</h2>
+<div class="blue-text">
+<p><em>If the Lord Almighty had consulted me before embarking on creation, I would have recommended something simpler.</em></p>
+<ul>
+<li>Alfonso X, King of Castile and Leon, 1252-1284</li>
+</ul>
+</div>
 <p>The above discussion may be feeling overwhelming right now, so let’s step it back and review the core principles of this chapter. First, we have a model that we think is a good idea for the data generation process. We fit that model to the data and then look at how well it fits. If it doesn’t fit well and we want to create a better model of the data generation process, we need to think about what model changes can account for the data better. These changes could be adding things or changing the form of the prediction equation, or changing the observation model family or parameters. We can check whether these changes improve model fit by comparing log-likelihoods of the two models.</p>
 <p>In the demonstrations above we gave some examples of advanced modeling options that can improve model fit. You’re not expected to understand or remember those options at this stage. The important thing to remember right now is that statistical modeling is an iterative process that happens both within one research study and across many studies in order to refine scientific theory. So you should be aware of how to check model fit.</p>
 <section id="dont-blindly-follow-diagnostic-plots" class="level3" data-number="13.6.1">
@@ -3094,6 +3114,9 @@ Figure&nbsp;13.1: The point of optimal model complexity it where the data likeli
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-14.html" class="pagination-link" aria-label="From Samples to Populations">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

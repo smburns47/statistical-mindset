@@ -1996,8 +1996,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Making Conclusions with Data</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Making Conclusions with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -2649,6 +2662,12 @@ Figure&nbsp;9.2: Four examples of ways that stress can relate to task performanc
 </section>
 <section id="models-as-useful-simplifications" class="level2 page-columns page-full" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="models-as-useful-simplifications"><span class="header-section-number">9.8</span> Models as useful simplifications</h2>
+<div class="blue-text">
+<p><em>Science must begin with myths, and with the criticism of myths.</em></p>
+<ul>
+<li>Karl Popper, philosopher of science</li>
+</ul>
+</div>
 <p>While we want to be specific and detailed about our ideas of the data generation process and iteratively improve upon them, we should also get comfortable with the idea that our models will never be perfect. They are <em>models</em> after all, not the real thing. Often times they will seem like major simplifications that make the process less complicated than we know it to be.</p>
 <p>But in some ways, that can be a strength. Imagine again the firetruck model we mentioned at the beginning of the chapter. A toy truck with rolling wheels and flashing lights is a better model of a firetruck than a square block painted red because it is more clear what the model represents. But adding even more detail, e.g.&nbsp;requiring gas and windshield wiper fluid to operate, isn’t necessary to capture the essence of a firetruck. Plus, those features make it more difficult for a child to use the model for play<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. If child’s play is the whole purpose of having the model in the first place, this kind of toy would be less useful than a simpler one.</p>
 <div class="page-columns page-full"><p>Thus, a good model is one that is clear, but simplified - one that is <strong>parsimonious</strong>. It should be precise in what it represents, but no more complicated than necessary for accomplishing your goals with it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>parsimonious</strong> = being no more detailed than is necessary for a specific use</span></div></div>
@@ -2706,7 +2725,7 @@ Smaldino, Paul E. 2023. <em>Modeling Social Behavior: Mathematical and Agent-Bas
 <hr>
 <ol>
 <li id="fn1"><p>or at least <em>a</em> data generation process that is adequate for explaining the data - it might not be the only way these data could occur!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Sometimes you’ll see these written in abbreviated ways, like <span class="math inline">\(Y \sim N(\beta X, \sigma^2)\)</span> where <span class="math inline">\(\beta X\)</span> stands for the entire prediction equation. Or <span class="math inline">\(Y = \beta X + \epsilon\)</span> where <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span>, to account for the variation in <span class="math inline">\(Y\)</span> not explained by the prediction equation. In this book we will try to be as consistent as possible by using the notation presented in this section, but in the world there are different notations used by different people. It’s all just a matter of algebra, though, so keeping in mind the three components of the data generation process should help!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Sometimes you’ll see these written in abbreviated ways, like <span class="math inline">\(Y \sim N(\beta X, \sigma^2)\)</span> where <span class="math inline">\(\beta X\)</span> stands for the entire prediction equation. Or <span class="math inline">\(Y = \beta X + \epsilon\)</span> where <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span>, to account for the variation in <span class="math inline">\(Y\)</span> not explained by the prediction equation. In this book we will try to be as consistent as possible by using the notation presented in this section, but in the world there are different notations used by different people. It’s all just a matter of algebra, though, so keeping in mind the four components of the data generation process should help!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>The advanced chapter <span class="quarto-unresolved-ref">?sec-ch23</span> covers how to do this!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>No more exercise, socializing, scary movies…<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>One of the most influential scholars in philosophy of science, Karl Popper, asserted that a scientific theory is only good if it is falsifiable. If our hypothesis is so generic that any way the data come out could be said to be consistent with it, then the hypothesis is not falsifiable and not very scientific. We should endeavor to subject our hypotheses to “extreme danger” of falsification because if they survive, we’ll know they are strong and useful.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
