@@ -375,7 +375,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"#sampling from a population with mean = 10 and sd = 2\nset.seed(47)\nx <- rnorm(100, mean = 10, sd = 2)\n\nggplot(data.frame(x), aes(x=x)) + \n  geom_histogram(fill='red') ","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean(x)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(8)\nx2 <- rnorm(100, mean = 10, sd = 2)\n\nmean(x2)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample_means <- vector(length=10000)\n\nfor (i in 1:10000) {\n  sample_means[i] <- mean(rnorm(100, mean = 10, sd = 2))\n}\n\nggplot(data.frame(sample_means), aes(x=sample_means)) + \n  geom_histogram(fill='blue')","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sampling_dist_mean <- #your code here\n  \nprint('Population mean: 10')\nprint(paste0('Sampling distribution mean: ', sampling_dist_mean))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"#drawing one sample from a population with mean = 10 and sd = 2\nset.seed(1)\nx <- rnorm(50, mean = 10, sd = 2)\n\nggplot(data.frame(x), aes(x=x)) + \n  geom_histogram(fill='red') ","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"mean(x)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(10)\nx2 <- rnorm(50, mean = 10, sd = 2)\n\nmean(x2)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample_means <- vector(length=10000)\n\nfor (i in 1:10000) {\n  sample_means[i] <- mean(rnorm(50, mean = 10, sd = 2))\n}\n\nggplot(data.frame(sample_means), aes(x=sample_means)) + \n  geom_histogram(fill='blue')","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample_means2 <- vector(length=10000)\n\nfor (i in 1:10000) {\n  sample_means2[i] <- mean(rnorm(50, mean = 11, sd = 2))\n}\n\nggplot(data.frame(sample_means2), aes(x=sample_means2)) + \n  geom_histogram(fill='forestgreen')","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"population_mean <- 10\nsampling_dist_mean <- #your code here\n  \nprint(paste0('Population mean: ', population_mean))\nprint(paste0('Sampling distribution mean: ', sampling_dist_mean))","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sd(sample_means)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\") |>\n  filter(!is.na(number_of_brothers_and_sisters),\n         !is.na(highest_year_of_school_completed))\n\nsample_betas <- vector(length=10000)\n\n#this will take a few seconds to run\nfor (i in 1:10000) {\n  sample_data <- slice_sample(gss_clean, n=50, replace=TRUE)\n  model <- lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=sample_data)\n  sample_betas[i] <- coef(model)[2]\n}","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"set.seed(21)\nsample1 <- slice_sample(gss_clean, n=50, replace=TRUE)\n\nset.seed(59)\nsample2 <- slice_sample(gss_clean, n=50, replace=TRUE)\n\nsamples <- data.frame(number_of_brothers_and_sisters=c(sample1$number_of_brothers_and_sisters, sample2$number_of_brothers_and_sisters), \n                      highest_year_of_school_completed=c(sample1$highest_year_of_school_completed, sample2$highest_year_of_school_completed),\n                      sample=rep(c('sample 1', 'sample 2'), each=50)\n)\n  \nggplot(samples, aes(x=number_of_brothers_and_sisters, y=highest_year_of_school_completed)) + \n  geom_jitter() + \n  geom_smooth(method='lm', se=FALSE) + \n  facet_wrap(vars(sample))                   ","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"summary(lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=sample1))","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"summary(lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=sample2))","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data.frame(sample_betas), aes(x=sample_betas)) + \n  geom_histogram(fill='purple')","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sample_sigmas <- vector(length=10000)\n\n#this will take a few seconds to run\nfor (i in 1:10000) {\n  sample_data <- slice_sample(gss_clean, n=50, replace=TRUE)\n  model <- lm(highest_year_of_school_completed ~ number_of_brothers_and_sisters, data=sample_data)\n  sample_sigmas[i] <- #your code here \n}\n\nggplot(data.frame(sample_sigmas), aes(x=sample_sigmas)) + \n  geom_histogram(fill='orange')","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x1 <- rnorm(50, mean = 10, sd = 2)\nx2 <- rnorm(50, mean = 10, sd = 2)\n\nsample_df <- data.frame(data = c(x1, x2),\n                        sample = rep(c('sample 1', 'sample 2'), each=50))\n\nggplot(sample_df, aes(x=data, fill=sample)) + \n  geom_histogram() + \n  facet_wrap(vars(sample)) ","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x1 <- rnorm(500, mean = 10, sd = 2)\nx2 <- rnorm(500, mean = 10, sd = 2)\n\nsample_df <- data.frame(data = c(x1, x2),\n                        sample = rep(c('sample 1', 'sample 2'), each=50))\n\nggplot(sample_df, aes(x=data, fill=sample)) + \n  geom_histogram() + \n  facet_wrap(vars(sample)) ","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x1 <- rnorm(50000, mean = 10, sd = 2)\nx2 <- rnorm(50000, mean = 10, sd = 2)\n\nsample_df <- data.frame(data = c(x1, x2),\n                        sample = rep(c('sample 1', 'sample 2'), each=50))\n\nggplot(sample_df, aes(x=data, fill=sample)) + \n  geom_histogram() + \n  facet_wrap(vars(sample)) ","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x_5 <- vector(length=1000)\nx_50 <- vector(length=1000)\nx_500 <- vector(length=1000)\n\nfor (i in 1:1000) {\n  x_5[i] <- mean(rnorm(5, mean = 10, sd = 2))\n  x_50[i] <- mean(rnorm(50, mean = 10, sd = 2))\n  x_500[i] <- mean(rnorm(500, mean = 10, sd = 2))\n}\n\nsampling_dists <- data.frame(data = c(x_5, x_50, x_500),\n                           sampling = rep(c('N=5', 'N=50', 'N=500'), each=1000))\n\nggplot(sampling_dists, aes(x=data, fill=sampling)) + \n  geom_histogram() + \n  facet_wrap(vars(sampling)) ","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"xy_cors <- vector(length=1000)\n\nset.seed(47)\nfor (i in 1:1000) {\n  x <- rnorm(500, mean = 0, sd = 1)\n  y <- rnorm(500, mean = 0.8*x, sd = sqrt(1-0.8^2))\nxy_cors[i] <- cor(x, y)\n}\n\nsd(xy_cors)\n\nggplot(data.frame(xy_cors), aes(x=xy_cors)) + \n  geom_histogram()","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"xy_noisy_cors <- vector(length=1000)\n\nset.seed(47)\nfor (i in 1:1000) {\n  x <- rnorm(500, mean = 0, sd = 1)\n  y <- rnorm(500, mean = 0.8*x, sd = sqrt(1-0.8^2))\n  x_meas <- rnorm(500, mean=x, sd=0.4)\n  y_meas <- rnorm(500, mean=y, sd=0.4)\n  xy_noisy_cors[i] <- cor(x_meas, y_meas)\n}\n\nsd(xy_noisy_cors)\n\nggplot(data.frame(xy_noisy_cors), aes(x=xy_noisy_cors)) + \n  geom_histogram()","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cor_diffs <- vector(length=1000)\n\n#True cor diff: 0.8-0.5 = 0.3\n#No measurement error, just sampling error\nset.seed(47)\nfor (i in 1:1000) {\n  x <- rnorm(500, mean = 0, sd = 1)\n  y <- rnorm(500, mean = 0.8*x, sd = sqrt(1-0.8^2))\n  z <- rnorm(500, mean = 0.5*x, sd = sqrt(1-0.5^2))\n  xy_cor <- cor(x, y)\n  xz_cor <- cor(x, z)\n  cor_diffs[i] <- xy_cor - xz_cor\n}\n\nsd(cor_diffs)\n\nggplot(data.frame(cor_diffs), aes(x=cor_diffs)) + \n  geom_histogram()","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1629,6 +1629,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1981,7 +2010,20 @@ globalThis.qwebrExecuteCode = async function (
   <li><a href="#sampling-processes" id="toc-sampling-processes" class="nav-link" data-scroll-target="#sampling-processes"><span class="header-section-number">14.2</span> Sampling processes</a></li>
   <li><a href="#sampling-distributions" id="toc-sampling-distributions" class="nav-link" data-scroll-target="#sampling-distributions"><span class="header-section-number">14.3</span> Sampling distributions</a></li>
   <li><a href="#attributes-of-sampling-distributions" id="toc-attributes-of-sampling-distributions" class="nav-link" data-scroll-target="#attributes-of-sampling-distributions"><span class="header-section-number">14.4</span> Attributes of sampling distributions</a></li>
-  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">14.5</span> Sample size</a></li>
+  <li><a href="#sampling-distributions-of-different-estimands" id="toc-sampling-distributions-of-different-estimands" class="nav-link" data-scroll-target="#sampling-distributions-of-different-estimands"><span class="header-section-number">14.5</span> Sampling distributions of different estimands</a></li>
+  <li><a href="#influences-on-the-sampling-distribution" id="toc-influences-on-the-sampling-distribution" class="nav-link" data-scroll-target="#influences-on-the-sampling-distribution"><span class="header-section-number">14.6</span> Influences on the sampling distribution</a>
+  <ul class="collapse">
+  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">14.6.1</span> Sample size</a></li>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link" data-scroll-target="#measurement-error"><span class="header-section-number">14.6.2</span> Measurement error</a></li>
+  <li><a href="#complicated-estimands" id="toc-complicated-estimands" class="nav-link" data-scroll-target="#complicated-estimands"><span class="header-section-number">14.6.3</span> Complicated estimands</a></li>
+  </ul></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">14.7</span> Inference</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">14.8</span> Chapter summary</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">14.8.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">14.8.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">14.8.3</span> New R functionality</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2298,7 +2340,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>But we usually don’t have access to the entire population. Instead, we have to collect a smaller sample and hope that it can stand in for everyone else. Well, we can do more than hope, but we need to follow some logical procedures called statistical inference<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that guide us on how we can deduce information about the population given a sample dataset, and how confident we can be about that deduction. In this chapter we will start learning about the principles of inference.</p>
 <section id="samples-vs.-populations" class="level2 page-columns page-full" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="samples-vs.-populations"><span class="header-section-number">14.1</span> Samples vs.&nbsp;populations</h2>
-<p>First, let’s define what specifically we mean when we say “population”. The population of some data is the distribution of all possible values of those data. In psychology, the population is often all people who exist and who will ever exist. If our interests are narrower, the population might instead be something like all people of a certain demographic characteristic, all children 4-6 years old, etc.</p>
+<p>First, let’s define what specifically we mean when we say “population”. The population of some data is the distribution of all possible values of those data. In psychology, the population is often all people who exist and who will ever exist.</p>
 <p>In contrast, a sample is a subset of the population. Previously we used a dataset from students in a stats class and evaluated the distribution of various characteristics like heights, but those data are not the only height values out there. Many more people have heights than are included in our dataset. Our dataset is a sample, because it includes some but not all of the people who have height.</p>
 <div id="fig-ch14-sample" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2311,7 +2353,7 @@ Figure&nbsp;14.1: A sample is a subset of data drawn from a bigger population.
 </figure>
 </div>
 <p>Of course, people are not the only population one might be interested in. If you’re in astronomy, you could be interested in the population of all stars in the universe. If you’re a biologist, maybe you’re interested in all bacteria of a certain strain. Populations don’t have to be physical entities, either; as an engineer building a bridge, you may be concerned with the population of all possible force vectors that your bridge could experience.</p>
-<p>Even if you are studying people, your population might not consist of all people. Maybe we don’t care about understanding the typical height of all people, but rather college students specifically. Or perhaps we’re only concerned with students in our own class - in that case our sample is our population of interest, and we don’t have to do any inferential statistics at all!</p>
+<p>Even if you are studying people, your population might not consist of all people. If our interests are narrower, the population might instead be something like all people of a certain demographic characteristic, all children 4-6 years old, etc. Maybe we don’t care about understanding the typical height of all people, but rather college students specifically. Or perhaps we’re only concerned with students in our own class - in that case our sample is our population of interest, and we don’t have to do any inferential statistics at all!</p>
 <p>Usually though, we are interested in more general populations in the world. In those cases, it is impractical or even impossible to measure every datapoint from the population. A sample is all we have. Thus, it is very important to have a good idea of what population we are trying to understand - this is one of the necessary parts of defining a good statistical question. Only then can we use our sample for inference about that population.</p>
 <div class="page-columns page-full"><p>Now, what makes a good sample? If we want to use a sample to make inferences about a population, we want that sample to be <strong>representative</strong> of that population. In other words, the sample distribution should closely resemble the population distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>representative sample</strong> = a sample whose key characteristics closely resemble the characteristics of the population it is meant to represent.</span></div></div>
 <p>Political polling is a good example of why it’s important to have representative samples. Sometimes, polls can be incredibly accurate at predicting the outcomes of elections. For instance, the polling company FiveThirtyEight correctly predicted electoral outcomes for 49/50 states in 2008 and for all 50 states in 2012. They did this by combining data from many different polls, each of which included data from about a thousand likely voters. If we consider the population of interest during an election to be all the votes of people who cast a vote, then in this case the intentions of that 1000-person sample very closely matched the overall voting behavior of the entire population. Yet, the 2016 US Presidential election was noteworthy for how poorly polls predicted the outcome (Clinton was strongly favored to win by many polling samples, but the electorate behaved differently). This is because the people who came out to vote for Donald Trump were not well represented in the poll samples. Bad predictions were made because of bad sampling<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
@@ -2322,7 +2364,7 @@ Figure&nbsp;14.1: A sample is a subset of data drawn from a bigger population.
 <p>How do data make it from the population to being in a sample? The selection of certain data points over others is called the sampling process, and will affect how representative the sample is.</p>
 <div class="page-columns page-full"><p>Many samples are based on practicality, where the sample is comprised of data points that were the easiest to obtain. This is called <strong>convenience sampling</strong>. The samples are chosen in a way that is convenient to the researcher. In real life, most studies are at least somewhat convenience samples. If you do a thesis on human cognition but collect data from other students, this is inherently a convenience sample because it is much easier for you to access other students than people from the opposite side of the world.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>convenience sampling</strong> = the process of collecting data for a sample based on their ease of access.</span></div></div>
 <p>Convenience sampling sometimes does a good job of creating a representative sample, but can instead create a non-representative sample if there’s some reason for why the sample is easier to collect that also affects the variables being studied. E.g., can you think of any way college students might differ from other people? Would those differences matter for understanding cognition processes?</p>
-<div class="page-columns page-full"><p>There are other sampling methods besides convenience sampling that aim to overcome its limitations. But the best way to pick a sample that most closely resembles the shape, center, and spread of the target population is to draw a <strong>random sample</strong>. If we treat the population distribution as a probabilitiy distribution, than the only thing that affects the chance a data value will be included in a sample is the probability density corresponding to that value in the population. This is usually impractical, though. For a psychologist, it’s not as easy to contact, recruit, or even know about some people in the population compared to others<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. For an ecologist, it is much easier to access animals that live in one site nearby, versus the same species that lives in a remote canyon. You can probably think of examples in other fields of study that make it hard to access every member of the population.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>random sampling</strong> = a sampling method where the only thing that affects the probability of inclusion of a value in the dataset is the proportion of the population with that value.</span></div></div>
+<div class="page-columns page-full"><p>There are other sampling methods besides convenience sampling that aim to overcome its limitations. But the best way to pick a sample that most closely resembles the shape, center, and spread of the target population is to draw a <strong>random sample</strong>. If we treat the population as a probability distribution, then the only thing that affects the chance a data value will be included in a sample is the probability density corresponding to that value in the population. This is usually impractical, though. For a psychologist, it’s not as easy to contact, recruit, or even know about some people in the population compared to others<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. For an ecologist, it is much easier to access animals that live in one site nearby, versus the same species that lives in a remote canyon. You can probably think of examples in other fields of study that make it hard to access every member of the population.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>random sampling</strong> = a sampling method where the only thing that affects the probability of inclusion of a value in the dataset is the proportion of the population with that value.</span></div></div>
 <p>Notably, even though random sampling is the most representative sampling process (i.e., has the best chance of creating a representative sample), that doesn’t always mean the sample you end up with will look exactly like the population, or even other random samples from the same population. We saw this idea previously in <a href="chapter-8.html" class="quarto-xref"><span>Chapter 8</span></a> when learning about probability distributions - because a sample is a finite number of observations, randomness will mean the sample’s data distribution will be jagged and not perfectly the same as the probability distribution from which it was drawn.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2345,15 +2387,15 @@ Figure&nbsp;14.2: Finite data samples drawn from a probability distribution can 
 <p>The existence of sampling error leads to some complicating consequences when we try to estimate estimands about a population using data from a sample. To see what these are, let’s simulate a data collection process as if we were recruiting subjects for a research study. We will define the population as some probability distribution, and then draw a sample from that population. We will use random sampling so that we can see, even in the best case scenario where every person in the population has a chance of being in the study, that complications still arise.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In this simulation we sampled 100 “people” from the population. Then we plotted a histogram of the sample data. We know the population is normally distributed, because we defined it that way in the simulation. But our sample data is not the same shape - it’s vaguely normal if you squint at it, but there is a lot of jaggedness to the distribution that we wouldn’t see in a nice smooth normal distribution.</p>
+<p>In this simulation we sampled 50 “people” from the population. Then we plotted a histogram of the sample data. We know the population is normally distributed, because we defined it that way in the simulation. But our sample data is not the same shape - it’s vaguely normal if you squint at it, but there is a lot of jaggedness and holes in the distribution that we wouldn’t see in a nice smooth normal probability distribution.</p>
 <p>The shape of our sample isn’t the only thing that’s a bit off from the population. Next, let’s say our estimand in this study is the mean of the population for the variable <code>x</code>. So to estimate that estimand, we calculate the mean of the values in our sample:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Notice something about this estimate relative to the population mean that we defined in the simulation: we specified that the population has a mean of 10, but the mean in our <em>sample</em> was 10.10. This is close, but not exactly the same.</p>
+<p>Notice something about this estimate relative to the population mean that we defined in the simulation: we specified that the population has a mean of 10, but the mean in our <em>sample</em> was 10.20. This is close, but not exactly the same.</p>
 <p>Now imagine we ran a second study to replicate our estimate. Here is a second sample, drawn from the same population:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This mean estimate is 9.81, which is even further away from the true population mean and in the opposite direction from our last estimate.</p>
+<p>This mean estimate is 9.32, which is even further away from the true population mean and in the opposite direction from our last estimate.</p>
 <p>Say that instead we replicated our study 10 times, drawing an entirely new sample each time. Here are the means estimated in all of those samples:</p>
 <table class="caption-top table">
 <thead>
@@ -2365,43 +2407,43 @@ Figure&nbsp;14.2: Finite data samples drawn from a probability distribution can 
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">9.99</td>
+<td style="text-align: center;">9.75</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">9.72</td>
+<td style="text-align: center;">10.60</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">9.94</td>
+<td style="text-align: center;">10.03</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">9.86</td>
+<td style="text-align: center;">9.92</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">9.65</td>
+<td style="text-align: center;">9.88</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">10.09</td>
+<td style="text-align: center;">9.90</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">7</td>
-<td style="text-align: center;">10.13</td>
+<td style="text-align: center;">10.17</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">8</td>
-<td style="text-align: center;">9.88</td>
+<td style="text-align: center;">9.94</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">9</td>
-<td style="text-align: center;">10.08</td>
+<td style="text-align: center;">10.33</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
-<td style="text-align: center;">10.31</td>
+<td style="text-align: center;">10.19</td>
 </tr>
 </tbody>
 </table>
@@ -2409,12 +2451,24 @@ Figure&nbsp;14.2: Finite data samples drawn from a probability distribution can 
 <p>Finally, let’s take this thought process to a perhaps absurd extreme. Imagine we replicated our study 10,000 times, drawing a new sample and calculating the sample mean each time. We could save all those estimates and plot a histogram of them:</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="page-columns page-full"><p>We clearly see here a distribution. It’s not a distribution of the population values - we know that distribution has a standard deviation of 2, which is different than what we see here. Instead, this is a distribution of mean estimates we could get, by drawing a sample of data from the population and calculating the mean on just the sample data values. The distribution of sample estimates is called the <strong>sampling distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling distribution</strong> = the distribution of estimates that are possible to get in a data sample drawn from a population, where the variation is only due to random sampling.</span></div></div>
+<div class="page-columns page-full"><p>We clearly see a distribution. It’s not a distribution of the population values - we know that distribution has a standard deviation of 2, which is different than what we see here. Instead, this is a distribution of <em>mean estimates</em> we could get, by drawing a sample of data from the population and calculating the mean on just the sample data values. The distribution of sample estimates is called the <strong>sampling distribution</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>sampling distribution</strong> = the distribution of estimates that are possible to get in a data sample drawn from a population, where the variation is only due to random sampling.</span></div></div>
+<p>Notice the range of possible estimates in this distribution. Even though the population mean is 10, sometimes we can get samples that tell us an estimate of 10.5, 9.5, even as low as 9. One population value, many possible estimates.</p>
+<p>Also notice the range of possibilities in this different population, with a mean of 11 instead:</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>There are many possible estimates that come from sampling this population as well. In fact, an estimate of 10.5 is also possible in <em>this</em> population. So one estimate can be produced by many possible populations!</p>
 </section>
 <section id="attributes-of-sampling-distributions" class="level2 page-columns page-full" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="attributes-of-sampling-distributions"><span class="header-section-number">14.4</span> Attributes of sampling distributions</h2>
-<p>Unlike a distribution of data in a data sample, we don’t typically get to see a full sampling distribution outside of simulations because we’re not collecting data for thousands of replications of one study. It’s more of a theoretical entity - it’s a probability distribution of sample estimates we <em>could</em> get, before we collect a sample and do analyses on it. Thinking about this theoretical entity helps shape our expectations about what could come about from running research studies. Knowing about the sampling distribution means knowing that estimates will vary sample to sample, and the pattern of variation will follow the shape of a sampling distribution.</p>
-<p>Additionally, thinking in this way about the range of possibilities different data samples can give us allows us to talk about attributes about these possibilities. For instance, notice on the blue sampling distribution histogram where the center of the distribution is, and compare that to the population mean. We can calculate this to make the comparison easier:</p>
+<p>We’re talking about several types of distributions right now, so as a reminder:</p>
+<ul>
+<li>a population distribution consists of all the possible and probable values of some variable in the world. We usually can’t see the whole population at once, so it’s useful to think of it as a probability distribution for individual data points.</li>
+<li>a sample distribution is all the data we have in a study sample - it consists of data points drawn from the population probability distribution.</li>
+<li>a sampl<em>ing</em> distribution consists of estimates calculated from separate samples.</li>
+</ul>
+<p>We don’t typically get to see a full sampling distribution outside of simulations because we’re not collecting data for thousands of replications of one study. It’s more of a theoretical entity - it’s a probability distribution of sample estimates we <em>could</em> get, before we collect a sample and do analyses on it. While the population distribution is a probability distribution for what individual data point values can be, the sampling distribution is a probability distribution for what separate sample estimates can be.</p>
+<p>Thinking about this theoretical entity helps shape our expectations about what could come about from running research studies. Knowing about the sampling distribution means knowing that estimates will vary sample to sample, and the pattern of variation will follow the shape of a sampling distribution.</p>
+<p>Additionally, thinking in this way about the range of possibilities different data samples can give us allows us to talk about attributes of these possibilities as a collective. For instance, notice where the center of the distribution is on the blue histogram of <code>sample_means</code>, and compare that to the “population” mean. We can calculate this to make the comparison easier:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2428,59 +2482,179 @@ Figure&nbsp;14.2: Finite data samples drawn from a probability distribution can 
 <p>Calculate the mean of the sampling distribution vector we created in the prior code cell.</p>
 </div>
 </div>
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This value is really really close to the population mean - much closer than most of the individual sample means were. This implies that, while any one sample we draw probably won’t give us the same estimate as the truth in the population, it is more likely for us to get a sample estimate that is closer to the truth than it is to get a sample estimate that is far away.</p>
-<div class="page-columns page-full"><p>In addition, notice the spread of the sampling distribution. Since any one sample is unlikely to give us an estimate that matches the truth in the population, it’s useful to know how far away from the truth we will tend to be. We know from <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> that the standard deviation of a distribution tells us the typical distance between a randomly-drawn data point and the mean of the distribution. Likewise, applying that concept to sampling distributions, the standard deviation of the sampling distribution tells us the typical distance between a sample estimate and the true value in the population. This standard deviation of the sampling distribution has a name - the <strong>standard error</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standard error</strong> = the standard deviation of a sampling distribution.</span></div></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 27%">
-<col style="width: 23%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Population distribution</th>
-<th style="text-align: center;">Sample distribution</th>
-<th style="text-align: center;">Sampling distribution</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>Definition</strong></td>
-<td style="text-align: center;">Distribution of possible data values in population</td>
-<td style="text-align: center;">Distribution of realized data values in a sample</td>
-<td style="text-align: center;">Distribution of possible estimates calculated in different samples</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Mean</strong></td>
-<td style="text-align: center;">Population mean</td>
-<td style="text-align: center;">Sample mean</td>
-<td style="text-align: center;">Mean of sample means</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Standard deviation</strong></td>
-<td style="text-align: center;">Population standard deviation</td>
-<td style="text-align: center;">Sample standard deviation</td>
-<td style="text-align: center;">Standard error</td>
-</tr>
-</tbody>
-</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal the answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>sampling_dist_mean &lt;- mean(sample_means)</code></p>
+</div>
+</div>
+</div>
+<p>This value is really really close to the population mean - much closer than most of the individual sample estimates are. This implies that, while any one sample we draw probably won’t give us the same estimate as the truth in the population, it is more likely for us to get a sample estimate that is closer to the truth than it is to get a sample estimate that is far away. The different sample estimates will also vary around the true value of the estimand in the population.</p>
+<div class="page-columns page-full"><p>In addition, notice the spread of the sampling distribution. Since any one sample is unlikely to give us an estimate that matches the truth in the population, it’s useful to know how far away from the truth we will tend to be. We know from <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> that the standard deviation of a distribution tells us the typical distance between a randomly-selected data point and the mean of the distribution. Likewise, applying that concept to sampling distributions, the standard deviation of the sampling distribution tells us the typical distance between any one sample estimate and the true value in the population. This standard deviation of the sampling distribution has a name - the <strong>standard error</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standard error</strong> = the standard deviation of a sampling distribution.</span></div></div>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>According to this, our sampling process will tend to give us estimates that are about +/- 0.28 away from the true effect value. So if we collected a random sample of 50 people from the population and found the mean of their scores, we would expect our mean estimate to be off from the truth by 0.28 on average.</p>
 </section>
-<section id="sample-size" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="sample-size"><span class="header-section-number">14.5</span> Sample size</h2>
-<p>The more data values in our sample, however, the more representative our sample is likely to be<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<p>Populations generating samples</p>
-<p>In a sample like the <code>studentdata</code> dataset, which collected information from students in statistics class, we might find that we can sort of predict someone’s thumb length from how tall they are:</p>
-<p>𝑇ℎ𝑢𝑚𝑏𝑖^=2.84+0.87𝐻𝑒𝑖𝑔ℎ𝑡𝑖</p>
-<p>By fitting this linear model, we predict that someone who is 60 inches tall will have a thumb length of 55.04mm (2.84 + 0.87*60), and for every additional inch of height they have their thumb length will be 0.87mm longer. Now these guesses will almost certainly be wrong - the RMSE of this model is 9.12, meaning on average our guess will be off by about 9mm. But basing our guesses off of someone’s height makes our guesses at least better than just knowing the mean of thumb (12% better in fact, since the PRE score is 0.12).</p>
-<p>Those RMSE and PRE scores are both measures of model performance called effect sizes. We will return to those in a few chapters, but it’s an important concept to start getting familiar with because it helps us decide what to do with our statistical model. Is it good enough? Am I confident in my predictions?</p>
-<p>If we’re okay with guesses that are on average 9mm away, we can stop there and move on with our day. If we want to make even better guesses, we can try to build a more complex model with additional predictors. Ultimately, how confident we are in our predictions is the deciding factor for how good our statistical models are. We build psychological theories about relationships between variables in order to find the predictors that will improve predictions about how people think, feel, and behave.</p>
-<p>With a large PRE score or low RMSE, our predictions are quite good. We are confident that the true values will not be too different… in this dataset, specifically. But one additional layer of uncertainty still at play is how good this model will be in other samples, or in the whole population.</p>
+<section id="sampling-distributions-of-different-estimands" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="sampling-distributions-of-different-estimands"><span class="header-section-number">14.5</span> Sampling distributions of different estimands</h2>
+<p>Any estimate we could calculate in a data sample has a corresponding sampling distribution. For instance, if our estimand in a research study was the effect of number of siblings on education attainment and we built a statistical model of that data generation process, we would focus on the <span class="math inline">\(\beta_1\)</span> model coefficient as our estimate of the effect. But the exact value of this effect estimate hinges on the specific data sample we fit the model in.</p>
+<p>Here’s a simulation where we treat the larger GSS dataset we worked with previously as if it were the population of all possible people, and then we repeatedly draw random smaller samples from the “population” using a function from <code>dplyr</code>, <code>slice_sample()</code>. <code>slice_sample()</code> takes as arguments a data frame to sample from and <code>n=</code>, a number of samples to draw. In addition, we want to set the argument <code>replace=</code> to <code>TRUE</code>. Doing this allows for us to draw the same value multiple times into a sample, just like it’s possible for two people in a real study to have the same value.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We now have many effect estimates, as if we had run this study 10,000 times. Because of sampling error, there will be slightly different association estimates between number of siblings and education attainment implied by the sample data. Here are scatter plots from two of the samples so you can see this visually:</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In sample 1, there is a strong negative effect of sibling number of education attainment. The expected level of education attainment in people with 5 siblings is much lower than in people with no siblings.</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>In sample 2, while the effect was still estimated to be negative, it is much weaker. People’s expected level of education only varies a little bit depending on their number of siblings.</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>And here is the sampling distribution of the <span class="math inline">\(\beta_1\)</span> estimate from all the replication studies we ran:</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>According to this distribution, most effects we would estimate using our sampling process would be negative, but the strength of the negative association can vary by a lot. Most of the time it is negative, but it can be a small negative effect or a large one. Sometimes, the effect is even estimated to be positive!</p>
+<p>If we were targeting the prediction accuracy of the model as our estimand instead, you guessed it - that accuracy estimate will also vary depending on what sample we draw.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Complete the simulation below to save the model <span class="math inline">\(\sigma\)</span> estimates from all the different samples.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Sometimes a model will be quite accurate for predicting the data it was fitted to, but that doesn’t mean it will have the same accuracy when predicting future data.</p>
+</section>
+<section id="influences-on-the-sampling-distribution" class="level2 page-columns page-full" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="influences-on-the-sampling-distribution"><span class="header-section-number">14.6</span> Influences on the sampling distribution</h2>
+<p>How much standard error there is - and therefor how much variation we can expect among sample estimates - is influenced by a few factors.</p>
+<section id="sample-size" class="level3 page-columns page-full" data-number="14.6.1">
+<h3 data-number="14.6.1" class="anchored" data-anchor-id="sample-size"><span class="header-section-number">14.6.1</span> Sample size</h3>
+<p>In the popular conscious, it seems like “sample size” ranks right under “correlation is not causation” in terms of critiques about research studies. There’s a sense that smaller samples are worse than bigger samples. Why is this? One of the big reasons is the effect sample size has on the standard error of an estimate.</p>
+<p>In the simulation example above when we sampled many times from a population, each of our samples was 50 people. This is a smaller number than the total population, so we get different samples and thus different sample estimates. In fact, just how <em>much</em> smaller a sample is has an influence on how different the sample will look relative to the population, and thus how variable the estimates are.</p>
+<p>For example, here are the distributions of two <em>N</em>=50 samples drawn from a normally-distributed population:</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This image is familiar to us by now. These distributions are roughly normal, but they don’t exactly look like each other or the ideal normal distribution they came from.</p>
+<p>Conversely, here are distributions of two <em>N</em>=500 samples:</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>These again are little bit jagged, but much less so. They’re looking much more similar to each other and to the population distribution.</p>
+<p>If we go even bigger:</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="page-columns page-full"><p>Now these huge samples are virtually indistinguishable from each other and the population. This phenomenon is known as the <strong>law of large numbers</strong> - the more data points that are in a sample, the more that sample resembles the population distribution it came from (if we use random sampling).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>law of large numbers</strong> = the principle that, as sample size increases, the sample distribution will more closely resemble the population distribution.</span></div></div>
+<p>Not only do the sample distributions look more similar as they get larger, estimates calculated on them will become more similar. Below are three sampling distributions plotted together for comparison.</p>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We can see that the estimates that come from samples with <em>N</em>=5 are super variable. The sampling distribution for this sampling process is super spread out. Meanwhile the sampling distribution for <em>N</em>=50 samples is narrower. The sampling distribution for <em>N</em>=500 samples is almost a straight line in the plot, meaning that almost every sample mean estimated in these big samples is very close to the true population mean. These samples were drawn from the same population. We even drew the same number of samples: 1,000. The only difference in these simulations was how many data points were in each sample. So the bigger the sample size, the smaller the standard error, and the more consistent and accurate our estimates are.</p>
+</section>
+<section id="measurement-error" class="level3" data-number="14.6.2">
+<h3 data-number="14.6.2" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">14.6.2</span> Measurement error</h3>
+<p>However, even in a very big sample, our estimates can still be variable if there is measurement error in our variables.</p>
+<p>Here’s another simulation to see why. First, we will simulate <em>N</em>=500 samples such that variables <code>x</code> and <code>y</code> are strongly linearly associated with a Pearson correlation of 0.8. We will simulate 1,000 samples to see the sampling distribution.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can simulate bivariate normal data by relying on some data generation priciples we learned last unit. First, a general linear model predictor equation creates the mean <span class="math inline">\(\mu\)</span> of the conditional probability distribution for <span class="math inline">\(Y\)</span>, so when simulating a variable <code>y</code> with <code>rnorm()</code> we can pass <code>mean = 0.8*x</code> to encode this predictor equation. Second, one of the equations we learned about in <a href="chapter-11.html" class="quarto-xref"><span>Chapter 11</span></a> was <span class="math inline">\(R^2 = 1 - \frac{Var(Y|X)}{Var(Y)}\)</span>. Solving for <span class="math inline">\(Var(Y|X)\)</span> (aka the standard deviation of the conditional probability distribution for <span class="math inline">\(Y\)</span>, which is <code>sd=</code> in the <code>rnorm()</code> simulation code), we get <span class="math inline">\(Var(Y|X) = Var(Y)(1-R^2)\)</span>. If we simulate <code>y</code> to have a variance of 1, we can simplify and pass <code>sd = sqrt(1-0.8^2)</code> to the <code>rnorm()</code> function to encode this conditional variance.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>There’s some standard error (0.015) in our sampling distribution because 500 is less than infinity, but the sample estimates are close and the sampling distribution is centered on the true correlation.</p>
+<p>Now however, we will modify our simulation. If <code>x</code> and <code>y</code> are the true, latent values these variables have, we might not be able to measure them perfectly when we collect data. Let’s see what happens if we there’s some measurement error. We’ll do this by creating new variables <code>x_meas</code> and <code>y_meas</code> that are generated probabilistically from <code>x</code> and <code>y</code> with some random noise.</p>
+<div id="qwebr-insertion-location-19"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The standard error of the <code>x_meas</code> and <code>y_meas</code> correlation is almost twice as large as it was in the correlation between the true values of <code>x</code> and <code>y</code>. This is because measurement error essentially adds more uncertainty to what the sampled data values will be. With more possibilities of sample distributions, there are more possibilities of sample estimates and thus a wider sampling distribution. So not only does sampling error create uncertainty in sample estimates, measurement error adds even more.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might also notice that the mean of the sampling distribution is lower than the true correlation of 0.8. This is because measurement error also <em>biases</em> sample estimates away from the true population value. We’ll talk more about estimate bias next chapter.</p>
+</div>
+</div>
+</section>
+<section id="complicated-estimands" class="level3" data-number="14.6.3">
+<h3 data-number="14.6.3" class="anchored" data-anchor-id="complicated-estimands"><span class="header-section-number">14.6.3</span> Complicated estimands</h3>
+<p>Finally, some estimands are more complicated to estimate than others. By complicated, we mean they take multiple mathematical steps. For instance, while the association between <code>x</code> and <code>y</code> was the estimand in the above example, we could instead be insterested in the <em>difference</em> is associations, say between <code>x</code> and <code>y</code> and <code>x</code> and <code>z</code>. Thus our estimator is not <span class="math inline">\(cor(X,Y)\)</span>, but <span class="math inline">\(cor(X,Y) - cor(X,Z)\)</span>. It’s a computation involving multiple different estimates.</p>
+<p>When our estimator is a complicated function of multiple sub-estimates, the sampling distribution of the final estimate it produces will be more variable. This is because any error (sampling error or measurement error) in the sub-estimates of this computation get propagated and amplified. Here is a simulation to demonstrate this:</p>
+<div id="qwebr-insertion-location-20"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>While the standard error of the <span class="math inline">\(cor(X,Y)\)</span> estimate was 0.015, the standard error of <span class="math inline">\(cor(X,Y) - cor(X,Z)\)</span> is 0.034 - more than twice as much despite the same sample size and no measurement error. The sampling distribution is centered on the true correlation difference, but the estimate derived from any one sample is going to be farther away from that truth on average because of error propogation in the estimator.</p>
+</section>
+</section>
+<section id="inference" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="inference"><span class="header-section-number">14.7</span> Inference</h2>
+<p>Now we know what’s possible to happen when we draw a sample from a population. The samples can be different from the population and each other, so they can give us sample estimates that are different from the true population value and from each other.</p>
+<p>Since we can’t typically see the population or sampling distributions, and usually only have one sample distribution to calculate one estimate in, there are implications for how we make conclusions about what the truth of the world is given what we see in our data. We’re already well aware that different data generation processes can create similar data distributions, so we can’t assume that the model form we fit in a data sample is the one true data generation process even if we see a strong effect estimate or low accuracy estimate. Now we also know that sampling error can give us different estimates for the model coefficients than is reality. This means, even if we do luck out and hit on the true data generation process form with our model, the specific estimates we fit in the model might not be correct!</p>
+<p>So what do we do about all this uncertainty? This overall practice - using limited sample information to make conclusions about the population - is called inference. While descriptive statistics are mathematical processes that tell us summaries about a dataset in front of us, inferential statistics are mathematical processes that tell us what conclusions we can make about an unknown population and how confident in those conclusions we can be.</p>
+<p>We’ve already covered the first thing to know about inferential statistics - that samples can be different than population distributions, and that different sample estimates will form a sampling distribution. We use different terms for these different ideas to keep them straight. First, the quantity in the population that we want to know about, as we know, is the estimand. We might also call this the population parameter when talking about it as a specific</p>
+<p>The next thing to know about inferential statistics is that while we can’t be sure what the true population value is, we can calculate how likely our single estimate is to come from different possible population values. This thought process is similar to when we were checking model fit to data in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. There, we calculated the likelihood of the data given a fitted model form and coefficients. If the data were really unlikely under the model, we decided the model was probably not right. If the data were more likely under Model A vs.&nbsp;Model B, we decided Model A was more likely to be the true data generation process than Model B. In neither of these cases did we arrive at the Truth<sup>tm</sup> from looking at just one sample of data, but the data helped us eliminate possibilities.</p>
+<p>The same principle applies when thinking about the true population value of an estimand. Given things we know about the estimator we use, the amount of measurement error, and sample size, we can calculate how likely it is to get an estimate like the one we got in our sample from various different possible population values. If it is very unlikely to get our estimate from a certain population value, we cross that population value off our list of consideration and narrow the range of possibilities. If one population value is more likely to create our estimate than an alternative option, we get rid of the less likely option. Statistical modeling and inferential statistics are processes of elimination for our ideas about the world. <span class="quarto-unresolved-ref">?sec-ch15</span> will discuss how we do this when we don’t have a preconceived idea of what the population value is, while <span class="quarto-unresolved-ref">?sec-ch16</span> will discuss how we do this when we have existing hypotheses about statistical model forms and coefficient values.</p>
+</section>
+<section id="chapter-summary" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">14.8</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="14.8.1">
+<h3 data-number="14.8.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">14.8.1</span> Learning goals</h3>
+<p>After reading this chapter, you should be able to:</p>
+<ul>
+<li>Explain the difference between a sample, population, and sampling distribution</li>
+<li>Simulate data samples and sampling distributions from a pre-defined population</li>
+<li>Find and explain the standard error of a sampling distribution</li>
+<li>Explain what influences the width of a sampling distribution</li>
+</ul>
+</section>
+<section id="new-concepts" class="level3" data-number="14.8.2">
+<h3 data-number="14.8.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">14.8.2</span> New concepts</h3>
+<ul>
+<li><strong>representative sample</strong> = a sample whose key characteristics closely resemble the characteristics of the population it is meant to represent.</li>
+<li><strong>convenience sampling</strong> = the process of collecting data for a sample based on their ease of access.</li>
+<li><strong>random sampling</strong> = a sampling method where the only thing that affects the probability of inclusion of a value in the dataset is the proportion of the population with that value.</li>
+<li><strong>sampling error</strong> = the difference between a sample statistic and the population it comes from, which is due to random sampling.</li>
+<li><strong>sampling distribution</strong> = the distribution of estimates that are possible to get in a data sample drawn from a population, where the variation is only due to random sampling.</li>
+<li><strong>standard error</strong> = the standard deviation of a sampling distribution.</li>
+<li><strong>law of large numbers</strong> = the principle that, as sample size increases, the sample distribution will more closely resemble the population distribution.</li>
+</ul>
+</section>
+<section id="new-r-functionality" class="level3" data-number="14.8.3">
+<h3 data-number="14.8.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">14.8.3</span> New R functionality</h3>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/reference/slice.html">dplyr::slice_sample()</a></li>
+</ul>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -2489,7 +2663,7 @@ Figure&nbsp;14.2: Finite data samples drawn from a probability distribution can 
 <li id="fn2"><p>To be clear, professional pollsters are typically very careful about how they collect their samples in order to infer the wider population. 2016 was a weird year, where people who normally didn’t vote and thus shouldn’t be included in polls came out to vote in ways that traditional polling methods didn’t anticipate.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>A lovely little women’s college in Southern California.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>The data in psychology results are often based on an over-representation of US psychology students, since universities require their psych majors to participate in studies.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>If it was drawn randomly - a large convenience sample can still look very different than the population it is intended to represent!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A simulation like this, where a sample of data is treated as a population from which repeated random draws are taken, is called a bootstrap simulation. Bootstrap simulations are pretty powerful because, despite the “population” not being the same as the true population, repeated samples drawn from it approximate the spread of the true sampling distribution really well.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
