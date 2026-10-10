@@ -1962,6 +1962,12 @@ globalThis.qwebrExecuteCode = async function (
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2396,7 +2402,7 @@ Note
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="page-columns page-full"><p>If this data file lived on your own computer and was within your working directory, you could load it with <code>read.csv("studentdata.csv").</code> If the data lived in a different folder on your computer, like a folder for your coursework on your Desktop, you’d use either the full path to that file (e.g.&nbsp;“Desktop/StatsClass/studentdata.csv”) or the <strong>relative path</strong> from your working directory in order for R to be able to find it.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>relative path</strong> = the path to a file relative to the current working directory</span></div></div>
-<p>E.g., imagine you saved the files for a research study on your computer at the location “Desktop/Research/StudentStudy”. Within that directory you could have further folders for specific parts of your study, like “data”, “code”, etc. <a href="#fig-ch3-directory" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> visualizes what this organization would look like.</p>
+<p>E.g., imagine you saved the files for a research study on your computer at the location “Desktop/Research/StudentStudy”. Within that directory you could have further folders for specific parts of your study, like “data”, “code”, etc. <a href="#fig-ch3-directory" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch3-directory</span></a> visualizes what this organization would look like.</p>
 <div id="fig-ch3-directory" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch3-directory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2623,7 +2629,7 @@ Warning
 </section>
 <section id="sec-ch3-writing-functions" class="level2 page-columns page-full" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="sec-ch3-writing-functions"><span class="header-section-number">3.6</span> Writing your own functions</h2>
-<p>Control flow is very useful for managing the progression of steps you take in a long program or analysis. So much so, that a lot of other people have written new functions to download (remember packages from <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a>?) that implement common analysis control flows for you. But it is still important to know how to explicitly define control flow like above because occasionally you will need to do something that has not already been written by someone else. In these cases, if you need to do the thing over and over, writing your own function becomes useful. In addition, if you find yourself repeating the same analysis steps over and over for multiple projects, you can write functions that will execute <em>sets of other functions</em>, which will save you a lot of time when writing code.</p>
+<p>Control flow is very useful for managing the progression of steps you take in a long program or analysis. So much so, that a lot of other people have written new functions to download (remember packages from <a href="#sec-ch1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch1</span></a>?) that implement common analysis control flows for you. But it is still important to know how to explicitly define control flow like above because occasionally you will need to do something that has not already been written by someone else. In these cases, if you need to do the thing over and over, writing your own function becomes useful. In addition, if you find yourself repeating the same analysis steps over and over for multiple projects, you can write functions that will execute <em>sets of other functions</em>, which will save you a lot of time when writing code.</p>
 <p>A function definition requires three pieces of information: the function name, the argument(s) to give it, and a block of code that is executed whenever your function is called. For example, here is a function that will convert temperature readings in Fahrenheit to Celsius.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">

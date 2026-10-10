@@ -2010,6 +2010,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2420,7 +2426,7 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 </div>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We will learn much more about data visualization ins <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> and <a href="chapter-7.html" class="quarto-xref"><span>Chapter 7</span></a>. For now, know that the very first thing you should do when analyzing data is examine the distributions of your variables. If you skip this step, and go directly to the application of other statistical procedures without knowing the distribution of your data, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are okay, and that your planned analysis will be appropriate.</p>
+<p>We will learn much more about data visualization ins <a href="#sec-ch6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch6</span></a> and <a href="#sec-ch7" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch7</span></a>. For now, know that the very first thing you should do when analyzing data is examine the distributions of your variables. If you skip this step, and go directly to the application of other statistical procedures without knowing the distribution of your data, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are okay, and that your planned analysis will be appropriate.</p>
 </section>
 </section>
 <section id="sec-ch5-math-notation-distributions" class="level2" data-number="5.3">
@@ -2458,7 +2464,7 @@ Figure&nbsp;5.1: Distributions of four variables from student dataset
 <section id="sec-ch5-distribution-center" class="level2 page-columns page-full" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="sec-ch5-distribution-center"><span class="header-section-number">5.5</span> Distribution center</h2>
 <p>If a distribution is unimodal, it is often useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample are around this middle value.”</p>
-<div class="page-columns page-full"><p>We can calculate a specific number to represent what that middle point is for a distribution. We mentioned in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> that one of the key principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we describe a variable using its center value. In most situations, after checking out the shape of the distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>central tendency</strong> = the “middle” or “typical” value of a distribution, close to where most points are</span></div></div>
+<div class="page-columns page-full"><p>We can calculate a specific number to represent what that middle point is for a distribution. We mentioned in <a href="#sec-ch1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch1</span></a> that one of the key principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we describe a variable using its center value. In most situations, after checking out the shape of the distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>central tendency</strong> = the “middle” or “typical” value of a distribution, close to where most points are</span></div></div>
 <section id="mean" class="level3 page-columns page-full" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">5.5.1</span> Mean</h3>
 <div class="page-columns page-full"><p>The <strong>mean</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of a set of observations is a traditional average: add all of the values up, and then divide by the total number of values. If a student took five exams and got scores 76, 91, 86, 80 and 92, the mean of those scores would be:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>mean</strong> = a measure of central tendency calculated by summing all values and dividing by the number of values</span></div></div>
@@ -2696,7 +2702,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <span class="quarto-unresolved-ref">?sec-ch15</span>, so for now just take it on faith that this is correct.</p>
+<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <a href="#sec-ch15" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch15</span></a>, so for now just take it on faith that this is correct.</p>
 </div>
 </div>
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code>var()</code>.</p>
@@ -2741,7 +2747,7 @@ Note
 <section id="sec-ch5-summarizing-nonnumeric-data" class="level2 page-columns page-full" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="sec-ch5-summarizing-nonnumeric-data"><span class="header-section-number">5.7</span> Summarizing non-numeric data</h2>
 <p>As you’ve probably noticed, the methods we’ve learned for describing a distributions are equations. We’ve mentioned a few times now that most statistical tools work this way and thus need quantitative data to operate. Thus, in order to summarize categorical data, we first need to turn them into numbers - we need to quantify them.</p>
-<p>Let’s start with a simple quantification problem first - a variable with only two categories. We have one like this in our <code>studentdata</code> dataset, <code>Sex</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. This variable has two values to start with - <code>Male</code> and <code>Female</code>. In <a href="chapter-2.html" class="quarto-xref"><span>Chapter 2</span></a> we learned about a data type in R that is specifically for variables with only two values - logical data. So we can simply convert the <code>Sex</code> variable from character to logical.</p>
+<p>Let’s start with a simple quantification problem first - a variable with only two categories. We have one like this in our <code>studentdata</code> dataset, <code>Sex</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. This variable has two values to start with - <code>Male</code> and <code>Female</code>. In <a href="#sec-ch2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch2</span></a> we learned about a data type in R that is specifically for variables with only two values - logical data. So we can simply convert the <code>Sex</code> variable from character to logical.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2789,7 +2795,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try to remember a function we learned about in this chapter to show which values are in <code>studentdata$Ethnicity</code> and how many observations are in each category. If you forgot, re-read <a href="#sec-ch5-distribution-center" class="quarto-xref"><span>Section 5.5</span></a> before peaking at the answer.</p>
+<p>Try to remember a function we learned about in this chapter to show which values are in <code>studentdata$Ethnicity</code> and how many observations are in each category. If you forgot, re-read <a href="#sec-ch5-distribution-center" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch5-distribution-center</span></a> before peaking at the answer.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-22"></div>
@@ -2824,7 +2830,7 @@ Note
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(p(1-p)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> as</p>
+<p>You may read elsewhere that the equation for the variance of a binary variable is <span class="math inline">\(p(1-p)\)</span>. This is derivable from the sum of squares <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-ss</span></a> we gave above. Since <span class="math inline">\(p = \bar{x}\)</span>, we can write <a href="#eq-ss" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-ss</span></a> as</p>
 <p><span class="math display">\[\sum_{i=1}^{n}(x_i-p)^2\]</span></p>
 <p>Because <span class="math inline">\(x_i\)</span> in a binary variable can only be 0 or 1, the deviation part of the equation can only ever be <span class="math inline">\((1-p)^2\)</span> or <span class="math inline">\((0-p)^2 = p^2\)</span>. If we let <span class="math inline">\(m\)</span> equal the number of 1s and <span class="math inline">\(n-m\)</span> equal the number of 0s, we can break down the sum to get:</p>
 <p><span class="math display">\[m(1-p)^2 + (n-m)p^2\]</span></p>
@@ -2835,7 +2841,7 @@ Note
 <p><span class="math display">\[np(1-p)\]</span></p>
 <p>If we divide by <span class="math inline">\(n\)</span> to calculate an “average deviation per observation”, we would end up with <span class="math inline">\(p(1-p)\)</span>, the commonly-referenced equation for the variance of a binary variable. However if we divide by <span class="math inline">\(n-1\)</span> instead to calculate variance like we did earlier in this chapter with the interval variable, we get:</p>
 <p><span class="math display">\[s^2 = \frac{np(1-p)}{n-1}\]</span></p>
-<p><span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we usually use <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>.</p>
+<p><a href="#sec-ch15" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch15</span></a> will explain why we usually use <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>.</p>
 <p>To derive a generalized equation for a multi-category variable, suppose there are <span class="math inline">\(k\)</span> categories and <span class="math inline">\(p_j\)</span> stands for the proportion of 1s in the jth dummy variable. Summing up the variances for each dummy variable gives us:</p>
 <p><span class="math display">\[\sum_{j=1}^{k} s_j^2 = \frac{n}{n-1} \sum_{j=1}^{k} p_j(1-p_j) = \frac{n}{n-1} (1 - \sum_{j=1}^{k} p_j^2)\]</span></p>
 </div>
@@ -2849,7 +2855,7 @@ Note
 <p>Interpreting the meaning of a variable, and thus its summary statistics, depends on knowing about that variable in real life. It depends on knowing the context of what other values on this variable are typical. This may seem like a problem for doing statistics on variables we are unfamiliar with (which is likely to happen, if we are doing data analysis to understand something better!). However, there is a way we can translate any variable into the same units so that they’re easier to interpret and compare.</p>
 <p>For example, consider a student who is 64 inches tall. What does this <em>mean</em>? Is that a particularly tall height, or pretty normal? How can we know?</p>
 <p>Let’s consider this student’s height relative to the mean of our <code>Height</code> data. By comparing these two values, we know that the student is about 1.8 inches shorter than average. That helps us get a little closer to understanding what this one data point means. But because we have no idea about the spread of the distribution, we still don’t have a complete answer. Is a 1.8 difference still pretty close to the mean, or is it far away? It’s hard to tell without also knowing what the spread of <code>Height</code> values looks like.</p>
-<p>Standard deviation is useful for this. A standard deviation of 3.65 tells us that, on average, people’s heights are 3.65 away from the mean, both above and below. So although our selected student is below average in height, they are definitely not one of the shortest people in the distribution, or even that atypical - they are only about 0.49 of a standard deviation away from the mean. Check out the histogram in <a href="#fig-ch5-zscore" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> to see this visualized (the green line is the distribution average, while the red line is the selected student’s height).</p>
+<p>Standard deviation is useful for this. A standard deviation of 3.65 tells us that, on average, people’s heights are 3.65 away from the mean, both above and below. So although our selected student is below average in height, they are definitely not one of the shortest people in the distribution, or even that atypical - they are only about 0.49 of a standard deviation away from the mean. Check out the histogram in <a href="#fig-ch5-zscore" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch5-zscore</span></a> to see this visualized (the green line is the distribution average, while the red line is the selected student’s height).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch5-zscore" class="quarto-float quarto-figure quarto-figure-center anchored">
