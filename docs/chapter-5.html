@@ -2010,6 +2010,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2696,7 +2702,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <span class="quarto-unresolved-ref">?sec-ch15</span>, so for now just take it on faith that this is correct.</p>
+<p>It may seem strange that we’re dividing by n-1 instead of n like in an average calculation. The reason for this is a bit nuanced and will be covered in <a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a>, so for now just take it on faith that this is correct.</p>
 </div>
 </div>
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code>var()</code>.</p>
@@ -2835,7 +2841,7 @@ Note
 <p><span class="math display">\[np(1-p)\]</span></p>
 <p>If we divide by <span class="math inline">\(n\)</span> to calculate an “average deviation per observation”, we would end up with <span class="math inline">\(p(1-p)\)</span>, the commonly-referenced equation for the variance of a binary variable. However if we divide by <span class="math inline">\(n-1\)</span> instead to calculate variance like we did earlier in this chapter with the interval variable, we get:</p>
 <p><span class="math display">\[s^2 = \frac{np(1-p)}{n-1}\]</span></p>
-<p><span class="quarto-unresolved-ref">?sec-ch15</span> will explain why we usually use <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>.</p>
+<p><a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a> will explain why we usually use <span class="math inline">\(n-1\)</span> instead of just <span class="math inline">\(n\)</span>.</p>
 <p>To derive a generalized equation for a multi-category variable, suppose there are <span class="math inline">\(k\)</span> categories and <span class="math inline">\(p_j\)</span> stands for the proportion of 1s in the jth dummy variable. Summing up the variances for each dummy variable gives us:</p>
 <p><span class="math display">\[\sum_{j=1}^{k} s_j^2 = \frac{n}{n-1} \sum_{j=1}^{k} p_j(1-p_j) = \frac{n}{n-1} (1 - \sum_{j=1}^{k} p_j^2)\]</span></p>
 </div>
