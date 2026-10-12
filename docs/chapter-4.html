@@ -373,7 +373,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'parameters'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'effectsize'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -2404,7 +2404,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="sec-ch4-filtering" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="sec-ch4-filtering"><span class="header-section-number">4.2</span> Filtering bad data</h2>
-<p>Filtering is very useful for removing data points we don’t want, such as the bad outliers and missing values discussed in <a href="chapter-2.html" class="quarto-xref"><span>Chapter 2</span></a>. To remove bad data, we need to decide what counts as unrealistic or poor measurement.</p>
+<p>Filtering is very useful for removing data points we don’t want, such as the bad outliers and missing values discussed in <a href="#sec-ch2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch2</span></a>. To remove bad data, we need to decide what counts as unrealistic or poor measurement.</p>
 <p>Often in human subjects research, the experimenters will record some sort of information to make sure the study is progressing as it should and the participants are completing the study correctly. For instance, an attention check is an easy question in a survey that everyone should get correct, if they are paying attention. If they provide an incorrect or nonsensical answer to an attention check, that could mean they weren’t paying good attention to the other questions either and thus their data shouldn’t be trusted.</p>
 <p>In our data, the instructions for answering <code>IDLast</code> was to provide the last digit of their student ID number. However someone students weren’t fully paying attention, and entered more than one digit. Let’s treat this variable as an attention check and filter out anyone who didn’t follow instructions.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
@@ -2444,7 +2444,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Based on this, we can easily see some missing data in this variable - there are <code>TRUE</code> results to the question “is this data point NA?”</p>
-<p>Now that you can find missing data, the big question is - what to do about it? We mentioned at the end of <a href="chapter-2.html" class="quarto-xref"><span>Chapter 2</span></a> that there are different opinions on how to handle outliers and missing data. Most commonly, researchers just remove observations with values missing on variables they’re analyzing. Others figure out what the missing value most likely is and insert that value into the dataset via imputation. For this exercise, we will use the exclusion method.</p>
+<p>Now that you can find missing data, the big question is - what to do about it? We mentioned at the end of <a href="#sec-ch2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch2</span></a> that there are different opinions on how to handle outliers and missing data. Most commonly, researchers just remove observations with values missing on variables they’re analyzing. Others figure out what the missing value most likely is and insert that value into the dataset via imputation. For this exercise, we will use the exclusion method.</p>
 <div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Can you remember what the <code>!</code> operator does? This code returns a data frame that includes only cases for which <code>SleepHours</code> is <em>not</em> equal to NA.</p>
@@ -2470,7 +2470,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="page-columns page-full"><p>Not only can you change the names of variables, you can also change the values or data types used to represent those variables. Changing the values themselves is called <strong>recoding</strong> a variable. For instance, now that we know which variable represents how happy students felt, we might want to know who was more or less happy. However, look at what values are currently in this variable:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>recoding</strong> = changing the values within a variable</span></div></div>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>This is an ordinal variable, recorded as character/qualitative data. As we learned in <a href="chapter-2.html" class="quarto-xref"><span>Chapter 2</span></a>, we can’t do math operations like <code>&lt;=</code> or <code>max()</code> on character data. But we can recode this variable to be numeric, which would give us numbers to use for these operations.</p>
+<p>This is an ordinal variable, recorded as character/qualitative data. As we learned in <a href="#sec-ch2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch2</span></a>, we can’t do math operations like <code>&lt;=</code> or <code>max()</code> on character data. But we can recode this variable to be numeric, which would give us numbers to use for these operations.</p>
 <p>As one option, you could set up a for loop and several if/else statements to change these values based on the current labels:</p>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>

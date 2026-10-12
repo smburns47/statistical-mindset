@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -354,7 +389,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'parameters'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'effectsize'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -376,7 +411,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\ngss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\ngss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed), \n    !is.na(number_of_brothers_and_sisters)\n    )","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\n\nggplot(gss, \n       aes(x=number_of_brothers_and_sisters, \n           y=highest_year_of_school_completed)) +\n  geom_jitter() ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(gss, \n       aes(x=number_of_brothers_and_sisters,\n           y=highest_year_of_school_completed)) +\n  geom_jitter() +\n  stat_summary(fun=mean, geom=\"point\", \n               color=\"red\", size=4)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(gss, \n       aes(x=number_of_brothers_and_sisters, \n           y=highest_year_of_school_completed)) +\n  geom_jitter() +\n  stat_summary(fun=mean, geom=\"point\", \n               color=\"red\", size=4) + \n  geom_abline(intercept = 14.72, \n              slope = -0.27, color=\"red\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed), \n    !is.na(number_of_brothers_and_sisters)\n    )\n\nmodel <- #your code here\n  \nmodel","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss_clean |>\n  filter(!is.na(highest_year_of_school_completed),\n         !is.na(respondents_sex)) \n\nmodel2 <- lm(highest_year_of_school_completed ~ respondents_sex, \n             data=gss_clean)\nmodel2","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cs <- coef(model2)\nsig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$respondents_sex[i])) {\n    mu_i <- cs[1] + cs[2]*gss_clean$respondents_sex[i]\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"str(gss_clean$respondents_sex)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss_clean |>\n  mutate(sex_dummy = respondents_sex == \"Male\") \n\ncs <- coef(model2)\nsig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$sex_dummy[i])) {\n    mu_i <- cs[1] + cs[2]*gss_clean$sex_dummy[i]\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$sex_dummy[i])) {\n    mu_i <- predict(model2, newdata=gss_clean[i,])\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, \n       aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\ngss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\ngss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed), \n    !is.na(number_of_brothers_and_sisters)\n    )","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss <- read.csv(\"https://statistical-mindset.com/data/GSS.csv\")\n\nggplot(gss, \n       aes(x=number_of_brothers_and_sisters, \n           y=highest_year_of_school_completed)) +\n  geom_jitter() ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(gss, \n       aes(x=number_of_brothers_and_sisters,\n           y=highest_year_of_school_completed)) +\n  geom_jitter() +\n  stat_summary(fun=mean, geom=\"point\", \n               color=\"red\", size=4)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(gss, \n       aes(x=number_of_brothers_and_sisters, \n           y=highest_year_of_school_completed)) +\n  geom_jitter() +\n  stat_summary(fun=mean, geom=\"point\", \n               color=\"red\", size=4) + \n  geom_abline(intercept = 14.72, \n              slope = -0.27, color=\"red\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss |>\n  filter(\n    !is.na(highest_year_of_school_completed), \n    !is.na(number_of_brothers_and_sisters)\n    )\n\nmodel <- #your code here\n  \nmodel","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss_clean |>\n  filter(!is.na(highest_year_of_school_completed),\n         !is.na(respondents_sex)) \n\nmodel2 <- lm(highest_year_of_school_completed ~ respondents_sex, \n             data=gss_clean)\nmodel2","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cs <- coef(model2)\nsig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$respondents_sex[i])) {\n    mu_i <- cs[1] + cs[2]*gss_clean$respondents_sex[i]\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"str(gss_clean$respondents_sex)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean <- gss_clean |>\n  mutate(sex_dummy = respondents_sex == \"Male\") \n\ncs <- coef(model2)\nsig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$sex_dummy[i])) {\n    mu_i <- cs[1] + cs[2]*gss_clean$sex_dummy[i]\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sig <- sigma(model2)\n\nset.seed(47)\nfor (i in 1:nrow(gss_clean)) {\n  if (!is.na(gss_clean$sex_dummy[i])) {\n    mu_i <- predict(model2, newdata=gss_clean[i,])\n    gss_clean$sim_y_i[i] <- rnorm(1, mean=mu_i, sd=sig)\n  }\n}\n\nggplot(gss_clean, \n       aes(x=highest_year_of_school_completed)) + \n  geom_histogram() + \n  geom_histogram(aes(x=sim_y_i), fill=\"red\", alpha=0.5)  + \n  labs(title = \"Observed (black) vs. simulated (red) years of education\")","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gss_clean |>\n  mutate(z_siblings = #your code here,\n           z_education = #your code here)\n           \nstandardized_model <- lm(z_education ~ z_siblings, \n                         data = gss_clean)\n\nmodel\nstandardized_model","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"y <- soto_work$Leadership\nx <- soto_work$Extraversion\ncor(y,x)","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2025,11 +2060,12 @@ window.Quarto = {
   <li><a href="#meaningful-and-meaningless-predictions" id="toc-meaningful-and-meaningless-predictions" class="nav-link" data-scroll-target="#meaningful-and-meaningless-predictions"><span class="header-section-number">10.5.4</span> Meaningful and meaningless predictions</a></li>
   <li><a href="#population-specificity" id="toc-population-specificity" class="nav-link" data-scroll-target="#population-specificity"><span class="header-section-number">10.5.5</span> Population specificity</a></li>
   </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">10.6</span> Chapter summary</a>
+  <li><a href="#standardized-coefficient-estimates" id="toc-standardized-coefficient-estimates" class="nav-link" data-scroll-target="#standardized-coefficient-estimates"><span class="header-section-number">10.6</span> Standardized coefficient estimates</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">10.7</span> Chapter summary</a>
   <ul class="collapse">
-  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">10.6.1</span> Learning goals</a></li>
-  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">10.6.2</span> New concepts</a></li>
-  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">10.6.3</span> New R functionality</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">10.7.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">10.7.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">10.7.3</span> New R functionality</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2503,10 +2539,111 @@ Figure&nbsp;10.3: Line of best fit through the means of each category of Sex (Fe
 <p>Lastly, the coefficient values make the data <em>we currently have</em> most likely to occur under the proposed statistical model, and thus reflect how the parameter of the conditional probability distribution changes <em>for these data</em>. But that doesn’t mean they would be the best coefficient values in a different dataset! Remember all the way back in <a href="chapter-1.html" class="quarto-xref"><span>Chapter 1</span></a> when we discussed that part of asking a good statistical question is knowing which population you are asking about. The population we are modeling right now is the population these data were collected from - adults in the US. The data generation process of education attainment could be different in different countries - a different mean level of education for people with no siblings for instance, or a weaker/stronger effect of sibling number. We don’t have access to data from other populations to know that, however. So we have to restrict our interpretations of the data generation process to what they mean for <em>this</em> population we do have data from. This is why, if a research field is interested in the fundamental processes of human cognition, it is really important to sample from all humans.</p>
 </section>
 </section>
-<section id="chapter-summary" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">10.6</span> Chapter summary</h2>
-<section id="learning-goals" class="level3" data-number="10.6.1">
-<h3 data-number="10.6.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">10.6.1</span> Learning goals</h3>
+<section id="standardized-coefficient-estimates" class="level2 page-columns page-full" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="standardized-coefficient-estimates"><span class="header-section-number">10.6</span> Standardized coefficient estimates</h2>
+<p>When we interpret statistical model coefficients in terms of the variable units, that is helpful for us to understand how big of a consequence the explanatory variable has on the target variable. In our example using number of siblings as the explanatory variable of education attainment, an effect of -0.27 years of education per sibling means that having 4 siblings vs.&nbsp;0 could determine whether someone stops going to college one year earlier (e.g.&nbsp;<span class="math inline">\(14.72\)</span> vs.&nbsp;<span class="math inline">\(14.72 - 0.27*4 = 13.64\)</span>). If we’re using this model for prediction or explanation goals, that effect size can inform us about what education levels to expect in a society with certain family planning trends, or how much public policy investment we need if we hope to increase education attainment by a certain amount.</p>
+<p>However, this decision-making about the meaning of the coefficients is only possible if we understand what the units of the variables mean. Years of education and number of siblings are variables and units we encounter in our everyday lives, and we have existing instincts about what big and small values are on those variables. But what if we were studying something more abstract like brain activation? If we said the effect of stimuli orientation on brain activity was -0.27 amplitude per radian of rotation, is that a big or small effect in the context of those variables? Have you even heard of those words before?</p>
+<p>Or, what if we were studying the effect of number of siblings on education but we had measured education in terms of months instead of years? The same effect of -0.27 years per sibling would be -3.24 months per sibling, which is a bigger number even though the effect itself is the same. If we were trying to compare the size of the effect we found in the US vs.&nbsp;Germany, but one study had measured education in terms of years and the other in terms of months, it would be hard to understand if the effects were the same. The conversion is more obvious in this example, but you can probably think of others where the measured variables are more abstract, like different survey instruments targeting personality or leadership. It’s not clear how to translate between these different scales when they don’t have an interval or ratio scale of measurement.</p>
+<div class="page-columns page-full"><p>Because of these realities, sometimes it is not the most helpful to interpret or report model coefficients in terms of the variable’s original units. Sometimes it is instead better to look at <strong>standardized coefficients</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standardized coefficient</strong> = a statistical model coefficient that has been transformed to be in terms of standard deviations of the variables rather than their original units</span></div></div>
+<p>We have seen some standardized statistical estimates before. We used z-scores in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> and correlation in <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> to understand the magnitude of distributions and associations generally, separate from the specific units of the variables. To do this we divided statistics by the variation in the variables used to compute them. This essentially brings all variables into the same, unitless scale.</p>
+<p>We can do the same with statistical model coefficients to standardize them. We simply model how the z-scored values of the explanatory variable influence the mean of the z-scored target variable distribution.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Z-score the explanatory and target variables in order to estimate standardized model coefficients.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal the answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>z_siblings = scale(number_of_brothers_and_sisters), z_education = scale(highest_year_of_school_completed)</code></p>
+</div>
+</div>
+</div>
+<p>This version of the model gives us very different coefficient values. We know how to interpret the coefficients returned by <code>model</code>: the change in the mean of <code>highest_year_of_school_completed</code> for every 1-unit change in <code>number_of_brothers_and_sisters</code>. Now let’s walk through how to interpret the standardized version of the coefficients.</p>
+<p>The standardized intercept, <span class="math inline">\(\beta_0\)</span>, is a really tiny number -2.590e-16 (expressed in scientific notation). This is essentially 0. Remember that <span class="math inline">\(\beta_0\)</span> is the mean target value when the explanatory variable is 0. Since the variables in a standardized model are z-scored, a z=0 value on the explanatory variable corresponds to the mean of sibling number. Because the y-intercept value is 0, we predict the mean education value will be the marginal mean of education when at the mean of sibling number. Someone average in number of siblings is expected to be average in years of education.</p>
+<p>The <span class="math inline">\(\beta_1\)</span> value, -0.26, tells us how to adjust our predictions from there. A 1-unit increase in a z-scored variable is an increase of 1 standard deviation in the original variable. We should interpret a standardized <span class="math inline">\(\beta_1\)</span> value as the change in <span class="math inline">\(Y|X\)</span>’s mean per unit of <span class="math inline">\(X\)</span>, so here we say that a 1SD increase in sibling number is associated with a 0.26SD decrease in the mean of education years.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ch10-zscore" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ch10-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter-10_files/figure-html/fig-ch10-zscore-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch10-zscore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.4: Mean of P(Y|X) when X=0 and variables are z-scored.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This standardized effect has the same value and same meaning no matter what the original units of the variables were. This makes it easier to compare effects across different studies and populations, and to interpret the size of the effect from the number alone.</p>
+<p>In fact, this standardized coefficient is something we’ve seen before! If we were to calculate the Pearson correlation between <code>Leadership</code> and <code>Extraversion</code>, we would get:</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This reveals a deeper understanding of what the correlation calculation is doing: it is finding how much the mean of <span class="math inline">\(Y|X\)</span> changes as a linear function of <span class="math inline">\(X\)</span>, in standardized units. This also means that we can interpret standardized model coefficients like a correlation, with the sign indicating the effect direction and the size (from -1 to 1) indicating the effect strength.</p>
+<p>We saw in <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> that the same correlation math works on interval and dummy-coded binary variables. Thus, if our model consists of a categorical explanatory variable, we can also z-score this type of variable to get a standardized <span class="math inline">\(\beta_1\)</span> value. In this case, the coefficient will be the same as the point-biserial correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p>However, standardizing in this way can make things more complicated to interpret for a categorical explanatory variable. The effect size would be comparable with different studies that use different scales of measurement, but directly interpreting <em>this</em> effect as a change in <span class="math inline">\(X\)</span> that is any value other than 1 would be making predictions with values that aren’t possible for the categorical <span class="math inline">\(X\)</span> variable to have.</p>
+<p>Because of this<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, it is more common to use a different approach for standardizing the coefficient of a model with a categorical explanatory variable. Instead of z-scoring both variables, we only z-score the target variable and leave the explanatory variable as 0s and 1s.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional: going deeper">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Optional: going deeper
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can also get to standardized coefficients after we’ve already fit a model on raw variables. For a numeric explanatory variable, since <span class="math inline">\(\beta_1\)</span> is the change in <span class="math inline">\(Y|X\)</span>’s mean per 1-unit increase of <span class="math inline">\(X\)</span>, and 1 standardized unit of <span class="math inline">\(X\)</span> is <span class="math inline">\(s_X\)</span>, the expected change in <span class="math inline">\(Y|X\)</span> per 1 standardized unit of <span class="math inline">\(X\)</span> is <span class="math inline">\(\beta_1 * s_X\)</span>. To express that in terms of standardized units of <span class="math inline">\(Y\)</span>, we divide by <span class="math inline">\(s_Y\)</span>. This gives us a formula for converting an unstandardized coefficient to a standardized one:</p>
+<p><span id="eq-beta1std"><span class="math display">\[\beta_1^{std} = \frac{\beta_1 * s_X}{s_Y} \tag{10.3}\]</span></span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#verifying that both ways of standardizing the coefficient give the same result</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(standardized_model)[<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>z_siblings 
+-0.2636462 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> gss_clean<span class="sc">$</span>highest_year_of_school_completed</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> gss_clean<span class="sc">$</span>number_of_brothers_and_sisters</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model)[<span class="dv">2</span>] <span class="sc">*</span> <span class="fu">sd</span>(x) <span class="sc">/</span> <span class="fu">sd</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>number_of_brothers_and_sisters 
+                    -0.2636462 </code></pre>
+</div>
+</div>
+<p>For a binary categorical explanatory variable, we simply divide the <span class="math inline">\(\beta_1\)</span> coefficient by the model’s <span class="math inline">\(\sigma\)</span> estimate:</p>
+<p><span id="eq-beta1cat"><span class="math display">\[\beta_1^{std} = \frac{\beta_1}{\sigma} \tag{10.4}\]</span></span></p>
+<p>Since the interpretation of <span class="math inline">\(\beta_1\)</span> for a categorical explanatory variable is the difference in the mean of <span class="math inline">\(Y|X\)</span> between two groups, dividing the estimate by <span class="math inline">\(\sigma\)</span> lets us express how big this mean difference is relative to the variation within the groups:</p>
+<p><span class="math display">\[\beta_1^{std} = \frac{\mu_{Y|X=0} - \mu_{Y|X=1}}{\sigma}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="chapter-summary" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">10.7</span> Chapter summary</h2>
+<section id="learning-goals" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">10.7.1</span> Learning goals</h3>
 <p>After reading this chapter, you should be able to:</p>
 <ul>
 <li>Explain what the best fitting line is in the context of an association between variables</li>
@@ -2516,17 +2653,18 @@ Figure&nbsp;10.3: Line of best fit through the means of each category of Sex (Fe
 <li>Make coefficient interpretations in terms of predictions about the target variable</li>
 </ul>
 </section>
-<section id="new-concepts" class="level3" data-number="10.6.2">
-<h3 data-number="10.6.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">10.6.2</span> New concepts</h3>
+<section id="new-concepts" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">10.7.2</span> New concepts</h3>
 <ul>
 <li><strong>overfitting</strong>: When a model fits the training data too closely and fails to generalize to new data.</li>
 <li><strong>General Linear Model</strong>: a statistical model where the prediction equation takes the form of a linear equation.</li>
 <li><strong>effect</strong>: the magnitude of change in the target variable parameter associated with a one-unit change in the explanatory variable.</li>
 <li><strong>reference group</strong>: the category of a categorical explanatory variable that is assigned a value of 0 when dummy coding, and to which other groups are compared.</li>
+<li><strong>standardized coefficient</strong>: a statistical model coefficient that has been transformed to be in terms of standard deviations of the variables rather than their original units.</li>
 </ul>
 </section>
-<section id="new-r-functionality" class="level3" data-number="10.6.3">
-<h3 data-number="10.6.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">10.6.3</span> New R functionality</h3>
+<section id="new-r-functionality" class="level3" data-number="10.7.3">
+<h3 data-number="10.7.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">10.7.3</span> New R functionality</h3>
 <ul>
 <li><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">ggplot2::stat_summary()</a></li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">ggplot2::geom_abline()</a></li>
@@ -2544,6 +2682,7 @@ Figure&nbsp;10.3: Line of best fit through the means of each category of Sex (Fe
 <li id="fn3"><p>“Effect” sounds like we’re implying that <span class="math inline">\(X\)</span> causes <span class="math inline">\(Y\)</span> in some way, but remember that models of the data generation process can encode both our ideas about real causes as well as our ideas about what information causes our guesses about another variable, even if those variables aren’t directly causing each other in the real world. Just because a model suggests an effect of <span class="math inline">\(X\)</span> in the statistical sense doesn’t mean changing <span class="math inline">\(X\)</span> would directly impact <span class="math inline">\(Y\)</span> in reality. That might be our theory, but there are other processes that could create associations. We’ll talk more about that in <span class="quarto-unresolved-ref">?sec-ch19</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Both the “education ~ siblings” model and the “education ~ sex” model fit the data in a similar way - this illustrates how a dataset could come about through multiple processes. A good fit for your hypothesized model doesn’t mean your idea is the one definite data generation process in the real world.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>If that doesn’t seem accurate, maybe there’s other important explanatory information missing from our model? <a href="chapter-12.html" class="quarto-xref"><span>Chapter 12</span></a> explains how to add multiple explanatory variables.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>And other reasons, like the fact that point-biserial correlations approach 0 when the distribution of <span class="math inline">\(X\)</span> is highly imbalanced even when the strength of association with <span class="math inline">\(Y\)</span> doesn’t change, since the variance of a binary <span class="math inline">\(X\)</span> approaches 0 as proportion <span class="math inline">\(p\)</span> decreases. See <a href="https://pubmed.ncbi.nlm.nih.gov/17154753/">this</a> paper for more mathematical detail.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
