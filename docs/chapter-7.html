@@ -2372,7 +2372,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>However, there’s not much point to doing all that work if you can’t share the results with other people. Doing statistics well is important, but equally important is the <em>communication</em> of your statistics. Otherwise, no one else will be able to use your insights to make different decisions or improve lives. In this chapter, we will discuss important principles of clearly communicating statistical results.</p>
 <section id="sec-ch7-reporting-distributions" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-ch7-reporting-distributions"><span class="header-section-number">7.1</span> Reporting summaries</h2>
-<p>Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well if you are a psychology or psychology-adjacent student. Here is what APA style has to say about how to share the kinds of statistics we learned in <a href="#sec-ch5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch5</span></a> and <a href="#sec-ch6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch6</span></a>.</p>
+<p>Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well if you are a psychology or psychology-adjacent student. Here is what APA style has to say about how to share the kinds of statistics we learned in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> and <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
 <section id="central-tendency" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="central-tendency"><span class="header-section-number">7.1.1</span> Central tendency</h3>
 <p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, so if you do need to report it, just write it as <em>Mode</em>. Numbers should be reported to two decimal places. Reporting the mean in the body of some text may look like:</p>
@@ -2407,7 +2407,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </tr>
 </tbody>
 </table>
-<p>To get this information for reporting, we could filter and summarize our data for each category as we learned in <a href="#sec-ch4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch4</span></a> and <a href="#sec-ch5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch5</span></a>. But <code>dplyr</code> gives us a more efficient way to get this table directly, with the <code>summarize()</code> function.</p>
+<p>To get this information for reporting, we could filter and summarize our data for each category as we learned in <a href="chapter-4.html" class="quarto-xref"><span>Chapter 4</span></a> and <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>. But <code>dplyr</code> gives us a more efficient way to get this table directly, with the <code>summarize()</code> function.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>This function makes a new data frame with just summary values instead of all the raw data. It takes the raw data frame as the first argument (as many <code>dplyr</code> functions do, to facilitate easy piping) and a definition of a new variable (here, we called it <code>mean</code>).</p>
@@ -2433,7 +2433,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="spread" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="spread"><span class="header-section-number">7.1.2</span> Spread</h3>
-<p>Summary statistics of variables involving numeric values often report both measurements of central tendency and spread together. Usually, standard deviation is the variation score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in <a href="#sec-ch5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch5</span></a> (e.g., IQR and IQV) or just the word of the measure. For example:</p>
+<p>Summary statistics of variables involving numeric values often report both measurements of central tendency and spread together. Usually, standard deviation is the variation score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a> (e.g., IQR and IQV) or just the word of the measure. For example:</p>
 <p>“The median nightly sleep duration in sophomores (<em>M</em> = 7.33, <em>SD</em> = 1.13) was longer than that of seniors (<em>M</em> = 6.7, <em>SD</em> = 1.57).”</p>
 <p>When reporting the descriptive statistical summaries of many groups, the results may be summarized in a table as well. <code>summarize()</code> lets you declare multiple new variables to create, so we can produce summaries of central tendency and spread at the same time:</p>
 <div id="qwebr-insertion-location-5"></div>
@@ -2474,7 +2474,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use <code>n()</code> and a function we learned about in <a href="#sec-ch6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch6</span></a> to summarize this information from <code>studentdata</code> with <code>summarize()</code>.</p>
+<p>Use <code>n()</code> and a function we learned about in <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> to summarize this information from <code>studentdata</code> with <code>summarize()</code>.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-7"></div>
@@ -2536,7 +2536,7 @@ Note
 <section id="sec-ch7-show-the-data" class="level2 page-columns page-full" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-ch7-show-the-data"><span class="header-section-number">7.3</span> Show the data</h2>
 <p>The goal of data visualization is to clarify - to make a messy set of data and patterns easier to understand. There are ways to use visualization that help with this goal, but also ways to do it poorly. Bad visualization obfuscates or distorts rather than clarifies. Here we will cover the major principles of good data visualization that you should always follow.</p>
-<p>Let’s say that you collected data with the aim to find the association between daily coffee intake and longevity. You have information on how much coffee people drank, and how long they lived. Now you want to visualize the relationship. <a href="#fig-ch7-coffee-longevity" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch7-coffee-longevity</span></a> below shows four potential ways the data could appear.</p>
+<p>Let’s say that you collected data with the aim to find the association between daily coffee intake and longevity. You have information on how much coffee people drank, and how long they lived. Now you want to visualize the relationship. <a href="#fig-ch7-coffee-longevity" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> below shows four potential ways the data could appear.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch7-coffee-longevity" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2574,7 +2574,7 @@ Figure&nbsp;7.1: Four potential sets of data that all show a positive relationsh
 <section id="dont-distort-the-data" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="dont-distort-the-data"><span class="header-section-number">7.4</span> Don’t distort the data</h2>
 <p>If you played around with the <code>width</code> argument for <code>geom_jitter()</code>, you may have noticed that it’s possible to set a jitter big enough that it is now unclear what category a data point belongs to (if you didn’t find this out yourself, go back and try!). This is an example of how features of a visualization can hinder rather than help. In this case, too much jitter distorted the data, so we couldn’t understand their true values well.</p>
-<p>Data can also be distorted through other means. A common one is the use of different axis scaling to either exaggerate or hide a pattern in the data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In <a href="#fig-ch7-crime" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch7-crime</span></a>, we can see data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The actual data values are the same, but they are shown in different contexts. The same data can tell two very different stories!</p>
+<p>Data can also be distorted through other means. A common one is the use of different axis scaling to either exaggerate or hide a pattern in the data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In <a href="#fig-ch7-crime" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>, we can see data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The actual data values are the same, but they are shown in different contexts. The same data can tell two very different stories!</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch7-crime" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2649,7 +2649,7 @@ Figure&nbsp;7.3: What various colors look like to individuals with the two most 
 </figcaption>
 </figure>
 </div>
-<p>Remember when we changed the colors of our histogram in <a href="#sec-ch7-plot-types" class="quarto-xref"><span class="quarto-unresolved-ref">sec-ch7-plot-types</span></a>?</p>
+<p>Remember when we changed the colors of our histogram in <a href="#sec-ch7-plot-types" class="quarto-xref"><span>Section 7.2</span></a>?</p>
 <div id="qwebr-insertion-location-25"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>If we only tell <code>ggplot</code> to fill the bars with different colors based on <code>Sex</code>, it will pick default colors to use. These colors are the defaults because they have good contrast and are vetted for being colorblind-friendly.</p>
@@ -2673,7 +2673,7 @@ Figure&nbsp;7.3: What various colors look like to individuals with the two most 
 </section>
 <section id="shape-sizes" class="level3" data-number="7.6.2">
 <h3 data-number="7.6.2" class="anchored" data-anchor-id="shape-sizes"><span class="header-section-number">7.6.2</span> Shape sizes</h3>
-<p>Other perceptual limitations apply to how we perceive quantities and sizes of shapes. For instance, look at the plot in <a href="#fig-ch7-piechart" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch7-piechart</span></a> below:</p>
+<p>Other perceptual limitations apply to how we perceive quantities and sizes of shapes. For instance, look at the plot in <a href="#fig-ch7-piechart" class="quarto-xref">Figure&nbsp;<span>7.4</span></a> below:</p>
 <div id="fig-ch7-piechart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-piechart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2700,7 +2700,7 @@ Figure&nbsp;7.5: A clear visualization of religious affiliation percentages in t
 </div>
 </div>
 </div>
-<p>In <a href="#fig-ch7-religion" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ch7-religion</span></a> we can see the pattern much more clearly. This plot allows the viewer to make comparisons based on just one feature - the the height of the bars. Humans tend to be more accurate when decoding differences this way vs.&nbsp;using area or volume. This plot may not look as flashy as the 3D pie chart, but it’s a much more effective representation of the data.</p>
+<p>In <a href="#fig-ch7-religion" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> we can see the pattern much more clearly. This plot allows the viewer to make comparisons based on just one feature - the the height of the bars. Humans tend to be more accurate when decoding differences this way vs.&nbsp;using area or volume. This plot may not look as flashy as the 3D pie chart, but it’s a much more effective representation of the data.</p>
 <p>That said, there is <a href="https://eagereyes.org/blog/2010/chart-junk-considered-useful-after-all">some</a> evidence that flashy plots are better for memory. You just want to be careful that your viewers are remembering the right things! For more resources on customizing plots so that they’re both eye-catching <em>and</em> communicative, check out <span class="citation" data-cites="wickham2023b">Wickham et al. (<a href="#ref-wickham2023b" role="doc-biblioref">2023</a>)</span> and <a href="https://r-graph-gallery.com/">r-graph-gallery</a>.</p>
 </section>
 </section>

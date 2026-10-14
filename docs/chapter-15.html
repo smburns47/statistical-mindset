@@ -2023,8 +2023,8 @@ window.Quarto = {
   <li><a href="#estimation-uncertainty" id="toc-estimation-uncertainty" class="nav-link" data-scroll-target="#estimation-uncertainty"><span class="header-section-number">15.3</span> Estimation uncertainty</a></li>
   <li><a href="#clearly-communicating-effect-estimates" id="toc-clearly-communicating-effect-estimates" class="nav-link" data-scroll-target="#clearly-communicating-effect-estimates"><span class="header-section-number">15.4</span> Clearly communicating effect estimates</a>
   <ul class="collapse">
-  <li><a href="#standardized-effect-estimates" id="toc-standardized-effect-estimates" class="nav-link" data-scroll-target="#standardized-effect-estimates"><span class="header-section-number">15.4.1</span> Standardized effect estimates</a></li>
-  <li><a href="#effects-as-predictions-comparisons" id="toc-effects-as-predictions-comparisons" class="nav-link" data-scroll-target="#effects-as-predictions-comparisons"><span class="header-section-number">15.4.2</span> Effects as predictions / comparisons</a></li>
+  <li><a href="#effects-as-predictions-comparisons" id="toc-effects-as-predictions-comparisons" class="nav-link" data-scroll-target="#effects-as-predictions-comparisons"><span class="header-section-number">15.4.1</span> Effects as predictions / comparisons</a></li>
+  <li><a href="#standardized-effect-estimates" id="toc-standardized-effect-estimates" class="nav-link" data-scroll-target="#standardized-effect-estimates"><span class="header-section-number">15.4.2</span> Standardized effect estimates</a></li>
   <li><a href="#visualizing-estimates-uncertainty" id="toc-visualizing-estimates-uncertainty" class="nav-link" data-scroll-target="#visualizing-estimates-uncertainty"><span class="header-section-number">15.4.3</span> Visualizing estimates &amp; uncertainty</a></li>
   </ul></li>
   </ul>
@@ -2512,10 +2512,11 @@ Figure&nbsp;15.2: Different levels of confidence intervals are more or less spec
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Unfortunately, the logic of a confidence interval is rather convoluted. It is one of the most misunderstood tools in all of statistics. We need to remember that a confidence interval is a range that will contain the true population parameter X% of the time across many samples. There is a certain probability <span class="math inline">\(P(\hat{\theta} | \theta)\)</span> that we will create this estimate given an unknown population value. But once we actually have a data sample and calculate the estimate, it either contains the population value, or it does not. Thus, here are a few common ways confidence intervals are misinterpreted, and what we should think instead:</p>
 <ul>
-<li>A 95% confidence interval is <em>not</em> the interval in which 95% of the data values can be found. That is the <em>prediction interval</em> that we learned about in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. A confidence interval is a summary statistic itself. Just as the mean of a sample doesn’t tell you what all the possible values in the sample are, a confidence interval doesn’t tell you about what will occur for individual observations, only overall sample estimates.</li>
-<li>A 95% confidence interval is <em>not</em> the interval in which you will find 95% of other sample estimates. A confidence interval is calculated from and centered on one sample estimate. That one sample estimate is likely to be higher or lower than the true population mean, meaning more that 5% of future estimates will fall outside of it. You can imagine calculating a 95% confidence interval on an outlier estimate, in which case almost no other estimates will fall within the range.<br>
-</li>
-<li>A 95% confidence interval does <em>not</em> say there is a 95% probability the population value is in this range. This is a nuanced one, but remember <span class="math inline">\(P(\hat{\theta} | \theta) \neq P(\theta | \hat{\theta})\)</span>. Also, under a Frequentist definition of probability, the population value cannot even <em>have</em> a probability because it doesn’t vary. 95% refers to the proportion of intervals we could randomly draw from a set population value. It does not refer to any property of the population value itself.</li>
+<li><p>A 95% confidence interval is <em>not</em> the interval in which 95% of the data values can be found. That is the <em>prediction interval</em> that we learned about in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. A confidence interval is a summary statistic itself. Just as the mean of a sample doesn’t tell you what all the possible values in the sample are, a confidence interval doesn’t tell you about what will occur for individual observations, only overall sample estimates.</p></li>
+<li><p>A 95% confidence interval is <em>not</em> the interval in which you will find 95% of other sample estimates. A confidence interval is calculated from and centered on one sample estimate. That one sample estimate is likely to be higher or lower than the true population mean, meaning more that 5% of future estimates will fall outside of it. You can imagine calculating a 95% confidence interval on an outlier estimate, in which case almost no other estimates will fall within the range.<br>
+</p></li>
+<li><p>A 95% confidence interval does <em>not</em> say there is a 95% probability the population value is in this range. This is a nuanced one, but remember <span class="math inline">\(P(\hat{\theta} | \theta) \neq P(\theta | \hat{\theta})\)</span>. Also, under a Frequentist definition of probability, the population value cannot even <em>have</em> a probability because it doesn’t vary. 95% refers to the proportion of intervals we could randomly draw from a set population value. It does not refer to any property of the population value itself.</p></li>
+<li><p>Focus on width of interval instead. Since it’s built out of the standard error, tells you how precise your estimate can be.</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2534,11 +2535,11 @@ Note
 <section id="clearly-communicating-effect-estimates" class="level2" data-number="15.4">
 <h2 data-number="15.4" class="anchored" data-anchor-id="clearly-communicating-effect-estimates"><span class="header-section-number">15.4</span> Clearly communicating effect estimates</h2>
 <p>If we are to make decisions based on statistical estimates, or inform others’ decisions, we need to make sure we communicate the correct interpretation of our estimates. In a research article it is common to report the results of statistical analyses as a big table of coefficient estimates, standard error estimates, and confidence intervals, but what one should <em>do</em> with this information is not always clear. For this reason, it is valuable to keep in mind some reporting possibilities that make effect interpretation easier.</p>
-<section id="standardized-effect-estimates" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="standardized-effect-estimates"><span class="header-section-number">15.4.1</span> Standardized effect estimates</h3>
+<section id="effects-as-predictions-comparisons" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="effects-as-predictions-comparisons"><span class="header-section-number">15.4.1</span> Effects as predictions / comparisons</h3>
 </section>
-<section id="effects-as-predictions-comparisons" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="effects-as-predictions-comparisons"><span class="header-section-number">15.4.2</span> Effects as predictions / comparisons</h3>
+<section id="standardized-effect-estimates" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="standardized-effect-estimates"><span class="header-section-number">15.4.2</span> Standardized effect estimates</h3>
 </section>
 <section id="visualizing-estimates-uncertainty" class="level3" data-number="15.4.3">
 <h3 data-number="15.4.3" class="anchored" data-anchor-id="visualizing-estimates-uncertainty"><span class="header-section-number">15.4.3</span> Visualizing estimates &amp; uncertainty</h3>
