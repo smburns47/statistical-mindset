@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -2653,7 +2672,7 @@ Note
 <section id="inference" class="level2" data-number="14.8">
 <h2 data-number="14.8" class="anchored" data-anchor-id="inference"><span class="header-section-number">14.8</span> Inference</h2>
 <p>Now we know what’s possible to happen when we draw a sample from a population. The samples can be different from the population and each other, so they can give us sample estimates that are different from the true population value and from each other.</p>
-<p>Since we can’t typically see the population or sampling distributions, and usually only have one sample distribution to calculate one estimate in, there are implications for how we make conclusions about what the truth of the world is given what we see in our data. We’re already well aware that different data generation processes can create similar data distributions, so we can’t assume that the model form we fit in a data sample is the one true data generation process even if we see a strong effect estimate or low accuracy estimate. Now we also that sampling error can also give us different estimates for the model coefficients than is reality. This means, even if we do luck out and hit on the true data generation process form with our model, the specific estimates we fit in the model might not be correct!</p>
+<p>Since we can’t typically see the population or sampling distributions, and usually only have one sample to calculate one estimate in, there are implications for how we make conclusions about what the truth of the world is given what we see in our data. We’re already well aware that different data generation processes can create similar data distributions, so we can’t assume that the model form we fit in a data sample is the one true data generation process even if we see a strong effect estimate or low accuracy estimate. Now we also see that sampling error can give us different estimates for the model coefficients than is reality. This means, even if we do luck out and hit on the correct specification of the data generation process, the specific estimates we fit in the model might not be correct!</p>
 <p>So what do we do about all this uncertainty? This overall practice - using limited sample information to make conclusions about the population - is called inference. While descriptive statistics are mathematical processes that tell us summaries about a dataset in front of us, inferential statistics are mathematical processes that tell us what conclusions we can make about an unknown population and how confident in those conclusions we can be.</p>
 <section id="estimates-vs.-estimands" class="level3" data-number="14.8.1">
 <h3 data-number="14.8.1" class="anchored" data-anchor-id="estimates-vs.-estimands"><span class="header-section-number">14.8.1</span> Estimates vs.&nbsp;estimands</h3>
@@ -2698,11 +2717,17 @@ Note
 </section>
 <section id="likelihood-of-estimates" class="level3" data-number="14.8.2">
 <h3 data-number="14.8.2" class="anchored" data-anchor-id="likelihood-of-estimates"><span class="header-section-number">14.8.2</span> Likelihood of estimates</h3>
-<p>The next thing to know about inferential statistics is that while we can’t be sure what the true population value is, we can calculate how likely our single estimate is to come from different possible population values. This thought process is similar to when we were checking model fit to data in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. There, we calculated the likelihood of the data given a fitted model form and coefficients. If the data were really unlikely under the model, we decided the model was probably not right. If the data were more likely under Model A vs.&nbsp;Model B, we decided Model A was more likely to be the true data generation process than Model B. In neither of these cases did we arrive at the Truth<sup>tm</sup> from looking at just one sample of data, but the data helped us eliminate possibilities.</p>
-<p>The same principle applies when thinking about the true population value of an estimand. Given things we know about the estimator we use, the amount of measurement error, and sample size, we can calculate how likely it is to get an estimate like the one we got in our sample from various different possible population values. If it is very unlikely to get our estimate from a certain population value, we cross that population value off our list of consideration and narrow the range of possibilities. If one population value is more likely to create our estimate than an alternative option, we get rid of the less likely option. Statistical modeling and inferential statistics are processes of elimination for our ideas about the world. While data cannot tell us what exact data generation process or population value created them, they give us information about possibilities probably did <em>not</em>. <a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a> will discuss how we do this when we don’t have a preconceived idea of what the population value is, while <span class="quarto-unresolved-ref">?sec-ch16</span> will discuss how we do this when we have existing hypotheses about statistical model forms and population values.</p>
+<p>The next thing to know about inferential statistics is that while we can’t be sure what the true population value is, we can calculate how likely our single estimate is to come from different possible population values. This thought process is similar to when we were checking model fit to data in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. There, we calculated the likelihood of the data given a fitted model form and coefficients. If the data were really unlikely under the model, we decided the model was probably not right. If the data were more likely under Model A vs.&nbsp;Model B, we decided Model A was more likely to be the true data generation process than Model B. In neither of these cases did we arrive at the Truth<sup>tm</sup> from looking at just one sample of data, but the data helped us compare possibilities.</p>
+<p>The same principle applies when thinking about the true population value of an estimand. Given things we know about the estimator we use, the amount of measurement error, and sample size, we can calculate how likely it is to get an estimate like the one we got in our sample from various different possible population values. If it is very unlikely to get our estimate from a certain population value, we cross that population value off our list of considerations and narrow the range of possibilities. Statistical modeling and inferential statistics are processes of elimination for our ideas about the world. While data cannot tell us what exact data generation process or population value created them, they give us information about possibilities that probably did <em>not</em>. <a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a> will discuss how we do this when we don’t have a preconceived idea of what the population value is, while <span class="quarto-unresolved-ref">?sec-ch16</span> will discuss how we do this when we have existing hypotheses about statistical model forms and population values.</p>
 </section>
 <section id="frequentist-vs.-bayesian-inference" class="level3" data-number="14.8.3">
 <h3 data-number="14.8.3" class="anchored" data-anchor-id="frequentist-vs.-bayesian-inference"><span class="header-section-number">14.8.3</span> Frequentist vs.&nbsp;Bayesian inference</h3>
+<p>The last thing to note here about inference is that there are two major schools of thought about what you can conclude based on sample estimates.</p>
+<p>The first school of thought is called <strong>Frequentist inference</strong>. The major tenet of Frequentism is that there is only one state of the world. A specific population value is either true, or it is not. We can describe the probability of generating various samples given the true state of the world, but if we don’t know that state, we can’t describe the probability of what that state is given a particular sample we have collected. It is verbotten to talk about the probability of something that doesn’t repeat or vary.</p>
+<p>In the examples above, we reasoned about how the same sample estimate is possible to produce from different population values, but <em>more likely</em> to happen under some values than others. However, if we are a Frequentist, we can’t say e.g.&nbsp;a population mean of <span class="math inline">\(\mu = 10.5\)</span> is more likely than <span class="math inline">\(mu = 15\)</span>. This is because there is only one true population value: <span class="math inline">\(\mu\)</span> cannot have probability. <span class="math inline">\(P(\mu | \hat{\mu})\)</span> is undefined. We can only commit to one guess of the population value and then find the probability of future data coming from that population (<span class="math inline">\(P(\hat{\mu} | \mu)\)</span>), or the likelihood of that some specific data came from that population. We then make a binary decision whether we think that likelihood is too low, and thus our one option is wrong.</p>
+<p>Alternatively, the other major school of inference is called <strong>Bayesian inference</strong>. Named after the philosopher and mathematician Thomas Bayes who first wrote about the ideas of “inverse probability”, Bayesian inference defines probability as strength of belief rather than long-run frequencies. In a Bayesian perspective, an unknown population value <em>can</em> have a probability because we can believe more or less in various options. If you were to make a bet about what the population <span class="math inline">\(\mu\)</span> is given a calculated estimate <span class="math inline">\(\hat{\mu} = 10.5\)</span>, how much money would you bet on 10? 12? 30? It is still the case that <span class="math inline">\(P(\mu | \hat{\mu}) \neq P(\hat{\mu} | \mu)\)</span>, but in this framework <span class="math inline">\(P(\mu | \hat{\mu})\)</span> is at least a defined quantity and can be plotted as its own probability distribution.</p>
+<p>There are a lot of strengths to the Bayesian approach - it is more natural to reason about our beliefs (and many <a href="https://pubmed.ncbi.nlm.nih.gov/16797219/">cognitive scientists argue</a> that our brains naturally do Bayesian inference to make decisions), and inferences can be adapted based on different pre-existing strengths of belief. However, because a Bayesian does not fix the population parameter to one value, it is more mathematically complicated to do Bayesian calculations. In addition, the sensitivity of conclusions to strength of starting belief means people with very different beliefs can arrive at different conclusions based on the same data.</p>
+<p>For these reasons, Frequentist inference dominated the 20th century data analysis world, including the mind sciences. Yet, this is gradually changing. The advent of modern computing tools and success of Bayesian methods in different fields of science means that Bayesian methods are catching on. In this introductory book we will cover only Frequentist tools of inference, although you might also notice Bayesian-esque language in some conceptual explanations (this author’s preferred framework). If you plan to stick around in science a while, it would be a good idea to familiarize yourself with Bayesian methods as well. Some really great introductions to Bayesian inference and modeling are <span class="citation" data-cites="kruschke2014">Kruschke (<a href="#ref-kruschke2014" role="doc-biblioref">2014</a>)</span> and <span class="citation" data-cites="mcelreath2020">McElreath (<a href="#ref-mcelreath2020" role="doc-biblioref">2020</a>)</span>. Frequentist vs.&nbsp;Bayesian inference is sometimes framed as a heated debate, but in a lot of ways these methods can compliment each other so a capable scientist should be able to deploy both depending on the use case.</p>
 </section>
 </section>
 <section id="chapter-summary" class="level2" data-number="14.9">
@@ -2736,6 +2761,14 @@ Note
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-kruschke2014" class="csl-entry" role="listitem">
+Kruschke, John K. 2014. <em>Doing Bayesian Analysis: A Tutorial with r, JAGS, and Stan</em>. Academic Press.
+</div>
+<div id="ref-mcelreath2020" class="csl-entry" role="listitem">
+McElreath, Richard. 2020. <em>Statistical Rethinking: A Bayesian Course with Examples in r and STAN</em>. CRC Press.
+</div>
+</div>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
