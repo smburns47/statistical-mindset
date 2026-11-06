@@ -354,7 +354,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'effectsize'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'effectsize'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -1997,6 +1997,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2525,7 +2531,7 @@ for (n in 1:1000) {
 </section>
 <section id="incorrect-observation-model" class="level2 page-columns page-full" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="incorrect-observation-model"><span class="header-section-number">13.3</span> Incorrect observation model</h2>
-<p>Poor model fit can also happen because we made an incorrect assumption about the observation model. In all the modeling chapters so far, we have not only consistently used a GLM form of the prediction equation, we have also used a normal distribution as the observation model and assumed that the mean of that distribution is what the prediction equation determines. In other words, we’ve been doing OLS regression - assuming a data generation process like <span class="math inline">\(Y_i \sim \text{Normal}(\mu_i, \sigma)\)</span> and <span class="math inline">\(\mu_i = \beta_0 + \beta_1X_{1i} + ... + \beta_nX_{ni}\)</span>.</p>
+<p>Poor model fit can also happen because we made an incorrect assumption about the observation model. In all the modeling chapters so far, we have not only consistently used a GLM form of the prediction equation, we have also used a normal distribution as the observation model and assumed that the mean of that distribution is what the prediction equation determines. In other words, we’ve been doing OLS regression - assuming a data generation process like <span class="math inline">\(Y_i \sim \mathcal{N}(\mu_i, \sigma)\)</span> and <span class="math inline">\(\mu_i = \beta_0 + \beta_1X_{1i} + ... + \beta_nX_{ni}\)</span>.</p>
 <section id="observation-model-family" class="level3" data-number="13.3.1">
 <h3 data-number="13.3.1" class="anchored" data-anchor-id="observation-model-family"><span class="header-section-number">13.3.1</span> Observation model family</h3>
 <p>A normally distributed observation model is a good default in a lot of situations, but not for when the target variable cannot take on continuous values. For instance, we shouldn’t use a normal distribution as the probabilistic process of binary data, since that data can only have one of two discrete values. If we make this mistake, we again will produce a poor-fitting model:</p>

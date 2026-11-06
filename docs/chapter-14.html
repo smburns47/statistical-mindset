@@ -373,7 +373,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'performance', 'effectsize'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'ggplot2', 'bayesplot', 'marginaleffects', 'effectsize'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -2016,6 +2016,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2680,9 +2686,9 @@ Note
 <p>We use different mathematical notation for these ideas depending on what we’re talking about. We refer to the estimand/parameter with Greek letters, like <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> that we learned about previously. These are the theoretical “true” values of the mean and standard deviation of the probability distribution in the population. When we are just calculating the mean and standard deviation of a sample and keeping our focus at that level, we use Latin letters like <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(s\)</span>. But when we are talking about the same calculations, yet treating them as estimates of the population estimands, we use the Greek letters with a “hat” over the top (e.g.&nbsp;<span class="math inline">\(\hat{\mu}\)</span> and <span class="math inline">\(\hat{\sigma}\)</span>). This helps us distinguish when we’re just talking about what a sample looks like vs.&nbsp;trying to use the sample for inference (<span class="math inline">\(\bar{x}\)</span> vs.&nbsp;<span class="math inline">\(\hat{\mu}\)</span>). It also helps us distinguish between our guess about the population value and what that value actually is (<span class="math inline">\(\hat{\mu}\)</span> vs.&nbsp;<span class="math inline">\(\mu\)</span>).</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 21%">
-<col style="width: 49%">
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2708,9 +2714,24 @@ Note
 <td style="text-align: center;"><span class="math inline">\(\hat{\sigma}^2\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">correlation, <span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\rho\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{\rho}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">model coefficient, <span class="math inline">\(b\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\beta\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\hat{\beta}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">target value, <span class="math inline">\(y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(Y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{Y}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">prediction accuracy, <span class="math inline">\(R^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(R^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{R}^2\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -2718,7 +2739,7 @@ Note
 <section id="likelihood-of-estimates" class="level3" data-number="14.8.2">
 <h3 data-number="14.8.2" class="anchored" data-anchor-id="likelihood-of-estimates"><span class="header-section-number">14.8.2</span> Likelihood of estimates</h3>
 <p>The next thing to know about inferential statistics is that while we can’t be sure what the true population value is, we can calculate how likely our single estimate is to come from different possible population values. This thought process is similar to when we were checking model fit to data in <a href="chapter-13.html" class="quarto-xref"><span>Chapter 13</span></a>. There, we calculated the likelihood of the data given a fitted model form and coefficients. If the data were really unlikely under the model, we decided the model was probably not right. If the data were more likely under Model A vs.&nbsp;Model B, we decided Model A was more likely to be the true data generation process than Model B. In neither of these cases did we arrive at the Truth<sup>tm</sup> from looking at just one sample of data, but the data helped us compare possibilities.</p>
-<p>The same principle applies when thinking about the true population value of an estimand. Given things we know about the estimator we use, the amount of measurement error, and sample size, we can calculate how likely it is to get an estimate like the one we got in our sample from various different possible population values. If it is very unlikely to get our estimate from a certain population value, we cross that population value off our list of considerations and narrow the range of possibilities. Statistical modeling and inferential statistics are processes of elimination for our ideas about the world. While data cannot tell us what exact data generation process or population value created them, they give us information about possibilities that probably did <em>not</em>. <a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a> will discuss how we do this when we don’t have a preconceived idea of what the population value is, while <span class="quarto-unresolved-ref">?sec-ch16</span> will discuss how we do this when we have existing hypotheses about statistical model forms and population values.</p>
+<p>The same principle applies when thinking about the true population value of an estimand. Given things we know about the estimator we use, the amount of measurement error, and sample size, we can calculate how likely it is to get an estimate like the one we got in our sample from various different possible population values. If it is very unlikely to get our estimate from a certain population value, we cross that population value off our list of considerations and narrow the range of possibilities. Statistical modeling and inferential statistics are processes of elimination for our ideas about the world. While data cannot tell us what exact data generation process or population value created them, they give us information about possibilities that probably did <em>not</em>. <a href="chapter-15.html" class="quarto-xref"><span>Chapter 15</span></a> will discuss how we do this when we don’t have a preconceived idea of what the population value is, while <a href="chapter-16.html" class="quarto-xref"><span>Chapter 16</span></a> will discuss how we do this when we have existing hypotheses about statistical model forms and population values.</p>
 </section>
 <section id="frequentist-vs.-bayesian-inference" class="level3" data-number="14.8.3">
 <h3 data-number="14.8.3" class="anchored" data-anchor-id="frequentist-vs.-bayesian-inference"><span class="header-section-number">14.8.3</span> Frequentist vs.&nbsp;Bayesian inference</h3>
