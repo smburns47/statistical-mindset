@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-17.html" rel="next">
 <link href="./chapter-15.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -2002,6 +2003,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Connection to Other Statistical Frameworks</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -2419,10 +2426,10 @@ Figure&nbsp;16.2: The sampling distribution of effect estimates from N=747 sampl
 </div>
 </div>
 <p>In a vacuum 0.51 might not seem like such a different number than 0.6; we may not consider those effect sizes to be meaningfully different. But in fact, given our sample size, it would surprising to get a 0.51 estimate if the true population effect were actually 0.6. It’s not impossible, but it’s in the tail extreme of the sampling distribution, making it very unusual to see.</p>
-<p>It can be helpful to standardize estimates in the sampling distribution to see this better. Remember the equation for a z-score we first encountered in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>? There, we learned a z-score is calculated as <span class="math inline">\(z = \frac{x_i - \bar{x}}{s_x}\)</span>. A z-score helped us see where a data value was relative to the distribution of other values. We can bring that logic to our sample estimate here, finding out where an estimate of 0.51 would be relative to the sampling distribution. To calculate that:</p>
-<p><span class="math display">\[z = \frac{\hat{\beta_1} - \beta_1}{SE_{\hat{\beta_1}}}\]</span></p>
-<p>This means, to standardize our estimate of 0.51, we first find how far away it is from the hypothesized population value of 0.6 (0.09). Then, we divide that deviation by the standard deviation of the sampling distribution - i.e.&nbsp;the standard error, 0.037. Solving this equation, we get a z-score of -2.58. An estimate of 0.51 is 2.58 standard deviations / standard errors below the sampling distribution mean.</p>
-<p>We can also calculate how likely it would be to get an estimate like this, or more extreme. That would be the probability of getting a sample estimate as far away, or farther, from the sampling distribution mean as 0.51. In other words, the probability of getting an estimate with a z-score in the sampling distribution of at least <span class="math inline">\(|z| = 2.58\)</span>.</p>
+<div class="page-columns page-full"><p>It can be helpful to standardize estimates in the sampling distribution to see this better. Remember the equation for a z-score we first encountered in <a href="chapter-5.html" class="quarto-xref"><span>Chapter 5</span></a>? There, we learned a z-score is calculated as <span class="math inline">\(z = \frac{x_i - \bar{x}}{s_x}\)</span>. A z-score helped us see where a data value was relative to the distribution of other values. We can bring that logic to our sample estimate here, finding out where an estimate of 0.51 would be relative to the sampling distribution. That version, when calculated for an estimate relative to its sampling distribution, is called a <strong>t-statistic</strong>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>t-statistic</strong> = standardization of an estimate relative to its sampling distribution, calculated as the difference between the estimate and sampling distribution mean divided by the estimated standard error.</span></div></div>
+<p><span class="math display">\[t = \frac{\hat{\beta_1} - \beta_1}{\hat{SE_{\hat{\beta_1}}}}\]</span></p>
+<p>To standardize our estimate of 0.51 as a t-statistic, we first find how far away it is from the hypothesized population value of 0.6 (0.09). Then, we divide that deviation by an estimate of the standard error<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, 0.037. Solving this equation, we get a t-statistic of -2.58. An estimate of 0.51 is 2.58 standard deviations / standard errors below the sampling distribution mean.</p>
+<p>We can also calculate how likely it would be to get an estimate like ours, or more extreme. That would be the probability of getting a sample estimate as far away, or farther, from the sampling distribution mean as 0.51 is. In other words, the probability of getting an estimate with a t-statistic in the sampling distribution of at least <span class="math inline">\(|t| = 2.58\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ch16-pval" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2437,7 +2444,7 @@ Figure&nbsp;16.3: The red areas of the distribution are as far away from the dis
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>This probability is called the <strong>p-value</strong> of the estimate. More clearly, the definition of a p-value is the probability of getting an estimate as extreme or more extreme than the one we calculated, when the hypothesized population value is true. “Extreme” here means far away from the hypothesized population value - it could be extremely above, or extremely below. That’s why both tails in <a href="#fig-ch16-pval" class="quarto-xref">Figure&nbsp;<span>16.3</span></a> are highlighted<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>p-value</strong> = the probability of getting a sample estimate as extreme or more extreme than a calculated estimate, assuming the hypothesized population value is true.</span></div></div>
+<div class="page-columns page-full"><p>This probability is called the <strong>p-value</strong> of the estimate. More clearly, the definition of a p-value is the probability of getting an estimate as extreme or more extreme than the one we calculated, when the hypothesized population value is true. “Extreme” here means far away from the hypothesized population value - it could be extremely above, or extremely below. That’s why both tails in <a href="#fig-ch16-pval" class="quarto-xref">Figure&nbsp;<span>16.3</span></a> are highlighted<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>p-value</strong> = the probability of getting a sample estimate as extreme or more extreme than a calculated estimate, assuming the hypothesized population value is true.</span></div></div>
 <p>In this situation, the p-value of a 0.51 <span class="math inline">\(\hat{\beta_1}\)</span> estimate, assuming the true <span class="math inline">\(\beta_1\)</span> is 0.6, would be 0.01. If 0.6 is the truth, only in 1% of random samples would we calculate an estimate as far away from 0.6 as 0.51 is, or farther.</p>
 </section>
 <section id="statistical-significance" class="level2 page-columns page-full" data-number="16.3">
@@ -2473,7 +2480,7 @@ Figure&nbsp;16.4: The sampling distribution of effect estimates from N=747 sampl
 <p>P-values of estimates with respect to a null hypothesis of 0 are the default in many statistical testing packages. For instance, if we just look at the summary output of a statistical model object:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We see a column “t value”. This is very similar to the z-score of the estimate we calculated above, only with a slightly different way of calculating the standard error<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. In this case, because the t-value is 13.72, our estimate of 0.51 is about 13.72 standard errors above the mean of the sampling distribution when that mean is set to 0.</p>
+<p>We see a column “t value”. This is the t-statistic we discussed at the beginning of the chapter. In this case, because the statistic is 13.72, our estimate of 0.51 is about 13.72 standard errors above the mean of the sampling distribution when that mean is set to 0.</p>
 <p>“Pr(&gt;|t|)” is the next column. This is the p-value of that estimate for a null hypothesis <span class="math inline">\(H_0: \beta_1 = 0\)</span>. It is the probability of getting an estimate that is at least as far away from 0 as 0.51 is, when the true population value is 0<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. If we want to use a typical <span class="math inline">\(\alpha\)</span> threshold of 0.05 for our significance criterion, then we can look at the “Pr(&gt;|t|)” value on the extraversion estimate line and see if it is less than 0.05. Listed here is a very tiny p-value (&lt;2e-16, needing scientific notation to write it!), so we decide to reject the null hypothesis that there is no effect of extraversion on leadership.</p>
 <p>But now let’s consider a multivariable situation, where we hypothesize that conscientiousness is also an explanatory variable of leadership after controlling for extraversion.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
@@ -2616,7 +2623,7 @@ Figure&nbsp;16.6: Regions of significance in the sampling distribution when usin
 <p>To implement our planned hypothesis described above, we simply type:</p>
 <div id="qwebr-insertion-location-18"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The result shows us the <span class="math inline">\(\hat{\beta_0}\)</span> estimate and standard error like the default <code>summary()</code> function does, but now it also shows us the estimate’s z-score and p-value relative to the new null hypothesis value of 3. Conveniently, it also shows us the 95% confidence interval of the <span class="math inline">\(\hat{\beta_0}\)</span> estimate so we don’t need to use a different function for finding that.</p>
+<p>The result shows us the <span class="math inline">\(\hat{\beta_0}\)</span> estimate and standard error like the default <code>summary()</code> function does, but now it also shows us the estimate’s z-statistic (very similar to a t-statistic) and p-value relative to the new null hypothesis value of 3. Conveniently, it also shows us the 95% confidence interval of the <span class="math inline">\(\hat{\beta_0}\)</span> estimate so we don’t need to use a different function for finding that.</p>
 <p>While an estimate of 3.52 was significant against a null hypothesis of 0, it seems it is <em>not</em> significant against a different null hypothesis of 3.5. The p-value in this case is 0.42. The estimate didn’t change, but which null hypothesis we tested it against did and that influenced whether or not the estimate was judged to be significant.</p>
 </section>
 </section>
@@ -2675,6 +2682,7 @@ Figure&nbsp;16.6: Regions of significance in the sampling distribution when usin
 <h3 data-number="16.7.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">16.7.2</span> New concepts</h3>
 <ul>
 <li><strong>hypothesis testing</strong>: the process of comparing real data to hypothesized expectations as a way of deciding whether the expectations were good or not.</li>
+<li><strong>t-statistic</strong>: standardization of an estimate relative to its sampling distribution, calculated as the difference between the estimate and sampling distribution mean divided by the estimated standard error.</li>
 <li><strong>p-value</strong>: the probability of getting a sample estimate as extreme or more extreme than a calculated estimate, assuming the hypothesized population value is true.</li>
 <li><strong>statistical significance</strong>: a large enough difference between a hypothesized estimand value and one’s estimate that makes one reject the hypothesized value.</li>
 <li><strong>significance criterion <span class="math inline">\(\alpha\)</span></strong>: the level of probability used for making a decision of statistical significance about an estimate; if the probability of getting our estimate or more extreme is less than the significance criterion, significance is decided and the hypothesis rejected.</li>
@@ -2696,8 +2704,8 @@ Figure&nbsp;16.6: Regions of significance in the sampling distribution when usin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>More verbosely, this is a two-sided p-value. It’s also possible to calculate the probability of getting only an extremely high or extremely low score, but that’s less common.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>The core of the difference is that, when sample sizes are small, not only is the sampling distribution wider, but exactly how wide is harder to estimate reliably. A t-value compensates for this fact by using the z-score equation, but including a slightly larger standard error estimate. In big samples the two methods are not noticeably different, but in small samples the t-value will be smaller than the z-value, and thus harder to reject as significant. See <a href="http://jmp.com/en/statistics-knowledge-portal/inferential-statistics/probability-distributions/t-distribution">here</a> to read more about t-values.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Standard error is clculated different ways for different estimands. For a model coefficient <span class="math inline">\(\beta_j\)</span>, it is <span class="math inline">\(\sqrt{\frac{VIF_j * \Sigma(y_i-\hat{y_i})^2}{(n-k-1)*\Sigma(x_ij-\bar{x_j})^2}}\)</span>, where VIF is the <a href="https://www.investopedia.com/terms/v/variance-inflation-factor.asp">variance inflation factor</a> of a variable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>More verbosely, this is a two-sided p-value. It’s also possible to calculate the probability of getting only an extremely high or extremely low score, but that’s less common.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>“Pr(&gt;|t|)” stands for the probability of drawing an estimate from the sampling distribution that has an absolute t-value at least as large as ours.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Note that there is a way to build support for the null hypothesis in Frequentist statistics, called <a href="https://lakens.github.io/statistical_inferences/09-equivalencetest.html">equivalence testing</a>, but it uses a different approach.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
@@ -3124,6 +3132,9 @@ Figure&nbsp;16.6: Regions of significance in the sampling distribution when usin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-17.html" class="pagination-link" aria-label="Connection to Other Statistical Frameworks">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Connection to Other Statistical Frameworks</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
