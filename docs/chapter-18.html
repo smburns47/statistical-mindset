@@ -1,0 +1,3303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18&nbsp; Communicating Inferences – Foundations for a Statistical Mindset</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-17.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-036d2a129aeaaa93511f8be1d1478034.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-15a2b56bc4678887a0eb5a686252e220.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-036d2a129aeaaa93511f8be1d1478034.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+<style type="text/css">
+.monaco-editor pre {
+  background-color: unset !important;
+}
+
+.qwebr-editor-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.qwebr-editor-toolbar-left-buttons, .qwebr-editor-toolbar-right-buttons {
+  display: flex;
+}
+
+.qwebr-non-interactive-loading-container.qwebr-cell-needs-evaluation, .qwebr-non-interactive-loading-container.qwebr-cell-evaluated {
+  justify-content: center;
+  display: flex;
+  background-color: rgba(250, 250, 250, 0.65);
+  border: 1px solid rgba(233, 236, 239, 0.65);
+  border-radius: 0.5rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.qwebr-r-project-logo {
+  color: #2767B0; /* R Project's blue color */
+}
+
+.qwebr-icon-status-spinner {
+  color: #7894c4;
+}
+
+.qwebr-icon-run-code {
+  color: #0d9c29
+}
+
+body.quarto-light .qwebr-output-code-stdout {
+  color: #111;
+}
+
+body.quarto-dark .qwebr-output-code-stdout {
+  color: #EEE;
+}
+
+.qwebr-output-code-stderr {
+  color: #db4133;
+}
+
+body.quarto-light .qwebr-editor {
+  border: 1px solid #EEEEEE;
+}
+
+body.quarto-light .qwebr-editor-toolbar {
+  background-color: #EEEEEE;
+  padding: 0.2rem 0.5rem;
+}
+
+body.quarto-dark .qwebr-editor {
+  border: 1px solid #111;
+}
+
+body.quarto-dark .qwebr-editor-toolbar {
+  background-color: #111;
+  padding: 0.2rem 0.5rem;
+}
+
+.qwebr-button {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
+  font-size: .9rem;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+body.quarto-light .qwebr-button {
+  background-color: #EEEEEE;
+  color: #000;
+  border-color: #dee2e6;
+  border: 1px solid rgba(0,0,0,0);
+}
+
+body.quarto-dark .qwebr-button {
+  background-color: #111;
+  color: #EEE;
+  border-color: #dee2e6;
+  border: 1px solid rgba(0,0,0,0);
+}
+
+body.quarto-light .qwebr-button:hover {
+  color: #000;
+  background-color: #d9dce0;
+  border-color: #c8ccd0;
+}
+
+body.quarto-dark .qwebr-button:hover {
+  color: #d9dce0;
+  background-color: #323232;
+  border-color: #d9dce0;
+}
+
+.qwebr-button:disabled,.qwebr-button.disabled,fieldset:disabled .qwebr-button {
+  pointer-events: none;
+  opacity: .65
+}
+
+.qwebr-button-reset {
+  color: #696969; /*#4682b4;*/
+}
+
+.qwebr-button-copy {
+  color: #696969;
+}
+
+/* Style the code highlight lines */
+body.quarto-light .qwebr-editor-highlight-line {
+  background-color: lightblue;
+}
+
+body.quarto-dark .qwebr-editor-highlight-line {
+  background-color: darkblue;
+}
+
+/* Style the modal pop-up */
+
+/* The Modal (background) */
+.qwebr-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content */
+.qwebr-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.qwebr-modal-content-code {
+  max-height: 50vh;
+  min-height: 5vh;
+  overflow: scroll;
+  border: 1px solid #888;
+}
+
+/* The Close Button */
+.qwebr-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.qwebr-modal-close:hover,
+.qwebr-modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.qwebr-download-btn {
+  margin-top: 10px;
+  text-decoration: none !important;
+}
+
+/* Styling to download image that is created */
+
+.qwebr-canvas-image {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.qwebr-canvas-image-download-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+figure:hover .qwebr-canvas-image-download-btn {
+  display: block;
+}
+
+/* Custom styling for RevealJS Presentations*/
+
+/* Reset the style of the interactive area */
+.reveal div.qwebr-interactive-area {
+  display: block;
+  box-shadow: none;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Provide space to entries */
+.reveal div.qwebr-output-code-area pre div {
+  margin: 1px 2px 1px 10px;
+}
+
+/* Collapse the inside code tags to avoid extra space between line outputs */
+.reveal pre div code.qwebr-output-code-stdout, .reveal pre div code.qwebr-output-code-stderr {
+  padding: 0;
+  display: contents;
+}
+
+body.reveal.quarto-light pre div code.qwebr-output-code-stdout {
+  color: #111;
+}
+
+body.reveal.quarto-dark pre div code.qwebr-output-code-stdout {
+  color: #EEEEEE;
+}
+
+.reveal pre div code.qwebr-output-code-stderr {
+  color: #db4133;
+}
+
+
+/* Create a border around console and output (does not effect graphs) */
+body.reveal.quarto-light div.qwebr-console-area {
+  border: 1px solid #EEEEEE;
+  box-shadow: 2px 2px 10px #EEEEEE;
+}
+
+body.reveal.quarto-dark div.qwebr-console-area {
+  border: 1px solid #111;
+  box-shadow: 2px 2px 10px #111;
+}
+
+
+/* Cap output height and allow text to scroll */
+/* TODO: Is there a better way to fit contents/max it parallel to the monaco editor size? */
+.reveal div.qwebr-output-code-area pre {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+iframe.qwebr-output-code-browse {
+  width: 100%;
+
+  /*
+    TODO: How to make the height automatic according to the widget size,
+    or respect the quarto code block options?
+  */
+  min-height: 500px;
+}
+
+</style>
+<script type="module">
+// Document level settings ----
+
+// Determine if we need to install R packages
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'tidyr', 'sjPlot', 'ggplot2', 'bayesplot', 'marginaleffects', 'effectsize', 'MBESS'];
+
+// Specify possible locations to search for the repository
+globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
+
+// Check to see if we have an empty array, if we do set to skip the installation.
+globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
+globalThis.qwebrAutoloadRPackages = true;
+
+// Display a startup message?
+globalThis.qwebrShowStartupMessage = true;
+globalThis.qwebrShowHeaderMessage = false;
+
+// Describe the webR settings that should be used
+globalThis.qwebrCustomizedWebROptions = {
+  "baseURL": "https://webr.r-wasm.org/v0.6.0/",
+  "serviceWorkerUrl": "",
+  "homedir": "/home/web_user", 
+  "channelType": "ChannelType.Automatic"
+};
+
+// Store cell data
+globalThis.qwebrCellDetails = [{"code":"#automatically loading data for when page is reloaded\nsoto_work <- read.csv(\"https://statistical-mindset.com/data/soto2019.csv\") ","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"output","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"soto_work <- read.csv(\"https://statistical-mindset.com/data/soto2019.csv\") |>\n  filter(survey == 'Survey2Adult') |>\n  filter(!is.na(Leadership), \n         !is.na(Extraversion),\n         !is.na(Conscientiousness))\n\nresults_table <- soto_work |>\n  summarize(M = NULL,\n            SD = NULL,\n            N = NULL)\n\nresults_table","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"results_table <- soto_work |>\n  filter(!is.na(HeartDisease)) |>\n  group_by(HeartDisease) |>\n  summarize(M = mean(Extraversion),\n            SD = sd(Extraversion),\n            N = length(Extraversion))\n\nresults_table","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"results_table <- soto_work |>\n  summarize(Extraversion_M = mean(Extraversion),\n            Extraversion_SD = sd(Extraversion),\n            Extraversion_N = length(Extraversion),\n            Conscientiousness_M = mean(Conscientiousness),\n            Conscientiousness_SD = sd(Conscientiousness),\n            Conscientiousness_N = length(Conscientiousness),\n            Leadership_M = mean(Leadership),\n            Leadership_SD = sd(Leadership),\n            Leadership_N = length(Leadership)\n  )\n\nresults_table","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"results_table <- soto_work |>\n  summarize(across(c(Extraversion, Conscientiousness, Leadership),\n                   c(M=mean, SD=sd, N=length))\n  )\n\nresults_table","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(tidyr)\nresults_table <- soto_work |>\n  summarize(across(c(Extraversion, Conscientiousness, Leadership),\n                   c(M=mean, SD=sd, N=length))\n  ) |>\n  pivot_longer(cols = everything(), \n               names_to = \"variable\")\n\n#cols= tells the function what columns to consider, while\n#everything() is like select() for all columns in a dataframe\n\nresults_table","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"results_table <- soto_work |>\n  summarize(across(c(Extraversion, Conscientiousness, Leadership),\n                   c(M=mean, SD=sd, N=length))\n  ) |>\n  pivot_longer(cols = everything(), \n               names_to = c(\"variable\", \".value\"),\n               names_sep = \"_\"\n  )\n\n# Adding \".value\" as a name option tells R to use whatever\n# existing name comes after the _ separator \n\nresults_table","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(sjPlot)\ntab_df(results_table)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ec_model <- lm(Leadership ~ Extraversion + Conscientiousness, data = soto_work)\n\ntab_model(ec_model)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"soto_work <- soto_work |>\n  mutate(Extraversion_z = scale(Extraversion),\n         Conscientiousness_z = scale(Conscientiousness),\n         Leadership_z = scale(Leadership))\n\nstandardized_model <- lm(Leadership_z ~ Extraversion_z + Conscientiousness_z, \n                         data = soto_work)\n\nsummary(standardized_model)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(effectsize)\nstandardize_parameters(ec_model)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cor(soto_work$Leadership, soto_work$Extraversion)^2\n\ne_model <- lm(Leadership ~ Extraversion, data = soto_work)\n\nsummary(e_model)$r.squared","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"c_model <- lm(Leadership ~ Conscientiousness, data = soto_work)\n\n#variance uniquely explained by Extraversion\nsummary(ec_model)$r.squared - summary(c_model)$r.squared","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"r2_semipartial(ec_model)","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"heart_model <- lm(Extraversion ~ HeartDisease, data = soto_work)\ncoef(heart_model)[2]","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cohens_d(Extraversion ~ HeartDisease, data = soto_work)","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"lm(Extraversion_z ~ HeartDisease, data = soto_work)","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"cohens_f_squared(ec_model)","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"studentdata <- read.csv(\"https://statistical-mindset.com/data/studentdata.csv\")\n\nfemale_height <- studentdata$Height[studentdata$Sex == \"Female\"]\nmale_height <- studentdata$Height[studentdata$Sex == \"Male\"]\n\npaste0('mean female height: ', mean(female_height, na.rm=TRUE))\npaste0('mean male height: ', mean(male_height, na.rm=TRUE))\n\n#X=0 is female, X=1 is male\ncohens_d(Height ~ Sex, data = studentdata)","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(soto_work, aes(x=Extraversion)) + \n  geom_histogram()","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"empty_model <- lm(Extraversion ~ NULL, data=soto_work)","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#making the histogram color lighter so it's easier to see the annotation\nggplot(soto_work, aes(x=Extraversion)) + \n  geom_histogram(alpha=0.5) + \n  annotate(\"point\", x = coef(empty_model)[1], y = 0)","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model_ci <- confint(empty_model)","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(soto_work, aes(x=Extraversion)) + \n  geom_histogram(alpha = 0.5) + \n  annotate(\"pointrange\", x = coef(empty_model)[1], y = 0, \n           xmin = model_ci[1,1], xmax = model_ci[1,2])","id":24,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-24","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"soto_subset <- slice_sample(soto_work, n=100)\nempty_model <- lm(Extraversion ~ NULL, data=soto_subset)\nmodel_ci <- confint(empty_model)\n\nggplot(soto_subset, aes(x=Extraversion)) + \n  geom_histogram(alpha = 0.5) + \n  annotate(\"pointrange\", x = coef(empty_model)[1], y = 0, \n           xmin = model_ci[1,1], xmax = model_ci[1,2])","id":25,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-25","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"soto_subset <- soto_work |>\n  filter(!is.na(HeartDisease)) |>\n  slice_sample(n=100)\n\nggplot(soto_subset, aes(x=as.factor(HeartDisease), y=Extraversion)) + \n  geom_boxplot()","id":26,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-26","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"heart_model <- lm(Extraversion ~ HeartDisease, \n                  data = soto_subset)\npredict(heart_model, \n        newdata=data.frame(HeartDisease=c(1,0)))","id":27,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-27","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"group_estimates <- predict(heart_model,\n                           newdata=data.frame(HeartDisease=c(1,0)),\n                           interval=\"confidence\")\n\ngroup_estimates","id":28,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-28","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(soto_subset, aes(x=HeartDisease, y=Extraversion)) + \n  geom_jitter(alpha=0.3, width=0.1) + \n  coord_cartesian(xlim=c(-0.5,1.5)) +\n  annotate(\"pointrange\", x = c(1,0), y = group_estimates[,1], \n           ymin = group_estimates[,2], ymax = group_estimates[,3])","id":29,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-29","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(soto_subset, aes(x=Extraversion, y=Leadership)) + \n  geom_point()","id":30,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-30","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"e_model <- lm(Leadership ~ Extraversion, data = soto_subset)\n\nggplot(soto_subset, aes(x=Extraversion, y=Leadership)) + \n  geom_point() + \n  geom_abline(intercept=coef(e_model)[1], slope = coef(e_model)[2])","id":31,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-31","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"e_model <- lm(Leadership ~ Extraversion, data = soto_subset)\n\nggplot(soto_subset, aes(x=Extraversion, y=Leadership)) + \n  geom_point() + \n  geom_smooth(method='lm')","id":32,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-32","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"multi_model <- lm(Leadership ~ Extraversion + Conscientiousness,\n                  data = soto_subset)\nsummary_table <- data.frame(estimate = names(coef(multi_model)),\n                            value = coef(multi_model),\n                            lwr = confint(multi_model)[,1],\n                            upr = confint(multi_model)[,2])\n\nggplot(summary_table, aes(y = estimate, x=value, xmin = lwr, xmax = upr)) + \n  geom_pointrange()","id":33,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-33","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot_model(multi_model)","id":34,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-34","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+
+</script>
+<script type="module">
+// Declare startupMessageQWebR globally
+globalThis.qwebrStartupMessage = document.createElement("p");
+
+// Verify if OffScreenCanvas is supported
+globalThis.qwebrOffScreenCanvasSupport = function() {
+  return typeof OffscreenCanvas !== 'undefined'
+}
+
+// Function to set the button text
+globalThis.qwebrSetInteractiveButtonState = function(buttonText, enableCodeButton = true) {
+  document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+    btn.innerHTML = buttonText;
+    btn.disabled = !enableCodeButton;
+  });
+}
+
+// Function to update the status message in non-interactive cells
+globalThis.qwebrUpdateStatusMessage = function(message) {
+  document.querySelectorAll(".qwebr-status-text.qwebr-cell-needs-evaluation").forEach((elem) => {
+    elem.innerText = message;
+  });
+}
+
+// Function to update the status message
+globalThis.qwebrUpdateStatusHeader = function(message) {
+  qwebrStartupMessage.innerHTML = `
+    <i class="fa-solid fa-spinner fa-spin qwebr-icon-status-spinner"></i>
+    <span>${message}</span>`;
+}
+
+// Function to return true if element is found, false if not
+globalThis.qwebrCheckHTMLElementExists = function(selector) {
+  const element = document.querySelector(selector);
+  return !!element;
+}
+
+// Function that detects whether reveal.js slides are present
+globalThis.qwebrIsRevealJS = function() {
+  // If the '.reveal .slides' selector exists, RevealJS is likely present
+  return qwebrCheckHTMLElementExists('.reveal .slides');
+}
+
+// Initialize the Quarto sidebar element
+function qwebrSetupQuartoSidebar() {
+  var newSideBarDiv = document.createElement('div');
+  newSideBarDiv.id = 'quarto-margin-sidebar';
+  newSideBarDiv.className = 'sidebar margin-sidebar';
+  newSideBarDiv.style.top = '0px';
+  newSideBarDiv.style.maxHeight = 'calc(0px + 100vh)';
+
+  return newSideBarDiv;
+}
+
+// Position the sidebar in the document
+function qwebrPlaceQuartoSidebar() {
+  // Get the reference to the element with id 'quarto-document-content'
+  var referenceNode = document.getElementById('quarto-document-content');
+
+  // Create the new div element
+  var newSideBarDiv = qwebrSetupQuartoSidebar();
+
+  // Insert the new div before the 'quarto-document-content' element
+  referenceNode.parentNode.insertBefore(newSideBarDiv, referenceNode);
+}
+
+function qwebrPlaceMessageContents(content, html_location = "title-block-header", revealjs_location = "title-slide") {
+
+  // Get references to header elements
+  const headerHTML = document.getElementById(html_location);
+  const headerRevealJS = document.getElementById(revealjs_location);
+
+  // Determine where to insert the quartoTitleMeta element
+  if (headerHTML || headerRevealJS) {
+    // Append to the existing "title-block-header" element or "title-slide" div
+    (headerHTML || headerRevealJS).appendChild(content);
+  } else {
+    // If neither headerHTML nor headerRevealJS is found, insert after "webr-monaco-editor-init" script
+    const monacoScript = document.getElementById("qwebr-monaco-editor-init");
+    const header = document.createElement("header");
+    header.setAttribute("id", "title-block-header");
+    header.appendChild(content);
+    monacoScript.after(header);
+  }
+}
+
+
+
+function qwebrOffScreenCanvasSupportWarningMessage() {
+  
+  // Verify canvas is supported.
+  if(qwebrOffScreenCanvasSupport()) return;
+
+  // Create the main container div
+  var calloutContainer = document.createElement('div');
+  calloutContainer.classList.add('callout', 'callout-style-default', 'callout-warning', 'callout-titled');
+
+  // Create the header div
+  var headerDiv = document.createElement('div');
+  headerDiv.classList.add('callout-header', 'd-flex', 'align-content-center');
+
+  // Create the icon container div
+  var iconContainer = document.createElement('div');
+  iconContainer.classList.add('callout-icon-container');
+
+  // Create the icon element
+  var iconElement = document.createElement('i');
+  iconElement.classList.add('callout-icon');
+
+  // Append the icon element to the icon container
+  iconContainer.appendChild(iconElement);
+
+  // Create the title container div
+  var titleContainer = document.createElement('div');
+  titleContainer.classList.add('callout-title-container', 'flex-fill');
+  titleContainer.innerText = 'Warning: Web Browser Does Not Support Graphing!';
+
+  // Append the icon container and title container to the header div
+  headerDiv.appendChild(iconContainer);
+  headerDiv.appendChild(titleContainer);
+
+  // Create the body container div
+  var bodyContainer = document.createElement('div');
+  bodyContainer.classList.add('callout-body-container', 'callout-body');
+
+  // Create the paragraph element for the body content
+  var paragraphElement = document.createElement('p');
+  paragraphElement.innerHTML = 'This web browser does not have support for displaying graphs through the <code>quarto-webr</code> extension since it lacks an <code>OffScreenCanvas</code>. Please upgrade your web browser to one that supports <code>OffScreenCanvas</code>.';
+
+  // Append the paragraph element to the body container
+  bodyContainer.appendChild(paragraphElement);
+
+  // Append the header div and body container to the main container div
+  calloutContainer.appendChild(headerDiv);
+  calloutContainer.appendChild(bodyContainer);
+
+  // Append the main container div to the document depending on format
+  qwebrPlaceMessageContents(calloutContainer, "title-block-header"); 
+
+}
+
+
+// Function that attaches the document status message and diagnostics
+function displayStartupMessage(showStartupMessage, showHeaderMessage) {
+  if (!showStartupMessage) {
+    return;
+  }
+
+  // Create the outermost div element for metadata
+  const quartoTitleMeta = document.createElement("div");
+  quartoTitleMeta.classList.add("quarto-title-meta");
+
+  // Create the first inner div element
+  const firstInnerDiv = document.createElement("div");
+  firstInnerDiv.setAttribute("id", "qwebr-status-message-area");
+
+  // Create the second inner div element for "WebR Status" heading and contents
+  const secondInnerDiv = document.createElement("div");
+  secondInnerDiv.setAttribute("id", "qwebr-status-message-title");
+  secondInnerDiv.classList.add("quarto-title-meta-heading");
+  secondInnerDiv.innerText = "WebR Status";
+
+  // Create another inner div for contents
+  const secondInnerDivContents = document.createElement("div");
+  secondInnerDivContents.setAttribute("id", "qwebr-status-message-body");
+  secondInnerDivContents.classList.add("quarto-title-meta-contents");
+
+  // Describe the WebR state
+  qwebrStartupMessage.innerText = "🟡 Loading...";
+  qwebrStartupMessage.setAttribute("id", "qwebr-status-message-text");
+  // Add `aria-live` to auto-announce the startup status to screen readers
+  qwebrStartupMessage.setAttribute("aria-live", "assertive");
+
+  // Append the startup message to the contents
+  secondInnerDivContents.appendChild(qwebrStartupMessage);
+
+  // Add a status indicator for COOP and COEP Headers if needed
+  if (showHeaderMessage) {
+    const crossOriginMessage = document.createElement("p");
+    crossOriginMessage.innerText = `${crossOriginIsolated ? '🟢' : '🟡'} COOP & COEP Headers`;
+    crossOriginMessage.setAttribute("id", "qwebr-coop-coep-header");
+    secondInnerDivContents.appendChild(crossOriginMessage);
+  }
+
+  // Combine the inner divs and contents
+  firstInnerDiv.appendChild(secondInnerDiv);
+  firstInnerDiv.appendChild(secondInnerDivContents);
+  quartoTitleMeta.appendChild(firstInnerDiv);
+
+  // Place message on webpage
+  qwebrPlaceMessageContents(quartoTitleMeta); 
+}
+
+function qwebrAddCommandHistoryModal() {
+  // Create the modal div
+  var modalDiv = document.createElement('div');
+  modalDiv.id = 'qwebr-history-modal';
+  modalDiv.className = 'qwebr-modal';
+
+  // Create the modal content div
+  var modalContentDiv = document.createElement('div');
+  modalContentDiv.className = 'qwebr-modal-content';
+
+  // Create the span for closing the modal
+  var closeSpan = document.createElement('span');
+  closeSpan.id = 'qwebr-command-history-close-btn';
+  closeSpan.className = 'qwebr-modal-close';
+  closeSpan.innerHTML = '&times;';
+
+  // Create the h1 element for the modal
+  var modalH1 = document.createElement('h1');
+  modalH1.textContent = 'R History Command Contents';
+
+  // Create an anchor element for downloading the Rhistory file 
+  var downloadLink = document.createElement('a');
+  downloadLink.href = '#';
+  downloadLink.id = 'qwebr-download-history-btn';
+  downloadLink.className = 'qwebr-download-btn';
+
+  // Create an 'i' element for the icon
+  var icon = document.createElement('i');
+  icon.className = 'bi bi-file-code';
+
+  // Append the icon to the anchor element
+  downloadLink.appendChild(icon);
+
+  // Add the text 'Download R History' to the anchor element
+  downloadLink.appendChild(document.createTextNode(' Download R History File'));
+
+  // Create the pre for command history contents
+  var commandContentsPre = document.createElement('pre');
+  commandContentsPre.id = 'qwebr-command-history-contents';
+  commandContentsPre.className = 'qwebr-modal-content-code';
+
+  // Append the close span, h1, and history contents pre to the modal content div
+  modalContentDiv.appendChild(closeSpan);
+  modalContentDiv.appendChild(modalH1);
+  modalContentDiv.appendChild(downloadLink);
+  modalContentDiv.appendChild(commandContentsPre);
+
+  // Append the modal content div to the modal div
+  modalDiv.appendChild(modalContentDiv);
+
+  // Append the modal div to the body
+  document.body.appendChild(modalDiv);
+}
+
+function qwebrRegisterRevealJSCommandHistoryModal() {
+  // Select the <ul> element inside the <div> with data-panel="Custom0"
+  let ulElement = document.querySelector('div[data-panel="Custom0"] > ul.slide-menu-items');
+
+  // Find the last <li> element with class slide-tool-item
+  let lastItem = ulElement.querySelector('li.slide-tool-item:last-child');
+
+  // Calculate the next data-item value
+  let nextItemValue = 0;
+  if (lastItem) {
+      nextItemValue = parseInt(lastItem.dataset.item) + 1;
+  }
+
+  // Create a new <li> element
+  let newListItem = document.createElement('li');
+  newListItem.className = 'slide-tool-item';
+  newListItem.dataset.item = nextItemValue.toString(); // Set the next available data-item value
+
+  // Create the <a> element inside the <li>
+  let newLink = document.createElement('a');
+  newLink.href = '#';
+  newLink.id = 'qwebrRHistoryButton'; // Set the ID for the new link
+  
+  // Create the <kbd> element inside the <a>
+  let newKbd = document.createElement('kbd');
+  newKbd.textContent = ' '; // Set to empty as we are not registering a keyboard shortcut
+
+  // Create text node for the link text
+  let newText = document.createTextNode(' View R History');
+
+  // Append <kbd> and text node to <a>
+  newLink.appendChild(newKbd);
+  newLink.appendChild(newText);
+
+  // Append <a> to <li>
+  newListItem.appendChild(newLink);
+
+  // Append <li> to <ul>
+  ulElement.appendChild(newListItem);
+}
+
+// Handle setting up the R history modal
+function qwebrCodeLinks() {
+
+  if (qwebrIsRevealJS()) {
+    qwebrRegisterRevealJSCommandHistoryModal();
+    return;
+  }
+
+  // Create the container div
+  var containerDiv = document.createElement('div');
+  containerDiv.className = 'quarto-code-links';
+
+  // Create the h2 element
+  var h2 = document.createElement('h2');
+  h2.textContent = 'webR Code Links';
+
+  // Create the ul element
+  var ul = document.createElement('ul');
+
+  // Create the li element
+  var li = document.createElement('li');
+
+  // Create the a_history_btn element
+  var a_history_btn = document.createElement('a');
+  a_history_btn.href = 'javascript:void(0)';
+  a_history_btn.setAttribute('id', 'qwebrRHistoryButton');
+
+  // Create the i_history_btn element
+  var i_history_btn = document.createElement('i');
+  i_history_btn.className = 'bi bi-file-code';
+
+  // Create the text node for the link text
+  var text_history_btn = document.createTextNode('View R History');
+
+  // Append the icon element and link text to the a element
+  a_history_btn.appendChild(i_history_btn);
+  a_history_btn.appendChild(text_history_btn);
+
+  // Append the a element to the li element
+  li.appendChild(a_history_btn);
+
+  // Append the li element to the ul element
+  ul.appendChild(li);
+
+  // Append the h2 and ul elements to the container div
+  containerDiv.appendChild(h2);
+  containerDiv.appendChild(ul);
+
+  // Append the container div to the element with the ID 'quarto-margin-sidebar'
+  var sidebar = document.getElementById('quarto-margin-sidebar');
+    
+  // If the sidebar element is not found, create it
+  if(!sidebar) {
+    qwebrPlaceQuartoSidebar();
+  }
+  
+  // Re-select the sidebar element (if it was just created)
+  sidebar = document.getElementById('quarto-margin-sidebar');   
+
+
+  // If the sidebar element exists, append the container div to it
+  if(sidebar) {
+    // Append the container div to the sidebar
+    sidebar.appendChild(containerDiv);
+    // Force the sidebar to be clickable by removing the 'zindex-bottom' class
+    // added in pre-release: https://github.com/quarto-dev/quarto-cli/commit/f0c53a1ffcaa1de4eccbf07803b096898248adcc
+    sidebar.className = 'sidebar margin-sidebar';
+  } else {
+    // Get a debugger ...
+    console.warn('Element with ID "quarto-margin-sidebar" not found.');
+  }
+}
+
+// Call the function to append the code links for qwebR into the right sidebar
+qwebrCodeLinks();
+
+// Add the command history modal
+qwebrAddCommandHistoryModal();
+
+displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
+qwebrOffScreenCanvasSupportWarningMessage();
+</script>
+<script type="module">
+// Define a global storage and retrieval solution ----
+
+// Store commands executed in R
+globalThis.qwebrRCommandHistory = [];
+
+// Function to retrieve the command history
+globalThis.qwebrFormatRHistory = function() {
+   return qwebrRCommandHistory.join("\n\n");
+}
+
+// Retrieve HTML Elements ----
+
+// Get the command modal
+const command_history_modal = document.getElementById("qwebr-history-modal");
+
+// Get the button that opens the command modal
+const command_history_btn = document.getElementById("qwebrRHistoryButton");
+
+// Get the <span> element that closes the command modal
+const command_history_close_span = document.getElementById("qwebr-command-history-close-btn");
+
+// Get the download button for r history information
+const command_history_download_btn = document.getElementById("qwebr-download-history-btn");
+
+// Plug in command history into modal/download button ----
+
+// Function to populate the modal with command history
+function populateCommandHistoryModal() {
+    document.getElementById("qwebr-command-history-contents").innerHTML = qwebrFormatRHistory() || "No commands have been executed yet.";
+}
+
+// Function to format the current date and time to
+// a string with the format YYYY-MM-DD-HH-MM-SS
+function formatDateTime() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+}
+
+
+// Function to convert document title with datetime to a safe filename
+function safeFileName() {
+    // Get the current page title
+    let pageTitle = document.title;
+
+    // Combine the current page title with the current date and time
+    let pageNameWithDateTime = `Rhistory-${pageTitle}-${formatDateTime()}`;
+
+    // Replace unsafe characters with safe alternatives
+    let safeFilename = pageNameWithDateTime.replace(/[\\/:\*\?! "<>\|]/g, '-');
+
+    return safeFilename;
+}
+
+
+// Function to download list contents as text file
+function downloadRHistory() {
+    // Get the current page title + datetime and use it as the filename
+    const filename = `${safeFileName()}.R`;
+
+    // Get the text contents of the R History list
+    const text = qwebrFormatRHistory();
+
+    // Create a new Blob object with the text contents
+    const blob = new Blob([text], { type: 'text/plain' });
+  
+    // Create a new anchor element for the download
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+
+    // Append the anchor to the body, click it, and remove it
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+// Register event handlers ----
+
+// When the user clicks the View R History button, open the command modal
+command_history_btn.onclick = function() {
+    populateCommandHistoryModal();
+    command_history_modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the command modal
+command_history_close_span.onclick = function() {
+    command_history_modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the command modal, close it
+window.onclick = function(event) {
+    if (event.target == command_history_modal) {
+        command_history_modal.style.display = "none";
+    }
+}
+
+// Add an onclick event listener to the download button so that
+// the user can download the R history as a text file
+command_history_download_btn.onclick = function() {
+    downloadRHistory();
+};
+</script>
+<script type="module">
+// Supported Evaluation Types for Context
+globalThis.EvalTypes = Object.freeze({
+  Interactive: 'interactive',
+  Setup: 'setup',
+  Output: 'output',
+});
+
+// Function that obtains the font size for a given element 
+globalThis.qwebrCurrentFontSizeOnElement = function(element, cssProperty = 'font-size') {
+
+  const currentFontSize = parseFloat(
+    window
+    .getComputedStyle(element)
+    .getPropertyValue(cssProperty)
+  );
+  
+  return currentFontSize;
+}
+
+// Function to determine font scaling
+globalThis.qwebrScaledFontSize = function(div, qwebrOptions) {
+  // Determine if we should compute font-size using RevealJS's `--r-main-font-size` 
+  // or if we can directly use the document's `font-size`.
+  const cssProperty = document.body.classList.contains('reveal') ? 
+    "--r-main-font-size" : "font-size";
+  
+  // Get the current font size on the div element
+  const elementFontSize = qwebrCurrentFontSizeOnElement(div, cssProperty);
+
+  // Determine the scaled font size value
+  const scaledFontSize = ((qwebrOptions['editor-font-scale'] ?? 1) * elementFontSize) ?? 17.5;
+
+  return scaledFontSize;
+}
+
+
+// Function that dispatches the creation request
+globalThis.qwebrCreateHTMLElement = function (
+  cellData
+) {
+
+  // Extract key components
+  const evalType = cellData.options.context;
+  const qwebrCounter = cellData.id;
+
+  // We make an assumption that insertion points are defined by the Lua filter as:
+  // qwebr-insertion-location-{qwebrCounter} 
+  const elementLocator = document.getElementById(`qwebr-insertion-location-${qwebrCounter}`);
+
+  // Figure out the routine to use to insert the element.
+  let qwebrElement;
+  switch ( evalType ) {
+    case EvalTypes.Interactive:
+      qwebrElement = qwebrCreateInteractiveElement(qwebrCounter, cellData.options);
+      break;
+    case EvalTypes.Output: 
+      qwebrElement = qwebrCreateNonInteractiveOutputElement(qwebrCounter, cellData.options);
+      break;
+    case EvalTypes.Setup: 
+      qwebrElement = qwebrCreateNonInteractiveSetupElement(qwebrCounter, cellData.options);
+      break;
+    default: 
+      qwebrElement = document.createElement('div');
+      qwebrElement.textContent = 'Error creating `quarto-webr` element';
+  }
+
+  // Insert the dynamically generated object at the document location.
+  elementLocator.appendChild(qwebrElement);
+};
+
+// Function that setups the interactive element creation
+globalThis.qwebrCreateInteractiveElement = function (qwebrCounter, qwebrOptions) {
+
+  // Create main div element
+  var mainDiv = document.createElement('div');
+  mainDiv.id = 'qwebr-interactive-area-' + qwebrCounter;
+  mainDiv.className = `qwebr-interactive-area`;
+  if (qwebrOptions.classes) {
+    mainDiv.className += " " + qwebrOptions.classes
+  }
+
+  // Add a unique cell identifier that users can customize
+  if (qwebrOptions.label) {
+    mainDiv.setAttribute('data-id', qwebrOptions.label);
+  }
+
+  // Create toolbar div
+  var toolbarDiv = document.createElement('div');
+  toolbarDiv.className = 'qwebr-editor-toolbar';
+  toolbarDiv.id = 'qwebr-editor-toolbar-' + qwebrCounter;
+
+  // Create a div to hold the left buttons
+  var leftButtonsDiv = document.createElement('div');
+  leftButtonsDiv.className = 'qwebr-editor-toolbar-left-buttons';
+
+  // Create a div to hold the right buttons
+  var rightButtonsDiv = document.createElement('div');
+  rightButtonsDiv.className = 'qwebr-editor-toolbar-right-buttons';
+
+  // Create Run Code button
+  var runCodeButton = document.createElement('button');
+  runCodeButton.className = 'btn btn-default qwebr-button qwebr-button-run';
+  runCodeButton.disabled = true;
+  runCodeButton.type = 'button';
+  runCodeButton.id = 'qwebr-button-run-' + qwebrCounter;
+  runCodeButton.textContent = '🟡 Loading webR...';
+  runCodeButton.title = `Run code (Shift + Enter)`;
+
+  // Append buttons to the leftButtonsDiv
+  leftButtonsDiv.appendChild(runCodeButton);
+
+  // Create Reset button
+  var resetButton = document.createElement('button');
+  resetButton.className = 'btn btn-light btn-xs qwebr-button qwebr-button-reset';
+  resetButton.type = 'button';
+  resetButton.id = 'qwebr-button-reset-' + qwebrCounter;
+  resetButton.title = 'Start over';
+  resetButton.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i>';
+
+  // Create Copy button
+  var copyButton = document.createElement('button');
+  copyButton.className = 'btn btn-light btn-xs qwebr-button qwebr-button-copy';
+  copyButton.type = 'button';
+  copyButton.id = 'qwebr-button-copy-' + qwebrCounter;
+  copyButton.title = 'Copy code';
+  copyButton.innerHTML = '<i class="fa-regular fa-copy"></i>';
+
+  // Append buttons to the rightButtonsDiv
+  rightButtonsDiv.appendChild(resetButton);
+  rightButtonsDiv.appendChild(copyButton);
+
+  // Create console area div
+  var consoleAreaDiv = document.createElement('div');
+  consoleAreaDiv.id = 'qwebr-console-area-' + qwebrCounter;
+  consoleAreaDiv.className = 'qwebr-console-area';
+
+  // Create editor div
+  var editorDiv = document.createElement('div');
+  editorDiv.id = 'qwebr-editor-' + qwebrCounter;
+  editorDiv.className = 'qwebr-editor';
+
+  // Create output code area div
+  var outputCodeAreaDiv = document.createElement('div');
+  outputCodeAreaDiv.id = 'qwebr-output-code-area-' + qwebrCounter;
+  outputCodeAreaDiv.className = 'qwebr-output-code-area';
+  outputCodeAreaDiv.setAttribute('aria-live', 'assertive');
+
+  // Create pre element inside output code area
+  var preElement = document.createElement('pre');
+  preElement.style.visibility = 'hidden';
+  outputCodeAreaDiv.appendChild(preElement);
+
+  // Create output graph area div
+  var outputGraphAreaDiv = document.createElement('div');
+  outputGraphAreaDiv.id = 'qwebr-output-graph-area-' + qwebrCounter;
+  outputGraphAreaDiv.className = 'qwebr-output-graph-area';
+
+  // Append buttons to the toolbar
+  toolbarDiv.appendChild(leftButtonsDiv);
+  toolbarDiv.appendChild(rightButtonsDiv);
+
+  // Append all elements to the main div
+  mainDiv.appendChild(toolbarDiv);
+  consoleAreaDiv.appendChild(editorDiv);
+  consoleAreaDiv.appendChild(outputCodeAreaDiv);
+  mainDiv.appendChild(consoleAreaDiv);
+  mainDiv.appendChild(outputGraphAreaDiv);
+
+  return mainDiv;
+}
+
+// Function that adds output structure for non-interactive output
+globalThis.qwebrCreateNonInteractiveOutputElement = function(qwebrCounter, qwebrOptions) {
+  // Create main div element
+  var mainDiv = document.createElement('div');
+  mainDiv.id = 'qwebr-noninteractive-area-' + qwebrCounter;
+  mainDiv.className = `qwebr-noninteractive-area`;
+  if (qwebrOptions.classes) {
+    mainDiv.className += " " + qwebrOptions.classes
+  }
+  
+  // Add a unique cell identifier that users can customize
+  if (qwebrOptions.label) {
+    mainDiv.setAttribute('data-id', qwebrOptions.label);
+  }
+  
+  // Create a status container div
+  var statusContainer = createLoadingContainer(qwebrCounter);
+
+  // Create output code area div
+  var outputCodeAreaDiv = document.createElement('div');
+  outputCodeAreaDiv.id = 'qwebr-output-code-area-' + qwebrCounter;
+  outputCodeAreaDiv.className = 'qwebr-output-code-area';
+  outputCodeAreaDiv.setAttribute('aria-live', 'assertive');
+
+  // Create pre element inside output code area
+  var preElement = document.createElement('pre');
+  preElement.style.visibility = 'hidden';
+  outputCodeAreaDiv.appendChild(preElement);
+
+  // Create output graph area div
+  var outputGraphAreaDiv = document.createElement('div');
+  outputGraphAreaDiv.id = 'qwebr-output-graph-area-' + qwebrCounter;
+  outputGraphAreaDiv.className = 'qwebr-output-graph-area';
+
+  // Append all elements to the main div
+  mainDiv.appendChild(statusContainer);
+  mainDiv.appendChild(outputCodeAreaDiv);
+  mainDiv.appendChild(outputGraphAreaDiv);
+
+  return mainDiv;
+};
+
+// Function that adds a stub in the page to indicate a setup cell was used.
+globalThis.qwebrCreateNonInteractiveSetupElement = function(qwebrCounter, qwebrOptions) {
+  // Create main div element
+  var mainDiv = document.createElement('div');
+  mainDiv.id = `qwebr-noninteractive-setup-area-${qwebrCounter}`;
+  mainDiv.className = `qwebr-noninteractive-setup-area`;
+  if (qwebrOptions.classes) {
+    mainDiv.className += " " + qwebrOptions.classes
+  }
+
+
+  // Add a unique cell identifier that users can customize
+  if (qwebrOptions.label) {
+    mainDiv.setAttribute('data-id', qwebrOptions.label);
+  }
+
+  // Create a status container div
+  var statusContainer = createLoadingContainer(qwebrCounter);
+
+  // Append status onto the main div
+  mainDiv.appendChild(statusContainer);
+
+  return mainDiv;
+}
+
+
+// Function to create loading container with specified ID
+globalThis.createLoadingContainer = function(qwebrCounter) {
+
+  // Create a status container
+  const container = document.createElement('div');
+  container.id = `qwebr-non-interactive-loading-container-${qwebrCounter}`;
+  container.className = 'qwebr-non-interactive-loading-container qwebr-cell-needs-evaluation';
+
+  // Create an R project logo to indicate its a code space
+  const rProjectIcon = document.createElement('i');
+  rProjectIcon.className = 'fa-brands fa-r-project fa-3x qwebr-r-project-logo';
+
+  // Setup a loading icon from font awesome
+  const spinnerIcon = document.createElement('i');
+  spinnerIcon.className = 'fa-solid fa-spinner fa-spin fa-1x qwebr-icon-status-spinner';
+
+  // Add a section for status text
+  const statusText = document.createElement('p');
+  statusText.id = `qwebr-status-text-${qwebrCounter}`;
+  statusText.className = `qwebr-status-text qwebr-cell-needs-evaluation`;
+  statusText.innerText = 'Loading webR...';
+
+  // Incorporate an inner container
+  const innerContainer = document.createElement('div');
+
+  // Append elements to the inner container
+  innerContainer.appendChild(spinnerIcon);
+  innerContainer.appendChild(statusText);
+
+  // Append elements to the main container
+  container.appendChild(rProjectIcon);
+  container.appendChild(innerContainer);
+
+  return container;
+}
+</script>
+<script type="module">
+// Function to install a single package
+async function qwebrInstallRPackage(packageName) {
+  await mainWebR.evalRVoid(`webr::install('${packageName}');`);
+}
+
+// Function to load a single package
+async function qwebrLoadRPackage(packageName) {
+  await mainWebR.evalRVoid(`require('${packageName}', quietly = TRUE)`);
+}
+
+// Generic function to process R packages
+async function qwebrProcessRPackagesWithStatus(packages, processType, displayStatusMessageUpdate = true) {
+  // Switch between contexts
+  const messagePrefix = processType === 'install' ? 'Installing' : 'Loading';
+
+  // Modify button state
+  qwebrSetInteractiveButtonState(`🟡 ${messagePrefix} package ...`, false);
+
+  // Iterate over packages
+  for (let i = 0; i < packages.length; i++) {
+    const activePackage = packages[i];
+    const formattedMessage = `${messagePrefix} package ${i + 1} out of ${packages.length}: ${activePackage}`;
+
+    // Display the update in header
+    if (displayStatusMessageUpdate) {
+      qwebrUpdateStatusHeader(formattedMessage);
+    }
+
+    // Display the update in non-active areas
+    qwebrUpdateStatusMessage(formattedMessage);
+
+    // Run package installation
+    if (processType === 'install') {
+      await qwebrInstallRPackage(activePackage);
+    } else {
+      await qwebrLoadRPackage(activePackage);
+    }
+  }
+
+  // Clean slate
+  if (processType === 'load') {
+    await mainWebR.flush();
+  }
+}
+
+// Start a timer
+const initializeWebRTimerStart = performance.now();
+
+// Encase with a dynamic import statement
+globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs").then(
+  async ({ WebR, ChannelType }) => {
+    // Populate WebR options with defaults or new values based on `webr` meta
+    globalThis.mainWebR = new WebR(qwebrCustomizedWebROptions);
+
+    // Initialization WebR
+    await mainWebR.init();
+
+    // Setup a shelter
+    globalThis.mainWebRCodeShelter = await new mainWebR.Shelter();
+
+    // Setup a pager to allow processing help documentation
+    await mainWebR.evalRVoid('webr::pager_install()');
+
+    // Setup a viewer to allow processing htmlwidgets.
+    // This might not be available in old webr version
+    await mainWebR.evalRVoid('try({ webr::viewer_install() })');
+
+    // Override the existing install.packages() to use webr::install()
+    await mainWebR.evalRVoid('webr::shim_install()');
+
+    // Specify the repositories to pull from
+    // Note: webR does not use the `repos` option, but instead uses `webr_pkg_repos`
+    // inside of `install()`. However, other R functions still pull from `repos`.
+    await mainWebR.evalRVoid(`
+      options(
+        webr_pkg_repos = c(${qwebrPackageRepoURLS.map(repoURL => `'${repoURL}'`).join(',')}),
+        repos = c(${qwebrPackageRepoURLS.map(repoURL => `'${repoURL}'`).join(',')})
+      )
+    `);
+
+    // Check to see if any packages need to be installed
+    if (qwebrSetupRPackages) {
+      // Obtain only a unique list of packages
+      const uniqueRPackageList = Array.from(new Set(qwebrInstallRPackagesList));
+
+      // Install R packages one at a time (either silently or with a status update)
+      await qwebrProcessRPackagesWithStatus(uniqueRPackageList, 'install', qwebrShowStartupMessage);
+
+      if (qwebrAutoloadRPackages) {
+        // Load R packages one at a time (either silently or with a status update)
+        await qwebrProcessRPackagesWithStatus(uniqueRPackageList, 'load', qwebrShowStartupMessage);
+      }
+    }
+  }
+);
+
+// Stop timer
+const initializeWebRTimerEnd = performance.now();
+
+</script>
+<script type="module">
+// Function to verify a given JavaScript Object is empty
+globalThis.qwebrIsObjectEmpty = function (arr) {
+    return Object.keys(arr).length === 0;
+}
+
+// Global version of the Escape HTML function that converts HTML
+// characters to their HTML entities.
+globalThis.qwebrEscapeHTMLCharacters = function(unsafe) {
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+};
+
+// Passthrough results
+globalThis.qwebrIdentity = function(x) {
+    return x;
+};
+
+// Append a comment
+globalThis.qwebrPrefixComment = function(x, comment) {
+    return `${comment}${x}`;
+};
+
+// Function to store the code in the history
+globalThis.qwebrLogCodeToHistory = function(codeToRun, options) {
+    qwebrRCommandHistory.push(
+        `# Ran code in ${options.label} at ${new Date().toLocaleString()} ----\n${codeToRun}`
+    );
+};
+
+// Function to attach a download button onto the canvas
+// allowing the user to download the image.
+function qwebrImageCanvasDownloadButton(canvas, canvasContainer) {
+
+    // Create the download button
+    const downloadButton = document.createElement('button');
+    downloadButton.className = 'qwebr-canvas-image-download-btn';
+    downloadButton.textContent = 'Download Image';
+    canvasContainer.appendChild(downloadButton);
+
+    // Trigger a download of the image when the button is clicked
+    downloadButton.addEventListener('click', function() {
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'qwebr-canvas-image.png';
+        link.click();
+    });
+}
+
+
+// Function to parse the pager results
+globalThis.qwebrParseTypePager = async function (msg) {
+
+    // Split out the event data
+    const { path, title, deleteFile } = msg.data;
+
+    // Process the pager data by reading the information from disk
+    const paged_data = await mainWebR.FS.readFile(path).then((data) => {
+        // Obtain the file content
+        let content = new TextDecoder().decode(data);
+
+        // Remove excessive backspace characters until none remain
+        while(content.match(/.[\b]/)){
+            content = content.replace(/.[\b]/g, '');
+        }
+
+        // Returned cleaned data
+        return content;
+    });
+
+    // Unlink file if needed
+    if (deleteFile) {
+        await mainWebR.FS.unlink(path);
+    }
+
+    // Return extracted data with spaces
+    return paged_data;
+};
+
+
+// Function to parse the browse results
+globalThis.qwebrParseTypeBrowse = async function (msg) {
+
+    // msg.type === "browse"
+    const path = msg.data.url;
+
+    // Process the browse data by reading the information from disk
+    const browse_data = await mainWebR.FS.readFile(path).then((data) => {
+        // Obtain the file content
+        let content = new TextDecoder().decode(data);
+
+        return content;
+    });
+
+    // Return extracted data as-is
+    return browse_data;
+};
+
+// Function to run the code using webR and parse the output
+globalThis.qwebrComputeEngine = async function(
+    codeToRun,
+    elements,
+    options) {
+
+    // Call into the R compute engine that persists within the document scope.
+    // To be prepared for all scenarios, the following happens:
+    // 1. We setup a canvas device to write to by making a namespace call into the {webr} package
+    // 2. We use values inside of the options array to set the figure size.
+    // 3. We capture the output stream information (STDOUT and STERR)
+    // 4. We disable the current device's image creation.
+    // 5. Piece-wise parse the results into the different output areas
+
+    // Create a pager variable for help/file contents
+    let pager = [];
+
+    // Handle how output is processed
+    let showMarkup = options.results === "markup" && options.output !== "asis";
+    let processOutput;
+
+    if (showMarkup) {
+        processOutput = qwebrEscapeHTMLCharacters;
+    } else {
+        processOutput = qwebrIdentity;
+    }
+
+    // ----
+    // Convert from Inches to Pixels by using DPI (dots per inch)
+    // for bitmap devices (dpi * inches = pixels)
+    let fig_width = options["fig-width"] * options["dpi"];
+    let fig_height = options["fig-height"] * options["dpi"];
+
+    // Initialize webR
+    await mainWebR.init();
+
+    // Configure capture output
+    let captureOutputOptions = {
+        withAutoprint: true,
+        captureStreams: true,
+        captureConditions: false,
+        // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    };
+
+    // Determine if the browser supports OffScreen
+    if (qwebrOffScreenCanvasSupport()) {
+        // Mirror default options of webr::canvas()
+        // with changes to figure height and width.
+        captureOutputOptions.captureGraphics = {
+            width: fig_width,
+            height: fig_height,
+            bg: "white", // default: transparent
+            pointsize: 12,
+            capture: true
+        };
+    }  else {
+        // Disable generating graphics
+        captureOutputOptions.captureGraphics = false;
+    }
+
+    // Store the code to run in history
+    qwebrLogCodeToHistory(codeToRun, options);
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    // Evaluate the R code
+    // Remove the active canvas silently
+    const result = await mainWebRCodeShelter.captureR(
+        `${codeToRun}`,
+        captureOutputOptions
+    );
+
+    // -----
+
+    // Start attempting to parse the result data
+    processResultOutput:try {
+
+        // Avoid running through output processing
+        if (options.results === "hide" || options.output === "false") {
+            break processResultOutput;
+        }
+
+        // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+        // Require both `warning` and `message` to be true to display `STDErr`.
+        const out = result.output
+        .filter(
+            evt => evt.type === "stdout" ||
+            ( evt.type === "stderr" && (options.warning === "true" && options.message === "true"))
+        )
+        .map((evt, index) => {
+            const className = `qwebr-output-code-${evt.type}`;
+            const outputResult = qwebrPrefixComment(processOutput(evt.data), options.comment);
+            return `<code id="${className}-editor-${elements.id}-result-${index + 1}" class="${className}">${outputResult}</code>`;
+        })
+        .join("\n");
+
+
+        // Clean the state
+        // We're now able to process pager events.
+        // As a result, we cannot maintain a true 1-to-1 output order
+        // without individually feeding each line
+        const msgs = await mainWebR.flush();
+
+        // Use `map` to process the filtered "pager" events asynchronously
+        const pager = [];
+        const browse = [];
+
+        await Promise.all(
+            msgs.map(
+                async (msg) => {
+
+                    const msgType = msg.type || "unknown";
+
+                    switch(msgType) {
+                        case 'pager':
+                            const pager_data = await qwebrParseTypePager(msg);
+                            pager.push(pager_data);
+                            break;
+                        case 'browse':
+                            const browse_data = await qwebrParseTypeBrowse(msg);
+                            browse.push(browse_data);
+                            break;
+                    }
+                    return;
+                }
+            )
+        );
+
+        // Nullify the output area of content
+        elements.outputCodeDiv.innerHTML = "";
+        elements.outputGraphDiv.innerHTML = "";
+
+        // Design an output object for messages
+        const pre = document.createElement("pre");
+        if (/\S/.test(out)) {
+            // Display results as HTML elements to retain output styling
+            const div = document.createElement("div");
+            div.innerHTML = out;
+
+            // Calculate a scaled font-size value
+            const scaledFontSize = qwebrScaledFontSize(
+                elements.outputCodeDiv, options);
+
+            // Override output code cell size
+            pre.style.fontSize = `${scaledFontSize}px`;
+            pre.appendChild(div);
+        } else {
+            // If nothing is present, hide the element.
+            pre.style.visibility = "hidden";
+        }
+
+        elements.outputCodeDiv.appendChild(pre);
+
+        // Determine if we have graphs to display
+        if (result.images.length > 0) {
+
+            // Create figure element
+            const figureElement = document.createElement("figure");
+            figureElement.className = "qwebr-canvas-image";
+
+            // Place each rendered graphic onto a canvas element
+            result.images.forEach((img) => {
+
+                // Construct canvas for object
+                const canvas = document.createElement("canvas");
+
+                // Add an image download button
+                qwebrImageCanvasDownloadButton(canvas, figureElement);
+
+                // Set canvas size to image
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                // Apply output truncations
+                canvas.style.width = options["out-width"] ? options["out-width"] : `${fig_width}px`;
+                if (options["out-height"]) {
+                    canvas.style.height = options["out-height"];
+                }
+
+                // Apply styling
+                canvas.style.display = "block";
+                canvas.style.margin = "auto";
+
+                // Draw image onto Canvas
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                // Append canvas to figure output area
+                figureElement.appendChild(canvas);
+
+            });
+
+            if (options['fig-cap']) {
+                // Create figcaption element
+                const figcaptionElement = document.createElement('figcaption');
+                figcaptionElement.innerText = options['fig-cap'];
+                // Append figcaption to figure
+                figureElement.appendChild(figcaptionElement);
+            }
+
+            elements.outputGraphDiv.appendChild(figureElement);
+
+        }
+
+        // Display the pager data
+        if (pager.length > 0) {
+            // Use the `pre` element to preserve whitespace.
+            pager.forEach((paged_data, index) => {
+                const pre_pager = document.createElement("pre");
+                pre_pager.innerText = paged_data;
+                pre_pager.classList.add("qwebr-output-code-pager");
+                pre_pager.setAttribute("id", `qwebr-output-code-pager-editor-${elements.id}-result-${index + 1}`);
+                elements.outputCodeDiv.appendChild(pre_pager);
+            });
+        }
+
+        // Display the browse data
+        if (browse.length > 0) {
+            // Use the `pre` element to preserve whitespace.
+            browse.forEach((browse_data, index) => {
+                const iframe_browse = document.createElement('iframe');
+                iframe_browse.classList.add("qwebr-output-code-browse");
+                iframe_browse.setAttribute("id", `qwebr-output-code-browse-editor-${elements.id}-result-${index + 1}`);
+                iframe_browse.style.width = "100%";
+                iframe_browse.style.minHeight = "500px";
+                elements.outputCodeDiv.appendChild(iframe_browse);
+
+                iframe_browse.contentWindow.document.open();
+                iframe_browse.contentWindow.document.write(browse_data);
+                iframe_browse.contentWindow.document.close();
+            });
+        }
+    } finally {
+        // Clean up the remaining code
+        mainWebRCodeShelter.purge();
+    }
+};
+
+// Function to execute the code (accepts code as an argument)
+globalThis.qwebrExecuteCode = async function (
+    codeToRun,
+    id,
+    options = {}) {
+
+    // If options are not passed, we fall back on the bare minimum to handle the computation
+    if (qwebrIsObjectEmpty(options)) {
+        options = {
+            "context": "interactive",
+            "fig-width": 7, "fig-height": 5,
+            "out-width": "700px", "out-height": "",
+            "dpi": 72,
+            "results": "markup",
+            "warning": "true", "message": "true",
+        };
+    }
+
+    // Next, we access the compute areas values
+    const elements = {
+        runButton: document.getElementById(`qwebr-button-run-${id}`),
+        outputCodeDiv: document.getElementById(`qwebr-output-code-area-${id}`),
+        outputGraphDiv: document.getElementById(`qwebr-output-graph-area-${id}`),
+        id: id,
+    }
+
+    // Disallowing execution of other code cells
+    document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+        btn.disabled = true;
+    });
+
+    if (options.context == EvalTypes.Interactive) {
+        // Emphasize the active code cell
+        elements.runButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin qwebr-icon-status-spinner"></i> <span>Run Code</span>';
+    }
+
+    // Evaluate the code and parse the output into the document
+    await qwebrComputeEngine(codeToRun, elements, options);
+
+    // Switch to allowing execution of code
+    document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+        btn.disabled = false;
+    });
+
+    if (options.context == EvalTypes.Interactive) {
+        // Revert to the initial code cell state
+        elements.runButton.innerHTML = '<i class="fa-solid fa-play qwebr-icon-run-code"></i> <span>Run Code</span>';
+    }
+}
+
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-14.html">Making Conclusions with Data</a></li><li class="breadcrumb-item"><a href="./chapter-18.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Inferences</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Foundations for a Statistical Mindset</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Working with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistics as a Way of Thinking</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What are Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Organizing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cleaning Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summarizing a Variable</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Patterns Among Multiple Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Predicting &amp; Explaining Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Where Data Come From</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Modeling the Data Generation Process</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Interpreting Model Coefficients</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Interpreting Model Uncertainty</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Making a Model More Detailed</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evaluating Model Fit</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Making Conclusions with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">From Samples to Populations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Effect Estimation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Null Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Connection to Other Statistical Frameworks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-18.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Inferences</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Advanced Modeling &amp; Inference</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#writing-up-results" id="toc-writing-up-results" class="nav-link active" data-scroll-target="#writing-up-results"><span class="header-section-number">18.1</span> Writing up results</a>
+  <ul class="collapse">
+  <li><a href="#descriptive-statistics-for-multiple-variables" id="toc-descriptive-statistics-for-multiple-variables" class="nav-link" data-scroll-target="#descriptive-statistics-for-multiple-variables"><span class="header-section-number">18.1.1</span> Descriptive statistics for multiple variables</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="header-section-number">18.1.2</span> Inferential statistics</a></li>
+  </ul></li>
+  <li><a href="#standardized-effect-estimates" id="toc-standardized-effect-estimates" class="nav-link" data-scroll-target="#standardized-effect-estimates"><span class="header-section-number">18.2</span> Standardized effect estimates</a>
+  <ul class="collapse">
+  <li><a href="#standardized-model-coefficients" id="toc-standardized-model-coefficients" class="nav-link" data-scroll-target="#standardized-model-coefficients"><span class="header-section-number">18.2.1</span> Standardized model coefficients</a></li>
+  <li><a href="#correlation-r" id="toc-correlation-r" class="nav-link" data-scroll-target="#correlation-r"><span class="header-section-number">18.2.2</span> Correlation <span class="math inline">\(r\)</span></a></li>
+  <li><a href="#coefficient-of-determination-r2" id="toc-coefficient-of-determination-r2" class="nav-link" data-scroll-target="#coefficient-of-determination-r2"><span class="header-section-number">18.2.3</span> Coefficient of determination <span class="math inline">\(R^2\)</span></a></li>
+  <li><a href="#cohens-d" id="toc-cohens-d" class="nav-link" data-scroll-target="#cohens-d"><span class="header-section-number">18.2.4</span> Cohen’s <span class="math inline">\(d\)</span></a></li>
+  <li><a href="#cohens-f2" id="toc-cohens-f2" class="nav-link" data-scroll-target="#cohens-f2"><span class="header-section-number">18.2.5</span> Cohen’s <span class="math inline">\(f^2\)</span></a></li>
+  </ul></li>
+  <li><a href="#what-is-a-good-effect-size" id="toc-what-is-a-good-effect-size" class="nav-link" data-scroll-target="#what-is-a-good-effect-size"><span class="header-section-number">18.3</span> What is a good effect size?</a></li>
+  <li><a href="#visualizing-inference-results" id="toc-visualizing-inference-results" class="nav-link" data-scroll-target="#visualizing-inference-results"><span class="header-section-number">18.4</span> Visualizing inference results</a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">18.4.1</span> Histograms</a></li>
+  <li><a href="#categorical-explanatory-variable" id="toc-categorical-explanatory-variable" class="nav-link" data-scroll-target="#categorical-explanatory-variable"><span class="header-section-number">18.4.2</span> Categorical explanatory variable</a></li>
+  <li><a href="#numeric-explanatory-variable" id="toc-numeric-explanatory-variable" class="nav-link" data-scroll-target="#numeric-explanatory-variable"><span class="header-section-number">18.4.3</span> Numeric explanatory variable</a></li>
+  <li><a href="#multiple-explanatory-variables" id="toc-multiple-explanatory-variables" class="nav-link" data-scroll-target="#multiple-explanatory-variables"><span class="header-section-number">18.4.4</span> Multiple explanatory variables</a></li>
+  </ul></li>
+  <li><a href="#sec-ch7-resources" id="toc-sec-ch7-resources" class="nav-link" data-scroll-target="#sec-ch7-resources"><span class="header-section-number">18.5</span> Chapter resources</a>
+  <ul class="collapse">
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals"><span class="header-section-number">18.5.1</span> Learning goals</a></li>
+  <li><a href="#new-concepts" id="toc-new-concepts" class="nav-link" data-scroll-target="#new-concepts"><span class="header-section-number">18.5.2</span> New concepts</a></li>
+  <li><a href="#new-r-functionality" id="toc-new-r-functionality" class="nav-link" data-scroll-target="#new-r-functionality"><span class="header-section-number">18.5.3</span> New R functionality</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
+<script type="module" id="qwebr-monaco-editor-init">
+
+  // Configure the Monaco Editor's loader
+  require.config({
+    paths: {
+      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs'
+    }
+  });
+</script>
+<script type="module">
+// Function to update Monaco Editors when body class changes
+function updateMonacoEditorsOnBodyClassChange() {
+    // Select the body element
+    const body = document.querySelector('body');
+
+    // Options for the observer (which mutations to observe)
+    const observerOptions = {
+        attributes: true,  // Observe changes to attributes
+        attributeFilter: ['class'] // Only observe changes to the 'class' attribute
+    };
+
+    // Callback function to execute when mutations are observed
+    const bodyClassChangeCallback = function(mutationsList, observer) {
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                // Class attribute has changed
+                // Update all Monaco Editors on the page
+                updateMonacoEditorTheme();
+            }
+        }
+    };
+
+    // Create an observer instance linked to the callback function
+    const observer = new MutationObserver(bodyClassChangeCallback);
+
+    // Start observing the target node for configured mutations
+    observer.observe(body, observerOptions);
+}
+
+// Function to update all instances of Monaco Editors on the page
+function updateMonacoEditorTheme() {
+    // Determine what VS Theme to use
+    const vsThemeToUse = document.body.classList.contains("quarto-dark") ? 'vs-dark' : 'vs' ;
+
+    // Iterate through all initialized Monaco Editors
+    qwebrEditorInstances.forEach( function(editorInstance) { 
+        editorInstance.updateOptions({ theme: vsThemeToUse }); 
+    });
+}
+
+// Call the function to start observing changes to body class
+updateMonacoEditorsOnBodyClassChange();
+</script>
+<script type="module">
+// Global array to store Monaco Editor instances
+globalThis.qwebrEditorInstances = [];
+
+function isValidCodeLineNumbers(stringCodeLineNumbers) {
+  // Regular expression to match valid input strings
+  const regex = /^(\d+(-\d+)?)(,\d+(-\d+)?)*$/;
+  return regex.test(stringCodeLineNumbers);
+}
+
+// Function that builds and registers a Monaco Editor instance    
+globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
+
+  const initialCode = cellData.code;
+  const qwebrCounter = cellData.id;
+  const qwebrOptions = cellData.options;
+
+  // Retrieve the previously created document elements
+  let runButton = document.getElementById(`qwebr-button-run-${qwebrCounter}`);
+  let resetButton = document.getElementById(`qwebr-button-reset-${qwebrCounter}`);
+  let copyButton = document.getElementById(`qwebr-button-copy-${qwebrCounter}`);
+  let editorDiv = document.getElementById(`qwebr-editor-${qwebrCounter}`);
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: initialCode,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // Works wonderfully with RevealJS
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: qwebrScaledFontSize(editorDiv, qwebrOptions),         
+      renderLineHighlight: "none",      // Disable current line highlighting
+      hideCursorInOverviewRuler: true,  // Remove cursor indictor in right hand side scroll bar
+      readOnly: qwebrOptions['read-only'] ?? false,
+      quickSuggestions: qwebrOptions['editor-quick-suggestions'] ?? false,
+      wordWrap: (qwebrOptions['editor-word-wrap'] == 'true' ? "on" : "off")
+    });
+
+    // Store the official counter ID to be used in keyboard shortcuts
+    editor.__qwebrCounter = qwebrCounter;
+
+    // Store the official div container ID
+    editor.__qwebrEditorId = `qwebr-editor-${qwebrCounter}`;
+
+    // Store the initial code value and options
+    editor.__qwebrinitialCode = initialCode;
+    editor.__qwebrOptions = qwebrOptions;
+
+    // Set at the model level the preferred end of line (EOL) character to LF.
+    // This prevent `\r\n` from being given to the webR engine if the user is on Windows.
+    // See details in: https://github.com/coatless/quarto-webr/issues/94
+    // Associated error text: 
+    // Error: <text>:1:7 unexpected input
+
+    // Retrieve the underlying model
+    const model = editor.getModel();
+    // Set EOL for the model
+    model.setEOL(monaco.editor.EndOfLineSequence.LF);
+    
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      // Increment editor height by 2 to prevent vertical scroll bar from appearing
+      const contentHeight = editor.getContentHeight() + 2;
+
+      // Retrieve editor-max-height option
+      const maxEditorHeight = qwebrOptions['editor-max-height'];
+
+      // If editor-max-height is missing, allow infinite growth. Otherwise, threshold.
+      const editorHeight = !maxEditorHeight ?  contentHeight : Math.min(contentHeight, maxEditorHeight);
+
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${editorHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Function to generate decorations to highlight lines
+    // in the editor based on input string.
+    function decoratorHighlightLines(codeLineNumbers) {
+      // Store the lines to be lighlight
+      let linesToHighlight = [];
+      
+      // Parse the codeLineNumbers string to get the line numbers to highlight
+      // First, split the string by commas
+      codeLineNumbers.split(',').forEach(part => {
+        // Check if we have a range of lines
+        if (part.includes('-')) {
+            // Handle range of lines (e.g., "6-8")
+            const [start, end] = part.split('-').map(Number);
+            for (let i = start; i <= end; i++) {
+                linesToHighlight.push(i);
+            }
+        } else {
+            // Handle single line (e.g., "7")
+            linesToHighlight.push(Number(part));
+        }
+      });
+  
+      // Create monaco decorations for the lines to highlight
+      const decorations = linesToHighlight.map(lineNumber => ({
+          range: new monaco.Range(lineNumber, 1, lineNumber, 1),
+          options: {
+              isWholeLine: true,
+              className: 'qwebr-editor-highlight-line'
+          }
+      }));
+  
+      // Return decorations to be applied to the editor
+      return decorations;
+    }
+
+    // Ensure that the editor-code-line-numbers option is set and valid
+    // then apply styling
+    if (qwebrOptions['editor-code-line-numbers']) {
+      // Remove all whitespace from the string
+      const codeLineNumbers = qwebrOptions['editor-code-line-numbers'].replace(/\s/g,'');
+      // Check if the string is valid for line numbers, e.g., "1,3-5,7"
+      if (isValidCodeLineNumbers(codeLineNumbers)) {
+        // Apply the decorations to the editor
+        editor.createDecorationsCollection(decoratorHighlightLines(codeLineNumbers));
+      } else {
+        // Warn the user that the input is invalid
+        console.warn(`Invalid "editor-code-line-numbers" value in code cell ${qwebrOptions['label']}: ${codeLineNumbers}`);
+      }
+    }
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        qwebrExecuteCode(editor.getValue(), editor.__qwebrCounter, editor.__qwebrOptions);
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          qwebrExecuteCode(currentLine, editor.__qwebrCounter, editor.__qwebrOptions);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          qwebrExecuteCode(selectedText, editor.__qwebrCounter, editor.__qwebrOptions);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+
+    // Store the editor instance in the global dictionary
+    qwebrEditorInstances[editor.__qwebrCounter] = editor;
+
+  });
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    qwebrExecuteCode(editor.getValue(), editor.__qwebrCounter, editor.__qwebrOptions);
+  };
+
+  // Add a click event listener to the reset button
+  copyButton.onclick = function () {
+    // Retrieve current code data
+    const data = editor.getValue();
+    
+    // Write code data onto the clipboard.
+    navigator.clipboard.writeText(data || "");
+  };
+  
+  // Add a click event listener to the copy button
+  resetButton.onclick = function () {
+    editor.setValue(editor.__qwebrinitialCode);
+  };
+  
+}
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter-14.html">Making Conclusions with Data</a></li><li class="breadcrumb-item"><a href="./chapter-18.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Inferences</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ch18" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Inferences</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="images/header-ch18.png" class="img-fluid"></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We now understand nearly every step of a data analysis pipeline, from data cleaning and management to modeling to inference. If we are to make decisions based on this work, or inform others’ decisions, we need to make sure we communicate it well. We discussed back in <a href="chapter-7.html" class="quarto-xref"><span>Chapter 7</span></a> how important clear data reporting and visualization is, although in that case we only worked with summaries of data distributions and associations. Now that we’ve done more complex analysis processes and also made logical inferences, we should discuss how to effectively communicate that additional information.</p>
+<section id="writing-up-results" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="writing-up-results"><span class="header-section-number">18.1</span> Writing up results</h2>
+<p>We learned previously that APA style is the standard way of communicating statistical results. It uses abbreviations and a particular format for numbers so that anyone trained in this style can quickly and efficiently understand your results, rather needed to read a long written paragraph description.</p>
+<section id="descriptive-statistics-for-multiple-variables" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="descriptive-statistics-for-multiple-variables"><span class="header-section-number">18.1.1</span> Descriptive statistics for multiple variables</h3>
+<p>When we first learned APA style, we learned that we should report summaries of our data variables by communicating central tendency, spread, and sample size. Can you remember how to do this for the <code>Extraversion</code> variable in <code>soto_work</code>?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fill in the <code>NULL</code> sections of the code below to output a summary table of these three variables.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reveal the answer">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reveal the answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here’s one option:</p>
+<p><code>soto_work |&gt; summarize(mean = mean(Extraversion), sd = sd(Extraversion), n = length(Extraversion))</code></p>
+</div>
+</div>
+</div>
+<p>We would then write about this in the text of our report with these abbreviations. For instance, “we measured participants’ personality in terms of their extraversion (<em>M</em> = 3.33, <em>SD</em> = 0.71, <em>N</em> = 747) and conscientiousness (<em>M</em> = 3.88, <em>SD</em> = 0.73, <em>N</em> = 747).”</p>
+<p>Besides the <code>summarize()</code> function in <code>dplyr</code>, <code>group_by()</code> is another function we used to help make find this summary information. This one let us subset our data based on values in a variable. Pairing it with <code>summarize()</code> is how we quickly calculated descriptive statistics within different subgroups:</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>That’s summarizing one variable. If we wanted to summarize several at once, we could make separate columns for the separate summary statistics of each variable:</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Though that is quite a bit of typing. Alternatively, the <code>across()</code> function lets you tell <code>summarize()</code> that you want to calculate the same function across multiple variables. To do so, you pass a vector of variable names to <code>across()</code> as well as a vector of functions to apply (using named arguments to say what you want those outputs to be called). This does the same thing as above, with much less work.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Lastly, maybe you want to organize this more nicely, such that each variable is on its own row and each statistic its own column. The function <code>pivot_longer()</code> from the <code>tidyr</code> package will group different columns together, make a new column out of their names, and a new column out of their values.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The above code now puts every separate previous column header as a separate line, but that’s not really what we wanted. We built those column names with a format like “variable_stat”. So we can tell <code>pivot_longer()</code> that there are multiple names in these headers to keep track of, and what character separates them.</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This output is now organized in an easily-readable format. Though, the <em>presentation</em> of it still leaves a bit to be desired. To make this table look nice for putting into a report, publication, etc., you don’t need to copy over the individual values to a separate software (that’s prone to making errors). Instead we could use a table-building package like <code>sjPlot</code>. Here is an example of the <code>tab_df()</code> function from that package, which makes a publication-ready table out of a data frame.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This output looks much more official! Simply copy this entire table into whatever report you are preparing<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+</section>
+<section id="inferential-statistics" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">18.1.2</span> Inferential statistics</h3>
+<p>Besides summaries, we also want to report the results of our inferential statistics in a readable APA format. The five pieces of information required for making a full APA report of inferences are:</p>
+<ul>
+<li><strong>The estimated effect size</strong>: This is the point estimate you get for your estimand - your model coefficient, coefficient of determination, sample mean, etc. You’d write this as <em>M</em> = ____ for a mean, <em>= ____ for a model coefficient, </em><span class="math inline">\(R^2\)</span>* = ____ for overall model performance, etc.</li>
+<li><strong>A confidence interval</strong>: The confidence interval version of your estimate. Usually a 95% level is used, but you can choose a different level if you want. When writing out the confidence interval, you indicate what this level is by writing e.g.&nbsp;95% CI [___]. Then you put the confidence interval boundaries in the brackets.</li>
+<li><strong>A testing statistic</strong>, if doing hypothesis testing: This would be <em>t</em> if you’re looking at individual variables in a model or <em>F</em> if you’re looking at overall model performance.</li>
+<li><strong>Degrees of freedom</strong> of the test statistic, if doing hypothesis testing: This information is in parentheses immediately following the test statistic. E.g., <em>t</em>(df) or <em>F</em>(k,df).</li>
+<li><strong>The p-value</strong> of the hypothesis test, if doing hypothesis testing: This is written as <em>p</em>. If <em>p</em> is really small, we usually say that by using a less-than sign instead of equal sign, e.g.&nbsp;<em>p</em> &lt; 0.001.</li>
+</ul>
+<p>For instance, if our research goal was to estimate the unique effect of extraversion on leadership while controlling for conscientiousness, we’d write our results as:</p>
+<p>“There was a significant partial effect of extraversion on leadership (<span class="math inline">\(\beta\)</span> = 0.48, 95% CI [0.40 0.56], <em>t</em>(744) = 11.73, <em>p</em> &lt; 0.001).</p>
+<p>We’ve seen many times where this information is in the outputs from functions like <code>summary()</code> or <code>confint()</code>. Though again, the <code>sjPlot</code> package is helpful for making a pretty table version of it all. In this case, we can use <code>tab_model()</code>.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>When writing about the results of your inferential statistics, you will likely use the in-text abbreviations like in the example above when talking about your specific estimand and the conclusions you are making based on your inferences about it. But it can also be helpful to include a model table like this so that more information is available to the research about the context of that estimand within the data generation process you specified.</p>
+</section>
+</section>
+<section id="standardized-effect-estimates" class="level2 page-columns page-full" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="standardized-effect-estimates"><span class="header-section-number">18.2</span> Standardized effect estimates</h2>
+<p>Let’s pause here to again talk about interpreting the actual effect estimate we get in the inference process. That effect of extraversion, 0.48, is an effect size. When we estimate it (as a point value or interval), we sometimes want to focus on the magnitude of that estimate rather than just the question of whether it might be zero or not. Focusing on the magnitude of the effect size helps us make decisions like is this effect important, impactful, or what expectations about the target value should I have based on the value of the explanatory variable.</p>
+<div class="page-columns page-full"><p>When we have performed estimation so far, usually we’ve done it in models built from <em>unstandardized</em> variables. That means the effect estimates we have calculated are <strong>unstandardized effect sizes</strong>. An unstandardized effect size is the magnitude of an effect expressed in the units of the variables.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>unstandardized effect size</strong> = an effect size represented in the original units of the variables.</span></div></div>
+<p>Unstandardized effect sizes are useful for making decisions about particular situations. Drug dose, cholesterol, height, etc. all having meaningful units by which their quantity is expressed. An unstandardized effect size representing a number in these units tells you how much of a drug you have to give to get an expected outcome, and amount of cholesterol in the blood is well-mapped to heart risks. We interact with the world through the units of quantities, and we best understand effects in these same units.</p>
+<p>However, we have less understanding about units in domains that we’re not already familiar with or that are abstract concepts. E.g., if a model suggested that drinking alcohol before bed is associated with a decrease in sleep length of 2 hours, we intuitively know what that means. We all sleep, and we’ve all felt the effects of 8 hours versus 6 hours of sleep. But if that model instead suggested that drinking alcohol before bed is associated with a 2 point decrease in cognitive fluency, what does that mean? What concrete things define cognitive fluency? What does fluency = 5 feel like compared to fluency = 7? In our example with personality influencing leadership, what is the practical implication of someone with a leadership score of 3 vs.&nbsp;4?</p>
+<p>Reporting unstandardized coefficients is useful for understanding the importance of effects when the relevant variables are in units that we know about. However, an unstandardized stimate like 0.48 for the effect of extraversion on leadership is hard to interpret in a vacuum. Is that a big or small number? For this reason, reporting unstandardized effect estimates is less useful (and potentially more confusing for our readers!) when dealing with abstract variables or domains we are unfamiliar with.</p>
+<div class="page-columns page-full"><p>In that case, we can standardize an effect size that we report. <strong>Standardized effect sizes</strong> remove the real-world units from variables. We’ve done a version of this already when learning about z-scores. A standardized variable is one that has been converted to z-scores. Z-scores, to review, express the value of a variable in terms of how many standard deviations it is away from the variable mean. By doing this, we don’t need to have domain expertise in the variable to intrinsically understand what certain values mean. Could you say what a temperature of 350F means relative to other typical temperatures for baking? What about a <a href="https://en.wikipedia.org/wiki/Gas_mark">Gas mark</a> of 5? You’re likely more familiar with the former than the latter. But if we convert each to z-scores and find that both have a z-score of -1, we can easily understand either of those values relative to their distribution.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>standardized effect size</strong> = an effect size represented in terms of standardized units (z-scores, proportion of error, etc.).</span></div></div>
+<p>A standardized effect size operates similarly. You don’t need to know about a variable’s units to understand the magnitude of a standardized effect size. Doing this has three benefits for understanding results from statistical models:</p>
+<ol type="1">
+<li><p>Standardized effect sizes help you evaluate how big or small an effect is when the units of measurement aren’t intuitive. We don’t have to know the typical range or mean of a variable already in order to interpret a standardized effect size - its value has all the information wrapped into it.</p></li>
+<li><p>Standardized effect sizes can help you compare results across studies. Many variables are measured on different scales in different studies. This isn’t likely to happen with a variable like temperature, but there are multiple anxiety questionnaires to choose from, each of which is on a different scale. Reporting standardized effect size estimates can help readers understand trends or differences across studies. It can also help us compare effect sizes of variables in the same model that are measured in different units (although remember we need to use hypothesis testing to figure out if a difference in estimated effect is statistically significant).</p></li>
+<li><p>Standardized effect sizes let us plan our research more easily. We’ll cover this process in <span class="quarto-unresolved-ref">?sec-ch20</span>, but the short of it is that there are tools we can use to figure out what sample size we should collect if we want to be able to find a particular effect size as statistically significant. Many of these tools use standardized effect sizes.</p></li>
+</ol>
+<p>Next we will cover how to calculate some of the most common standardized effect statistics, depending on what your estimand is.</p>
+<section id="standardized-model-coefficients" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="standardized-model-coefficients"><span class="header-section-number">18.2.1</span> Standardized model coefficients</h3>
+<p>An unstandardized model coefficient is the coefficient estimate a model gives when the model is fit directly onto raw variable values. It is interpreted in the context of those variable units.</p>
+<p>A standardized model coefficient, in contrast, is the estimate a model gives when those variables have been z-scored first. The code below gives an example of z-scoring <code>Extraversion</code>, <code>Conscientiousness</code>, and <code>Leadership</code> first in order to derive standardized model coefficient estimates.</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Another way you can do this quickly, without computing z-scored variables yourself, is with the <code>standardize_parameters()</code> function in the <code>effectsize</code> package. Simply pass it a model object that was already fit on the raw variables, and it will recalculate the coefficients to show you the standardized versions. However, note that this approach doesn’t show you hypothesis test results, only effect estimates and confidence intervals.</p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>These coefficient estimates are different than before. Now, <span class="math inline">\(\hat{\beta_0}\)</span> is basically 0 and <span class="math inline">\(\hat{\beta_1} = 0.426\)</span>. This is because these coefficients are now in the context of z-scores instead of years of levels of the Likert scale used to measure personality and leadership. We’d interpret these standardized estimates as expecting someone to have an average leadership score (z = 0) if they had average extraversion (z = 0), when holding conscientiousness constant. This makes sense, because a regression line always runs through the mean of both the predictor and outcome variable. We’d also expect that leadership score to increase by 0.426 SDs for every 1 SD increase in extraversion, according to the value of the standardized <span class="math inline">\(\hat{\beta_1}\)</span>.</p>
+<p>Also notice the p-value for our effect of interest in the standardized vs.&nbsp;unstandardized models. They are the same. This is because, regardless of the units, the strength of the effect is still the same. The estimated value changes, but so does the estimated standard error for calculating t and thus p.&nbsp;Thus there’s no difference in the significance of effect coefficients between a standardized and unstandardized model. This is why you can choose to express the effect size of an estimate in either standardized or unstandardized terms. However, when talking about the value of the estimate for an estimation goal, make sure you are being explicit about which one you are using. Otherwise your readers may make the wrong interpretation.</p>
+</section>
+<section id="correlation-r" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="correlation-r"><span class="header-section-number">18.2.2</span> Correlation <span class="math inline">\(r\)</span></h3>
+<p>Another standardized coefficient that is common to see is correlation <span class="math inline">\(r\)</span>. We’ve discussed this idea a few times already - as a measure of linear association in <a href="chapter-6.html" class="quarto-xref"><span>Chapter 6</span></a> and again as a traditional alternative to a statistical model estimate in <a href="chapter-17.html" class="quarto-xref"><span>Chapter 17</span></a>. By now we should be familiar with how to interpret this number when we see it. It can range from -1 (perfect negative correlation) to 1 (perfect positive correlation), with 0 meaning no relationship. This is considered a standardized effect size because it’s computed on the z-scored variables, and thus we can interpret its value no matter what units the original variables were measured in.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that if you have a multivariable model, the standardized coefficients for each explanatory variable are <em>partial correlations</em>, not the same thing as <span class="math inline">\(r\)</span>. They are the correlation with the outcome variable’s residuals after taking into account the effects of the other predictors.</p>
+</div>
+</div>
+</section>
+<section id="coefficient-of-determination-r2" class="level3" data-number="18.2.3">
+<h3 data-number="18.2.3" class="anchored" data-anchor-id="coefficient-of-determination-r2"><span class="header-section-number">18.2.3</span> Coefficient of determination <span class="math inline">\(R^2\)</span></h3>
+<p>While standardized <span class="math inline">\(\hat{\beta}\)</span> and correlation <span class="math inline">\(r\)</span> speak to the relationship between one explanatory variable and a target, <span class="math inline">\(R^2\)</span> is a standardized effect size for how much variation an entire model explains. It tells us the proportional reduction in error of a full model compared to the null model, and its meaning is the same regardless of the units used for the variables in the model.</p>
+<p>In the case of a one-variable model, it is actually the same thing as the square of the correlation coefficient:</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>That’s where the name “<span class="math inline">\(R^2\)</span>” comes from. But of course it can also be used to to account for the proportion of error explained by a model with more than one predictor.</p>
+<p>We also previously discussed <span class="math inline">\(\Delta R^2\)</span> as a way of quantifying how much variance in a target variable is <em>uniquely</em> explained by a specific explanatory variable. To find this number, we fit separate models with and without the variable of interest and subtracted the <span class="math inline">\(R^2\)</span> values:</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We would call this quantity “change in <span class="math inline">\(R^2\)</span>” or alternatively, the semi-partial <span class="math inline">\(R^2\)</span>. It is also a standardized effect size since its interpretation doesn’t depend on the variable units. We can find this ourselves with the operation above, or we can again use the <code>effectsize</code> package to give us a short cut with the <code>r2_semipartial()</code> function. This will return <span class="math inline">\(\Delta R^2\)</span> for every explanatory variable in a model.</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="cohens-d" class="level3 page-columns page-full" data-number="18.2.4">
+<h3 data-number="18.2.4" class="anchored" data-anchor-id="cohens-d"><span class="header-section-number">18.2.4</span> Cohen’s <span class="math inline">\(d\)</span></h3>
+<p>Standardized <span class="math inline">\(\hat{\beta}\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(R^2\)</span>, and <span class="math inline">\(\Delta R^2\)</span> are all effect sizes that we have seen and used before. There are two more measures of effect size that are common to see in psychology research that we haven’t yet encountered.</p>
+<div class="page-columns page-full"><p>One of them is called <strong>Cohen’s d</strong>. This measure was created by an influential quantitative psychologist named Jacob Cohen in the 1950s. It is used specifically to represent the magnitude of difference between two categorical groups independent of real-world units. Cohen’s <span class="math inline">\(d\)</span> is related to the concept of z-score, in that it indicates the size of a group mean difference in standard deviation units. It is calculated as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Cohen’s d</strong> = A standardized effect size that represents the magnitude of difference between two group means in terms of standard deviation units.</span></div></div>
+<p><span class="math display">\[ d = \frac{\bar{X_1} - \bar{X_2}}{s_{pooled}} \]</span></p>
+<p><span class="math inline">\(s_{pooled}\)</span> is a weighted average of the standard deviations from both groups:</p>
+<p><span class="math display">\[s_{pooled} = \frac{df_1s_1 + df_2s_2}{df_1 + df_2}\]</span></p>
+<p>Cohen’s <span class="math inline">\(d\)</span> can range between 0 and infinity, but in practice is rarely more than 2. The bigger the <span class="math inline">\(d\)</span> value, the bigger an effect is. To find Cohen’s <span class="math inline">\(d\)</span> in R, you can pass a group model formula and dataset argument to the <code>cohens_d()</code> function in the <code>effectsize</code> package as if you were fitting the model.</p>
+<p>For instance, here’s the unstandardized difference in mean extraversion between people who do not have heart disease and people who do:</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>However, this is expressed in the units extraversion was measured on, which were rather arbitrary / specific to the questionnaire used in this study. So here is how to find Cohen’s <span class="math inline">\(d\)</span> of this mean difference instead:</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Note the sign is flipped here because <code>cohens_d()</code> chooses to subtract the mean of reference group from the mean of the other group, rather than the other way around like <code>lm()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. But the absolute magnitude of the effect is what’s important here. This result tells you that people without heart disease (X=0) have 0.23SD higher extraversion than people with heart disease.</p>
+<p>Note that we could have found the same standardized effect estimate ourselves if we z-scored only the target variable in a statistical model call:</p>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="cohens-f2" class="level3 page-columns page-full" data-number="18.2.5">
+<h3 data-number="18.2.5" class="anchored" data-anchor-id="cohens-f2"><span class="header-section-number">18.2.5</span> Cohen’s <span class="math inline">\(f^2\)</span></h3>
+<div class="page-columns page-full"><p>Cohen also came up with something very similar to <span class="math inline">\(R^2\)</span>, called <strong>Cohen’s <span class="math inline">\(f^2\)</span></strong> (lowercase, not to be confused with an F value in an F distribution). Rather than describing the proportion of variation in a target that a model explains, Cohen’s <span class="math inline">\(f^2\)</span> is the ratio of explained to unexplained error:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Cohen’s <span class="math inline">\(f^2\)</span></strong> = A standardized effect size that represents model performance through the ratio of explained to unexplained error.</span></div></div>
+<p><span class="math display">\[f^2 = \frac{R^2}{1-R^2} \]</span></p>
+<p>Sometimes people report is as just Cohen’s <span class="math inline">\(f\)</span>:</p>
+<p><span class="math display">\[f = \sqrt{\frac{R^2}{1-R^2}} \]</span></p>
+<p>Rather than being bound between 0 and 1 as <span class="math inline">\(R^2\)</span> is, <span class="math inline">\(f^2\)</span> can be as small as 0 and theoretically as large as infinity. A bigger <span class="math inline">\(f^2\)</span> means a model is explaining more variation. If <span class="math inline">\(f^2\)</span> is above 1, then the model explains more variation than what is left unexplained. In psychology that is rare but not unheard of.</p>
+<div class="page-columns page-full"><p>The above equation is known as the <strong>global <span class="math inline">\(f^2\)</span></strong>, or the <span class="math inline">\(f^2\)</span> score for a model compared to the empty model with no explanatory variables.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>global <span class="math inline">\(f^2\)</span></strong> = The increase in Cohen’s <span class="math inline">\(f^2\)</span> for a model with predictors compared to the null model.</span></div></div>
+<div class="page-columns page-full"><p>There is also a <strong>local <span class="math inline">\(f^2\)</span></strong> that tells you the increase in explained variation between a full model and a model with an explanatory variable taken out (we’ll call these <span class="math inline">\(R_{full}\)</span> and <span class="math inline">\(R_{sub}\)</span>). The equation for that is:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>local <span class="math inline">\(f^2\)</span></strong> = The increase in Cohen’s <span class="math inline">\(f^2\)</span> for a larger model compared to a smaller model.</span></div></div>
+<p><span class="math display">\[f^2 = \frac{R^2_{full} - R^2_{sub}}{1-R^2_{full}} \]</span></p>
+<p>You can get this local <span class="math inline">\(f^2\)</span> in the <code>effectsize</code> package by passing a model object to the <code>cohens_f_squared()</code> function:</p>
+<div id="qwebr-insertion-location-18"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="what-is-a-good-effect-size" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="what-is-a-good-effect-size"><span class="header-section-number">18.3</span> What is a good effect size?</h2>
+<p>When evaluating an unstandardized effect size for units you are familiar with, you will already have a sense about what an “important” vs.&nbsp;“trivial” effect size is. If you’re studying for a test, 10 hours of studying making a difference of 1% on your grade might not be worth it, but a difference of 10% could be worth spending your whole Saturday in the library.</p>
+<p>When you use a standardized effect size, the down side is that you don’t have any real-world units to ground this number in. But the up side is that the same standardized effect size can apply across many research studies. Over time, then, you begin to accumulate a sense for what value of a standardized effect size is “big”, “medium”, or “small.”</p>
+<p>When Jacob Cohen first formulated his measurements of <span class="math inline">\(d\)</span> and <span class="math inline">\(f^2\)</span>, he came up with rules of thumb for what counts as a small, medium, and large effect. He decided that, in general, a “large” effect is one that is obvious - people generally should be able to see this effect in the population, without the need to collect data. This translates to a Cohen’s <span class="math inline">\(d\)</span> of &gt;= 0.8. Something like the difference in height between men and women is a large effect because it is generally possible to see without systematic research, and also has a Cohen’s <span class="math inline">\(d\)</span> &gt; 0.8:</p>
+<div id="qwebr-insertion-location-19"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Cohen set a “medium” effect to be one that is 0.5 &lt; <span class="math inline">\(d\)</span> &lt; 0.8. A medium effect should be visible within a representative dataset “to the naked eye of a careful observer.” You might not obviously notice it in real life, but if you collect data and plot the histograms of two groups, you’d be able to see a difference in the histograms.</p>
+<p>Finally, a “small” effect is 0.2 &lt; <span class="math inline">\(d\)</span> &lt; 0.5. This is one that you can’t see with the naked eye, but that is still meaningful. It will still matter at the scale of an entire population. Cohen considered any <span class="math inline">\(d\)</span> less than 0.2 to be trivial and not worth studying.</p>
+<p>In his 1988 book “Statistical Power Analysis for the Behavioral Sciences”, Cohen also set some general rules of thumb for <span class="math inline">\(r\)</span>, <span class="math inline">\(R^2\)</span>, and <span class="math inline">\(f^2\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Effect size</th>
+<th style="text-align: center;">small effect</th>
+<th style="text-align: center;">medium effect</th>
+<th style="text-align: center;">large effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">0.2-0.5</td>
+<td style="text-align: center;">0.5-0.8</td>
+<td style="text-align: center;">0.8+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: center;">0.1-0.3</td>
+<td style="text-align: center;">0.3-0.5</td>
+<td style="text-align: center;">0.5+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(R^2\)</span></td>
+<td style="text-align: center;">0.02-0.10</td>
+<td style="text-align: center;">0.10-0.25</td>
+<td style="text-align: center;">0.25+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(f^2\)</span></td>
+<td style="text-align: center;">0.02-0.15</td>
+<td style="text-align: center;">0.15-0.35</td>
+<td style="text-align: center;">0.35+</td>
+</tr>
+</tbody>
+</table>
+<p>However, in practice it is best to remember that these are just guidelines. A large effect might not be very trustworthy if you found it in a small sample, and a tiny effect might still be theoretically important (e.g., it’s not a great predictor on its own but significantly contributes to a larger model). It is better to be aware of the field of study you are working in, what the typical effect sizes are, and how your measured effect size compares to those. For instance, it is pretty rare to find large effects in psychology research (most of those have been published already!). A lot of modern work is on the little effects that give the data generation process nuance.</p>
+</section>
+<section id="visualizing-inference-results" class="level2 page-columns page-full" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="visualizing-inference-results"><span class="header-section-number">18.4</span> Visualizing inference results</h2>
+<p>Finally, to mirror our last discussion of communicating results, we should also <em>show</em> what we find, not just talk about it (however efficiently we use our words). Now that we’ve done inference, this means visualizing not only the data within our sample, but also the sample estimate we derive and how precise it is. That way, someone can look at our plot and immediately understand the sample we have as well as the conclusions we are capable of making with it.</p>
+<p>Previously, we followed three principles of good data visualization:</p>
+<ol type="1">
+<li>Show the data</li>
+<li>Don’t distort the data</li>
+<li>Label the data</li>
+</ol>
+<p>Now, let’s add one more principle for when we’re communicating inferences:</p>
+<ol start="4" type="1">
+<li>Show the estimate, with uncertainty</li>
+</ol>
+<p>That generally means indicating on the plot, in some way, what the sample estimate is. Then, we place some sort of bars around it to indicate something like the standard error or confidence interval.</p>
+<section id="histograms" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">18.4.1</span> Histograms</h3>
+<p>Let’s see what this looks like in the context of a few plots we already know how to make. First, we can start with a one-variable plot like a histogram. As you may recall, there are functions for building this type of plot using the <code>ggplot</code> package. Here is a basic histogram of the <code>Extraversion</code> variable as a refresher.</p>
+<div id="qwebr-insertion-location-20"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>As simple as this is, it satisfies the first three principles of data visualization. But it doesn’t tell us what single sample estimate represents these data. For that, we need to add new layers with summary information.</p>
+<p>To add an estimate like the mean, we need to calculate that first. Of course we can use something like <code>mean()</code> to do this, or we can fit an empty statistical model and find the estimate of <span class="math inline">\(\hat{\beta_0}\)</span>. Let’s do that second option.</p>
+<div id="qwebr-insertion-location-21"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Next, we want to be able to add that to our plot as a new layer. The <code>annotate()</code> function in <code>ggplot</code> is one way to include information from outside your dataset that you calculated yourself<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. To use <code>annotate()</code>, tell it what kind of geom you want to add to the plot (we will use “point” in order to add one point at the location of our mean estimate). Then, we tell <code>annotate()</code> the x/y coordinate where you want your geom to land.</p>
+<p>Here is how we can use <code>annotate()</code> to add our estimate of <span class="math inline">\(\hat{\beta_0}\)</span> to the histogram image:</p>
+<div id="qwebr-insertion-location-22"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Great! Now we can quickly see not only the distribution of the data, but where the mean is. However, that’s not the full story. We also want to be able to show our reader how certain we are in this estimate - can we be really precise with this as an estimate of the population mean of extraversion, or should we hedge and say the there is some uncertainty around this point value?</p>
+<p>Adding this extra uncertainty information requires visually adding an interval to the plot. Some people use +/- 1 standard error to create their interval, while others use a confidence interval. Let’s use that latter option since we know how to find that easily.</p>
+<div id="qwebr-insertion-location-23"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This object is a vector with two values - the lower and upper bound of the 95% confidence interval for <span class="math inline">\(\hat{\beta_0}\)</span> (if we had wanted a different confidence level, we’d change the <code>level=</code> argument in <code>confint()</code>). To include this information in the <code>annotate()</code> layer of our plot, we can change the type of geom to “pointrange” instead of “point”. When doing so, we also include <code>xmin=</code> and <code>xmax=</code> arguments to tell the geom how wide to make the point range. Here’s a demonstration:</p>
+<div id="qwebr-insertion-location-24"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Our image actually doesn’t look different right now because our confidence interval is so narrow, the dot for the mean covers it up - we have a very precise estimate given our sample size! To make this plotting lesson clearer however, let’s look at what would happen if our sample size was only 100 people:</p>
+<div id="qwebr-insertion-location-25"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now, we’re satisfying all <em>four</em> principles of data visualization: we’re showing the data, not distorting it, labeling it, and showing an estimate with uncertainty.</p>
+</section>
+<section id="categorical-explanatory-variable" class="level3" data-number="18.4.2">
+<h3 data-number="18.4.2" class="anchored" data-anchor-id="categorical-explanatory-variable"><span class="header-section-number">18.4.2</span> Categorical explanatory variable</h3>
+<p>When we want to plot associations between two variables instead of one distribution, we need a two-variable plot. Something like a boxplot is used when an explanatory variable is categorical:</p>
+<div id="qwebr-insertion-location-26"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This plot summarizes the median and IQR of the data within each group, but it doesn’t give us a good idea of how confident we can be in these values as <em>estimates</em> for a population. So instead, let’s use the point range functionality we learned above, but plot individual group means and confidence intervals for each group.</p>
+<p>First, lets calculate those estimates. A model object only gives us the coefficient <span class="math inline">\(\beta_1\)</span>, which is the <em>difference</em> between group means. The group means themselves are different estimates, <span class="math inline">\(\hat{Y}\)</span> when X=0 and <span class="math inline">\(\hat{Y}\)</span> when X=1. <code>predict()</code> tells us what those are, since we predict the conditional mean for <span class="math inline">\(\hat{Y}\)</span>.</p>
+<div id="qwebr-insertion-location-27"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>So that takes care of finding our point estimates. To get confidence intervals of these predictions, <code>predict()</code> actually has an optional argument <code>interval=</code> where we can specify that we want a confidence interval along with the point prediction.</p>
+<div id="qwebr-insertion-location-28"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now we can pass all this information to the <code>annotate()</code> layer of a plot. Since there are multiple group means and confidence interval bounds, we pass vectors of these values to the relevant arguments in <code>annotate()</code> instead of individual numbers.</p>
+<div id="qwebr-insertion-location-29"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Notice how one confidence interval in this plot is wider than the other. That’s because there are fewer people in the heart disease group, so our estimate of that specific group mean is less certain. We wouldn’t be able to know that from just the boxplot without also showing the data and our estimate with uncertainty.</p>
+</section>
+<section id="numeric-explanatory-variable" class="level3" data-number="18.4.3">
+<h3 data-number="18.4.3" class="anchored" data-anchor-id="numeric-explanatory-variable"><span class="header-section-number">18.4.3</span> Numeric explanatory variable</h3>
+<p>Alternatively, if our explanatory variable is numeric, we would use something like a scatter plot to show our data:</p>
+<div id="qwebr-insertion-location-30"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The sample estimate in this case that we would like to show is the <span class="math inline">\(\hat{\beta_1}\)</span> effect of X on Y. We know that is the difference in conditional mean of Y for every one-unit increase in X - aka the slope of a best fitting line. So if we want to plot this estimate on a scatter plot, we can draw a best fitting line.</p>
+<div id="qwebr-insertion-location-31"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>When this estimate is uncertain, the true population value of <span class="math inline">\(\beta_1\)</span> could be a bit higher or a bit lower. Since <span class="math inline">\(\beta_1\)</span> is the slope of the best fitting line, that means the “real” slope in the population could be a bit steeper or shallower. So to visualize uncertainty of this estimate on a plot, we add what is called a confidence band. This is a faded band around the best fitting line that shows how much the line could tilt up or down if it were actually the slope at the bottom vs.&nbsp;the top of the confidence interval for <span class="math inline">\(\beta_1\)</span>.</p>
+<p>A new function <code>geom_smooth()</code> lets us add the best fitting line and confidence interval all in one go. We just tell it what kind of line to draw, with <code>method='lm'</code>.</p>
+<div id="qwebr-insertion-location-32"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="multiple-explanatory-variables" class="level3 page-columns page-full" data-number="18.4.4">
+<h3 data-number="18.4.4" class="anchored" data-anchor-id="multiple-explanatory-variables"><span class="header-section-number">18.4.4</span> Multiple explanatory variables</h3>
+<p>Finally, another situation we have discussed is building statistical models with multiple explanatory variables.</p>
+<p>How do we put more than two variables onto a plot? It’s very hard to do in a way that still shows the data, because we only have two dimensions available to us on a computer screen. This is one of the situations where the “show the data” principle falls apart. You should be ready to break this rule if there is too much data to include and it obfiscates the plot instead of adding clarity. You’ll also break this rule if you can’t put all the dimensions of the data onto the screen at once.</p>
+<div class="page-columns page-full"><p>We can still visualize the effect estimates and their uncertainty, however. A common way to do this is called a <strong>forest plot</strong>. This sort of plot visualizes the estimates of each explanatory variable on a number line, with different estimates stacked horizontally. This way you can easily see the relative magnitude of each estimate as well as each of their uncertainties.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>forest plot</strong> = a type of data visualization that plots point and interval estimates for all explanatory variables in a multivariable model.</span></div></div>
+<p>We could build this up ourselves with <code>ggplot</code> code by making a data frame of each effect estimate and its accompanying confidence interval. Then we would pass that smaller data frame, rather than the overall dataset, to <code>ggplot</code> and add a <code>geom_pointrange()</code> layer. We also want min and max information added to the aesthetic mapping function.</p>
+<div id="qwebr-insertion-location-33"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><code>sjPlot</code> also gives us a one-and-done function <code>plot_model()</code> that will do all of the above code for us:</p>
+<div id="qwebr-insertion-location-34"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+</section>
+<section id="sec-ch7-resources" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">18.5</span> Chapter resources</h2>
+<section id="learning-goals" class="level3" data-number="18.5.1">
+<h3 data-number="18.5.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">18.5.1</span> Learning goals</h3>
+<p>After reading this chapter, you should be able to:</p>
+<ul>
+<li>Find and write the results of inferential statistics in APA-style</li>
+<li>Find and interpret standardized model estimates</li>
+<li>Find and interpret other standardized effect sizes like <span class="math inline">\(d\)</span>, <span class="math inline">\(r\)</span>, and <span class="math inline">\(f^2\)</span></li>
+<li>Discuss ideas of what makes a small vs.&nbsp;large effect size</li>
+<li>Visualize sample estimates and confidence intervals on data plots</li>
+</ul>
+</section>
+<section id="new-concepts" class="level3" data-number="18.5.2">
+<h3 data-number="18.5.2" class="anchored" data-anchor-id="new-concepts"><span class="header-section-number">18.5.2</span> New concepts</h3>
+<ul>
+<li><strong>unstandardized effect size</strong>: an effect size represented in the original units of the variables.</li>
+<li><strong>standardized effect size</strong>: an effect size represented in terms of standardized units (z-scores, proportion of error, etc.).</li>
+<li><strong>Cohen’s <span class="math inline">\(d\)</span></strong>: A standardized effect size that represents the magnitude of difference between two group means in terms of standard deviation units.</li>
+<li><strong>Cohen’s <span class="math inline">\(f^2\)</span></strong>: A standardized effect size that represents model performance through the ratio of explained to unexplained error.</li>
+<li><strong>global <span class="math inline">\(f^2\)</span></strong>: The increase in Cohen’s <span class="math inline">\(f^2\)</span> for a model with predictors compared to the empty model.</li>
+<li><strong>local <span class="math inline">\(f^2\)</span></strong>: The increase in Cohen’s <span class="math inline">\(f^2\)</span> for a larger model compared to a smaller model.</li>
+<li><strong>forest plot</strong>: a type of data visualization that plots point and interval estimates for all explanatory variables in a multivariable model.</li>
+</ul>
+</section>
+<section id="new-r-functionality" class="level3" data-number="18.5.3">
+<h3 data-number="18.5.3" class="anchored" data-anchor-id="new-r-functionality"><span class="header-section-number">18.5.3</span> New R functionality</h3>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/reference/across.html">dplyr::across()</a></li>
+<li><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">tidyr::pivot_longer()</a></li>
+<li><a href="https://www.rdocumentation.org/packages/sjPlot/versions/2.8.17/topics/tab_df">sjPlot::tab_df()</a></li>
+<li><a href="https://strengejacke.github.io/sjPlot/reference/tab_model.html">sjPlot::tab_model()</a></li>
+<li><a href="https://easystats.github.io/parameters/reference/standardize_parameters.html">effectsize::standardize_parameters()</a></li>
+<li><a href="https://easystats.github.io/effectsize/reference/r2_semipartial.html">effectsize::r2_semipartial()</a></li>
+<li><a href="https://easystats.github.io/effectsize/reference/cohens_d.html">effectsize::cohens_d()</a></li>
+<li><a href="https://easystats.github.io/effectsize/reference/eta_squared.html">effectsize::cohens_f_squared()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/annotate.html">ggplot::annotate()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">ggplot::geom_smooth()</a></li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">ggplot::geom_pointrange()</a></li>
+<li><a href="https://strengejacke.github.io/sjPlot/reference/plot_model.html">sjPlot::plot_model()</a></li>
+</ul>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Even better, you could write your entire report/paper in a <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto markdown file</a> in R, which lets you put code cells in amongst text passages you are writing. That way if new data comes in or you find a bug in your analysis code, you can simply re-run the entire file to update the stats rather than hunting through a word document to fix individual numbers. This textbook is written with Quarto files!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>you could change this by recoding the binary variable with <code>factor()</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Since <code>ggplot</code> lets you control a plot very precisely, there are lots of approaches to this - if you search the Internet generally for putting estimates and intervals on plots in ggplot too, you’ll find a ton of different methods. This is just one option. If you don’t like how it looks, try another!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter-17.html" class="pagination-link" aria-label="Connection to Other Statistical Frameworks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Connection to Other Statistical Frameworks</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2026 CC-BY-NC-SA</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/smburns47">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://bluesky.com/shannon47burns">
+      <i class="bi bi-bluesky" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shannon47burns/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script type="module">
+// Handle cell initialization initialization
+qwebrCellDetails.map(
+  (entry) => {
+    // Handle the creation of the element
+    qwebrCreateHTMLElement(entry);
+    // In the event of interactive, initialize the monaco editor
+    if (entry.options.context == EvalTypes.Interactive) {
+      qwebrCreateMonacoEditorInstance(entry);
+    }
+  }
+);
+
+// Identify non-interactive cells (in order)
+const filteredEntries = qwebrCellDetails.filter(entry => {
+  const contextOption = entry.options && entry.options.context;
+  return ['output', 'setup'].includes(contextOption) || (contextOption == "interactive" && entry.options && entry.options.autorun === 'true');
+});
+
+// Condition non-interactive cells to only be run after webR finishes its initialization.
+qwebrInstance.then(
+  async () => {
+    const nHiddenCells = filteredEntries.length;
+    var currentHiddenCell = 0;
+
+
+    // Modify button state
+    qwebrSetInteractiveButtonState(`🟡 Running hidden code cells ...`, false);
+
+    // Begin processing non-interactive sections
+    // Due to the iteration policy, we must use a for() loop.
+    // Otherwise, we would need to switch to using reduce with an empty
+    // starting promise
+    for (const entry of filteredEntries) {
+
+      // Determine cell being examined
+      currentHiddenCell = currentHiddenCell + 1;
+      const formattedMessage = `Evaluating hidden cell ${currentHiddenCell} out of ${nHiddenCells}`;
+
+      // Update the document status header
+      if (qwebrShowStartupMessage) {
+        qwebrUpdateStatusHeader(formattedMessage);
+      }
+
+      // Display the update in non-active areas
+      qwebrUpdateStatusMessage(formattedMessage);
+
+      // Extract details on the active cell
+      const evalType = entry.options.context;
+      const cellCode = entry.code;
+      const qwebrCounter = entry.id;
+
+      if (['output', 'setup'].includes(evalType)) {
+        // Disable further global status updates
+        const activeContainer = document.getElementById(`qwebr-non-interactive-loading-container-${qwebrCounter}`);
+        activeContainer.classList.remove('qwebr-cell-needs-evaluation');
+        activeContainer.classList.add('qwebr-cell-evaluated');
+
+        // Update status on the code cell
+        const activeStatus = document.getElementById(`qwebr-status-text-${qwebrCounter}`);
+        activeStatus.innerText = " Evaluating hidden code cell...";
+        activeStatus.classList.remove('qwebr-cell-needs-evaluation');
+        activeStatus.classList.add('qwebr-cell-evaluated');
+      }
+
+      switch (evalType) {
+        case 'interactive':
+          // TODO: Make this more standardized.
+          // At the moment, we're overriding the interactive status update by pretending its
+          // output-like. 
+          const tempOptions = entry.options;
+          tempOptions["context"] = "output"
+          // Run the code in a non-interactive state that is geared to displaying output
+          await qwebrExecuteCode(`${cellCode}`, qwebrCounter, tempOptions);
+          break;
+        case 'output':
+          // Run the code in a non-interactive state that is geared to displaying output
+          await qwebrExecuteCode(`${cellCode}`, qwebrCounter, entry.options);
+          break;
+        case 'setup':
+          const activeDiv = document.getElementById(`qwebr-noninteractive-setup-area-${qwebrCounter}`);
+
+          // Store code in history
+          qwebrLogCodeToHistory(cellCode, entry.options);
+
+          // Run the code in a non-interactive state with all output thrown away
+          await mainWebR.evalRVoid(`${cellCode}`);
+          break;
+        default: 
+          break; 
+      }
+
+      if (['output', 'setup'].includes(evalType)) {
+        // Disable further global status updates
+        const activeContainer = document.getElementById(`qwebr-non-interactive-loading-container-${qwebrCounter}`);
+        // Disable visibility
+        activeContainer.style.visibility = 'hidden';
+        activeContainer.style.display = 'none';
+      }
+    }
+  }
+).then(
+  () => {
+    // Release document status as ready
+
+    if (qwebrShowStartupMessage) {
+      qwebrStartupMessage.innerText = "🟢 Ready!"
+    }
+  
+    qwebrSetInteractiveButtonState(
+      `<i class="fa-solid fa-play qwebr-icon-run-code"></i> <span>Run Code</span>`, 
+      true
+    );  
+  }
+);
+</script>
+
+
+
+
+</body></html>
