@@ -353,7 +353,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'tidyr', 'sjPlot', 'ggplot2', 'bayesplot', 'marginaleffects', 'effectsize', 'MBESS'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'tidyr', 'sjPlot', 'ggplot2', 'bayesplot', 'marginaleffects', 'effectsize', 'gsl', 'MBESS'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://tidyverse.r-universe.dev', 'https://repo.r-wasm.org/', 'https://repo.r-wasm.org/'];
@@ -2724,11 +2724,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Change the code below to run a sensitivity analysis finding the achievable power in a study targeting a <span class="math inline">\(beta\)</span> estimand with only N=80.</p>
+<p>Change the code below to run a sensitivity analysis finding the achievable power in a study targeting a <span class="math inline">\(\beta\)</span> estimand with only N=80.</p>
 </div>
 </div>
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This suggests we have rather disappointing power to detect a significant effect for <span class="math inline">\(\beta\)</span>, if its <span class="math inline">\(\Delta R^2\)</span> is 0.05. When we have low power to detect a low effect, that means we have a greater risk of committing a Type II error if the effect in the population is really what we thought it was. If our decision about the effect to plan for is reasonable, and we have low power, we should stop and think really hard about whether it is actually worth spending the limited resources we have on this specific study, or if there are other research designs we could run with stronger effects and therefor better power.</p>
 </section>
 <section id="sec-ch7-resources" class="level2" data-number="19.7">
 <h2 data-number="19.7" class="anchored" data-anchor-id="sec-ch7-resources"><span class="header-section-number">19.7</span> Chapter resources</h2>
