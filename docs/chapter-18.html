@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-19.html" rel="next">
 <link href="./chapter-17.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -1923,7 +1924,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Statistical Results</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Communicating Data Summaries</span></span></a>
   </div>
 </li>
       </ul>
@@ -2012,6 +2013,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./chapter-18.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Communicating Inferences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Study Planning</span></span></a>
   </div>
 </li>
       </ul>
@@ -2509,7 +2516,9 @@ Note
 <section id="cohens-d" class="level3 page-columns page-full" data-number="18.2.4">
 <h3 data-number="18.2.4" class="anchored" data-anchor-id="cohens-d"><span class="header-section-number">18.2.4</span> Cohen’s <span class="math inline">\(d\)</span></h3>
 <p>Standardized <span class="math inline">\(\hat{\beta}\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(R^2\)</span>, and <span class="math inline">\(\Delta R^2\)</span> are all effect sizes that we have seen and used before. There are two more measures of effect size that are common to see in psychology research that we haven’t yet encountered.</p>
-<div class="page-columns page-full"><p>One of them is called <strong>Cohen’s d</strong>. This measure was created by an influential quantitative psychologist named Jacob Cohen in the 1950s. It is used specifically to represent the magnitude of difference between two categorical groups independent of real-world units. Cohen’s <span class="math inline">\(d\)</span> is related to the concept of z-score, in that it indicates the size of a group mean difference in standard deviation units. It is calculated as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Cohen’s d</strong> = A standardized effect size that represents the magnitude of difference between two group means in terms of standard deviation units.</span></div></div>
+<div class="page-columns page-full"><p>One of them is called <strong>Cohen’s d</strong>. This measure was created by an influential quantitative psychologist named Jacob Cohen in the 1950s. The first version pairs with a one-sample t-test, and is used to represent the magnitude of difference between a sample mean and a hypothesized population mean, independent of real-world units. Cohen’s <span class="math inline">\(d\)</span> is related to the concept of z-score, in that it indicates the size of a mean difference in standard deviation units. It is calculated as:</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>Cohen’s d</strong> = A standardized effect size that represents the magnitude of difference between two group means in terms of standard deviation units.</span></div></div>
+<p><span class="math display">\[ d = \frac{\bar{X} - \mu}{s_{X}} \]</span></p>
+<p>The other version of Cohen’s <span class="math inline">\(d\)</span> represents the standardized difference between two categorical groups:</p>
 <p><span class="math display">\[ d = \frac{\bar{X_1} - \bar{X_2}}{s_{pooled}} \]</span></p>
 <p><span class="math inline">\(s_{pooled}\)</span> is a weighted average of the standard deviations from both groups:</p>
 <p><span class="math display">\[s_{pooled} = \frac{df_1s_1 + df_2s_2}{df_1 + df_2}\]</span></p>
@@ -2549,7 +2558,7 @@ Note
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Cohen set a “medium” effect to be one that is 0.5 &lt; <span class="math inline">\(d\)</span> &lt; 0.8. A medium effect should be visible within a representative dataset “to the naked eye of a careful observer.” You might not obviously notice it in real life, but if you collect data and plot the histograms of two groups, you’d be able to see a difference in the histograms.</p>
 <p>Finally, a “small” effect is 0.2 &lt; <span class="math inline">\(d\)</span> &lt; 0.5. This is one that you can’t see with the naked eye, but that is still meaningful. It will still matter at the scale of an entire population. Cohen considered any <span class="math inline">\(d\)</span> less than 0.2 to be trivial and not worth studying.</p>
-<p>In his 1988 book “Statistical Power Analysis for the Behavioral Sciences”, Cohen also set some general rules of thumb for <span class="math inline">\(r\)</span>, <span class="math inline">\(R^2\)</span>, and <span class="math inline">\(f^2\)</span>:</p>
+<p>In his 1988 book “Statistical Power Analysis for the Behavioral Sciences”, Cohen also set some general rules of thumb for <span class="math inline">\(r\)</span> / standardized <span class="math inline">\(\beta\)</span>, <span class="math inline">\(R^2\)</span>, and <span class="math inline">\(f^2\)</span>:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -2567,7 +2576,7 @@ Note
 <td style="text-align: center;">0.8+</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r\)</span> / <span class="math inline">\(\beta\)</span></td>
 <td style="text-align: center;">0.1-0.3</td>
 <td style="text-align: center;">0.3-0.5</td>
 <td style="text-align: center;">0.5+</td>
@@ -3145,6 +3154,9 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./chapter-19.html" class="pagination-link" aria-label="Study Planning">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Study Planning</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
